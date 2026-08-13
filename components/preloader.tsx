@@ -16,7 +16,12 @@ const FADE_MS = 2000;
  *  gives the logo animation room to play before the fade starts. */
 const MIN_DISPLAY_MS = 2000;
 
-export function Preloader() {
+export function Preloader({
+  src = "/images/brand/preloader.gif",
+}: {
+  /** GIF-URL — komt uit site_assets (Supabase) met lokaal bestand als fallback. */
+  src?: string;
+}) {
   const [fading, setFading] = useState(false);
   const [gone, setGone] = useState(false);
 
@@ -64,7 +69,7 @@ export function Preloader() {
       {/* Animated GIF: plain <img>, next/image would freeze/re-encode it */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/brand/preloader.gif"
+        src={src}
         alt=""
         width={550}
         height={310}

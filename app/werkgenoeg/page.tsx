@@ -29,6 +29,7 @@ import {
 import { faqWerkenBij } from "@/lib/faq";
 import { jobs } from "@/lib/jobs";
 import { site } from "@/lib/site";
+import { getAsset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: { absolute: "Werken bij MTB Bouw — vacature timmerman & BBL Twente" },
@@ -49,7 +50,8 @@ const applyHref = (job?: string) =>
     job ? `Sollicitatie ${job}` : "Open sollicitatie"
   )}`;
 
-export default function WerkGenoegPage() {
+export default async function WerkGenoegPage() {
+  const mathijs = await getAsset("team-mathijs", "/images/team/mathijs.webp");
   const projects = portfolio.filter((p) => !p.draft).slice(0, 3);
 
   return (
@@ -117,7 +119,7 @@ export default function WerkGenoegPage() {
         eyebrow="Onze cultuur"
         title="Geen hiërarchie, wel verantwoordelijkheid"
         image={{
-          src: "/images/team/mathijs.webp",
+          src: mathijs.url,
           alt: "Mathijs van MTB Bouw op de bouwplaats",
         }}
         imageSide="left"

@@ -8,6 +8,7 @@ import { FeatureGrid } from "@/components/sections/feature-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { site } from "@/lib/site";
 import { pillars } from "@/lib/data";
+import { getAsset } from "@/lib/assets";
 import { CheckIcon, ChatIcon, HammerIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -19,7 +20,12 @@ export const metadata: Metadata = {
 
 const pillarIcons = [CheckIcon, ChatIcon, HammerIcon];
 
-export default function OverOnsPage() {
+export default async function OverOnsPage() {
+  const mathijs = await getAsset(
+    "team-mathijs",
+    "/images/team/mathijs.webp",
+    "Mathijs, projectleider van MTB Bouw"
+  );
   return (
     <>
       <BreadcrumbJsonLd
@@ -40,7 +46,7 @@ export default function OverOnsPage() {
       <SplitSection
         eyebrow="Ons verhaal"
         title="Luisteren is het halve werk"
-        image={{ src: "/images/team/mathijs.webp", alt: "Mathijs, projectleider van MTB Bouw" }}
+        image={{ src: mathijs.url, alt: mathijs.alt || "Mathijs, projectleider van MTB Bouw" }}
         cta={{ href: "/hoe-wij-werken", label: "Zo werken wij" }}
       >
         <p>

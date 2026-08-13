@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { kennisbank, portfolio } from "#site/content";
+import { getAsset } from "@/lib/assets";
 import {
   CheckIcon,
   ChatIcon,
@@ -229,7 +230,11 @@ const PARTNER_TONE: Record<Tone, string> = {
 
 /* ---------------------------------- Page --------------------------------- */
 
-export default function HomePage() {
+export default async function HomePage() {
+  const hero = await getAsset(
+    "team-mathijs",
+    "https://mtbbouw.com/wp-content/uploads/2025/12/Mathijs-scaled.webp"
+  );
   const latestArticles = kennisbank
     .filter((a) => !a.draft)
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -247,8 +252,7 @@ export default function HomePage() {
           aria-hidden="true"
           className="absolute inset-0"
           style={{
-            backgroundImage:
-              "linear-gradient(180deg, rgba(19,22,20,0.55) 0%, rgba(19,22,20,0.75) 100%), url('https://mtbbouw.com/wp-content/uploads/2025/12/Mathijs-scaled.webp')",
+            backgroundImage: `linear-gradient(180deg, rgba(19,22,20,0.55) 0%, rgba(19,22,20,0.75) 100%), url('${hero.url}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { OrganizationJsonLd } from "@/components/json-ld";
 import { Preloader } from "@/components/preloader";
+import { getAsset } from "@/lib/assets";
 import { ContactDrawerProvider } from "@/components/contact-drawer";
 
 /**
@@ -46,16 +47,17 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const preloader = await getAsset("preloader", "/images/brand/preloader.gif");
   return (
     <html lang="nl" className={`${montserrat.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <OrganizationJsonLd />
-        <Preloader />
+        <Preloader src={preloader.url} />
         <ContactDrawerProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>

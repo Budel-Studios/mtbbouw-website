@@ -3,8 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     // Velite-geoptimaliseerde beelden komen lokaal uit /public/static.
-    // Externe bronnen hier whitelisten als die later nodig zijn.
+    // Site-assets (foto's/logo's die de redactie wisselt) komen uit
+    // Supabase Storage — zie lib/assets.ts.
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
+    ],
   },
   async redirects() {
     return [

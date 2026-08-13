@@ -31,6 +31,7 @@ import {
   RecycleIcon,
 } from "@/components/icons";
 import { faqVeiligBouwen } from "@/lib/faq";
+import { getAsset } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: { absolute: "Veilig & verantwoord bouwen — hoe MTB Bouw werkt" },
@@ -56,7 +57,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function VeiligVerantwoordBouwenPage() {
+export default async function VeiligVerantwoordBouwenPage() {
+  const rick = await getAsset("team-rick", "/images/team/rick.jpg");
   return (
     <>
       <BreadcrumbJsonLd
@@ -201,7 +203,7 @@ export default function VeiligVerantwoordBouwenPage() {
           eyebrow="Opleiden en ontwikkelen"
           title="Erkend leerbedrijf"
           image={{
-            src: "/images/team/rick.jpg",
+            src: rick.url,
             alt: "Vakman van MTB Bouw begeleidt een collega op de bouwplaats",
           }}
         >
