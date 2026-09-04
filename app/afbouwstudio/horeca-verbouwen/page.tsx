@@ -11,7 +11,7 @@ import { faqHorecaVerbouwen } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Horeca verbouwen | Afbouwstudio — MTB Bouw | Twente & Oost-NL" },
   description:
-    "Horecazaak verbouwen? Afbouwstudio (MTB Bouw) bouwt lunchrooms, restaurants en cafés af — van casco tot opening, met minimale sluitingstijd. Bekijk de Broodbode-cases in Zwolle en Apeldoorn.",
+    "Horecazaak verbouwen? Afbouwstudio (MTB Bouw) bouwt lunchrooms, restaurants en cafés af — van casco tot opening, strak op planning. Bekijk de Broodbode-cases in Zwolle en Apeldoorn.",
   alternates: { canonical: "/afbouwstudio/horeca-verbouwen" },
 };
 
@@ -19,7 +19,7 @@ const PIJLERS = [
   {
     icon: ClockIcon,
     title: "Minimale sluitingstijd",
-    text: "We plannen terug vanaf je (her)openingsdatum en werken in fasen of 's nachts. Broodbode Apeldoorn was maar 10 dagen dicht.",
+    text: "We plannen terug vanaf je (her)openingsdatum. De complete transformatie van Broodbode Apeldoorn voerden we uit tijdens de zomervakantie.",
   },
   {
     icon: CupIcon,
@@ -59,12 +59,12 @@ export default function HorecaVerbouwenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/project-2.jpg",
+          src: "/images/projects/broodbode-apeldoorn/01.jpg",
           alt: "Horeca-afbouw van De Broodbode door Afbouwstudio (MTB Bouw)",
         }}
         eyebrow="Afbouwstudio · Horeca"
         title="Horeca verbouwen: open op de datum die jij belooft"
-        intro="Een horecaverbouwing draait om één ding: zo snel mogelijk (weer) open, met een zaak die klopt tot in de laatste hoek. Afbouwstudio bouwde voor De Broodbode complete lunchrooms af in Zwolle en Apeldoorn — van casco pand tot sfeervolle zaak, en van restyling met maar 10 dagen sluitingstijd."
+        intro="Een horecaverbouwing draait om één ding: zo snel mogelijk (weer) open, met een zaak die klopt tot in de laatste hoek. Afbouwstudio bouwde voor De Broodbode complete lunchrooms in Zwolle en Apeldoorn — van casco pand tot sfeervolle zaak, en van verouderd winkelpand tot huiskamer-lunchroom."
         cta={
           <>
             <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>
@@ -100,8 +100,8 @@ export default function HorecaVerbouwenPage() {
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden bg-ink">
               <Image
-                src="/images/projects/project-1.jpg"
-                alt="Interieur van lunchroom De Broodbode, afgebouwd door Afbouwstudio"
+                src="/images/projects/broodbode-apeldoorn/07.jpg"
+                alt="Ronde maatwerkbalie van lunchroom De Broodbode in Apeldoorn, afgebouwd door Afbouwstudio"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -121,16 +121,18 @@ export default function HorecaVerbouwenPage() {
                 Voor De Broodbode bouwden we in <strong>Zwolle</strong> een leeg
                 casco-pand in 7 weken om tot complete lunchroom — keukenblok,
                 counter met etalage, zitruimte en sanitair. In{" "}
-                <strong>Apeldoorn</strong> kreeg de bestaande zaak een complete
-                restyling met maar 10 dagen sluitingstijd: de rest deden we
-                &apos;s nachts en in fasen.
+                <strong>Apeldoorn</strong> transformeerden we een verouderd
+                winkelpand uit de jaren &apos;40–&apos;50 in circa 7 weken tot
+                huiskamer-lunchroom: volledige herindeling, nieuwe elektra,
+                180 m² tegelwerk en twee ronde maatwerkbalies — uitgevoerd
+                tijdens de zomervakantie.
               </p>
               <div className="mt-7 flex items-center gap-6">
                 <span className="flex items-center gap-1.5 text-sm text-stone">
                   <MapPinIcon className="h-4 w-4 text-lime-dark" /> Zwolle · 7 weken
                 </span>
                 <span className="flex items-center gap-1.5 text-sm text-stone">
-                  <MapPinIcon className="h-4 w-4 text-lime-dark" /> Apeldoorn · 10 dagen dicht
+                  <MapPinIcon className="h-4 w-4 text-lime-dark" /> Apeldoorn · ±7 weken
                 </span>
               </div>
               <div className="mt-8">

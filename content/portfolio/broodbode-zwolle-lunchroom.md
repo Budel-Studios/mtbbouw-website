@@ -42,6 +42,6 @@ Tijdens het eerste pandbezoek legden we met onze eigen app elke wand, vloer en p
 
 ## Het resultaat
 
-Opgeleverd vóór de opening. Een zaak met de warme uitstraling van een ambachtelijke bakker, gebouwd op een strakke planning. De Broodbode was zo tevreden dat we daarna ook hun vestiging in Apeldoorn mochten restylen — met maar 10 dagen sluitingstijd.
+Opgeleverd vóór de opening. Een zaak met de warme uitstraling van een ambachtelijke bakker, gebouwd op een strakke planning. De Broodbode was zo tevreden dat we daarna ook [hun vestiging in Apeldoorn volledig mochten transformeren](/projecten/broodbode-apeldoorn-lunchroom) tot huiskamer-lunchroom.
 
 Zelf een horecazaak of casco pand af te bouwen? Bekijk [horeca verbouwen](/afbouwstudio/horeca-verbouwen) of plan direct een intake via [Afbouwstudio](/afbouwstudio).

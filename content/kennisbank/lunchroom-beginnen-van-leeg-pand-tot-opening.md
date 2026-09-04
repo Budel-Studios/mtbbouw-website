@@ -92,7 +92,7 @@ Dat horen we bij bijna iedere horecaverbouwing: "We willen open vóór de zomer.
 
 De verbouwing van De Broodbode in Zwolle duurde 7 weken, van casco tot complete lunchroom. Maar daarvóór zat de vergunning, het ontwerp en de voorbereiding. Tel dus royaal terug vanaf je gewenste openingsdatum.
 
-En als je zaak al draait? Dan telt elke dag dicht dubbel. Toen De Broodbode later hun zaak in Apeldoorn wilde restylen, hebben we 's nachts en in fasen gewerkt: de zaak was maar 10 dagen dicht. Dat vraagt strakke voorbereiding, maar het kan. Lees het hele verhaal bij [het Broodbode-project](/projecten/broodbode-zwolle-lunchroom).
+En als je zaak al draait? Dan telt elke dag dicht dubbel. Toen De Broodbode hun verouderde pand in Apeldoorn volledig wilde transformeren, planden we de complete verbouwing — sloop, herindeling, elektra en 180 m² tegelwerk — precies in de zomervakantie: circa 7 weken, klaar vóór de heropening. Dat vraagt strakke voorbereiding, maar het kan. Lees het hele verhaal bij [het Broodbode-project in Apeldoorn](/projecten/broodbode-apeldoorn-lunchroom).
 
 ## Stappenplan: van leeg pand tot opening
 
@@ -138,7 +138,7 @@ Er gelden eisen voor ventilatie en afzuiging, hygiëne (schoon te maken oppervla
 
 ### Kan mijn zaak openblijven tijdens een verbouwing?
 
-Deels, ja. Bij de restyling van De Broodbode in Apeldoorn werkten we 's nachts en in fasen: de zaak was maar 10 dagen dicht. Het vraagt extra planning, maar het scheelt je flink omzetverlies.
+Deels, ja. De complete transformatie van De Broodbode in Apeldoorn planden we bijvoorbeeld in de zomervakantie, zodat de sluitingstijd zo kort mogelijk was. Het vraagt extra planning, maar het scheelt je flink omzetverlies.
 
 ### Moet ik een casco pand of een oud horecapand kiezen?
 

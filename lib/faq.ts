@@ -562,7 +562,7 @@ export const faqHorecaVerbouwen: Faq[] = [
   {
     question: "Hoe lang moet mijn zaak dicht tijdens een horecaverbouwing?",
     answer:
-      "Zo kort mogelijk. Bij de restyling van Broodbode Apeldoorn was de zaak maar 10 dagen dicht: we werkten in fasen en 's nachts door. In de planning rekenen we terug vanaf jouw (her)openingsdatum.",
+      "Zo kort mogelijk. We rekenen in de planning terug vanaf jouw (her)openingsdatum en benutten rustige periodes: de complete transformatie van Broodbode Apeldoorn voerden we in circa 7 weken uit tijdens de zomervakantie.",
   },
   {
     question: "Wat kost een horecaverbouwing?",
@@ -643,7 +643,7 @@ export const faqKantoorApeldoorn: Faq[] = [
   {
     question: "Hebben jullie eerder in Apeldoorn gewerkt?",
     answer:
-      "Ja — in het centrum van Apeldoorn verzorgden we de complete restyling van lunchroom De Broodbode, met maar 10 dagen sluitingstijd. Diezelfde aanpak (gefaseerd, 's nachts doorwerken) passen we toe bij kantoorverbouwingen.",
+      "Ja — in het centrum van Apeldoorn transformeerden we het verouderde pand van lunchroom De Broodbode volledig tot huiskamer-lunchroom: herindeling, nieuwe elektra en 180 m² tegelwerk, in circa 7 weken tijdens de zomervakantie. Diezelfde strakke planning passen we toe bij kantoorverbouwingen.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Apeldoorn?",
@@ -653,7 +653,7 @@ export const faqKantoorApeldoorn: Faq[] = [
   {
     question: "Is de reisafstand vanuit Enschede geen probleem?",
     answer:
-      "Nee. Onze teams werken projectmatig op locatie; bij De Broodbode Apeldoorn werkten we zelfs 's nachts. Je merkt er niets van in planning of prijs.",
+      "Nee. Onze teams werken projectmatig op locatie — De Broodbode in Apeldoorn transformeerden we volledig in circa 7 weken, strak op planning. Je merkt er niets van in planning of prijs.",
   },
   {
     question: "Regelen jullie ook de installaties en het klimaat?",

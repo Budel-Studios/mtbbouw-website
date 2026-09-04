@@ -174,8 +174,23 @@ export default async function ProjectPage({
       {project.faq.length > 0 && <FaqJsonLd items={project.faq} />}
 
       {/* 1 — HERO */}
-      <header className="relative bg-ink">
-        {project.cover && (
+      <header className="relative overflow-hidden bg-ink">
+        {project.coverVideo ? (
+          <>
+            {/* Geluidloze sfeer-loop; cover fungeert als poster/fallback */}
+            <video
+              src={project.coverVideo}
+              poster={project.cover}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover opacity-55"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
+          </>
+        ) : project.cover ? (
           <>
             <Image
               src={project.cover}
@@ -187,7 +202,7 @@ export default async function ProjectPage({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
           </>
-        )}
+        ) : null}
         <div className="relative mx-auto flex min-h-[58vh] max-w-6xl flex-col justify-end px-6 pb-12 pt-28">
           <nav className="mb-auto text-sm text-white/70">
             <Link href="/projecten" className="hover:text-white">

@@ -53,6 +53,7 @@ const portfolio = defineCollection({
       // ---- Beeld ----
       cover: s.string().optional(), // Sfeerfoto hero (pad onder /public)
       coverAlt: s.string().optional(), // Alt-tekst hero (val terug op titel)
+      coverVideo: s.string().optional(), // Hero-video (mp4, muted autoplay-loop; cover = poster/fallback)
 
       // ---- Verhaallijn (elk veld = eigen markdown-blok, optioneel) ----
       intro: s.string().max(400).optional(), // Korte introductie (lead)

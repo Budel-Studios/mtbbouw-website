@@ -10,7 +10,7 @@ import { faqKantoorApeldoorn } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Apeldoorn | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Apeldoorn? Afbouwstudio verbouwde er De Broodbode met maar 10 dagen sluitingstijd. Kantoorafbouw van casco tot turn-key — gefaseerd, 's avonds of in het weekend, vaste prijs.",
+    "Kantoor verbouwen in Apeldoorn? Afbouwstudio transformeerde er De Broodbode volledig, strak gepland in de zomervakantie. Kantoorafbouw van casco tot turn-key — gefaseerd, 's avonds of in het weekend, vaste prijs.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-apeldoorn" },
 };
 
@@ -36,12 +36,12 @@ export default function KantoorApeldoornPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/project-1.jpg",
+          src: "/images/projects/broodbode-apeldoorn/01.jpg",
           alt: "Verbouwing van De Broodbode in Apeldoorn door Afbouwstudio",
         }}
         eyebrow="Afbouwstudio · Apeldoorn"
         title="Kantoor verbouwen in Apeldoorn — met minimale verstoring van je werk"
-        intro="In het centrum van Apeldoorn verbouwden we De Broodbode met maar 10 dagen sluitingstijd: gefaseerd en 's nachts doorwerken. Diezelfde aanpak gebruiken we voor kantoren in Apeldoorn — je team werkt door terwijl wij verbouwen, tegen een vaste prijs."
+        intro="In het centrum van Apeldoorn transformeerden we De Broodbode volledig — herindeling, elektra en 180 m² tegelwerk — strak gepland in de zomervakantie zodat de zaak zo kort mogelijk dicht was. Diezelfde aanpak gebruiken we voor kantoren in Apeldoorn: je team werkt door terwijl wij verbouwen, tegen een vaste prijs."
         cta={
           <>
             <ArrowLink href="#contact" onDark>Plan een intake in Apeldoorn</ArrowLink>
@@ -62,10 +62,10 @@ export default function KantoorApeldoornPage() {
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Onze kracht in Apeldoorn is bewezen: bij De Broodbode planden we
-                de restyling zo dat de zaak maar 10 dagen dicht hoefde — de
-                rest gebeurde &apos;s nachts en in fasen. Voor kantoren
-                betekent dat: werkplekken blijven bereikbaar, deadlines staan
-                vast, en je krijgt vooraf een vaste prijs.
+                de complete transformatie precies in de zomervakantie, zodat de
+                heropening vaststond. Voor kantoren betekent dat: werkplekken
+                blijven bereikbaar, deadlines staan vast, en je krijgt vooraf
+                een vaste prijs.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[

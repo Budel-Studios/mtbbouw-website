@@ -141,7 +141,7 @@ Dit adviseren we eigenlijk bijna altijd: neem in stap 2 de tijd. Elke beslissing
 
 ## Praktijkgevoel: snelheid werkt ook binnen
 
-Prefab draait om slim voorbereiden zodat je op locatie snel bent. Dat principe passen we overal toe. Voor lunchroomketen De Broodbode bouwden we [een casco pand in Zwolle in 7 weken om tot complete lunchroom](/projecten/broodbode-zwolle-lunchroom) — tegelwerk, maatwerk counter, akoestisch zwart plafond, verlichtingsplan, sanitair en keukenblok. En bij de restyling van hun zaak in Apeldoorn hielden we de sluitingstijd op maar 10 dagen, door 's nachts en in fasen te werken. Andere klus, zelfde denkwijze: alles vooraf uitdenken, op locatie alleen nog uitvoeren.
+Prefab draait om slim voorbereiden zodat je op locatie snel bent. Dat principe passen we overal toe. Voor lunchroomketen De Broodbode bouwden we [een casco pand in Zwolle in 7 weken om tot complete lunchroom](/projecten/broodbode-zwolle-lunchroom) — tegelwerk, maatwerk counter, akoestisch zwart plafond, verlichtingsplan, sanitair en keukenblok. En [hun zaak in Apeldoorn](/projecten/broodbode-apeldoorn-lunchroom) transformeerden we volledig in circa 7 weken, strak gepland in de zomervakantie. Andere klus, zelfde denkwijze: alles vooraf uitdenken, op locatie alleen nog uitvoeren.
 
 ## Veelgestelde vragen
 

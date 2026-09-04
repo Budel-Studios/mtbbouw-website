@@ -142,7 +142,7 @@ Dit zijn de missers die we het vaakst tegenkomen. Loop ze even na:
 
 ## Praktijkvoorbeeld: snelheid door slim plannen
 
-Even een voorbeeld uit onze eigen praktijk — geen uitbouw, maar het laat mooi zien wat strakke planning doet. Voor De Broodbode bouwden we een casco pand in Zwolle (wijk Wezenlanden) in **7 weken** om tot een complete lunchroom: tegelwerk, maatwerk counter, akoestisch zwart plafond, verlichtingsplan, sanitair en keukenblok. Daarna volgde de restyling van hun zaak in Apeldoorn met maar **10 dagen sluitingstijd** — door 's nachts en in fasen te werken.
+Even een voorbeeld uit onze eigen praktijk — geen uitbouw, maar het laat mooi zien wat strakke planning doet. Voor De Broodbode bouwden we een casco pand in Zwolle (wijk Wezenlanden) in **7 weken** om tot een complete lunchroom: tegelwerk, maatwerk counter, akoestisch zwart plafond, verlichtingsplan, sanitair en keukenblok. Daarna transformeerden we [hun zaak in Apeldoorn](/projecten/broodbode-apeldoorn-lunchroom) volledig — óók in circa **7 weken**, strak gepland in de zomervakantie zodat de zaak zo kort mogelijk dicht was.
 
 De les voor jouw uitbouw: doorlooptijd is geen toeval, maar het resultaat van werkvoorbereiding. Alles besteld en uitgedacht vóórdat de eerste schop de grond in gaat. [Bekijk het project](/projecten/broodbode-zwolle-lunchroom).
 

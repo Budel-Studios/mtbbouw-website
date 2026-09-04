@@ -122,7 +122,7 @@ Zo bouw je een kantoor dat meebeweegt in plaats van elke vijf jaar op de schop m
 
 Geen kantoor, wel precies dezelfde vraagstukken: licht, geluid, routing en sfeer. Voor [De Broodbode bouwden we in Zwolle](/projecten/broodbode-zwolle-lunchroom) een casco pand in de wijk Wezenlanden in 7 weken om tot complete lunchroom. Tegelwerk, een maatwerk counter, sanitair, keukenblok — en ja: een akoestisch zwart plafond met een compleet verlichtingsplan. Want in een volle lunchroom geldt hetzelfde als in een kantoortuin: zonder akoestiek versta je elkaar niet.
 
-Daarna volgde de restyling van hun zaak in Apeldoorn. Die kon maar kort dicht, dus werkten we 's nachts en in fasen: 10 dagen sluitingstijd, klaar. Dat faseren doen we bij kantoren ook — zodat je team gewoon kan doorwerken terwijl wij per zone verbouwen.
+Daarna volgde [hun zaak in Apeldoorn](/projecten/broodbode-apeldoorn-lunchroom): een verouderd winkelpand dat we in circa 7 weken volledig transformeerden — strak gepland in de zomervakantie, zodat de heropening vaststond. Dat plannen rond jouw bedrijfsvoering doen we bij kantoren ook: per zone verbouwen, zodat je team kan doorwerken.
 
 ## Checklist: scoort jouw kantoor een voldoende?
 
@@ -163,7 +163,7 @@ Begin bij het plafond (akoestische panelen), voeg wandpanelen toe bij bel- en ov
 
 ### Kan mijn team blijven doorwerken tijdens de verbouwing?
 
-Vaak wel. We verbouwen in fasen, per zone, en plannen luidruchtig werk buiten kantoortijden als dat nodig is. Bij de restyling van De Broodbode in Apeldoorn werkten we 's nachts — de zaak was maar 10 dagen dicht.
+Vaak wel. We verbouwen in fasen, per zone, en plannen luidruchtig werk buiten kantoortijden als dat nodig is. De complete transformatie van De Broodbode in Apeldoorn planden we bijvoorbeeld precies in de zomervakantie, zodat de zaak zo kort mogelijk dicht was.
 
 ### Zijn glaswanden niet juist slecht voor de akoestiek?
 

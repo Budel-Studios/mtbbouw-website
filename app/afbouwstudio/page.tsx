@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
@@ -75,18 +76,20 @@ const CASES = [
     story:
       "Een leeg casco-pand in een nieuw ontwikkelingsgebied. Wij bouwden de complete lunchroom af: keukenblok, counter met etalage, zitruimte, sanitair en achterkeuken. Met onze app legden we tijdens het eerste bezoek elke wand vast — een week later lag het complete voorstel op tafel.",
     items: ["Tegelwerk vloer & wanden", "Bar / counter op maat", "Akoestisch plafond", "Verlichtingsplan", "Sanitair", "Schilderwerk", "Keukenblok-installatie", "Opgeleverd vóór opening"],
-    img: "/images/projects/project-2.jpg",
+    img: "/images/projects/broodbode-zwolle-lunchroom/cover.jpg",
+    href: "/projecten/broodbode-zwolle-lunchroom",
   },
   {
-    tag: "Restyling bestaand pand",
+    tag: "Complete transformatie bestaand pand",
     title: "Broodbode Apeldoorn",
     location: "Centrum Apeldoorn",
-    type: "Restyling lunchroom",
-    looptijd: "4 weken (10 dagen dicht)",
+    type: "Huiskamer-lunchroom",
+    looptijd: "±7 weken (zomervakantie)",
     story:
-      "Bestaand pand, maar de uitstraling moest aansluiten bij de nieuwe Broodbode-stijl. Wij planden de werkzaamheden zo dat de zaak slechts 10 dagen dicht hoefde — de rest deden we 's nachts en in fasen.",
-    items: ["Vernieuwd interieur", "Nieuwe vloer", "Bar uitgebreid", "Verlichting vervangen", "Schilderwerk", "Akoestiek verbeterd", "Heropening op planning"],
-    img: "/images/projects/project-1.jpg",
+      "Een verouderd winkelpand uit de jaren '40–'50, volledig getransformeerd tot warme huiskamer-lunchroom. Gedeeltelijke sloop, nieuwe indeling met Ytong- en metal-studwanden, volledig nieuwe elektra en circa 180 m² tegelwerk — uitgevoerd tijdens de zomervakantie, strak op de planning van De Broodbode.",
+    items: ["Volledige herindeling", "Nieuwe elektra + meterkast", "180 m² tegelwerk", "Twee ronde maatwerkbalies met doekglas", "Nieuwe toiletten & wasruimte", "Complete spoelkeuken", "Vloercoating", "Lambrisering & maatwerk"],
+    img: "/images/projects/broodbode-apeldoorn/01.jpg",
+    href: "/projecten/broodbode-apeldoorn-lunchroom",
   },
 ];
 
@@ -261,11 +264,11 @@ export default function AfbouwstudioPage() {
             De Broodbode. Twee locaties, één signatuur.
           </h2>
           <p className="mt-6 max-w-3xl leading-relaxed text-stone">
-            Toen De Broodbode uitbreidde naar Zwolle en hun locatie in Apeldoorn
-            een complete restyling kreeg, kwamen ze bij Afbouwstudio. De opdracht:
-            een ambachtelijke lunchroom afbouwen waar elke focaccia en elke koffie
-            tot zijn recht komt. Twee panden, twee karakters — één strakke
-            uitvoering.
+            Toen De Broodbode uitbreidde naar Zwolle en hun verouderde pand in
+            Apeldoorn volledig werd getransformeerd tot huiskamer-lunchroom,
+            kwamen ze bij Afbouwstudio. De opdracht: een ambachtelijke lunchroom
+            afbouwen waar elke focaccia en elke koffie tot zijn recht komt. Twee
+            panden, twee karakters — één strakke uitvoering.
           </p>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
@@ -310,6 +313,12 @@ export default function AfbouwstudioPage() {
                       ))}
                     </ul>
                   </div>
+                  <Link
+                    href={c.href}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink underline decoration-lime decoration-2 underline-offset-4 hover:decoration-ink"
+                  >
+                    Bekijk het volledige project →
+                  </Link>
                 </div>
               </article>
             ))}
