@@ -123,8 +123,7 @@ export function SiteFooter() {
             )}
           </div>
           <p className="text-xs text-stone">
-            © {year} MTB Bouw B.V is een door SBB erkend leerbedrijf ID
-            100812726
+            © {year} {site.legalName} · KVK {site.kvk} · {site.sbb}
           </p>
         </div>
       </div>

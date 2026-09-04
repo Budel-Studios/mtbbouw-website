@@ -78,6 +78,8 @@ export default function PrivacyPolicyPage() {
           <p>
             {site.legalName}
             <br />
+            KVK {site.kvk}
+            <br />
             {site.address.streetAddress}, {site.address.postalCode}{" "}
             {site.address.addressLocality}
             <br />

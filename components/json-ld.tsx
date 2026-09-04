@@ -27,6 +27,11 @@ export function OrganizationJsonLd() {
         telephone: site.telephoneHref,
         email: site.email,
         areaServed: site.areaServed,
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "KVK",
+          value: site.kvk,
+        },
         address: {
           "@type": "PostalAddress",
           streetAddress: site.address.streetAddress,

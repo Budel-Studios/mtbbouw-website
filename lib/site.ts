@@ -25,6 +25,7 @@ export const site = {
   },
   openingHours: "Ma–Vr 08:00–17:00",
   areaServed: ["Twente", "Oost-Nederland"],
+  kvk: "42148321",
   sbb: "SBB-erkend leerbedrijf · ID 100812726",
   social: {
     instagram: "https://www.instagram.com/mtbbouw/",
