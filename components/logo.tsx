@@ -1,15 +1,17 @@
 /**
- * MTB Bouw beeldmerk — SVG-recreatie van het officiële tricolor "T"-logo
- * (lime → cyaan → donkerblauw, hoekige balk met puntige stam). Inline SVG =
- * scherp op elk formaat. De clip-id is per plek uniek (uid) zodat header en
- * footer elkaar niet in de weg zitten.
+ * MTB Bouw beeldmerk — vectorversie van het officiële tricolor "T"-logo.
  *
- * Kleuren zijn ingeschat op basis van het aangeleverde logo — pas ze hier
- * centraal aan als de exacte merkwaarden anders zijn:
+ * Geometrie en kleuren zijn overgenomen uit het aangeleverde bronbestand
+ * (LOGO oud, 6.svg) en pixelgewijs geverifieerd tegen dat origineel. De
+ * clip-id is per plek uniek (uid) zodat header en footer elkaar niet in de
+ * weg zitten.
+ *
+ * Het volledige logo mét woordmerk staat als raster in
+ * /public/images/brand/logo-full.png (voor social/OG en extern gebruik).
  */
-const LIME = "#8FBE1F";
-const CYAN = "#29ABE2";
-const NAVY = "#1B3F94";
+const LIME = "#ABE000";
+const CYAN = "#00AEF7";
+const NAVY = "#003384";
 
 export function LogoMark({
   className,
@@ -21,20 +23,22 @@ export function LogoMark({
   const clipId = `mtb-t-${uid}`;
   return (
     <svg
-      viewBox="0 0 100 100"
+      viewBox="0 0 100.49 100"
       className={className}
       role="img"
       aria-label="MTB Bouw"
     >
       <defs>
         <clipPath id={clipId}>
-          <path d="M18 26 L82 26 L73 44 L56 44 L56 80 L50 90 L44 80 L44 44 L27 44 Z" />
+          {/* Balk loopt naar onderen breder uit; stam eindigt in een punt. */}
+          <path d="M12.96 0 L86.32 0 L100.49 22 L62.5 22 L62.5 85 L49.84 100 L37.08 85 L37.08 22 L0 22 Z" />
         </clipPath>
       </defs>
       <g clipPath={`url(#${clipId})`}>
-        <rect x="0" y="0" width="100" height="100" fill={LIME} />
-        <polygon points="0,72.75 100,11.25 100,100 0,100" fill={CYAN} />
-        <polygon points="0,94.75 100,33.25 100,100 0,100" fill={NAVY} />
+        <rect width="100.49" height="100" fill={LIME} />
+        {/* Twee diagonalen delen het merk in lime → cyaan → navy. */}
+        <polygon points="0,56.6 100.49,-1.7 100.49,100 0,100" fill={CYAN} />
+        <polygon points="0,31.7 100.49,80.7 100.49,100 0,100" fill={NAVY} />
       </g>
     </svg>
   );

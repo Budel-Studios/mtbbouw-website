@@ -20,7 +20,8 @@ const mime = { ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
 
 // filename (without ext) -> { bucket, alt, label }
 const assets = {
-  "logo":                { bucket: "brand", label: "Logo MTB Bouw", alt: "MTB Bouw logo" },
+  "logomark":            { bucket: "brand", label: "Beeldmerk MTB Bouw", alt: "MTB Bouw beeldmerk" },
+  "logo-full":           { bucket: "brand", label: "Logo MTB Bouw (met woordmerk)", alt: "MTB Bouw logo" },
   "preloader":           { bucket: "brand", label: "Preloader-animatie", alt: "MTB Bouw laadanimatie" },
   "team-mathijs":        { bucket: "team", label: "Teamfoto Mathijs", alt: "Mathijs, projectleider bij MTB Bouw" },
   "team-rick":           { bucket: "team", label: "Teamfoto Rick", alt: "Rick, afbouwspecialist (RN Afbouw) bij MTB Bouw" },
