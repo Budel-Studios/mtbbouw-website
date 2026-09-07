@@ -73,26 +73,20 @@ export default function ProjectenPage() {
           { name: "Gerealiseerde projecten", url: "/projecten" },
         ]}
       />
-      <div className="mx-auto max-w-7xl px-6 pt-16 md:px-16 md:pt-24">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
-          Ons werk
-        </p>
-        {/* Hero-titel — replica van de WP-component (Archivo, 2 regels, strak) */}
-        <h1
-          style={{ fontWeight: 600 }}
-          className="mt-4 font-display text-4xl leading-[0.95] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[3.5rem]"
-        >
-          Gerealiseerde
-          <br />
-          projecten
-        </h1>
-      </div>
+      {/* De uitgelichte case ís de header van deze pagina */}
+      <ProjectSpotlight
+        eyebrow="Ons werk"
+        pageTitle={
+          <>
+            Gerealiseerde
+            <br />
+            projecten
+          </>
+        }
+        project={spotlight}
+      />
 
-      <div className="mt-12 md:mt-16">
-        <ProjectSpotlight project={spotlight} />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-6 pb-16 pt-16 md:px-16 md:pb-24 md:pt-24">
+      <div className="mx-auto max-w-7xl px-6 pb-16 pt-14 md:px-16 md:pb-24 md:pt-16">
         <h2 className="mb-8 font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
           Alle projecten
         </h2>
