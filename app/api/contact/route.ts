@@ -158,14 +158,16 @@ function buildQuoteEmail(f: QuotePayload) {
         row("Naam", f.name) +
           row("Telefoon", f.phone) +
           row("E-mail", f.email) +
-          row("Projecttype", f.projectTypes.join(", "))
+          row("Projecttype", (f.projectTypes ?? []).join(", "))
       )}
       ${section(
         "Projectdetails",
         row("Omschrijving", f.description) +
           row("Huidige situatie", f.situation) +
           row("Afmetingen / aantallen", f.dimensions) +
-          row("Werkonderdelen", f.workParts.join(", "))
+          // Arrays kunnen ontbreken bij een deels ingevuld formulier; row()
+          // vangt lege strings al af, maar .join() op undefined crasht.
+          row("Werkonderdelen", (f.workParts ?? []).join(", "))
       )}
       ${section(
         "Locatie & planning",
