@@ -1,18 +1,72 @@
 import { NextResponse } from "next/server";
 
 /**
- * Formulier-inzendingen (offerte-drawer, contactformulier, brochure-aanvraag) —
- * zelfde flow als de live site: bouwt een HTML-mail en post die naar het
- * bestaande WordPress mail-endpoint (custom/v1/contact), dat relayt naar de
- * MTB-inbox.
+ * Formulier-inzendingen (offerte-drawer, contactformulier, brochure-aanvraag):
+ * bouwt een HTML-mail en bezorgt die.
+ *
+ * Bezorging kent twee routes:
+ *  1. Resend (RESEND_API_KEY gezet) — de route waar we naartoe gaan.
+ *  2. Het oude WordPress-endpoint — vangnet zolang mtbbouw.com nog op
+ *     WordPress draait. Zodra het domein naar Vercel wijst bestaat dit
+ *     endpoint niet meer, dus dan MOET RESEND_API_KEY gezet zijn.
  *
  * Lokaal testen zonder echte mails: zet MAIL_RELAY_URL naar een echo-endpoint.
- *
- * TODO: when the WordPress site is retired, replace WP_ENDPOINT with our own
- * mailer (e.g. nodemailer + SMTP env vars) — the payload shape stays the same.
  */
 const WP_ENDPOINT =
   process.env.MAIL_RELAY_URL ?? "https://mtbbouw.com/wp-json/custom/v1/contact";
+
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+/** Afzender moet op een in Resend geverifieerd domein zitten. */
+const MAIL_FROM = process.env.MAIL_FROM ?? "website@mtbbouw.com";
+const MAIL_TO = process.env.MAIL_TO ?? "info@mtbbouw.com";
+
+const SUBJECTS: Record<FormType, string> = {
+  offerte: "Nieuwe offerteaanvraag via de website",
+  contact: "Nieuw contactformulier via de website",
+  brochure: "Brochure-aanvraag via de website",
+};
+
+/**
+ * Verstuurt de mail. Geeft `true` terug bij succes; de aanroeper vertaalt dat
+ * naar de response. Reply-to wijst naar de aanvrager, zodat je vanuit de inbox
+ * direct kunt antwoorden.
+ */
+async function deliver(
+  subject: string,
+  html: string,
+  replyTo?: string
+): Promise<boolean> {
+  if (RESEND_API_KEY) {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `MTB Bouw website <${MAIL_FROM}>`,
+        to: [MAIL_TO],
+        subject,
+        html,
+        ...(replyTo ? { reply_to: replyTo } : {}),
+      }),
+    });
+    if (!res.ok) {
+      // Body meelezen helpt bij het debuggen van afzender-/domeinfouten.
+      console.error("Resend failed", res.status, await res.text().catch(() => ""));
+      return false;
+    }
+    return true;
+  }
+
+  const res = await fetch(WP_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: "Mtbbouw", email: MAIL_TO, message: html }),
+  });
+  const data = await res.json().catch(() => null);
+  return res.ok && data?.success !== false;
+}
 
 type FormType = "offerte" | "contact" | "brochure";
 
@@ -206,17 +260,12 @@ export async function POST(request: Request) {
         : buildQuoteEmail(body);
 
   try {
-    const res = await fetch(WP_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: "Mtbbouw",
-        email: "info@mtbbouw.com",
-        message,
-      }),
-    });
-    const data = await res.json().catch(() => null);
-    const success = res.ok && data?.success !== false;
+    const replyTo = typeof body.email === "string" ? body.email.trim() : "";
+    const success = await deliver(
+      SUBJECTS[type],
+      message,
+      replyTo || undefined
+    );
     return NextResponse.json({ success });
   } catch {
     return NextResponse.json({ success: false, error: "Mail relay failed" }, { status: 502 });

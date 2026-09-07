@@ -43,3 +43,6 @@ next-env.d.ts
 # velite (generated content layer + processed assets)
 /.velite
 /public/static
+
+.vercel
+.env*
