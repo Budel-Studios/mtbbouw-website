@@ -49,7 +49,7 @@ export default function BouwbedrijfEnschedePage() {
         }}
         eyebrow="Bouwbedrijf Enschede"
         title="Het bouwbedrijf uit Enschede met vier specialismen onder één dak"
-        intro="MTB Bouw is een allround bouwbedrijf, gevestigd aan de Heersenkampweg 5 in Enschede. Particulieren helpen we met verbouw, renovatie en aanbouw; bedrijven met complete afbouw van kantoren, winkels en horeca. Eén team, één planning, één aanspreekpunt."
+        intro="MTB Bouw is een allround bouwbedrijf uit Enschede. Particulieren helpen we met verbouw, renovatie en aanbouw; bedrijven met complete afbouw van kantoren, winkels en horeca. Eén team, één planning, één aanspreekpunt — en een intake bij jou op locatie."
         cta={<QuoteButton />}
       />
 

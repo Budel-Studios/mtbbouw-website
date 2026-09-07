@@ -45,26 +45,44 @@ export default async function OverOnsPage() {
 
       <SplitSection
         eyebrow="Ons verhaal"
-        title="Luisteren is het halve werk"
+        title="Ontstaan vanuit de praktijk"
         image={{ src: mathijs.url, alt: mathijs.alt || "Mathijs, projectleider van MTB Bouw" }}
         cta={{ href: "/hoe-wij-werken", label: "Zo werken wij" }}
       >
         <p>
-          MTB Bouw is het bedrijf van Mathijs, die na jaren als uitvoerder bij
-          Koopmans Bouw voor zichzelf begon. Inmiddels leidt hij met een vast
-          team grote verbouwingen en bouwprojecten in heel Twente en daarbuiten.
+          MTB Bouw is ontstaan vanuit de praktijk. Mathijs werkte jarenlang als
+          uitvoerder bij Koopmans Bouw en zag van dichtbij waar het in de bouw
+          soms beter kan: vakmensen die te weinig ruimte krijgen om hun werk
+          goed te doen, onnodige inefficiëntie binnen organisaties en
+          communicatie die onderweg niet altijd duidelijk blijft.
         </p>
+        <p>Dat wilde hij anders aanpakken.</p>
         <p>
-          Onze filosofie is simpel: luisteren naar de klant vinden we misschien
-          wel het allerbelangrijkste. Wie goed luistert, bouwt geen huis maar
-          een thuis — en geen pand maar een werkplek die klopt.
-        </p>
-        <p>
-          We werken met vaste, erkende partners en zijn een door SBB erkend
-          leerbedrijf ({site.sbb.split("· ")[1]}): de vakmensen van morgen
-          leren bij ons het vak.
+          Met die filosofie werken we stap voor stap aan onze plek in de
+          bouwwereld: persoonlijk, nuchter, vakkundig en samen. We werken met
+          vaste, erkende partners en zijn een door SBB erkend leerbedrijf (
+          {site.sbb.split("· ")[1]}): de vakmensen van morgen leren bij ons het
+          vak.
         </p>
       </SplitSection>
+
+      <FeatureGrid
+        eyebrow="Waar het bij ons om draait"
+        title="Twee dingen waar we niet op inleveren"
+        columns={2}
+        items={[
+          {
+            icon: HammerIcon,
+            title: "De vakman centraal",
+            text: "Goed werk begint met mensen die hun vak verstaan, verantwoordelijkheid krijgen en met goed materiaal kunnen werken. Geen onnodig gedoe, maar duidelijke afspraken, korte lijnen en samen de schouders eronder.",
+          },
+          {
+            icon: ChatIcon,
+            title: "Heldere communicatie",
+            text: "Voor klanten, collega's en partners moet helder zijn wát we doen, wannéér we het doen en wat zij kunnen verwachten. Zo bouwen we niet alleen aan woningen, verbouwingen en bedrijfsruimtes, maar ook aan vertrouwen.",
+          },
+        ]}
+      />
 
       <TeamGrid
         title="Het team"
@@ -85,8 +103,8 @@ export default async function OverOnsPage() {
 
       <CtaBanner
         eyebrow="Kennismaken?"
-        title="Kom eens langs aan de Heersenkampweg"
-        text="Of plan een vrijblijvende intake — dan komen wij naar jou."
+        title="We komen graag bij je langs"
+        text="Plan een vrijblijvende intake op locatie. Dan bekijken we de situatie direct goed en kunnen we gericht adviseren."
         cta={{ label: "Neem contact op", href: "/contact" }}
         secondary={{ label: "Werken bij MTB Bouw", href: "/werkgenoeg" }}
       />

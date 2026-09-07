@@ -38,11 +38,15 @@ export default function ContactPage() {
             <h2 className="text-sm font-semibold uppercase tracking-wide text-stone">
               Bouwbedrijf MTB Bouw
             </h2>
-            <address className="mt-3 not-italic text-lg leading-relaxed">
-              {site.address.streetAddress}
-              <br />
-              {site.address.postalCode} {site.address.addressLocality}
-            </address>
+            <p className="mt-3 text-lg leading-relaxed">
+              Wij komen graag bij je langs voor een intake op locatie. Zo
+              bekijken we de situatie direct goed en kunnen we gericht
+              adviseren.
+            </p>
+            <p className="mt-2 text-base text-stone">
+              Werkgebied: {site.address.addressLocality}, Twente en heel
+              Oost-Nederland.
+            </p>
           </div>
 
           <dl className="space-y-4 text-lg">

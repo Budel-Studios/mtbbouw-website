@@ -14,7 +14,7 @@ import { faqAannemerEnschede } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Enschede | MTB Bouw — verbouw, aanbouw & renovatie" },
   description:
-    "Op zoek naar een aannemer in Enschede? MTB Bouw is gevestigd aan de Heersenkampweg en verbouwt door heel Enschede: renovatie, aanbouw, uitbouw en kozijnen. Vaste prijs, één aanspreekpunt.",
+    "Op zoek naar een aannemer in Enschede? MTB Bouw verbouwt door heel Enschede: renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, vaste prijs, één aanspreekpunt.",
   alternates: { canonical: "/aannemer-enschede" },
 };
 
@@ -75,7 +75,7 @@ export default function AannemerEnschedePage() {
         }}
         eyebrow="Aannemer Enschede"
         title="Aannemer in Enschede voor verbouw, aanbouw en renovatie"
-        intro="MTB Bouw is een aannemersbedrijf uit Enschede, gevestigd aan de Heersenkampweg 5. Wij verbouwen woningen door de hele stad — van Twekkelerveld tot Glanerbrug — met een vast team, een vaste prijs en één aanspreekpunt."
+        intro="MTB Bouw is een aannemersbedrijf uit Enschede. Wij verbouwen woningen door de hele stad — van Twekkelerveld tot Glanerbrug — met een vast team, een vaste prijs en één aanspreekpunt. We komen graag bij je langs voor een intake op locatie."
         cta={<QuoteButton />}
       />
 

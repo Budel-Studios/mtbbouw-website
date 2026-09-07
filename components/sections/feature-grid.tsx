@@ -9,6 +9,7 @@ export function FeatureGrid({
   columns = 3,
   eyebrow,
   title,
+  intro,
   headingLevel = "h2",
 }: {
   items: {
@@ -19,6 +20,8 @@ export function FeatureGrid({
   columns?: 2 | 3 | 4;
   eyebrow?: string;
   title?: string;
+  /** Korte inleiding onder de titel. */
+  intro?: string;
   /** h3 gebruiken wanneer de sectie onder een eigen H2 valt */
   headingLevel?: "h2" | "h3";
 }) {
@@ -29,8 +32,8 @@ export function FeatureGrid({
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
-      {(eyebrow || title) && (
-        <div className="mb-12">
+      {(eyebrow || title || intro) && (
+        <div className="mb-12 max-w-3xl">
           {eyebrow && (
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
               {eyebrow}
@@ -38,6 +41,11 @@ export function FeatureGrid({
           )}
           {title && (
             <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+          )}
+          {intro && (
+            <p className="mt-5 text-base leading-relaxed text-stone md:text-lg">
+              {intro}
+            </p>
           )}
         </div>
       )}

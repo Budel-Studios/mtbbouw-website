@@ -6,7 +6,7 @@ import {
   FaqJsonLd,
 } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
-import { PerkGrid } from "@/components/sections/perk-grid";
+import { FeatureGrid } from "@/components/sections/feature-grid";
 import { SplitSection } from "@/components/sections/split-section";
 import { TeamGrid } from "@/components/sections/team-grid";
 import { JobCard } from "@/components/sections/job-card";
@@ -23,8 +23,10 @@ import {
   GraduationIcon,
   TrendingUpIcon,
   UsersIcon,
-  LayersIcon,
-  MapPinIcon,
+  EuroIcon,
+  ChatIcon,
+  ShieldIcon,
+  CupIcon,
 } from "@/components/icons";
 import { faqWerkenBij } from "@/lib/faq";
 import { jobs } from "@/lib/jobs";
@@ -99,18 +101,56 @@ export default async function WerkGenoegPage() {
       />
 
       {/* WAAROM MTB BOUW */}
-      <PerkGrid
+      <FeatureGrid
         eyebrow="Waarom MTB Bouw"
-        title="Dit krijg je erbij"
+        title="Waarom werken bij MTB Bouw?"
+        intro="Bij MTB Bouw werk je in een klein, hecht team waar je echt verantwoordelijkheid krijgt. Geen onnodige lagen, maar samen bouwen aan mooie projecten, elkaar helpen en trots zijn op het eindresultaat."
         items={[
-          { icon: ClockIcon, text: "Vierdaagse werkweek mogelijk" },
-          { icon: VanIcon, text: "Eigen bus" },
-          { icon: WrenchIcon, text: "Eigen gereedschap" },
-          { icon: GraduationIcon, text: "Specialistische opleidingen" },
-          { icon: TrendingUpIcon, text: "Doorgroeimogelijkheden" },
-          { icon: UsersIcon, text: "Kleine hechte ploeg" },
-          { icon: LayersIcon, text: "Veel afwisseling" },
-          { icon: MapPinIcon, text: "Werken in Twente" },
+          {
+            icon: EuroIcon,
+            title: "Salaris volgens de cao Bouw",
+            text: "Circa € 3.000 tot € 4.500 bruto per maand, afhankelijk van je ervaring en functie.",
+          },
+          {
+            icon: WrenchIcon,
+            title: "Compleet Makita-gereedschap",
+            text: "Van de zaak. Je werkt met goed materieel, niet met wat er toevallig nog in de bus lag.",
+          },
+          {
+            icon: VanIcon,
+            title: "Eigen bus",
+            text: "Bij een passende functie en ervaring rijd je in je eigen bus.",
+          },
+          {
+            icon: UsersIcon,
+            title: "Kleine, hechte teams",
+            text: "Zelfsturend en overzichtelijk. Je weet wie je collega's zijn en wat er speelt.",
+          },
+          {
+            icon: ChatIcon,
+            title: "Ruimte om mee te denken",
+            text: "Zie je het slimmer? Zeg het. Je krijgt de verantwoordelijkheid om het ook zo te doen.",
+          },
+          {
+            icon: TrendingUpIcon,
+            title: "Prestatie- en aanbrengbonussen",
+            text: "Goed werk en een goede collega aanbrengen worden beloond.",
+          },
+          {
+            icon: GraduationIcon,
+            title: "Opleiden en doorgroeien",
+            text: "Voor timmermannen is er ruimte en een bonus tot € 5.000 om je verder te ontwikkelen.",
+          },
+          {
+            icon: ShieldIcon,
+            title: "Goede spullen, fijne collega's",
+            text: "Degelijke werkkleding, degelijk materieel en mensen met wie je graag een dag draait.",
+          },
+          {
+            icon: ClockIcon,
+            title: "Vier dagen werken kan",
+            text: "Wanneer het bij je functie en de planning past, is een vierdaagse werkweek bespreekbaar.",
+          },
         ]}
       />
 
@@ -138,6 +178,85 @@ export default async function WerkGenoegPage() {
           Kort gezegd: wij bouwen samen. Op de bouw, maar ook als team.
         </p>
       </SplitSection>
+
+      {/* VEILIG EN VERANTWOORD WERKEN */}
+      <section className="bg-paper">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              Hoe we voor elkaar zorgen
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+              Veilig en verantwoord werken
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-stone md:text-lg">
+              Bouwen is prachtig werk, maar ook gewoon zwaar werk. Dat merk je
+              pas echt als je zelf een paar weken meedraait. Eén van onze
+              collega&apos;s werkte jarenlang op kantoor in de financiële
+              dienstverlening en sprong door spoed zes weken bij op de bouw.
+            </p>
+          </div>
+
+          <blockquote className="mt-8 max-w-3xl border-l-2 border-lime pl-6">
+            <p className="font-display text-xl font-bold leading-snug text-ink md:text-2xl">
+              &ldquo;Ik wist niet dat je handen, benen en voeten zó moe konden
+              zijn.&rdquo;
+            </p>
+            <footer className="mt-3 text-sm text-stone">
+              Met 15.000 tot 20.000 stappen per dag snap je dat ook wel.
+            </footer>
+          </blockquote>
+
+          <div className="mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-stone md:text-lg">
+            <p>
+              Daarom nemen we veilig en verantwoord werken serieus. De cao Bouw
+              is al goed ingericht, met voldoende vrije dagen en heldere
+              afspraken voor vakmensen. Bij MTB Bouw willen we daar waar
+              mogelijk nog een stap verder in gaan.
+            </p>
+            <p>
+              Goed bouwen begint met mensen die het werk langdurig met plezier,
+              energie en trots kunnen blijven doen.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                Icon: ShieldIcon,
+                title: "Veiligheid vóór snelheid",
+                text: "Liever een dag later klaar dan een ongeluk erbij.",
+              },
+              {
+                Icon: WrenchIcon,
+                title: "Goed gereedschap",
+                text: "Degelijk materieel scheelt je lijf elke dag een beetje.",
+              },
+              {
+                Icon: ClockIcon,
+                title: "Flexibele werktijden",
+                text: "We houden rekening met de belasting van het werk.",
+              },
+              {
+                Icon: CupIcon,
+                title: "Ruimte om bij te tanken",
+                text: "Laat de planning het toe? Dan is een extra vrije dag bespreekbaar.",
+              },
+            ].map(({ Icon, title, text }) => (
+              <div
+                key={title}
+                className="border border-mist bg-white p-6 transition-colors hover:border-lime"
+              >
+                <Icon className="h-8 w-8 text-lime-dark" />
+                <h3 className="mt-5 text-base font-bold leading-snug text-ink">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-stone">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <TeamGrid
         title="Je toekomstige collega's"

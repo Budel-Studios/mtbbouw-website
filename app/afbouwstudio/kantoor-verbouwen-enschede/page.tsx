@@ -10,7 +10,7 @@ import { faqKantoorEnschede } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Enschede | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Enschede? Afbouwstudio is het zakelijke label van MTB Bouw, gevestigd aan de Heersenkampweg. Kantoorafbouw van casco tot turn-key — lokaal, snel schakelen, vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Enschede? Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Kantoorafbouw van casco tot turn-key — lokaal, snel schakelen, vaste prijs binnen 5 werkdagen.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-enschede" },
 };
 
@@ -41,7 +41,7 @@ export default function KantoorEnschedePage() {
         }}
         eyebrow="Afbouwstudio · Enschede"
         title="Kantoor verbouwen in Enschede — met de afbouwer uit je eigen stad"
-        intro="Afbouwstudio is het zakelijke label van MTB Bouw, gevestigd aan de Heersenkampweg in Enschede. Voor kantoren in onze eigen stad betekent dat: intake dezelfde week, snel schakelen tijdens de bouw, en één vast aanspreekpunt om de hoek — met een vaste prijs binnen vijf werkdagen."
+        intro="Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Voor kantoren in onze eigen stad betekent dat: intake bij jou op locatie, vaak nog dezelfde week, snel schakelen tijdens de bouw en één vast aanspreekpunt om de hoek — met een vaste prijs binnen vijf werkdagen."
         cta={
           <>
             <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>

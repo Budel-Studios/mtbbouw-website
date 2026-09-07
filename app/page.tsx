@@ -653,9 +653,12 @@ export default async function HomePage() {
                     <MapPinIcon className="mt-0.5 h-5 w-5 shrink-0 text-lime" />
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-widest text-white/50">
-                        Bezoek
+                        Intake op locatie
                       </p>
-                      <p className="mt-1">Heersenkampweg 5, Enschede</p>
+                      <p className="mt-1">
+                        We komen graag bij je langs — in Enschede, Twente en
+                        heel Oost-Nederland.
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">

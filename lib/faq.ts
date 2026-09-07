@@ -388,9 +388,9 @@ export const generalFaq = [
 
 export const faqAannemerEnschede: Faq[] = [
   {
-    question: "Zijn jullie echt in Enschede gevestigd?",
+    question: "Zijn jullie echt uit Enschede?",
     answer:
-      "Ja — ons bedrijf zit aan de Heersenkampweg 5 in Enschede. Vanaf daar werken we in de hele stad, van Twekkelerveld tot Glanerbrug, en in de omliggende gemeenten.",
+      "Ja — MTB Bouw komt uit Enschede en we werken in de hele stad, van Twekkelerveld tot Glanerbrug, en in de omliggende gemeenten. We komen graag bij je langs voor een intake op locatie: zo bekijken we de situatie direct goed en kunnen we gericht adviseren.",
   },
   {
     question: "Heb ik een vergunning nodig voor mijn verbouwing in Enschede?",
@@ -878,7 +878,7 @@ export const faqKantoorEnschede: Faq[] = [
   {
     question: "Hoe snel kunnen jullie bij ons kantoor in Enschede zijn?",
     answer:
-      "Snel — Enschede is onze thuisstad. Ons bedrijf zit aan de Heersenkampweg 5, dus voor een intake, een tussentijdse schouw of nazorg zijn we er meestal dezelfde week nog.",
+      "Snel — Enschede is onze thuisstad. Voor een intake op locatie, een tussentijdse schouw of nazorg zijn we er meestal dezelfde week nog.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Enschede?",
