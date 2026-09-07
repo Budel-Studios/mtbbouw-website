@@ -26,7 +26,14 @@ const C = {
 
 const DISPLAY = "'Montserrat',Arial,Helvetica,sans-serif";
 const BODY = "Arial,Helvetica,sans-serif";
-const LOGO = `${site.url}/images/brand/logo-full.png`;
+/**
+ * Absolute URL: mailclients hebben niets aan een relatief pad. Lokaal wijst
+ * hij naar de dev-server, zodat de previewroute het logo ook echt toont.
+ */
+const LOGO =
+  process.env.NODE_ENV === "production"
+    ? `${site.url}/images/brand/logo-full.png`
+    : "http://localhost:3000/images/brand/logo-full.png";
 
 /** Escaped ook quotes: waarden belanden soms in een href-attribuut. */
 export function esc(value: string): string {
@@ -138,16 +145,16 @@ export function wrapEmail(s: Shell): string {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.paper}" style="background-color:${C.paper};border-collapse:collapse;">
 <tr><td align="center" style="padding:24px 12px;">
   <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.white}" style="width:600px;max-width:600px;background-color:${C.white};border:1px solid ${C.mist};border-collapse:collapse;">
-    <tr><td align="left" bgcolor="${C.ink}" style="background-color:${C.ink};padding:24px 32px;">
-      <img src="${LOGO}" width="180" height="44" alt="MTB Bouw" style="display:block;border:0;outline:none;text-decoration:none;width:180px;height:44px;max-width:180px;" />
+    <tr><td align="left" bgcolor="${C.white}" style="background-color:${C.white};padding:36px 40px 28px 40px;">
+      <img src="${LOGO}" width="220" height="54" alt="MTB Bouw" style="display:block;border:0;outline:none;text-decoration:none;width:220px;height:54px;max-width:220px;" />
     </td></tr>
-    <tr><td bgcolor="${C.lime}" style="background-color:${C.lime};line-height:4px;font-size:4px;height:4px;">&nbsp;</td></tr>
-    <tr><td style="padding:32px 32px 0 32px;">
-      <h1 style="margin:0;font-family:${DISPLAY};font-size:22px;line-height:1.25;font-weight:800;color:${C.ink};letter-spacing:-0.01em;">${esc(s.heading)}</h1>
-      ${s.intro ? `<p style="margin:12px 0 0 0;font-family:${BODY};font-size:15px;line-height:1.6;color:${C.stone};">${s.intro}</p>` : ""}
+    <tr><td bgcolor="${C.lime}" style="background-color:${C.lime};line-height:3px;font-size:3px;height:3px;">&nbsp;</td></tr>
+    <tr><td style="padding:36px 40px 0 40px;">
+      <h1 style="margin:0;font-family:${DISPLAY};font-size:26px;line-height:1.2;font-weight:800;color:${C.ink};letter-spacing:-0.02em;">${esc(s.heading)}</h1>
+      ${s.intro ? `<p style="margin:16px 0 0 0;font-family:${BODY};font-size:16px;line-height:1.65;color:${C.stone};">${s.intro}</p>` : ""}
     </td></tr>
-    <tr><td style="padding:8px 32px 32px 32px;">${s.body}</td></tr>
-    <tr><td bgcolor="${C.paper}" style="background-color:${C.paper};border-top:1px solid ${C.mist};padding:24px 32px;font-family:${BODY};font-size:12px;line-height:1.7;color:${C.stone};">
+    <tr><td style="padding:8px 40px 36px 40px;">${s.body}</td></tr>
+    <tr><td bgcolor="${C.paper}" style="background-color:${C.paper};border-top:1px solid ${C.mist};padding:28px 40px;font-family:${BODY};font-size:12px;line-height:1.8;color:${C.stone};">
       <strong style="color:${C.ink};">${site.name}</strong> &middot; ${site.tagline}<br />
       <a href="tel:${site.telephoneHref}" style="color:${C.stone};text-decoration:underline;">${site.telephone}</a> &middot;
       <a href="https://wa.me/${site.whatsapp.replace(/[^0-9]/g, "")}" style="color:${C.stone};text-decoration:underline;">WhatsApp</a> &middot;
