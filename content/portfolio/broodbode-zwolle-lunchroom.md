@@ -6,7 +6,6 @@ location: "Zwolle"
 category: "Horeca-afbouw"
 duration: "7 weken"
 clientType: "Zakelijk"
-featured: true
 cover: "/images/projects/broodbode-zwolle-lunchroom/cover.jpg"
 coverAlt: "Interieur van lunchroom De Broodbode in Zwolle, afgebouwd door Afbouwstudio (MTB Bouw)"
 intro: "Een lege betonnen doos aan de Schuurmansstraat. Zeven weken later: een lunchroom waar de focaccia's over de toonbank vliegen. Dit is het casco-naar-turn-key-werk waar ons label Afbouwstudio voor bestaat."

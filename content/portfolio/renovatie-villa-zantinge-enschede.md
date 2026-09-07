@@ -5,6 +5,7 @@ date: 2025-11-05
 location: "Enschede"
 category: "Renovatie"
 clientType: "Particulier"
+featured: true
 cover: "/images/projects/renovatie-villa-zantinge-enschede/cover.jpg"
 coverAlt: "Villa Zantinge in Enschede tijdens de renovatie"
 intro: "Een villa met een naam heeft ook een verhaal. Bij de renovatie van villa Zantinge in Enschede draaide alles om de balans tussen behouden wat mooi is en vernieuwen wat nodig is."

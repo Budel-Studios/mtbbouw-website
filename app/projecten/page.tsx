@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { portfolio } from "#site/content";
 import { ProjectGrid } from "@/components/project-grid";
+import { ProjectSpotlight } from "@/components/sections/project-spotlight";
+import { CtaBanner } from "@/components/sections/cta-banner";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 const INTRO =
@@ -14,9 +16,31 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectenPage() {
-  const projects = portfolio
+  const live = portfolio
     .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  // Spotlight = nieuwste uitgelichte project met beeld.
+  const s = live.find((p) => p.featured && (p.cover || p.coverVideo));
+  const spotlight = s
+    ? {
+        permalink: s.permalink,
+        title: s.title,
+        intro: s.intro || s.description,
+        cover: s.cover,
+        coverAlt: s.coverAlt,
+        coverVideo: s.coverVideo,
+        category: s.category,
+        location: s.location,
+        duration: s.duration,
+        clientType: s.clientType,
+        status: s.status,
+        // Quotes staan uit tot er een échte klantquote is; zet deze regel aan
+        // zodra die er is: testimonial: s.testimonial,
+      }
+    : undefined;
+
+  const projects = live
     .map((p) => {
       // Hover-diashow: cover eerst, aangevuld met gallery-foto's (ontdubbeld, max 3).
       const images = [
@@ -35,6 +59,7 @@ export default function ProjectenPage() {
         description: p.description,
         category: p.category,
         location: p.location,
+        featured: p.featured,
         images,
       };
     })
@@ -48,19 +73,44 @@ export default function ProjectenPage() {
           { name: "Gerealiseerde projecten", url: "/projecten" },
         ]}
       />
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-6 pt-16 md:px-16 md:pt-24">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          Ons werk
+        </p>
         {/* Hero-titel — replica van de WP-component (Archivo, 2 regels, strak) */}
         <h1
           style={{ fontWeight: 600 }}
-          className="mb-8 font-display text-4xl leading-[0.95] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[3.5rem]"
+          className="mt-4 font-display text-4xl leading-[0.95] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[3.5rem]"
         >
           Gerealiseerde
           <br />
           projecten
         </h1>
-
-        <ProjectGrid projects={projects} intro={INTRO} />
       </div>
+
+      <div className="mt-12 md:mt-16">
+        <ProjectSpotlight project={spotlight} />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 pb-16 pt-16 md:px-16 md:pb-24 md:pt-24">
+        <h2 className="mb-8 font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
+          Alle projecten
+        </h2>
+        <ProjectGrid
+          projects={projects}
+          intro={INTRO}
+          spotlightSlug={s?.slug}
+        />
+      </div>
+
+      <CtaBanner
+        eyebrow="Zelf iets te bouwen?"
+        title="Benieuwd wat we voor jou kunnen betekenen?"
+        text="Vertel kort wat je van plan bent — we denken vrijblijvend mee en komen graag bij je langs voor een intake op locatie."
+        cta={{ label: "Vraag een offerte aan", drawer: true }}
+        secondary={{ label: "Neem contact op", href: "/contact" }}
+        align="center"
+      />
     </div>
   );
 }

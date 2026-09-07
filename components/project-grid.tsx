@@ -18,26 +18,46 @@ type Project = {
   description: string;
   category?: string;
   location?: string;
+  featured?: boolean;
   images: { src: string; alt: string }[]; // cover eerst, dan gallery (max 3)
 };
 
 const ALL = "Alle projecten";
 
 /**
- * Metro-patroon: herhaalt per 6 tegels. Groottes in kolom/rij-spans op een
- * 4-koloms grid (mobiel valt alles terug naar 2 kolommen).
- *   [ groot 2x2 ][ 1x1 ][ 1x1 ]
- *   [           ][ breed 2x1  ]
- *   [ 1x1 ][ hoog 1x2 ][ groot 2x2 ... ]
+ * Tegelgroottes. Deze volgen het bélang van een project, niet zijn positie:
+ * uitgelichte projecten krijgen de grote tegel, de rest houdt een rustig
+ * ritme. Op mobiel (2 kolommen) worden GROOT en BREED volle-breedte rijen.
  */
-const METRO: string[] = [
-  "md:col-span-2 md:row-span-2", // groot
-  "md:col-span-1 md:row-span-1",
-  "md:col-span-1 md:row-span-1",
-  "md:col-span-2 md:row-span-1", // breed
-  "md:col-span-1 md:row-span-2", // hoog
-  "md:col-span-1 md:row-span-1",
-];
+const GROOT = "col-span-2 row-span-2 md:col-span-2 md:row-span-2";
+const BREED = "col-span-2 row-span-1 md:col-span-2 md:row-span-1";
+const UNIT = "md:col-span-1 md:row-span-1";
+
+/**
+ * Wijst per zichtbaar project een tegelgrootte toe.
+ * - uitgelicht → groot (max 2, anders domineert één categorie het raster)
+ * - extra uitgelicht → breed
+ * - overige → elke 5e breed, rest 1×1
+ * - géén uitgelicht in beeld (bv. na filteren) → eerste tegel groot, zonder
+ *   chip, zodat het raster nooit een vlak veld van gelijke blokjes wordt.
+ */
+function sizeClasses(items: Project[]): string[] {
+  let bigs = 0;
+  let plain = 0;
+  const spans = items.map((p) => {
+    if (p.featured) {
+      if (bigs < 2) {
+        bigs++;
+        return GROOT;
+      }
+      return BREED;
+    }
+    plain++;
+    return plain % 5 === 0 ? BREED : UNIT;
+  });
+  if (bigs === 0 && spans.length > 2) spans[0] = GROOT;
+  return spans;
+}
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -160,13 +180,20 @@ function Tile({
 
       {/* Verloop + tekst-overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
+
+      {project.featured && (
+        <span className="absolute left-3 top-3 z-10 inline-flex items-center bg-lime px-2.5 py-1 text-[11px] font-bold text-ink md:px-3 md:py-1.5 md:text-xs">
+          Uitgelicht
+        </span>
+      )}
+
       <div className="absolute inset-x-0 bottom-0 p-4">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-white/70">
           {[project.category, project.location].filter(Boolean).join(" · ")}
         </p>
-        <h2 className="mt-0.5 font-semibold leading-snug text-white">
+        <h3 className="mt-0.5 font-semibold leading-snug text-white">
           {project.title}
-        </h2>
+        </h3>
       </div>
 
       {multi && (
@@ -221,9 +248,12 @@ function Tile({
 export function ProjectGrid({
   projects,
   intro,
+  spotlightSlug,
 }: {
   projects: Project[];
   intro?: string;
+  /** Project dat al als spotlight boven het raster staat — dubbelt niet. */
+  spotlightSlug?: string;
 }) {
   const categories = useMemo(() => {
     const unique = Array.from(
@@ -234,8 +264,21 @@ export function ProjectGrid({
 
   const [active, setActive] = useState(ALL);
 
-  const visible =
-    active === ALL ? projects : projects.filter((p) => p.category === active);
+  // In het volledige overzicht laten we het spotlight-project weg (het staat er
+  // al groot boven). Zodra er gefilterd wordt tonen we het wél: anders zou juist
+  // in "Horeca-afbouw" het beste horecaproject ontbreken.
+  const visible = useMemo(() => {
+    const base =
+      active === ALL
+        ? projects.filter((p) => p.slug !== spotlightSlug)
+        : projects.filter((p) => p.category === active);
+    // Uitgelicht werk vooraan (zoals in de homepage-carrousel), daarbinnen
+    // blijft de datumvolgorde staan — anders belandt een grote tegel
+    // halverwege het raster en valt de uitlichting juist niet op.
+    return [...base.filter((p) => p.featured), ...base.filter((p) => !p.featured)];
+  }, [projects, active, spotlightSlug]);
+
+  const spans = useMemo(() => sizeClasses(visible), [visible]);
 
   return (
     <div>
@@ -257,13 +300,14 @@ export function ProjectGrid({
 
       {/* Metro-grid: 4 kolommen, kleine gap, wisselende spans */}
       {visible.length > 0 ? (
-        <div className="mt-10 grid auto-rows-[170px] grid-cols-2 gap-1.5 md:auto-rows-[220px] md:grid-cols-4">
+        // grid-flow-row-dense vult de gaten die de gemengde spans achterlaten.
+        <div className="mt-10 grid auto-rows-[170px] grid-flow-row-dense grid-cols-2 gap-1.5 md:auto-rows-[220px] md:grid-cols-4">
           {visible.map((project, i) => (
             <Tile
               key={project.slug}
               project={project}
-              sizeClass={METRO[i % METRO.length]}
-              priority={i < 3}
+              sizeClass={spans[i]}
+              priority={!spotlightSlug && i < 2}
             />
           ))}
         </div>
