@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { kennisbank, portfolio } from "#site/content";
 import { getAsset } from "@/lib/assets";
+import { ProjectCarousel } from "@/components/project-carousel";
 import {
   CheckIcon,
   ChatIcon,
@@ -134,11 +135,12 @@ function ExpertiseCard({ exp }: { exp: (typeof EXPERTISES)[number] }) {
       href={exp.href}
       className={`group relative block h-full overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_-20px_rgba(0,0,0,0.18)] md:p-10 ${toneClass}`}
     >
-      {/* Decoratieve cirkelvorm */}
+      {/* Decoratieve cirkelvorm — zonder rounded-full werd dit een hard
+          vierkant kleurvlak precies achter het pijltje rechtsboven. */}
       <div
         aria-hidden="true"
-        className={`absolute -right-16 -top-16 h-56 w-56 opacity-30 transition-transform duration-500 group-hover:scale-110 ${
-          isLime ? "bg-white/40" : "bg-lime/20"
+        className={`absolute -right-20 -top-20 h-56 w-56 rounded-full opacity-30 blur-2xl transition-transform duration-500 group-hover:scale-110 ${
+          isLime ? "bg-white/50" : isDark ? "bg-lime/25" : "bg-lime/30"
         }`}
       />
       <div className="relative flex h-full min-h-[280px] flex-col">
@@ -217,7 +219,14 @@ const PARTNER_TILES: PartnerTile[] = [
   { kind: "partner", name: "Gevelaar", span: "col-span-1 row-span-1", tone: "paper" },
   { kind: "partner", name: "Zebrano Studio", span: "col-span-1 row-span-1", tone: "stone" },
   { kind: "partner", name: "Meuleman Hoveniers", span: "col-span-1 row-span-1", tone: "paper" },
-  { kind: "partner", name: "Dukato", span: "col-span-1 row-span-1", tone: "paper" },
+  { kind: "partner", name: "Jongeneel Hengelo", span: "col-span-1 row-span-1", tone: "stone" },
+  { kind: "partner", name: "Voskamp Bouw & Industrie", span: "col-span-1 row-span-1", tone: "paper" },
+  { kind: "partner", name: "Rouwmaat Beton", span: "col-span-1 row-span-1", tone: "lime" },
+  { kind: "partner", name: "KUality Schilders", span: "col-span-1 row-span-1", tone: "paper" },
+  { kind: "partner", name: "Het Vloerenhof", span: "col-span-1 row-span-1", tone: "stone" },
+  { kind: "partner", name: "Kamphuis Dakbedekking", span: "col-span-1 row-span-1", tone: "paper" },
+  { kind: "partner", name: "Brouwer Containers", span: "col-span-1 row-span-1", tone: "paper" },
+  { kind: "partner", name: "Dukato", span: "col-span-1 row-span-1", tone: "stone" },
   { kind: "cta", span: "col-span-1 row-span-1" },
 ];
 
@@ -239,10 +248,15 @@ export default async function HomePage() {
     .filter((a) => !a.draft)
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
-  const latestProjects = portfolio
+  // Uitgelichte projecten staan altijd vooraan in de carrousel; daarachter de
+  // rest op datum. Zo blijft ons beste werk zichtbaar, ook als het ouder wordt.
+  const published = portfolio
     .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 4);
+    .sort((a, b) => b.date.localeCompare(a.date));
+  const carouselProjects = [
+    ...published.filter((p) => p.featured),
+    ...published.filter((p) => !p.featured),
+  ].slice(0, 8);
 
   return (
     <>
@@ -447,53 +461,20 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <div className="relative mt-12 md:mt-14">
-          <div className="no-scrollbar snap-x snap-mandatory scroll-smooth overflow-x-auto">
-            <ul className="flex gap-4 px-6 pb-6 md:gap-5 lg:px-10">
-              {latestProjects.map((p) => (
-                <li
-                  key={p.slug}
-                  className="w-[85vw] shrink-0 snap-start sm:w-[420px] md:w-[460px]"
-                >
-                  <Link
-                    href={p.permalink}
-                    className="group flex h-full flex-col overflow-hidden border border-mist bg-white transition-shadow hover:shadow-[0_28px_60px_-24px_rgba(0,0,0,0.18)]"
-                  >
-                    <div className="relative aspect-square overflow-hidden bg-ink">
-                      {p.cover && (
-                        <Image
-                          src={p.cover}
-                          alt={p.coverAlt || p.title}
-                          fill
-                          sizes="(max-width: 768px) 85vw, 460px"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      )}
-                      {p.category && (
-                        <span className="absolute left-5 top-5 inline-flex items-center gap-2 bg-ink px-3 py-1.5 text-xs font-semibold text-white">
-                          {p.category}
-                        </span>
-                      )}
-                    </div>
-                    <div className="flex flex-1 flex-col p-7 md:p-8">
-                      {p.location && (
-                        <div className="flex items-center gap-2 text-xs font-semibold text-ink/60">
-                          <MapPinIcon className="h-3.5 w-3.5" /> {p.location}
-                        </div>
-                      )}
-                      <h3 className="mt-3 font-display text-xl font-bold leading-tight tracking-tight text-ink md:text-2xl">
-                        {p.title}
-                      </h3>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/65">
-                        {p.description}
-                      </p>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-              <li aria-hidden="true" className="w-4 shrink-0" />
-            </ul>
-          </div>
+        <div className="mt-12 md:mt-14">
+          <ProjectCarousel
+            projects={carouselProjects.map((p) => ({
+              slug: p.slug,
+              permalink: p.permalink,
+              title: p.title,
+              description: p.description,
+              cover: p.cover,
+              coverAlt: p.coverAlt,
+              category: p.category,
+              location: p.location,
+              featured: p.featured,
+            }))}
+          />
         </div>
       </section>
 

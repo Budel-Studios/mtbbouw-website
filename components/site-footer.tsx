@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { LogoMark } from "@/components/logo";
 
 function WhatsAppIcon() {
   return (
@@ -33,26 +33,41 @@ export function SiteFooter() {
   return (
     <footer className="bg-paper">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-2">
-          {/* Merk — logo als enige merkdrager, geen dubbele "MTB Bouw"-tekst ernaast */}
-          <div>
-            <LogoMark uid="ftr" className="h-24 w-auto" />
-            <p className="mt-6 font-bold">{site.tagline}</p>
-            <p className="mt-1 text-sm text-stone">
-              Zie ook ons interieurmerk{" "}
-              <a
-                href="https://zebranostudio.nl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-lime-dark hover:underline"
-              >
-                Zebrano Studio
-              </a>
-            </p>
-          </div>
+        {/* Merk — volledig logo, tagline en de vier labels onder één dak */}
+        <div className="max-w-3xl">
+          <Image
+            src="/images/brand/logo-full.png"
+            alt={`${site.legalName} logo`}
+            width={1600}
+            height={394}
+            className="h-14 w-auto md:h-16"
+          />
+          <p
+            className="mt-6 font-display font-extrabold leading-none tracking-tight text-ink"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.03em" }}
+          >
+            {site.tagline}
+          </p>
+          <p className="mt-5 text-base leading-relaxed text-stone">
+            Overkoepelend bouwmerk uit Enschede. Wonen &amp; Verbouwen ·
+            Afbouwstudio · Kozijnstudio · Prefab Bouwen.
+          </p>
+          <p className="mt-3 text-sm text-stone">
+            Zie ook ons interieurmerk{" "}
+            <a
+              href="https://zebranostudio.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-lime-dark hover:underline"
+            >
+              Zebrano Studio
+            </a>
+          </p>
+        </div>
 
-          {/* Kolommen */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+        {/* Kolommen — op één regel per link, dus geen afbrekende labels */}
+        <div className="mt-16 border-t border-mist pt-12">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
             {site.footerColumns.map((col) => (
               <div key={col.title}>
                 <h3 className="font-display text-sm font-extrabold uppercase tracking-wide">
@@ -63,7 +78,7 @@ export function SiteFooter() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-ink/75 transition-colors hover:text-ink"
+                        className="whitespace-nowrap text-stone transition-colors hover:text-lime-dark"
                       >
                         {link.label}
                       </Link>
@@ -80,7 +95,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={`mailto:${site.email}`}
-                    className="text-ink/75 transition-colors hover:text-ink"
+                    className="whitespace-nowrap text-stone transition-colors hover:text-lime-dark"
                   >
                     {site.email}
                   </a>
@@ -88,7 +103,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     href={`tel:${site.telephoneHref}`}
-                    className="font-bold transition-colors hover:text-lime-dark"
+                    className="whitespace-nowrap font-bold text-ink transition-colors hover:text-lime-dark"
                   >
                     {site.telephone}
                   </a>

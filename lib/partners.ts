@@ -10,7 +10,9 @@ type PartnerCategory =
   | "schilders"
   | "dakwerk"
   | "stukadoor"
+  | "vloeren"
   | "bouwmaterialen"
+  | "afvoer"
   | "gevels"
   | "tuin"
   | "interieur"
@@ -38,7 +40,9 @@ export const partnerCategories: Record<PartnerCategory, string> = {
   schilders: "Schilders",
   dakwerk: "Dakwerk",
   stukadoor: "Stukadoor & Afbouw",
+  vloeren: "Vloeren",
   bouwmaterialen: "Bouwmaterialen",
+  afvoer: "Afvoer & Containers",
   gevels: "Gevels & Kozijnen",
   tuin: "Tuin & Buitenruimte",
   interieur: "Interieur",
@@ -73,7 +77,9 @@ export const categoryToBucket: Record<PartnerCategory, Bucket> = {
   schilders: "onderaannemers",
   dakwerk: "onderaannemers",
   stukadoor: "onderaannemers",
+  vloeren: "onderaannemers",
   bouwmaterialen: "toeleveranciers",
+  afvoer: "toeleveranciers",
   gevels: "toeleveranciers",
   bouwbedrijven: "partners",
   tuin: "partners",
@@ -101,9 +107,65 @@ const craftsman: Partner[] = [
     region: "Enschede",
     featured: true,
   },
+  {
+    name: "KUality Schilders",
+    category: "schilders",
+    description:
+      "Schilderwerk en gevelonderhoud binnen en buiten — vaste schilderspartner uit Enschede.",
+    url: "https://kuality.nl/",
+    region: "Enschede",
+  },
+  {
+    name: "Het Vloerenhof",
+    category: "vloeren",
+    description:
+      "Gietvloeren, coatings en PVC. Verzorgde onder meer de vloercoating bij De Broodbode in Apeldoorn.",
+    url: "https://hetvloerenhof.nl/",
+    region: "Enschede",
+  },
+  {
+    name: "Kamphuis Dakbedekking",
+    category: "dakwerk",
+    description:
+      "Onze partner voor platte daken en dakbedekking op renovatie- en nieuwbouwprojecten.",
+    url: "https://kamphuis-dakbedekking.nl/",
+    region: "Twente",
+  },
 ];
 
 const suppliers: Partner[] = [
+  {
+    name: "Jongeneel Hengelo",
+    category: "bouwmaterialen",
+    description:
+      "Houthandel en bouwmaterialen om de hoek — van constructiehout tot plaatmateriaal en gevelbekleding.",
+    url: "https://www.jongeneel.nl/vestiging/jongeneel-hengelo",
+    region: "Hengelo",
+  },
+  {
+    name: "Voskamp Bouw en Industrie",
+    category: "bouwmaterialen",
+    description:
+      "Groothandel voor de bouw: bevestiging, gereedschap en beslag uit een zeer breed assortiment.",
+    url: "https://www.voskampgroep.nl/bouw-en-industrie",
+    region: "Oost-Nederland",
+  },
+  {
+    name: "Rouwmaat Betoncentrale",
+    category: "bouwmaterialen",
+    description:
+      "Beton voor funderingen en vloeren, geleverd en gestort vanuit de eigen betoncentrale.",
+    url: "https://www.rouwmaat.nl/",
+    region: "Oost-Nederland",
+  },
+  {
+    name: "Brouwer Containers",
+    category: "afvoer",
+    description:
+      "Containers en afvalafvoer op de bouw — zo blijft het werk netjes en de planning strak.",
+    url: "https://www.brouwercontainers.nl/",
+    region: "Twente",
+  },
   {
     name: "BMN Bouwmaterialen",
     category: "bouwmaterialen",
@@ -159,13 +221,6 @@ const suppliers: Partner[] = [
     category: "overig",
     description: "Vaste partner in de bouwregio Twente.",
     url: "https://dukato.nl",
-    region: "Twente",
-  },
-  {
-    name: "Kuality",
-    category: "overig",
-    description: "Vaste partner in de bouwregio Twente.",
-    url: "https://kuality.nl/",
     region: "Twente",
   },
 ];

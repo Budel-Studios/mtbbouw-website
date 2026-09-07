@@ -8,6 +8,7 @@ duration: "circa 7 weken"
 executionPeriod: "zomervakantie 2026"
 year: 2026
 clientType: "Zakelijk"
+featured: true
 cover: "/images/projects/broodbode-apeldoorn/01.jpg"
 coverAlt: "Sfeervol zitgedeelte van huiskamer-lunchroom De Broodbode in Apeldoorn met vintage behang en houten meubels"
 coverVideo: "/images/projects/broodbode-apeldoorn/header.mp4"

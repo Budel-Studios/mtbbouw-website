@@ -49,6 +49,7 @@ const portfolio = defineCollection({
       year: s.number().optional(), // Jaar van uitvoering, bijv. 2025
       clientType: s.string().optional(), // Klanttype, bijv. "Particulier", "Zakelijk"
       status: s.string().default("Opgeleverd"), // Status
+      featured: s.boolean().default(false), // Uitgelicht — staat altijd vooraan in de homepage-carrousel
 
       // ---- Beeld ----
       cover: s.string().optional(), // Sfeerfoto hero (pad onder /public)
