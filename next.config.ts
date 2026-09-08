@@ -32,7 +32,9 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.mtbbouw.com" }],
         destination: "https://mtbbouw.com/:path*",
-        permanent: true,
+        // Expliciet 301 i.p.v. Next's standaard 308: Google behandelt ze
+        // gelijk, maar veel SEO-tools vlaggen een 308 onterecht.
+        statusCode: 301,
       },
 
       // Oude Yoast-sitemapnamen → de Next.js-sitemap. Zonder deze redirect

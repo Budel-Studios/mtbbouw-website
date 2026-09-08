@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { RelatedContent } from "@/components/sections/related-content";
+import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerOldenzaal } from "@/lib/faq";
 
@@ -15,6 +18,12 @@ export const metadata: Metadata = {
 };
 
 export default function AannemerOldenzaalPage() {
+  // Echte projecten uit de regio — geen verzonnen lokale referenties.
+  const projects = portfolio
+    .filter((p) => !p.draft)
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -70,6 +79,14 @@ export default function AannemerOldenzaalPage() {
         eyebrow="Veelgesteld"
         title="Vragen aan een aannemer in Oldenzaal"
       />
+
+      <RelatedContent
+        projects={projects}
+        eyebrow="Werk uit de regio"
+        title="Recent werk in Twente"
+      />
+
+      <NearbyPlaces currentSlug="aannemer-oldenzaal" />
 
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { RelatedContent } from "@/components/sections/related-content";
+import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerBorne } from "@/lib/faq";
 
@@ -15,6 +18,17 @@ export const metadata: Metadata = {
 };
 
 export default function AannemerBornePage() {
+  // Echte projecten: het Borne-project voorop, aangevuld met recent
+  // regiowerk. Geen verzonnen lokale referenties.
+  const live = portfolio.filter((p) => !p.draft);
+  const inBorne = live.filter((p) => p.location?.includes("Borne"));
+  const projects = [
+    ...inBorne,
+    ...live
+      .filter((p) => !inBorne.includes(p))
+      .sort((a, b) => b.date.localeCompare(a.date)),
+  ].slice(0, 3);
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -80,6 +94,14 @@ export default function AannemerBornePage() {
         eyebrow="Veelgesteld"
         title="Vragen aan een aannemer in Borne"
       />
+
+      <RelatedContent
+        projects={projects}
+        eyebrow="Werk uit de regio"
+        title="Recent werk in Borne en omgeving"
+      />
+
+      <NearbyPlaces currentSlug="aannemer-borne" />
 
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"

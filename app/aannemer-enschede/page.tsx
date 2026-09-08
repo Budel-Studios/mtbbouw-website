@@ -7,6 +7,7 @@ import { FeatureGrid } from "@/components/sections/feature-grid";
 import { RelatedContent } from "@/components/sections/related-content";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { UsersIcon, EuroIcon, ClockIcon, HammerIcon, HouseIcon, WindowIcon, LayersIcon } from "@/components/icons";
 import { faqAannemerEnschede } from "@/lib/faq";
@@ -197,6 +198,8 @@ export default function AannemerEnschedePage() {
         eyebrow="Veelgesteld"
         title="Vragen aan een aannemer in Enschede"
       />
+
+      <NearbyPlaces currentSlug="aannemer-enschede" />
 
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
