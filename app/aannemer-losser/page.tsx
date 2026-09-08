@@ -10,7 +10,7 @@ import { faqAannemerLosser } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Losser | MTB Bouw — ook De Lutte & Overdinkel" },
   description:
-    "Aannemer nodig in Losser, Overdinkel, De Lutte of Beuningen? MTB Bouw uit Enschede is er binnen een kwartier: renovatie, aanbouw, kozijnen, prefab en verduurzaming. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Losser, Overdinkel en De Lutte. MTB Bouw uit Enschede doet renovatie, aanbouw, kozijnen en prefab. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-losser" },
 };
 

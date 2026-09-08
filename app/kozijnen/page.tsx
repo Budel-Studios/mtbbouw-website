@@ -7,7 +7,7 @@ import { WindowIcon, CheckIcon, EuroIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: { absolute: "Kozijnen | De Kozijnstudio — het kozijnen-label van MTB Bouw" },
   description:
-    "Kozijnen is het specialisme van De Kozijnstudio, het kozijnen-label van MTB Bouw. Hout, kunststof en aluminium kozijnen, eerlijk advies en ISDE-subsidie — bekijk het volledige aanbod op dekozijnstudio.nl.",
+    "Hout, kunststof en aluminium kozijnen via De Kozijnstudio, het kozijnen-label van MTB Bouw. Eerlijk advies, heldere prijzen en uitleg over ISDE-subsidie.",
   alternates: { canonical: "/kozijnen" },
   openGraph: {
     type: "website",

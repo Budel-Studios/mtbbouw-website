@@ -36,7 +36,7 @@ import { getAsset } from "@/lib/assets";
 export const metadata: Metadata = {
   title: { absolute: "Werken bij MTB Bouw — vacature timmerman & BBL Twente" },
   description:
-    "Vacature allround timmerman en BBL-leerling in Enschede en Twente. Werken in de bouw bij een jong team: vierdaagse werkweek mogelijk, eigen gereedschap, opleidingen en doorgroeien zonder dat een diploma leidend is.",
+    "Vacature timmerman en BBL-leerling in Enschede en Twente. Klein hecht team, cao-loon, eigen Makita-gereedschap en ruimte om door te groeien.",
   alternates: { canonical: "/werkgenoeg" },
   openGraph: {
     type: "website",

@@ -13,6 +13,39 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
   );
 }
 
+/**
+ * Vaste identiteit van het bedrijf. Andere schema's verwijzen hiernaar met
+ * `@id` in plaats van de gegevens te herhalen — zo ziet Google één entiteit
+ * in plaats van losse vermeldingen.
+ */
+export const ORG_ID = `${site.url}/#organization`;
+
+/**
+ * Provincie bij een projectlocatie. Stond eerder hardgecodeerd op Overijssel,
+ * wat onjuist was voor Hilversum (Noord-Holland) en Apeldoorn (Gelderland).
+ * Onbekende plaats → geen regio meegeven, liever niets dan fout.
+ */
+const REGIONS: Record<string, string> = {
+  enschede: "Overijssel",
+  hengelo: "Overijssel",
+  almelo: "Overijssel",
+  oldenzaal: "Overijssel",
+  borne: "Overijssel",
+  haaksbergen: "Overijssel",
+  losser: "Overijssel",
+  twente: "Overijssel",
+  zwolle: "Overijssel",
+  deventer: "Overijssel",
+  apeldoorn: "Gelderland",
+  hilversum: "Noord-Holland",
+};
+
+function regionFor(locality: string): string | undefined {
+  const key = locality.toLowerCase();
+  const match = Object.keys(REGIONS).find((k) => key.includes(k));
+  return match ? REGIONS[match] : undefined;
+}
+
 /** LocalBusiness — in de root layout, op elke pagina aanwezig. */
 export function OrganizationJsonLd() {
   const sameAs = Object.values(site.social).filter(Boolean);
@@ -21,12 +54,24 @@ export function OrganizationJsonLd() {
       data={{
         "@context": "https://schema.org",
         "@type": "GeneralContractor",
+        "@id": ORG_ID,
         name: site.legalName,
+        alternateName: site.name,
+        slogan: site.tagline,
         url: site.url,
         description: site.description,
         telephone: site.telephoneHref,
         email: site.email,
-        areaServed: site.areaServed,
+        logo: {
+          "@type": "ImageObject",
+          url: `${site.url}/images/brand/logo-full.png`,
+          width: 1600,
+          height: 394,
+        },
+        image: `${site.url}/images/brand/hero.png`,
+        // Werkgebied als Place, zodat Google er een regio in herkent in
+        // plaats van losse woorden.
+        areaServed: site.areaServed.map((name) => ({ "@type": "Place", name })),
         identifier: {
           "@type": "PropertyValue",
           propertyID: "KVK",
@@ -40,8 +85,43 @@ export function OrganizationJsonLd() {
           addressRegion: site.address.addressRegion,
           addressCountry: site.address.addressCountry,
         },
-        openingHours: "Mo-Fr 08:00-17:00",
+        // De stringvorm is verouderd; deze vorm leest Google betrouwbaar.
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+            ],
+            opens: "08:00",
+            closes: "17:00",
+          },
+        ],
         ...(sameAs.length > 0 && { sameAs }),
+      }}
+    />
+  );
+}
+
+/**
+ * WebSite-knoop. Geeft de site een eigen identiteit naast het bedrijf en is
+ * de plek waar een eventuele sitebrede zoekactie aan hangt.
+ */
+export function WebSiteJsonLd() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: site.name,
+        description: site.description,
+        inLanguage: "nl-NL",
+        publisher: { "@id": ORG_ID },
       }}
     />
   );
@@ -54,13 +134,24 @@ export function ArticleJsonLd({
   url,
   datePublished,
   dateModified,
+  image,
+  section,
 }: {
   title: string;
   description: string;
   url: string;
   datePublished: string;
   dateModified?: string;
+  /** Pad onder /public of absolute URL — Google vereist een afbeelding. */
+  image?: string;
+  section?: string;
 }) {
+  const absolute = image
+    ? image.startsWith("http")
+      ? image
+      : `${site.url}${image}`
+    : undefined;
+
   return (
     <JsonLd
       data={{
@@ -71,8 +162,12 @@ export function ArticleJsonLd({
         datePublished,
         dateModified: dateModified ?? datePublished,
         url,
-        author: { "@type": "Organization", name: site.name },
-        publisher: { "@type": "Organization", name: site.name },
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        inLanguage: "nl-NL",
+        ...(absolute && { image: [absolute] }),
+        ...(section && { articleSection: section }),
+        author: { "@id": ORG_ID },
+        publisher: { "@id": ORG_ID },
       }}
     />
   );
@@ -175,7 +270,7 @@ export function ProjectJsonLd({
             address: {
               "@type": "PostalAddress",
               addressLocality: locality,
-              addressRegion: "Overijssel",
+              ...(regionFor(locality) && { addressRegion: regionFor(locality) }),
               addressCountry: "NL",
             },
           },

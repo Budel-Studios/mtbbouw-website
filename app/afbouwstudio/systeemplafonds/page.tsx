@@ -11,7 +11,7 @@ import { faqSysteemplafonds } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Systeemplafonds voor kantoren | Afbouwstudio — MTB Bouw" },
   description:
-    "Systeemplafonds voor kantoren, winkels en horeca in Twente en Oost-Nederland: akoestisch, met geïntegreerde LED-verlichting en klimaat. Geplaatst in dagen, met vaste prijs.",
+    "Systeemplafonds voor kantoren, winkels en horeca in Twente: akoestisch, met LED-verlichting en klimaat. Geplaatst in dagen, vaste prijs.",
   alternates: { canonical: "/afbouwstudio/systeemplafonds" },
 };
 

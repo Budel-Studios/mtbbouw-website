@@ -9,9 +9,9 @@ import { HouseIcon, WindowIcon, LayersIcon, RecycleIcon } from "@/components/ico
 import { faqVerduurzamen } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Woning verduurzamen in Enschede | MTB Bouw — slim tijdens de verbouwing" },
+  title: { absolute: "Woning verduurzamen in Enschede | MTB Bouw" },
   description:
-    "Woning verduurzamen in Enschede of Twente? MTB Bouw combineert isolatie, HR++/triple glas en dakrenovatie met je verbouwing — dat scheelt fors in de kosten. Inclusief hulp bij de ISDE-subsidieaanvraag.",
+    "Woning verduurzamen in Enschede: isolatie, HR++ glas en dakrenovatie gecombineerd met je verbouwing. Inclusief hulp bij de ISDE-subsidieaanvraag.",
   alternates: { canonical: "/verduurzamen-enschede" },
 };
 

@@ -10,7 +10,7 @@ import { faqKantoorEnschede } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Enschede | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Enschede? Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Kantoorafbouw van casco tot turn-key — lokaal, snel schakelen, vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Enschede door Afbouwstudio, het zakelijke label van MTB Bouw. Casco tot turn-key, vaste prijs binnen 5 werkdagen.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-enschede" },
 };
 

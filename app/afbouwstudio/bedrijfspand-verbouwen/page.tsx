@@ -10,7 +10,7 @@ import { faqBedrijfspandVerbouwen } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Bedrijfspand verbouwen in Twente | Afbouwstudio — MTB Bouw" },
   description:
-    "Bedrijfspand verbouwen in Enschede of Twente? Afbouwstudio (MTB Bouw) verbouwt bedrijfshallen, werkplaatsen en utiliteitspanden — inclusief inpandige kantoren. Vaste prijs, gefaseerd terwijl je bedrijf doordraait.",
+    "Bedrijfshallen, werkplaatsen en utiliteitspanden verbouwen in Twente. Vaste prijs en gefaseerd uitgevoerd, terwijl jouw bedrijf gewoon doordraait.",
   alternates: { canonical: "/afbouwstudio/bedrijfspand-verbouwen" },
 };
 

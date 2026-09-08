@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Artikelen en praktische uitleg over bouwen, verbouwen, renovatie en kozijnen van MTB Bouw.",
   alternates: { canonical: "/kennisbank" },
+  openGraph: {
+    type: "website",
+    title: "Kennisbank | MTB Bouw",
+    description: "Artikelen en praktische uitleg over bouwen, verbouwen, renovatie en kozijnen van MTB Bouw.",
+    url: "/kennisbank",
+  },
 };
 
 export default function KennisbankPage() {

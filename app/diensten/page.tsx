@@ -7,8 +7,14 @@ import { expertises } from "@/lib/expertises";
 export const metadata: Metadata = {
   title: "Wat we bouwen",
   description:
-    "MTB Bouw is het overkoepelende merk achter vier expertises: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab Bouwen. Ontdek de juiste specialist voor jouw project.",
+    "MTB Bouw bundelt vier expertises: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab Bouwen. Vind de juiste specialist voor jouw project.",
   alternates: { canonical: "/diensten" },
+  openGraph: {
+    type: "website",
+    title: "Wat we bouwen | MTB Bouw",
+    description: "MTB Bouw bundelt vier expertises: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab Bouwen. Vind de juiste specialist voor jouw project.",
+    url: "/diensten",
+  },
 };
 
 export default function DienstenPage() {

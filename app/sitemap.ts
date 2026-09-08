@@ -4,6 +4,10 @@ import { site } from "@/lib/site";
 
 // Genereert sitemap.xml automatisch bij elke build.
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Buildtijdstip: statische pagina's hebben geen eigen wijzigingsdatum,
+  // maar Google verwacht wel een lastModified per URL.
+  const built = new Date();
+
   // Dienstpagina's — belangrijkste landingspagina's voor SEO
   const serviceRoutes = [
     "/verbouwing",
@@ -35,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/aannemer-losser",
   ].map((path) => ({
     url: `${site.url}${path}`,
+    lastModified: built,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -50,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/regionale-partners",
   ].map((path) => ({
     url: `${site.url}${path}`,
+    lastModified: built,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
@@ -57,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     ...["", "/diensten", "/projecten", "/kennisbank", "/contact"].map((path) => ({
       url: `${site.url}${path}`,
+      lastModified: built,
       changeFrequency: "monthly" as const,
       priority: path === "" ? 1 : 0.7,
     })),
@@ -64,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...infoRoutes,
     {
       url: `${site.url}/privacy-policy`,
+      lastModified: built,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },

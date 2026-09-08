@@ -10,7 +10,7 @@ import { faqKantoorHengelo } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Hengelo | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Hengelo? Afbouwstudio (MTB Bouw, Enschede) is er in een kwartier: kantoorafbouw van casco tot turn-key, ook in combinatie met bedrijfshallen. Vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Hengelo: kantoorafbouw van casco tot turn-key, ook bij bedrijfshallen. Vaste prijs binnen 5 werkdagen na de intake.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-hengelo" },
 };
 

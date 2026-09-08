@@ -13,10 +13,16 @@ import { expertises } from "@/lib/expertises";
 import { faqBouwbedrijfEnschede } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Bouwbedrijf Enschede | MTB Bouw — van verbouwing tot nieuwbouw" },
+  title: { absolute: "Bouwbedrijf in Enschede | MTB Bouw" },
   description:
-    "MTB Bouw is een allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio (zakelijk), Kozijnen en Prefab Bouwen. SBB-erkend leerbedrijf, vaste prijzen.",
+    "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, vaste prijzen.",
   alternates: { canonical: "/bouwbedrijf-enschede" },
+  openGraph: {
+    type: "website",
+    title: "Bouwbedrijf in Enschede | MTB Bouw",
+    description: "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, vaste prijzen.",
+    url: "/bouwbedrijf-enschede",
+  },
 };
 
 export default function BouwbedrijfEnschedePage() {

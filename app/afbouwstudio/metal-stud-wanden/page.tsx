@@ -11,7 +11,7 @@ import { faqMetalStud } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Metal stud-wanden plaatsen | Afbouwstudio — MTB Bouw" },
   description:
-    "Metal stud-wanden voor kantoren en bedrijfsruimtes in Twente en Oost-Nederland: snel geplaatst, geluidwerend en later eenvoudig aan te passen. Inclusief glaswanden en deuren, met vaste prijs.",
+    "Metal stud-wanden voor kantoren en bedrijfsruimtes in Twente: snel geplaatst, geluidwerend en eenvoudig aan te passen. Vaste prijs vooraf.",
   alternates: { canonical: "/afbouwstudio/metal-stud-wanden" },
 };
 

@@ -11,10 +11,12 @@ import { useEffect, useState } from "react";
  * Timers (not rAF) drive the fade so it also completes in background tabs,
  * and a hard removal timer backs up onTransitionEnd.
  */
-const FADE_MS = 2000;
+const FADE_MS = 700;
 /** Minimum time the preloader stays fully visible, even on instant loads —
  *  gives the logo animation room to play before the fade starts. */
-const MIN_DISPLAY_MS = 2000;
+const MIN_DISPLAY_MS = 600;
+/** Eén keer per sessie tonen; bij doorklikken geen wit scherm meer. */
+const SEEN_KEY = "mtb-preloader-seen";
 
 export function Preloader({
   src = "/images/brand/preloader.gif",
@@ -23,9 +25,20 @@ export function Preloader({
   src?: string;
 }) {
   const [fading, setFading] = useState(false);
-  const [gone, setGone] = useState(false);
+  // Start verborgen: alleen de eerste paginaweergave van een sessie toont de
+  // preloader. Hij dekte voorheen élke pagina minimaal 2s af met een wit vlak,
+  // wat rechtstreeks de gemeten laadtijd (LCP) omhoog duwde.
+  const [gone, setGone] = useState(true);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem(SEEN_KEY)) return;
+      sessionStorage.setItem(SEEN_KEY, "1");
+    } catch {
+      // Privémodus of geblokkeerde opslag: dan gewoon tonen.
+    }
+    setGone(false);
+
     const timers: number[] = [];
     const mountedAt = Date.now();
 
@@ -62,7 +75,7 @@ export function Preloader({
     <div
       aria-hidden="true"
       onTransitionEnd={() => setGone(true)}
-      className={`fixed inset-0 z-999 flex items-center justify-center bg-white transition-opacity duration-2000 ${
+      className={`fixed inset-0 z-999 flex items-center justify-center bg-white transition-opacity duration-700 ${
         fading ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >

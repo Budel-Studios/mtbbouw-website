@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Regionale partners — samen bouwen met de regio",
   description:
-    "MTB Bouw werkt samen met een vast netwerk van regionale vakmensen en leveranciers in Twente. Korte lijnen, hoge kwaliteit en lokaal verankerd. Bekijk onze partners.",
+    "MTB Bouw werkt met een vast netwerk van regionale vakmensen en leveranciers in Twente. Korte lijnen, hoge kwaliteit, lokaal verankerd.",
   alternates: { canonical: "/regionale-partners" },
   openGraph: {
     type: "website",

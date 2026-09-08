@@ -15,8 +15,14 @@ import { faqNieuwbouw } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "Nieuwbouw in Enschede en Twente",
   description:
-    "Bouwen vanaf nul met één team en één aanspreekpunt. Energiezuinige nieuwbouw (BENG) met vaste aanneemsom, vaste opleverdatum en garanties tot 20 jaar op de constructie.",
+    "Energiezuinige nieuwbouw (BENG) met één aanspreekpunt, vaste aanneemsom, vaste opleverdatum en garanties tot 20 jaar op de constructie.",
   alternates: { canonical: "/nieuwbouw" },
+  openGraph: {
+    type: "website",
+    title: "Nieuwbouw in Enschede en Twente | MTB Bouw",
+    description: "Energiezuinige nieuwbouw (BENG) met één aanspreekpunt, vaste aanneemsom, vaste opleverdatum en garanties tot 20 jaar op de constructie.",
+    url: "/nieuwbouw",
+  },
 };
 
 export default function NieuwbouwPage() {

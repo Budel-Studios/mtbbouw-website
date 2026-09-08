@@ -23,11 +23,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Bouwen doen we samen | Aannemer in Enschede & Twente`,
+    default: `${site.name} — Aannemer in Enschede & Twente`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  alternates: { canonical: "/" },
   openGraph: {
     // Geen title/url hier: pagina's zonder eigen openGraph erven dit blok
     // volledig, en zouden anders sitewide dezelfde og:title/og:url tonen.

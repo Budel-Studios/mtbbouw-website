@@ -7,7 +7,7 @@ import { BrochureForm } from "@/components/brochure-form";
 import { CheckIcon, EuroIcon, ClockIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Gratis brochure — zo pak je jouw (ver)bouwproject aan",
+  title: "Gratis brochure over je (ver)bouwproject",
   description:
     "Vraag de gratis brochure van MTB Bouw aan: hoe een bouwtraject werkt, hoe kosten zijn opgebouwd en waar je op moet letten. Binnen een minuut aangevraagd.",
   alternates: { canonical: "/gratis-brochure" },

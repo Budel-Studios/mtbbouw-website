@@ -12,10 +12,16 @@ import { UsersIcon, EuroIcon, ClockIcon, HammerIcon, HouseIcon, WindowIcon, Laye
 import { faqAannemerEnschede } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aannemer in Enschede | MTB Bouw — verbouw, aanbouw & renovatie" },
+  title: { absolute: "Aannemer in Enschede — verbouw & renovatie | MTB Bouw" },
   description:
-    "Op zoek naar een aannemer in Enschede? MTB Bouw verbouwt door heel Enschede: renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, vaste prijs, één aanspreekpunt.",
+    "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
   alternates: { canonical: "/aannemer-enschede" },
+  openGraph: {
+    type: "website",
+    title: "Aannemer in Enschede — verbouw & renovatie | MTB Bouw",
+    description: "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
+    url: "/aannemer-enschede",
+  },
 };
 
 const DIENSTEN = [

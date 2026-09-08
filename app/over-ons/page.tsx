@@ -14,8 +14,14 @@ import { CheckIcon, ChatIcon, HammerIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: { absolute: "Over ons — het team achter MTB Bouw" },
   description:
-    "Al meer dan 10 jaar bouwen we in Overijssel en Gelderland. Maak kennis met het team achter MTB Bouw: een vast team vakmensen met korte lijnen en één filosofie — Bouw. Samen.",
+    "Maak kennis met het team achter MTB Bouw: vaste vakmensen uit Twente, korte lijnen en één filosofie — Bouw. Samen.",
   alternates: { canonical: "/over-ons" },
+  openGraph: {
+    type: "website",
+    title: "Over ons — het team achter MTB Bouw",
+    description: "Maak kennis met het team achter MTB Bouw: vaste vakmensen uit Twente, korte lijnen en één filosofie — Bouw. Samen.",
+    url: "/over-ons",
+  },
 };
 
 const pillarIcons = [CheckIcon, ChatIcon, HammerIcon];

@@ -57,6 +57,8 @@ export default async function ArticlePage({
         url={`${site.url}${article.permalink}`}
         datePublished={article.date}
         dateModified={article.updated}
+        image={article.cover}
+        section={article.category}
       />
       <BreadcrumbJsonLd
         items={[

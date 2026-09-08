@@ -14,8 +14,14 @@ import { faqAannemerTwente } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Twente | MTB Bouw — verbouwen in de hele regio" },
   description:
-    "Aannemer nodig in Twente? MTB Bouw uit Enschede verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, regionale partners.",
+    "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, lokale partners.",
   alternates: { canonical: "/aannemer-twente" },
+  openGraph: {
+    type: "website",
+    title: "Aannemer in Twente | MTB Bouw — verbouwen in de hele regio",
+    description: "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, lokale partners.",
+    url: "/aannemer-twente",
+  },
 };
 
 const PLAATSEN: { name: string; href?: string }[] = [

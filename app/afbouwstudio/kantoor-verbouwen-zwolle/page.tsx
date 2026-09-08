@@ -10,7 +10,7 @@ import { faqKantoorZwolle } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Zwolle | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Zwolle? Afbouwstudio bouwde er al een compleet casco-pand af (De Broodbode, Wezenlanden). Van casco tot turn-key kantoor met vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Zwolle: we bouwden er een compleet casco-pand af voor De Broodbode. Casco tot turn-key, vaste prijs binnen 5 werkdagen.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-zwolle" },
 };
 

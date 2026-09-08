@@ -10,7 +10,7 @@ import { faqAannemerBorne } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Borne | MTB Bouw — wonen & zakelijk" },
   description:
-    "Aannemer nodig in Borne? MTB Bouw bouwde er al een bedrijfshal af en verbouwt woningen in heel Borne en Zenderen. Renovatie, aanbouw, kozijnen en prefab — vaste prijs, geen voorrijkosten.",
+    "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. We bouwden er al een bedrijfshal af. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-borne" },
 };
 

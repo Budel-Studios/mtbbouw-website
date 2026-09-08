@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Contact",
   description: `Neem contact op met ${site.name} in Enschede voor een vrijblijvend advies of offerte. Bel ${site.telephone} of mail ${site.email}.`,
   alternates: { canonical: "/contact" },
+  openGraph: {
+    type: "website",
+    title: "Contact — MTB Bouw, aannemer in Enschede",
+    description: `Neem contact op met ${site.name} in Enschede voor een vrijblijvend advies of offerte.`,
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

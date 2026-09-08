@@ -17,10 +17,16 @@ import {
 import { faqKantoorVerbouwen } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio — MTB Bouw" },
+  title: { absolute: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio" },
   description:
-    "Kantoor verbouwen of casco kantoorruimte afbouwen? Afbouwstudio (MTB Bouw, Enschede) verzorgt kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Vaste prijs binnen 5 werkdagen.",
+    "Kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Door Afbouwstudio (MTB Bouw). Vaste prijs binnen 5 werkdagen.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen" },
+  openGraph: {
+    type: "website",
+    title: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio",
+    description: "Kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Door Afbouwstudio (MTB Bouw). Vaste prijs binnen 5 werkdagen.",
+    url: "/afbouwstudio/kantoor-verbouwen",
+  },
 };
 
 const WERKZAAMHEDEN: {

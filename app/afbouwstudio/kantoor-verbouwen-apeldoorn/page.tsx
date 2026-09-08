@@ -10,7 +10,7 @@ import { faqKantoorApeldoorn } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Apeldoorn | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Apeldoorn? Afbouwstudio transformeerde er De Broodbode volledig, strak gepland in de zomervakantie. Kantoorafbouw van casco tot turn-key — gefaseerd, 's avonds of in het weekend, vaste prijs.",
+    "Kantoor verbouwen in Apeldoorn: casco tot turn-key, gefaseerd of buiten kantoortijden. We transformeerden er De Broodbode in de zomervakantie.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-apeldoorn" },
 };
 

@@ -19,9 +19,9 @@ import {
 import { faqZakelijkeAfbouw } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Afbouwstudio — Kantoorafbouw & afbouw bedrijfspanden | MTB Bouw" },
+  title: { absolute: "Kantoorafbouw & afbouw bedrijfspanden | Afbouwstudio" },
   description:
-    "Afbouwstudio is het label van MTB Bouw voor afbouw van bedrijfspanden en horeca in Enschede, Twente en heel Overijssel. Eigen app voor wand/vloer/plafond — snel schakelen, vaste prijs. Bekijk de case De Broodbode (Zwolle & Apeldoorn).",
+    "Afbouw van kantoren, winkels en horeca in Enschede, Twente en heel Overijssel. Van casco tot turn-key, met een vaste prijs binnen vijf werkdagen.",
   alternates: { canonical: "/afbouwstudio" },
   openGraph: {
     type: "website",

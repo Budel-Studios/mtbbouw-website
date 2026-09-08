@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { kennisbank, portfolio } from "#site/content";
 import { getAsset } from "@/lib/assets";
+import { WebSiteJsonLd } from "@/components/json-ld";
+import { site } from "@/lib/site";
 import { ProjectCarousel } from "@/components/project-carousel";
 import {
   CheckIcon,
@@ -239,6 +242,26 @@ const PARTNER_TONE: Record<Tone, string> = {
 
 /* ---------------------------------- Page --------------------------------- */
 
+/**
+ * Eigen metadata voor de homepage. Zonder deze export erfde de belangrijkste
+ * pagina van de site de generieke standaardtitel uit de layout (76 tekens,
+ * dus afgekapt in Google) en de sitebrede omschrijving.
+ */
+export const metadata: Metadata = {
+  title: {
+    absolute: "Aannemer in Enschede & Twente | MTB Bouw",
+  },
+  description:
+    "Aannemer uit Enschede voor verbouwing, aanbouw, renovatie en zakelijke afbouw in heel Twente. Vaste prijs vooraf, één aanspreekpunt, intake bij je op locatie.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "MTB Bouw — aannemer in Enschede & Twente",
+    description:
+      "Verbouwing, aanbouw, renovatie en zakelijke afbouw. Eén team, één planning, één aanspreekpunt.",
+    url: "/",
+  },
+};
+
 export default async function HomePage() {
   const hero = await getAsset(
     "team-mathijs",
@@ -260,6 +283,8 @@ export default async function HomePage() {
 
   return (
     <>
+      <WebSiteJsonLd />
+
       {/* HERO — full-bleed foto, lime accent-glow en trust-strip */}
       <section className="relative w-full overflow-hidden bg-ink text-white">
         <div

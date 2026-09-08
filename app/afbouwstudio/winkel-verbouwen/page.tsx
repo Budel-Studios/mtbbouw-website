@@ -8,9 +8,9 @@ import { BuildingIcon, ClockIcon, PaintIcon, UsersIcon } from "@/components/icon
 import { faqWinkelVerbouwen } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Winkel verbouwen | Afbouwstudio — MTB Bouw | retail-afbouw Oost-NL" },
+  title: { absolute: "Winkel verbouwen in Twente | Afbouwstudio" },
   description:
-    "Winkel of showroom verbouwen? Afbouwstudio (MTB Bouw) verzorgt retail-afbouw in Twente en Oost-Nederland: klaar vóór je openingsdatum, gefaseerd of buiten openingstijden, vaste prijs.",
+    "Winkel of showroom verbouwen in Twente: klaar vóór je openingsdatum, gefaseerd of buiten openingstijden uitgevoerd, met een vaste prijs.",
   alternates: { canonical: "/afbouwstudio/winkel-verbouwen" },
 };
 

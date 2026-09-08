@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Ontdek een selectie van onze gerealiseerde projecten: van renovaties en uitbouwen tot complete woningen, kozijnen en bedrijfspanden in Twente en Oost-Nederland.",
   alternates: { canonical: "/projecten" },
+  openGraph: {
+    type: "website",
+    title: "Gerealiseerde projecten | MTB Bouw",
+    description: "Ontdek een selectie van onze gerealiseerde projecten: van renovaties en uitbouwen tot complete woningen, kozijnen en bedrijfspanden in Twente en Oost-Nederland.",
+    url: "/projecten",
+  },
 };
 
 export default function ProjectenPage() {

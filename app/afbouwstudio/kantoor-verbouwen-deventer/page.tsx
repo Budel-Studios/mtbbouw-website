@@ -10,7 +10,7 @@ import { faqKantoorDeventer } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Deventer | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Deventer? Afbouwstudio (MTB Bouw) verzorgt kantoorafbouw van casco tot turn-key: metal stud, systeemplafonds, installaties en afwerking. Vaste prijs binnen 5 werkdagen na de intake.",
+    "Kantoor verbouwen in Deventer: metal stud, systeemplafonds, installaties en afwerking. Van casco tot turn-key, vaste prijs binnen 5 werkdagen.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-deventer" },
 };
 

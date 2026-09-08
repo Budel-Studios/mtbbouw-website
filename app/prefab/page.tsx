@@ -15,8 +15,14 @@ import { faqPrefab } from "@/lib/faq";
 export const metadata: Metadata = {
   title: "Prefab bouwen in Twente",
   description:
-    "Sneller bouwen zonder in te leveren op kwaliteit. HSB, prefab daken en wanden, overkappingen en buitengebouwen: ruwbouw in dagen in plaats van weken, maatvast uit de fabriek.",
+    "Houtskeletbouw, prefab daken en wanden, overkappingen en buitengebouwen. Ruwbouw in dagen in plaats van weken, maatvast uit de fabriek.",
   alternates: { canonical: "/prefab" },
+  openGraph: {
+    type: "website",
+    title: "Prefab bouwen in Twente | MTB Bouw",
+    description: "Houtskeletbouw, prefab daken en wanden, overkappingen en buitengebouwen. Ruwbouw in dagen in plaats van weken, maatvast uit de fabriek.",
+    url: "/prefab",
+  },
 };
 
 const ONDERDELEN = [

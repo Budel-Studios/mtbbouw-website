@@ -10,7 +10,7 @@ import { faqAannemerHaaksbergen } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Haaksbergen | MTB Bouw — dorp & buitengebied" },
   description:
-    "Aannemer nodig in Haaksbergen? MTB Bouw verbouwt woningen in het dorp én het buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-haaksbergen" },
 };
 

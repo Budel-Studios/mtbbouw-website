@@ -10,7 +10,7 @@ import { faqAannemerOldenzaal } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Oldenzaal | MTB Bouw — verbouw & renovatie" },
   description:
-    "Aannemer nodig in Oldenzaal? MTB Bouw uit Enschede is er binnen een kwartier: renovatie, verbouw, aanbouw en kozijnen — met oog voor karakteristieke woningen. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Oldenzaal: renovatie, verbouw, aanbouw en kozijnen, met oog voor karakteristieke woningen. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-oldenzaal" },
 };
 

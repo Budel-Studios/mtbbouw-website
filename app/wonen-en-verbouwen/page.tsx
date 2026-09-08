@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description:
     "Wonen & Verbouwen is het label van MTB Bouw voor particulieren: renovatie & verbouw en aanbouw & uitbouw in Enschede, Twente en Oost-Nederland.",
   alternates: { canonical: "/wonen-en-verbouwen" },
+  openGraph: {
+    type: "website",
+    title: "Wonen & Verbouwen | MTB Bouw",
+    description: "Wonen & Verbouwen is het label van MTB Bouw voor particulieren: renovatie & verbouw en aanbouw & uitbouw in Enschede, Twente en Oost-Nederland.",
+    url: "/wonen-en-verbouwen",
+  },
 };
 
 const SUB_ITEMS = [

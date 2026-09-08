@@ -9,9 +9,9 @@ import { CupIcon, ClockIcon, PaintIcon, ShieldIcon, MapPinIcon } from "@/compone
 import { faqHorecaVerbouwen } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: { absolute: "Horeca verbouwen | Afbouwstudio — MTB Bouw | Twente & Oost-NL" },
+  title: { absolute: "Horeca verbouwen in Twente | Afbouwstudio" },
   description:
-    "Horecazaak verbouwen? Afbouwstudio (MTB Bouw) bouwt lunchrooms, restaurants en cafés af — van casco tot opening, strak op planning. Bekijk de Broodbode-cases in Zwolle en Apeldoorn.",
+    "Lunchrooms, restaurants en cafés afbouwen van casco tot opening, strak op planning. Bekijk de Broodbode-cases in Zwolle en Apeldoorn.",
   alternates: { canonical: "/afbouwstudio/horeca-verbouwen" },
 };
 

@@ -36,7 +36,7 @@ import { getAsset } from "@/lib/assets";
 export const metadata: Metadata = {
   title: { absolute: "Veilig & verantwoord bouwen — hoe MTB Bouw werkt" },
   description:
-    "Hoe MTB Bouw omgaat met veiligheid, kwaliteit en verantwoordelijkheid op de bouwplaats. Erkend leerbedrijf, vaste partners en heldere afspraken — een kijkje achter de schermen bij aannemer in Twente.",
+    "Hoe MTB Bouw omgaat met veiligheid, kwaliteit en verantwoordelijkheid op de bouwplaats. Erkend leerbedrijf, vaste partners en heldere afspraken.",
   keywords: [
     "veilig bouwen",
     "verantwoord bouwen",

@@ -10,7 +10,7 @@ import { faqKantoorAlmelo } from "@/lib/faq";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Almelo | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Almelo? Afbouwstudio (MTB Bouw) verzorgt kantoorafbouw van casco tot turn-key in Almelo en Noord-Twente: wanden, plafonds, installaties en afwerking met vaste prijs.",
+    "Kantoor verbouwen in Almelo en Noord-Twente: wanden, plafonds, installaties en afwerking. Van casco tot turn-key, met een vaste prijs.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-almelo" },
 };
 
