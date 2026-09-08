@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { kennisbank } from "#site/content";
 import { site } from "@/lib/site";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
+import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { extractFaq } from "@/lib/article-faq";
 
 type Params = { slug: string };
 
@@ -49,6 +50,10 @@ export default async function ArticlePage({
   const article = getArticle(slug);
   if (!article) notFound();
 
+  // De FAQ staat als gewone tekst in het artikel; hieruit halen we het
+  // FAQPage-schema, zodat er maar één bron van waarheid is.
+  const faq = extractFaq(article.body);
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       <ArticleJsonLd
@@ -60,6 +65,7 @@ export default async function ArticlePage({
         image={article.cover}
         section={article.category}
       />
+      {faq.length > 0 && <FaqJsonLd items={faq} />}
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
