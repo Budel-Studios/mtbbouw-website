@@ -26,6 +26,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Oude Yoast-sitemapnamen → de Next.js-sitemap. Zonder deze redirect
+      // krijgt Google de 404-HTML-pagina en meldt hij "Your Sitemap appears
+      // to be an HTML page".
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+
       // Oude "Werken bij"-URL → nieuwe recruitmentpagina.
       { source: "/werken-bij", destination: "/werkgenoeg", permanent: true },
       // Merkstructuur-herpositionering: /voor-bedrijven is opgegaan in het
