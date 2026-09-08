@@ -8,6 +8,10 @@ import { OrganizationJsonLd } from "@/components/json-ld";
 import { Preloader } from "@/components/preloader";
 import { getAsset } from "@/lib/assets";
 import { ContactDrawerProvider } from "@/components/contact-drawer";
+// Cookieloze statistieken van Vercel: geen consent-banner nodig en de
+// privacyverklaring ("alleen functionele en analytische cookies") blijft kloppen.
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 /**
  * Merklettertype: Montserrat voor koppen, buttons, navigatie en labels.
@@ -62,6 +66,8 @@ export default async function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </ContactDrawerProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
