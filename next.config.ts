@@ -26,6 +26,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Eén canonieke domeinvariant: www -> apex, permanent. Zonder dit geven
+      // beide varianten een 200 terug en verdeelt Google de signalen.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.mtbbouw.com" }],
+        destination: "https://mtbbouw.com/:path*",
+        permanent: true,
+      },
+
       // Oude Yoast-sitemapnamen → de Next.js-sitemap. Zonder deze redirect
       // krijgt Google de 404-HTML-pagina en meldt hij "Your Sitemap appears
       // to be an HTML page".
