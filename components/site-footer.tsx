@@ -137,23 +137,31 @@ export function SiteFooter() {
               </a>
             )}
           </div>
-          <p className="text-xs text-stone">
-            © {year} {site.legalName} · KVK {site.kvk} · {site.sbb}
-          </p>
+          <div className="flex flex-col items-start gap-x-4 gap-y-2 text-xs text-stone sm:items-end lg:flex-row lg:items-center">
+            <p>
+              © {year} {site.legalName} · KVK {site.kvk} · {site.sbb}
+            </p>
+            <a
+              href="https://tien98.nl"
+              target="_blank"
+              rel="noopener"
+              className="group inline-flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-ink"
+            >
+              <span className="hidden text-mist lg:inline" aria-hidden="true">
+                |
+              </span>
+              Branding door
+              <Image
+                src="/images/partners/tien98-mark.png"
+                alt=""
+                width={711}
+                height={446}
+                className="h-2.5 w-auto opacity-80 transition-opacity group-hover:opacity-100"
+              />
+              <span className="font-semibold text-ink">tien98</span>
+            </a>
+          </div>
         </div>
-
-        {/* Credit — helemaal onderin */}
-        <p className="mt-10 border-t border-mist pt-6 text-center text-xs text-stone">
-          Brand by{" "}
-          <a
-            href="https://tien98.nl"
-            target="_blank"
-            rel="noopener"
-            className="font-semibold text-ink transition-colors hover:text-lime-dark"
-          >
-            tien98
-          </a>
-        </p>
       </div>
     </footer>
   );
