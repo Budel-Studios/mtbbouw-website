@@ -141,6 +141,19 @@ export function SiteFooter() {
             © {year} {site.legalName} · KVK {site.kvk} · {site.sbb}
           </p>
         </div>
+
+        {/* Credit — helemaal onderin */}
+        <p className="mt-10 border-t border-mist pt-6 text-center text-xs text-stone">
+          Brand by{" "}
+          <a
+            href="https://tien98.nl"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-ink transition-colors hover:text-lime-dark"
+          >
+            tien98
+          </a>
+        </p>
       </div>
     </footer>
   );

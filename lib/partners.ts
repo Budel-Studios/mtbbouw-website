@@ -223,6 +223,14 @@ const suppliers: Partner[] = [
     url: "https://dukato.nl",
     region: "Twente",
   },
+  {
+    name: "tien98",
+    category: "overig",
+    description:
+      "Onze partner voor branding en merkidentiteit — het merk MTB Bouw is door hen neergezet.",
+    url: "https://tien98.nl",
+    region: "Twente",
+  },
 ];
 
 export const allPartners: Partner[] = [...craftsman, ...suppliers];
