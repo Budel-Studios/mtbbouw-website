@@ -2,7 +2,9 @@
 title: "Een kantoor inrichten waar mensen graag werken: zo pak je het aan"
 description: "Kantoor inrichten? Het draait om licht, akoestiek en indeling — niet om dure bureaus. Praktische tips, een checklist en eerlijke prijzen uit de praktijk."
 date: 2026-07-05
-category: "Afbouwstudio"
+category: plannen-aanpak
+subcategories: [wanden-plafonds]
+audience: [bedrijven]
 cover: /images/projects/broodbode-zwolle-lunchroom/cover.jpg
 coverAlt: "Sfeervol ingericht interieur met akoestisch zwart plafond, maatwerk counter en doordacht verlichtingsplan"
 tags: ["kantoor inrichten", "kantoor indeling", "akoestiek", "kantoor verbouwen", "afbouw"]

@@ -2,7 +2,9 @@
 title: "ISDE-subsidie uitgelegd: zo werkt het écht (in gewone taal)"
 description: "Wat is de ISDE-subsidie, welke isolatiemaatregelen tellen mee en hoe vraag je hem aan? We leggen het uit alsof je bij ons aan de keukentafel zit."
 date: 2026-07-05
-category: "Verduurzamen"
+category: verduurzamen
+subcategories: [daken, vloeren, kozijnen-glas]
+audience: [thuis]
 cover: /images/projects/renovatie-schuur-behoud-karakter/cover.jpg
 coverAlt: "Renovatie van een schuur met behoud van karakter, een project waarbij isolatie en verduurzaming samenkomen"
 tags:

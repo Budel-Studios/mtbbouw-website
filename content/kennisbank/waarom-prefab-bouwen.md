@@ -2,7 +2,9 @@
 title: "Waarom prefab bouwen zo populair wordt (en of het iets voor jou is)"
 description: "Prefab bouwen groeit hard. Hoe werkt het, hoe snel is het echt, wat kost het en wanneer kies je er juist niet voor? We leggen het gewoon uit."
 date: 2026-07-05
-category: "Prefab bouwen"
+category: technische-keuzes
+subcategories: [fundering-constructie]
+audience: [thuis, bedrijven]
 cover: /images/projects/dubbele-uitbouw-enschede/cover.webp
 coverAlt: "Prefab uitbouw aan een woning in Enschede, ruwbouw in korte tijd geplaatst"
 tags:

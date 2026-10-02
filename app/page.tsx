@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { kennisbank, portfolio } from "#site/content";
+import { categoryLabel } from "@/lib/kennisbank-taxonomy";
 import { getAsset } from "@/lib/assets";
 import { WebSiteJsonLd } from "@/components/json-ld";
 import { site } from "@/lib/site";
@@ -600,7 +601,7 @@ export default async function HomePage() {
                   <div className="flex items-center gap-3 text-xs">
                     {a.category && (
                       <span className="inline-flex items-center border border-lime/40 bg-lime/10 px-2.5 py-1 font-semibold text-ink">
-                        {a.category}
+                        {categoryLabel(a.category)}
                       </span>
                     )}
                   </div>

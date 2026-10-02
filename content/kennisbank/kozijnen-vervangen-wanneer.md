@@ -2,7 +2,9 @@
 title: "Wanneer is het tijd om je kozijnen te vervangen?"
 description: "De belangrijkste signalen dat je kozijnen aan vervanging toe zijn — en wat het je oplevert aan comfort en energiebesparing."
 date: 2026-06-10
-category: "Kozijnen"
+category: technische-keuzes
+subcategories: [kozijnen-glas]
+audience: [thuis]
 cover: "/images/projects/project-3.jpg" # PLACEHOLDER — vervang door een echte artikelfoto
 coverAlt: "Close-up van een kunststof kozijn met HR++ beglazing"
 tags: [kozijnen, onderhoud, isolatie]

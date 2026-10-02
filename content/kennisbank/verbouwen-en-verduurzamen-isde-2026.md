@@ -2,7 +2,9 @@
 title: "Verbouwen en verduurzamen tegelijk: zo werkt de ISDE in 2026"
 description: "Wie toch al verbouwt, verduurzaamt het voordeligst. Zo combineer je isolatie en isolerend glas met je verbouwing — en zo werkt de ISDE-subsidieaanvraag in 2026, stap voor stap."
 date: 2026-07-04
-category: "Verduurzamen"
+category: verduurzamen
+subcategories: [daken, vloeren]
+audience: [thuis]
 cover: "/images/projects/project-1.jpg"
 coverAlt: "Woningrenovatie met isolatie en nieuw glas in Enschede"
 tags: [verduurzamen, isolatie, subsidie, ISDE]

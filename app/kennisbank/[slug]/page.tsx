@@ -5,6 +5,11 @@ import { kennisbank } from "#site/content";
 import { site } from "@/lib/site";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { extractFaq } from "@/lib/article-faq";
+import {
+  categoryLabel,
+  kennisbankFilterHref,
+  subcategoryLabel,
+} from "@/lib/kennisbank-taxonomy";
 
 type Params = { slug: string };
 
@@ -63,7 +68,7 @@ export default async function ArticlePage({
         datePublished={article.date}
         dateModified={article.updated}
         image={article.cover}
-        section={article.category}
+        section={categoryLabel(article.category)}
       />
       {faq.length > 0 && <FaqJsonLd items={faq} />}
       <BreadcrumbJsonLd
@@ -97,6 +102,28 @@ export default async function ArticlePage({
           {article.title}
         </h1>
         <p className="mt-3 text-lg text-stone">{article.description}</p>
+
+        {/* Indeling — elk label opent de kennisbank met dat filter actief. */}
+        <ul className="mt-5 flex flex-wrap gap-2 text-xs" aria-label="Onderwerp en bouwdelen">
+          <li>
+            <Link
+              href={kennisbankFilterHref("category", article.category)}
+              className="inline-flex items-center border border-lime/40 bg-lime/10 px-2.5 py-1 font-semibold text-ink transition-colors hover:border-lime"
+            >
+              {categoryLabel(article.category)}
+            </Link>
+          </li>
+          {article.subcategories.map((sub) => (
+            <li key={sub}>
+              <Link
+                href={kennisbankFilterHref("subcategory", sub)}
+                className="inline-flex items-center border border-mist bg-white px-2.5 py-1 font-medium text-stone transition-colors hover:border-ink hover:text-ink"
+              >
+                {subcategoryLabel(sub)}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </header>
 
       <div

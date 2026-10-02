@@ -1,5 +1,11 @@
 import { defineConfig, defineCollection, s } from "velite";
 import rehypeSlug from "rehype-slug";
+import {
+  AUDIENCE_SLUGS,
+  CATEGORY_SLUGS,
+  MAX_SUBCATEGORIES,
+  SUBCATEGORY_SLUGS,
+} from "./lib/kennisbank-taxonomy";
 
 // Shared computed fields. `s.path()` gives the file path relative to `root`
 // (e.g. "kennisbank/kozijnen-vervangen"); we take the last segment as the slug.
@@ -14,7 +20,16 @@ const kennisbank = defineCollection({
       description: s.string().max(200),
       date: s.isodate(),
       updated: s.isodate().optional(),
-      category: s.string().optional(), // bijv. "Kozijnen", "Renovatie" (ook filter op /kennisbank)
+      // Indeling — zie lib/kennisbank-taxonomy.ts voor de toegestane slugs.
+      category: s.enum(CATEGORY_SLUGS), // onderwerp, bijv. "verduurzamen"
+      subcategories: s
+        .array(s.enum(SUBCATEGORY_SLUGS))
+        .max(MAX_SUBCATEGORIES)
+        .default([]), // bouwdelen, bijv. [daken, vloeren]
+      audience: s
+        .array(s.enum(AUDIENCE_SLUGS))
+        .min(1)
+        .default(["thuis", "bedrijven"]), // voor wie: thuis en/of bedrijven
       // Optional optimized cover image. When present, Velite copies it to
       // /public/static and returns { src, width, height, blurDataURL } for next/image.
       cover: s.string().optional(), // publiek pad onder /public

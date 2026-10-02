@@ -2,7 +2,9 @@
 title: "Wat kost een kantoorverbouwing per m² in 2026?"
 description: "Een kantoor verbouwen kost in 2026 indicatief €150–400 per m² voor een opknapbeurt tot €600–1.500 per m² voor complete casco-afbouw. Alle kostenposten, rekenvoorbeelden en bespaartips op een rij."
 date: 2026-07-04
-category: "Kosten & prijzen"
+category: kosten-offertes
+subcategories: [wanden-plafonds]
+audience: [bedrijven]
 cover: "/images/projects/bedrijfshal-borne.webp"
 coverAlt: "Zakelijke afbouw van een bedrijfspand door Afbouwstudio (MTB Bouw)"
 tags: [kantoor, zakelijk, afbouw, kosten]

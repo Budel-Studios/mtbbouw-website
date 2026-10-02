@@ -29,6 +29,8 @@ export default function KennisbankPage() {
       title: a.title,
       description: a.description,
       category: a.category,
+      subcategories: a.subcategories,
+      audience: a.audience,
       date: a.date,
       readingTime: a.metadata.readingTime,
       cover: a.cover,
