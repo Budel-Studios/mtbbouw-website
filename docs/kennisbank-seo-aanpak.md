@@ -142,10 +142,7 @@ De scheduled task kan bij elke publicatie meteen een kant-en-klare tekst voor he
 
 ## 9. Eerst rechtzetten: bedrijfsgegevens
 
-Lokale vindbaarheid leunt op overal exact dezelfde bedrijfsgegevens. Twee dingen vielen op:
-
-- **KvK-nummer:** de site toont **42148321** (footer, `lib/site.ts`), maar bedrijvenregisters (onder andere aannemer-nu.nl en companyinfo.nl) tonen **60942037**. Check het KvK-uittreksel en zet het overal gelijk.
-- **Oud adres:** aannemer-nu.nl toont nog **Wiggerlanden 30**, naast het eerder gevonden Herikebrink 37. Toevoegen aan de correctielijst in [local-seo-actieplan.md](local-seo-actieplan.md).
+Lokale vindbaarheid leunt op overal exact dezelfde bedrijfsgegevens. Op 2 oktober 2026 is een volledige check gedaan; zie de NAP-audit in [local-seo-actieplan.md](local-seo-actieplan.md). Kort: KvK 42148321 (MTB Bouw B.V.) op de site klopt. Diverse gidsen tonen nog de oude eenmanszaak (KvK 60942037) met oude adressen.
 
 ## 10. Bestaande artikelen
 

@@ -69,3 +69,29 @@ Met exact dezelfde NAP-gegevens, in deze volgorde:
 4. Directory-correcties (telefoonboek, bedrijvenregister, aannemer-nu)
 5. Bing Places + Apple Maps + LinkedIn aanmaken
 6. Search Console koppelen bij livegang nieuwe site
+
+---
+
+## 6. NAP-audit 2 oktober 2026
+
+**Juiste gegevens volgens het KvK-handelsregister:** MTB Bouw B.V. · KvK **42148321** · vestigingsnummer 000066533465 · Heersenkampweg 5, 7546 PG Enschede. Telefoon 053 206 50 71, info@mtbbouw.com, https://mtbbouw.com.
+
+KvK **60942037** is de oude eenmanszaak (handelsnamen "MTB Bouw" en "Ledubs carpentry", vestigingsnummer 000030090156, Herikebrink 37). Die staat niet meer tussen de ingeschreven bedrijven. Gidsen die dit nummer tonen, hebben oude data overgenomen.
+
+| Vermelding | Wat er fout staat | Actie |
+|---|---|---|
+| aannemer-nu.nl | Adres Wiggerlanden 30, 7542 MZ · KvK 60942037 · geen telefoon | Vermelding claimen en NAP aanpassen |
+| bedrijvenregister.nl | Herikebrink 37, 7544 ER · KvK 60942037 · eenmanszaak · handelsnaam Ledubs carpentry · telefoon 0900-1511 (betaald doorschakelnummer) | Wijziging doorgeven met KvK 42148321 |
+| oozo.nl | Herikebrink 37 · KvK 60942037 | Correctie of verwijdering aanvragen |
+| bouwbedrijfoverzicht.nl | Wiggerlanden 30, 7542 MZ · telefoon 06-15823081 | Correctie aanvragen |
+| werkspot.nl | KvK 60942037 | In het Werkspot-account aanpassen |
+| SBB leerbedrijvenregister | Naam "mtbbouw" · vestigingsnummer 000030090156 (oude eenmanszaak) | Via MijnSBB naam en vestigingsnummer laten aanpassen |
+| Google-bedrijfsprofiel | Naam "Bouwbedrijf MTB Bouw" (rest klopt) | Naam terugbrengen naar "MTB Bouw" |
+| Bing Places | Naam "Bouwbedrijf MTB Bouw" · website met www | Meeveranderen met Google (Bing is daaruit overgenomen) |
+| Instagram | Weergavenaam "MTBbouw" | Naam "MTB Bouw" |
+| mtbbouw.com | Gegevens kloppen, maar het adres staat alleen op de privacypagina, niet in footer of op /contact | Adres zichtbaar maken in footer en op /contact |
+| mtbbouw.com → dekozijnstudio.nl | dekozijnstudio.nl is niet bereikbaar, terwijl /kozijnen en de partnerpagina ernaar linken | Domein live zetten of links aanpassen |
+
+Geen actie nodig: telefoonboek.nl (vermelding verwijderd), companyinfo.nl (profiel oude eenmanszaak verwijderd), goudengids.nl (niet vermeld). Geen Facebook- of LinkedIn-bedrijfspagina gevonden.
+
+Let op: §4 hierboven noemt het adres "in footer en contactpagina"; in werkelijkheid staat het daar (nog) niet.
