@@ -6,6 +6,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
 import { BuildingIcon, ClockIcon, PaintIcon, UsersIcon } from "@/components/icons";
 import { faqWinkelVerbouwen } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Winkel verbouwen in Twente | Afbouwstudio" },
@@ -104,6 +105,11 @@ export default function WinkelVerbouwenPage() {
         items={faqWinkelVerbouwen}
         eyebrow="02 — Veelgesteld"
         title="Vragen over winkels verbouwen"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "bedrijven" }}
+        title="Kennis voor ondernemers"
       />
 
       {/* CTA */}

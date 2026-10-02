@@ -6,6 +6,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
 import { CheckIcon } from "@/components/icons";
 import { faqKantoorAlmelo } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Almelo | Afbouwstudio — MTB Bouw" },
@@ -113,6 +114,11 @@ export default function KantoorAlmeloPage() {
         items={faqKantoorAlmelo}
         eyebrow="03 — Veelgesteld"
         title="Kantoor verbouwen in Almelo: veelgestelde vragen"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "bedrijven" }}
+        title="Kennis voor ondernemers"
       />
 
       <section id="contact" className="scroll-mt-24 bg-ink text-white">

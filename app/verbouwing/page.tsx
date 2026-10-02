@@ -19,6 +19,10 @@ export default function VerbouwingPage() {
     <ServicePageTemplate
       data={renovatieData}
       caseImage="/images/projects/project-1.jpg"
+      kennisbank={{
+        match: { categories: ["plannen-aanpak", "kosten-offertes"], audience: "thuis" },
+        title: "Lees je in voor je gaat verbouwen",
+      }}
     />
   );
 }

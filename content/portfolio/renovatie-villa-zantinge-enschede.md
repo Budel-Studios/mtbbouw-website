@@ -28,4 +28,4 @@ Bij een woning als villa Zantinge kijken we per onderdeel: wat is origineel en w
 
 Een villa die klaar is voor de komende decennia, met zijn karakter volledig intact.
 
-Zelf een woning met karakter renoveren in Enschede of Twente? Bekijk [renovatie & verbouw](/verbouwing) of lees hoe je [verbouwen en verduurzamen slim combineert](/kennisbank/verbouwen-en-verduurzamen-isde-2026).
+Zelf een woning met karakter renoveren in Enschede of Twente? Bekijk [renovatie & verbouw](/verbouwing) of lees hoe je [verbouwen en verduurzamen slim combineert](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk).

@@ -212,11 +212,17 @@ function Tile({
 export function ArticleGrid({
   articles,
   intro,
+  filterable = true,
 }: {
   articles: Article[];
   intro?: string;
+  /** false op hubpagina's: daar is de selectie al gemaakt, dus geen filters. */
+  filterable?: boolean;
 }) {
-  const { filters, setFilter, reset } = useFilters();
+  const { filters: urlFilters, setFilter, reset } = useFilters();
+  const filters = filterable
+    ? urlFilters
+    : { category: "", subcategory: "", audience: "" };
 
   // Alleen opties tonen waar ook echt artikelen onder staan, in de vaste
   // volgorde van de taxonomie (niet alfabetisch).
@@ -256,53 +262,57 @@ export function ArticleGrid({
         </p>
       )}
 
-      <div className="mt-8 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-        <AudienceToggle
-          active={filters.audience}
-          onChange={(v) => setFilter("audience", v)}
-        />
+      {filterable && (
+        <div className="mt-8 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <AudienceToggle
+            active={filters.audience}
+            onChange={(v) => setFilter("audience", v)}
+          />
 
-        <div className="flex flex-col gap-3 md:flex-row">
-          {categoryOptions.length > 1 && (
-            <FilterDropdown
-              label="Filter op onderwerp"
-              options={[ALL_CATEGORIES, ...categoryOptions.map((c) => c.label)]}
-              active={labelFor(CATEGORIES, filters.category, ALL_CATEGORIES)}
-              onChange={(label) =>
-                setFilter("category", slugFor(CATEGORIES, label))
-              }
-            />
-          )}
-          {subcategoryOptions.length > 1 && (
-            <FilterDropdown
-              label="Filter op bouwdeel"
-              options={[
-                ALL_SUBCATEGORIES,
-                ...subcategoryOptions.map((s) => s.label),
-              ]}
-              active={labelFor(SUBCATEGORIES, filters.subcategory, ALL_SUBCATEGORIES)}
-              onChange={(label) =>
-                setFilter("subcategory", slugFor(SUBCATEGORIES, label))
-              }
-            />
-          )}
+          <div className="flex flex-col gap-3 md:flex-row">
+            {categoryOptions.length > 1 && (
+              <FilterDropdown
+                label="Filter op onderwerp"
+                options={[ALL_CATEGORIES, ...categoryOptions.map((c) => c.label)]}
+                active={labelFor(CATEGORIES, filters.category, ALL_CATEGORIES)}
+                onChange={(label) =>
+                  setFilter("category", slugFor(CATEGORIES, label))
+                }
+              />
+            )}
+            {subcategoryOptions.length > 1 && (
+              <FilterDropdown
+                label="Filter op bouwdeel"
+                options={[
+                  ALL_SUBCATEGORIES,
+                  ...subcategoryOptions.map((s) => s.label),
+                ]}
+                active={labelFor(SUBCATEGORIES, filters.subcategory, ALL_SUBCATEGORIES)}
+                onChange={(label) =>
+                  setFilter("subcategory", slugFor(SUBCATEGORIES, label))
+                }
+              />
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
-      <p className="mt-4 flex items-center gap-3 text-sm text-stone" aria-live="polite">
-        <span>
-          {visible.length} {visible.length === 1 ? "artikel" : "artikelen"}
-        </span>
-        {anyActive && (
-          <button
-            type="button"
-            onClick={reset}
-            className="font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-lime-dark"
-          >
-            Wis filters
-          </button>
-        )}
-      </p>
+      {filterable && (
+        <p className="mt-4 flex items-center gap-3 text-sm text-stone" aria-live="polite">
+          <span>
+            {visible.length} {visible.length === 1 ? "artikel" : "artikelen"}
+          </span>
+          {anyActive && (
+            <button
+              type="button"
+              onClick={reset}
+              className="font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-lime-dark"
+            >
+              Wis filters
+            </button>
+          )}
+        </p>
+      )}
 
       {visible.length > 0 ? (
         <div className="mt-6 grid auto-rows-[170px] grid-cols-2 gap-1.5 md:auto-rows-[220px] md:grid-cols-4">

@@ -15,6 +15,7 @@ import {
   CheckIcon,
 } from "@/components/icons";
 import { faqKantoorVerbouwen } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio" },
@@ -237,7 +238,7 @@ export default function KantoorVerbouwenPage() {
               <UsersIcon className="h-5 w-5 text-ink" /> Eén vast team, ook op locatie
             </div>
             <div className="flex items-center gap-3 text-sm text-stone">
-              <ClockIcon className="h-5 w-5 text-ink" /> Ook 's avonds of in het weekend
+              <ClockIcon className="h-5 w-5 text-ink" /> Ook &apos;s avonds of in het weekend
             </div>
           </div>
         </div>
@@ -247,6 +248,11 @@ export default function KantoorVerbouwenPage() {
         items={faqKantoorVerbouwen}
         eyebrow="05 — Veelgesteld"
         title="Vragen over kantoor verbouwen"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "bedrijven" }}
+        title="Kennis voor ondernemers"
       />
 
       {/* CTA — zelfde patroon als /afbouwstudio */}

@@ -1,5 +1,6 @@
 ---
 title: "Lunchroom beginnen: van leeg pand tot opening, stap voor stap"
+seoTitle: "Lunchroom beginnen: van leeg pand tot opening"
 description: "Een lunchroom beginnen in een leeg pand? Zo pak je het aan: pandkeuze, vergunningen, installaties, keuken en planning. Met echt praktijkvoorbeeld uit Zwolle."
 date: 2026-07-05
 category: plannen-aanpak

@@ -9,6 +9,7 @@ import { RelatedContent } from "@/components/sections/related-content";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerLosser } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Losser | MTB Bouw — ook De Lutte & Overdinkel" },
@@ -85,6 +86,11 @@ export default function AannemerLosserPage() {
         projects={projects}
         eyebrow="Werk uit de regio"
         title="Recent werk in Twente"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "thuis" }}
+        title="Lees je in voor je gaat verbouwen"
       />
 
       <NearbyPlaces currentSlug="aannemer-losser" />

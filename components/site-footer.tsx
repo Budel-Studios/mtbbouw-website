@@ -93,6 +93,13 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-5 space-y-3 font-display text-sm">
                 <li>
+                  <address className="not-italic leading-relaxed text-stone">
+                    {site.address.streetAddress}
+                    <br />
+                    {site.address.postalCode} {site.address.addressLocality}
+                  </address>
+                </li>
+                <li>
                   <a
                     href={`mailto:${site.email}`}
                     className="whitespace-nowrap text-stone transition-colors hover:text-lime-dark"

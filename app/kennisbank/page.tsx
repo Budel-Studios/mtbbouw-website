@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { kennisbank } from "#site/content";
 import { ArticleGrid } from "@/components/article-grid";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { HubLinks } from "@/components/kennisbank/hub-links";
+import { publishedArticles, toCard } from "@/lib/kennisbank";
 
 const INTRO =
   "Praktische uitleg en advies over bouwen, verbouwen, renoveren en kozijnen. Van veelgestelde vragen tot achtergrondartikelen: hier vind je antwoorden zonder poeha, geschreven door het team dat het werk ook echt uitvoert.";
@@ -20,22 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function KennisbankPage() {
-  const articles = kennisbank
-    .filter((a) => !a.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .map((a) => ({
-      slug: a.slug,
-      permalink: a.permalink,
-      title: a.title,
-      description: a.description,
-      category: a.category,
-      subcategories: a.subcategories,
-      audience: a.audience,
-      date: a.date,
-      readingTime: a.metadata.readingTime,
-      cover: a.cover,
-      coverAlt: a.coverAlt,
-    }));
+  const articles = publishedArticles().map(toCard);
 
   return (
     <div className="bg-canvas">
@@ -57,6 +43,11 @@ export default function KennisbankPage() {
         </h1>
 
         <ArticleGrid articles={articles} intro={INTRO} />
+
+        {/* Vaste links naar de hubpagina's: crawlbaar, in tegenstelling tot de filter. */}
+        <div className="mt-16 border-t border-mist pt-10">
+          <HubLinks />
+        </div>
       </div>
     </div>
   );

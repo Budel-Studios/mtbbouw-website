@@ -1,7 +1,9 @@
 ---
 title: "ISDE-subsidie uitgelegd: zo werkt het écht (in gewone taal)"
+seoTitle: "ISDE-subsidie uitgelegd in gewone taal"
 description: "Wat is de ISDE-subsidie, welke isolatiemaatregelen tellen mee en hoe vraag je hem aan? We leggen het uit alsof je bij ons aan de keukentafel zit."
 date: 2026-07-05
+updated: 2026-10-02
 category: verduurzamen
 subcategories: [daken, vloeren, kozijnen-glas]
 audience: [thuis]
@@ -28,7 +30,7 @@ Want de ISDE is eigenlijk een prima regeling. De overheid betaalt mee als jij je
 - Waarom twee maatregelen slimmer zijn dan één
 - Stappenplan: zo vraag je de ISDE aan
 - Veelgemaakte fouten (die we vaak voorbij zien komen)
-- ISDE combineren met een verbouwing
+- Verbouwen en verduurzamen tegelijk
 - Veelgestelde vragen
 - Samenvatting
 
@@ -114,11 +116,35 @@ Tip: maak op je telefoon een mapje "ISDE" en gooi daar alles meteen in. Factuur,
 - **Maatregelen los aanvragen** terwijl combineren het hoge tarief had opgeleverd.
 - **Materiaal dat niet op de lijst staat.** Niet elk product voldoet aan de eisen. Even checken vooraf voorkomt een kater achteraf.
 
-## De slimme combinatie: ISDE + verbouwing
+## Verbouwen en verduurzamen tegelijk
 
-En nu het leukste. Ga je toch al verbouwen — een [aanbouw of uitbouw](/aanbouw-uitbouw), een dakrenovatie, een grote [verbouwing](/verbouwing) — dan is dát het moment om isolatie mee te pakken. De steiger staat er toch al, de vakmensen lopen toch al rond, en met twee maatregelen pak je meteen het hoge ISDE-tarief.
+En nu het leukste. Ga je toch al verbouwen, zoals een [aanbouw of uitbouw](/aanbouw-uitbouw), een dakrenovatie of een grote [verbouwing](/verbouwing)? Dan is dát het moment om isolatie mee te pakken. Bij een losse verduurzamingsklus betaal je elke keer opnieuw voor voorbereiding, steigerwerk, sloopwerk en afwerking. Tijdens een verbouwing zijn die kosten er al.
 
-Zo maakte de subsidie een deel van de meerkosten goed, en je energierekening wordt er elke maand vrolijker van. Hoe je verbouwen en verduurzamen precies slim combineert, lees je in ons artikel over [verbouwen en verduurzamen met ISDE](/kennisbank/verbouwen-en-verduurzamen-isde-2026). En woon je in de buurt, kijk dan ook even bij [verduurzamen in Enschede](/verduurzamen-enschede).
+Een paar voorbeelden uit de praktijk:
+
+- **Dak open voor een dakkapel of opbouw?** Dakisolatie meenemen kost dan vooral het materiaal en wat extra arbeid.
+- **Gevel aanpassen voor een aanbouw?** Spouw- of gevelisolatie lift mee op hetzelfde werk.
+- **Kozijnen die toch vervangen worden?** Kies dan meteen [HR++ of triple glas](/kozijnen). Het prijsverschil met standaardglas is klein, het verschil in comfort groot.
+
+En met twee maatregelen pak je meteen het hoge ISDE-tarief. Zo maakt de subsidie een deel van de meerkosten goed, en je energierekening wordt er elke maand vrolijker van.
+
+### De juiste volgorde: eerst de schil, dan de techniek
+
+1. **Isoleren:** dak, gevel, vloer en glas. Dit verlaagt de warmtevraag blijvend.
+2. **Ventileren:** een goed geïsoleerd huis heeft gecontroleerde ventilatie nodig.
+3. **Installaties:** pas daarna een (hybride) warmtepomp. Die kan dan kleiner, en dus goedkoper.
+
+Wie de volgorde omdraait, betaalt een te grote installatie voor een lek huis.
+
+### Stappenplan: verbouwen, verduurzamen en subsidie
+
+1. **Plan de verbouwing** en vraag je aannemer om verduurzamingsopties voor elk bouwdeel dat toch open gaat.
+2. **Kies maatregelen die aan de ISDE-eisen voldoen** (isolatiewaarde en oppervlakte). Wij adviseren daarover in het voortraject.
+3. **Laat het werk uitvoeren** en vraag om een gespecificeerde factuur met m² en isolatiewaarden.
+4. **Dien de aanvraag in** via mijn.rvo.nl, met DigiD, facturen, betaalbewijzen en foto's.
+5. **Uitbetaling** volgt na goedkeuring door RVO.
+
+Naast de subsidie levert het je een lagere energierekening op, minder tocht en geluid, en een beter energielabel. Woon je in de buurt? Kijk dan ook bij [verduurzamen in Enschede](/verduurzamen-enschede).
 
 Leuk weetje: een goed geïsoleerd huis is niet alleen in de winter fijn. In de zomer houdt diezelfde isolatie de hitte buiten. Twee vliegen, één klap.
 
@@ -150,7 +176,7 @@ DigiD, een gespecificeerde factuur (m², isolatiewaarden, materiaal), een betaal
 
 ### Kan ik de ISDE combineren met een verbouwing?
 
-Ja, en dat is vaak juist slim: je pakt isolatie mee terwijl de bouw toch al bezig is, en met twee maatregelen krijg je het hoge tarief. Lees er meer over in [verbouwen en verduurzamen met ISDE](/kennisbank/verbouwen-en-verduurzamen-isde-2026).
+Ja, en dat is vaak juist slim: je pakt isolatie mee terwijl de bouw toch al bezig is, en met twee maatregelen krijg je het hoge tarief. Isoleer eerst de schil (dak, gevel, vloer, glas) en kies daarna pas installaties zoals een warmtepomp.
 
 ## Samenvatting
 

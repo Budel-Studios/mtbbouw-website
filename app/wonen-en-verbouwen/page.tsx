@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { HammerIcon, HouseIcon, WallIcon } from "@/components/icons";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: "Wonen & Verbouwen",
@@ -120,6 +121,11 @@ export default function WonenEnVerbouwenPage() {
           </div>
         </div>
       </section>
+
+      <KennisbankBlock
+        match={{ categories: ["plannen-aanpak", "kosten-offertes"], audience: "thuis" }}
+        title="Lees je in voor je gaat verbouwen"
+      />
     </>
   );
 }

@@ -6,6 +6,7 @@ import { SplitSection } from "@/components/sections/split-section";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { HammerIcon, ShieldIcon, HouseIcon } from "@/components/icons";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: "Traditioneel bouwen in Twente",
@@ -87,6 +88,11 @@ export default function BouwmethodesPage() {
           bouwtijd en kosten.
         </p>
       </SplitSection>
+
+      <KennisbankBlock
+        match={{ categories: ["technische-keuzes"], subcategories: ["fundering-constructie"] }}
+        title="Meer over bouwmethodes"
+      />
 
       <CtaBanner
         eyebrow="Advies nodig?"

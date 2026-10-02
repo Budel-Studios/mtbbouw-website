@@ -61,9 +61,26 @@ Doelgroep: alles `thuis`, behalve "Plafonds 80 appartementen" en "Casco bedrijfs
 - **Interne links:** elk artikel linkt naar de pijler van z'n serie, naar de bijbehorende dienstpagina en waar mogelijk naar een project.
 - **Feiten:** regels, subsidies en U-/Rc-waarden altijd checken bij de bron (rvo.nl, iplo.nl) en de bron linken. Geen bedragen noemen die snel verouderen.
 - **Persoonlijke verhalen:** alleen wat het team zelf heeft verteld. Niets verzinnen.
+- **Frontmatter van een nieuw artikel:**
+
+  ```yaml
+  title: "Volledige titel (H1)"
+  seoTitle: "Korte titel voor Google"   # alleen als titel + " | MTB Bouw" boven 60 tekens komt
+  description: "140–160 tekens"
+  date: 2026-10-20                      # geplande publicatiedatum
+  category: technische-keuzes
+  subcategories: [gevels]
+  audience: [thuis]
+  series: uitbouw                       # als het bij een serie hoort
+  author: robbert                       # of mathijs; weglaten = MTB Bouw
+  cover: /images/...
+  coverAlt: "..."
+  draft: true                           # de scheduled task zet dit op false
+  ```
+- **Links naar concepten:** link vanuit een live artikel niet naar een concept; die pagina bestaat nog niet. Serienavigatie en "Lees ook" nemen nieuwe artikelen automatisch mee zodra ze live staan.
 
 ## Onderhoud bestaande artikelen
 
-- De twee ISDE-artikelen (`isde-subsidie-uitgelegd` en `verbouwen-en-verduurzamen-isde-2026`) concurreren op hetzelfde zoekwoord. Voorstel: samenvoegen en de kortste met een 301 doorverwijzen.
+- ✅ De twee ISDE-artikelen zijn samengevoegd in `isde-subsidie-uitgelegd`; de oude URL verwijst door (301).
 - `wat-kost-een-aanbouw-2026` en `kantoor-verbouwen-kosten-2026` in januari bijwerken naar 2027 en uitbreiden met rekenvoorbeelden.
 - `kozijnen-vervangen-wanneer` gebruikt nog een placeholderfoto.

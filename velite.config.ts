@@ -3,9 +3,14 @@ import rehypeSlug from "rehype-slug";
 import {
   AUDIENCE_SLUGS,
   CATEGORY_SLUGS,
+  MAX_META_DESCRIPTION,
   MAX_SUBCATEGORIES,
+  MAX_TITLE_TAG,
+  SERIES_SLUGS,
   SUBCATEGORY_SLUGS,
+  TITLE_SUFFIX,
 } from "./lib/kennisbank-taxonomy";
+import { AUTHOR_SLUGS } from "./lib/authors";
 
 // Shared computed fields. `s.path()` gives the file path relative to `root`
 // (e.g. "kennisbank/kozijnen-vervangen"); we take the last segment as the slug.
@@ -16,8 +21,11 @@ const kennisbank = defineCollection({
   pattern: "kennisbank/**/*.md",
   schema: s
     .object({
-      title: s.string().max(120),
-      description: s.string().max(200),
+      title: s.string().max(120), // H1 van het artikel
+      // Korte titel voor Google (zonder " | MTB Bouw", dat plakt de template
+      // erachter). Alleen nodig als de H1 te lang is voor de zoekresultaten.
+      seoTitle: s.string().max(MAX_TITLE_TAG - TITLE_SUFFIX.length).optional(),
+      description: s.string().max(200), // meta description; streef ≤ 160
       date: s.isodate(),
       updated: s.isodate().optional(),
       // Indeling — zie lib/kennisbank-taxonomy.ts voor de toegestane slugs.
@@ -30,6 +38,9 @@ const kennisbank = defineCollection({
         .array(s.enum(AUDIENCE_SLUGS))
         .min(1)
         .default(["thuis", "bedrijven"]), // voor wie: thuis en/of bedrijven
+      series: s.enum(SERIES_SLUGS).optional(), // redactionele serie, bijv. "kozijnen"
+      // Auteur uit lib/authors.ts. Zonder auteur is MTB Bouw de auteur.
+      author: s.enum(AUTHOR_SLUGS).optional(),
       // Optional optimized cover image. When present, Velite copies it to
       // /public/static and returns { src, width, height, blurDataURL } for next/image.
       cover: s.string().optional(), // publiek pad onder /public
@@ -42,9 +53,28 @@ const kennisbank = defineCollection({
     })
     .transform((data) => {
       const slug = slugFrom(data.path);
+      warnSeoLimits(slug, data.seoTitle ?? data.title, data.description);
       return { ...data, slug, permalink: `/kennisbank/${slug}` };
     }),
 });
+
+/**
+ * Waarschuwt (zonder de build te breken) als de titel in Google of de meta
+ * description te lang wordt. Google kapt dan af met "…".
+ */
+function warnSeoLimits(slug: string, title: string, description: string) {
+  const titleTag = `${title}${TITLE_SUFFIX}`;
+  if (titleTag.length > MAX_TITLE_TAG) {
+    console.warn(
+      `[kennisbank] ${slug}: titel in Google is ${titleTag.length} tekens (max ${MAX_TITLE_TAG}). Vul een korter seoTitle in.`
+    );
+  }
+  if (description.length > MAX_META_DESCRIPTION) {
+    console.warn(
+      `[kennisbank] ${slug}: description is ${description.length} tekens (max ${MAX_META_DESCRIPTION}).`
+    );
+  }
+}
 
 const portfolio = defineCollection({
   name: "Project",

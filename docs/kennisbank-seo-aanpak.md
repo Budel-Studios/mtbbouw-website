@@ -106,8 +106,8 @@ Elke serie heeft een **pijler** (het brede overzichtsartikel) en clusterartikele
 |---|---|
 | URL (slug) | Hoofdzoekwoord, kort, **geen jaartal** (verouderd snel; jaartal hoort in de titel) |
 | Titel (H1) | Max 120 tekens, hoofdzoekwoord vooraan |
-| Titel in Google | Max ~60 tekens inclusief " \| MTB Bouw". Is de H1 langer, vul dan `seoTitle` (zie §7) |
-| Meta description | 140–160 tekens: hoofdzoekwoord, regio waar het past, wat de lezer eraan heeft |
+| Titel in Google | Max 60 tekens inclusief " \| MTB Bouw". Is de H1 langer, vul dan `seoTitle` in (max 49 tekens). De build waarschuwt als het te lang is |
+| Meta description | 140–160 tekens: hoofdzoekwoord, regio waar het past, wat de lezer eraan heeft. De build waarschuwt boven 160 |
 | Eerste alinea's | Aanleiding + meteen het antwoord of ons standpunt. Zelfstandig te citeren door AI |
 | Koppen | H2 als vraag waar het kan ("Wat kost …", "Wanneer kies je …") |
 | FAQ | `## Veelgestelde vragen` met 5–8 `###`-vragen. Wordt automatisch FAQ-schema |
@@ -115,19 +115,23 @@ Elke serie heeft een **pijler** (het brede overzichtsartikel) en clusterartikele
 | Beeld | Eigen omslagfoto (min. 1600 px breed) + 1–3 foto's in de tekst, alle met alt-tekst |
 | Bronnen | 1–3 links naar gezaghebbende bronnen (rvo.nl, iplo.nl, Milieu Centraal) |
 | Indeling | `category`, `subcategories`, `audience` volgens lib/kennisbank-taxonomy.ts |
+| Serie | `series` (kozijnen, uitbouw, offertes-prijzen, klus-plannen) als het artikel bij een serie hoort. Serienavigatie en "Lees ook" volgen automatisch |
+| Auteur | `author: mathijs` of `author: robbert` (lib/authors.ts). Zonder auteur is MTB Bouw de auteur |
 | Datum | `updated` invullen bij elke inhoudelijke update |
 
 ## 7. Technische verbeteringen (code)
 
-Op volgorde van effect. De eerste vier zijn het belangrijkst.
+Stand 2 oktober 2026: alle zeven punten zijn gebouwd (pull request #1).
 
-1. **Onderwerp- en bouwdeelpagina's die kunnen ranken.** De filter met `?onderwerp=` is handig voor bezoekers, maar elke gefilterde weergave heeft dezelfde inhoud en canonical als /kennisbank. Google ziet die dus niet als aparte pagina's. Echte pagina's als `/kennisbank/onderwerp/verduurzamen` en `/kennisbank/bouwdeel/kozijnen-glas`, met een eigen intro van 150–300 woorden, eigen title en description, kunnen wél ranken. Ze worden ook de broodkruimel tussen Kennisbank en artikel.
-2. **Kennisbank-blok op dienst- en stadspagina's.** "Uit de kennisbank": automatisch de 3 nieuwste artikelen met het bijbehorende onderwerp of bouwdeel (bijvoorbeeld op /kozijnen alle artikelen met bouwdeel `kozijnen-glas`). Nu linkt alleen /aannemer-enschede naar één artikel.
-3. **"Lees ook" onder elk artikel.** Automatisch 3 artikelen uit dezelfde serie of hetzelfde bouwdeel, plus een serienavigatie ("Deel 2 van 6: Kozijnen"). Nieuw veld `series` in de frontmatter.
-4. **Auteur per artikel.** Naam en rol (Mathijs of Robbert) onder de titel, met Person-schema. Nu staat het bedrijf als auteur; een echte vakman als auteur weegt zwaarder voor ervaring en betrouwbaarheid.
-5. **`seoTitle`-veld** voor een korte Google-titel naast een langere H1.
-6. **Waarschuwing bij te lange description** (> 160 tekens) tijdens de build.
-7. **Stadspagina's Hengelo en Almelo** (uit de site-strategie, fase 2). De twee grootste Twentse plaatsen na Enschede hebben nog geen particuliere stadspagina; artikelen kunnen er dan ook naartoe linken.
+Hoe de hubpagina's werken: een onderwerp of bouwdeel krijgt pas een eigen pagina vanaf 2 gepubliceerde artikelen (`MIN_HUB_ARTICLES`). Daaronder linken labels naar de gefilterde kennisbank. Nieuwe hubs verschijnen vanzelf bij de volgende build, dus ook als de scheduled task een artikel live zet.
+
+1. ✅ **Onderwerp- en bouwdeelpagina's die kunnen ranken.** De filter met `?onderwerp=` is handig voor bezoekers, maar elke gefilterde weergave heeft dezelfde inhoud en canonical als /kennisbank. Google ziet die dus niet als aparte pagina's. Echte pagina's als `/kennisbank/onderwerp/verduurzamen` en `/kennisbank/bouwdeel/kozijnen-glas`, met een eigen intro van 150–300 woorden, eigen title en description, kunnen wél ranken. Ze worden ook de broodkruimel tussen Kennisbank en artikel.
+2. ✅ **Kennisbank-blok op dienst- en stadspagina's.** "Uit de kennisbank": automatisch de 3 nieuwste artikelen met het bijbehorende onderwerp of bouwdeel (bijvoorbeeld op /kozijnen alle artikelen met bouwdeel `kozijnen-glas`). Nu linkt alleen /aannemer-enschede naar één artikel.
+3. ✅ **"Lees ook" onder elk artikel.** Automatisch 3 artikelen uit dezelfde serie of hetzelfde bouwdeel, plus een serienavigatie ("Deel 2 van 6: Kozijnen"). Nieuw veld `series` in de frontmatter.
+4. ✅ **Auteur per artikel.** Naam en rol (Mathijs of Robbert) onder de titel, met Person-schema. Nu staat het bedrijf als auteur; een echte vakman als auteur weegt zwaarder voor ervaring en betrouwbaarheid.
+5. ✅ **`seoTitle`-veld** voor een korte Google-titel naast een langere H1.
+6. ✅ **Waarschuwing bij te lange titel of description** (> 160 tekens) tijdens de build.
+7. ✅ **Stadspagina's Hengelo en Almelo** (uit de site-strategie, fase 2). De twee grootste Twentse plaatsen na Enschede hebben nog geen particuliere stadspagina; artikelen kunnen er dan ook naartoe linken.
 
 ## 8. Buiten de website, per artikel
 
@@ -145,6 +149,8 @@ De scheduled task kan bij elke publicatie meteen een kant-en-klare tekst voor he
 Lokale vindbaarheid leunt op overal exact dezelfde bedrijfsgegevens. Op 2 oktober 2026 is een volledige check gedaan; zie de NAP-audit in [local-seo-actieplan.md](local-seo-actieplan.md). Kort: KvK 42148321 (MTB Bouw B.V.) op de site klopt. Diverse gidsen tonen nog de oude eenmanszaak (KvK 60942037) met oude adressen.
 
 ## 10. Bestaande artikelen
+
+Stand 2 oktober 2026: ISDE samengevoegd (301 actief), kozijnen-vervangen-wanneer uitgebreid, korte Google-titels toegevoegd. Kosten-artikelen bijwerken staat nog voor januari.
 
 - **ISDE:** `isde-subsidie-uitgelegd` en `verbouwen-en-verduurzamen-isde-2026` concurreren met elkaar. Samenvoegen en de kortste doorverwijzen (301).
 - **Kosten-artikelen** (`wat-kost-een-aanbouw-2026`, `kantoor-verbouwen-kosten-2026`): in januari bijwerken naar 2027 en uitbreiden met rekenvoorbeelden. URL blijft gelijk; titel en `updated` veranderen.

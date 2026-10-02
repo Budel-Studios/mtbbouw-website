@@ -11,6 +11,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { ClockIcon, RulerIcon, CheckIcon, WallIcon, ShedIcon } from "@/components/icons";
 import { faqPrefab } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: "Prefab bouwen in Twente",
@@ -155,6 +156,11 @@ export default function PrefabPage() {
       />
 
       <FaqAccordion items={faqPrefab} title="Veelgestelde vragen over prefab" />
+
+      <KennisbankBlock
+        match={{ categories: ["technische-keuzes"], subcategories: ["fundering-constructie"], audience: "thuis" }}
+        title="Meer over bouwmethodes"
+      />
 
       <CtaBanner
         eyebrow="Vrijblijvend advies"

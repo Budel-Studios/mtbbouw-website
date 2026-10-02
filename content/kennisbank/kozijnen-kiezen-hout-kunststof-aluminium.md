@@ -1,10 +1,13 @@
 ---
 title: "Kozijnen kiezen: hout, kunststof of aluminium? Alles over duurzame kozijnen"
+seoTitle: "Kozijnen kiezen: hout, kunststof of aluminium?"
 description: "Hout, kunststof of aluminium? HR++ of triple glas? Alles wat je moet weten om duurzame kozijnen te kiezen, met eerlijk advies van MTB Bouw uit Enschede."
 date: 2026-10-13
 category: technische-keuzes
 subcategories: [kozijnen-glas]
 audience: [thuis]
+series: kozijnen
+author: robbert
 cover: /images/projects/dubbele-uitbouw-enschede/03.webp
 coverAlt: "Witte kozijnen in een uitbouw in Enschede, gebouwd door MTB Bouw"
 tags:

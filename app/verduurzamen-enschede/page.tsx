@@ -7,6 +7,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { HouseIcon, WindowIcon, LayersIcon, RecycleIcon } from "@/components/icons";
 import { faqVerduurzamen } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Woning verduurzamen in Enschede | MTB Bouw" },
@@ -117,7 +118,7 @@ export default function VerduurzamenEnschedePage() {
                 </a>
                 . Wij denken mee over welke maatregelen in aanmerking komen en
                 helpen bij de aanvraag. Lees ook onze{" "}
-                <Link href="/kennisbank/verbouwen-en-verduurzamen-isde-2026" className="font-semibold text-ink underline hover:text-lime-dark">
+                <Link href="/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk" className="font-semibold text-ink underline hover:text-lime-dark">
                   gids over verbouwen en verduurzamen tegelijk
                 </Link>
                 .
@@ -147,6 +148,11 @@ export default function VerduurzamenEnschedePage() {
         items={faqVerduurzamen}
         eyebrow="Veelgesteld"
         title="Vragen over verduurzamen"
+      />
+
+      <KennisbankBlock
+        match={{ categories: ["verduurzamen"], audience: "thuis" }}
+        title="Meer over verduurzamen"
       />
 
       <CtaBanner

@@ -872,6 +872,52 @@ export const faqAannemerLosser: Faq[] = [
   },
 ];
 
+export const faqAannemerHengelo: Faq[] = [
+  {
+    question: "Werken jullie vaak in Hengelo?",
+    answer:
+      "Ja, Hengelo is onze directe buurstad en hoort bij ons vaste werkgebied. Vanaf onze werkplaats in Enschede zijn we er binnen een kwartier.",
+  },
+  {
+    question: "Rekenen jullie voorrijkosten naar Hengelo?",
+    answer:
+      "Nee, we werken met een vaste projectprijs waar alles in zit.",
+  },
+  {
+    question: "Voor welke klussen kan ik jullie in Hengelo inschakelen?",
+    answer:
+      "Renovatie en verbouw, aanbouwen en uitbouwen, kozijnen via De Kozijnstudio en prefab bouwen. Dat doen we in heel Hengelo, en ook in Beckum en Oele.",
+  },
+  {
+    question: "Doen jullie in Hengelo ook zakelijke projecten?",
+    answer:
+      "Ja. Via Afbouwstudio bouwen we kantoren, winkels en bedrijfspanden af, van casco tot turn-key, met één team en één vaste prijs.",
+  },
+];
+
+export const faqAannemerAlmelo: Faq[] = [
+  {
+    question: "Hoort Almelo bij jullie werkgebied?",
+    answer:
+      "Ja. Almelo ligt op zo'n halfuur van onze werkplaats in Enschede en hoort bij ons vaste Twentse werkgebied, net als Aadorp, Bornerbroek en Mariaparochie.",
+  },
+  {
+    question: "Rekenen jullie voorrijkosten naar Almelo?",
+    answer:
+      "Nee, alles zit in de vaste projectprijs.",
+  },
+  {
+    question: "Kan ik in Almelo ook prefab laten bouwen?",
+    answer:
+      "Ja. Via ons Prefab-label staat de ruwbouw van een aanbouw vaak binnen een week, met minder overlast voor jou en de buren.",
+  },
+  {
+    question: "Doen jullie in Almelo ook zakelijke projecten?",
+    answer:
+      "Ja. Via Afbouwstudio bouwen we kantoren, winkels en bedrijfspanden af, van casco tot turn-key, met één team en één vaste prijs.",
+  },
+];
+
 /* ----------------------- Kantoor-stadspagina's Twente ------------------------------ */
 
 export const faqKantoorEnschede: Faq[] = [

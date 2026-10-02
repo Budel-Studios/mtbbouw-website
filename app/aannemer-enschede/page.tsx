@@ -11,6 +11,7 @@ import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { UsersIcon, EuroIcon, ClockIcon, HammerIcon, HouseIcon, WindowIcon, LayersIcon } from "@/components/icons";
 import { faqAannemerEnschede } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Enschede — verbouw & renovatie | MTB Bouw" },
@@ -197,6 +198,11 @@ export default function AannemerEnschedePage() {
         items={faqAannemerEnschede}
         eyebrow="Veelgesteld"
         title="Vragen aan een aannemer in Enschede"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "thuis" }}
+        title="Lees je in voor je gaat verbouwen"
       />
 
       <NearbyPlaces currentSlug="aannemer-enschede" />

@@ -3,6 +3,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { ArrowLink } from "@/components/ui/button";
 import { WindowIcon, CheckIcon, EuroIcon } from "@/components/icons";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Kozijnen | De Kozijnstudio — het kozijnen-label van MTB Bouw" },
@@ -78,6 +79,11 @@ export default function KozijnenPage() {
           </div>
         </div>
       </section>
+
+      <KennisbankBlock
+        match={{ subcategories: ["kozijnen-glas"], audience: "thuis" }}
+        title="Meer over kozijnen en glas"
+      />
 
       <section className="border-y border-mist bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 text-center sm:py-24">

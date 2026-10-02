@@ -1,5 +1,6 @@
 ---
 title: "Een kantoor inrichten waar mensen graag werken: zo pak je het aan"
+seoTitle: "Kantoor inrichten: zo pak je het aan"
 description: "Kantoor inrichten? Het draait om licht, akoestiek en indeling — niet om dure bureaus. Praktische tips, een checklist en eerlijke prijzen uit de praktijk."
 date: 2026-07-05
 category: plannen-aanpak
