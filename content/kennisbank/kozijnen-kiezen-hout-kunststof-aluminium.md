@@ -1,12 +1,12 @@
 ---
 title: "Kozijnen kiezen: hout, kunststof of aluminium? Alles over duurzame kozijnen"
-description: "Hout, kunststof of aluminium, HR++ of triple glas, een zwarte of aluminium afstandhouder: alles wat je moet weten om duurzame kozijnen te kiezen. Eerlijk advies van MTB Bouw."
+description: "Hout, kunststof of aluminium? HR++ of triple glas? Alles wat je moet weten om duurzame kozijnen te kiezen, met eerlijk advies van MTB Bouw uit Enschede."
 date: 2026-10-13
 category: technische-keuzes
 subcategories: [kozijnen-glas]
 audience: [thuis]
 cover: /images/projects/dubbele-uitbouw-enschede/03.webp
-coverAlt: "Witte kozijnen met HR++ glas in een uitbouw in Enschede, geplaatst door MTB Bouw"
+coverAlt: "Witte kozijnen in een uitbouw in Enschede, gebouwd door MTB Bouw"
 tags:
   - kozijnen kiezen
   - duurzame kozijnen
@@ -42,13 +42,14 @@ In dit artikel lopen we alle keuzes langs die je bij een kozijn maakt, met de na
 - Uitstraling: profiel, kleur en dorpels
 - Draairichting, ventilatie en veiligheid
 - Montage: hier wordt duurzaamheid gemaakt of gebroken
+- Kozijnen laten plaatsen in Enschede en Twente
 - Subsidie en vergunning
 - Veelgemaakte fouten
 - Veelgestelde vragen
 
 ## Waarom wij De Kozijnstudio zijn begonnen
 
-We hebben met MTB Bouw al heel wat kozijnen mogen plaatsen. In uitbouwen, bij renovaties, in hele woningen. Steeds vaker kregen we de vraag of we "alleen" de kozijnen wilden doen. Daarom hebben we er een eigen tak voor opgezet: [De Kozijnstudio](https://dekozijnstudio.nl). Volledig gespecialiseerd in kozijnen, met transparante prijzen waar alles al in zit.
+We hebben met MTB Bouw al heel veel kozijnen mogen plaatsen. Dat is ook waarom we er een eigen tak voor hebben opgezet: [De Kozijnstudio](https://dekozijnstudio.nl). Volledig gespecialiseerd in kozijnen, met transparante prijzen waar alles al in zit.
 
 Maar we willen ons niet beperken tot één materiaal. Veel kozijnbedrijven verkopen alleen kunststof, omdat dat hun inkoop is. Wij vinden dat zonde. Een kozijn plaatsen is immers hetzelfde proces, of het nu van hout, kunststof of aluminium is. Inmeten, oude kozijnen eruit, nieuwe erin, waterdicht en luchtdicht aansluiten, netjes afwerken. Alleen de inkoopkanalen verschillen. Dus bij ons kun je alle drie krijgen, en adviseren we wat bij jouw huis past.
 
@@ -192,6 +193,14 @@ Waar wij bij montage op letten:
 - **Afwerken binnen en buiten**, zodat het er niet alleen goed uitziet maar ook jaren goed blijft.
 
 Dit is ook waarom we het montageproces zo belangrijk vinden, ongeacht het materiaal. Het is hetzelfde vakwerk.
+
+## Kozijnen laten plaatsen in Enschede en Twente
+
+Zoek je op kozijnen in Enschede of elders in Twente, dan vind je vooral bedrijven die één materiaal verkopen, meestal kunststof. Prima als dat bij je huis past. Maar je wilt eerst weten wat er allemaal kan, en dan pas kiezen.
+
+Daarom komen we altijd eerst bij je langs. We meten in, kijken naar je woning en de gevel, en bespreken welk materiaal en welk glas past bij hoe jij wilt wonen. Kozijnen zijn bij ons ook vaak onderdeel van een grotere klus, zoals een uitbouw of renovatie. Een voorbeeld uit Enschede is deze [dubbele uitbouw](/projecten/dubbele-uitbouw-enschede). Ook voor de regels kijken we mee: of je aan de voorkant een vergunning nodig hebt, hangt af van het omgevingsplan van je gemeente. Dat kan in Enschede anders zijn dan in Hengelo of Oldenzaal.
+
+We werken in heel Twente, vanuit Enschede. Meer over ons werkgebied lees je op de pagina [aannemer in Enschede](/aannemer-enschede).
 
 ## Subsidie en vergunning
 

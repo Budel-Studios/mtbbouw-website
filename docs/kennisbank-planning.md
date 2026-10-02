@@ -1,6 +1,6 @@
 # Kennisbank-planning
 
-Bron van waarheid voor wat er wanneer op /kennisbank verschijnt. De scheduled task leest dit bestand elke dinsdagochtend.
+Bron van waarheid voor wat er wanneer op /kennisbank verschijnt. De scheduled task leest dit bestand elke dinsdagochtend. Zoekwoorden, doelpagina's en SEO-regels per artikel: [kennisbank-seo-aanpak.md](kennisbank-seo-aanpak.md).
 
 ## Zo werkt het
 
