@@ -86,7 +86,7 @@ Elke serie heeft een **pijler** (het brede overzichtsartikel) en clusterartikele
 
 | Serie | Pijler | Doelpagina's | Stadspagina |
 |---|---|---|---|
-| Kozijnen | kozijnen-kiezen-hout-kunststof-aluminium | /kozijnen, dekozijnstudio.nl | /aannemer-enschede |
+| Kozijnen | kozijnen-kiezen-hout-kunststof-aluminium | /kozijnen, kozijnstudio.com | /aannemer-enschede |
 | Uitbouw | uitbouw-houtskeletbouw-of-traditioneel | /aanbouw-uitbouw, /prefab, /bouwmethodes | /aannemer-twente |
 | Offertes & prijzen | offertes-aannemer-vergelijken | /hoe-wij-werken, bestaande kosten-artikelen | /aannemer-twente |
 | Je klus plannen | verbouwing-plannen-stappenplan | /wonen-en-verbouwen, /verbouwing (later de kluswijzer) | /aannemer-enschede |
@@ -140,7 +140,7 @@ Elke dinsdag als een artikel live gaat:
 - **Google-bedrijfsprofiel:** een "Update"-post met de kern van het artikel, een foto en de link. Dit houdt het profiel actief, wat meetelt voor Google Maps.
 - **LinkedIn en Instagram:** korte post (zakelijke artikelen vooral LinkedIn).
 - **Partners:** wordt een partner of leverancier genoemd (Gevelaar, BMN, Finiplus, Prefabmaat), stuur ze de link. Een link of deelactie van hen is een natuurlijke, regionale backlink.
-- **De Kozijnstudio:** dekozijnstudio.nl linkt naar de kozijnen-serie, en andersom.
+- **De Kozijnstudio:** kozijnstudio.com linkt naar de kozijnen-serie, en andersom.
 
 De scheduled task kan bij elke publicatie meteen een kant-en-klare tekst voor het bedrijfsprofiel en LinkedIn meesturen.
 

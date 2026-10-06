@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Kozijnen — De Kozijnstudio, het kozijnen-label van MTB Bouw",
     description:
-      "Hout, kunststof en aluminium kozijnen met eerlijk advies. Volledig aanbod op dekozijnstudio.nl.",
+      "Hout, kunststof en aluminium kozijnen met eerlijk advies. Volledig aanbod op kozijnstudio.com.",
     url: "/kozijnen",
   },
 };
@@ -54,7 +54,7 @@ export default function KozijnenPage() {
         title="Voor kozijnen heeft MTB Bouw een eigen specialist: De Kozijnstudio."
         intro="Tochtende kozijnen, slecht sluitende ramen, oude enkelglas? De Kozijnstudio is het label van MTB Bouw dat zich volledig richt op kozijnen — met eerlijk advies en een heldere prijsopgave, geen wilde marges."
         cta={
-          <ArrowLink href="https://dekozijnstudio.nl" onDark>
+          <ArrowLink href="https://kozijnstudio.com" onDark>
             Bekijk De Kozijnstudio
           </ArrowLink>
         }
@@ -92,18 +92,18 @@ export default function KozijnenPage() {
             Vraag advies of een offerte aan bij De Kozijnstudio
           </h2>
           <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-stone">
-            Op dekozijnstudio.nl vind je het volledige aanbod, prijzen en
+            Op kozijnstudio.com vind je het volledige aanbod, prijzen en
             voorbeeldprojecten van MTB Bouw&apos;s kozijnen-specialist.
           </p>
           <div className="mt-9 flex justify-center gap-2">
             <a
-              href="https://dekozijnstudio.nl"
+              href="https://kozijnstudio.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-ink px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-ink/85"
             >
               <EuroIcon className="h-4 w-4" />
-              Naar dekozijnstudio.nl
+              Naar kozijnstudio.com
             </a>
           </div>
         </div>

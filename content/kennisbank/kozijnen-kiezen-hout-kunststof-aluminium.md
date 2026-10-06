@@ -52,7 +52,7 @@ In dit artikel lopen we alle keuzes langs die je bij een kozijn maakt, met de na
 
 ## Waarom wij De Kozijnstudio zijn begonnen
 
-We hebben met MTB Bouw al heel veel kozijnen mogen plaatsen. Dat is ook waarom we er een eigen tak voor hebben opgezet: [De Kozijnstudio](https://dekozijnstudio.nl). Volledig gespecialiseerd in kozijnen, met transparante prijzen waar alles al in zit.
+We hebben met MTB Bouw al heel veel kozijnen mogen plaatsen. Dat is ook waarom we er een eigen tak voor hebben opgezet: [De Kozijnstudio](https://kozijnstudio.com). Volledig gespecialiseerd in kozijnen, met transparante prijzen waar alles al in zit.
 
 Maar we willen ons niet beperken tot één materiaal. Veel kozijnbedrijven verkopen alleen kunststof, omdat dat hun inkoop is. Wij vinden dat zonde. Een kozijn plaatsen is immers hetzelfde proces, of het nu van hout, kunststof of aluminium is. Inmeten, oude kozijnen eruit, nieuwe erin, waterdicht en luchtdicht aansluiten, netjes afwerken. Alleen de inkoopkanalen verschillen. Dus bij ons kun je alle drie krijgen, en adviseren we wat bij jouw huis past.
 
@@ -262,4 +262,4 @@ De ISDE-subsidie geldt voor isolerend glas en voor isolerende deuren en panelen,
 - De montage bepaalt of je kozijn echt presteert.
 - Check subsidie en vergunning voordat je opdracht geeft.
 
-Wil je weten welk kozijn bij jouw huis past? Kijk bij [kozijnen](/kozijnen) of bij [De Kozijnstudio](https://dekozijnstudio.nl) voor transparante prijzen, of [neem contact met ons op](/contact). We komen graag langs om te kijken en mee te denken.
+Wil je weten welk kozijn bij jouw huis past? Kijk bij [kozijnen](/kozijnen) of bij [De Kozijnstudio](https://kozijnstudio.com) voor transparante prijzen, of [neem contact met ons op](/contact). We komen graag langs om te kijken en mee te denken.

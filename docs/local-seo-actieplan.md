@@ -90,7 +90,7 @@ KvK **60942037** is de oude eenmanszaak (handelsnamen "MTB Bouw" en "Ledubs carp
 | Bing Places | Naam "Bouwbedrijf MTB Bouw" · website met www | Meeveranderen met Google (Bing is daaruit overgenomen) |
 | Instagram | Weergavenaam "MTBbouw" | Naam "MTB Bouw" |
 | mtbbouw.com | Het adres stond alleen op de privacypagina, niet in footer of op /contact | ✅ Opgelost (PR #1): adres in footer en op /contact; naam op /contact gelijkgetrokken naar MTB Bouw B.V. |
-| mtbbouw.com → dekozijnstudio.nl | dekozijnstudio.nl is niet bereikbaar, terwijl /kozijnen en de partnerpagina ernaar linken | Domein live zetten of links aanpassen |
+| mtbbouw.com → De Kozijnstudio | dekozijnstudio.nl is niet bereikbaar; De Kozijnstudio draait op kozijnstudio.com | ✅ Opgelost 6 okt 2026: alle links wijzen naar kozijnstudio.com |
 
 Geen actie nodig: telefoonboek.nl (vermelding verwijderd), companyinfo.nl (profiel oude eenmanszaak verwijderd), goudengids.nl (niet vermeld). Geen Facebook- of LinkedIn-bedrijfspagina gevonden.
 

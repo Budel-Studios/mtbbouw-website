@@ -187,7 +187,7 @@ const suppliers: Partner[] = [
     category: "gevels",
     description:
       "All-in en transparante kozijnvervanging. Onze kennispartner voor advies over glas en isolatie.",
-    url: "https://dekozijnstudio.nl",
+    url: "https://kozijnstudio.com",
     region: "Oost-Nederland",
     featured: true,
   },
