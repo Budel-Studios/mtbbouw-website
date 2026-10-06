@@ -21,7 +21,7 @@ Elk artikel heeft één onderwerp (`category`), 0–3 bouwdelen (`subcategories`
 
 | Datum | Serie | Titel (werktitel) | Onderwerp | Bouwdeel | Zoekwoord | Slug | Status |
 |---|---|---|---|---|---|---|---|
-| 2026-10-13 | Kozijnen 1 (pijler) | Kozijnen kiezen: hout, kunststof of aluminium? Alles over duurzame kozijnen | technische-keuzes | kozijnen-glas | kozijnen kiezen | kozijnen-kiezen-hout-kunststof-aluminium | concept |
+| 2026-10-06 | Kozijnen 1 (pijler) | Kozijnen kiezen: hout, kunststof of aluminium? Alles over duurzame kozijnen | technische-keuzes | kozijnen-glas | kozijnen kiezen | kozijnen-kiezen-hout-kunststof-aluminium | live |
 | 2026-10-20 | Uitbouw 1 (pijler) | Uitbouw in houtskeletbouw of traditioneel: wat is het verschil? | technische-keuzes | fundering-constructie, gevels | houtskeletbouw of traditioneel bouwen | uitbouw-houtskeletbouw-of-traditioneel | idee |
 | 2026-10-27 | Offertes 1 (pijler) | Offertes van aannemers vergelijken: zo vergelijk je appels met appels | kosten-offertes | — | offertes vergelijken aannemer | offertes-aannemer-vergelijken | idee |
 | 2026-11-03 | Los | Huis isoleren: dak, vloer of spouw — waar begin je? | verduurzamen | daken, vloeren, gevels | woning isoleren waar beginnen | huis-isoleren-waar-begin-je | idee |
