@@ -7,6 +7,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
 import { BuildingIcon, BoltIcon, ChatIcon } from "@/components/icons";
 import { faqSysteemplafonds } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Systeemplafonds voor kantoren | Afbouwstudio — MTB Bouw" },
@@ -98,6 +99,11 @@ export default function SysteemplafondsPage() {
         items={faqSysteemplafonds}
         eyebrow="Veelgesteld"
         title="Vragen over systeemplafonds"
+      />
+
+      <KennisbankBlock
+        match={{ subcategories: ["wanden-plafonds"], audience: "bedrijven" }}
+        title="Meer over wanden en plafonds"
       />
 
       <section id="contact" className="scroll-mt-24 bg-ink text-white">

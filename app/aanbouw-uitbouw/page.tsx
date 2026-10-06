@@ -19,6 +19,10 @@ export default function AanbouwUitbouwPage() {
     <ServicePageTemplate
       data={uitbouwData}
       caseImage="/images/projects/project-2.jpg"
+      kennisbank={{
+        match: { subcategories: ["fundering-constructie", "gevels", "daken"], categories: ["regels-vergunningen"], audience: "thuis" },
+        title: "Meer over aanbouwen en uitbouwen",
+      }}
     />
   );
 }

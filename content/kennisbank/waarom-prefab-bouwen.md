@@ -1,8 +1,12 @@
 ---
 title: "Waarom prefab bouwen zo populair wordt (en of het iets voor jou is)"
+seoTitle: "Prefab bouwen: werkwijze, snelheid en kosten"
 description: "Prefab bouwen groeit hard. Hoe werkt het, hoe snel is het echt, wat kost het en wanneer kies je er juist niet voor? We leggen het gewoon uit."
 date: 2026-07-05
-category: "Prefab bouwen"
+category: technische-keuzes
+subcategories: [fundering-constructie]
+audience: [thuis, bedrijven]
+series: uitbouw
 cover: /images/projects/dubbele-uitbouw-enschede/cover.webp
 coverAlt: "Prefab uitbouw aan een woning in Enschede, ruwbouw in korte tijd geplaatst"
 tags:
@@ -171,7 +175,7 @@ Bijna altijd, ja. De elementen zijn groot en gaan met een kraan op hun plek. In 
 
 ### Krijg ik subsidie op prefab bouwen?
 
-Op prefab zelf niet, maar combineer je het met isolatie of andere verduurzaming, dan kom je mogelijk in aanmerking voor ISDE-subsidie. De regels en bedragen wijzigen jaarlijks; check rvo.nl of lees onze uitleg over [verbouwen en verduurzamen met ISDE](/kennisbank/verbouwen-en-verduurzamen-isde-2026).
+Op prefab zelf niet, maar combineer je het met isolatie of andere verduurzaming, dan kom je mogelijk in aanmerking voor ISDE-subsidie. De regels en bedragen wijzigen jaarlijks; check rvo.nl of lees onze uitleg over [verbouwen en verduurzamen met ISDE](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk).
 
 ## Samenvatting
 

@@ -11,6 +11,7 @@ import { QuoteButton } from "@/components/ui/quote-button";
 import { GraduationIcon, UsersIcon, BuildingIcon } from "@/components/icons";
 import { expertises } from "@/lib/expertises";
 import { faqBouwbedrijfEnschede } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Bouwbedrijf in Enschede | MTB Bouw" },
@@ -147,6 +148,11 @@ export default function BouwbedrijfEnschedePage() {
         items={faqBouwbedrijfEnschede}
         eyebrow="Veelgesteld"
         title="Vragen over ons bouwbedrijf"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "thuis" }}
+        title="Lees je in voor je gaat verbouwen"
       />
 
       <CtaBanner

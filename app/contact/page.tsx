@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="space-y-8">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wide text-stone">
-              Bouwbedrijf MTB Bouw
+              {site.legalName}
             </h2>
             <p className="mt-3 text-lg leading-relaxed">
               Wij komen graag bij je langs voor een intake op locatie. Zo
@@ -56,6 +56,28 @@ export default function ContactPage() {
           </div>
 
           <dl className="space-y-4 text-lg">
+            <div>
+              <dt className="text-sm font-semibold uppercase tracking-wide text-stone">
+                Adres
+              </dt>
+              <dd>
+                <address className="not-italic">
+                  {site.address.streetAddress}
+                  <br />
+                  {site.address.postalCode} {site.address.addressLocality}
+                </address>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    `${site.legalName}, ${site.address.streetAddress}, ${site.address.postalCode} ${site.address.addressLocality}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-stone underline hover:text-lime-dark"
+                >
+                  Route plannen
+                </a>
+              </dd>
+            </div>
             <div>
               <dt className="text-sm font-semibold uppercase tracking-wide text-stone">
                 Telefoon
@@ -107,7 +129,9 @@ export default function ContactPage() {
             </Button>
           </div>
 
-          <p className="text-xs text-stone">{site.sbb}</p>
+          <p className="text-xs text-stone">
+            KVK {site.kvk} · {site.sbb}
+          </p>
         </div>
 
         {/* Formulier */}

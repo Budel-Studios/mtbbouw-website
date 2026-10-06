@@ -17,6 +17,7 @@ import {
   MapPinIcon,
 } from "@/components/icons";
 import { faqZakelijkeAfbouw } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoorafbouw & afbouw bedrijfspanden | Afbouwstudio" },
@@ -403,6 +404,11 @@ export default function AfbouwstudioPage() {
         items={faqZakelijkeAfbouw}
         eyebrow="06 — Veelgesteld"
         title="Vragen van zakelijke opdrachtgevers"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "bedrijven" }}
+        title="Kennis voor ondernemers"
       />
 
       {/* CTA */}

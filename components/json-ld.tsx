@@ -136,6 +136,7 @@ export function ArticleJsonLd({
   dateModified,
   image,
   section,
+  author,
 }: {
   title: string;
   description: string;
@@ -145,6 +146,8 @@ export function ArticleJsonLd({
   /** Pad onder /public of absolute URL — Google vereist een afbeelding. */
   image?: string;
   section?: string;
+  /** Teamlid als auteur (Person); zonder auteur is het bedrijf de auteur. */
+  author?: { name: string; jobTitle: string; image?: string };
 }) {
   const absolute = image
     ? image.startsWith("http")
@@ -166,7 +169,16 @@ export function ArticleJsonLd({
         inLanguage: "nl-NL",
         ...(absolute && { image: [absolute] }),
         ...(section && { articleSection: section }),
-        author: { "@id": ORG_ID },
+        author: author
+          ? {
+              "@type": "Person",
+              name: author.name,
+              jobTitle: author.jobTitle,
+              url: `${site.url}/over-ons`,
+              ...(author.image && { image: `${site.url}${author.image}` }),
+              worksFor: { "@id": ORG_ID },
+            }
+          : { "@id": ORG_ID },
         publisher: { "@id": ORG_ID },
       }}
     />

@@ -9,6 +9,8 @@ import {
   ServiceJsonLd,
 } from "@/components/json-ld";
 import type { ServiceData } from "@/lib/services/types";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import type { KennisbankMatch } from "@/lib/kennisbank";
 
 /**
  * Gedeelde dienstpagina-template — overgenomen uit het Lovable-project en
@@ -44,9 +46,12 @@ function ArrowIcon() {
 export function ServicePageTemplate({
   data,
   caseImage,
+  kennisbank,
 }: {
   data: ServiceData;
   caseImage?: string;
+  /** Welke kennisbankartikelen onder de FAQ verschijnen (automatisch gekozen). */
+  kennisbank?: { match: KennisbankMatch; title?: string };
 }) {
   return (
     <>
@@ -333,6 +338,10 @@ export function ServicePageTemplate({
           </Link>
         </div>
       </section>
+
+      {kennisbank && (
+        <KennisbankBlock match={kennisbank.match} title={kennisbank.title} />
+      )}
 
       {/* CTA */}
       <section className="bg-ink text-white">

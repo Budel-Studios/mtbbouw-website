@@ -1,8 +1,11 @@
 ---
 title: "Lunchroom beginnen: van leeg pand tot opening, stap voor stap"
+seoTitle: "Lunchroom beginnen: van leeg pand tot opening"
 description: "Een lunchroom beginnen in een leeg pand? Zo pak je het aan: pandkeuze, vergunningen, installaties, keuken en planning. Met echt praktijkvoorbeeld uit Zwolle."
 date: 2026-07-05
-category: "Horeca"
+category: plannen-aanpak
+subcategories: [wanden-plafonds, installaties-ventilatie]
+audience: [bedrijven]
 cover: /images/projects/broodbode-zwolle-lunchroom/cover.jpg
 coverAlt: "Complete lunchroom van De Broodbode in Zwolle, verbouwd vanuit een casco pand"
 tags: ["lunchroom beginnen", "horeca verbouwen", "horecapand", "afbouw", "zwolle"]

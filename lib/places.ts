@@ -15,6 +15,8 @@ export type Place = {
 
 export const places: Place[] = [
   { slug: "aannemer-enschede", name: "Enschede", nearby: "Glanerbrug, Boekelo en Lonneker" },
+  { slug: "aannemer-hengelo", name: "Hengelo", nearby: "Beckum en Oele" },
+  { slug: "aannemer-almelo", name: "Almelo", nearby: "Aadorp, Bornerbroek en Mariaparochie" },
   { slug: "aannemer-oldenzaal", name: "Oldenzaal", nearby: "De Lutte en Rossum" },
   { slug: "aannemer-borne", name: "Borne", nearby: "Zenderen en Hertme" },
   { slug: "aannemer-haaksbergen", name: "Haaksbergen", nearby: "Buurse en Sint Isidorushoeve" },

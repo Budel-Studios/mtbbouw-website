@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { kennisbank, portfolio } from "#site/content";
+import { portfolio } from "#site/content";
+import { existingHubs, hubArticles, hubPath, publishedArticles } from "@/lib/kennisbank";
 import { site } from "@/lib/site";
 
 // Genereert sitemap.xml automatisch bij elke build.
@@ -33,6 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/aannemer-enschede",
     "/bouwbedrijf-enschede",
     "/aannemer-twente",
+    "/aannemer-hengelo",
+    "/aannemer-almelo",
     "/aannemer-oldenzaal",
     "/aannemer-borne",
     "/aannemer-haaksbergen",
@@ -77,14 +80,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const articleRoutes = kennisbank
-    .filter((a) => !a.draft)
-    .map((a) => ({
-      url: `${site.url}${a.permalink}`,
-      lastModified: a.updated ?? a.date,
-      changeFrequency: "yearly" as const,
-      priority: 0.6,
-    }));
+  const articleRoutes = publishedArticles().map((a) => ({
+    url: `${site.url}${a.permalink}`,
+    lastModified: a.updated ?? a.date,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
 
   const projectRoutes = portfolio
     .filter((p) => !p.draft)
@@ -95,5 +96,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }));
 
-  return [...staticRoutes, ...articleRoutes, ...projectRoutes];
+  // Kennisbank-hubs: lastModified = nieuwste artikel in die hub.
+  const hubRoutes = (["category", "subcategory"] as const).flatMap((type) =>
+    existingHubs(type).map((item) => {
+      const newest = hubArticles(type, item.slug)
+        .map((a) => a.updated ?? a.date)
+        .sort()
+        .at(-1);
+      return {
+        url: `${site.url}${hubPath(type, item.slug)}`,
+        lastModified: newest ?? built,
+        changeFrequency: "weekly" as const,
+        priority: 0.6,
+      };
+    })
+  );
+
+  return [...staticRoutes, ...articleRoutes, ...hubRoutes, ...projectRoutes];
 }

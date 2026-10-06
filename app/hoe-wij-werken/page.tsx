@@ -7,6 +7,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { pillars } from "@/lib/data";
 import { CheckIcon, ChatIcon, HammerIcon, ShieldIcon } from "@/components/icons";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: "Hoe wij werken — van kennismaking tot nazorg",
@@ -165,6 +166,11 @@ export default function HoeWijWerkenPage() {
       />
 
       <FaqAccordion items={procesFaq} title="Veelgestelde vragen over het proces" />
+
+      <KennisbankBlock
+        match={{ categories: ["kosten-offertes", "plannen-aanpak"] }}
+        title="Meer over kosten en aanpak"
+      />
 
       <CtaBanner
         eyebrow="Kennismaken?"

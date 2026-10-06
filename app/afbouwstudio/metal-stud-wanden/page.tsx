@@ -7,6 +7,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
 import { WallIcon, ClockIcon, BulbIcon } from "@/components/icons";
 import { faqMetalStud } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Metal stud-wanden plaatsen | Afbouwstudio — MTB Bouw" },
@@ -99,6 +100,11 @@ export default function MetalStudPage() {
         items={faqMetalStud}
         eyebrow="Veelgesteld"
         title="Vragen over metal stud-wanden"
+      />
+
+      <KennisbankBlock
+        match={{ subcategories: ["wanden-plafonds"], audience: "bedrijven" }}
+        title="Meer over wanden en plafonds"
       />
 
       <section id="contact" className="scroll-mt-24 bg-ink text-white">

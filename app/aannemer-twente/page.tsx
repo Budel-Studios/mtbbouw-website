@@ -10,6 +10,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { MapPinIcon } from "@/components/icons";
 import { faqAannemerTwente } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Twente | MTB Bouw — verbouwen in de hele regio" },
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
 
 const PLAATSEN: { name: string; href?: string }[] = [
   { name: "Enschede", href: "/aannemer-enschede" },
-  { name: "Hengelo" },
-  { name: "Almelo" },
+  { name: "Hengelo", href: "/aannemer-hengelo" },
+  { name: "Almelo", href: "/aannemer-almelo" },
   { name: "Oldenzaal", href: "/aannemer-oldenzaal" },
   { name: "Borne", href: "/aannemer-borne" },
   { name: "Haaksbergen", href: "/aannemer-haaksbergen" },
@@ -152,6 +153,11 @@ export default function AannemerTwentePage() {
         items={faqAannemerTwente}
         eyebrow="Veelgesteld"
         title="Vragen aan een aannemer in Twente"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "thuis" }}
+        title="Lees je in voor je gaat verbouwen"
       />
 
       <CtaBanner

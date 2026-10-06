@@ -7,6 +7,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
 import { CupIcon, ClockIcon, PaintIcon, ShieldIcon, MapPinIcon } from "@/components/icons";
 import { faqHorecaVerbouwen } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Horeca verbouwen in Twente | Afbouwstudio" },
@@ -147,6 +148,11 @@ export default function HorecaVerbouwenPage() {
         items={faqHorecaVerbouwen}
         eyebrow="03 — Veelgesteld"
         title="Vragen over horeca verbouwen"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "bedrijven" }}
+        title="Kennis voor ondernemers"
       />
 
       {/* CTA */}

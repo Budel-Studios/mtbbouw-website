@@ -59,6 +59,13 @@ const nextConfig: NextConfig = {
       { source: "/voor-bedrijven-twente", destination: "/afbouwstudio", permanent: true },
       { source: "/vveilig-bouwen-enschede", destination: "/veilig-verantwoord-bouwen", permanent: true },
       { source: "/kennisbank-bouwen-twente", destination: "/kennisbank", permanent: true },
+      // Kennisbank: twee ISDE-artikelen samengevoegd (okt 2026) om te
+      // voorkomen dat ze met elkaar concurreren op hetzelfde zoekwoord.
+      {
+        source: "/kennisbank/verbouwen-en-verduurzamen-isde-2026",
+        destination: "/kennisbank/isde-subsidie-uitgelegd",
+        permanent: true,
+      },
       { source: "/brochure_detail", destination: "/gratis-brochure", permanent: true },
       { source: "/gerealiseerde_projecten", destination: "/projecten", permanent: true },
       { source: "/eerder-werk-old", destination: "/projecten", permanent: true },

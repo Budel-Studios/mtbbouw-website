@@ -6,6 +6,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
 import { ShedIcon, WallIcon, BoltIcon, LayersIcon } from "@/components/icons";
 import { faqBedrijfspandVerbouwen } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Bedrijfspand verbouwen in Twente | Afbouwstudio — MTB Bouw" },
@@ -141,6 +142,11 @@ export default function BedrijfspandVerbouwenPage() {
         items={faqBedrijfspandVerbouwen}
         eyebrow="04 — Veelgesteld"
         title="Vragen over bedrijfspanden verbouwen"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "bedrijven" }}
+        title="Kennis voor ondernemers"
       />
 
       {/* CTA */}

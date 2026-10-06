@@ -1,8 +1,12 @@
 ---
 title: "De ultieme uitbouw-gids: alles wat je wilt weten voordat je begint"
+seoTitle: "Uitbouw-gids: alles wat je moet weten"
 description: "Uitbouw plannen? Van vergunning tot fundering en isolatie: dit is de complete gids met stappenplan, kosten-indicatie en veelgemaakte fouten."
 date: 2026-07-05
-category: "Aanbouw & uitbouw"
+category: plannen-aanpak
+subcategories: [fundering-constructie]
+audience: [thuis]
+series: uitbouw
 cover: /images/projects/dubbele-uitbouw-enschede/cover.webp
 coverAlt: "Dubbele uitbouw aan een woning in Enschede, gebouwd door MTB Bouw"
 tags: ["uitbouw", "aanbouw", "verbouwen", "prefab", "vergunning", "fundering"]
@@ -126,7 +130,7 @@ Denk aan:
 - **Kierdichting** op de aansluiting met het bestaande huis, dé plek waar warmte lekt
 - **Ventilatie** niet vergeten: goed geïsoleerd zonder ventilatie = vochtproblemen
 
-Slim: pak meteen de rest van je huis mee. Als de steiger er toch staat en de vloer toch open ligt, is dát het moment om ook de bestaande gevel of vloer aan te pakken. Voor isolatiemaatregelen aan de bestaande woning bestaat bovendien ISDE-subsidie — de bedragen en voorwaarden wisselen per jaar, dus check de actuele regeling op rvo.nl. Meer hierover lees je op [verduurzamen in Enschede](/verduurzamen-enschede) en in ons artikel over [verbouwen en verduurzamen met ISDE](/kennisbank/verbouwen-en-verduurzamen-isde-2026).
+Slim: pak meteen de rest van je huis mee. Als de steiger er toch staat en de vloer toch open ligt, is dát het moment om ook de bestaande gevel of vloer aan te pakken. Voor isolatiemaatregelen aan de bestaande woning bestaat bovendien ISDE-subsidie — de bedragen en voorwaarden wisselen per jaar, dus check de actuele regeling op rvo.nl. Meer hierover lees je op [verduurzamen in Enschede](/verduurzamen-enschede) en in ons artikel over [verbouwen en verduurzamen met ISDE](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk).
 
 ## Veelgemaakte fouten (checklist)
 

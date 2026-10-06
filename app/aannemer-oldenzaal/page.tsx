@@ -9,6 +9,7 @@ import { RelatedContent } from "@/components/sections/related-content";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerOldenzaal } from "@/lib/faq";
+import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Oldenzaal | MTB Bouw — verbouw & renovatie" },
@@ -84,6 +85,11 @@ export default function AannemerOldenzaalPage() {
         projects={projects}
         eyebrow="Werk uit de regio"
         title="Recent werk in Twente"
+      />
+
+      <KennisbankBlock
+        match={{ audience: "thuis" }}
+        title="Lees je in voor je gaat verbouwen"
       />
 
       <NearbyPlaces currentSlug="aannemer-oldenzaal" />
