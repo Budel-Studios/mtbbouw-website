@@ -43,7 +43,7 @@ export default function SysteemplafondsPage() {
         eyebrow="Afbouwstudio · Plafonds"
         title="Systeemplafonds: rust, licht en techniek in één plafond"
         intro="Een systeemplafond is de snelste verbetering van een werkruimte: de galm verdwijnt, de verlichting wordt in één keer goed en alle techniek blijft bereikbaar. Afbouwstudio plaatst (akoestische) systeemplafonds in kantoren, winkels en horeca — zoals het zwarte akoestiekplafond bij De Broodbode."
-        cta={<ArrowLink href="#contact" onDark>Vraag een vaste prijs aan</ArrowLink>}
+        cta={<ArrowLink href="/contact#formulier" onDark>Vraag een vaste prijs aan</ArrowLink>}
       />
 
       <FeatureGrid
@@ -120,7 +120,7 @@ export default function SysteemplafondsPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Offerte%20systeemplafond"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Vraag offerte aan

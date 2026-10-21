@@ -67,7 +67,7 @@ export default function WinkelVerbouwenPage() {
         intro="Bij een winkelverbouwing telt elke dag: elke dag dicht is omzetverlies. Afbouwstudio bouwt winkels, showrooms en concept stores af in Twente en Oost-Nederland — gefaseerd of buiten openingstijden, met een vaste prijs en een planning die staat."
         cta={
           <>
-            <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>
+            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk onze cases</ArrowLink>
           </>
         }
@@ -131,7 +131,7 @@ export default function WinkelVerbouwenPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Intake%20winkelverbouwing"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake

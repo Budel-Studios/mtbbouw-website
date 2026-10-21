@@ -43,7 +43,7 @@ export default function MetalStudPage() {
         eyebrow="Afbouwstudio · Wanden"
         title="Metal stud-wanden: een nieuwe kantoorindeling in dagen"
         intro="Metal stud is dé manier om een kantoor of bedrijfsruimte opnieuw in te delen: licht, snel en droog gebouwd, geluidwerend uit te voeren en later eenvoudig aan te passen. Afbouwstudio plaatst metal stud-wanden inclusief glasstroken, deuren en volledige afwerking."
-        cta={<ArrowLink href="#contact" onDark>Vraag een vaste prijs aan</ArrowLink>}
+        cta={<ArrowLink href="/contact#formulier" onDark>Vraag een vaste prijs aan</ArrowLink>}
       />
 
       <FeatureGrid
@@ -121,7 +121,7 @@ export default function MetalStudPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Offerte%20metal%20stud-wanden"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Vraag offerte aan

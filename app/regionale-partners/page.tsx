@@ -40,7 +40,7 @@ export default function RegionalePartnersPage() {
       {/* Word partner van MTB — opvallend lime-blok */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <a
-          href="mailto:info@mtbbouw.com?subject=Partner%20van%20MTB%20worden"
+          href="/contact#formulier"
           className="group block border border-navy/20 bg-navy transition-colors hover:bg-navy-dark"
         >
           <div className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:gap-10 md:p-12">

@@ -175,7 +175,7 @@ export default async function ArticlePage({
       </article>
 
       {related.length > 0 && (
-        <section aria-labelledby="lees-ook" className="border-t border-mist">
+        <section aria-labelledby="lees-ook" className="bg-tint">
           <div className="container-page py-20 md:py-28">
             <p className="label-mono text-navy">Verder lezen</p>
             <h2 id="lees-ook" className="display mt-4 text-4xl md:text-6xl">

@@ -14,6 +14,7 @@
   --color-paper: #f6f6f4; /* warm papier: paginabodem */
   --color-canvas: #f6f6f4; /* = paper (overzichtspagina's) */
   --color-mist: #e5e3de; /* hairlines / randen */
+  --color-tint: #edf1f6; /* heel licht blauwgrijs: afwisselende secties */
   --color-stone: #6b6b6b; /* secundaire tekst */
   --color-navy: #003384; /* hoofdaccent: knoppen, labels, links, footer */
   --color-navy-dark: #00255f; /* navy hover */
@@ -199,6 +200,60 @@
 /* =====================================================================
  * Keyframes
  * ===================================================================== */
+/* ---- Speelse accenten (alleen gebruikt op de testpagina /test-speels) ---- */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.4s 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hover-wiggle:hover {
+  animation: wiggle 0.5s ease-in-out 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-marquee,
+  .hover-wiggle:hover {
+    animation: none;
+  }
+  .animate-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

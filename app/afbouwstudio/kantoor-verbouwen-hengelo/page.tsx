@@ -45,7 +45,7 @@ export default function KantoorHengeloPage() {
         intro="Hengelo is onze directe buurstad: vanaf de werkplaats in Enschede staan we er in een kwartier. Typerend voor Hengelo is de combinatie van kantoor en bedrijfsruimte in één pand — precies waar Afbouwstudio sterk in is: wij bouwen beide af, in één planning en met één vaste prijs."
         cta={
           <>
-            <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>
+            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk onze cases</ArrowLink>
           </>
         }
@@ -134,7 +134,7 @@ export default function KantoorHengeloPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Intake%20kantoor%20Hengelo"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake

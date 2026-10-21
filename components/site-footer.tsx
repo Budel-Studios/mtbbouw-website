@@ -62,7 +62,7 @@ export function SiteFooter() {
           <div className="md:col-span-8">
             <p className="label-mono text-white/65">Bouwen doen we samen</p>
             <Link
-              href="/contact"
+              href="/contact#formulier"
               className="display group mt-6 block text-5xl md:text-7xl lg:text-8xl"
             >
               Klaar om te bouwen?{" "}
@@ -82,12 +82,12 @@ export function SiteFooter() {
               >
                 {site.telephone}
               </a>
-              <a
-                href={`mailto:${site.email}?subject=Kennismaking`}
+              <Link
+                href="/contact#formulier"
                 className="label-mono inline-flex items-center border border-white/40 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy"
               >
-                Mail ons
-              </a>
+                Stuur een bericht
+              </Link>
             </div>
           </div>
         </div>

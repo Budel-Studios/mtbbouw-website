@@ -78,7 +78,7 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
 
   return (
     <>
-      <div className="sticky top-16 z-30 border-y border-mist bg-paper/90 backdrop-blur-md">
+      <div className="sticky top-16 z-30 border-y border-mist bg-tint/90 backdrop-blur-md">
         <div className="container-page flex items-center justify-between gap-6 py-3">
           <div
             role="group"
@@ -116,7 +116,8 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
         </div>
       </div>
 
-      <section aria-label="Projecten" className="container-page py-14 md:py-20">
+      <section aria-label="Projecten" className="bg-tint">
+        <div className="container-page py-14 md:py-20">
         {visible.length === 0 ? (
           <p className="text-stone">Geen projecten in deze categorie.</p>
         ) : view === "grid" ? (
@@ -124,6 +125,7 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
         ) : (
           <ProjectRows items={visible} />
         )}
+        </div>
       </section>
     </>
   );

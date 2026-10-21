@@ -246,7 +246,8 @@ export default async function ProjectPage({
       </ProjectVisuals>
 
       {/* 3 — VERHAAL */}
-      <section className="container-page grid gap-14 py-20 md:grid-cols-12 md:py-28">
+      <section className="mt-20 bg-tint md:mt-28">
+        <div className="container-page grid gap-14 py-20 md:grid-cols-12 md:py-28">
         <aside className="md:col-span-4">
           <div className="md:sticky md:top-28">
             <p className="label-mono text-navy">Projectgegevens</p>
@@ -296,12 +297,13 @@ export default async function ProjectPage({
             {project.learnings && <Block title="Wat hebben we geleerd" html={project.learnings} />}
           </div>
         </div>
+        </div>
       </section>
 
       {/* 4 — KLANTQUOTE */}
       {project.testimonial && (
-        <section className="container-page pb-24 md:pb-32">
-          <figure className="grid gap-8 border-t border-mist pt-14 md:grid-cols-12">
+        <section className="container-page py-24 md:py-32">
+          <figure className="grid gap-8 md:grid-cols-12">
             <span className="label-mono text-navy md:col-span-2">Citaat</span>
             <div className="md:col-span-9">
               <blockquote className="display text-2xl not-italic leading-[1.15] md:text-4xl">
@@ -378,7 +380,7 @@ export default async function ProjectPage({
 
       {/* FAQ */}
       {project.faq.length > 0 && (
-        <div className="border-t border-mist">
+        <div className="bg-tint">
           <FaqAccordion
             items={project.faq}
             eyebrow="Veelgestelde vragen"

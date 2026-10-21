@@ -67,7 +67,7 @@ export default function BedrijfspandVerbouwenPage() {
         intro="Een bedrijfspand verbouwen betekent bij Afbouwstudio: gefaseerd werken terwijl jouw bedrijfsvoering doordraait, met een vaste prijs binnen vijf werkdagen na de intake. Van bedrijfshal tot utiliteitspand, in Enschede, Twente en heel Oost-Nederland."
         cta={
           <>
-            <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>
+            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/projecten" onDark>Bekijk projecten</ArrowLink>
           </>
         }
@@ -168,7 +168,7 @@ export default function BedrijfspandVerbouwenPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Intake%20bedrijfspand"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake

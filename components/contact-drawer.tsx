@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   createContext,
   useCallback,
-  useContext,
   useEffect,
   useState,
   type ReactNode,
@@ -375,12 +376,13 @@ type Errors = Partial<Record<keyof ContactFormData, string>>;
 
 const ContactDrawerContext = createContext<{ open: () => void } | null>(null);
 
-function useContactDrawer() {
-  const ctx = useContext(ContactDrawerContext);
-  if (!ctx) throw new Error("useContactDrawer must be used within ContactDrawerProvider");
-  return ctx;
-}
+/** Waar alle contactknoppen naartoe gaan: het formulier op /contact. */
+export const CONTACT_FORM_HREF = "/contact#formulier";
 
+/**
+ * Contactknop. Leidt (sitebreed) naar het contactformulier op /contact;
+ * de offerte-drawer hieronder wordt daardoor niet meer geopend.
+ */
 export function ContactDrawerButton({
   className,
   children,
@@ -388,21 +390,13 @@ export function ContactDrawerButton({
 }: {
   className?: string;
   children: ReactNode;
-  /** Runs before the drawer opens (e.g. to close a menu first) */
+  /** Runs before navigating (e.g. to close a menu first) */
   onClick?: () => void;
 }) {
-  const { open } = useContactDrawer();
   return (
-    <button
-      type="button"
-      onClick={() => {
-        onClick?.();
-        open();
-      }}
-      className={className}
-    >
+    <Link href={CONTACT_FORM_HREF} onClick={onClick} className={className}>
       {children}
-    </button>
+    </Link>
   );
 }
 

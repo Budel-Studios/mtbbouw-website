@@ -24,7 +24,7 @@ export function KennisbankBlock({
   if (articles.length === 0) return null;
 
   return (
-    <section className="border-y border-mist">
+    <section className="bg-tint">
       <div className="container-page py-20 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">

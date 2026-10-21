@@ -45,7 +45,7 @@ export default function KantoorZwollePage() {
         intro="In de Zwolse wijk Wezenlanden bouwden we een leeg casco-pand in 7 weken om tot een complete, werkende zaak. Datzelfde casco-naar-turn-key-traject voeren we uit voor kantoren in Zwolle: wanden, plafonds, vloeren, installaties en afwerking — één team, één vaste prijs."
         cta={
           <>
-            <ArrowLink href="#contact" onDark>Plan een intake in Zwolle</ArrowLink>
+            <ArrowLink href="/contact#formulier" onDark>Plan een intake in Zwolle</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk de Zwolle-case</ArrowLink>
           </>
         }
@@ -134,7 +134,7 @@ export default function KantoorZwollePage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Intake%20kantoor%20Zwolle"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake

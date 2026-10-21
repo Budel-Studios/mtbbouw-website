@@ -32,7 +32,7 @@ export default function KennisbankPage() {
         ]}
       />
       {/* Kop — zelfde editoriale opzet als /projecten */}
-      <section className="container-page pb-6 pt-16 md:pt-24">
+      <section className="container-page pb-14 pt-16 md:pb-20 md:pt-24">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="animate-fade-up md:col-span-8">
             <p className="label-mono text-navy">Inspiratie &amp; kennis</p>
@@ -51,13 +51,15 @@ export default function KennisbankPage() {
         </div>
       </section>
 
-      <div className="container-page pb-24 md:pb-32">
-        <ArticleGrid articles={articles} />
-
-        {/* Vaste links naar de hubpagina's: crawlbaar, in tegenstelling tot de filter. */}
-        <div className="mt-24 border-t border-ink pt-10">
-          <HubLinks />
+      <div className="bg-tint">
+        <div className="container-page pb-24 pt-10 md:pb-32">
+          <ArticleGrid articles={articles} />
         </div>
+      </div>
+
+      {/* Vaste links naar de hubpagina's: crawlbaar, in tegenstelling tot de filter. */}
+      <div className="container-page py-14">
+        <HubLinks />
       </div>
     </>
   );

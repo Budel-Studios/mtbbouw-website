@@ -68,7 +68,7 @@ export default function HorecaVerbouwenPage() {
         intro="Een horecaverbouwing draait om één ding: zo snel mogelijk (weer) open, met een zaak die klopt tot in de laatste hoek. Afbouwstudio bouwde voor De Broodbode complete lunchrooms in Zwolle en Apeldoorn — van casco pand tot sfeervolle zaak, en van verouderd winkelpand tot huiskamer-lunchroom."
         cta={
           <>
-            <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>
+            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk de Broodbode-cases</ArrowLink>
           </>
         }
@@ -174,7 +174,7 @@ export default function HorecaVerbouwenPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="mailto:info@mtbbouw.com?subject=Intake%20horecaverbouwing"
+              href="/contact#formulier"
               className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake
