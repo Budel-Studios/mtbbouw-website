@@ -208,7 +208,7 @@ export default async function ProjectPage({
             Project {projectNumber(project.slug)}
           </span>
         </div>
-        <h1 className="display mt-14 animate-fade-up break-words text-5xl md:mt-20 md:text-7xl lg:text-8xl">
+        <h1 className="display mt-14 animate-fade-up break-words text-[2.5rem] sm:text-5xl md:mt-20 md:text-7xl lg:text-8xl">
           {project.title}
         </h1>
         <div
