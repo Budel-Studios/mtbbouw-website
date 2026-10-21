@@ -139,7 +139,7 @@ export function ProjectVisuals({
   photos,
   children,
 }: {
-  hero?: { src: string; alt: string };
+  hero?: { src: string; alt: string; position?: string };
   video?: string;
   photos: Photo[];
   children?: ReactNode;
@@ -194,7 +194,7 @@ export function ProjectVisuals({
           aria-label="Vergroot hoofdfoto"
           className="group relative block aspect-[4/3] w-full overflow-hidden bg-mist md:aspect-[16/8] md:max-h-[88vh]"
         >
-          <Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" className="img-zoom object-cover" />
+          <Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" style={hero.position ? { objectPosition: hero.position } : undefined} className="img-zoom object-cover" />
           <span className="label-mono glass-dark absolute bottom-5 right-5 px-3 py-2 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
             + Vergroten
           </span>

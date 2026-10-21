@@ -224,7 +224,7 @@ export default async function ProjectPage({
 
       {/* 2 — BEELD: hero, verhaal, voor/na en galerij */}
       <ProjectVisuals
-        hero={project.cover ? { src: project.cover, alt: project.coverAlt || project.title } : undefined}
+        hero={project.cover ? { src: project.cover, alt: project.coverAlt || project.title, position: project.coverPosition } : undefined}
         video={project.coverVideo}
         photos={project.gallery}
       >
