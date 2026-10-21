@@ -20,7 +20,6 @@ export type ProjectCardData = {
   permalink: string;
   title: string;
   description: string;
-  number: string; // "01", "02" … (vaste nummering op datum)
   category?: string;
   location?: string;
   clientType?: string;
@@ -152,12 +151,11 @@ export function ProjectCards({
               className={wide ? "aspect-[4/3] md:aspect-[21/9]" : "aspect-[4/3]"}
             />
             <div className="mt-5 grid grid-cols-12 items-start gap-x-4 gap-y-3">
-              <span className="label-mono col-span-2 pt-1.5 text-navy md:col-span-1">{p.number}</span>
-              <div className="col-span-10 flex flex-wrap justify-end gap-x-3 pt-1.5 text-right md:order-3 md:col-span-3 md:flex-col md:items-end md:gap-1">
+              <div className="col-span-12 flex flex-wrap gap-x-3 pt-1.5 md:order-3 md:col-span-3 md:flex-col md:items-end md:gap-1 md:text-right">
                 {p.location && <span className="label-mono text-ink">{p.location}</span>}
                 {p.category && <span className="label-mono text-stone">{p.category}</span>}
               </div>
-              <div className="col-span-12 md:order-2 md:col-span-8">
+              <div className="col-span-12 md:order-2 md:col-span-9">
                 <Heading
                   className={`display ${
                     wide ? "text-3xl md:text-5xl" : "text-2xl md:text-3xl"
@@ -181,8 +179,7 @@ export function ProjectRows({ items }: { items: ProjectCardData[] }) {
   return (
     <div className="border-t border-ink">
       <div className="label-mono hidden grid-cols-12 gap-4 border-b border-mist py-3 text-stone md:grid">
-        <span className="col-span-1">Nr.</span>
-        <span className="col-span-5">Project</span>
+        <span className="col-span-6">Project</span>
         <span className="col-span-2">Locatie</span>
         <span className="col-span-2">Werkzaamheden</span>
         <span className="col-span-1">Klant</span>
@@ -194,8 +191,7 @@ export function ProjectRows({ items }: { items: ProjectCardData[] }) {
           href={p.permalink}
           className="group grid grid-cols-12 items-center gap-4 border-b border-mist py-5 transition-colors hover:bg-white"
         >
-          <span className="label-mono col-span-2 text-navy md:col-span-1">{p.number}</span>
-          <div className="col-span-10 flex items-center gap-5 md:col-span-5">
+          <div className="col-span-12 flex items-center gap-5 md:col-span-6">
             <div className="relative hidden h-14 w-20 shrink-0 overflow-hidden bg-mist sm:block">
               {p.images[0] && (
                 <Image
@@ -209,7 +205,7 @@ export function ProjectRows({ items }: { items: ProjectCardData[] }) {
             </div>
             <span className="display text-xl md:text-2xl">{p.title}</span>
           </div>
-          <span className="label-mono col-span-6 col-start-3 md:col-span-2 md:col-start-auto">
+          <span className="label-mono col-span-6 md:col-span-2">
             {p.location}
           </span>
           <span className="label-mono col-span-4 text-stone md:col-span-2">{p.category}</span>
@@ -253,10 +249,7 @@ export function ProjectCard({
         />
       </div>
       <div className="mt-5 flex items-baseline justify-between gap-4">
-        <span className="label-mono text-stone">
-          {p.number}
-          {p.category ? ` · ${p.category}` : ""}
-        </span>
+        <span className="label-mono text-stone">{p.category}</span>
         {p.location && <span className="label-mono shrink-0">{p.location}</span>}
       </div>
       <Heading className="display mt-3 flex items-start justify-between gap-3 text-2xl md:text-3xl">

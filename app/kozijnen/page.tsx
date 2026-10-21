@@ -100,7 +100,7 @@ export default function KozijnenPage() {
               href="https://kozijnstudio.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-ink px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-ink/85"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-ink bg-ink px-5 py-3.5 text-paper transition-colors hover:bg-transparent hover:text-ink"
             >
               <EuroIcon className="h-4 w-4" />
               Naar kozijnstudio.com

@@ -74,7 +74,7 @@ export default function RegionalePartnersPage() {
                 met ons meebouwen? We horen graag van je.
               </p>
             </div>
-            <div className="inline-flex shrink-0 items-center gap-2 bg-ink px-6 py-3.5 font-semibold text-white transition-colors group-hover:bg-white group-hover:text-ink">
+            <div className="label-mono inline-flex shrink-0 items-center gap-2 border border-ink bg-ink px-5 py-3.5 text-paper transition-colors group-hover:bg-white group-hover:text-ink">
               Neem contact op
               <svg
                 className="h-4 w-4"

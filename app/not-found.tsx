@@ -24,7 +24,7 @@ export default function NotFound() {
           <Link
             key={e.id}
             href={e.href}
-            className="border border-mist bg-white px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+            className="label-mono inline-flex items-center justify-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             {e.title}
           </Link>

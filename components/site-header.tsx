@@ -102,13 +102,13 @@ function TomButton({ text, href, onClick }: { text: string; href: string; onClic
       onClick={onClick}
       className="group flex w-fit items-center gap-2 border border-ink px-5 py-2.5 transition-colors duration-300 hover:bg-ink"
     >
-      <span className="label-mono text-navy transition-colors duration-300 group-hover:text-white">
+      <span className="label-nav text-ink transition-colors duration-300 group-hover:text-paper">
         {text}
       </span>
       <span className="relative block h-[15px] w-[15px] overflow-hidden">
         <span className="relative block transition-transform duration-300 ease-in-out group-hover:-translate-y-3 group-hover:translate-x-3">
-          <ArrowUpRight className="text-navy transition-colors duration-300 group-hover:text-white" />
-          <ArrowUpRight className="absolute -left-3 top-3 text-navy transition-colors duration-300 group-hover:text-white" />
+          <ArrowUpRight className="text-ink transition-colors duration-300 group-hover:text-paper" />
+          <ArrowUpRight className="absolute -left-3 top-3 text-ink transition-colors duration-300 group-hover:text-paper" />
         </span>
       </span>
     </Link>
@@ -122,7 +122,7 @@ function StepItem({ step, onClick }: { step: NavLink; onClick: () => void }) {
       onClick={onClick}
       className="flex border-b border-mist pb-2 transition-all hover:pl-2"
     >
-      <span className="label-mono mr-4 pt-1.5 text-navy">{step.id}</span>
+      <span className="label-num mr-5 pt-1 text-navy">{step.id}</span>
       <span>
         <span className="block text-xl font-medium tracking-[-0.02em] text-ink">{step.title}</span>
         {step.subtitle && (
@@ -162,11 +162,13 @@ function LinkColumn({ column, onClick }: { column: NavColumn; onClick: () => voi
 
 function MegaPanel({ content, onClose }: { content: MegaContent; onClose: () => void }) {
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden overflow-hidden lg:block">
-      <div className="flex w-full animate-mega-in">
-        {/* Grid column — starts below de 64px-balk, altijd tot aan de afbeelding */}
-        <div className="min-w-0 flex-1 pt-16">
-          <div className="pointer-events-auto grid h-full w-full grid-cols-[0.75fr_1fr_1fr_1fr] gap-8 border-t border-mist bg-paper p-12 shadow-pop">
+    /* Geen z-index/transform op de wrapper: zo delen menubalk, raster en
+       beeld één stacking context en kan het beeld óver de balk vallen. */
+    <div className="pointer-events-none absolute inset-x-0 top-0 hidden lg:flex">
+        {/* Raster — één doorlopend vlak vanaf de bovenkant: de menubalk ligt
+            erin, zonder naad of lijn tussen balk en paneel. */}
+        <div className="relative z-0 min-w-0 flex-1 animate-mega-in bg-paper pt-16 shadow-pop">
+          <div className="pointer-events-auto grid h-full w-full grid-cols-[0.75fr_1fr_1fr_1fr] gap-8 p-12">
             {content.intro ? (
               <div className="col-span-1">
                 {/* p, geen h2: nav-labels horen niet in de document-outline
@@ -217,16 +219,19 @@ function MegaPanel({ content, onClose }: { content: MegaContent; onClose: () => 
             )}
           </div>
         </div>
-        {/* Beeldpaneel — transparante wrapper met pt-16 duwt de afbeelding zelf
-            (een los kind-element, niet enkel een achtergrond-property) onder
-            de 64px-menubalk, zodat hij nooit over het hoofdmenu heen valt. */}
-        <div className="pointer-events-auto flex-[0_0_30%] pt-16">
+        {/* Beeldpaneel — loopt vanaf de bovenkant óver de vaste menubalk.
+            Een zachte donkere verloop bovenin houdt de knoppen rechts
+            (Contact / telefoon, die erbovenop liggen) leesbaar. */}
+        <div className="pointer-events-auto relative z-20 flex-[0_0_26%] animate-mega-in shadow-pop xl:min-w-[29rem] xl:flex-[0_0_30%]">
           <div
-            className="h-full w-full bg-cover bg-left"
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${content.image})` }}
           />
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/60 to-transparent"
+          />
         </div>
-      </div>
     </div>
   );
 }
@@ -240,7 +245,7 @@ function MobileStepRow({ step, onClick }: { step: NavLink; onClick: () => void }
       onClick={onClick}
       className="flex border-b border-mist pb-3"
     >
-      <span className="label-mono mr-4 pt-1 text-navy">{step.id}</span>
+      <span className="label-num mr-4 pt-0.5 text-navy">{step.id}</span>
       <span>
         <span className="block text-lg font-medium tracking-[-0.02em] text-ink">{step.title}</span>
         {step.subtitle && (
@@ -318,7 +323,7 @@ function MobileSubmenu({
                 onClick={onClose}
                 className="mb-4 flex items-center text-lg font-bold text-ink"
               >
-                <span className="label-mono mr-4 text-navy">{col.id}</span>
+                <span className="label-num mr-4 text-navy">{col.id}</span>
                 {col.title}
               </Link>
               {col.items.length > 0 && (
@@ -398,19 +403,19 @@ export function SiteHeader() {
         onMouseLeave={scheduleClose}
         className="relative border-b border-mist bg-paper/85 font-display backdrop-blur-md"
       >
-        <div className="relative z-10 flex h-16 items-stretch">
+        <div className="flex h-16 items-stretch">
           {/* Logo — beeldmerk + woordmerk */}
           <Link
             href="/"
             onClick={closeAll}
-            className="flex shrink-0 items-center px-5 md:px-8"
+            className="relative z-10 flex shrink-0 items-center px-5 md:px-8"
             aria-label={site.name}
           >
             <Logo uid="hdr" />
           </Link>
 
           {/* Desktop-menu: links naast het logo, hover opent mega-menu */}
-          <div className="ml-6 hidden items-stretch gap-8 lg:flex">
+          <div className="relative z-10 ml-2 hidden items-stretch gap-6 lg:flex xl:ml-6 xl:gap-8">
             {mainNav.map((item) => (
               <div
                 key={item.id}
@@ -423,7 +428,7 @@ export function SiteHeader() {
                     type="button"
                     onMouseEnter={() => openMega(item.id)}
                     onClick={() => openMega(item.id)}
-                    className="label-mono flex cursor-pointer items-center text-stone transition-colors hover:text-navy"
+                    className="label-nav flex cursor-pointer items-center whitespace-nowrap text-ink/70 transition-colors hover:text-navy"
                   >
                     {item.title}
                     <ChevronDown
@@ -440,7 +445,7 @@ export function SiteHeader() {
                       cancelClose();
                       setActiveMega(null);
                     }}
-                    className="label-mono flex items-center text-stone transition-colors hover:text-navy"
+                    className="label-nav flex items-center whitespace-nowrap text-ink/70 transition-colors hover:text-navy"
                   >
                     {item.title}
                   </Link>
@@ -451,7 +456,9 @@ export function SiteHeader() {
 
           {/* Rechts: brochure, Contact (offerte-drawer) en omlijnde telefoonknop */}
           <div
-            className="ml-auto hidden items-stretch lg:flex"
+            className={`relative z-30 ml-auto hidden items-stretch transition-colors lg:flex ${
+              activeMega ? "text-white" : "text-ink"
+            }`}
             onMouseEnter={() => {
               cancelClose();
               setActiveMega(null);
@@ -460,22 +467,22 @@ export function SiteHeader() {
             <Link
               href="/gratis-brochure"
               onClick={closeAll}
-              className="label-mono mr-6 hidden items-center whitespace-nowrap text-stone transition-colors hover:text-navy xl:flex"
+              className={`label-nav mr-6 hidden items-center whitespace-nowrap transition-colors xl:flex ${activeMega ? "text-white/85 hover:text-white" : "text-ink/70 hover:text-navy"}`}
             >
               Gratis brochure
             </Link>
             <ContactDrawerButton
               onClick={closeAll}
-              className="label-mono link-line mr-6 flex cursor-pointer items-center self-center py-1 text-stone transition-colors hover:text-navy"
+              className={`label-mono mr-3 flex cursor-pointer items-center self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink"}`}
             >
               Contact
             </ContactDrawerButton>
             <a
               href={`tel:${site.telephoneHref}`}
-              className="label-mono mr-5 flex items-center gap-2 self-center border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+              className={`label-mono mr-5 whitespace-nowrap flex items-center gap-2 self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white/80 text-white hover:bg-white hover:text-ink" : "border-ink text-ink hover:bg-ink hover:text-paper"}`}
             >
               <Phone size={14} />
-              {site.telephone}
+              <span className="sr-only xl:not-sr-only">{site.telephone}</span>
             </a>
           </div>
 

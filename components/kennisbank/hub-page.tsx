@@ -45,12 +45,12 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
         </div>
 
         {item.links && item.links.length > 0 && (
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="mt-6 flex flex-wrap gap-3">
             {item.links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="label-mono inline-flex items-center gap-1.5 border-b border-ink pb-0.5 text-ink transition-colors hover:text-navy-dark"
+                  className="label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
                 >
                   {link.label} →
                 </Link>

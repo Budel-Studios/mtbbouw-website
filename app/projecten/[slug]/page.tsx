@@ -10,7 +10,7 @@ import {
 } from "@/components/json-ld";
 import { PartnerCards } from "@/components/project/partner-cards";
 import { ProjectVisuals } from "@/components/project/project-gallery";
-import { projectNumber, publishedProjects } from "@/lib/projects";
+import { publishedProjects } from "@/lib/projects";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 
@@ -204,9 +204,6 @@ export default async function ProjectPage({
               ← Alle projecten
             </Link>
           </nav>
-          <span className="label-mono text-stone">
-            Project {projectNumber(project.slug)}
-          </span>
         </div>
         <h1 className="display mt-14 animate-fade-up break-words text-[2.5rem] sm:text-5xl md:mt-20 md:text-7xl lg:text-8xl">
           {project.title}

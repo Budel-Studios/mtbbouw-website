@@ -134,12 +134,12 @@ export default function KantoorHengeloPage() {
             en sturen binnen 5 werkdagen een vaste offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white">
+            <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">
               Plan intake
             </ContactDrawerButton>
             <a
               href="tel:+31532065071"
-              className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-ink"
             >
               Bel direct: 053 206 50 71
             </a>

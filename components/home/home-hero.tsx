@@ -123,7 +123,7 @@ export function HomeHero({
             className="flex animate-fade-up flex-wrap items-center gap-3 md:col-span-5 md:justify-end"
             style={{ animationDelay: "300ms" }}
           >
-            <ContactDrawerButton className="label-mono link-line cursor-pointer py-2 text-white/85 hover:text-white">
+            <ContactDrawerButton className="label-mono flex cursor-pointer items-center border border-white bg-white px-6 py-4 text-ink transition-colors hover:border-lime hover:bg-lime">
               Plan een intake
             </ContactDrawerButton>
             <Link href="/projecten" className="group inline-flex items-stretch md:ml-2">

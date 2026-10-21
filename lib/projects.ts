@@ -14,23 +14,6 @@ export function publishedProjects(): PortfolioProject[] {
   return [...live.filter((p) => p.featured), ...live.filter((p) => !p.featured)];
 }
 
-/**
- * Vaste projectnummers op uitvoeringsdatum (oudste = 01), zodat een nummer
- * niet verspringt als er een nieuw project bijkomt.
- */
-function projectNumbers(): Map<string, string> {
-  const chronological = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug));
-  return new Map(
-    chronological.map((p, i) => [p.slug, String(i + 1).padStart(2, "0")])
-  );
-}
-
-export function projectNumber(slug: string): string {
-  return projectNumbers().get(slug) ?? "";
-}
-
 /** Cover eerst, aangevuld met galerijfoto's (ontdubbeld, max 3). */
 export function projectImages(p: PortfolioProject) {
   return [
@@ -47,7 +30,6 @@ export function toProjectCard(p: PortfolioProject): ProjectCardData {
     permalink: p.permalink,
     title: p.title,
     description: p.description,
-    number: projectNumber(p.slug),
     category: p.category,
     location: p.location,
     clientType: p.clientType,

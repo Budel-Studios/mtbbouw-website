@@ -151,6 +151,26 @@
   font-weight: 400;
 }
 
+/* Nummering (01, 02 …): duidelijk leesbaar, groter dan label-mono */
+@utility label-num {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hoofdmenu-items: mono-hoofdletters, iets groter dan label-mono */
+@utility label-nav {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 /* Grote displaykop */
 @utility display {
   font-family: var(--font-display);

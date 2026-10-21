@@ -8,6 +8,7 @@ import { IconServicesGrid } from "@/components/sections/icon-services-grid";
 import { PerkGrid } from "@/components/sections/perk-grid";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
+import Link from "next/link";
 import {
   ShieldIcon,
   WrenchIcon,
@@ -211,7 +212,11 @@ export default async function VeiligVerantwoordBouwenPage() {
             MTB Bouw is een <strong className="text-ink">SBB-erkend leerbedrijf</strong>.
             We geloven dat je het vak leert op de bouwplaats, niet alleen in
             de schoolbanken. Meer over hoe dat eruitziet lees je op onze
-            pagina over <ArrowLink href="/werkgenoeg">werken bij MTB Bouw</ArrowLink>.
+            pagina over{" "}
+            <Link href="/werkgenoeg" className="font-semibold text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-navy">
+              werken bij MTB Bouw
+            </Link>
+            .
           </p>
         </SplitSection>
         <FeatureGrid

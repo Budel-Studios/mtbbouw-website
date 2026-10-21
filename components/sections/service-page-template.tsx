@@ -86,7 +86,7 @@ export function ServicePageTemplate({
             </Button>
             <a
               href={data.hero.secondaryCta.href}
-              className="inline-flex items-center gap-2 border border-ink/25 px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-ink/5"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper"
             >
               {data.hero.secondaryCta.label}
             </a>
@@ -124,7 +124,7 @@ export function ServicePageTemplate({
                 <p className="mt-3 leading-relaxed text-stone">{c.desc}</p>
                 <Link
                   href="/contact"
-                  className="mt-5 inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
+                  className="mt-6 label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
                 >
                   Lees meer <ArrowIcon />
                 </Link>
@@ -332,7 +332,7 @@ export function ServicePageTemplate({
         <div className="mt-8">
           <Link
             href={data.faq.fullFaqLink}
-            className="inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
+            className="label-mono inline-flex items-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             Alle veelgestelde vragen <ArrowIcon />
           </Link>
@@ -372,7 +372,7 @@ export function ServicePageTemplate({
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-paper"
+                  className="label-mono inline-flex items-center justify-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
                 >
                   {r.label}
                 </Link>

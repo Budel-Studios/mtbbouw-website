@@ -224,7 +224,7 @@ export async function HomeContent({
               key={t}
               className="border-mist py-6 pr-4 md:border-r md:py-8 md:last:border-r-0 md:[&:not(:first-child)]:pl-8"
             >
-              <span className="label-mono text-navy">{String(i + 1).padStart(2, "0")}</span>
+              <span className="label-num text-navy">{String(i + 1).padStart(2, "0")}</span>
               <p className="mt-3 text-base tracking-[-0.01em] md:text-lg">{t}</p>
             </li>
           ))}
@@ -359,7 +359,7 @@ export async function HomeContent({
                   key={r.title}
                   className="group w-[80%] shrink-0 snap-start border border-inverse-border p-6 transition-colors duration-500 hover:bg-white/[0.04] sm:w-[45%] md:p-8 lg:w-auto lg:border-l-0 lg:border-t-0"
                 >
-                  <span className="label-mono text-lime">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="label-num text-lime">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-8 text-xl font-semibold tracking-[-0.02em] md:text-2xl">{r.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-inverse-muted">{r.desc}</p>
                 </li>
@@ -417,7 +417,7 @@ export async function HomeContent({
                 <span className="label-mono hidden text-stone sm:block">
                   Blok voor blok gebouwd — {PARTNERS.length} vaste partners
                 </span>
-                <Link href="/regionale-partners" className="label-mono link-line inline-flex items-center gap-2">
+                <Link href="/regionale-partners" className="label-mono inline-flex items-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper">
                   Ontmoet al onze partners <ArrowUpRight className="size-3.5" />
                 </Link>
               </span>
@@ -432,7 +432,7 @@ export async function HomeContent({
           <div className="container-page py-24 md:py-32">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading eyebrow="Inspiratie & kennis" title="Kennisbank." />
-              <Link href="/kennisbank" className="label-mono link-line inline-flex items-center gap-2">
+              <Link href="/kennisbank" className="label-mono inline-flex items-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper">
                 Alle artikelen <ArrowUpRight className="size-3.5" />
               </Link>
             </div>

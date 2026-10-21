@@ -112,8 +112,10 @@ export function Button({
 }
 
 /**
- * Tekstlink met pijl en lime onderstreping — het "Meer info →" /
- * "Bekijk alle projecten →"-patroon van de live site.
+ * Actieknop met pijl. Sitebreed één knoppensysteem:
+ * - contact/offerte (opent de drawer) = gevuld (inkt op licht, lime op donker)
+ * - overige links = omlijnd (inkt op licht, wit op donker)
+ * Onderstreping is alleen nog voor links ín lopende tekst.
  */
 export function ArrowLink({
   href,
@@ -129,9 +131,15 @@ export function ArrowLink({
   className?: string;
   onDark?: boolean;
 }) {
-  const cls = `inline-flex items-center gap-1.5 border-b-2 border-lime pb-1 text-sm font-semibold ${
-    onDark ? "text-white" : "text-ink"
-  } transition-colors hover:text-navy ${className}`.trim();
+  const opensDrawer = drawer || !href || href === CONTACT_HREF;
+  const tone = opensDrawer
+    ? onDark
+      ? variants.lime
+      : variants.primary
+    : onDark
+      ? "border border-white/80 text-white hover:bg-white hover:text-ink"
+      : variants["outline-dark"];
+  const cls = `${base} ${tone} ${sizes.md} ${className}`.trim();
   const content = (
     <>
       {children}
@@ -139,7 +147,7 @@ export function ArrowLink({
     </>
   );
 
-  if (drawer || !href || href === CONTACT_HREF) {
+  if (opensDrawer || !href) {
     return (
       <ContactDrawerButton className={`cursor-pointer ${cls}`}>{content}</ContactDrawerButton>
     );

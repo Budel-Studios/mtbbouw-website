@@ -32,7 +32,7 @@ export function PartnerCards({ partners }: { partners: Partner[] }) {
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="label-mono mt-6 inline-flex items-center gap-1.5 self-start border-b-2 border-lime pb-0.5 text-ink transition-colors hover:text-navy"
+              className="mt-6 self-start label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
             >
               {partner.anchor || partner.name}
               <svg
