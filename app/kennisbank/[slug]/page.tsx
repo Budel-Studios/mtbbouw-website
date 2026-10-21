@@ -142,7 +142,7 @@ export default async function ArticlePage({
             <li>
               <Link
                 href={category.href}
-                className="label-mono inline-flex items-center bg-ink px-3 py-2 text-white transition-colors hover:bg-ink/85"
+                className="label-mono inline-flex items-center bg-navy px-3 py-2 text-white transition-colors hover:bg-navy-dark"
               >
                 {category.label}
               </Link>

@@ -15,6 +15,7 @@ import { RelatedContent } from "@/components/sections/related-content";
 import { TurnkeyFlow } from "@/components/sections/turnkey-flow";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { ApplyButton } from "@/components/apply-dialog";
 import { ArrowLink } from "@/components/ui/button";
 import {
   ClockIcon,
@@ -30,7 +31,6 @@ import {
 } from "@/components/icons";
 import { faqWerkenBij } from "@/lib/faq";
 import { jobs } from "@/lib/jobs";
-import { site } from "@/lib/site";
 import { getAsset } from "@/lib/assets";
 
 export const metadata: Metadata = {
@@ -46,11 +46,6 @@ export const metadata: Metadata = {
     url: "/werkgenoeg",
   },
 };
-
-const applyHref = (job?: string) =>
-  `mailto:${site.email}?subject=${encodeURIComponent(
-    job ? `Sollicitatie ${job}` : "Open sollicitatie"
-  )}`;
 
 export default async function WerkGenoegPage() {
   const mathijs = await getAsset("team-mathijs", "/images/team/mathijs.webp");
@@ -93,9 +88,7 @@ export default async function WerkGenoegPage() {
             <ArrowLink href="#vacatures" onDark>
               Bekijk onze vacatures
             </ArrowLink>
-            <ArrowLink href={applyHref()} onDark>
-              Solliciteer direct
-            </ArrowLink>
+            <ApplyButton tone="light" />
           </>
         }
       />
@@ -274,7 +267,7 @@ export default async function WerkGenoegPage() {
           </h2>
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             {jobs.map((job) => (
-              <JobCard key={job.slug} job={job} applyHref={applyHref(job.title)} />
+              <JobCard key={job.slug} job={job} />
             ))}
           </div>
         </div>
@@ -339,7 +332,7 @@ export default async function WerkGenoegPage() {
         eyebrow="Solliciteren"
         title="Kom gewoon eens kennismaken."
         text="Geen lange motivatiebrief. Geen ingewikkelde procedure. Bel ons, app ons, of kom een kop koffie drinken."
-        cta={{ label: "Solliciteer direct", href: applyHref() }}
+        cta={{ node: <ApplyButton /> }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />
     </>

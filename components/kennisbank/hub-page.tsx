@@ -50,7 +50,7 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+                  className="label-mono inline-flex items-center gap-2 border border-navy px-4 py-2.5 text-navy transition-colors hover:bg-navy hover:text-white"
                 >
                   {link.label} →
                 </Link>

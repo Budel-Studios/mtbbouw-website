@@ -17,10 +17,10 @@ const base =
   "label-mono inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "border border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",
+  primary: "border border-navy bg-navy text-white hover:border-navy-dark hover:bg-navy-dark",
   lime: "border border-lime bg-lime text-ink hover:border-white hover:bg-white",
   "outline-light": "border border-white/80 text-white hover:bg-white/10",
-  "outline-dark": "border border-ink text-ink hover:bg-ink hover:text-paper",
+  "outline-dark": "border border-navy text-navy hover:bg-navy hover:text-white",
 };
 
 const sizes: Record<Size, string> = {
@@ -137,7 +137,7 @@ export function ArrowLink({
       ? variants.lime
       : variants.primary
     : onDark
-      ? "border border-white/80 text-white hover:bg-white hover:text-ink"
+      ? "border border-white/80 text-white hover:bg-white hover:text-navy"
       : variants["outline-dark"];
   const cls = `${base} ${tone} ${sizes.md} ${className}`.trim();
   const content = (

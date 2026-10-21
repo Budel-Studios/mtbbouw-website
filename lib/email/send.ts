@@ -78,11 +78,11 @@ async function deliver(mail: Mail): Promise<boolean> {
  * Promise.all: één afwijzing zou de ander laten vallen.
  */
 export async function sendFormEmails(args: {
-  internal: { subject: string; html: string; replyTo: string };
+  internal: { subject: string; html: string; replyTo: string; to?: string };
   customer: { to: string; subject: string; html: string };
 }): Promise<{ internalOk: boolean; customerOk: boolean }> {
   const internalOk = await deliver({
-    to: MAIL_TO,
+    to: args.internal.to ?? MAIL_TO,
     subject: args.internal.subject,
     html: args.internal.html,
     replyTo: args.internal.replyTo,

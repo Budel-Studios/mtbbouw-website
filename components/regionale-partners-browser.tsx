@@ -147,7 +147,7 @@ export function RegionalePartnersBrowser() {
               aria-pressed={isActive}
               className={`border px-5 py-2.5 font-display text-sm font-semibold transition-colors ${
                 isActive
-                  ? "border-ink bg-ink text-white"
+                  ? "border-navy bg-navy text-white"
                   : "border-mist bg-transparent text-ink hover:border-ink hover:bg-paper"
               }`}
             >

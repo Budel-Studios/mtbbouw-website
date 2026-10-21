@@ -98,7 +98,7 @@ export function Slider({
                 className={`grid size-11 cursor-pointer place-items-center border transition-colors disabled:cursor-default disabled:opacity-30 ${
                   inverse
                     ? "border-inverse-border hover:border-white enabled:hover:bg-white enabled:hover:text-ink"
-                    : "border-ink/20 hover:border-ink enabled:hover:bg-ink enabled:hover:text-paper"
+                    : "border-navy/25 hover:border-navy enabled:hover:bg-navy enabled:hover:text-white"
                 }`}
               >
                 <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

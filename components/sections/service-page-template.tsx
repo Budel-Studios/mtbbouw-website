@@ -86,7 +86,7 @@ export function ServicePageTemplate({
             </Button>
             <a
               href={data.hero.secondaryCta.href}
-              className="label-mono inline-flex items-center justify-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
             >
               {data.hero.secondaryCta.label}
             </a>
@@ -124,7 +124,7 @@ export function ServicePageTemplate({
                 <p className="mt-3 leading-relaxed text-stone">{c.desc}</p>
                 <Link
                   href="/contact"
-                  className="mt-6 label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+                  className="mt-6 label-mono inline-flex items-center gap-2 border border-navy px-4 py-2.5 text-navy transition-colors hover:bg-navy hover:text-white"
                 >
                   Lees meer <ArrowIcon />
                 </Link>
@@ -332,7 +332,7 @@ export function ServicePageTemplate({
         <div className="mt-8">
           <Link
             href={data.faq.fullFaqLink}
-            className="label-mono inline-flex items-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+            className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
           >
             Alle veelgestelde vragen <ArrowIcon />
           </Link>
@@ -372,7 +372,7 @@ export function ServicePageTemplate({
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="label-mono inline-flex items-center justify-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+                  className="label-mono inline-flex items-center justify-center gap-2 border border-navy px-4 py-2.5 text-navy transition-colors hover:bg-navy hover:text-white"
                 >
                   {r.label}
                 </Link>

@@ -138,7 +138,7 @@ function AudienceToggle({
             aria-checked={isActive}
             onClick={() => onChange(opt.slug)}
             className={`label-mono flex-1 whitespace-nowrap px-3 py-2 transition-colors md:flex-none ${
-              isActive ? "bg-ink text-white" : "text-stone hover:text-navy"
+              isActive ? "bg-navy text-white" : "text-stone hover:text-navy"
             }`}
           >
             {opt.label}

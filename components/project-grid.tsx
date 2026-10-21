@@ -52,7 +52,7 @@ function ViewButton({
       aria-label={label}
       aria-pressed={active}
       className={`grid size-9 cursor-pointer place-items-center transition-colors ${
-        active ? "bg-ink text-paper" : "text-stone hover:text-ink"
+        active ? "bg-navy text-white" : "text-stone hover:text-ink"
       }`}
     >
       {children}

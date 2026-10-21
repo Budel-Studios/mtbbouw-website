@@ -40,8 +40,8 @@ export function HomeHero({
   };
 
   return (
-    <section className="px-2 pt-2 md:px-3 md:pt-3">
-      <div className="relative isolate flex min-h-[max(38rem,calc(100svh-4.75rem))] flex-col overflow-hidden bg-inverse text-white">
+    <section>
+      <div className="relative isolate flex min-h-[max(38rem,calc(100svh-4rem))] flex-col overflow-hidden bg-inverse text-white">
         {video ? (
           <video
             ref={videoRef}

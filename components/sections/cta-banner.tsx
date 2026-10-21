@@ -7,7 +7,9 @@ import { QuoteButton } from "@/components/ui/quote-button";
  * - "center": grote pre-footer-CTA met kop links en knoppen rechts
  * Met `cta.drawer` opent de knop de offerte-drawer i.p.v. te navigeren.
  */
-type Cta = { label: string } & ({ href: string; drawer?: never } | { drawer: true; href?: never });
+type Cta =
+  | ({ label: string } & ({ href: string; drawer?: never } | { drawer: true; href?: never }))
+  | { node: React.ReactNode };
 
 export function CtaBanner({
   eyebrow,
@@ -24,7 +26,9 @@ export function CtaBanner({
   secondary?: { label: string; href: string };
   align?: "row" | "center";
 }) {
-  const button = cta.drawer ? (
+  const button = "node" in cta ? (
+    cta.node
+  ) : cta.drawer ? (
     <QuoteButton>{cta.label}</QuoteButton>
   ) : (
     <Button href={cta.href} arrow>

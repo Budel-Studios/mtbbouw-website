@@ -93,7 +93,7 @@ export default function AannemerTwentePage() {
                 {p.href ? (
                   <Link
                     href={p.href}
-                    className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+                    className="flex items-center gap-1.5 border border-navy/20 bg-white px-4 py-2 text-sm font-medium text-navy transition-colors hover:border-navy hover:bg-navy hover:text-white"
                   >
                     <MapPinIcon className="h-3.5 w-3.5 text-navy" />
                     {p.name}

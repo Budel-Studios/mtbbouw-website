@@ -361,7 +361,7 @@ export default function AfbouwstudioPage() {
           </h2>
           <ul className="mt-10 flex flex-wrap gap-2.5">
             {SECTORS.map((s) => (
-              <li key={s} className="border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white">
+              <li key={s} className="border border-navy/20 bg-white px-4 py-2 text-sm font-medium text-navy transition-colors hover:border-navy hover:bg-navy hover:text-white">
                 {s}
               </li>
             ))}
@@ -432,7 +432,7 @@ export default function AfbouwstudioPage() {
             </ContactDrawerButton>
             <a
               href="tel:+31532065071"
-              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-ink"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy"
             >
               Bel direct: 053 206 50 71
             </a>

@@ -1,5 +1,5 @@
+import { ApplyButton } from "@/components/apply-dialog";
 import { CheckIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
 import type { Job } from "@/lib/jobs";
 
 /**
@@ -7,7 +7,7 @@ import type { Job } from "@/lib/jobs";
  * arbeidsvoorwaarden als afvinklijst. Hoekig, veel witruimte, geen
  * standaard "vacaturebank"-uitstraling.
  */
-export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
+export function JobCard({ job }: { job: Job }) {
   return (
     <article className="border border-mist bg-white p-8 sm:p-10">
       <h3 className="text-2xl font-semibold sm:text-3xl">{job.title}</h3>
@@ -74,9 +74,7 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
       )}
 
       <div className="mt-9">
-        <Button href={applyHref} arrow>
-          Solliciteer direct
-        </Button>
+        <ApplyButton job={job.title} />
       </div>
     </article>
   );

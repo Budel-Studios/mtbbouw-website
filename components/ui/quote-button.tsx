@@ -11,7 +11,7 @@ const base =
   "label-mono inline-flex cursor-pointer items-center justify-center gap-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink px-5 py-3.5";
 
 const variants = {
-  primary: "border border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",
+  primary: "border border-navy bg-navy text-white hover:border-navy-dark hover:bg-navy-dark",
   "outline-light": "border border-white/80 text-white hover:bg-white/10",
 } as const;
 

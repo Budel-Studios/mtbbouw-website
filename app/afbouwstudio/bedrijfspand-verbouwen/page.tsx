@@ -173,7 +173,7 @@ export default function BedrijfspandVerbouwenPage() {
             </ContactDrawerButton>
             <a
               href="tel:+31532065071"
-              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-ink"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy"
             >
               Bel direct: 053 206 50 71
             </a>
