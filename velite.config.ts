@@ -95,10 +95,12 @@ const portfolio = defineCollection({
       clientType: s.string().optional(), // Klanttype, bijv. "Particulier", "Zakelijk"
       status: s.string().default("Opgeleverd"), // Status
       featured: s.boolean().default(false), // Uitgelicht — staat altijd vooraan in de homepage-carrousel
+      spotlight: s.boolean().default(false), // Spotlight — hét uitgelichte project: allereerst op /projecten en de homepage
 
       // ---- Beeld ----
       cover: s.string().optional(), // Sfeerfoto hero (pad onder /public)
       coverAlt: s.string().optional(), // Alt-tekst hero (val terug op titel)
+      coverPosition: s.string().optional(), // Focuspunt van de cover bij bijsnijden, bijv. "50% 65%"
       coverVideo: s.string().optional(), // Hero-video (mp4, muted autoplay-loop; cover = poster/fallback)
 
       // ---- Verhaallijn (elk veld = eigen markdown-blok, optioneel) ----

@@ -24,7 +24,7 @@ export type ProjectCardData = {
   location?: string;
   clientType?: string;
   featured?: boolean;
-  images: { src: string; alt: string }[]; // cover eerst, dan galerij (max 3)
+  images: { src: string; alt: string; position?: string }[]; // cover eerst, dan galerij (max 3)
 };
 
 function ArrowUpRight({ className }: { className?: string }) {
@@ -52,7 +52,7 @@ function PhotoStack({
   priority,
   className,
 }: {
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; position?: string }[];
   sizes: string;
   priority: boolean;
   className: string;
@@ -93,6 +93,7 @@ function PhotoStack({
           fill
           sizes={sizes}
           priority={priority && i === 0}
+          style={img.position ? { objectPosition: img.position } : undefined}
           className={`img-zoom object-cover transition-opacity duration-700 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
@@ -240,6 +241,7 @@ export function ProjectCard({
             alt={img.alt}
             fill
             sizes="(max-width: 640px) 82vw, (max-width: 1024px) 55vw, 38vw"
+            style={img.position ? { objectPosition: img.position } : undefined}
             className="img-zoom object-cover"
           />
         )}
