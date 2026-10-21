@@ -72,10 +72,10 @@ export default function WonenEnVerbouwenPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="label-mono text-stone">
             Onze specialismen
           </p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Drie manieren om je woning te verbeteren
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -95,8 +95,8 @@ export default function WonenEnVerbouwenPage() {
                   />
                 </div>
                 <div className="p-8">
-                  <Icon className="h-7 w-7 text-lime-dark" />
-                  <h3 className="mt-5 text-2xl font-extrabold">{title}</h3>
+                  <Icon className="h-7 w-7 text-navy" />
+                  <h3 className="mt-5 text-2xl font-semibold">{title}</h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-stone">
                     {text}
                   </p>

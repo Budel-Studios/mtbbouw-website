@@ -83,7 +83,7 @@ export default async function ArticlePage({
 
   return (
     <>
-      <article className="mx-auto max-w-3xl px-6 py-16">
+      <article className="container-page pb-24 pt-10 md:pb-32 md:pt-14">
         <ArticleJsonLd
           title={article.title}
           description={article.description}
@@ -108,18 +108,18 @@ export default async function ArticlePage({
           ]}
         />
 
-        <nav aria-label="Kruimelpad" className="mb-8 text-sm text-stone">
-          <Link href="/kennisbank" className="hover:text-ink">
+        <nav aria-label="Kruimelpad" className="label-mono text-stone">
+          <Link href="/kennisbank" className="link-line hover:text-navy">
             Kennisbank
           </Link>
           <span className="mx-2" aria-hidden="true">/</span>
-          <Link href={category.href} className="hover:text-ink">
+          <Link href={category.href} className="link-line text-navy">
             {category.label}
           </Link>
         </nav>
 
-        <header className="mb-8">
-          <p className="text-xs uppercase tracking-wide text-stone">
+        <header className="mx-auto mb-14 mt-14 max-w-3xl md:mt-20">
+          <p className="label-mono text-stone">
             <time dateTime={article.date}>{formatDate(article.date)}</time>
             {article.updated && article.updated !== article.date && (
               <>
@@ -130,17 +130,19 @@ export default async function ArticlePage({
             {" · "}
             {article.metadata.readingTime} min lezen
           </p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="display mt-6 animate-fade-up text-5xl md:text-6xl">
             {article.title}
           </h1>
-          <p className="mt-3 text-lg text-stone">{article.description}</p>
+          <p className="mt-8 max-w-2xl border-t border-mist pt-6 text-xl leading-snug tracking-[-0.01em] text-stone md:text-2xl">
+            {article.description}
+          </p>
 
           {/* Indeling — naar de hubpagina als die bestaat, anders de gefilterde kennisbank. */}
-          <ul className="mt-5 flex flex-wrap gap-2 text-xs" aria-label="Onderwerp en bouwdelen">
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Onderwerp en bouwdelen">
             <li>
               <Link
                 href={category.href}
-                className="inline-flex items-center border border-lime/40 bg-lime/10 px-2.5 py-1 font-semibold text-ink transition-colors hover:border-lime"
+                className="label-mono inline-flex items-center bg-navy px-3 py-2 text-white transition-colors hover:bg-navy-dark"
               >
                 {category.label}
               </Link>
@@ -149,7 +151,7 @@ export default async function ArticlePage({
               <li key={sub}>
                 <Link
                   href={hubHref("subcategory", sub)}
-                  className="inline-flex items-center border border-mist bg-white px-2.5 py-1 font-medium text-stone transition-colors hover:border-ink hover:text-ink"
+                  className="label-mono inline-flex items-center border border-mist bg-white px-3 py-2 text-stone transition-colors hover:border-navy hover:text-navy"
                 >
                   {subcategoryLabel(sub)}
                 </Link>
@@ -161,25 +163,25 @@ export default async function ArticlePage({
         </header>
 
         <div
-          className="prose prose-stone max-w-none prose-headings:tracking-tight prose-headings:font-display prose-a:text-lime-dark"
+          className="prose prose-stone mx-auto max-w-3xl text-[1.0625rem] leading-[1.75] prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-[-0.02em] prose-h2:mt-14 prose-h2:text-3xl prose-a:text-navy prose-a:decoration-navy/40 prose-blockquote:border-navy prose-strong:text-ink"
           dangerouslySetInnerHTML={{ __html: article.body }}
         />
 
         {article.series && (
-          <SeriesNav series={article.series} parts={parts} currentSlug={article.slug} />
+          <div className="mx-auto max-w-3xl">
+            <SeriesNav series={article.series} parts={parts} currentSlug={article.slug} />
+          </div>
         )}
       </article>
 
       {related.length > 0 && (
-        <section aria-labelledby="lees-ook" className="border-t border-mist bg-paper">
-          <div className="mx-auto max-w-6xl px-6 py-16">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
-              Verder lezen
-            </p>
-            <h2 id="lees-ook" className="mt-4 text-3xl font-extrabold tracking-tight">
+        <section aria-labelledby="lees-ook" className="border-t border-mist">
+          <div className="container-page py-20 md:py-28">
+            <p className="label-mono text-navy">Verder lezen</p>
+            <h2 id="lees-ook" className="display mt-4 text-4xl md:text-6xl">
               Lees ook
             </h2>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) => (
                 <ArticleCard key={r.slug} article={r} />
               ))}

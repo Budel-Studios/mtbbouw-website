@@ -55,7 +55,7 @@ function PartnerTile({ partner }: { partner: Partner }) {
       {/* Basisweergave */}
       <div className="absolute inset-0 flex flex-col justify-between p-5 transition-opacity duration-200 group-hover:opacity-0">
         <div>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-lime-dark">
+          <span className="label-mono text-navy">
             {partnerCategories[partner.category]}
           </span>
           <p className="mt-2 font-display text-lg font-bold leading-tight text-ink md:text-xl">
@@ -82,7 +82,7 @@ function PartnerTile({ partner }: { partner: Partner }) {
       {/* Hover-overlay met omschrijving */}
       <div className="absolute inset-0 flex flex-col justify-between bg-ink p-5 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
         <div>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-lime">
+          <span className="label-mono text-sky">
             {partnerCategories[partner.category]}
           </span>
           <p className="mt-2 font-display text-lg font-bold leading-tight md:text-xl">
@@ -95,13 +95,13 @@ function PartnerTile({ partner }: { partner: Partner }) {
         <div className="flex items-end justify-between gap-3 text-xs text-white/70">
           {partner.region ? (
             <span className="inline-flex items-center gap-1">
-              <MapPinIcon className="h-3 w-3 text-lime" /> {partner.region}
+              <MapPinIcon className="h-3 w-3 text-sky" /> {partner.region}
             </span>
           ) : (
             <span />
           )}
           {host && (
-            <span className="inline-flex items-center gap-1 font-medium text-lime">
+            <span className="inline-flex items-center gap-1 font-medium text-sky">
               {host}
               <ExternalIcon />
             </span>
@@ -173,7 +173,7 @@ export function RegionalePartnersBrowser() {
                 </h2>
                 <p className="mt-1 max-w-2xl text-sm text-stone">{meta.intro}</p>
               </div>
-              <span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-stone">
+              <span className="shrink-0 label-mono text-stone">
                 {items.length} {items.length === 1 ? "partner" : "partners"}
               </span>
             </div>

@@ -77,10 +77,10 @@ export default function AannemerTwentePage() {
       {/* WERKGEBIED */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="label-mono text-stone">
             Werkgebied
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Actief in heel Twente
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -93,14 +93,14 @@ export default function AannemerTwentePage() {
                 {p.href ? (
                   <Link
                     href={p.href}
-                    className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-lime-dark hover:bg-lime"
+                    className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-navy hover:bg-navy hover:text-white"
                   >
-                    <MapPinIcon className="h-3.5 w-3.5 text-lime-dark" />
+                    <MapPinIcon className="h-3.5 w-3.5 text-navy" />
                     {p.name}
                   </Link>
                 ) : (
                   <span className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink">
-                    <MapPinIcon className="h-3.5 w-3.5 text-lime-dark" />
+                    <MapPinIcon className="h-3.5 w-3.5 text-navy" />
                     {p.name}
                   </span>
                 )}
@@ -109,12 +109,12 @@ export default function AannemerTwentePage() {
           </ul>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-stone">
             In Enschede zelf? Bekijk dan ook onze pagina{" "}
-            <Link href="/aannemer-enschede" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/aannemer-enschede" className="font-semibold text-ink underline hover:text-navy">
               aannemer in Enschede
             </Link>
             . Zakelijk project buiten Twente? Voor kantoor- en horeca-afbouw
             werken we in heel Oost-Nederland —{" "}
-            <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
               lees meer over kantoor verbouwen
             </Link>
             .

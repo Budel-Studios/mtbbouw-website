@@ -105,7 +105,7 @@ const PILLARS = [
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+    <p className="label-mono text-stone">
       {children}
     </p>
   );
@@ -150,7 +150,7 @@ export default function AfbouwstudioPage() {
       <section id="specialismen" className="scroll-mt-24 bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <Eyebrow>01 — Specialismen</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Onze focus: afbouw die werkt voor jouw business
           </h2>
           {/* Kaarten linken door naar de sector-subpagina's — bewust géén
@@ -163,10 +163,10 @@ export default function AfbouwstudioPage() {
                 href={href}
                 className="group border-b border-r border-mist bg-white p-8 transition-colors hover:bg-paper md:p-10"
               >
-                <Icon className="h-8 w-8 text-lime-dark" />
-                <h3 className="mt-6 text-2xl font-extrabold">{title}</h3>
+                <Icon className="h-8 w-8 text-navy" />
+                <h3 className="mt-6 text-2xl font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">{body}</p>
-                <span className="mt-5 inline-block text-sm font-bold group-hover:text-lime-dark">
+                <span className="mt-5 inline-block text-sm font-bold group-hover:text-navy">
                   Meer info →
                 </span>
               </a>
@@ -181,7 +181,7 @@ export default function AfbouwstudioPage() {
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <Eyebrow>02 — Werkwijze</Eyebrow>
-              <h2 className="mt-4 text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-4xl">
                 Wand. Vloer. Plafond. Live in onze eigen app.
               </h2>
               <p className="mt-6 leading-relaxed text-stone">
@@ -200,7 +200,7 @@ export default function AfbouwstudioPage() {
                   "Materialen, kleuren en deadlines geüpdatet zonder e-mail-pingpong",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
-                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-lime-dark" />
+                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-navy" />
                     <span>{t}</span>
                   </li>
                 ))}
@@ -209,16 +209,16 @@ export default function AfbouwstudioPage() {
             {/* Statische PandScan-visual */}
             <div className="mx-auto w-full max-w-sm border border-mist bg-white">
               <div className="border-b border-mist px-5 py-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-stone">
+                <p className="label-mono text-stone">
                   Afbouwstudio · PandScan
                 </p>
                 <p className="mt-1 font-display text-lg font-bold">Broodbode · Zwolle</p>
               </div>
-              <div className="relative aspect-[4/3] bg-lime/10">
+              <div className="relative aspect-[4/3] bg-navy/5">
                 <svg viewBox="0 0 200 150" className="h-full w-full" aria-hidden="true">
                   <rect x="20" y="20" width="160" height="110" fill="none" stroke="var(--color-ink)" strokeWidth="1.5" />
                   <path d="M20 80h160M110 20v110" stroke="var(--color-ink)" strokeWidth="1" fill="none" strokeDasharray="4 4" />
-                  <rect x="34" y="34" width="60" height="26" fill="none" stroke="var(--color-lime)" strokeWidth="2.4" />
+                  <rect x="34" y="34" width="60" height="26" fill="none" stroke="var(--color-navy)" strokeWidth="2.4" />
                 </svg>
               </div>
               <div className="space-y-1.5 p-3">
@@ -244,7 +244,7 @@ export default function AfbouwstudioPage() {
             {STEPS.map(({ icon: Icon, title, body }, i) => (
               <div key={title} className="border-b border-r border-mist bg-white p-7">
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="font-display text-3xl font-extrabold text-lime-dark">
+                  <span className="font-display text-3xl font-semibold text-navy">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <Icon className="h-5 w-5 text-ink" />
@@ -261,7 +261,7 @@ export default function AfbouwstudioPage() {
       <section id="cases" className="scroll-mt-24 bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <Eyebrow>03 — Case study</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
+          <h2 className="mt-4 max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-5xl">
             De Broodbode. Twee locaties, één signatuur.
           </h2>
           <p className="mt-6 max-w-3xl leading-relaxed text-stone">
@@ -283,12 +283,12 @@ export default function AfbouwstudioPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <span className="absolute left-4 top-4 bg-lime px-2.5 py-1 text-[11px] font-semibold text-ink">
+                  <span className="absolute left-4 top-4 bg-navy px-2.5 py-1 text-[11px] font-semibold text-white">
                     {c.tag}
                   </span>
                 </div>
                 <div className="p-7 md:p-9">
-                  <h3 className="text-2xl font-extrabold md:text-3xl">{c.title}</h3>
+                  <h3 className="text-2xl font-semibold md:text-3xl">{c.title}</h3>
                   <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-stone">
                     <span className="flex items-center gap-1.5">
                       <MapPinIcon className="h-3.5 w-3.5" />
@@ -302,13 +302,13 @@ export default function AfbouwstudioPage() {
                   </div>
                   <p className="mt-5 text-[15px] leading-relaxed text-stone">{c.story}</p>
                   <div className="mt-5 border-t border-mist pt-5">
-                    <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone">
+                    <p className="mb-3 label-mono text-stone">
                       Wat we deden
                     </p>
                     <ul className="grid gap-x-4 gap-y-1.5 text-sm text-ink sm:grid-cols-2">
                       {c.items.map((it) => (
                         <li key={it} className="flex gap-2">
-                          <span className="text-lime-dark">·</span>
+                          <span className="text-navy">·</span>
                           {it}
                         </li>
                       ))}
@@ -316,7 +316,7 @@ export default function AfbouwstudioPage() {
                   </div>
                   <Link
                     href={c.href}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink underline decoration-lime decoration-2 underline-offset-4 hover:decoration-ink"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink underline decoration-navy decoration-2 underline-offset-4 hover:decoration-ink"
                   >
                     Bekijk het volledige project →
                   </Link>
@@ -325,7 +325,7 @@ export default function AfbouwstudioPage() {
             ))}
           </div>
 
-          <blockquote className="mt-16 border-l-4 border-lime bg-lime/10 p-10 md:p-14">
+          <blockquote className="mt-16 border-l-4 border-navy bg-navy/5 p-10 md:p-14">
             <p className="font-display text-2xl font-bold leading-[1.15] text-ink md:text-3xl">
               &ldquo;Afbouwstudio was van het eerste pandbezoek tot oplevering
               helder, snel en vakkundig. De app waarmee ze elke wand vastlegden
@@ -341,7 +341,7 @@ export default function AfbouwstudioPage() {
       {/* SCHETS BREAK */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <h2 className="max-w-4xl font-display text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl">
+          <h2 className="max-w-4xl font-display text-4xl font-medium leading-[1.02] tracking-[-0.03em] sm:text-6xl">
             Niet bouwen op gevoel. Bouwen op plan.
           </h2>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
@@ -355,18 +355,18 @@ export default function AfbouwstudioPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <Eyebrow>04 — Sectoren</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Voor ondernemers in Twente, Overijssel en daarbuiten
           </h2>
           <ul className="mt-10 flex flex-wrap gap-2.5">
             {SECTORS.map((s) => (
-              <li key={s} className="border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-lime-dark hover:bg-lime">
+              <li key={s} className="border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-navy hover:bg-navy hover:text-white">
                 {s}
               </li>
             ))}
           </ul>
           <div className="mt-14 border-t border-mist pt-10">
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone">
+            <p className="mb-5 label-mono text-stone">
               Partners & opdrachtgevers
             </p>
             <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
@@ -384,14 +384,14 @@ export default function AfbouwstudioPage() {
       <section className="border-y border-mist bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <Eyebrow>05 — Waarom</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Geen bouwsoap. Een team dat doet wat het zegt.
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {PILLARS.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="border-t-2 border-lime pt-6">
+              <div key={title} className="border-t-2 border-navy pt-6">
                 <Icon className="h-8 w-8 text-ink" />
-                <h3 className="mt-5 text-2xl font-extrabold">{title}</h3>
+                <h3 className="mt-5 text-2xl font-semibold">{title}</h3>
                 <p className="mt-3 leading-relaxed text-stone">{body}</p>
               </div>
             ))}
@@ -414,10 +414,10 @@ export default function AfbouwstudioPage() {
       {/* CTA */}
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-lime">
+          <p className="label-mono text-sky">
             Persoonlijk contact
           </p>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
             Klaar voor de intake?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
@@ -428,7 +428,7 @@ export default function AfbouwstudioPage() {
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="mailto:info@mtbbouw.com?subject=Intake%20bedrijfspand"
-              className="inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-lime-dark"
+              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake
             </a>

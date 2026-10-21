@@ -6,21 +6,21 @@ type Size = "md" | "sm";
 
 /*
  * Eén uniforme knopstijl voor de hele site, afgestemd op de live site:
- * vierkante hoeken, lime-vlak met donkere tekst en pijl, of omlijnd (wit op
+ * vierkante hoeken, navy vlak met witte tekst en pijl, of omlijnd (wit op
  * foto's/donkere secties, donker op licht).
  */
 const base =
-  "inline-flex items-center justify-center gap-2 font-display font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-dark disabled:cursor-not-allowed disabled:opacity-60";
+  "label-mono inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-lime text-ink hover:bg-lime-dark",
+  primary: "bg-navy text-white hover:bg-navy-dark",
   "outline-light": "border border-white/80 text-white hover:bg-white/10",
-  "outline-dark": "border border-ink/25 text-ink hover:bg-ink/5",
+  "outline-dark": "border border-navy text-navy hover:bg-navy hover:text-white",
 };
 
 const sizes: Record<Size, string> = {
-  md: "px-6 py-3.5 text-sm",
-  sm: "px-5 py-2.5 text-sm",
+  md: "px-5 py-3.5",
+  sm: "px-4 py-2.5",
 };
 
 type BaseProps = {
@@ -100,7 +100,7 @@ export function Button({
 }
 
 /**
- * Tekstlink met pijl en lime onderstreping — het "Meer info →" /
+ * Tekstlink met pijl en navy onderstreping — het "Meer info →" /
  * "Bekijk alle projecten →"-patroon van de live site.
  */
 export function ArrowLink({
@@ -114,9 +114,9 @@ export function ArrowLink({
   className?: string;
   onDark?: boolean;
 }) {
-  const cls = `inline-flex items-center gap-1.5 border-b-2 border-lime pb-1 text-sm font-bold ${
+  const cls = `inline-flex items-center gap-1.5 border-b border-navy pb-1 text-sm font-semibold ${
     onDark ? "text-white" : "text-ink"
-  } transition-colors hover:text-lime-dark ${className}`.trim();
+  } transition-colors hover:text-navy ${className}`.trim();
   const content = (
     <>
       {children}

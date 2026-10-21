@@ -5,7 +5,7 @@ import type { SketchIcon } from "@/lib/services/types";
  * MTB-huisstijl (ink-lijn + lime-accent). Pure SVG — server component.
  */
 const INK = "var(--color-ink)";
-const LIME = "var(--color-lime)";
+const LIME = "var(--color-navy)";
 
 export function ServiceSketch({
   name,

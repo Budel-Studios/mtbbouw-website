@@ -19,7 +19,7 @@ function FilterIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      className="shrink-0 text-black"
+      className="shrink-0 text-navy"
     >
       <path d="M2 5h20" />
       <path d="M6 12h12" />
@@ -65,16 +65,16 @@ export function FilterDropdown({
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex w-full items-center justify-between border border-mist bg-white px-6 py-4 text-sm text-ink shadow-sm transition-colors hover:bg-paper"
+        className="flex w-full items-center justify-between border border-mist bg-white px-5 py-3 text-ink transition-colors hover:border-navy"
       >
-        <span className="font-display font-medium">{active === options[0] ? label : active}</span>
+        <span className="label-mono">{active === options[0] ? label : active}</span>
         <FilterIcon />
       </button>
 
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 z-20 mt-1 w-full border border-mist bg-white py-1 shadow-lg"
+          className="absolute right-0 z-20 mt-1 w-full border border-mist bg-white py-1 shadow-pop"
         >
           {options.map((opt) => {
             const isActive = opt === active;
@@ -86,12 +86,12 @@ export function FilterDropdown({
                     onChange(opt);
                     setOpen(false);
                   }}
-                  className={`flex w-full items-center justify-between px-6 py-2.5 text-left text-sm transition-colors hover:bg-paper ${
-                    isActive ? "font-semibold text-ink" : "text-stone"
+                  className={`flex w-full items-center justify-between px-5 py-2.5 text-left text-sm transition-colors hover:bg-paper ${
+                    isActive ? "font-semibold text-navy" : "text-stone"
                   }`}
                 >
                   {opt}
-                  {isActive && <span className="h-1.5 w-1.5 shrink-0 bg-lime" />}
+                  {isActive && <span className="h-1.5 w-1.5 shrink-0 bg-navy" />}
                 </button>
               </li>
             );

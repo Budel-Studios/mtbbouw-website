@@ -35,12 +35,12 @@ export function FeatureGrid({
       {(eyebrow || title || intro) && (
         <div className="mb-12 max-w-3xl">
           {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+            <p className="label-mono text-stone">
               {eyebrow}
             </p>
           )}
           {title && (
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
           )}
           {intro && (
             <p className="mt-5 text-base leading-relaxed text-stone md:text-lg">
@@ -53,9 +53,9 @@ export function FeatureGrid({
         {items.map((item) => {
           const Icon = item.icon;
           return (
-            <div key={item.title} className="border-t-2 border-lime pt-8">
+            <div key={item.title} className="border-t-2 border-navy pt-8">
               {Icon && <Icon className="h-7 w-7" />}
-              <ItemHeading className="mt-4 text-xl font-extrabold">
+              <ItemHeading className="mt-4 text-xl font-semibold">
                 {item.title}
               </ItemHeading>
               <p className="mt-2 text-stone">{item.text}</p>

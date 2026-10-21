@@ -5,8 +5,7 @@ import type { ArticleCardData } from "@/lib/kennisbank";
 
 /**
  * Lichte artikelkaart voor "Lees ook" en het kennisbank-blok op dienst- en
- * stadspagina's. Zelfde beeldtaal als de homepage-kaarten: papier, haarlijn,
- * lime bij hover.
+ * stadspagina's. Foto-eerst, mono-meta en een displaykop; navy bij hover.
  */
 export function ArticleCard({
   article,
@@ -19,32 +18,33 @@ export function ArticleCard({
   return (
     <Link
       href={article.permalink}
-      className="group flex flex-col border border-mist bg-white transition-all hover:-translate-y-0.5 hover:border-lime hover:shadow-card"
+      className="group flex flex-col"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-ink">
+      <div className="relative aspect-[4/3] overflow-hidden bg-mist">
         {article.cover ? (
           <Image
             src={article.cover}
             alt={article.coverAlt || article.title}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="img-zoom object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(171,224,0,0.18),transparent_60%)]" />
+          <div className="absolute inset-0 bg-navy" />
         )}
       </div>
-      <div className="flex flex-1 flex-col p-6">
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-stone">
-          {categoryLabel(article.category)} · {article.readingTime} min lezen
+      <div className="flex flex-1 flex-col pt-5">
+        <p className="label-mono flex flex-wrap gap-x-3">
+          <span className="text-navy">{categoryLabel(article.category)}</span>
+          <span className="text-stone">{article.readingTime} min lezen</span>
         </p>
-        <Heading className="mt-2 font-display text-lg font-bold leading-snug text-ink transition-colors group-hover:text-lime-dark">
+        <Heading className="display mt-3 text-2xl transition-colors group-hover:text-navy">
           {article.title}
         </Heading>
-        <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-ink/65">
+        <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-stone">
           {article.description}
         </p>
-        <span className="mt-4 text-sm font-semibold text-ink">Lees meer →</span>
+        <span className="label-mono mt-5 text-navy">Lees artikel →</span>
       </div>
     </Link>
   );

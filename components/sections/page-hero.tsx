@@ -3,9 +3,8 @@ import type { ReactNode } from "react";
 
 /**
  * Pagina-hero in twee varianten:
- * - "plain": gecentreerde eyebrow + H1 + intro (patroon van /diensten)
- * - "image": full-bleed foto met witte H1 en lime accentlijn (patroon van de
- *   homepage-hero, maar lager)
+ * - "plain": editoriale kop — mono-eyebrow + grote displaykop links, intro rechts
+ * - "image": full-bleed foto met witte displaykop onderin
  */
 export function PageHero({
   variant = "plain",
@@ -33,17 +32,10 @@ export function PageHero({
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-ink/40" />
-        <div className="absolute bottom-0 left-10 top-0 hidden w-1 md:block">
-          <div className="absolute bottom-0 h-1/3 w-full bg-lime" />
-        </div>
-        <div className="relative mx-auto flex min-h-[50vh] max-w-6xl flex-col justify-center px-6 py-20">
-          {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime">
-              {eyebrow}
-            </p>
-          )}
-          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/35 to-ink/10" />
+        <div className="container-page relative flex min-h-[50vh] flex-col justify-end py-16 md:py-20">
+          {eyebrow && <p className="label-mono text-white/80">{eyebrow}</p>}
+          <h1 className="display mt-5 max-w-4xl text-5xl text-white md:text-7xl">
             {title}
           </h1>
           {intro && (
@@ -58,21 +50,21 @@ export function PageHero({
   }
 
   return (
-    <section className="mx-auto max-w-4xl px-6 pb-12 pt-16 text-center">
-      {eyebrow && (
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
-          {eyebrow}
-        </p>
-      )}
-      <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-        {title}
-      </h1>
-      {intro && (
-        <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-stone">
-          {intro}
-        </p>
-      )}
-      {cta && <div className="mt-8 flex justify-center gap-6">{cta}</div>}
+    <section className="container-page pb-12 pt-16 md:pb-16 md:pt-24">
+      <div className="grid gap-10 md:grid-cols-12 md:items-end">
+        <div className="animate-fade-up md:col-span-8">
+          {eyebrow && <p className="label-mono text-navy">{eyebrow}</p>}
+          <h1 className="display mt-6 text-5xl md:text-7xl">{title}</h1>
+        </div>
+        {(intro || cta) && (
+          <div className="animate-fade-up md:col-span-4" style={{ animationDelay: "120ms" }}>
+            {intro && (
+              <p className="max-w-md text-base leading-relaxed text-stone">{intro}</p>
+            )}
+            {cta && <div className="mt-8 flex flex-wrap items-center gap-4">{cta}</div>}
+          </div>
+        )}
+      </div>
     </section>
   );
 }

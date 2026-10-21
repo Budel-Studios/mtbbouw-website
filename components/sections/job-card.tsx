@@ -10,12 +10,12 @@ import type { Job } from "@/lib/jobs";
 export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
   return (
     <article className="border border-mist bg-white p-8 sm:p-10">
-      <h3 className="text-2xl font-extrabold sm:text-3xl">{job.title}</h3>
+      <h3 className="text-2xl font-semibold sm:text-3xl">{job.title}</h3>
       <p className="mt-4 leading-relaxed text-stone">{job.intro}</p>
 
       {job.tasks.length > 0 && (
         <div className="mt-8">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-stone">
+          <p className="label-mono text-stone">
             Werkzaamheden
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -33,13 +33,13 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
 
       {job.profile.length > 0 && (
         <div className="mt-8">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-stone">
+          <p className="label-mono text-stone">
             Wij zoeken iemand die
           </p>
           <ul className="mt-3 space-y-1.5">
             {job.profile.map((trait) => (
               <li key={trait} className="flex items-start gap-2 text-sm text-ink">
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-lime-dark" />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-navy" />
                 {trait}
               </li>
             ))}
@@ -48,7 +48,7 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
       )}
 
       {job.extra.length > 0 && (
-        <div className="mt-6 space-y-2 border-l-2 border-lime pl-4">
+        <div className="mt-6 space-y-2 border-l-2 border-navy pl-4">
           {job.extra.map((line) => (
             <p key={line} className="text-sm leading-relaxed text-stone">
               {line}
@@ -59,13 +59,13 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
 
       {job.benefits.length > 0 && (
         <div className="mt-8">
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-stone">
+          <p className="label-mono text-stone">
             Arbeidsvoorwaarden
           </p>
           <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
             {job.benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-2 text-sm text-ink">
-                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-lime-dark" />
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-navy" />
                 {benefit}
               </li>
             ))}

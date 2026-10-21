@@ -13,10 +13,10 @@ export function NearbyPlaces({ currentSlug }: { currentSlug: string }) {
   return (
     <section className="border-y border-mist bg-white">
       <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+        <p className="label-mono text-stone">
           Werkgebied
         </p>
-        <h2 className="mt-4 max-w-3xl text-2xl font-extrabold tracking-tight sm:text-3xl">
+        <h2 className="mt-4 max-w-3xl text-2xl font-medium tracking-[-0.03em] sm:text-3xl">
           Ook actief in de rest van Twente
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-stone">
@@ -30,14 +30,14 @@ export function NearbyPlaces({ currentSlug }: { currentSlug: string }) {
                 href={`/${p.slug}`}
                 className="group flex h-full flex-col gap-1 bg-white p-6 transition-colors hover:bg-paper"
               >
-                <span className="flex items-center gap-2 font-extrabold">
-                  <MapPinIcon className="h-4 w-4 text-lime-dark" />
+                <span className="flex items-center gap-2 font-semibold">
+                  <MapPinIcon className="h-4 w-4 text-navy" />
                   {p.name}
                 </span>
                 <span className="text-sm leading-relaxed text-stone">
                   Ook {p.nearby}
                 </span>
-                <span className="mt-2 text-sm font-bold group-hover:text-lime-dark">
+                <span className="mt-2 text-sm font-bold group-hover:text-navy">
                   Bekijk →
                 </span>
               </Link>
@@ -46,7 +46,7 @@ export function NearbyPlaces({ currentSlug }: { currentSlug: string }) {
         </ul>
         <p className="mt-8 text-sm text-stone">
           Staat jouw plaats er niet bij? Bekijk{" "}
-          <Link href="/aannemer-twente" className="font-semibold text-ink underline hover:text-lime-dark">
+          <Link href="/aannemer-twente" className="font-semibold text-ink underline hover:text-navy">
             ons werkgebied in Twente
           </Link>
           .

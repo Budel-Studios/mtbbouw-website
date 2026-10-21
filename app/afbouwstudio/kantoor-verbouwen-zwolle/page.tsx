@@ -55,10 +55,10 @@ export default function KantoorZwollePage() {
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+              <p className="label-mono text-stone">
                 01 — Waarom Afbouwstudio in Zwolle
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 Twentse nuchterheid, bewezen in Zwolle
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -76,30 +76,30 @@ export default function KantoorZwollePage() {
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
-                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-lime-dark" />
+                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-navy" />
                     <span>{t}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+              <p className="label-mono text-stone">
                 02 — Wat we doen
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 Complete kantoorafbouw
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
-                <Link href="/afbouwstudio/metal-stud-wanden" className="font-semibold text-ink underline hover:text-lime-dark">Metal stud-wanden</Link>{" "}
+                <Link href="/afbouwstudio/metal-stud-wanden" className="font-semibold text-ink underline hover:text-navy">Metal stud-wanden</Link>{" "}
                 en glaswanden,{" "}
-                <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-lime-dark">systeemplafonds</Link>{" "}
+                <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
                 met verlichting, vloeren, installaties, pantry en sanitair.
                 Kostenindicaties en het volledige verhaal vind je op onze{" "}
-                <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-lime-dark">
+                <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   kantoor verbouwen-pagina
                 </Link>{" "}
                 en in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-lime-dark">
+                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
                   kostengids 2026
                 </Link>
                 .
@@ -122,10 +122,10 @@ export default function KantoorZwollePage() {
 
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-lime">
+          <p className="label-mono text-sky">
             Persoonlijk contact
           </p>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
             Kantoorplannen in Zwolle?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
@@ -135,7 +135,7 @@ export default function KantoorZwollePage() {
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="mailto:info@mtbbouw.com?subject=Intake%20kantoor%20Zwolle"
-              className="inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-lime-dark"
+              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Plan intake
             </a>

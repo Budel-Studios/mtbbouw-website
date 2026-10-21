@@ -41,10 +41,10 @@ export default function RegionalePartnersPage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <a
           href="mailto:info@mtbbouw.com?subject=Partner%20van%20MTB%20worden"
-          className="group block border border-lime-dark/20 bg-lime transition-colors hover:bg-lime-dark"
+          className="group block border border-navy/20 bg-navy transition-colors hover:bg-navy-dark"
         >
           <div className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:gap-10 md:p-12">
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-ink text-lime md:h-24 md:w-24">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-ink text-sky md:h-24 md:w-24">
               <svg
                 className="h-10 w-10 md:h-12 md:w-12"
                 viewBox="0 0 24 24"
@@ -63,10 +63,10 @@ export default function RegionalePartnersPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink/70">
+              <span className="label-mono text-ink/70">
                 Open plek in ons netwerk
               </span>
-              <h2 className="mt-2 font-display text-3xl font-extrabold leading-[1.05] text-ink sm:text-4xl">
+              <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.05] text-ink sm:text-4xl">
                 Word partner van MTB
               </h2>
               <p className="mt-3 max-w-2xl leading-relaxed text-ink/80">

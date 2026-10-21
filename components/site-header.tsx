@@ -5,7 +5,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { mainNav, type MegaContent, type NavColumn, type NavItem, type NavLink } from "@/lib/nav";
 import { ContactDrawerButton } from "@/components/contact-drawer";
-import { LogoMark } from "@/components/logo";
+import { Logo } from "@/components/logo";
 
 /**
  * Site header — 1:1 replica of the live site's custom jalalabadi header:
@@ -92,7 +92,7 @@ const User = () => (
 
 /**
  * Outline button with the sliding arrow icon (live: jalalabadi_tom_btn).
- * Hover: de hele knop vult lime, tekst en pijl worden zwart — vorm en
+ * Hover: de hele knop vult navy, tekst en pijl worden wit — vorm en
  * pijl-animatie blijven ongewijzigd, alleen een subtiele kleurovergang.
  */
 function TomButton({ text, href, onClick }: { text: string; href: string; onClick: () => void }) {
@@ -100,15 +100,15 @@ function TomButton({ text, href, onClick }: { text: string; href: string; onClic
     <Link
       href={href}
       onClick={onClick}
-      className="group flex w-fit items-center gap-1 border border-lime px-5 py-2 transition-colors duration-300 hover:bg-lime"
+      className="group flex w-fit items-center gap-2 border border-navy px-5 py-2.5 transition-colors duration-300 hover:bg-navy"
     >
-      <span className="text-base text-lime transition-colors duration-300 group-hover:text-ink">
+      <span className="label-mono text-navy transition-colors duration-300 group-hover:text-white">
         {text}
       </span>
       <span className="relative block h-[15px] w-[15px] overflow-hidden">
         <span className="relative block transition-transform duration-300 ease-in-out group-hover:-translate-y-3 group-hover:translate-x-3">
-          <ArrowUpRight className="text-lime transition-colors duration-300 group-hover:text-ink" />
-          <ArrowUpRight className="absolute -left-3 top-3 text-lime transition-colors duration-300 group-hover:text-ink" />
+          <ArrowUpRight className="text-navy transition-colors duration-300 group-hover:text-white" />
+          <ArrowUpRight className="absolute -left-3 top-3 text-navy transition-colors duration-300 group-hover:text-white" />
         </span>
       </span>
     </Link>
@@ -122,9 +122,9 @@ function StepItem({ step, onClick }: { step: NavLink; onClick: () => void }) {
       onClick={onClick}
       className="flex border-b border-mist pb-2 transition-all hover:pl-2"
     >
-      <span className="mr-4 text-lg font-bold text-lime">{step.id}</span>
+      <span className="label-mono mr-4 pt-1.5 text-navy">{step.id}</span>
       <span>
-        <span className="block text-xl text-ink">{step.title}</span>
+        <span className="block text-xl font-medium tracking-[-0.02em] text-ink">{step.title}</span>
         {step.subtitle && (
           <span className="mt-1 block text-sm leading-snug text-stone">
             {step.subtitle}
@@ -148,7 +148,7 @@ function LinkColumn({ column, onClick }: { column: NavColumn; onClick: () => voi
               <Link
                 href={item.href}
                 onClick={onClick}
-                className="text-stone transition-colors hover:text-lime"
+                className="text-stone transition-colors hover:text-navy"
               >
                 {item.title}
               </Link>
@@ -164,14 +164,14 @@ function MegaPanel({ content, onClose }: { content: MegaContent; onClose: () => 
   return (
     <div className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden overflow-hidden lg:block">
       <div className="flex w-full animate-mega-in">
-        {/* Grid column — starts below de 80px-balk, altijd tot aan de afbeelding */}
-        <div className="min-w-0 flex-1 pt-20">
-          <div className="pointer-events-auto grid h-full w-full grid-cols-[0.75fr_1fr_1fr_1fr] gap-8 border-t border-mist bg-paper p-12 shadow-xl">
+        {/* Grid column — starts below de 64px-balk, altijd tot aan de afbeelding */}
+        <div className="min-w-0 flex-1 pt-16">
+          <div className="pointer-events-auto grid h-full w-full grid-cols-[0.75fr_1fr_1fr_1fr] gap-8 border-t border-mist bg-paper p-12 shadow-pop">
             {content.intro ? (
               <div className="col-span-1">
                 {/* p, geen h2: nav-labels horen niet in de document-outline
                     (deze panelen staan op élke pagina in de DOM). */}
-                <p className="mb-6 text-3xl font-light leading-tight text-ink">
+                <p className="display mb-6 text-3xl text-ink">
                   {content.intro.title}
                 </p>
                 <TomButton
@@ -205,7 +205,7 @@ function MegaPanel({ content, onClose }: { content: MegaContent; onClose: () => 
             )}
             {content.introPro && (
               <div className="col-span-1">
-                <p className="mb-6 mt-0 text-3xl font-light leading-tight text-ink">
+                <p className="display mb-6 mt-0 text-3xl text-ink">
                   {content.introPro.title}
                 </p>
                 <TomButton
@@ -217,10 +217,10 @@ function MegaPanel({ content, onClose }: { content: MegaContent; onClose: () => 
             )}
           </div>
         </div>
-        {/* Beeldpaneel — transparante wrapper met pt-20 duwt de afbeelding zelf
+        {/* Beeldpaneel — transparante wrapper met pt-16 duwt de afbeelding zelf
             (een los kind-element, niet enkel een achtergrond-property) onder
-            de 80px-menubalk, zodat hij nooit over het hoofdmenu heen valt. */}
-        <div className="pointer-events-auto flex-[0_0_30%] pt-20">
+            de 64px-menubalk, zodat hij nooit over het hoofdmenu heen valt. */}
+        <div className="pointer-events-auto flex-[0_0_30%] pt-16">
           <div
             className="h-full w-full bg-cover bg-left"
             style={{ backgroundImage: `url(${content.image})` }}
@@ -240,9 +240,9 @@ function MobileStepRow({ step, onClick }: { step: NavLink; onClick: () => void }
       onClick={onClick}
       className="flex border-b border-mist pb-3"
     >
-      <span className="mr-4 text-lg font-bold text-lime">{step.id}</span>
+      <span className="label-mono mr-4 pt-1 text-navy">{step.id}</span>
       <span>
-        <span className="block text-lg text-ink">{step.title}</span>
+        <span className="block text-lg font-medium tracking-[-0.02em] text-ink">{step.title}</span>
         {step.subtitle && (
           <span className="mt-0.5 block text-sm leading-snug text-stone">
             {step.subtitle}
@@ -271,7 +271,7 @@ function MobileSubmenu({
         <button
           type="button"
           onClick={onBack}
-          className="mb-6 flex items-center text-sm font-medium text-stone transition-colors hover:text-lime"
+          className="label-mono mb-6 flex items-center text-stone transition-colors hover:text-navy"
         >
           <ArrowLeft /> Terug
         </button>
@@ -283,7 +283,7 @@ function MobileSubmenu({
             <Link
               href={intro.href}
               onClick={onClose}
-              className="mb-10 flex w-full items-center justify-center border border-lime py-3 text-lime transition-colors hover:bg-lime hover:text-white"
+              className="label-mono mb-10 flex w-full items-center justify-center border border-navy py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
             >
               {intro.button} <ArrowRight />
             </Link>
@@ -318,7 +318,7 @@ function MobileSubmenu({
                 onClick={onClose}
                 className="mb-4 flex items-center text-lg font-bold text-ink"
               >
-                <span className="mr-4 text-lg font-bold text-lime">{col.id}</span>
+                <span className="label-mono mr-4 text-navy">{col.id}</span>
                 {col.title}
               </Link>
               {col.items.length > 0 && (
@@ -396,26 +396,26 @@ export function SiteHeader() {
         aria-label="Hoofdmenu"
         onMouseEnter={cancelClose}
         onMouseLeave={scheduleClose}
-        className="relative bg-paper font-display shadow-hair"
+        className="relative border-b border-mist bg-paper/90 font-display backdrop-blur-md"
       >
-        <div className="relative z-10 flex h-20 items-stretch">
-          {/* Logo — alleen beeldmerk, tegen de linkerrand */}
+        <div className="relative z-10 flex h-16 items-stretch">
+          {/* Logo — beeldmerk + woordmerk */}
           <Link
             href="/"
             onClick={closeAll}
-            className="flex shrink-0 items-center px-5"
+            className="flex shrink-0 items-center px-5 md:px-8"
             aria-label={site.name}
           >
-            <LogoMark uid="hdr" className="h-11 w-auto" />
+            <Logo uid="hdr" />
           </Link>
 
           {/* Desktop-menu: links naast het logo, hover opent mega-menu */}
-          <div className="ml-10 hidden items-stretch gap-9 lg:flex">
+          <div className="ml-6 hidden items-stretch gap-8 lg:flex">
             {mainNav.map((item) => (
               <div
                 key={item.id}
-                className={`flex items-stretch border-b-4 transition-colors ${
-                  activeMega === item.id ? "border-lime" : "border-transparent"
+                className={`flex items-stretch border-b-2 transition-colors ${
+                  activeMega === item.id ? "border-navy" : "border-transparent"
                 }`}
               >
                 {item.content ? (
@@ -423,11 +423,11 @@ export function SiteHeader() {
                     type="button"
                     onMouseEnter={() => openMega(item.id)}
                     onClick={() => openMega(item.id)}
-                    className="flex cursor-pointer items-center text-sm font-medium text-ink transition-colors hover:text-lime-dark"
+                    className="label-mono flex cursor-pointer items-center text-stone transition-colors hover:text-navy"
                   >
                     {item.title}
                     <ChevronDown
-                      className={`ml-1 transition-transform duration-300 ${
+                      className={`ml-1 h-3.5 w-3.5 transition-transform duration-300 ${
                         activeMega === item.id ? "rotate-180" : ""
                       }`}
                     />
@@ -440,7 +440,7 @@ export function SiteHeader() {
                       cancelClose();
                       setActiveMega(null);
                     }}
-                    className="flex items-center text-sm font-medium text-ink transition-colors hover:text-lime-dark"
+                    className="label-mono flex items-center text-stone transition-colors hover:text-navy"
                   >
                     {item.title}
                   </Link>
@@ -449,7 +449,7 @@ export function SiteHeader() {
             ))}
           </div>
 
-          {/* Rechts: brochure-tekstlink + vierkant lime Contact-blok (tegen de rand) */}
+          {/* Rechts: brochure-tekstlink + navy Contact-blok (tegen de rand) */}
           <div
             className="ml-auto hidden items-stretch lg:flex"
             onMouseEnter={() => {
@@ -460,13 +460,13 @@ export function SiteHeader() {
             <Link
               href="/gratis-brochure"
               onClick={closeAll}
-              className="mr-4 hidden items-center whitespace-nowrap text-sm font-medium text-ink transition-colors hover:text-lime-dark xl:flex"
+              className="label-mono mr-6 hidden items-center whitespace-nowrap text-stone transition-colors hover:text-navy xl:flex"
             >
               Gratis brochure
             </Link>
             <ContactDrawerButton
               onClick={closeAll}
-              className="flex cursor-pointer items-center bg-lime px-4 text-sm font-normal text-ink transition-colors hover:bg-lime-dark"
+              className="label-mono flex cursor-pointer items-center gap-2 bg-navy px-6 text-white transition-colors hover:bg-navy-dark"
             >
               Contact
             </ContactDrawerButton>
@@ -476,10 +476,10 @@ export function SiteHeader() {
           <div className="ml-auto flex items-stretch lg:hidden">
             <a
               href={`tel:${site.telephoneHref}`}
-              className="flex items-center justify-center border-l border-mist px-5 text-stone"
+              className="flex items-center justify-center bg-navy px-5 text-white"
               aria-label="Bel ons"
             >
-              <Phone />
+              <Phone size={18} />
             </a>
             <button
               type="button"
@@ -487,10 +487,10 @@ export function SiteHeader() {
                 setMobileOpen(!mobileOpen);
                 setMobileSub(null);
               }}
-              className="flex cursor-pointer items-center gap-3 border-l border-mist px-6 text-black"
+              className="flex cursor-pointer items-center gap-3 px-5 text-ink"
             >
               {mobileOpen ? <X /> : <Menu />}
-              <span className="text-sm font-medium">Menu</span>
+              <span className="label-mono">Menu</span>
             </button>
           </div>
         </div>
@@ -510,7 +510,7 @@ export function SiteHeader() {
 
       {/* Mobiel fullscreen-menu */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-20 z-40 animate-menu-down overflow-hidden bg-paper font-display lg:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-16 z-40 animate-menu-down overflow-hidden bg-paper font-display lg:hidden">
           <div className="relative h-full w-full">
             <div
               className="absolute inset-0 overflow-y-auto p-6 transition-opacity duration-300"
@@ -526,7 +526,7 @@ export function SiteHeader() {
                       <button
                         type="button"
                         onClick={() => setMobileSub(item)}
-                        className="flex w-full cursor-pointer items-center justify-between py-4 text-left text-xl font-medium text-ink"
+                        className="flex w-full cursor-pointer items-center justify-between py-4 text-left text-2xl font-medium tracking-[-0.02em] text-ink"
                       >
                         {item.title}
                         <ChevronDown className="-rotate-90 text-stone" />
@@ -535,7 +535,7 @@ export function SiteHeader() {
                       <Link
                         href={item.href!}
                         onClick={closeAll}
-                        className="flex w-full items-center justify-between py-4 text-xl font-medium text-ink"
+                        className="flex w-full items-center justify-between py-4 text-2xl font-medium tracking-[-0.02em] text-ink"
                       >
                         {item.title}
                       </Link>
@@ -546,7 +546,7 @@ export function SiteHeader() {
               <div className="mt-8 flex flex-col gap-4 pb-20">
                 <ContactDrawerButton
                   onClick={closeAll}
-                  className="flex w-full cursor-pointer items-center justify-center bg-lime py-4 text-lg font-bold text-ink shadow-sm transition-transform active:scale-95"
+                  className="label-mono flex w-full cursor-pointer items-center justify-center bg-navy py-4 text-white transition-transform active:scale-95"
                 >
                   Contact
                 </ContactDrawerButton>
@@ -554,14 +554,14 @@ export function SiteHeader() {
                   <Link
                     href="/gratis-brochure"
                     onClick={closeAll}
-                    className="bg-white py-4 pl-2 text-center text-sm font-medium shadow-sm transition-transform active:scale-95"
+                    className="label-mono border border-mist bg-white py-4 text-center transition-transform active:scale-95"
                   >
                     Gratis brochure
                   </Link>
                   {/* MijnMTB — klantportaal, nog geen pagina (live knop is ook een placeholder) */}
                   <button
                     type="button"
-                    className="flex items-center justify-center gap-2 bg-white py-4 text-sm font-medium shadow-sm transition-transform active:scale-95"
+                    className="label-mono flex items-center justify-center gap-2 border border-mist bg-white py-4 transition-transform active:scale-95"
                   >
                     <User /> MijnMTB
                   </button>

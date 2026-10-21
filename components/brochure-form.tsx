@@ -40,7 +40,7 @@ export function BrochureForm() {
   if (status === "success") {
     return (
       <div className="border border-mist bg-white p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime/20 text-lime-dark">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-navy/10 text-navy">
           <svg
             className="h-7 w-7"
             viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ export function BrochureForm() {
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="mt-5 font-display text-xl font-extrabold">Aanvraag ontvangen</h3>
+        <h3 className="mt-5 font-display text-xl font-semibold">Aanvraag ontvangen</h3>
         <p className="mt-2 text-stone">
           We mailen je de brochure zo snel mogelijk. Check ook je spamfolder.
         </p>
@@ -69,7 +69,7 @@ export function BrochureForm() {
       aria-label="Brochure aanvragen"
       noValidate
     >
-      <h2 className="font-display text-xl font-extrabold">Vraag de brochure aan</h2>
+      <h2 className="font-display text-xl font-semibold">Vraag de brochure aan</h2>
       <p className="mt-1 text-sm text-stone">
         Gratis en vrijblijvend — je zit nergens aan vast.
       </p>
@@ -85,7 +85,7 @@ export function BrochureForm() {
         />
         <div>
           <label htmlFor="brochure-naam" className="field-label">
-            Naam <span className="text-lime-dark">*</span>
+            Naam <span className="text-navy">*</span>
           </label>
           <input
             id="brochure-naam"
@@ -98,7 +98,7 @@ export function BrochureForm() {
         </div>
         <div>
           <label htmlFor="brochure-email" className="field-label">
-            E-mail <span className="text-lime-dark">*</span>
+            E-mail <span className="text-navy">*</span>
           </label>
           <input
             id="brochure-email"

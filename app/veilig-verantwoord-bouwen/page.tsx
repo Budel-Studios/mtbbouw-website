@@ -83,10 +83,10 @@ export default async function VeiligVerantwoordBouwenPage() {
 
       {/* 1. ONZE VISIE */}
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+        <p className="label-mono text-stone">
           Onze visie
         </p>
-        <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
           Bouwen is mensenwerk
         </h2>
         <div className="mt-6 space-y-4 leading-relaxed text-stone">
@@ -169,10 +169,10 @@ export default async function VeiligVerantwoordBouwenPage() {
       {/* 4. VAKMANSCHAP */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 pt-16">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="label-mono text-stone">
             Vakmanschap
           </p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-extrabold sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-3xl font-semibold sm:text-4xl">
             Waar kwaliteit vandaan komt
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -306,7 +306,7 @@ export default async function VeiligVerantwoordBouwenPage() {
       {/* Rustige interne links — bewust geen grote CTA */}
       <section className="border-t border-mist py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="label-mono text-stone">
             Meer lezen
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

@@ -19,12 +19,12 @@ export function PerkGrid({
       {(eyebrow || title) && (
         <div className="mb-12 max-w-2xl">
           {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+            <p className="label-mono text-stone">
               {eyebrow}
             </p>
           )}
           {title && (
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
           )}
         </div>
       )}
@@ -34,12 +34,12 @@ export function PerkGrid({
           return (
             <div
               key={item.text}
-              className="relative border border-mist bg-white p-6 transition-colors hover:border-lime"
+              className="relative border border-mist bg-white p-6 transition-colors hover:border-navy"
             >
-              <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center bg-lime text-ink">
+              <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center bg-navy text-white">
                 <CheckIcon className="h-3.5 w-3.5" />
               </span>
-              <Icon className="h-8 w-8 text-lime-dark" />
+              <Icon className="h-8 w-8 text-navy" />
               <p className="mt-5 text-base font-bold leading-snug text-ink">
                 {item.text}
               </p>

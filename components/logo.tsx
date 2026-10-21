@@ -1,16 +1,16 @@
 /**
- * MTB Bouw beeldmerk — vectorversie van het officiële tricolor "T"-logo.
+ * MTB Bouw beeldmerk — de T uit het officiële logo, in de minimalistische
+ * huisstijl hertekend met een vloeiend verloop lime → hemelsblauw → navy
+ * (dezelfde drie merkkleuren als het origineel, zonder harde vlakken).
  *
- * Geometrie en kleuren zijn overgenomen uit het aangeleverde bronbestand
- * (LOGO oud, 6.svg) en pixelgewijs geverifieerd tegen dat origineel. De
- * clip-id is per plek uniek (uid) zodat header en footer elkaar niet in de
- * weg zitten.
+ * De gradient-id is per plek uniek (uid) zodat header, footer en andere
+ * instanties elkaar niet in de weg zitten.
  *
- * Het volledige logo mét woordmerk staat als raster in
- * /public/images/brand/logo-full.png (voor social/OG en extern gebruik).
+ * Het volledige logo mét woordmerk staat ook als raster in
+ * /public/images/brand/logo-full.png (voor schema.org, e-mail en social).
  */
 const LIME = "#ABE000";
-const CYAN = "#00AEF7";
+const SKY = "#00AEF7";
 const NAVY = "#003384";
 
 export function LogoMark({
@@ -20,7 +20,7 @@ export function LogoMark({
   className?: string;
   uid?: string;
 }) {
-  const clipId = `mtb-t-${uid}`;
+  const gradientId = `mtb-g-${uid}`;
   return (
     <svg
       viewBox="0 0 100.49 100"
@@ -29,17 +29,43 @@ export function LogoMark({
       aria-label="MTB Bouw"
     >
       <defs>
-        <clipPath id={clipId}>
-          {/* Balk loopt naar onderen breder uit; stam eindigt in een punt. */}
-          <path d="M12.96 0 L86.32 0 L100.49 22 L62.5 22 L62.5 85 L49.84 100 L37.08 85 L37.08 22 L0 22 Z" />
-        </clipPath>
+        <linearGradient id={gradientId} x1="0" y1="0" x2="0.35" y2="1">
+          <stop offset="0" stopColor={LIME} />
+          <stop offset="0.45" stopColor={SKY} />
+          <stop offset="0.85" stopColor={NAVY} />
+        </linearGradient>
       </defs>
-      <g clipPath={`url(#${clipId})`}>
-        <rect width="100.49" height="100" fill={LIME} />
-        {/* Twee diagonalen delen het merk in lime → cyaan → navy. */}
-        <polygon points="0,56.6 100.49,-1.7 100.49,100 0,100" fill={CYAN} />
-        <polygon points="0,31.7 100.49,80.7 100.49,100 0,100" fill={NAVY} />
-      </g>
+      <path
+        d="M12.96 0 L86.32 0 L100.49 22 L62.5 22 L62.5 85 L49.84 100 L37.08 85 L37.08 22 L0 22 Z"
+        fill={`url(#${gradientId})`}
+      />
     </svg>
+  );
+}
+
+/**
+ * Beeldmerk + woordmerk "MTB BOUW" in Montserrat. `tone="light"` voor
+ * gebruik op navy of donkere vlakken.
+ */
+export function Logo({
+  uid = "logo",
+  tone = "dark",
+  className = "",
+}: {
+  uid?: string;
+  tone?: "dark" | "light";
+  className?: string;
+}) {
+  return (
+    <span className={`inline-flex items-center gap-2.5 ${className}`.trim()}>
+      <LogoMark uid={uid} className="h-7 w-7 shrink-0" />
+      <span
+        className={`font-display text-lg font-extrabold leading-none tracking-[-0.02em] ${
+          tone === "light" ? "text-white" : "text-ink"
+        }`}
+      >
+        MTB BOUW
+      </span>
+    </span>
   );
 }

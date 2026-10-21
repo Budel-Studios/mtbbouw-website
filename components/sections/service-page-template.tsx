@@ -20,7 +20,7 @@ import type { KennisbankMatch } from "@/lib/kennisbank";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime-dark">
+    <p className="label-mono text-navy">
       {children}
     </p>
   );
@@ -74,7 +74,7 @@ export function ServicePageTemplate({
       <section className="border-b border-mist">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <Eyebrow>{data.hero.eyebrow}</Eyebrow>
-          <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
+          <h1 className="mt-4 max-w-4xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-5xl">
             {data.hero.h1}
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-stone">
@@ -97,7 +97,7 @@ export function ServicePageTemplate({
                 <div key={stat.label} className="border-b border-r border-mist p-6">
                   <dt className="sr-only">{stat.label}</dt>
                   <dd>
-                    <span className="block font-display text-3xl font-extrabold text-ink">
+                    <span className="block font-display text-3xl font-semibold text-ink">
                       {stat.value}
                     </span>
                     <span className="mt-1 block text-sm text-stone">{stat.label}</span>
@@ -113,18 +113,18 @@ export function ServicePageTemplate({
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <Eyebrow>{data.subServices.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             {data.subServices.h2}
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
             {data.subServices.cards.map((c) => (
               <div key={c.title} className="border-b border-r border-mist bg-white p-8">
                 <ServiceSketch name={c.sketchIcon} className="mb-5 h-14 w-14" />
-                <h3 className="text-xl font-extrabold">{c.title}</h3>
+                <h3 className="text-xl font-semibold">{c.title}</h3>
                 <p className="mt-3 leading-relaxed text-stone">{c.desc}</p>
                 <Link
                   href="/contact"
-                  className="mt-5 inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-lime-dark"
+                  className="mt-5 inline-flex items-center gap-1.5 border-b-2 border-navy pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
                 >
                   Lees meer <ArrowIcon />
                 </Link>
@@ -139,7 +139,7 @@ export function ServicePageTemplate({
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <Eyebrow>{data.werkwijze.eyebrow}</Eyebrow>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
               {data.werkwijze.h2}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-stone">
@@ -153,7 +153,7 @@ export function ServicePageTemplate({
                 { n: "04", t: "Oplevering + nazorg", d: "Wij leveren op én komen na 1 jaar gratis langs." },
               ].map((s) => (
                 <li key={s.n} className="flex gap-4">
-                  <span className="w-10 shrink-0 font-display text-2xl font-extrabold text-lime-dark">
+                  <span className="w-10 shrink-0 font-display text-2xl font-semibold text-navy">
                     {s.n}
                   </span>
                   <span>
@@ -167,7 +167,7 @@ export function ServicePageTemplate({
           {/* Statische "app"-visual — inventarisatie op locatie */}
           <div className="mx-auto w-full max-w-sm border border-mist bg-white">
             <div className="border-b border-mist px-5 py-4">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="label-mono text-stone">
                 MTB-app · inventarisatie
               </p>
               <p className="mt-1 font-display text-base font-bold">
@@ -179,13 +179,13 @@ export function ServicePageTemplate({
                 <rect x="20" y="20" width="160" height="110" fill="none" stroke="var(--color-ink)" strokeWidth="1.5" />
                 <rect x="40" y="55" width="34" height="55" fill="none" stroke="var(--color-ink)" strokeWidth="1.2" />
                 <rect x="126" y="55" width="34" height="55" fill="none" stroke="var(--color-ink)" strokeWidth="1.2" />
-                <path d="M20 20h160" stroke="var(--color-lime)" strokeWidth="3" fill="none" />
+                <path d="M20 20h160" stroke="var(--color-navy)" strokeWidth="3" fill="none" />
               </svg>
             </div>
             <div className="space-y-2 p-4">
               {["Wand opgemeten · 4.20 × 2.60 m", "Stucwerk: vlak, geverfd", "Notitie: kabelgoot links"].map((t) => (
                 <div key={t} className="flex items-center gap-2 border border-mist px-3 py-2 text-xs text-ink">
-                  <span className="h-1.5 w-1.5 shrink-0 bg-lime" />
+                  <span className="h-1.5 w-1.5 shrink-0 bg-navy" />
                   {t}
                 </div>
               ))}
@@ -198,7 +198,7 @@ export function ServicePageTemplate({
       <section id="case" className="scroll-mt-24 border-y border-mist bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <Eyebrow>{data.caseStudy.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             {data.caseStudy.h2}
           </h2>
           <div className="mt-12 grid gap-12 lg:grid-cols-2">
@@ -220,15 +220,15 @@ export function ServicePageTemplate({
             <div>
               <div className="mb-5 flex flex-wrap gap-4 text-sm text-stone">
                 <span className="inline-flex items-center gap-1.5">
-                  <MapPinIcon className="h-4 w-4 text-lime-dark" />
+                  <MapPinIcon className="h-4 w-4 text-navy" />
                   {data.caseStudy.location}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <ClockIcon className="h-4 w-4 text-lime-dark" />
+                  <ClockIcon className="h-4 w-4 text-navy" />
                   {data.caseStudy.duration}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <CheckIcon className="h-4 w-4 text-lime-dark" />
+                  <CheckIcon className="h-4 w-4 text-navy" />
                   {data.caseStudy.delivered}
                 </span>
               </div>
@@ -237,14 +237,14 @@ export function ServicePageTemplate({
               <ul className="mt-3 space-y-2">
                 {data.caseStudy.didList.map((d) => (
                   <li key={d} className="flex gap-2 text-sm text-stone">
-                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-lime-dark" />
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-navy" />
                     {d}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <blockquote className="mt-12 border-l-4 border-lime bg-lime/10 p-8 md:p-12">
+          <blockquote className="mt-12 border-l-4 border-navy bg-navy/5 p-8 md:p-12">
             <p className="font-display text-xl leading-snug text-ink md:text-2xl">
               &ldquo;{data.caseStudy.quote}&rdquo;
             </p>
@@ -258,7 +258,7 @@ export function ServicePageTemplate({
       {/* SKETCH BREAK */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <p className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+          <p className="font-display text-3xl font-semibold leading-tight sm:text-4xl">
             &ldquo;{data.sketchBreak.bigQuote}&rdquo;
           </p>
         </div>
@@ -267,7 +267,7 @@ export function ServicePageTemplate({
       {/* TYPE WONINGEN */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <Eyebrow>{data.typeWoningen.eyebrow}</Eyebrow>
-        <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
           {data.typeWoningen.h2}
         </h2>
         <ul className="mt-8 flex flex-wrap gap-2">
@@ -286,14 +286,14 @@ export function ServicePageTemplate({
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <Eyebrow>{data.waarom.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             {data.waarom.h2}
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {data.waarom.pillars.map((p) => (
-              <div key={p.title} className="border-t-2 border-lime bg-white p-8">
+              <div key={p.title} className="border-t-2 border-navy bg-white p-8">
                 <ServiceSketch name={p.sketchIcon} className="h-12 w-12" />
-                <h3 className="mt-5 text-xl font-extrabold">{p.title}</h3>
+                <h3 className="mt-5 text-xl font-semibold">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-stone">{p.desc}</p>
               </div>
             ))}
@@ -304,7 +304,7 @@ export function ServicePageTemplate({
       {/* FAQ */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <Eyebrow>{data.faq.eyebrow}</Eyebrow>
-        <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
           {data.faq.h2}
         </h2>
         <div className="mt-10 max-w-3xl divide-y divide-mist border-y border-mist">
@@ -332,7 +332,7 @@ export function ServicePageTemplate({
         <div className="mt-8">
           <Link
             href={data.faq.fullFaqLink}
-            className="inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-lime-dark"
+            className="inline-flex items-center gap-1.5 border-b-2 border-navy pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
           >
             Alle veelgestelde vragen <ArrowIcon />
           </Link>
@@ -346,7 +346,7 @@ export function ServicePageTemplate({
       {/* CTA */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl">{data.cta.h2}</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">{data.cta.h2}</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/75">{data.cta.subtitle}</p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Button href={data.cta.primaryCta.href} arrow>
@@ -364,7 +364,7 @@ export function ServicePageTemplate({
       {data.related.length > 0 && (
         <section className="border-t border-mist py-12">
           <div className="mx-auto max-w-6xl px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+            <p className="label-mono text-stone">
               Gerelateerd
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -372,7 +372,7 @@ export function ServicePageTemplate({
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-lime hover:bg-paper"
+                  className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-navy hover:bg-paper"
                 >
                   {r.label}
                 </Link>

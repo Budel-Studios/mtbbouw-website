@@ -68,10 +68,10 @@ export default function SysteemplafondsPage() {
 
       <section className="border-y border-mist bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+          <p className="label-mono text-stone">
             Kosten & aanpak
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Wat kost een systeemplafond?
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -79,15 +79,15 @@ export default function SysteemplafondsPage() {
             €40–80 per m²; inclusief LED-verlichting reken je op €65–120 per
             m². Een gemiddelde kantoorvloer is in enkele dagen voorzien — vaak
             gecombineerd met{" "}
-            <Link href="/afbouwstudio/metal-stud-wanden" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/afbouwstudio/metal-stud-wanden" className="font-semibold text-ink underline hover:text-navy">
               metal stud-wanden
             </Link>{" "}
             in dezelfde planning, als onderdeel van een{" "}
-            <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
               kantoorverbouwing
             </Link>
             . Zie ook de{" "}
-            <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
               kostengids 2026
             </Link>
             .
@@ -108,10 +108,10 @@ export default function SysteemplafondsPage() {
 
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-lime">
+          <p className="label-mono text-sky">
             Vaste prijs
           </p>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
             Plafond aan vervanging toe?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
@@ -121,7 +121,7 @@ export default function SysteemplafondsPage() {
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="mailto:info@mtbbouw.com?subject=Offerte%20systeemplafond"
-              className="inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-lime-dark"
+              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
             >
               Vraag offerte aan
             </a>

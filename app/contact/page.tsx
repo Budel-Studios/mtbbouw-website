@@ -26,10 +26,10 @@ export default function ContactPage() {
         ]}
       />
 
-      <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+      <p className="label-mono text-stone">
         Contact
       </p>
-      <h1 className="mt-3 text-4xl font-extrabold tracking-tight">
+      <h1 className="mt-3 text-4xl font-medium tracking-[-0.03em]">
         Neem contact op
       </h1>
       <p className="mt-3 max-w-2xl text-stone">
@@ -41,7 +41,7 @@ export default function ContactPage() {
         {/* Gegevens */}
         <div className="space-y-8">
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-stone">
+            <h2 className="label-mono text-stone">
               {site.legalName}
             </h2>
             <p className="mt-3 text-lg leading-relaxed">
@@ -57,7 +57,7 @@ export default function ContactPage() {
 
           <dl className="space-y-4 text-lg">
             <div>
-              <dt className="text-sm font-semibold uppercase tracking-wide text-stone">
+              <dt className="label-mono text-stone">
                 Adres
               </dt>
               <dd>
@@ -72,40 +72,40 @@ export default function ContactPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-semibold text-stone underline hover:text-lime-dark"
+                  className="text-sm font-semibold text-stone underline hover:text-navy"
                 >
                   Route plannen
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-sm font-semibold uppercase tracking-wide text-stone">
+              <dt className="label-mono text-stone">
                 Telefoon
               </dt>
               <dd>
                 <a
                   href={`tel:${site.telephoneHref}`}
-                  className="font-semibold hover:text-lime-dark"
+                  className="font-semibold hover:text-navy"
                 >
                   {site.telephone}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-sm font-semibold uppercase tracking-wide text-stone">
+              <dt className="label-mono text-stone">
                 E-mail
               </dt>
               <dd>
                 <a
                   href={`mailto:${site.email}`}
-                  className="font-semibold hover:text-lime-dark"
+                  className="font-semibold hover:text-navy"
                 >
                   {site.email}
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-sm font-semibold uppercase tracking-wide text-stone">
+              <dt className="label-mono text-stone">
                 Openingstijden
               </dt>
               <dd className="text-base text-stone">

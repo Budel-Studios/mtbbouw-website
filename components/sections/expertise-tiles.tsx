@@ -45,7 +45,7 @@ export function ExpertiseTiles({
               <div className="absolute inset-x-0 bottom-0 p-6">
                 {/* h2: op /diensten (enige gebruiker) volgen de tegels direct
                     op de h1 — h3 zou een niveau-sprong geven. */}
-                <h2 className="font-display text-2xl font-extrabold text-white">
+                <h2 className="font-display text-2xl font-semibold text-white">
                   {item.title}
                 </h2>
                 <p className="mt-1 text-sm text-white/80">{item.subtitle}</p>
@@ -67,7 +67,7 @@ export function ExpertiseTiles({
 
             {showSubItems && item.subItems.length === 0 && (
               <div className="flex items-center gap-2 p-5 text-sm font-semibold text-ink">
-                <Icon className="h-4 w-4 text-lime-dark" />
+                <Icon className="h-4 w-4 text-navy" />
                 Bekijk Kozijnstudio
               </div>
             )}

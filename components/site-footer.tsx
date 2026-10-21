@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { Logo } from "@/components/logo";
 
 function WhatsAppIcon() {
   return (
@@ -27,108 +28,142 @@ function InstagramIcon() {
   );
 }
 
+function ArrowUpRight({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
+}
+
+/**
+ * Footer — navy vlak met lime merklijn bovenaan. Grote "Klaar om te bouwen?"
+ * als afsluiter op elke pagina, daaronder de crawlbare vangnet-navigatie
+ * (lib/site.ts → footerColumns), contactgegevens en de onderbalk.
+ */
 export function SiteFooter() {
   const year = 2026; // jaarlijks bijwerken of via build-var
 
   return (
-    <footer className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        {/* Merk — volledig logo, tagline en de vier labels onder één dak */}
-        <div className="max-w-3xl">
-          <Image
-            src="/images/brand/logo-full.png"
-            alt={`${site.legalName} logo`}
-            width={1600}
-            height={394}
-            className="h-14 w-auto md:h-16"
-          />
-          <p
-            className="mt-6 font-display font-extrabold leading-none tracking-tight text-ink"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.03em" }}
-          >
-            {site.tagline}
-          </p>
-          <p className="mt-5 text-base leading-relaxed text-stone">
-            Overkoepelend bouwmerk uit Enschede. Wonen &amp; Verbouwen ·
-            Afbouwstudio · Kozijnstudio · Prefab Bouwen.
-          </p>
-          <p className="mt-3 text-sm text-stone">
-            Zie ook ons interieurmerk{" "}
-            <a
-              href="https://zebranostudio.nl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-lime-dark hover:underline"
+    <footer className="border-t-4 border-lime bg-navy text-white">
+      <div className="container-page py-20 md:py-28">
+        {/* Afsluiter */}
+        <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-8">
+            <p className="label-mono text-white/65">Bouwen doen we samen</p>
+            <Link
+              href="/contact"
+              className="display group mt-6 block text-5xl md:text-7xl lg:text-8xl"
             >
-              Zebrano Studio
-            </a>
-          </p>
-        </div>
-
-        {/* Kolommen — op één regel per link, dus geen afbrekende labels */}
-        <div className="mt-16 border-t border-mist pt-12">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
-            {site.footerColumns.map((col) => (
-              <div key={col.title}>
-                <h3 className="font-display text-sm font-extrabold uppercase tracking-wide">
-                  {col.title}
-                </h3>
-                <ul className="mt-5 space-y-3 font-display text-sm">
-                  {col.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="whitespace-nowrap text-stone transition-colors hover:text-lime-dark"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <div>
-              <h3 className="font-display text-sm font-extrabold uppercase tracking-wide">
-                Contact
-              </h3>
-              <ul className="mt-5 space-y-3 font-display text-sm">
-                <li>
-                  <address className="not-italic leading-relaxed text-stone">
-                    {site.address.streetAddress}
-                    <br />
-                    {site.address.postalCode} {site.address.addressLocality}
-                  </address>
-                </li>
-                <li>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="whitespace-nowrap text-stone transition-colors hover:text-lime-dark"
-                  >
-                    {site.email}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${site.telephoneHref}`}
-                    className="whitespace-nowrap font-bold text-ink transition-colors hover:text-lime-dark"
-                  >
-                    {site.telephone}
-                  </a>
-                </li>
-              </ul>
+              Klaar om te bouwen?{" "}
+              <ArrowUpRight className="inline-block size-10 align-baseline transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 md:size-14" />
+            </Link>
+          </div>
+          <div className="md:col-span-4">
+            <p className="max-w-sm text-base leading-relaxed text-white/80">
+              Vraag vrijblijvend een kennismaking aan. We komen graag bij je
+              langs voor een intake op locatie — in Enschede, Twente en heel
+              Oost-Nederland.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href={`tel:${site.telephoneHref}`}
+                className="label-mono inline-flex items-center bg-white px-5 py-3.5 text-navy transition-colors hover:bg-paper"
+              >
+                {site.telephone}
+              </a>
+              <a
+                href={`mailto:${site.email}?subject=Kennismaking`}
+                className="label-mono inline-flex items-center border border-white/40 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy"
+              >
+                Mail ons
+              </a>
             </div>
           </div>
         </div>
 
+        {/* Kolommen — vangnet-navigatie + contact */}
+        <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/20 pt-10 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
+            <Logo uid="ftr" tone="light" />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">
+              {site.tagline}{" "}
+              Overkoepelend bouwmerk uit Enschede: Wonen &amp;
+              Verbouwen · Afbouwstudio · Kozijnstudio · Prefab Bouwen.
+            </p>
+            <p className="mt-3 text-sm text-white/70">
+              Zie ook ons interieurmerk{" "}
+              <a
+                href="https://zebranostudio.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-line text-white"
+              >
+                Zebrano Studio
+              </a>
+            </p>
+          </div>
+          {site.footerColumns.map((col) => (
+            <div key={col.title}>
+              <h3 className="label-mono text-white/65">{col.title}</h3>
+              <ul className="mt-4 space-y-2 text-sm">
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="link-line whitespace-nowrap">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div>
+            <h3 className="label-mono text-white/65">Contact</h3>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>
+                <address className="not-italic leading-relaxed">
+                  {site.legalName}
+                  <br />
+                  {site.address.streetAddress}
+                  <br />
+                  {site.address.postalCode} {site.address.addressLocality}
+                  <br />
+                  <span className="text-white/65">{site.openingHours}</span>
+                </address>
+              </li>
+              <li>
+                <a href={`mailto:${site.email}`} className="link-line whitespace-nowrap">
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${site.telephoneHref}`} className="link-line whitespace-nowrap">
+                  {site.telephone}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* Onderbalk: social links + copyright */}
-        <div className="mt-14 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <div className="flex gap-3">
+        <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-white/20 pt-8 sm:flex-row sm:items-center">
+          <div className="flex gap-2">
             <a
               href={`https://wa.me/${site.whatsapp.replace(/[^0-9]/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-mist text-ink/70 transition-colors hover:border-ink hover:bg-ink hover:text-white"
+              className="flex h-10 w-10 items-center justify-center border border-white/25 text-white/80 transition-colors hover:bg-white hover:text-navy"
             >
               <WhatsAppIcon />
             </a>
@@ -138,13 +173,13 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-mist text-ink/70 transition-colors hover:border-ink hover:bg-ink hover:text-white"
+                className="flex h-10 w-10 items-center justify-center border border-white/25 text-white/80 transition-colors hover:bg-white hover:text-navy"
               >
                 <InstagramIcon />
               </a>
             )}
           </div>
-          <div className="flex flex-col items-start gap-x-4 gap-y-2 text-xs text-stone sm:items-end lg:flex-row lg:items-center">
+          <div className="label-mono flex flex-col items-start gap-x-4 gap-y-2 text-white/65 sm:items-end lg:flex-row lg:items-center">
             <p>
               © {year} {site.legalName} · KVK {site.kvk} · {site.sbb}
             </p>
@@ -152,9 +187,9 @@ export function SiteFooter() {
               href="https://tien98.nl"
               target="_blank"
               rel="noopener"
-              className="group inline-flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-ink"
+              className="group inline-flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-white"
             >
-              <span className="hidden text-mist lg:inline" aria-hidden="true">
+              <span className="hidden text-white/30 lg:inline" aria-hidden="true">
                 |
               </span>
               Branding door
@@ -163,9 +198,9 @@ export function SiteFooter() {
                 alt=""
                 width={711}
                 height={446}
-                className="h-2.5 w-auto opacity-80 transition-opacity group-hover:opacity-100"
+                className="h-2.5 w-auto opacity-80 brightness-0 invert transition-opacity group-hover:opacity-100"
               />
-              <span className="font-semibold text-ink">tien98</span>
+              <span className="text-white">tien98</span>
             </a>
           </div>
         </div>

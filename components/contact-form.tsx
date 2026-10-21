@@ -43,7 +43,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex h-full flex-col items-center justify-center border border-mist bg-white p-10 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-lime/20 text-lime-dark">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-navy/10 text-navy">
           <svg
             className="h-7 w-7"
             viewBox="0 0 24 24"
@@ -57,7 +57,7 @@ export function ContactForm() {
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="mt-5 font-display text-xl font-extrabold">Bericht verstuurd</h3>
+        <h3 className="mt-5 font-display text-xl font-semibold">Bericht verstuurd</h3>
         <p className="mt-2 text-stone">
           Bedankt! We nemen zo snel mogelijk contact met je op.
         </p>
@@ -78,7 +78,7 @@ export function ContactForm() {
       />
       <div>
         <label htmlFor="naam" className="field-label">
-          Naam <span className="text-lime-dark">*</span>
+          Naam <span className="text-navy">*</span>
         </label>
         <input
           id="naam"
@@ -91,7 +91,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="email" className="field-label">
-          E-mail <span className="text-lime-dark">*</span>
+          E-mail <span className="text-navy">*</span>
         </label>
         <input
           id="email"
@@ -116,7 +116,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="bericht" className="field-label">
-          Bericht <span className="text-lime-dark">*</span>
+          Bericht <span className="text-navy">*</span>
         </label>
         <textarea
           id="bericht"

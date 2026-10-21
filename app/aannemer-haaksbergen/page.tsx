@@ -51,27 +51,27 @@ export default function AannemerHaaksbergenPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="label-mono text-stone">
             Verbouwen in Haaksbergen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Ruimte om het huis? Ruimte voor plannen.
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
             Juist rond Haaksbergen — met veel vrijstaande woningen en erven —
             zijn{" "}
-            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-lime-dark">aanbouwen</Link>
+            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-navy">aanbouwen</Link>
             , tuinkamers en{" "}
-            <Link href="/prefab#overkappingen" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/prefab#overkappingen" className="font-semibold text-ink underline hover:text-navy">
               overkappingen en bijgebouwen
             </Link>{" "}
             populair. Via ons Prefab-label staan die maatvast en in een paar
             dagen op het erf. Daarnaast doen we{" "}
-            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-lime-dark">renovaties</Link>
+            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-navy">renovaties</Link>
             ,{" "}
-            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-lime-dark">kozijnen</Link>{" "}
+            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">kozijnen</Link>{" "}
             en{" "}
-            <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-lime-dark">verduurzaming</Link>{" "}
+            <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-navy">verduurzaming</Link>{" "}
             — het voordeligst gecombineerd met de verbouwing zelf.
           </p>
         </div>

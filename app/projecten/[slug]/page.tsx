@@ -8,9 +8,9 @@ import {
   ProjectJsonLd,
   FaqJsonLd,
 } from "@/components/json-ld";
-import { QuickFacts } from "@/components/project/quick-facts";
 import { PartnerCards } from "@/components/project/partner-cards";
-import { ProjectGallery } from "@/components/project/project-gallery";
+import { ProjectVisuals } from "@/components/project/project-gallery";
+import { projectNumber, publishedProjects } from "@/lib/projects";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 
@@ -85,13 +85,13 @@ export async function generateMetadata({
 function Prose({ html }: { html: string }) {
   return (
     <div
-      className="prose prose-stone max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:font-semibold prose-a:text-lime-dark prose-strong:text-ink"
+      className="prose prose-stone max-w-none text-base leading-[1.75] prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-[-0.02em] prose-a:font-semibold prose-a:text-navy prose-strong:text-ink"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
 }
 
-/** Genummerd narratief blok met lime-accentlijn onder de titel. */
+/** Verhaalblok: kleine kop, daaronder de tekst. */
 function Block({
   title,
   html,
@@ -103,33 +103,43 @@ function Block({
 }) {
   return (
     <section>
-      <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-        {title}
-      </h2>
-      <div className="mt-3 h-1 w-12 bg-lime" />
-      <div className="mt-6">{html ? <Prose html={html} /> : children}</div>
+      <h2 className="mb-3 text-lg font-semibold tracking-[-0.01em] text-ink">{title}</h2>
+      {html ? <Prose html={html} /> : children}
     </section>
   );
 }
 
-/** Rij met labels (materialen, onderaannemers, leveranciers) als hoekige chips. */
-function ChipList({ label, items }: { label: string; items: string[] }) {
+function ArrowUpRight({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
+}
+
+/** Specificatieregel (materialen, onderaannemers, leveranciers). */
+function SpecRow({ label, items }: { label: string; items: string[] }) {
   if (items.length === 0) return null;
   return (
-    <div>
-      <p className="text-xs font-bold uppercase tracking-[0.15em] text-stone">
-        {label}
-      </p>
-      <ul className="mt-3 flex flex-wrap gap-2">
-        {items.map((item) => (
-          <li
-            key={item}
-            className="border border-mist bg-paper px-3 py-1.5 text-sm text-ink"
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-5 gap-4 border-b border-mist py-5">
+      <dt className="label-mono col-span-2 pt-1 text-stone">{label}</dt>
+      <dd className="col-span-3 text-base">
+        <ul className="space-y-1">
+          {items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </dd>
     </div>
   );
 }
@@ -146,8 +156,21 @@ export default async function ProjectPage({
   const uitgevoerdIn =
     project.executionPeriod ?? (project.year ? String(project.year) : undefined);
 
-  const hasPartnerBlock =
-    project.partners.length > 0 ||
+  const all = publishedProjects();
+  const idx = all.findIndex((p) => p.slug === project.slug);
+  const next = all.length > 1 ? all[(idx + 1) % all.length] : undefined;
+
+  const facts = [
+    { label: "Locatie", value: project.location },
+    { label: "Type werkzaamheden", value: project.category },
+    { label: "Klanttype", value: project.clientType },
+    { label: "Projectduur", value: project.duration },
+    { label: "Uitgevoerd in", value: uitgevoerdIn },
+    { label: "Status", value: project.status },
+  ].filter((f): f is { label: string; value: string } => !!f.value && f.value.trim().length > 0);
+
+  const hasSpecs =
+    project.materials.length > 0 ||
     project.contractors.length > 0 ||
     project.suppliers.length > 0;
 
@@ -173,214 +196,178 @@ export default async function ProjectPage({
       />
       {project.faq.length > 0 && <FaqJsonLd items={project.faq} />}
 
-      {/* 1 — HERO */}
-      <header className="relative overflow-hidden bg-ink">
-        {project.coverVideo ? (
-          <>
-            {/* Geluidloze sfeer-loop; cover fungeert als poster/fallback */}
-            <video
-              src={project.coverVideo}
-              poster={project.cover}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover opacity-55"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
-          </>
-        ) : project.cover ? (
-          <>
-            <Image
-              src={project.cover}
-              alt={project.coverAlt || project.title}
-              fill
-              sizes="100vw"
-              className="object-cover opacity-55"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
-          </>
-        ) : null}
-        <div className="relative mx-auto flex min-h-[58vh] max-w-6xl flex-col justify-end px-6 pb-12 pt-28">
-          <nav className="mb-auto text-sm text-white/70">
-            <Link href="/projecten" className="hover:text-white">
+      {/* 1 — TITEL */}
+      <header className="container-page pb-12 pt-10 md:pb-16 md:pt-14">
+        <div className="flex items-center justify-between">
+          <nav aria-label="Kruimelpad" className="label-mono text-stone">
+            <Link href="/projecten" className="link-line inline-flex items-center gap-2 hover:text-navy">
               ← Alle projecten
             </Link>
           </nav>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold uppercase tracking-[0.2em] text-lime">
-            {project.category && <span>{project.category}</span>}
-            {project.category && project.location && (
-              <span className="text-white/40">/</span>
-            )}
-            {project.location && <span>{project.location}</span>}
-          </div>
-          <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl">
-            {project.title}
-          </h1>
-          {project.status && (
-            <span className="mt-6 inline-flex w-fit items-center gap-2 bg-lime px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink">
-              <span className="h-1.5 w-1.5 bg-ink" />
-              {project.status}
-            </span>
-          )}
+          <span className="label-mono text-stone">
+            Project {projectNumber(project.slug)}
+          </span>
+        </div>
+        <h1 className="display mt-14 animate-fade-up break-words text-5xl md:mt-20 md:text-7xl lg:text-8xl">
+          {project.title}
+        </h1>
+        <div
+          className="mt-10 grid animate-fade-up gap-6 border-t border-mist pt-6 md:grid-cols-12"
+          style={{ animationDelay: "120ms" }}
+        >
+          <p className="label-mono text-navy md:col-span-3">{project.location}</p>
+          <p className="label-mono text-stone md:col-span-3">
+            {[project.category, project.clientType].filter(Boolean).join(" · ")}
+          </p>
+          <p className="max-w-md text-base leading-relaxed text-stone md:col-span-6 md:justify-self-end">
+            {project.description}
+          </p>
         </div>
       </header>
 
-      {/* 2 — PROJECT IN HET KORT */}
-      <div className="py-12 sm:py-16">
-        <QuickFacts
-          facts={[
-            { label: "Locatie", value: project.location },
-            { label: "Projectduur", value: project.duration },
-            { label: "Uitgevoerd in", value: uitgevoerdIn },
-            { label: "Type werkzaamheden", value: project.category },
-            { label: "Klanttype", value: project.clientType },
-            { label: "Status", value: project.status },
-          ]}
-        />
-      </div>
-
-      {/* 3–8 — VERHAALLIJN (narrow, leesbaar) */}
-      <div className="mx-auto max-w-3xl space-y-14 px-6 pb-16">
-        {project.intro && (
-          <p className="text-xl leading-relaxed text-ink">{project.intro}</p>
-        )}
-
-        {/* Uitgebreide omschrijving (document-body) */}
-        {project.body && project.body.trim().length > 0 && (
-          <Prose html={project.body} />
-        )}
-
-        {project.situation && (
-          <Block title="De situatie" html={project.situation} />
-        )}
-        {project.clientRequest && (
-          <Block title="De vraag van de klant" html={project.clientRequest} />
-        )}
-        {(project.challenges || project.approach) && (
-          <Block title="Onze aanpak">
-            {project.challenges && (
-              <div className="mb-6">
-                <h3 className="text-sm font-bold uppercase tracking-wide text-stone">
-                  Uitdagingen
-                </h3>
-                <div className="mt-2">
-                  <Prose html={project.challenges} />
+      {/* 2 — BEELD: hero, feiten, voor/na en galerij (foto-eerst) */}
+      <ProjectVisuals
+        hero={project.cover ? { src: project.cover, alt: project.coverAlt || project.title } : undefined}
+        video={project.coverVideo}
+        photos={project.gallery}
+      >
+        {facts.length > 0 && (
+          <section aria-label="Project in het kort" className="container-page">
+            <dl className="grid grid-cols-2 border-b border-mist sm:grid-cols-3 lg:grid-cols-6">
+              {facts.map((f) => (
+                <div key={f.label} className="border-mist py-6 pr-4 lg:border-r lg:last:border-r-0 lg:[&:not(:first-child)]:pl-6">
+                  <dt className="label-mono text-stone">{f.label}</dt>
+                  <dd className="mt-3 text-base tracking-[-0.01em] md:text-lg">{f.value}</dd>
                 </div>
-              </div>
-            )}
-            {project.approach && <Prose html={project.approach} />}
-          </Block>
+              ))}
+            </dl>
+          </section>
         )}
-        {project.highlights && (
-          <Block
-            title="Bijzonderheden tijdens de uitvoering"
-            html={project.highlights}
-          />
-        )}
-        {(project.execution || project.materials.length > 0) && (
-          <Block title="Uitvoering & planning">
-            {project.execution && <Prose html={project.execution} />}
-            {project.materials.length > 0 && (
-              <div className="mt-6">
-                <ChipList
-                  label="Gebruikte materialen"
-                  items={project.materials}
-                />
-              </div>
-            )}
-          </Block>
-        )}
-      </div>
+      </ProjectVisuals>
 
-      {/* 9 — PARTNERS & LEVERANCIERS */}
-      {hasPartnerBlock && (
-        <section className="border-t border-mist bg-paper py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-              Partners &amp; leveranciers
-            </h2>
-            <div className="mt-3 h-1 w-12 bg-lime" />
-            <p className="mt-6 max-w-2xl text-stone">
-              Goed bouwen doe je samen. Deze ondernemers en leveranciers werkten
-              met ons aan dit project.
+      {/* 3 — VERHAAL */}
+      <section className="container-page grid gap-14 py-20 md:grid-cols-12 md:py-28">
+        <aside className="md:col-span-4">
+          <div className="md:sticky md:top-28">
+            <p className="label-mono text-navy">Projectgegevens</p>
+            <dl className="mt-6 border-t border-ink">
+              {facts.map((f) => (
+                <div key={f.label} className="grid grid-cols-5 gap-4 border-b border-mist py-3.5">
+                  <dt className="label-mono col-span-2 pt-0.5 text-stone">{f.label}</dt>
+                  <dd className="col-span-3 text-sm">{f.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </aside>
+        <div className="md:col-span-7 md:col-start-6">
+          <p className="label-mono text-navy">Over dit project</p>
+          {project.intro && (
+            <p className="mt-6 text-2xl leading-snug tracking-[-0.02em] md:text-[2.1rem]">
+              {project.intro}
             </p>
-            <div className="mt-8">
-              <PartnerCards partners={project.partners} />
-            </div>
-            {(project.contractors.length > 0 ||
-              project.suppliers.length > 0) && (
-              <div className="mt-8 grid gap-8 sm:grid-cols-2">
-                <ChipList
-                  label="Onderaannemers"
-                  items={project.contractors}
-                />
-                <ChipList label="Leveranciers" items={project.suppliers} />
-              </div>
+          )}
+          <div className="mt-10 space-y-10 text-stone">
+            {/* Uitgebreide omschrijving (document-body) */}
+            {project.body && project.body.trim().length > 0 && <Prose html={project.body} />}
+
+            {project.situation && <Block title="De situatie" html={project.situation} />}
+            {project.clientRequest && (
+              <Block title="De vraag van de klant" html={project.clientRequest} />
             )}
+            {(project.challenges || project.approach) && (
+              <Block title="Onze aanpak">
+                {project.challenges && (
+                  <div className="mb-6">
+                    <h3 className="label-mono text-stone">Uitdagingen</h3>
+                    <div className="mt-2">
+                      <Prose html={project.challenges} />
+                    </div>
+                  </div>
+                )}
+                {project.approach && <Prose html={project.approach} />}
+              </Block>
+            )}
+            {project.highlights && (
+              <Block title="Bijzonderheden tijdens de uitvoering" html={project.highlights} />
+            )}
+            {project.execution && <Block title="Uitvoering & planning" html={project.execution} />}
+            {project.result && <Block title="Het eindresultaat" html={project.result} />}
+            {project.learnings && <Block title="Wat hebben we geleerd" html={project.learnings} />}
           </div>
-        </section>
-      )}
-
-      {/* 10 — FOTOGALERIJ */}
-      {project.gallery.length > 0 && (
-        <section className="border-t border-mist py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-              Foto&apos;s van het project
-            </h2>
-            <div className="mt-3 h-1 w-12 bg-lime" />
-            <div className="mt-8">
-              <ProjectGallery photos={project.gallery} />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 11–12 — RESULTAAT & GELEERD */}
-      {(project.result || project.learnings || project.testimonial) && (
-        <div className="mx-auto max-w-3xl space-y-14 px-6 py-16">
-          {project.result && (
-            <Block title="Het eindresultaat" html={project.result} />
-          )}
-          {project.learnings && (
-            <Block title="Wat hebben we geleerd" html={project.learnings} />
-          )}
-          {project.testimonial && (
-            <blockquote className="border-l-2 border-lime pl-6">
-              <p className="text-lg italic leading-relaxed text-ink">
-                “{project.testimonial.text}”
-              </p>
-              <footer className="mt-4 text-sm font-semibold text-lime-dark">
-                — {project.testimonial.attribution}
-              </footer>
-            </blockquote>
-          )}
         </div>
+      </section>
+
+      {/* 4 — KLANTQUOTE */}
+      {project.testimonial && (
+        <section className="container-page pb-24 md:pb-32">
+          <figure className="grid gap-8 border-t border-mist pt-14 md:grid-cols-12">
+            <span className="label-mono text-navy md:col-span-2">Citaat</span>
+            <div className="md:col-span-9">
+              <blockquote className="display text-2xl not-italic leading-[1.15] md:text-4xl">
+                “{project.testimonial.text}”
+              </blockquote>
+              <figcaption className="label-mono mt-8 text-stone">
+                — {project.testimonial.attribution}
+              </figcaption>
+            </div>
+          </figure>
+        </section>
+      )}
+
+      {/* 5 — PARTNERS & LEVERANCIERS */}
+      {project.partners.length > 0 && (
+        <section className="container-page pb-24 md:pb-32">
+          <div className="flex items-end justify-between gap-6 border-t border-mist pt-14">
+            <div>
+              <p className="label-mono text-navy">Samenwerkingen</p>
+              <h2 className="display mt-4 text-4xl md:text-6xl">Partners &amp; leveranciers</h2>
+            </div>
+            <span className="label-mono text-stone">
+              {String(project.partners.length).padStart(2, "0")} partners
+            </span>
+          </div>
+          <p className="mt-6 max-w-2xl text-stone">
+            Goed bouwen doe je samen. Deze ondernemers en leveranciers werkten
+            met ons aan dit project.
+          </p>
+          <div className="mt-10">
+            <PartnerCards partners={project.partners} />
+          </div>
+        </section>
+      )}
+
+      {/* 6 — SPECIFICATIES */}
+      {hasSpecs && (
+        <section className="container-page pb-24 md:pb-32">
+          <p className="label-mono text-navy">Specificaties</p>
+          <h2 className="display mt-4 text-4xl md:text-6xl">Details</h2>
+          <dl className="mt-10 grid border-t border-ink md:grid-cols-2 md:gap-x-16">
+            <SpecRow label="Gebruikte materialen" items={project.materials} />
+            <SpecRow label="Onderaannemers" items={project.contractors} />
+            <SpecRow label="Leveranciers" items={project.suppliers} />
+          </dl>
+        </section>
       )}
 
       {/* Interne links naar diensten + projectenoverzicht */}
       {project.relatedServices.length > 0 && (
-        <section className="border-t border-mist bg-paper py-12">
-          <div className="mx-auto max-w-6xl px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
-              Meer over onze diensten
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
+        <section className="container-page pb-16">
+          <div className="border-t border-mist pt-10">
+            <p className="label-mono text-stone">Meer over onze diensten</p>
+            <div className="mt-4 flex flex-wrap gap-2">
               {project.relatedServices.map((svc) => (
                 <Link
                   key={svc.href}
                   href={svc.href}
-                  className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-lime hover:bg-white"
+                  className="label-mono inline-flex items-center border border-mist px-4 py-2.5 text-ink transition-colors hover:border-navy hover:text-navy"
                 >
                   {svc.label}
                 </Link>
               ))}
               <Link
                 href="/projecten"
-                className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-lime hover:bg-white"
+                className="label-mono inline-flex items-center border border-mist px-4 py-2.5 text-ink transition-colors hover:border-navy hover:text-navy"
               >
                 Alle projecten
               </Link>
@@ -400,7 +387,7 @@ export default async function ProjectPage({
         </div>
       )}
 
-      {/* 13 — CTA */}
+      {/* CTA */}
       <CtaBanner
         eyebrow="Ook een project starten?"
         title="Benieuwd wat wij voor jouw woning of bedrijfspand kunnen betekenen?"
@@ -408,6 +395,38 @@ export default async function ProjectPage({
         cta={{ label: "Neem contact op", href: "/contact" }}
         secondary={{ label: "Bekijk meer projecten", href: "/projecten" }}
       />
+
+      {/* Volgend project */}
+      {next && (
+        <section className="border-t border-mist">
+          <Link
+            href={next.permalink}
+            className="container-page group grid gap-8 py-16 md:grid-cols-12 md:items-center md:py-24"
+          >
+            <div className="md:col-span-5">
+              <p className="label-mono text-stone">Volgend project</p>
+              <p className="display mt-5 flex items-end gap-3 text-4xl transition-colors group-hover:text-navy md:text-6xl">
+                {next.title}
+                <ArrowUpRight className="mb-1 size-8 shrink-0 text-navy transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 md:size-12" />
+              </p>
+              <p className="label-mono mt-5 text-stone">
+                {[next.location, next.category].filter(Boolean).join(" · ")}
+              </p>
+            </div>
+            {next.cover && (
+              <div className="relative aspect-[16/9] overflow-hidden bg-mist md:col-span-7">
+                <Image
+                  src={next.cover}
+                  alt={next.coverAlt || next.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                  className="img-zoom object-cover"
+                />
+              </div>
+            )}
+          </Link>
+        </section>
+      )}
     </article>
   );
 }
