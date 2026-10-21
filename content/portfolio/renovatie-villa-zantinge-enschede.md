@@ -19,10 +19,17 @@ materials:
   - "Nieuw, verduurzaamd glas"
   - "Gevelimpregnatie en nieuw voegwerk"
   - "Tegelwerk en stucwerk"
+  - "Maatwerk wandbekleding"
+  - "Maatwerk banken in de zitkuil"
+  - "Nieuw licht- en elektraplan en meterkast"
+  - "Badkamers en keuken van Gevelaar"
 partners:
   - name: "Van Galen Tegelzetters"
     role: "Tegelwerk & stucwerk"
     description: "Heeft de complete woning betegeld en gestukadoord."
+  - name: "Gevelaar"
+    role: "Badkamers & keuken"
+    description: "Leverde de twee nieuwe badkamers en de keuken voor deze villa, vanuit Enschede."
   - name: "Green Solutions"
     role: "Partner"
     description: "Partner in de renovatie van deze Van Zantinge-villa."
@@ -44,12 +51,12 @@ gallery:
     caption: "Het typische Van Zantinge-dak met houten bekleding, behouden en hersteld"
     phase: "eind"
   - src: "/images/projects/renovatie-villa-zantinge-enschede/04.jpg"
-    alt: "Verdiepte zithoek met haard, zwevende houten planken en baksteenwand in een Van Zantinge-villa in Enschede"
-    caption: "De kenmerkende verdiepte zithoek met haard"
+    alt: "Zitkuil met maatwerk banken, haard, zwevende houten planken en baksteenwand in een Van Zantinge-villa in Enschede"
+    caption: "De kenmerkende zitkuil met haard en maatwerk banken"
     phase: "eind"
   - src: "/images/projects/renovatie-villa-zantinge-enschede/05.jpg"
-    alt: "Stalen glazen binnendeur tussen houten lamellenwanden in de gerenoveerde Van Zantinge-villa"
-    caption: "Nieuwe binnendeur, strak afgetimmerd"
+    alt: "Stalen glazen binnendeur in maatwerk wandbekleding van houten lamellen in de gerenoveerde Van Zantinge-villa"
+    caption: "Maatwerk wandbekleding met nieuwe binnendeur"
     phase: "eind"
 relatedServices:
   - { href: "/verbouwing", label: "Renovatie & verbouw" }
@@ -63,7 +70,7 @@ faq:
   - question: "Waarom is een Van Zantinge-woning renoveren zo bijzonder?"
     answer: "Van Zantinge-woningen zijn herkenbaar aan hun flauwe daken, verhogingen en zithoeken. Die architectuur wil je behouden, maar deze huizen vragen ook veel onderhoud. Bij deze villa, waar Van Zantinge zelf woonde, was welstand bovendien onderdeel van de verbouwing."
   - question: "Wat is er allemaal gerenoveerd aan deze villa?"
-    answer: "Zowel de binnen- als de buitenschil: heringedeelde en met gasbeton vergrote kamers, twee nieuwe badkamers en een toilet, volledig installatiewerk met vloerverwarming, een nieuwe dekvloer, een nieuw geïsoleerd dak en plafond, nieuw glas, maatwerk kozijnen, een nieuwe glazen patio, gevelimpregnatie, nieuw voegwerk, een uitbouw van een meter en een opgeknapte trap."
+    answer: "Zowel de binnen- als de buitenschil: heringedeelde en met gasbeton vergrote kamers, twee nieuwe badkamers en een toilet, keukeninstallaties, volledig installatiewerk met vloerverwarming, een volledig nieuw licht- en elektraplan met vernieuwde meterkast, een nieuwe dekvloer, maatwerk wandbekleding en zitkuilbanken, een nieuw geïsoleerd dak en plafond, een bovenlicht in de hal, nieuw glas, maatwerk kozijnen, een nieuwe glazen patio, gevelimpregnatie, nieuw voegwerk, aangeheelde voordeuren, de oprit, een uitbouw van een meter en een opgeknapte trap."
   - question: "Hoe lang duurde de renovatie?"
     answer: "Het project heeft in totaal zes maanden geduurd."
   - question: "Maken jullie kozijnen ook zelf op maat?"
@@ -87,19 +94,26 @@ Uiteindelijk hebben we de villa volledig gerenoveerd, van binnen en van buiten.
 **Binnen**
 
 - De kamers opnieuw ingedeeld en vergroot met gasbeton
-- Twee nieuwe badkamers en een toilet gerealiseerd
+- Twee nieuwe badkamers en een toilet gerealiseerd — badkamers en keuken geleverd door Gevelaar in Enschede
+- Keukeninstallaties aangelegd
 - Volledig nieuw installatiewerk, inclusief vloerverwarming
+- Een volledig nieuw licht- en elektraplan, inclusief een vernieuwde meterkast
 - Een nieuwe dekvloer
+- Maatwerk wandbekleding
+- Maatwerk banken in de kenmerkende zitkuil
 - De trap aangepakt
 - Volledig betegeld en gestukadoord door onze partner Van Galen
 
-**Dak en buitenschil**
+**Dak, gevel en buiten**
 
 - Het dak en het plafond volledig vervangen en geïsoleerd
 - Lekkages in het dak opgelost met nieuwe folie
 - Overal het glas vervangen en verduurzaamd
 - De gevel geïmpregneerd en de voegen opnieuw aangeheeld
-- Deuren geplaatst, afgetimmerd en een bovenlicht geplaatst
+- Een bovenlicht gerealiseerd in de hal
+- Deuren geplaatst en afgetimmerd
+- De voordeuren aangeheeld
+- De oprit aangepakt
 
 Daarnaast hebben we een uitbouw van een meter gerealiseerd over de hele breedte van de woonkamer, zodat de woning net wat meer ruimte heeft gekregen. Met diverse verduurzamingsmaatregelen is de villa bovendien klaar voor de komende decennia.
 
