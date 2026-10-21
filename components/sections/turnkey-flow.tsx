@@ -7,7 +7,7 @@ function FlowArrow() {
   return (
     <div
       aria-hidden="true"
-      className="flex shrink-0 items-center justify-center py-1 text-sky lg:px-1 lg:py-0"
+      className="flex shrink-0 items-center justify-center py-1 text-lime lg:px-1 lg:py-0"
     >
       {/* Basisvorm: pijl omlaag (mobiel, gestapeld). Op desktop -90° = pijl naar rechts. */}
       <svg
@@ -41,7 +41,7 @@ export function TurnkeyFlow({
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-2xl">
           {eyebrow && (
-            <p className="label-mono text-sky">
+            <p className="eyebrow text-white/65">
               {eyebrow}
             </p>
           )}

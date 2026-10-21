@@ -41,10 +41,10 @@ export default function RegionalePartnersPage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <a
           href="/contact#formulier"
-          className="group block border border-navy/20 bg-navy transition-colors hover:bg-navy-dark"
+          className="group block bg-lime text-ink transition-colors hover:bg-lime-dark"
         >
           <div className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:gap-10 md:p-12">
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-ink text-sky md:h-24 md:w-24">
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-ink text-lime md:h-24 md:w-24">
               <svg
                 className="h-10 w-10 md:h-12 md:w-12"
                 viewBox="0 0 24 24"

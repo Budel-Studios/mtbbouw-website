@@ -82,7 +82,7 @@ function PartnerTile({ partner }: { partner: Partner }) {
       {/* Hover-overlay met omschrijving */}
       <div className="absolute inset-0 flex flex-col justify-between bg-ink p-5 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
         <div>
-          <span className="label-mono text-sky">
+          <span className="label-mono text-lime">
             {partnerCategories[partner.category]}
           </span>
           <p className="mt-2 font-display text-lg font-bold leading-tight md:text-xl">
@@ -95,13 +95,13 @@ function PartnerTile({ partner }: { partner: Partner }) {
         <div className="flex items-end justify-between gap-3 text-xs text-white/70">
           {partner.region ? (
             <span className="inline-flex items-center gap-1">
-              <MapPinIcon className="h-3 w-3 text-sky" /> {partner.region}
+              <MapPinIcon className="h-3 w-3 text-lime" /> {partner.region}
             </span>
           ) : (
             <span />
           )}
           {host && (
-            <span className="inline-flex items-center gap-1 font-medium text-sky">
+            <span className="inline-flex items-center gap-1 font-medium text-lime">
               {host}
               <ExternalIcon />
             </span>

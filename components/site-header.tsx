@@ -100,7 +100,7 @@ function TomButton({ text, href, onClick }: { text: string; href: string; onClic
     <Link
       href={href}
       onClick={onClick}
-      className="group flex w-fit items-center gap-2 border border-navy px-5 py-2.5 transition-colors duration-300 hover:bg-navy"
+      className="group flex w-fit items-center gap-2 border border-ink px-5 py-2.5 transition-colors duration-300 hover:bg-ink"
     >
       <span className="label-mono text-navy transition-colors duration-300 group-hover:text-white">
         {text}
@@ -283,7 +283,7 @@ function MobileSubmenu({
             <Link
               href={intro.href}
               onClick={onClose}
-              className="label-mono mb-10 flex w-full items-center justify-center border border-navy py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
+              className="label-mono mb-10 flex w-full items-center justify-center border border-ink py-3.5 text-ink transition-colors hover:bg-ink hover:text-white"
             >
               {intro.button} <ArrowRight />
             </Link>
@@ -396,7 +396,7 @@ export function SiteHeader() {
         aria-label="Hoofdmenu"
         onMouseEnter={cancelClose}
         onMouseLeave={scheduleClose}
-        className="relative border-b border-mist bg-paper/90 font-display backdrop-blur-md"
+        className="relative border-b border-mist bg-paper/85 font-display backdrop-blur-md"
       >
         <div className="relative z-10 flex h-16 items-stretch">
           {/* Logo — beeldmerk + woordmerk */}
@@ -415,7 +415,7 @@ export function SiteHeader() {
               <div
                 key={item.id}
                 className={`flex items-stretch border-b-2 transition-colors ${
-                  activeMega === item.id ? "border-navy" : "border-transparent"
+                  activeMega === item.id ? "border-lime" : "border-transparent"
                 }`}
               >
                 {item.content ? (
@@ -449,7 +449,7 @@ export function SiteHeader() {
             ))}
           </div>
 
-          {/* Rechts: brochure-tekstlink + navy Contact-blok (tegen de rand) */}
+          {/* Rechts: brochure, Contact (offerte-drawer) en omlijnde telefoonknop */}
           <div
             className="ml-auto hidden items-stretch lg:flex"
             onMouseEnter={() => {
@@ -466,20 +466,28 @@ export function SiteHeader() {
             </Link>
             <ContactDrawerButton
               onClick={closeAll}
-              className="label-mono flex cursor-pointer items-center gap-2 bg-navy px-6 text-white transition-colors hover:bg-navy-dark"
+              className="label-mono link-line mr-6 flex cursor-pointer items-center self-center py-1 text-stone transition-colors hover:text-navy"
             >
               Contact
             </ContactDrawerButton>
+            <a
+              href={`tel:${site.telephoneHref}`}
+              className="label-mono mr-5 flex items-center gap-2 self-center border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              <Phone size={14} />
+              {site.telephone}
+            </a>
           </div>
 
           {/* Mobiel: telefoon + Menu-knop (zoals live: icoon + "Menu"-tekst) */}
           <div className="ml-auto flex items-stretch lg:hidden">
             <a
               href={`tel:${site.telephoneHref}`}
-              className="flex items-center justify-center bg-navy px-5 text-white"
+              className="label-mono flex items-center gap-2 self-center border border-ink px-3 py-2 text-ink"
               aria-label="Bel ons"
             >
-              <Phone size={18} />
+              <Phone size={14} />
+              Bel
             </a>
             <button
               type="button"
@@ -546,7 +554,7 @@ export function SiteHeader() {
               <div className="mt-8 flex flex-col gap-4 pb-20">
                 <ContactDrawerButton
                   onClick={closeAll}
-                  className="label-mono flex w-full cursor-pointer items-center justify-center bg-navy py-4 text-white transition-transform active:scale-95"
+                  className="label-mono flex w-full cursor-pointer items-center justify-center border border-ink bg-ink py-4 text-paper transition-transform active:scale-95"
                 >
                   Contact
                 </ContactDrawerButton>

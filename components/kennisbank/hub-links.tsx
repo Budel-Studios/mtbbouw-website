@@ -18,7 +18,7 @@ export function HubLinks({ current }: { current?: string }) {
     <nav aria-label="Kennisbank per onderwerp en bouwdeel" className="grid gap-8 sm:grid-cols-2">
       {groups.map((group) => (
         <div key={group.type}>
-          <p className="label-mono text-navy">
+          <p className="eyebrow text-stone">
             {group.title}
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -32,8 +32,8 @@ export function HubLinks({ current }: { current?: string }) {
                     aria-current={isCurrent ? "page" : undefined}
                     className={`label-mono inline-flex items-center border px-3 py-2 transition-colors ${
                       isCurrent
-                        ? "border-navy bg-navy text-white"
-                        : "border-mist bg-white text-ink hover:border-navy hover:text-navy"
+                        ? "border-ink bg-ink text-white"
+                        : "border-mist bg-white text-ink hover:border-ink hover:text-navy"
                     }`}
                   >
                     {item.label}

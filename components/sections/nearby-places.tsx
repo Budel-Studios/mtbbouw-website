@@ -13,7 +13,7 @@ export function NearbyPlaces({ currentSlug }: { currentSlug: string }) {
   return (
     <section className="border-y border-mist bg-white">
       <div className="mx-auto max-w-6xl px-6 py-14 sm:py-16">
-        <p className="label-mono text-stone">
+        <p className="eyebrow text-stone">
           Werkgebied
         </p>
         <h2 className="mt-4 max-w-3xl text-2xl font-medium tracking-[-0.03em] sm:text-3xl">

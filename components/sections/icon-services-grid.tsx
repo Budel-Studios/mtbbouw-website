@@ -20,7 +20,7 @@ export function IconServicesGrid({
         {(eyebrow || title) && (
           <div className="mb-12">
             {eyebrow && (
-              <p className="label-mono text-stone">
+              <p className="eyebrow text-stone">
                 {eyebrow}
               </p>
             )}

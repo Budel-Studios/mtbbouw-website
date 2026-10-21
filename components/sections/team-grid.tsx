@@ -23,7 +23,7 @@ export async function TeamGrid({
   const assets = await getSiteAssets();
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
-      <p className="label-mono text-stone">
+      <p className="eyebrow text-stone">
         {eyebrow}
       </p>
       <h2 className="mt-4 max-w-2xl text-3xl font-semibold sm:text-4xl">{title}</h2>

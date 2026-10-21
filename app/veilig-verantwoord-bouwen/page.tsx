@@ -83,7 +83,7 @@ export default async function VeiligVerantwoordBouwenPage() {
 
       {/* 1. ONZE VISIE */}
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <p className="label-mono text-stone">
+        <p className="eyebrow text-stone">
           Onze visie
         </p>
         <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
@@ -169,7 +169,7 @@ export default async function VeiligVerantwoordBouwenPage() {
       {/* 4. VAKMANSCHAP */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 pt-16">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Vakmanschap
           </p>
           <h2 className="mt-4 max-w-2xl text-3xl font-semibold sm:text-4xl">
@@ -306,7 +306,7 @@ export default async function VeiligVerantwoordBouwenPage() {
       {/* Rustige interne links — bewust geen grote CTA */}
       <section className="border-t border-mist py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Meer lezen
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

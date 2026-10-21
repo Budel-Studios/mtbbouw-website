@@ -52,7 +52,7 @@ export default function ProjectenPage() {
       <section className="container-page pb-14 pt-16 md:pb-20 md:pt-24">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="animate-fade-up md:col-span-8">
-            <p className="label-mono text-navy">Ons werk — recent werk uit Twente</p>
+            <p className="label-mono text-stone">Ons werk — recent werk uit Twente</p>
             <h1 className="display mt-6 text-[2.75rem] sm:text-6xl md:text-6xl lg:text-8xl xl:text-[7.5rem]">
               Gerealiseerde projecten
             </h1>
@@ -66,7 +66,7 @@ export default function ProjectenPage() {
         </div>
 
         <dl className="mt-16 grid grid-cols-3 border-t border-mist">
-          <Stat value={projects.length} label="Projecten" />
+          <Stat value={projects.length} label="Uitgelichte projecten" />
           <Stat value={places} label="Plaatsen" />
           <Stat value={kinds} label="Soorten werk" />
         </dl>
@@ -78,8 +78,8 @@ export default function ProjectenPage() {
         eyebrow="Zelf iets te bouwen?"
         title="Benieuwd wat we voor jou kunnen betekenen?"
         text="Vertel kort wat je van plan bent — we denken vrijblijvend mee en komen graag bij je langs voor een intake op locatie."
-        cta={{ label: "Vraag een offerte aan", drawer: true }}
-        secondary={{ label: "Neem contact op", href: "/contact" }}
+        cta={{ label: "Plan een intake", drawer: true }}
+        secondary={{ label: "053 206 50 71", href: "tel:+31532065071" }}
         align="center"
       />
     </>

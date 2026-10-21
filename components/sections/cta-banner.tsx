@@ -35,9 +35,9 @@ export function CtaBanner({
   if (align === "row") {
     return (
       <section className="container-page py-16">
-        <div className="flex flex-col items-start justify-between gap-6 border-t-4 border-navy bg-white px-8 py-9 md:flex-row md:items-center">
+        <div className="flex flex-col items-start justify-between gap-6 border-t-2 border-lime bg-white px-8 py-9 md:flex-row md:items-center">
           <div>
-            {eyebrow && <p className="label-mono text-navy">{eyebrow}</p>}
+            {eyebrow && <p className="eyebrow text-stone">{eyebrow}</p>}
             <p className="mt-3 font-display text-xl font-medium tracking-[-0.02em] text-ink">
               {title}
             </p>
@@ -58,9 +58,9 @@ export function CtaBanner({
 
   return (
     <section className="container-page py-20 md:py-28">
-      <div className="grid gap-8 border-t-4 border-navy bg-white p-8 md:grid-cols-12 md:items-center md:p-12">
+      <div className="grid gap-8 border-t-2 border-lime bg-white p-8 md:grid-cols-12 md:items-center md:p-12">
         <div className="md:col-span-8">
-          {eyebrow && <p className="label-mono text-navy">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow text-stone">{eyebrow}</p>}
           <h2 className="display mt-4 text-3xl md:text-5xl">{title}</h2>
           {text && (
             <p className="mt-4 max-w-xl text-base leading-relaxed text-stone">{text}</p>

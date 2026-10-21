@@ -105,7 +105,7 @@ export default function HoeWijWerkenPage() {
 
       {/* De acht stappen — uitgeschreven, verticaal */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <p className="label-mono text-stone">
+        <p className="eyebrow text-stone">
           Stap voor stap
         </p>
         <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
@@ -127,7 +127,7 @@ export default function HoeWijWerkenPage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="label-mono text-stone">
+              <p className="eyebrow text-stone">
                 Veilig en verantwoord
               </p>
               <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
@@ -140,7 +140,7 @@ export default function HoeWijWerkenPage() {
                 projectplan, zodat iedereen weet waar hij aan toe is.
               </p>
             </div>
-            <div className="border-t-2 border-navy pt-8">
+            <div className="border-t-2 border-lime pt-8">
               <ShieldIcon className="h-7 w-7" />
               <h3 className="mt-4 text-xl font-semibold">
                 SBB-erkend leerbedrijf

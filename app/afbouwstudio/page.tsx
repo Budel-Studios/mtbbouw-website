@@ -106,7 +106,7 @@ const PILLARS = [
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="label-mono text-stone">
+    <p className="eyebrow text-stone">
       {children}
     </p>
   );
@@ -215,7 +215,7 @@ export default function AfbouwstudioPage() {
                 </p>
                 <p className="mt-1 font-display text-lg font-bold">Broodbode · Zwolle</p>
               </div>
-              <div className="relative aspect-[4/3] bg-navy/5">
+              <div className="relative aspect-[4/3] bg-lime/15">
                 <svg viewBox="0 0 200 150" className="h-full w-full" aria-hidden="true">
                   <rect x="20" y="20" width="160" height="110" fill="none" stroke="var(--color-ink)" strokeWidth="1.5" />
                   <path d="M20 80h160M110 20v110" stroke="var(--color-ink)" strokeWidth="1" fill="none" strokeDasharray="4 4" />
@@ -284,7 +284,7 @@ export default function AfbouwstudioPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <span className="absolute left-4 top-4 bg-navy px-2.5 py-1 text-[11px] font-semibold text-white">
+                  <span className="absolute left-4 top-4 bg-ink px-2.5 py-1 text-[11px] font-semibold text-white">
                     {c.tag}
                   </span>
                 </div>
@@ -317,7 +317,7 @@ export default function AfbouwstudioPage() {
                   </div>
                   <Link
                     href={c.href}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink underline decoration-navy decoration-2 underline-offset-4 hover:decoration-ink"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink underline decoration-lime decoration-2 underline-offset-4 hover:decoration-ink"
                   >
                     Bekijk het volledige project →
                   </Link>
@@ -326,7 +326,7 @@ export default function AfbouwstudioPage() {
             ))}
           </div>
 
-          <blockquote className="mt-16 border-l-4 border-navy bg-navy/5 p-10 md:p-14">
+          <blockquote className="mt-16 border-l-4 border-lime bg-white p-10 md:p-14">
             <p className="font-display text-2xl font-bold leading-[1.15] text-ink md:text-3xl">
               &ldquo;Afbouwstudio was van het eerste pandbezoek tot oplevering
               helder, snel en vakkundig. De app waarmee ze elke wand vastlegden
@@ -361,7 +361,7 @@ export default function AfbouwstudioPage() {
           </h2>
           <ul className="mt-10 flex flex-wrap gap-2.5">
             {SECTORS.map((s) => (
-              <li key={s} className="border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-navy hover:bg-navy hover:text-white">
+              <li key={s} className="border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white">
                 {s}
               </li>
             ))}
@@ -390,7 +390,7 @@ export default function AfbouwstudioPage() {
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {PILLARS.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="border-t-2 border-navy pt-6">
+              <div key={title} className="border-t-2 border-lime pt-6">
                 <Icon className="h-8 w-8 text-ink" />
                 <h3 className="mt-5 text-2xl font-semibold">{title}</h3>
                 <p className="mt-3 leading-relaxed text-stone">{body}</p>
@@ -415,7 +415,7 @@ export default function AfbouwstudioPage() {
       {/* CTA */}
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <p className="label-mono text-sky">
+          <p className="eyebrow text-white/65">
             Persoonlijk contact
           </p>
           <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
@@ -427,7 +427,7 @@ export default function AfbouwstudioPage() {
             offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white">
               Plan intake
             </ContactDrawerButton>
             <a

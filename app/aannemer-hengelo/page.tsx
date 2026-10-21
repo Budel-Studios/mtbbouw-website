@@ -53,7 +53,7 @@ export default function AannemerHengeloPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Verbouwen in Hengelo
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">

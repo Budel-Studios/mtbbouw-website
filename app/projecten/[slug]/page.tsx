@@ -225,32 +225,18 @@ export default async function ProjectPage({
         </div>
       </header>
 
-      {/* 2 — BEELD: hero, feiten, voor/na en galerij (foto-eerst) */}
+      {/* 2 — BEELD: hero, verhaal, voor/na en galerij */}
       <ProjectVisuals
         hero={project.cover ? { src: project.cover, alt: project.coverAlt || project.title } : undefined}
         video={project.coverVideo}
         photos={project.gallery}
       >
-        {facts.length > 0 && (
-          <section aria-label="Project in het kort" className="container-page">
-            <dl className="grid grid-cols-2 border-b border-mist sm:grid-cols-3 lg:grid-cols-6">
-              {facts.map((f) => (
-                <div key={f.label} className="border-mist py-6 pr-4 lg:border-r lg:last:border-r-0 lg:[&:not(:first-child)]:pl-6">
-                  <dt className="label-mono text-stone">{f.label}</dt>
-                  <dd className="mt-3 text-base tracking-[-0.01em] md:text-lg">{f.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        )}
-      </ProjectVisuals>
-
-      {/* 3 — VERHAAL */}
-      <section className="mt-20 bg-tint md:mt-28">
+      {/* 3 — VERHAAL + PROJECTGEGEVENS (tussen hero en galerij) */}
+        <section>
         <div className="container-page grid gap-14 py-20 md:grid-cols-12 md:py-28">
         <aside className="md:col-span-4">
           <div className="md:sticky md:top-28">
-            <p className="label-mono text-navy">Projectgegevens</p>
+            <p className="label-mono text-stone">Projectgegevens</p>
             <dl className="mt-6 border-t border-ink">
               {facts.map((f) => (
                 <div key={f.label} className="grid grid-cols-5 gap-4 border-b border-mist py-3.5">
@@ -262,7 +248,7 @@ export default async function ProjectPage({
           </div>
         </aside>
         <div className="md:col-span-7 md:col-start-6">
-          <p className="label-mono text-navy">Over dit project</p>
+          <p className="label-mono text-stone">Over dit project</p>
           {project.intro && (
             <p className="mt-6 text-2xl leading-snug tracking-[-0.02em] md:text-[2.1rem]">
               {project.intro}
@@ -298,7 +284,9 @@ export default async function ProjectPage({
           </div>
         </div>
         </div>
-      </section>
+        </section>
+
+      </ProjectVisuals>
 
       {/* 4 — KLANTQUOTE */}
       {project.testimonial && (
@@ -322,7 +310,7 @@ export default async function ProjectPage({
         <section className="container-page pb-24 md:pb-32">
           <div className="flex items-end justify-between gap-6 border-t border-mist pt-14">
             <div>
-              <p className="label-mono text-navy">Samenwerkingen</p>
+              <p className="eyebrow text-stone">Samenwerkingen</p>
               <h2 className="display mt-4 text-4xl md:text-6xl">Partners &amp; leveranciers</h2>
             </div>
             <span className="label-mono text-stone">
@@ -342,7 +330,7 @@ export default async function ProjectPage({
       {/* 6 — SPECIFICATIES */}
       {hasSpecs && (
         <section className="container-page pb-24 md:pb-32">
-          <p className="label-mono text-navy">Specificaties</p>
+          <p className="eyebrow text-stone">Specificaties</p>
           <h2 className="display mt-4 text-4xl md:text-6xl">Details</h2>
           <dl className="mt-10 grid border-t border-ink md:grid-cols-2 md:gap-x-16">
             <SpecRow label="Gebruikte materialen" items={project.materials} />
@@ -356,20 +344,20 @@ export default async function ProjectPage({
       {project.relatedServices.length > 0 && (
         <section className="container-page pb-16">
           <div className="border-t border-mist pt-10">
-            <p className="label-mono text-stone">Meer over onze diensten</p>
+            <p className="eyebrow text-stone">Meer over onze diensten</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.relatedServices.map((svc) => (
                 <Link
                   key={svc.href}
                   href={svc.href}
-                  className="label-mono inline-flex items-center border border-mist px-4 py-2.5 text-ink transition-colors hover:border-navy hover:text-navy"
+                  className="label-mono inline-flex items-center border border-mist px-4 py-2.5 text-ink transition-colors hover:border-ink hover:text-navy"
                 >
                   {svc.label}
                 </Link>
               ))}
               <Link
                 href="/projecten"
-                className="label-mono inline-flex items-center border border-mist px-4 py-2.5 text-ink transition-colors hover:border-navy hover:text-navy"
+                className="label-mono inline-flex items-center border border-mist px-4 py-2.5 text-ink transition-colors hover:border-ink hover:text-navy"
               >
                 Alle projecten
               </Link>
@@ -394,8 +382,8 @@ export default async function ProjectPage({
         eyebrow="Ook een project starten?"
         title="Benieuwd wat wij voor jouw woning of bedrijfspand kunnen betekenen?"
         text="Vertel ons over je plannen — we denken graag mee en zijn duidelijk over prijs en planning."
-        cta={{ label: "Neem contact op", href: "/contact" }}
-        secondary={{ label: "Bekijk meer projecten", href: "/projecten" }}
+        cta={{ label: "Plan een intake", drawer: true }}
+        secondary={{ label: "053 206 50 71", href: "tel:+31532065071" }}
       />
 
       {/* Volgend project */}
@@ -406,7 +394,7 @@ export default async function ProjectPage({
             className="container-page group grid gap-8 py-16 md:grid-cols-12 md:items-center md:py-24"
           >
             <div className="md:col-span-5">
-              <p className="label-mono text-stone">Volgend project</p>
+              <p className="eyebrow text-stone">Volgend project</p>
               <p className="display mt-5 flex items-end gap-3 text-4xl transition-colors group-hover:text-navy md:text-6xl">
                 {next.title}
                 <ArrowUpRight className="mb-1 size-8 shrink-0 text-navy transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 md:size-12" />

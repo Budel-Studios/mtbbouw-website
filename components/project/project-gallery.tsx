@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import { Lightbox, type LightboxImage } from "@/components/project/lightbox";
+import { Slider } from "@/components/slider";
 
 /**
  * Foto-eerst projectbeeld: grote hero (foto of video), daaronder de
@@ -29,22 +30,22 @@ function layout(count: number): { span: string; aspect: string }[] {
   const cells: { span: string; aspect: string }[] = [];
   const rows = [
     [
-      { span: "md:col-span-8", aspect: "aspect-[4/3] md:aspect-[16/10]" },
-      { span: "md:col-span-4", aspect: "aspect-[4/3] md:aspect-[4/5]" },
+      { span: "md:col-span-8", aspect: "md:aspect-[16/10]" },
+      { span: "md:col-span-4", aspect: "md:aspect-[4/5]" },
     ],
     [
-      { span: "md:col-span-4", aspect: "aspect-[4/3] md:aspect-[4/5]" },
-      { span: "md:col-span-8", aspect: "aspect-[4/3] md:aspect-[16/10]" },
+      { span: "md:col-span-4", aspect: "md:aspect-[4/5]" },
+      { span: "md:col-span-8", aspect: "md:aspect-[16/10]" },
     ],
     [
-      { span: "md:col-span-6", aspect: "aspect-[4/3]" },
-      { span: "md:col-span-6", aspect: "aspect-[4/3]" },
+      { span: "md:col-span-6", aspect: "md:aspect-[4/3]" },
+      { span: "md:col-span-6", aspect: "md:aspect-[4/3]" },
     ],
   ];
   let r = 0;
   while (cells.length < count) {
     if (count - cells.length === 1) {
-      cells.push({ span: "md:col-span-12", aspect: "aspect-[4/3] md:aspect-[21/9]" });
+      cells.push({ span: "md:col-span-12", aspect: "md:aspect-[21/9]" });
     } else {
       cells.push(...rows[r % rows.length]);
       r++;
@@ -64,29 +65,31 @@ function PhotoGrid({
 }) {
   const cells = layout(photos.length);
   return (
-    <div className="grid gap-4 md:grid-cols-12 md:gap-6">
+    <Slider label="Projectfoto's" until="md" className="md:grid-cols-12">
       {photos.map((photo, i) => (
-        <figure key={photo.src + i} className={cells[i].span}>
-          <button
-            type="button"
-            onClick={() => onOpen(offset + i)}
-            aria-label={`Vergroot: ${photo.alt}`}
-            className={`group relative block w-full overflow-hidden bg-mist ${cells[i].aspect}`}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes={cells[i].span.includes("12") ? "100vw" : "(max-width: 768px) 100vw, 66vw"}
-              className="img-zoom object-cover"
-            />
-          </button>
-          {photo.caption && (
-            <figcaption className="label-mono mt-3 text-stone">{photo.caption}</figcaption>
-          )}
-        </figure>
+        <li key={photo.src + i} className={`w-[85%] shrink-0 snap-start sm:w-[60%] md:w-auto ${cells[i].span}`}>
+          <figure>
+            <button
+              type="button"
+              onClick={() => onOpen(offset + i)}
+              aria-label={`Vergroot: ${photo.alt}`}
+              className={`group relative block w-full cursor-zoom-in overflow-hidden bg-mist aspect-[4/5] ${cells[i].aspect}`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes={cells[i].span.includes("12") ? "100vw" : "(max-width: 768px) 85vw, 66vw"}
+                className="img-zoom object-cover"
+              />
+            </button>
+            {photo.caption && (
+              <figcaption className="label-mono mt-3 text-stone">{photo.caption}</figcaption>
+            )}
+          </figure>
+        </li>
       ))}
-    </div>
+    </Slider>
   );
 }
 
@@ -105,14 +108,14 @@ function BeforeAfter({ before, after }: { before: Photo; after: Photo }) {
           className="pointer-events-none absolute inset-y-0 w-px bg-white"
           style={{ left: `${pos}%` }}
         >
-          <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-navy px-2 py-1.5 text-white">
+          <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-lime px-2 py-1.5 text-ink">
             <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="m9 18-6-6 6-6M15 6l6 6-6 6" />
             </svg>
           </span>
         </div>
         <span className="label-mono absolute left-4 top-4 bg-ink/70 px-2 py-1 text-white">Voor</span>
-        <span className="label-mono absolute right-4 top-4 bg-navy px-2 py-1 text-white">Na</span>
+        <span className="label-mono absolute right-4 top-4 bg-lime px-2 py-1 text-ink">Na</span>
         <input
           type="range"
           min={0}
@@ -192,7 +195,7 @@ export function ProjectVisuals({
           className="group relative block aspect-[4/3] w-full overflow-hidden bg-mist md:aspect-[16/8] md:max-h-[88vh]"
         >
           <Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" className="img-zoom object-cover" />
-          <span className="label-mono absolute bottom-5 right-5 bg-navy px-3 py-2 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+          <span className="label-mono glass-dark absolute bottom-5 right-5 px-3 py-2 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
             + Vergroten
           </span>
         </button>
@@ -203,7 +206,7 @@ export function ProjectVisuals({
       {/* VOOR / NA */}
       {before && after && (
         <section aria-label="Voor en na" className="container-page pt-16 md:pt-24">
-          <p className="label-mono mb-6 text-navy">Voor &amp; na</p>
+          <p className="eyebrow mb-6 text-stone">Voor &amp; na</p>
           <BeforeAfter before={before} after={after} />
         </section>
       )}
@@ -211,7 +214,7 @@ export function ProjectVisuals({
       {/* GALERIJ */}
       {galleryOrdered.length > 0 && (
         <section className="container-page space-y-10 pt-16 md:pt-24">
-          <h2 className="label-mono text-navy">Foto&apos;s van het project</h2>
+          <h2 className="eyebrow text-stone">Foto&apos;s van het project</h2>
           {groups.map((group) => {
             const list = group.photos.filter((p) => p.src !== hero?.src);
             if (list.length === 0) return null;
@@ -221,7 +224,7 @@ export function ProjectVisuals({
               <div key={group.phase ?? "rest"}>
                 {group.phase && (
                   <p className="label-mono mb-6 flex items-center justify-between border-b border-mist pb-3 text-stone">
-                    <span className="text-navy">{PHASE_LABELS[group.phase]}</span>
+                    <span className="text-ink">{PHASE_LABELS[group.phase]}</span>
                     <span>{String(list.length).padStart(2, "0")} foto&apos;s</span>
                   </p>
                 )}
@@ -229,8 +232,8 @@ export function ProjectVisuals({
               </div>
             );
           })}
-          <p className="label-mono text-stone">
-            {String(all.length).padStart(2, "0")} beelden — klik om te vergroten
+          <p className="eyebrow text-stone">
+            {String(all.length).padStart(2, "0")} beelden — tik of klik om te vergroten
           </p>
         </section>
       )}

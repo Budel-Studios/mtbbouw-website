@@ -56,7 +56,7 @@ export function SiteFooter() {
   const year = 2026; // jaarlijks bijwerken of via build-var
 
   return (
-    <footer className="border-t-4 border-lime bg-navy text-white">
+    <footer id="contact-footer" className="bg-navy text-white">
       <div className="container-page py-20 md:py-28">
         {/* Afsluiter */}
         <div className="grid gap-10 md:grid-cols-12 md:items-end">

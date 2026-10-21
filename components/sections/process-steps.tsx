@@ -25,7 +25,7 @@ export function ProcessSteps({
 }) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
-      <p className="label-mono text-stone">
+      <p className="eyebrow text-stone">
         {eyebrow}
       </p>
       <h2

@@ -35,7 +35,7 @@ export function FeatureGrid({
       {(eyebrow || title || intro) && (
         <div className="mb-12 max-w-3xl">
           {eyebrow && (
-            <p className="label-mono text-stone">
+            <p className="eyebrow text-stone">
               {eyebrow}
             </p>
           )}
@@ -53,7 +53,7 @@ export function FeatureGrid({
         {items.map((item) => {
           const Icon = item.icon;
           return (
-            <div key={item.title} className="border-t-2 border-navy pt-8">
+            <div key={item.title} className="border-t-2 border-lime pt-8">
               {Icon && <Icon className="h-7 w-7" />}
               <ItemHeading className="mt-4 text-xl font-semibold">
                 {item.title}

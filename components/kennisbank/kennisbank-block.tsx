@@ -28,7 +28,7 @@ export function KennisbankBlock({
       <div className="container-page py-20 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="label-mono text-navy">{eyebrow}</p>
+            <p className="eyebrow text-stone">{eyebrow}</p>
             <h2 className="display mt-4 text-4xl md:text-5xl">
               {title}
             </h2>

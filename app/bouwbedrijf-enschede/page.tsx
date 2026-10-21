@@ -63,7 +63,7 @@ export default function BouwbedrijfEnschedePage() {
       {/* DE VIER LABELS */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Wat we bouwen
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
@@ -98,14 +98,14 @@ export default function BouwbedrijfEnschedePage() {
       {/* HET BEDRIJF */}
       <section className="border-y border-mist bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Het bedrijf
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Vakmanschap uit Enschede, opgeleid in eigen huis
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="border-t-2 border-navy pt-6">
+            <div className="border-t-2 border-lime pt-6">
               <UsersIcon className="h-8 w-8 text-ink" />
               <h3 className="mt-5 text-2xl font-semibold">Vast kernteam</h3>
               <p className="mt-3 leading-relaxed text-stone">
@@ -114,7 +114,7 @@ export default function BouwbedrijfEnschedePage() {
                 afwerking. Dezelfde gezichten op elke klus.
               </p>
             </div>
-            <div className="border-t-2 border-navy pt-6">
+            <div className="border-t-2 border-lime pt-6">
               <GraduationIcon className="h-8 w-8 text-ink" />
               <h3 className="mt-5 text-2xl font-semibold">Erkend leerbedrijf</h3>
               <p className="mt-3 leading-relaxed text-stone">
@@ -123,7 +123,7 @@ export default function BouwbedrijfEnschedePage() {
                 vakmanschap dat blijft.
               </p>
             </div>
-            <div className="border-t-2 border-navy pt-6">
+            <div className="border-t-2 border-lime pt-6">
               <BuildingIcon className="h-8 w-8 text-ink" />
               <h3 className="mt-5 text-2xl font-semibold">Particulier én zakelijk</h3>
               <p className="mt-3 leading-relaxed text-stone">

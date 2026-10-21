@@ -159,7 +159,7 @@ export function ProjectCards({
               </div>
               <div className="col-span-12 md:order-2 md:col-span-8">
                 <Heading
-                  className={`display transition-colors group-hover:text-navy ${
+                  className={`display ${
                     wide ? "text-3xl md:text-5xl" : "text-2xl md:text-3xl"
                   }`}
                 >
@@ -222,5 +222,48 @@ export function ProjectRows({ items }: { items: ProjectCardData[] }) {
         </Link>
       ))}
     </div>
+  );
+}
+
+/** Compacte projectkaart voor horizontale sliders (homepage). */
+export function ProjectCard({
+  project: p,
+  headingLevel = "h3",
+}: {
+  project: ProjectCardData;
+  headingLevel?: "h2" | "h3";
+}) {
+  const Heading = headingLevel;
+  const img = p.images[0];
+  return (
+    <Link href={p.permalink} className="group block">
+      <div className="relative aspect-[4/5] overflow-hidden bg-mist sm:aspect-[4/3]">
+        {img && (
+          <Image
+            src={img.src}
+            alt={img.alt}
+            fill
+            sizes="(max-width: 640px) 82vw, (max-width: 1024px) 55vw, 38vw"
+            className="img-zoom object-cover"
+          />
+        )}
+        <span
+          className="absolute bottom-0 left-0 h-1 w-0 bg-lime transition-[width] duration-700 ease-[var(--ease-architectural)] group-hover:w-full"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="mt-5 flex items-baseline justify-between gap-4">
+        <span className="label-mono text-stone">
+          {p.number}
+          {p.category ? ` · ${p.category}` : ""}
+        </span>
+        {p.location && <span className="label-mono shrink-0">{p.location}</span>}
+      </div>
+      <Heading className="display mt-3 flex items-start justify-between gap-3 text-2xl md:text-3xl">
+        {p.title}
+        <ArrowUpRight className="mt-1 size-5 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink" />
+      </Heading>
+      <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-stone">{p.description}</p>
+    </Link>
   );
 }

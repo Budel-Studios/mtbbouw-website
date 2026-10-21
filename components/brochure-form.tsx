@@ -40,7 +40,7 @@ export function BrochureForm() {
   if (status === "success") {
     return (
       <div className="border border-mist bg-white p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-navy/10 text-navy">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime/25 text-ink">
           <svg
             className="h-7 w-7"
             viewBox="0 0 24 24"

@@ -21,9 +21,9 @@ export function SeriesNav({
   return (
     <nav
       aria-label={`Serie: ${seriesLabel(series)}`}
-      className="mt-14 border-t-4 border-navy bg-white p-6 md:p-8"
+      className="mt-14 border-t-2 border-lime bg-white p-6 md:p-8"
     >
-      <p className="label-mono text-navy">
+      <p className="eyebrow text-stone">
         Serie · deel {index + 1} van {parts.length}
       </p>
       <p className="display mt-3 text-2xl">{seriesLabel(series)}</p>

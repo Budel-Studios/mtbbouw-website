@@ -19,7 +19,7 @@ export function PerkGrid({
       {(eyebrow || title) && (
         <div className="mb-12 max-w-2xl">
           {eyebrow && (
-            <p className="label-mono text-stone">
+            <p className="eyebrow text-stone">
               {eyebrow}
             </p>
           )}
@@ -34,9 +34,9 @@ export function PerkGrid({
           return (
             <div
               key={item.text}
-              className="relative border border-mist bg-white p-6 transition-colors hover:border-navy"
+              className="relative border border-mist bg-white p-6 transition-colors hover:border-ink"
             >
-              <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center bg-navy text-white">
+              <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center bg-ink text-white">
                 <CheckIcon className="h-3.5 w-3.5" />
               </span>
               <Icon className="h-8 w-8 text-navy" />

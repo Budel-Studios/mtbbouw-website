@@ -38,7 +38,7 @@ export function RelatedContent({
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="label-mono text-sky">
+            <p className="eyebrow text-white/65">
               {eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>

@@ -65,7 +65,7 @@ export function FilterDropdown({
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex w-full items-center justify-between border border-mist bg-white px-5 py-3 text-ink transition-colors hover:border-navy"
+        className="flex w-full items-center justify-between border border-mist bg-white px-5 py-3 text-ink transition-colors hover:border-ink"
       >
         <span className="label-mono">{active === options[0] ? label : active}</span>
         <FilterIcon />
@@ -91,7 +91,7 @@ export function FilterDropdown({
                   }`}
                 >
                   {opt}
-                  {isActive && <span className="h-1.5 w-1.5 shrink-0 bg-navy" />}
+                  {isActive && <span className="h-1.5 w-1.5 shrink-0 bg-ink" />}
                 </button>
               </li>
             );

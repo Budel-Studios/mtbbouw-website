@@ -30,7 +30,7 @@ export function ArticleCard({
             className="img-zoom object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-navy" />
+          <div className="absolute inset-0 bg-ink" />
         )}
       </div>
       <div className="flex flex-1 flex-col pt-5">

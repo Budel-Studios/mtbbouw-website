@@ -119,7 +119,7 @@ export default async function ArticlePage({
         </nav>
 
         <header className="mx-auto mb-14 mt-14 max-w-3xl md:mt-20">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             <time dateTime={article.date}>{formatDate(article.date)}</time>
             {article.updated && article.updated !== article.date && (
               <>
@@ -142,7 +142,7 @@ export default async function ArticlePage({
             <li>
               <Link
                 href={category.href}
-                className="label-mono inline-flex items-center bg-navy px-3 py-2 text-white transition-colors hover:bg-navy-dark"
+                className="label-mono inline-flex items-center bg-ink px-3 py-2 text-white transition-colors hover:bg-ink/85"
               >
                 {category.label}
               </Link>
@@ -151,7 +151,7 @@ export default async function ArticlePage({
               <li key={sub}>
                 <Link
                   href={hubHref("subcategory", sub)}
-                  className="label-mono inline-flex items-center border border-mist bg-white px-3 py-2 text-stone transition-colors hover:border-navy hover:text-navy"
+                  className="label-mono inline-flex items-center border border-mist bg-white px-3 py-2 text-stone transition-colors hover:border-ink hover:text-navy"
                 >
                   {subcategoryLabel(sub)}
                 </Link>
@@ -177,7 +177,7 @@ export default async function ArticlePage({
       {related.length > 0 && (
         <section aria-labelledby="lees-ook" className="bg-tint">
           <div className="container-page py-20 md:py-28">
-            <p className="label-mono text-navy">Verder lezen</p>
+            <p className="eyebrow text-stone">Verder lezen</p>
             <h2 id="lees-ook" className="display mt-4 text-4xl md:text-6xl">
               Lees ook
             </h2>

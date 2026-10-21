@@ -51,8 +51,8 @@ function ViewButton({
       onClick={onClick}
       aria-label={label}
       aria-pressed={active}
-      className={`grid size-9 place-items-center transition-colors ${
-        active ? "bg-navy text-white" : "text-stone hover:text-navy"
+      className={`grid size-9 cursor-pointer place-items-center transition-colors ${
+        active ? "bg-ink text-paper" : "text-stone hover:text-ink"
       }`}
     >
       {children}
@@ -78,8 +78,8 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
 
   return (
     <>
-      <div className="sticky top-16 z-30 border-y border-mist bg-tint/90 backdrop-blur-md">
-        <div className="container-page flex items-center justify-between gap-6 py-3">
+      <div className="sticky top-16 z-30 border-y border-mist bg-paper/90 backdrop-blur-md">
+        <div className="container-page flex items-center justify-between gap-6 py-4">
           <div
             role="group"
             aria-label="Filter op type project"
@@ -95,8 +95,8 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
                   type="button"
                   onClick={() => setActive(c)}
                   aria-pressed={isActive}
-                  className={`label-mono shrink-0 px-3 py-2 transition-colors ${
-                    isActive ? "bg-navy text-white" : "text-stone hover:text-navy"
+                  className={`label-mono shrink-0 cursor-pointer border-b-2 px-3 py-2 transition-colors ${
+                    isActive ? "border-lime text-ink" : "border-transparent text-stone hover:text-ink"
                   }`}
                 >
                   {c}
@@ -116,7 +116,7 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
         </div>
       </div>
 
-      <section aria-label="Projecten" className="bg-tint">
+      <section aria-label="Projecten">
         <div className="container-page py-14 md:py-20">
         {visible.length === 0 ? (
           <p className="text-stone">Geen projecten in deze categorie.</p>

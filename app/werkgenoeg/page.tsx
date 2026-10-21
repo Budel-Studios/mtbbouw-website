@@ -183,7 +183,7 @@ export default async function WerkGenoegPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <p className="label-mono text-stone">
+            <p className="eyebrow text-stone">
               Hoe we voor elkaar zorgen
             </p>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
@@ -197,7 +197,7 @@ export default async function WerkGenoegPage() {
             </p>
           </div>
 
-          <blockquote className="mt-8 max-w-3xl border-l-2 border-navy pl-6">
+          <blockquote className="mt-8 max-w-3xl border-l-2 border-lime pl-6">
             <p className="font-display text-xl font-bold leading-snug text-ink md:text-2xl">
               &ldquo;Ik wist niet dat je handen, benen en voeten zó moe konden
               zijn.&rdquo;
@@ -245,7 +245,7 @@ export default async function WerkGenoegPage() {
             ].map(({ Icon, title, text }) => (
               <div
                 key={title}
-                className="border border-mist bg-white p-6 transition-colors hover:border-navy"
+                className="border border-mist bg-white p-6 transition-colors hover:border-ink"
               >
                 <Icon className="h-8 w-8 text-navy" />
                 <h3 className="mt-5 text-base font-bold leading-snug text-ink">
@@ -266,7 +266,7 @@ export default async function WerkGenoegPage() {
       {/* OPENSTAANDE FUNCTIES */}
       <section id="vacatures" className="scroll-mt-20 bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Openstaande functies
           </p>
           <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
@@ -323,7 +323,7 @@ export default async function WerkGenoegPage() {
       {/* Interne links */}
       <section className="border-t border-mist py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Meer weten
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

@@ -28,7 +28,7 @@ export function SplitSection({
       {eyebrow && (
         <p
           className={`label-mono ${
-            dark ? "text-sky" : "text-stone"
+            dark ? "text-lime" : "text-stone"
           }`}
         >
           {eyebrow}

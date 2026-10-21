@@ -18,7 +18,7 @@ export function FaqAccordion({
 }) {
   return (
     <section id={id} className="container-page scroll-mt-24 py-20 md:py-28">
-      <p className="label-mono text-navy">
+      <p className="eyebrow text-stone">
         {eyebrow}
       </p>
       <h2 className="display mt-4 text-4xl md:text-6xl">{title}</h2>

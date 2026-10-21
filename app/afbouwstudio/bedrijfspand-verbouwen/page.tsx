@@ -77,7 +77,7 @@ export default function BedrijfspandVerbouwenPage() {
       {/* WERKZAAMHEDEN */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             01 — Wat we doen
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
@@ -100,7 +100,7 @@ export default function BedrijfspandVerbouwenPage() {
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="label-mono text-stone">
+              <p className="eyebrow text-stone">
                 02 — Veelgevraagd
               </p>
               <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
@@ -117,7 +117,7 @@ export default function BedrijfspandVerbouwenPage() {
               </p>
             </div>
             <div>
-              <p className="label-mono text-stone">
+              <p className="eyebrow text-stone">
                 03 — Kosten
               </p>
               <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
@@ -153,7 +153,7 @@ export default function BedrijfspandVerbouwenPage() {
       {/* CTA */}
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <p className="label-mono text-sky">
+          <p className="eyebrow text-white/65">
             Persoonlijk contact
           </p>
           <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
@@ -168,7 +168,7 @@ export default function BedrijfspandVerbouwenPage() {
             .
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white">
               Plan intake
             </ContactDrawerButton>
             <a

@@ -19,7 +19,7 @@ export function DayTimeline({
       {(eyebrow || title) && (
         <div className="mb-14 max-w-2xl">
           {eyebrow && (
-            <p className="label-mono text-stone">
+            <p className="eyebrow text-stone">
               {eyebrow}
             </p>
           )}
@@ -33,7 +33,7 @@ export function DayTimeline({
         {moments.map((moment) => (
           <li
             key={moment.label}
-            className="flex-1 border-t-2 border-navy px-0 py-5 sm:px-6 sm:pt-6"
+            className="flex-1 border-t-2 border-lime px-0 py-5 sm:px-6 sm:pt-6"
           >
             {moment.time && (
               <span className="block text-sm font-semibold text-navy">

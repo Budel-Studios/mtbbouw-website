@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { kennisbank } from "#site/content";
@@ -5,40 +7,30 @@ import { categoryLabel } from "@/lib/kennisbank-taxonomy";
 import { getAsset } from "@/lib/assets";
 import { WebSiteJsonLd } from "@/components/json-ld";
 import { publishedProjects, toProjectCard } from "@/lib/projects";
-import { ProjectCards } from "@/components/project/project-cards";
-import { QuoteButton } from "@/components/ui/quote-button";
+import { ProjectCard } from "@/components/project/project-cards";
+import { Slider } from "@/components/slider";
+import { HomeHero } from "@/components/home/home-hero";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 import {
-  Doodle,
   HandNote,
   PlacesMarquee,
   SpinBadge,
-  Squiggle,
   Sticker,
 } from "@/components/home/playful";
 
 /**
- * Inhoud van de homepage — minimalistische, architectonische opzet: grote
- * displaykop, één full-bleed foto, vier expertises met beeld, recent werk als
- * foto-eerst raster, over ons, waarom, partners en de kennisbank. Secties
- * wisselen af tussen papier en een heel lichte blauwgrijze tint.
+ * Inhoud van de homepage — 1:1 de opzet en styling van het Lovable-ontwerp
+ * "Bouwprojecten Showcase": ingekaderde hero met foto/video, trustpunten,
+ * expertises, recent werk (slider), over ons, een donkere "waarom"-sectie,
+ * een partnermuur en de kennisbank. Teksten, links en SEO zijn die van
+ * mtbbouw.com.
  *
- * Met `playful` (alleen op /test-speels) komen er speelse accenten bij:
- * handgeschreven notities, stickers, een draaiende badge en een
- * plaatsnamen-band. De afsluitende "Klaar om te bouwen?" staat in de footer.
+ * Met `playful` (alleen op /test-speels) komen er speelse accenten bij.
  */
 
 function ArrowRight({ className = "size-3.5" }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M5 12h14" />
       <path d="m12 5 7 7-7 7" />
     </svg>
@@ -47,16 +39,7 @@ function ArrowRight({ className = "size-3.5" }: { className?: string }) {
 
 function ArrowUpRight({ className = "size-5" }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.25"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M7 7h10v10" />
       <path d="M7 17 17 7" />
     </svg>
@@ -129,20 +112,20 @@ const WHY_ITEMS = [
 ];
 
 const PARTNERS = [
-  "BMN Bouwmaterialen",
-  "De Kozijnstudio",
-  "RN Afbouw",
-  "Gevelaar",
-  "Zebrano Studio",
-  "Meuleman Hoveniers",
-  "Jongeneel Hengelo",
-  "Voskamp Bouw & Industrie",
-  "Rouwmaat Beton",
-  "KUality Schilders",
-  "Het Vloerenhof",
-  "Kamphuis Dakbedekking",
-  "Brouwer Containers",
-  "Dukato",
+  { name: "BMN Bouwmaterialen", role: "Bouwmaterialen" },
+  { name: "De Kozijnstudio", role: "Kozijnen" },
+  { name: "RN Afbouw", role: "Afbouw" },
+  { name: "Gevelaar", role: "Gevels" },
+  { name: "Zebrano Studio", role: "Interieur" },
+  { name: "Meuleman Hoveniers", role: "Tuin & buitenruimte" },
+  { name: "Jongeneel Hengelo", role: "Bouwmaterialen" },
+  { name: "Voskamp Bouw & Industrie", role: "Bouwmaterialen" },
+  { name: "Rouwmaat Beton", role: "Beton" },
+  { name: "KUality Schilders", role: "Schilderwerk" },
+  { name: "Het Vloerenhof", role: "Vloeren & coatings" },
+  { name: "Kamphuis Dakbedekking", role: "Dakwerk" },
+  { name: "Brouwer Containers", role: "Afvoer & containers" },
+  { name: "Dukato", role: "Partner" },
 ];
 
 /* ------------------------------ Bouwstenen ----------------------------- */
@@ -151,32 +134,35 @@ function SectionHeading({
   eyebrow,
   title,
   intro,
+  tone = "default",
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro?: string;
+  tone?: "default" | "inverse";
 }) {
-  if (!intro) {
-    return (
-      <div>
-        <p className="label-mono text-navy">{eyebrow}</p>
-        <h2 className="display mt-4 text-4xl md:text-6xl">{title}</h2>
-      </div>
-    );
-  }
+  const heading = (
+    <>
+      <p className={`eyebrow ${tone === "inverse" ? "text-inverse-muted" : "text-stone"}`}>{eyebrow}</p>
+      <h2 className="display mt-4 text-4xl md:text-6xl">{title}</h2>
+    </>
+  );
+  if (!intro) return <div>{heading}</div>;
   return (
     <div className="grid gap-6 md:grid-cols-12 md:items-end">
-      <div className="md:col-span-7">
-        <p className="label-mono text-navy">{eyebrow}</p>
-        <h2 className="display mt-4 text-4xl md:text-6xl">{title}</h2>
-      </div>
-      <p className="max-w-md text-base leading-relaxed text-stone md:col-span-4 md:col-start-9">
+      <div className="md:col-span-7">{heading}</div>
+      <p
+        className={`max-w-md text-base leading-relaxed md:col-span-4 md:col-start-9 ${
+          tone === "inverse" ? "text-inverse-muted" : "text-stone"
+        }`}
+      >
         {intro}
       </p>
     </div>
   );
 }
 
+/* ---------------------------------- Page --------------------------------- */
 
 export async function HomeContent({
   playful = false,
@@ -187,87 +173,52 @@ export async function HomeContent({
   /** className van het handschriftfont, nodig als playful aan staat. */
   hand?: string;
 }) {
-  // Hero-foto is wisselbaar via Supabase (site_assets → "home-hero");
-  // zonder die asset tonen we de gerenoveerde schuur.
+  // Herobeeld is wisselbaar via Supabase (site_assets → "home-hero");
+  // zonder die asset tonen we de luxe overkapping.
   const hero = await getAsset(
     "home-hero",
-    "/images/projects/renovatie-schuur-behoud-karakter/cover.jpg",
-    "Gerenoveerde houten schuur in Twente, met behoud van karakter, door MTB Bouw"
+    "/images/projects/luxe-overkapping-twente/cover.jpg",
+    "Luxe glazen overkapping in een tuin in Twente, gebouwd door MTB Bouw"
+  );
+  // Optionele video-loop: Supabase-asset "home-hero-video", anders
+  // public/images/home/hero-loop.mp4 (alleen als dat bestand bestaat).
+  const localVideo = "/images/home/hero-loop.mp4";
+  const heroVideo = await getAsset(
+    "home-hero-video",
+    existsSync(path.join(process.cwd(), "public", localVideo)) ? localVideo : ""
   );
   const latestArticles = kennisbank
     .filter((a) => !a.draft)
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
-  const recent = publishedProjects().slice(0, 5).map(toProjectCard);
+  const projects = publishedProjects().map(toProjectCard).filter((p) => p.images.length > 0);
+
+  // Partnermuur: rijen van 3 (vanaf sm) of 2 (mobiel), om en om ingesprongen.
+  const rows = (size: number) =>
+    Array.from({ length: Math.ceil(PARTNERS.length / size) }, (_, r) =>
+      PARTNERS.slice(r * size, r * size + size)
+    );
 
   return (
     <>
       <WebSiteJsonLd />
 
-      {/* INTRO — grote displaykop links, tekst + knoppen rechts */}
-      <section className="container-page pb-12 pt-16 md:pb-16 md:pt-24">
-        <div className="grid gap-10 md:grid-cols-12 md:items-end">
-          <div className="animate-fade-up md:col-span-8">
-            <p className="label-mono text-navy">Bouwbedrijf in Enschede &amp; Twente</p>
-            <h1 className="display mt-6 text-6xl md:text-8xl lg:text-[8.5rem]">
-              Bouwen doen we{" "}
-              <span className="relative inline-block text-navy">
-                samen.
-                {playful && <Squiggle />}
-              </span>
-            </h1>
-          </div>
-          <div className="animate-fade-up md:col-span-4" style={{ animationDelay: "120ms" }}>
-            {playful && (
-              <HandNote hand={hand} arrow="down-right" className="mb-4 -rotate-3">
-                al jaren in heel Twente
-              </HandNote>
-            )}
-            <p className="max-w-md text-base leading-relaxed text-stone">
-              Van een verbouwing thuis tot de complete afbouw van een
-              bedrijfspand. MTB Bouw brengt vakmanschap, betrouwbare partners
-              en heldere communicatie samen — onder één dak.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/projecten"
-                className="label-mono inline-flex items-center gap-2 bg-navy px-5 py-3.5 text-white transition-colors hover:bg-navy-dark"
-              >
-                Bekijk projecten <ArrowRight />
-              </Link>
-              <a
-                href="#expertises"
-                className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
-              >
-                Onze expertises
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HEROFOTO — full-bleed */}
-      <div className="relative">
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-mist md:aspect-[16/7] md:max-h-[80vh]">
-          <Image
-            src={hero.url}
-            alt={hero.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        {playful && (
-          <SpinBadge className="absolute bottom-5 right-5 z-10 md:bottom-10 md:right-16" />
-        )}
-      </div>
+      <HomeHero
+        image={{ src: hero.url, alt: hero.alt }}
+        video={heroVideo.url ? { mp4: heroVideo.url } : undefined}
+        project={{ href: "/projecten/luxe-overkapping-twente", title: "Luxe overkapping", city: "Twente" }}
+        badge={
+          playful ? (
+            <SpinBadge className="absolute right-6 top-1/2 hidden -translate-y-1/2 md:block md:right-14" />
+          ) : undefined
+        }
+      />
 
       {playful && <PlacesMarquee />}
 
       {/* TRUST-STRIP */}
       <section className="container-page">
-        <ul className="grid grid-cols-2 md:grid-cols-4">
+        <ul className="grid grid-cols-2 border-b border-mist md:grid-cols-4">
           {TRUST_POINTS.map((t, i) => (
             <li
               key={t}
@@ -280,31 +231,29 @@ export async function HomeContent({
         </ul>
       </section>
 
-      {/* EXPERTISES — vier labels met beeld (tint) */}
-      <section id="expertises" className="scroll-mt-20 bg-tint">
-        <div className="container-page py-24 md:py-32">
-          <SectionHeading
-            eyebrow="Wat we bouwen"
-            title="Vier expertises, één aanspreekpunt."
-            intro="Elk label heeft z'n eigen specialisme — maar de manier van werken is overal hetzelfde: vakmanschap, transparantie en korte lijnen."
-          />
-          <ul className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+      {/* EXPERTISES */}
+      <section id="expertises" className="container-page scroll-mt-20 py-24 md:py-32">
+        <SectionHeading
+          eyebrow="Wat we bouwen"
+          title="Vier expertises, één aanspreekpunt."
+          intro="Elk label heeft z'n eigen specialisme — maar de manier van werken is overal hetzelfde: vakmanschap, transparantie en korte lijnen."
+        />
+        <div className="mt-14">
+          <Slider label="Expertises" until="lg" className="lg:grid-cols-4">
             {EXPERTISES.map((e, i) => (
-              <li key={e.title}>
+              <li key={e.title} className="w-[78%] shrink-0 snap-start sm:w-[45%] lg:w-auto">
                 <Link href={e.href} className="group block">
-                  <div
-                    className={`relative aspect-[4/5] overflow-hidden bg-mist ${
-                      playful
-                        ? `transition-transform duration-500 ${i % 2 ? "group-hover:rotate-1" : "group-hover:-rotate-1"}`
-                        : ""
-                    }`}
-                  >
+                  <div className="relative aspect-[4/5] overflow-hidden bg-mist">
                     <Image
                       src={e.image.src}
                       alt={e.image.alt}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 78vw, (max-width: 1024px) 45vw, 25vw"
                       className="img-zoom object-cover"
+                    />
+                    <span
+                      className="absolute bottom-0 left-0 h-1 w-0 bg-lime transition-[width] duration-700 group-hover:w-full"
+                      aria-hidden="true"
                     />
                     {playful && (
                       <Sticker
@@ -317,215 +266,208 @@ export async function HomeContent({
                     )}
                   </div>
                   <p className="label-mono mt-5 text-stone">{e.eyebrow}</p>
-                  <h3 className="display mt-3 flex items-center justify-between gap-3 text-2xl transition-colors group-hover:text-navy md:text-3xl">
+                  <h3 className="display mt-3 flex items-center justify-between gap-3 text-2xl md:text-3xl">
                     {e.title}
-                    <ArrowUpRight className="size-5 shrink-0 text-navy transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <ArrowUpRight className="size-5 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink" />
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-stone">{e.desc}</p>
                 </Link>
               </li>
             ))}
-          </ul>
+          </Slider>
         </div>
       </section>
 
-      {/* PROJECTEN — foto-eerst raster */}
-      <section id="projecten" className="scroll-mt-20">
+      {/* RECENT WERK — slider op warmgrijs */}
+      <section id="projecten" className="scroll-mt-20 bg-tint">
         <div className="container-page py-24 md:py-32">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="relative">
               <SectionHeading eyebrow="Projecten" title="Recent werk uit Twente." />
               {playful && (
                 <HandNote hand={hand} arrow="down-left" className="absolute -bottom-12 left-6 rotate-2 md:left-40">
-                  klik voor alle foto&apos;s
+                  swipe door ons werk
                 </HandNote>
               )}
             </div>
             <Link
               href="/projecten"
-              className="label-mono inline-flex items-center gap-2 bg-navy px-5 py-3.5 text-white transition-colors hover:bg-navy-dark"
+              className="label-mono group inline-flex items-center gap-2 border border-ink px-5 py-3.5 transition-colors hover:bg-ink hover:text-paper"
             >
-              Bekijk alle projecten <ArrowRight />
+              Bekijk alle {projects.length} projecten
+              <ArrowRight className="size-3.5 transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
           </div>
           <div className={playful ? "mt-20" : "mt-14"}>
-            <ProjectCards items={recent} headingLevel="h3" priorityCount={0} />
+            <Slider label="Recente projecten">
+              {projects.map((p) => (
+                <li key={p.slug} className="w-[82%] shrink-0 snap-start sm:w-[55%] lg:w-[38%]">
+                  <ProjectCard project={p} />
+                </li>
+              ))}
+            </Slider>
           </div>
         </div>
       </section>
 
-      {/* OVER MTB BOUW + WAAROM (tint) */}
-      <div className="bg-tint">
-        <section id="over" className="scroll-mt-20">
-          <div className="container-page grid gap-14 py-24 md:grid-cols-12 md:py-32">
-            <div className="md:col-span-5">
-              <p className="label-mono text-navy">Over MTB Bouw</p>
-              <h2 className="display mt-4 text-4xl md:text-6xl">
-                Eén bouwbedrijf, <span className="text-stone">vier expertises,</span>{" "}
-                honderden vertrouwde handen.
-              </h2>
-              <ul className="mt-8 flex flex-wrap gap-2">
-                {["Persoonlijk", "Lokaal", "Betrouwbaar", "Nuchter"].map((p, i) => (
-                  <li
-                    key={p}
-                    className={`label-mono border border-mist bg-paper px-3 py-1.5 text-ink ${
-                      playful ? `hover-wiggle ${i % 2 ? "rotate-2" : "-rotate-2"}` : ""
-                    }`}
-                  >
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-6 text-base leading-[1.75] text-stone md:col-span-6 md:col-start-7 md:pt-10">
-              <p className="text-2xl leading-snug tracking-[-0.02em] text-ink md:text-[1.9rem]">
-                MTB Bouw begon als klassieke aannemer in Enschede en groeide uit
-                tot het overkoepelende merk voor alles wat we bouwen.
-              </p>
-              <p>
-                Onder ons dak werken vier specialistische labels samen — met
-                korte lijnen, één vast aanspreekpunt en heldere afspraken vooraf.
-              </p>
-              <p>
-                Of je nu je woning wil verbouwen, een bedrijfspand casco op wil
-                laten leveren of prefab wil bouwen: bij MTB kom je binnen op één
-                plek en werk je met mensen die luisteren, meedenken en doen wat ze
-                beloven.
-              </p>
-              {playful && (
-                <HandNote hand={hand} className="-rotate-2 pt-2">
-                  — Mathijs &amp; Robbert
-                </HandNote>
-              )}
-            </div>
+      {/* OVER MTB BOUW */}
+      <section id="over" className="scroll-mt-20">
+        <div className="container-page grid gap-14 py-24 md:grid-cols-12 md:py-32">
+          <div className="md:col-span-5">
+            <p className="eyebrow text-stone">Over MTB Bouw</p>
+            <h2 className="display mt-4 text-4xl md:text-6xl">
+              Eén bouwbedrijf, vier expertises, honderden vertrouwde handen.
+            </h2>
           </div>
-        </section>
-
-        {/* WAAROM MTB BOUW */}
-        <section className="container-page pb-24 md:pb-32">
-          <div className="relative">
-            <SectionHeading eyebrow="Waarom MTB Bouw" title="Bouwen zoals het hoort." />
+          <div className="space-y-6 text-base leading-[1.75] text-stone md:col-span-6 md:col-start-7 md:pt-10">
+            <p className="text-2xl leading-snug tracking-[-0.02em] text-ink md:text-[1.9rem]">
+              MTB Bouw begon als klassieke aannemer in Enschede en groeide uit
+              tot het overkoepelende merk voor alles wat we bouwen.
+            </p>
+            <p>
+              Onder ons dak werken vier specialistische labels samen — met
+              korte lijnen, één vast aanspreekpunt en heldere afspraken vooraf.
+            </p>
+            <p>
+              Of je nu je woning wil verbouwen, een bedrijfspand casco op wil
+              laten leveren of prefab wil bouwen: bij MTB kom je binnen op één
+              plek en werk je met mensen die luisteren, meedenken en doen wat ze
+              beloven.
+            </p>
             {playful && (
-              <Doodle className="absolute -top-6 left-[min(28rem,70%)] size-10 text-lime md:size-14" />
+              <HandNote hand={hand} className="-rotate-2 pt-2">
+                — Mathijs &amp; Robbert
+              </HandNote>
             )}
           </div>
-          <ul className="mt-14 grid border-l border-t border-mist bg-paper sm:grid-cols-2 lg:grid-cols-3">
-            {WHY_ITEMS.map((r, i) => (
-              <li key={r.title} className="group border-b border-r border-mist p-6 md:p-8">
-                {playful ? (
-                  <span className="label-mono inline-grid size-9 place-items-center rounded-full bg-lime text-ink transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                ) : (
-                  <span className="label-mono text-navy">{String(i + 1).padStart(2, "0")}</span>
-                )}
-                <h3 className="mt-8 text-xl font-semibold tracking-[-0.02em] md:text-2xl">
-                  {r.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-stone">{r.desc}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      {/* PARTNERS */}
-      <section>
+      {/* WAAROM MTB BOUW — donker */}
+      <section className="bg-inverse text-white">
+        <div className="container-page py-24 md:py-32">
+          <SectionHeading eyebrow="Waarom MTB Bouw" title="Bouwen zoals het hoort." tone="inverse" />
+          <div className="mt-14">
+            <Slider
+              label="Waarom MTB Bouw"
+              until="lg"
+              tone="inverse"
+              className="lg:grid-cols-3 lg:gap-0 lg:border-l lg:border-t lg:border-inverse-border"
+            >
+              {WHY_ITEMS.map((r, i) => (
+                <li
+                  key={r.title}
+                  className="group w-[80%] shrink-0 snap-start border border-inverse-border p-6 transition-colors duration-500 hover:bg-white/[0.04] sm:w-[45%] md:p-8 lg:w-auto lg:border-l-0 lg:border-t-0"
+                >
+                  <span className="label-mono text-lime">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-8 text-xl font-semibold tracking-[-0.02em] md:text-2xl">{r.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-inverse-muted">{r.desc}</p>
+                </li>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNERS — muur van blokken */}
+      <section className="bg-white">
         <div className="container-page py-24 md:py-32">
           <SectionHeading
             eyebrow="Onze partners"
             title="Sterk door lokale samenwerking."
             intro="Kwaliteit komt niet uit één set handen — het komt uit een goed netwerk. Wij bouwen met vaste, regionale partners die net zo scherp op hun vak zijn als wij."
           />
-          <ul className="mt-14 grid grid-cols-2 border-l border-t border-mist md:grid-cols-4 lg:grid-cols-5">
-            {PARTNERS.map((name) => (
-              <li
-                key={name}
-                className={`flex min-h-28 flex-col justify-between border-b border-r border-mist p-5 md:p-6 ${
-                  playful ? "transition-colors duration-300 hover:bg-lime" : ""
-                }`}
+          <div className="mt-16 flex flex-col-reverse gap-2 md:gap-3">
+            {[2, 3].map((size) => (
+              <div
+                key={size}
+                className={`flex-col-reverse gap-2 md:gap-3 ${size === 2 ? "flex sm:hidden" : "hidden sm:flex"}`}
               >
-                <span className="label-mono text-stone">Partner</span>
-                <span className="mt-6 text-base tracking-[-0.02em] md:text-lg">{name}</span>
-              </li>
+                {rows(size).map((row, r) => (
+                  <ul
+                    key={r}
+                    className={`grid gap-2 md:gap-3 ${size === 2 ? "grid-cols-2" : "grid-cols-3"} ${
+                      r % 2 === 1 ? "ml-8 sm:ml-[16.66%]" : "mr-8 sm:mr-[16.66%]"
+                    }`}
+                  >
+                    {row.map((p, i) => (
+                      <li
+                        key={p.name}
+                        className="animate-fade-up"
+                        style={{ animationDelay: `${(r * size + i) * 90}ms` }}
+                      >
+                        <div className="flex h-full min-h-24 flex-col justify-between border border-mist bg-paper p-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-ink sm:min-h-28 sm:p-5 md:p-7">
+                          <span className="label-mono text-stone">{p.role}</span>
+                          <span className="mt-5 text-base leading-tight tracking-[-0.02em] sm:text-lg md:text-xl">
+                            {p.name}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
             ))}
-            <li className="border-b border-r border-mist">
-              <Link
-                href="/regionale-partners"
-                className="group flex h-full min-h-28 flex-col justify-between bg-navy p-5 text-white transition-colors hover:bg-navy-dark md:p-6"
-              >
-                <span className="label-mono text-white/70">Meer</span>
-                <span className="mt-6 inline-flex items-center gap-2 text-base tracking-[-0.02em] md:text-lg">
-                  Ontmoet al onze partners
-                  <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <ContactDrawerButton className="group flex cursor-pointer items-center gap-4 bg-lime px-5 py-4 text-ink transition-transform duration-500 hover:-translate-y-1.5">
+                <span className="label-mono">+ Jouw project</span>
+                <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </ContactDrawerButton>
+              <span className="flex items-center gap-6">
+                <span className="label-mono hidden text-stone sm:block">
+                  Blok voor blok gebouwd — {PARTNERS.length} vaste partners
                 </span>
-              </Link>
-            </li>
-          </ul>
+                <Link href="/regionale-partners" className="label-mono link-line inline-flex items-center gap-2">
+                  Ontmoet al onze partners <ArrowUpRight className="size-3.5" />
+                </Link>
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* KENNISBANK (tint) */}
+      {/* KENNISBANK — warmgrijs */}
       {latestArticles.length > 0 && (
         <section id="kennisbank" className="scroll-mt-20 bg-tint">
           <div className="container-page py-24 md:py-32">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading eyebrow="Inspiratie & kennis" title="Kennisbank." />
-              <Link
-                href="/kennisbank"
-                className="label-mono link-line inline-flex items-center gap-2 text-navy"
-              >
+              <Link href="/kennisbank" className="label-mono link-line inline-flex items-center gap-2">
                 Alle artikelen <ArrowUpRight className="size-3.5" />
               </Link>
             </div>
-            <ul className="mt-14 grid border-t border-ink md:grid-cols-3">
-              {latestArticles.map((a, i) => (
-                <li key={a.slug} className="relative border-b border-mist md:border-r md:last:border-r-0">
-                  {playful && i === 0 && (
-                    <Sticker tone="navy" rotate="rotate-6" className="absolute -top-4 right-6">
-                      nieuw
-                    </Sticker>
-                  )}
-                  <Link
-                    href={a.permalink}
-                    className="group flex h-full flex-col p-6 transition-colors hover:bg-white md:p-8"
-                  >
-                    {a.category && (
-                      <span className="label-mono text-navy">{categoryLabel(a.category)}</span>
+            <div className="mt-14">
+              <Slider label="Kennisbank-artikelen" until="md" className="md:grid-cols-3">
+                {latestArticles.map((a, i) => (
+                  <li key={a.slug} className="relative w-[85%] shrink-0 snap-start sm:w-[60%] md:w-auto">
+                    {playful && i === 0 && (
+                      <Sticker tone="navy" rotate="rotate-6" className="absolute -top-4 right-6 z-10">
+                        nieuw
+                      </Sticker>
                     )}
-                    <h3 className="mt-6 text-xl font-semibold leading-snug tracking-[-0.02em] transition-colors group-hover:text-navy">
-                      {a.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-stone">{a.description}</p>
-                    <span className="label-mono mt-8 inline-flex items-center gap-2 text-navy">
-                      Lees artikel
-                      <ArrowRight className="size-3.5 transition-transform duration-500 group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Link
+                      href={a.permalink}
+                      className="group flex h-full flex-col border-t-2 border-lime bg-paper p-6 transition-colors hover:bg-white md:p-8"
+                    >
+                      {a.category && (
+                        <span className="label-mono text-stone">{categoryLabel(a.category)}</span>
+                      )}
+                      <h3 className="mt-6 text-xl font-semibold leading-snug tracking-[-0.02em]">
+                        {a.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-stone">{a.description}</p>
+                      <span className="label-mono mt-8 inline-flex items-center gap-2">
+                        Lees artikel
+                        <ArrowRight className="size-3.5 transition-transform duration-500 group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </Slider>
+            </div>
           </div>
         </section>
       )}
-
-      {/* INTAKE — korte regel boven de footer, naar het contactformulier */}
-      <section id="contact" className="container-page scroll-mt-20 py-20 md:py-24">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <p className="max-w-2xl text-2xl leading-snug tracking-[-0.02em] md:text-3xl">
-            Een idee of al een concreet plan? We komen graag langs voor een
-            intake op locatie.
-          </p>
-          <div className="flex flex-col items-start gap-3">
-            {playful && (
-              <HandNote hand={hand} arrow="down-right" className="-rotate-3">
-                hier begint het
-              </HandNote>
-            )}
-            <QuoteButton>Vraag kennismaking aan</QuoteButton>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

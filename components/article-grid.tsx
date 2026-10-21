@@ -138,7 +138,7 @@ function AudienceToggle({
             aria-checked={isActive}
             onClick={() => onChange(opt.slug)}
             className={`label-mono flex-1 whitespace-nowrap px-3 py-2 transition-colors md:flex-none ${
-              isActive ? "bg-navy text-white" : "text-stone hover:text-navy"
+              isActive ? "bg-ink text-white" : "text-stone hover:text-navy"
             }`}
           >
             {opt.label}
@@ -179,7 +179,7 @@ function Card({
           />
         ) : (
           // Geen cover: rustig navy vlak i.p.v. kapotte afbeelding.
-          <div className="absolute inset-0 bg-navy" />
+          <div className="absolute inset-0 bg-ink" />
         )}
       </div>
       <p className="label-mono mt-5 flex flex-wrap gap-x-3 gap-y-1">
@@ -300,7 +300,7 @@ export function ArticleGrid({
             <button
               type="button"
               onClick={reset}
-              className="text-navy underline decoration-navy underline-offset-4 hover:text-navy-dark"
+              className="text-navy underline decoration-lime underline-offset-4 hover:text-navy-dark"
             >
               Wis filters
             </button>
@@ -325,7 +325,7 @@ export function ArticleGrid({
           <button
             type="button"
             onClick={reset}
-            className="mt-3 font-medium text-ink underline decoration-navy decoration-2 underline-offset-4 hover:text-navy"
+            className="mt-3 font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-navy"
           >
             Bekijk alle artikelen
           </button>

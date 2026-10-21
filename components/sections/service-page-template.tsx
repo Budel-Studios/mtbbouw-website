@@ -20,7 +20,7 @@ import type { KennisbankMatch } from "@/lib/kennisbank";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="label-mono text-navy">
+    <p className="eyebrow text-stone">
       {children}
     </p>
   );
@@ -124,7 +124,7 @@ export function ServicePageTemplate({
                 <p className="mt-3 leading-relaxed text-stone">{c.desc}</p>
                 <Link
                   href="/contact"
-                  className="mt-5 inline-flex items-center gap-1.5 border-b-2 border-navy pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
+                  className="mt-5 inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
                 >
                   Lees meer <ArrowIcon />
                 </Link>
@@ -167,7 +167,7 @@ export function ServicePageTemplate({
           {/* Statische "app"-visual — inventarisatie op locatie */}
           <div className="mx-auto w-full max-w-sm border border-mist bg-white">
             <div className="border-b border-mist px-5 py-4">
-              <p className="label-mono text-stone">
+              <p className="eyebrow text-stone">
                 MTB-app · inventarisatie
               </p>
               <p className="mt-1 font-display text-base font-bold">
@@ -185,7 +185,7 @@ export function ServicePageTemplate({
             <div className="space-y-2 p-4">
               {["Wand opgemeten · 4.20 × 2.60 m", "Stucwerk: vlak, geverfd", "Notitie: kabelgoot links"].map((t) => (
                 <div key={t} className="flex items-center gap-2 border border-mist px-3 py-2 text-xs text-ink">
-                  <span className="h-1.5 w-1.5 shrink-0 bg-navy" />
+                  <span className="h-1.5 w-1.5 shrink-0 bg-ink" />
                   {t}
                 </div>
               ))}
@@ -244,7 +244,7 @@ export function ServicePageTemplate({
               </ul>
             </div>
           </div>
-          <blockquote className="mt-12 border-l-4 border-navy bg-navy/5 p-8 md:p-12">
+          <blockquote className="mt-12 border-l-4 border-lime bg-white p-8 md:p-12">
             <p className="font-display text-xl leading-snug text-ink md:text-2xl">
               &ldquo;{data.caseStudy.quote}&rdquo;
             </p>
@@ -291,7 +291,7 @@ export function ServicePageTemplate({
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {data.waarom.pillars.map((p) => (
-              <div key={p.title} className="border-t-2 border-navy bg-white p-8">
+              <div key={p.title} className="border-t-2 border-lime bg-white p-8">
                 <ServiceSketch name={p.sketchIcon} className="h-12 w-12" />
                 <h3 className="mt-5 text-xl font-semibold">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-stone">{p.desc}</p>
@@ -332,7 +332,7 @@ export function ServicePageTemplate({
         <div className="mt-8">
           <Link
             href={data.faq.fullFaqLink}
-            className="inline-flex items-center gap-1.5 border-b-2 border-navy pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
+            className="inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-navy"
           >
             Alle veelgestelde vragen <ArrowIcon />
           </Link>
@@ -349,7 +349,7 @@ export function ServicePageTemplate({
           <h2 className="text-3xl font-semibold sm:text-4xl">{data.cta.h2}</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/75">{data.cta.subtitle}</p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <Button href={data.cta.primaryCta.href} arrow>
+            <Button href={data.cta.primaryCta.href} variant="lime" arrow>
               {data.cta.primaryCta.label}
             </Button>
             <Button href={data.cta.secondaryCta.href} variant="outline-light">
@@ -364,7 +364,7 @@ export function ServicePageTemplate({
       {data.related.length > 0 && (
         <section className="border-t border-mist py-12">
           <div className="mx-auto max-w-6xl px-6">
-            <p className="label-mono text-stone">
+            <p className="eyebrow text-stone">
               Gerelateerd
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -372,7 +372,7 @@ export function ServicePageTemplate({
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-navy hover:bg-paper"
+                  className="inline-flex items-center gap-1.5 border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-paper"
                 >
                   {r.label}
                 </Link>

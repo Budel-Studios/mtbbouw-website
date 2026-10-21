@@ -49,7 +49,7 @@ export function FaqQuickNav({
               href={`#${cat.slug}`}
               className={`shrink-0 whitespace-nowrap border px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
                 isActive
-                  ? "border-navy bg-navy text-white"
+                  ? "border-ink bg-ink text-white"
                   : "border-mist text-stone hover:border-ink/30 hover:text-ink"
               }`}
             >

@@ -26,7 +26,7 @@ export default function ContactPage() {
         ]}
       />
 
-      <p className="label-mono text-stone">
+      <p className="eyebrow text-stone">
         Contact
       </p>
       <h1 className="mt-3 text-4xl font-medium tracking-[-0.03em]">
@@ -135,7 +135,7 @@ export default function ContactPage() {
         </div>
 
         {/* Formulier */}
-        <div id="formulier" className="scroll-mt-24 border-t-4 border-navy bg-white p-8">
+        <div id="formulier" className="scroll-mt-24 border-t-2 border-lime bg-white p-8">
           <h2 className="text-xl font-bold">Stuur een bericht</h2>
           <p className="mt-1 text-sm text-stone">
             We reageren doorgaans binnen één werkdag.

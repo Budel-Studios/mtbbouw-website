@@ -33,7 +33,7 @@ export default function GratisBrochurePage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <div>
-            <p className="label-mono text-stone">
+            <p className="eyebrow text-stone">
               Wat je leert
             </p>
             <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">

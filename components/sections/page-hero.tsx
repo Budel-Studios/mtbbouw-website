@@ -34,7 +34,7 @@ export function PageHero({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/35 to-ink/10" />
         <div className="container-page relative flex min-h-[50vh] flex-col justify-end py-16 md:py-20">
-          {eyebrow && <p className="label-mono text-white/80">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow text-white/80">{eyebrow}</p>}
           <h1 className="display mt-5 max-w-4xl text-5xl text-white md:text-7xl">
             {title}
           </h1>
@@ -53,7 +53,7 @@ export function PageHero({
     <section className="container-page pb-12 pt-16 md:pb-16 md:pt-24">
       <div className="grid gap-10 md:grid-cols-12 md:items-end">
         <div className="animate-fade-up md:col-span-8">
-          {eyebrow && <p className="label-mono text-navy">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow text-stone">{eyebrow}</p>}
           <h1 className="display mt-6 text-5xl md:text-7xl">{title}</h1>
         </div>
         {(intro || cta) && (

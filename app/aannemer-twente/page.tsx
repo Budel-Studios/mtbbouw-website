@@ -77,7 +77,7 @@ export default function AannemerTwentePage() {
       {/* WERKGEBIED */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Werkgebied
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
@@ -93,7 +93,7 @@ export default function AannemerTwentePage() {
                 {p.href ? (
                   <Link
                     href={p.href}
-                    className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-navy hover:bg-navy hover:text-white"
+                    className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
                   >
                     <MapPinIcon className="h-3.5 w-3.5 text-navy" />
                     {p.name}

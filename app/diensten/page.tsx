@@ -29,7 +29,7 @@ export default function DienstenPage() {
 
       {/* Intro */}
       <section className="mx-auto max-w-4xl px-6 py-16 text-center">
-        <p className="label-mono text-stone">
+        <p className="eyebrow text-stone">
           Wat we bouwen
         </p>
         <h1 className="mt-3 text-4xl font-medium tracking-[-0.03em]">

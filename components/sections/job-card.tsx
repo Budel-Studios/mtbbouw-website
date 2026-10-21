@@ -15,7 +15,7 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
 
       {job.tasks.length > 0 && (
         <div className="mt-8">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Werkzaamheden
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -33,7 +33,7 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
 
       {job.profile.length > 0 && (
         <div className="mt-8">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Wij zoeken iemand die
           </p>
           <ul className="mt-3 space-y-1.5">
@@ -48,7 +48,7 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
       )}
 
       {job.extra.length > 0 && (
-        <div className="mt-6 space-y-2 border-l-2 border-navy pl-4">
+        <div className="mt-6 space-y-2 border-l-2 border-lime pl-4">
           {job.extra.map((line) => (
             <p key={line} className="text-sm leading-relaxed text-stone">
               {line}
@@ -59,7 +59,7 @@ export function JobCard({ job, applyHref }: { job: Job; applyHref: string }) {
 
       {job.benefits.length > 0 && (
         <div className="mt-8">
-          <p className="label-mono text-stone">
+          <p className="eyebrow text-stone">
             Arbeidsvoorwaarden
           </p>
           <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
