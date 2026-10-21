@@ -24,31 +24,43 @@ export default function KennisbankPage() {
   const articles = publishedArticles().map(toCard);
 
   return (
-    <div className="bg-canvas">
+    <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
           { name: "Kennisbank", url: "/kennisbank" },
         ]}
       />
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-16 md:py-24">
-        {/* Hero-titel — zelfde stijl als /projecten (Archivo, 2 regels, strak) */}
-        <h1
-          style={{ fontWeight: 600 }}
-          className="mb-8 font-display text-4xl leading-[0.95] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[3.5rem]"
-        >
-          Kennisbank
-          <br />
-          &amp; artikelen
-        </h1>
+      {/* Kop — zelfde editoriale opzet als /projecten */}
+      <section className="container-page pb-14 pt-16 md:pb-20 md:pt-24">
+        <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="animate-fade-up md:col-span-8">
+            <p className="eyebrow text-stone">Inspiratie &amp; kennis</p>
+            <h1 className="display mt-6 text-5xl sm:text-6xl md:text-8xl lg:text-[8.5rem]">
+              Kennisbank
+              <br />
+              &amp; artikelen
+            </h1>
+          </div>
+          <p
+            className="animate-fade-up max-w-md text-base leading-relaxed text-stone md:col-span-4"
+            style={{ animationDelay: "120ms" }}
+          >
+            {INTRO}
+          </p>
+        </div>
+      </section>
 
-        <ArticleGrid articles={articles} intro={INTRO} />
-
-        {/* Vaste links naar de hubpagina's: crawlbaar, in tegenstelling tot de filter. */}
-        <div className="mt-16 border-t border-mist pt-10">
-          <HubLinks />
+      <div className="bg-tint">
+        <div className="container-page pb-24 pt-10 md:pb-32">
+          <ArticleGrid articles={articles} />
         </div>
       </div>
-    </div>
+
+      {/* Vaste links naar de hubpagina's: crawlbaar, in tegenstelling tot de filter. */}
+      <div className="container-page py-14">
+        <HubLinks />
+      </div>
+    </>
   );
 }

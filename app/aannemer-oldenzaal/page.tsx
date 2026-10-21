@@ -51,25 +51,25 @@ export default function AannemerOldenzaalPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Verbouwen in Oldenzaal
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Van jaren-30-renovatie tot moderne aanbouw
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
             Oldenzaal kent veel woningen met karakter — metselwerkdetails,
             kapvormen en profileringen die je bij een verbouwing wilt behouden.
             Wij renoveren en verbouwen mét dat karakter: een{" "}
-            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-lime-dark">renovatie</Link>{" "}
+            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-navy">renovatie</Link>{" "}
             die past bij het huis, een{" "}
-            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-lime-dark">aanbouw of uitbouw</Link>{" "}
+            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-navy">aanbouw of uitbouw</Link>{" "}
             die aansluit op de bestaande stijl, nieuwe{" "}
-            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-lime-dark">kozijnen</Link>{" "}
+            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">kozijnen</Link>{" "}
             via De Kozijnstudio, of{" "}
-            <Link href="/prefab" className="font-semibold text-ink underline hover:text-lime-dark">prefab bouwen</Link>{" "}
+            <Link href="/prefab" className="font-semibold text-ink underline hover:text-navy">prefab bouwen</Link>{" "}
             als snelheid telt. Ook{" "}
-            <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-lime-dark">verduurzamen</Link>{" "}
+            <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-navy">verduurzamen</Link>{" "}
             nemen we het voordeligst mee tijdens de verbouwing zelf.
           </p>
         </div>

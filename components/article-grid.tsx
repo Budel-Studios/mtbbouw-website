@@ -14,10 +14,9 @@ import {
 } from "@/lib/kennisbank-taxonomy";
 
 /**
- * Kennisbank-browser — visueel identiek aan de projecten-metro-grid (zelfde
- * dropdown-filter, zelfde tegelstijl), maar afgestemd op artikelen: één
- * cover-foto met hover-zoom (geen 3-foto-diashow) en datum/leestijd i.p.v.
- * locatie/categorie-onderschrift.
+ * Kennisbank-browser — zelfde editoriale, foto-eerst kaartstijl als
+ * /projecten: cover met hover-zoom, mono-meta (onderwerp, leestijd, datum)
+ * en een displaykop. Het nieuwste artikel krijgt een brede kaart.
  *
  * Drie filters, gecombineerd (EN): voor wie, onderwerp en bouwdeel. De actieve
  * filters staan in de URL (?voor=thuis&onderwerp=verduurzamen&bouwdeel=daken),
@@ -42,16 +41,6 @@ type Filters = { category: string; subcategory: string; audience: string };
 
 const ALL_CATEGORIES = "Alle onderwerpen";
 const ALL_SUBCATEGORIES = "Alle bouwdelen";
-
-/** Zelfde metro-patroon als de projectengrid, voor een consistente look. */
-const METRO: string[] = [
-  "md:col-span-2 md:row-span-2",
-  "md:col-span-1 md:row-span-1",
-  "md:col-span-1 md:row-span-1",
-  "md:col-span-2 md:row-span-1",
-  "md:col-span-1 md:row-span-2",
-  "md:col-span-1 md:row-span-1",
-];
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("nl-NL", {
@@ -137,7 +126,7 @@ function AudienceToggle({
     <div
       role="radiogroup"
       aria-label="Voor wie"
-      className="inline-flex w-full border border-mist bg-white p-1 shadow-sm md:w-auto"
+      className="inline-flex w-full gap-1 md:w-auto"
     >
       {options.map((opt) => {
         const isActive = opt.slug === active;
@@ -148,8 +137,8 @@ function AudienceToggle({
             role="radio"
             aria-checked={isActive}
             onClick={() => onChange(opt.slug)}
-            className={`flex-1 whitespace-nowrap px-5 py-3 font-display text-sm font-medium transition-colors md:flex-none ${
-              isActive ? "bg-ink text-white" : "text-stone hover:bg-paper hover:text-ink"
+            className={`label-mono flex-1 whitespace-nowrap px-3 py-2 transition-colors md:flex-none ${
+              isActive ? "bg-ink text-white" : "text-stone hover:text-navy"
             }`}
           >
             {opt.label}
@@ -160,51 +149,56 @@ function AudienceToggle({
   );
 }
 
-function Tile({
+function Card({
   article,
-  sizeClass,
+  wide,
   priority,
 }: {
   article: Article;
-  sizeClass: string;
+  wide: boolean;
   priority: boolean;
 }) {
   return (
     <Link
       href={article.permalink}
-      className={`group relative block min-h-44 overflow-hidden bg-ink ${sizeClass}`}
+      className={`group block animate-fade-up ${wide ? "md:col-span-2" : ""}`}
     >
-      {article.cover ? (
-        <Image
-          src={article.cover}
-          alt={article.coverAlt || article.title}
-          fill
-          sizes="(max-width: 768px) 50vw, 33vw"
-          priority={priority}
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-      ) : (
-        // Geen cover: nette tekst-tegel i.p.v. kapotte afbeelding.
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(171,224,0,0.18),transparent_60%)]" />
-      )}
-
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-4">
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-white/70">
-          {[categoryLabel(article.category), `${article.readingTime} min lezen`]
-            .filter(Boolean)
-            .join(" · ")}
-        </p>
-        <h2 className="mt-0.5 font-semibold leading-snug text-white">
-          {article.title}
-        </h2>
-        <time
-          dateTime={article.date}
-          className="mt-1 block text-xs text-white/60"
-        >
-          {formatDate(article.date)}
-        </time>
+      <div
+        className={`relative overflow-hidden bg-mist ${
+          wide ? "aspect-[4/3] md:aspect-[16/9]" : "aspect-[4/3]"
+        }`}
+      >
+        {article.cover ? (
+          <Image
+            src={article.cover}
+            alt={article.coverAlt || article.title}
+            fill
+            sizes={wide ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+            priority={priority}
+            className="img-zoom object-cover"
+          />
+        ) : (
+          // Geen cover: rustig navy vlak i.p.v. kapotte afbeelding.
+          <div className="absolute inset-0 bg-ink" />
+        )}
       </div>
+      <p className="label-mono mt-5 flex flex-wrap gap-x-3 gap-y-1">
+        <span className="text-navy">{categoryLabel(article.category)}</span>
+        <span className="text-stone">{article.readingTime} min lezen</span>
+      </p>
+      <h2
+        className={`display mt-3 transition-colors group-hover:text-navy ${
+          wide ? "text-3xl md:text-5xl" : "text-2xl"
+        }`}
+      >
+        {article.title}
+      </h2>
+      <p className="mt-3 line-clamp-3 max-w-xl text-sm leading-relaxed text-stone">
+        {article.description}
+      </p>
+      <time dateTime={article.date} className="label-mono mt-4 block text-stone">
+        {formatDate(article.date)}
+      </time>
     </Link>
   );
 }
@@ -257,13 +251,13 @@ export function ArticleGrid({
   return (
     <div>
       {intro && (
-        <p className="max-w-3xl text-sm leading-relaxed text-ink/80 md:text-base">
+        <p className="max-w-3xl text-base leading-relaxed text-stone">
           {intro}
         </p>
       )}
 
       {filterable && (
-        <div className="mt-8 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-y border-mist py-3 lg:flex-row lg:items-center lg:justify-between">
           <AudienceToggle
             active={filters.audience}
             onChange={(v) => setFilter("audience", v)}
@@ -298,7 +292,7 @@ export function ArticleGrid({
       )}
 
       {filterable && (
-        <p className="mt-4 flex items-center gap-3 text-sm text-stone" aria-live="polite">
+        <p className="label-mono mt-4 flex items-center gap-3 text-stone" aria-live="polite">
           <span>
             {visible.length} {visible.length === 1 ? "artikel" : "artikelen"}
           </span>
@@ -306,7 +300,7 @@ export function ArticleGrid({
             <button
               type="button"
               onClick={reset}
-              className="font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-lime-dark"
+              className="text-navy underline decoration-lime underline-offset-4 hover:text-navy-dark"
             >
               Wis filters
             </button>
@@ -315,13 +309,13 @@ export function ArticleGrid({
       )}
 
       {visible.length > 0 ? (
-        <div className="mt-6 grid auto-rows-[170px] grid-cols-2 gap-1.5 md:auto-rows-[220px] md:grid-cols-4">
+        <div className="mt-10 grid gap-x-8 gap-y-16 md:grid-cols-3">
           {visible.map((article, i) => (
-            <Tile
+            <Card
               key={article.slug}
               article={article}
-              sizeClass={METRO[i % METRO.length]}
-              priority={i < 3}
+              wide={i === 0 && visible.length > 2}
+              priority={i < 2}
             />
           ))}
         </div>
@@ -331,7 +325,7 @@ export function ArticleGrid({
           <button
             type="button"
             onClick={reset}
-            className="mt-3 font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-lime-dark"
+            className="mt-3 font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-navy"
           >
             Bekijk alle artikelen
           </button>

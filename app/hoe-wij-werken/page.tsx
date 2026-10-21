@@ -105,17 +105,17 @@ export default function HoeWijWerkenPage() {
 
       {/* De acht stappen — uitgeschreven, verticaal */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+        <p className="eyebrow text-stone">
           Stap voor stap
         </p>
-        <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
           Van kennismaking tot nazorg
         </h2>
         <ol className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2">
           {steps.map((s) => (
             <li key={s.step} className="border-t border-mist pt-6">
-              <span className="text-2xl font-extrabold text-lime-dark">{s.step}</span>
-              <h3 className="mt-3 text-xl font-extrabold">{s.title}</h3>
+              <span className="text-2xl font-semibold text-navy">{s.step}</span>
+              <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-stone">{s.text}</p>
             </li>
           ))}
@@ -127,10 +127,10 @@ export default function HoeWijWerkenPage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="eyebrow text-stone">
                 Veilig en verantwoord
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
                 Veiligheid is geen bijzaak
               </h2>
               <p className="mt-5 max-w-lg leading-relaxed text-stone">
@@ -142,7 +142,7 @@ export default function HoeWijWerkenPage() {
             </div>
             <div className="border-t-2 border-lime pt-8">
               <ShieldIcon className="h-7 w-7" />
-              <h3 className="mt-4 text-xl font-extrabold">
+              <h3 className="mt-4 text-xl font-semibold">
                 SBB-erkend leerbedrijf
               </h3>
               <p className="mt-2 text-stone">

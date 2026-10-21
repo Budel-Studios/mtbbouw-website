@@ -24,21 +24,19 @@ export function KennisbankBlock({
   if (articles.length === 0) return null;
 
   return (
-    <section className="border-y border-mist bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+    <section className="bg-tint">
+      <div className="container-page py-20 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
-              {eyebrow}
-            </p>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <p className="eyebrow text-stone">{eyebrow}</p>
+            <h2 className="display mt-4 text-4xl md:text-5xl">
               {title}
             </h2>
             {intro && <p className="mt-4 leading-relaxed text-stone">{intro}</p>}
           </div>
           <ArrowLink href="/kennisbank">Alle artikelen</ArrowLink>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
             <ArticleCard key={article.slug} article={article} />
           ))}

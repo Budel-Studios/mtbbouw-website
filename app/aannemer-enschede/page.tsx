@@ -90,10 +90,10 @@ export default function AannemerEnschedePage() {
       {/* DIENSTEN IN ENSCHEDE */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Wat we voor je doen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Verbouwen in Enschede — alles onder één dak
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -108,10 +108,10 @@ export default function AannemerEnschedePage() {
                 href={href}
                 className="group border-b border-r border-mist bg-white p-8 transition-colors hover:bg-paper"
               >
-                <Icon className="h-7 w-7 text-lime-dark" />
-                <h3 className="mt-5 text-xl font-extrabold">{title}</h3>
+                <Icon className="h-7 w-7 text-navy" />
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">{text}</p>
-                <span className="mt-4 inline-block text-sm font-bold group-hover:text-lime-dark">
+                <span className="mt-4 inline-block text-sm font-bold group-hover:text-navy">
                   Meer info →
                 </span>
               </Link>
@@ -125,10 +125,10 @@ export default function AannemerEnschedePage() {
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="eyebrow text-stone">
                 Vergunningen in Enschede
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 Wij kennen de regels van de gemeente
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -141,10 +141,10 @@ export default function AannemerEnschedePage() {
               </p>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="eyebrow text-stone">
                 Kosten
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 Vaste prijs, vooraf helder
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -153,11 +153,11 @@ export default function AannemerEnschedePage() {
                 aanneemsom en een realistische planning. Eventuele stelposten
                 benoemen we transparant. Zo weet je vóór de eerste hamerslag
                 waar je aan toe bent. Tip: bekijk ook onze{" "}
-                <Link href="/kennisbank/wat-kost-een-aanbouw-2026" className="font-semibold text-ink underline hover:text-lime-dark">
+                <Link href="/kennisbank/wat-kost-een-aanbouw-2026" className="font-semibold text-ink underline hover:text-navy">
                   kostengids voor aanbouwen
                 </Link>{" "}
                 en{" "}
-                <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-lime-dark">
+                <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-navy">
                   verduurzamen tijdens de verbouwing
                 </Link>
                 .

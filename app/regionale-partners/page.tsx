@@ -40,8 +40,8 @@ export default function RegionalePartnersPage() {
       {/* Word partner van MTB — opvallend lime-blok */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <a
-          href="mailto:info@mtbbouw.com?subject=Partner%20van%20MTB%20worden"
-          className="group block border border-lime-dark/20 bg-lime transition-colors hover:bg-lime-dark"
+          href="/contact#formulier"
+          className="group block bg-lime text-ink transition-colors hover:bg-lime-dark"
         >
           <div className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:gap-10 md:p-12">
             <div className="flex h-20 w-20 shrink-0 items-center justify-center bg-ink text-lime md:h-24 md:w-24">
@@ -63,10 +63,10 @@ export default function RegionalePartnersPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink/70">
+              <span className="label-mono text-ink/70">
                 Open plek in ons netwerk
               </span>
-              <h2 className="mt-2 font-display text-3xl font-extrabold leading-[1.05] text-ink sm:text-4xl">
+              <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.05] text-ink sm:text-4xl">
                 Word partner van MTB
               </h2>
               <p className="mt-3 max-w-2xl leading-relaxed text-ink/80">
@@ -74,7 +74,7 @@ export default function RegionalePartnersPage() {
                 met ons meebouwen? We horen graag van je.
               </p>
             </div>
-            <div className="inline-flex shrink-0 items-center gap-2 bg-ink px-6 py-3.5 font-semibold text-white transition-colors group-hover:bg-white group-hover:text-ink">
+            <div className="label-mono inline-flex shrink-0 items-center gap-2 border border-ink bg-ink px-5 py-3.5 text-paper transition-colors group-hover:bg-white group-hover:text-ink">
               Neem contact op
               <svg
                 className="h-4 w-4"

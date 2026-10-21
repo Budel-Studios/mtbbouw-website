@@ -8,6 +8,7 @@ import { IconServicesGrid } from "@/components/sections/icon-services-grid";
 import { PerkGrid } from "@/components/sections/perk-grid";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
+import Link from "next/link";
 import {
   ShieldIcon,
   WrenchIcon,
@@ -83,10 +84,10 @@ export default async function VeiligVerantwoordBouwenPage() {
 
       {/* 1. ONZE VISIE */}
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+        <p className="eyebrow text-stone">
           Onze visie
         </p>
-        <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
           Bouwen is mensenwerk
         </h2>
         <div className="mt-6 space-y-4 leading-relaxed text-stone">
@@ -169,10 +170,10 @@ export default async function VeiligVerantwoordBouwenPage() {
       {/* 4. VAKMANSCHAP */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 pt-16">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Vakmanschap
           </p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-extrabold sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl text-3xl font-semibold sm:text-4xl">
             Waar kwaliteit vandaan komt
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -211,7 +212,11 @@ export default async function VeiligVerantwoordBouwenPage() {
             MTB Bouw is een <strong className="text-ink">SBB-erkend leerbedrijf</strong>.
             We geloven dat je het vak leert op de bouwplaats, niet alleen in
             de schoolbanken. Meer over hoe dat eruitziet lees je op onze
-            pagina over <ArrowLink href="/werkgenoeg">werken bij MTB Bouw</ArrowLink>.
+            pagina over{" "}
+            <Link href="/werkgenoeg" className="font-semibold text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-navy">
+              werken bij MTB Bouw
+            </Link>
+            .
           </p>
         </SplitSection>
         <FeatureGrid
@@ -306,7 +311,7 @@ export default async function VeiligVerantwoordBouwenPage() {
       {/* Rustige interne links — bewust geen grote CTA */}
       <section className="border-t border-mist py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Meer lezen
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

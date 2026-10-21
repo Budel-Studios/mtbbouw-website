@@ -170,7 +170,7 @@ function CheckboxField({
     <label className="group flex cursor-pointer items-center gap-3">
       <div
         className={`flex h-5 w-5 items-center justify-center border transition-colors ${
-          checked ? "border-lime bg-lime" : "border-ink/40 bg-white group-hover:border-lime-dark"
+          checked ? "border-ink bg-ink" : "border-ink/40 bg-white group-hover:border-ink"
         }`}
       >
         {checked && (
@@ -207,10 +207,10 @@ function RadioField({
     <label onClick={onChange} className="group flex cursor-pointer items-center gap-3">
       <div
         className={`flex h-5 w-5 items-center justify-center rounded-full border transition-colors ${
-          checked ? "border-lime-dark" : "border-ink/40 group-hover:border-lime-dark"
+          checked ? "border-ink" : "border-ink/40 group-hover:border-ink"
         }`}
       >
-        {checked && <div className="h-2.5 w-2.5 rounded-full bg-lime-dark" />}
+        {checked && <div className="h-2.5 w-2.5 rounded-full bg-ink" />}
       </div>
       <span className="text-sm text-ink">{label}</span>
     </label>
@@ -381,6 +381,11 @@ function useContactDrawer() {
   return ctx;
 }
 
+/**
+ * Contactknop: opent sitebreed de offerte-drawer (het formulier in 3 stappen).
+ * Alle contact-, intake- en offerteknoppen gebruiken deze knop; alleen
+ * telefoonnummers bellen direct.
+ */
 export function ContactDrawerButton({
   className,
   children,
@@ -510,7 +515,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
           {success ? (
             /* --------------------------- success screen --------------------------- */
             <div className="m-auto w-full max-w-md animate-pop-in bg-white p-8 text-center shadow-2xl">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-lime/15 text-lime-dark">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-lime/25 text-ink">
                 <Check />
               </div>
               <h3 className="mb-2 text-2xl font-bold text-ink">
@@ -523,7 +528,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
               <button
                 type="button"
                 onClick={closeSuccess}
-                className="w-full bg-lime py-4 font-display font-bold text-ink transition-all hover:bg-lime-dark"
+                className="w-full bg-ink py-4 font-display font-bold text-white transition-all hover:bg-ink/85"
               >
                 Sluiten
               </button>
@@ -553,7 +558,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
                     <div key={label} className="flex-1">
                       <div
                         className={`h-1.5 rounded-full transition-all duration-300 ${
-                          step >= i + 1 ? "bg-lime" : "bg-mist"
+                          step >= i + 1 ? "bg-ink" : "bg-mist"
                         }`}
                       />
                       <span
@@ -802,7 +807,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
                       type={step === 3 ? "submit" : "button"}
                       onClick={step === 3 ? undefined : next}
                       disabled={sending}
-                      className="flex flex-2 items-center justify-center gap-2 bg-lime py-2 font-medium text-ink shadow-lg transition-all hover:bg-lime-dark disabled:opacity-60"
+                      className="flex flex-2 items-center justify-center gap-2 bg-ink py-2 font-medium text-white shadow-lg transition-all hover:bg-ink/85 disabled:opacity-60"
                     >
                       {step === 3 ? (sending ? "Versturen..." : "Versturen") : "Volgende"}{" "}
                       {step === 3 ? <Send /> : <ArrowRight />}

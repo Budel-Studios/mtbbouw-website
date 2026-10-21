@@ -4,24 +4,34 @@
 /* =====================================================================
  * MTB Bouw — design tokens
  * Eén centrale bron voor kleuren, fonts, radius, shadows en animaties.
- * Uitstraling: professioneel, lokaal, strak (hoekig), warm, degelijk.
+ * Uitstraling: architectonisch en minimalistisch — warm papier, bijna-zwarte
+ * inkt, MTB-navy als hoofdaccent, haarlijnen en scherpe hoeken. Lime en
+ * hemelsblauw komen uit het logo en worden spaarzaam ingezet.
  * ===================================================================== */
 @theme {
   /* ---- Kleuren ---- */
-  --color-ink: #1a1a18; /* bijna-zwart: koppen, donkere secties, bodytekst */
-  --color-paper: #f6f6f4; /* gebroken wit: header, footer, subtiele secties */
-  --color-canvas: #f5f5f5; /* neutrale paginabodem (overzichtspagina's) */
+  --color-ink: #1a1a18; /* bijna-zwart: koppen, bodytekst */
+  --color-paper: #f6f6f4; /* warm papier: paginabodem */
+  --color-canvas: #f6f6f4; /* = paper (overzichtspagina's) */
   --color-mist: #e5e3de; /* hairlines / randen */
+  --color-tint: #e5e3de; /* warm lichtgrijs: afwisselende secties (Lovable 'secondary') */
+  --color-inverse: #131614; /* donkere sectie (bijna zwart, groenzweem) */
+  --color-inverse-muted: #a5a5a2; /* secundaire tekst op donker */
+  --color-inverse-border: #303432; /* lijnen op donker */
   --color-stone: #6b6b6b; /* secundaire tekst */
-  --color-lime: #abe000; /* hét accent: primaire knoppen, lijnen, labels */
-  --color-lime-dark: #8fb800; /* accent hover / accenttekst op licht */
+  --color-navy: #003384; /* hoofdaccent: knoppen, labels, links, footer */
+  --color-navy-dark: #00255f; /* navy hover */
+  --color-sky: #00aef7; /* accent op donker (navy/inkt) */
+  --color-lime: #abe000; /* logo-accent: spaarzaam (footerlijn, details) */
+  --color-lime-dark: #8fb800;
   --color-danger: #d02f2f; /* foutmeldingen in formulieren */
 
   /* ---- Typografie ----
-   * Montserrat = merkfont (koppen, buttons, navigatie, labels).
-   * Arial = bodytekst (systeemfont, degelijk en snel). */
+   * Montserrat = merkfont (koppen, navigatie). Arial = bodytekst.
+   * Mono = kleine technische labels (eyebrows, meta, nummering). */
   --font-sans: Arial, Helvetica, sans-serif;
   --font-display: var(--font-montserrat), "Montserrat", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* ---- Radius ---- (site is bewust hoekig) */
   --radius-none: 0px;
@@ -39,42 +49,56 @@
   --animate-pop-in: pop-in 0.25s ease-out;
   --animate-mega-in: mega-in 0.35s ease-out;
   --animate-menu-down: menu-down 0.35s ease-out;
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --ease-architectural: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-hero-zoom: hero-zoom 2.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-mark-draw: mark-draw 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
 }
 
 /* =====================================================================
  * Basisstijlen
  * ===================================================================== */
-html {
-  scroll-behavior: smooth;
-}
+/* In @layer base, zodat utility-klassen (font-medium, label-mono, display …)
+ * altijd winnen van deze standaardstijlen. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  background: #ffffff;
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-/* Koppen in het merkfont Montserrat */
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
 
-/* Citaten & testimonials altijd schuingedrukt */
-blockquote,
-blockquote p,
-cite,
-.testimonial {
-  font-style: italic;
-}
-cite {
-  font-weight: 600;
+  /* Koppen in het merkfont Montserrat — rustig gewicht, strak gespatieerd */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  /* Citaten & testimonials altijd schuingedrukt */
+  blockquote,
+  blockquote p,
+  cite,
+  .testimonial {
+    font-style: italic;
+  }
+  cite {
+    font-weight: 600;
+  }
 }
 
 /* =====================================================================
@@ -92,8 +116,8 @@ cite {
   }
   /* Focus-state expliciet (betrouwbaarder dan @apply focus: in Tailwind v4) */
   .field-control:focus {
-    border-color: var(--color-lime);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-lime) 30%, transparent);
+    border-color: var(--color-ink);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-lime) 45%, transparent);
   }
 
   .field-control-error {
@@ -113,6 +137,134 @@ cite {
   }
 }
 
+/* =====================================================================
+ * Minimalistische utilities (architectonische look)
+ * ===================================================================== */
+
+/* Klein technisch label in hoofdletters (eyebrows, meta, nummering) */
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* Nummering (01, 02 …): duidelijk leesbaar, groter dan label-mono */
+@utility label-num {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hoofdmenu-items: mono-hoofdletters, iets groter dan label-mono */
+@utility label-nav {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* Grote displaykop */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+/* Paginacontainer */
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 96rem;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+  @media (width >= 80rem) {
+    padding-inline: 3.5rem;
+  }
+}
+
+/* Langzame zoom op foto's binnen een .group */
+@utility img-zoom {
+  transition: transform 1.2s var(--ease-architectural);
+  :where(.group):hover & {
+    transform: scale(1.035);
+  }
+}
+
+/* Onderstreping die van links naar rechts inschuift */
+@utility link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease-architectural);
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+
+/* Eyebrow: klein mono-label met een lime blokje ervoor */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  &::before {
+    content: "";
+    width: 0.375rem;
+    height: 0.375rem;
+    flex-shrink: 0;
+    background: var(--color-lime);
+  }
+}
+
+/* Donker verloop over de herofoto zodat witte tekst leesbaar blijft */
+@utility hero-scrim {
+  background-image:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-inverse) 72%, transparent) 0%,
+      color-mix(in oklab, var(--color-inverse) 30%, transparent) 38%,
+      transparent 55%
+    ),
+    linear-gradient(
+      to top,
+      color-mix(in oklab, var(--color-inverse) 82%, transparent) 0%,
+      color-mix(in oklab, var(--color-inverse) 25%, transparent) 30%,
+      transparent 50%
+    ),
+    linear-gradient(to right, color-mix(in oklab, var(--color-inverse) 40%, transparent) 0%, transparent 60%);
+}
+
+/* Dikke lime onderstreping net onder de basislijn */
+@utility mark-lime {
+  background-image: linear-gradient(var(--color-lime), var(--color-lime));
+  background-repeat: no-repeat;
+  background-position: 0 86%;
+  background-size: 100% 0.12em;
+}
+
+/* Matglazen donker paneel voor elementen op foto's */
+@utility glass-dark {
+  background-color: color-mix(in oklab, var(--color-inverse) 40%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
 /* Verberg de scrollbar van de horizontale projecten-rail op de homepage. */
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -125,6 +277,105 @@ cite {
 /* =====================================================================
  * Keyframes
  * ===================================================================== */
+/* ---- Speelse accenten (alleen gebruikt op de testpagina /test-speels) ---- */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.4s 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hover-wiggle:hover {
+  animation: wiggle 0.5s ease-in-out 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-marquee,
+  .hover-wiggle:hover {
+    animation: none;
+  }
+  .animate-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes mark-draw {
+  from {
+    background-size: 0% 0.12em;
+  }
+  to {
+    background-size: 100% 0.12em;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none;
+  }
+}
+
 @keyframes mega-in {
   from {
     opacity: 0;

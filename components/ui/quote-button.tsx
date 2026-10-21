@@ -8,10 +8,10 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
  * renderen zonder zelf client component te worden.
  */
 const base =
-  "inline-flex cursor-pointer items-center justify-center gap-2 font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-dark px-6 py-3.5 text-sm";
+  "label-mono inline-flex cursor-pointer items-center justify-center gap-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink px-5 py-3.5";
 
 const variants = {
-  primary: "bg-lime text-ink hover:bg-lime-dark",
+  primary: "border border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",
   "outline-light": "border border-white/80 text-white hover:bg-white/10",
 } as const;
 

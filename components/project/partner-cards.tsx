@@ -15,19 +15,15 @@ export function PartnerCards({ partners }: { partners: Partner[] }) {
   if (partners.length === 0) return null;
 
   return (
-    <div className="grid gap-px border border-mist bg-mist sm:grid-cols-2">
+    <ul className="grid border-l border-t border-mist sm:grid-cols-2 lg:grid-cols-3">
       {partners.map((partner) => (
-        <div key={partner.name} className="flex flex-col bg-white p-6">
-          <div className="flex items-baseline justify-between gap-3">
-            <h3 className="font-bold text-ink">{partner.name}</h3>
-            {partner.role && (
-              <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-stone">
-                {partner.role}
-              </span>
-            )}
-          </div>
+        <li key={partner.name} className="flex min-h-40 flex-col border-b border-r border-mist p-6 transition-colors hover:bg-white md:p-8">
+          {partner.role && <span className="label-mono text-stone">{partner.role}</span>}
+          <h3 className="mt-6 text-xl font-medium tracking-[-0.02em] md:text-2xl">
+            {partner.name}
+          </h3>
           {partner.description && (
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-stone">
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-stone">
               {partner.description}
             </p>
           )}
@@ -36,7 +32,7 @@ export function PartnerCards({ partners }: { partners: Partner[] }) {
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1.5 self-start border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-lime-dark"
+              className="mt-6 self-start label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
             >
               {partner.anchor || partner.name}
               <svg
@@ -53,8 +49,8 @@ export function PartnerCards({ partners }: { partners: Partner[] }) {
               </svg>
             </a>
           )}
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

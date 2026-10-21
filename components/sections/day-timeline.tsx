@@ -19,12 +19,12 @@ export function DayTimeline({
       {(eyebrow || title) && (
         <div className="mb-14 max-w-2xl">
           {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+            <p className="eyebrow text-stone">
               {eyebrow}
             </p>
           )}
           {title && (
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
           )}
         </div>
       )}
@@ -36,7 +36,7 @@ export function DayTimeline({
             className="flex-1 border-t-2 border-lime px-0 py-5 sm:px-6 sm:pt-6"
           >
             {moment.time && (
-              <span className="block text-sm font-extrabold text-lime-dark">
+              <span className="block text-sm font-semibold text-navy">
                 {moment.time}
               </span>
             )}

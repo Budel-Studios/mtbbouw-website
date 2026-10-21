@@ -14,14 +14,14 @@ export function LogoRow({
   return (
     <section className="border-y border-mist bg-paper">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-stone">
+        <p className="text-center label-mono text-stone">
           {title}
         </p>
         <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
           {names.map((name) => (
             <li
               key={name}
-              className="text-sm font-bold uppercase tracking-wider text-stone/80"
+              className="label-monor text-stone/80"
             >
               {name}
             </li>

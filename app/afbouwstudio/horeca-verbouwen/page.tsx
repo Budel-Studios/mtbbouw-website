@@ -8,6 +8,7 @@ import { ArrowLink } from "@/components/ui/button";
 import { CupIcon, ClockIcon, PaintIcon, ShieldIcon, MapPinIcon } from "@/components/icons";
 import { faqHorecaVerbouwen } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Horeca verbouwen in Twente | Afbouwstudio" },
@@ -68,7 +69,7 @@ export default function HorecaVerbouwenPage() {
         intro="Een horecaverbouwing draait om één ding: zo snel mogelijk (weer) open, met een zaak die klopt tot in de laatste hoek. Afbouwstudio bouwde voor De Broodbode complete lunchrooms in Zwolle en Apeldoorn — van casco pand tot sfeervolle zaak, en van verouderd winkelpand tot huiskamer-lunchroom."
         cta={
           <>
-            <ArrowLink href="#contact" onDark>Plan een intake</ArrowLink>
+            <ArrowLink drawer onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk de Broodbode-cases</ArrowLink>
           </>
         }
@@ -77,17 +78,17 @@ export default function HorecaVerbouwenPage() {
       {/* PIJLERS */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+          <p className="eyebrow text-stone">
             01 — Waarom Afbouwstudio
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Gebouwd rond jouw openingstijden
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
             {PIJLERS.map(({ icon: Icon, title, text }) => (
               <div key={title} className="border-b border-r border-mist bg-white p-8 md:p-10">
-                <Icon className="h-8 w-8 text-lime-dark" />
-                <h3 className="mt-6 text-2xl font-extrabold">{title}</h3>
+                <Icon className="h-8 w-8 text-navy" />
+                <h3 className="mt-6 text-2xl font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">{text}</p>
               </div>
             ))}
@@ -107,15 +108,15 @@ export default function HorecaVerbouwenPage() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
-              <span className="absolute left-4 top-4 bg-lime px-2.5 py-1 text-[11px] font-semibold text-ink">
+              <span className="absolute left-4 top-4 bg-ink px-2.5 py-1 text-[11px] font-semibold text-white">
                 Case: De Broodbode
               </span>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+              <p className="eyebrow text-stone">
                 02 — Bewezen in de praktijk
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 Twee zaken, één signatuur
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -130,10 +131,10 @@ export default function HorecaVerbouwenPage() {
               </p>
               <div className="mt-7 flex items-center gap-6">
                 <span className="flex items-center gap-1.5 text-sm text-stone">
-                  <MapPinIcon className="h-4 w-4 text-lime-dark" /> Zwolle · 7 weken
+                  <MapPinIcon className="h-4 w-4 text-navy" /> Zwolle · 7 weken
                 </span>
                 <span className="flex items-center gap-1.5 text-sm text-stone">
-                  <MapPinIcon className="h-4 w-4 text-lime-dark" /> Apeldoorn · ±7 weken
+                  <MapPinIcon className="h-4 w-4 text-navy" /> Apeldoorn · ±7 weken
                 </span>
               </div>
               <div className="mt-8">
@@ -158,10 +159,10 @@ export default function HorecaVerbouwenPage() {
       {/* CTA */}
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-lime">
+          <p className="eyebrow text-white/65">
             Persoonlijk contact
           </p>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
             Wanneer wil je open?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
@@ -173,15 +174,12 @@ export default function HorecaVerbouwenPage() {
             .
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="mailto:info@mtbbouw.com?subject=Intake%20horecaverbouwing"
-              className="inline-flex items-center justify-center gap-2 bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-lime-dark"
-            >
+            <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">
               Plan intake
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
-              className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-ink"
             >
               Bel direct: 053 206 50 71
             </a>

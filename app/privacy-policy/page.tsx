@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
       />
 
       <section className="mx-auto max-w-3xl px-6 pb-20">
-        <article className="prose prose-stone max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-lime-dark">
+        <article className="prose prose-stone max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-navy">
           <h2>Welke gegevens we verzamelen</h2>
           <p>
             Wanneer je contact met ons opneemt — via het formulier, telefoon,

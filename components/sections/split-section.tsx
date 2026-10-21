@@ -27,14 +27,14 @@ export function SplitSection({
     <div>
       {eyebrow && (
         <p
-          className={`text-xs font-bold uppercase tracking-[0.2em] ${
+          className={`label-mono ${
             dark ? "text-lime" : "text-stone"
           }`}
         >
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+      <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
       <div
         className={`mt-5 max-w-lg space-y-4 leading-relaxed ${
           dark ? "text-white/75" : "text-stone"

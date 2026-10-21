@@ -61,28 +61,28 @@ export default function AannemerBornePage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Verbouwen in Borne
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Wonen én zakelijk, met lokaal bewijs
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
             Borne ligt precies tussen Hengelo en Almelo — vanaf onze werkplaats
             in Enschede zijn we er in zo&apos;n 20 minuten. Bekijk{" "}
-            <Link href="/projecten/bedrijfshal-borne" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/projecten/bedrijfshal-borne" className="font-semibold text-ink underline hover:text-navy">
               de bedrijfshal die we in Borne afbouwden
             </Link>{" "}
             of vraag ons naar de mogelijkheden voor jouw woning: van{" "}
-            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-lime-dark">renovatie</Link>{" "}
+            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-navy">renovatie</Link>{" "}
             en{" "}
-            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-lime-dark">aanbouw</Link>{" "}
+            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-navy">aanbouw</Link>{" "}
             tot{" "}
-            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-lime-dark">kozijnen</Link>{" "}
+            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">kozijnen</Link>{" "}
             en een snelle{" "}
-            <Link href="/prefab" className="font-semibold text-ink underline hover:text-lime-dark">prefab uitbouw</Link>
+            <Link href="/prefab" className="font-semibold text-ink underline hover:text-navy">prefab uitbouw</Link>
             . Zakelijk pand in Borne? Dan is{" "}
-            <Link href="/afbouwstudio/bedrijfspand-verbouwen" className="font-semibold text-ink underline hover:text-lime-dark">
+            <Link href="/afbouwstudio/bedrijfspand-verbouwen" className="font-semibold text-ink underline hover:text-navy">
               Afbouwstudio
             </Link>{" "}
             je aanspreekpunt.

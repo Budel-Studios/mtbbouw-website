@@ -38,7 +38,7 @@ export function FaqQuickNav({
   return (
     <nav
       aria-label="Snel naar categorie"
-      className="sticky top-20 z-20 border-y border-mist bg-white/95 backdrop-blur"
+      className="sticky top-16 z-20 border-y border-mist bg-paper/95 backdrop-blur"
     >
       <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-6 py-3">
         {categories.map((cat) => {
@@ -49,7 +49,7 @@ export function FaqQuickNav({
               href={`#${cat.slug}`}
               className={`shrink-0 whitespace-nowrap border px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
                 isActive
-                  ? "border-lime bg-lime text-ink"
+                  ? "border-ink bg-ink text-white"
                   : "border-mist text-stone hover:border-ink/30 hover:text-ink"
               }`}
             >

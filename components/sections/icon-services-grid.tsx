@@ -20,12 +20,12 @@ export function IconServicesGrid({
         {(eyebrow || title) && (
           <div className="mb-12">
             {eyebrow && (
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="eyebrow text-stone">
                 {eyebrow}
               </p>
             )}
             {title && (
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
                 {title}
               </h2>
             )}
@@ -39,7 +39,7 @@ export function IconServicesGrid({
                 key={item.label}
                 className="flex items-center gap-3 border-b border-r border-mist bg-white p-5"
               >
-                <Icon className="h-6 w-6 shrink-0 text-lime-dark" />
+                <Icon className="h-6 w-6 shrink-0 text-navy" />
                 <span className="text-sm font-semibold text-ink">
                   {item.label}
                 </span>

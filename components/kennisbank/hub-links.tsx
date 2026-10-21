@@ -18,7 +18,7 @@ export function HubLinks({ current }: { current?: string }) {
     <nav aria-label="Kennisbank per onderwerp en bouwdeel" className="grid gap-8 sm:grid-cols-2">
       {groups.map((group) => (
         <div key={group.type}>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             {group.title}
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -30,10 +30,10 @@ export function HubLinks({ current }: { current?: string }) {
                   <Link
                     href={href}
                     aria-current={isCurrent ? "page" : undefined}
-                    className={`inline-flex items-center border px-3 py-1.5 text-sm font-semibold transition-colors ${
+                    className={`label-mono inline-flex items-center border px-3 py-2 transition-colors ${
                       isCurrent
                         ? "border-ink bg-ink text-white"
-                        : "border-mist bg-white text-ink hover:border-lime hover:bg-paper"
+                        : "border-mist bg-white text-ink hover:border-ink hover:text-navy"
                     }`}
                   >
                     {item.label}

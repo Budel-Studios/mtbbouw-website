@@ -17,22 +17,22 @@ export function FaqAccordion({
   id?: string;
 }) {
   return (
-    <section id={id} className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16">
-      <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+    <section id={id} className="container-page scroll-mt-24 py-20 md:py-28">
+      <p className="eyebrow text-stone">
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
-      <div className="mt-10 max-w-3xl divide-y divide-mist border-y border-mist">
+      <h2 className="display mt-4 text-4xl md:text-6xl">{title}</h2>
+      <div className="mt-12 max-w-4xl divide-y divide-mist border-y border-ink">
         {items.map((item) => (
           <details key={item.question} className="group">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-lg font-bold [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 text-lg font-medium tracking-[-0.02em] transition-colors hover:text-navy md:text-xl [&::-webkit-details-marker]:hidden">
               {item.question}
               <svg
-                className="h-5 w-5 shrink-0 transition-transform group-open:rotate-180"
+                className="h-5 w-5 shrink-0 text-navy transition-transform group-open:rotate-180"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -40,7 +40,7 @@ export function FaqAccordion({
                 <path d="m6 9 6 6 6-6" />
               </svg>
             </summary>
-            <p className="pb-6 leading-relaxed text-stone">{item.answer}</p>
+            <p className="max-w-3xl pb-6 leading-relaxed text-stone">{item.answer}</p>
           </details>
         ))}
       </div>

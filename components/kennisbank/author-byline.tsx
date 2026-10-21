@@ -17,7 +17,7 @@ export function AuthorByline({ author }: { author: Author }) {
       )}
       <p className="text-sm leading-snug text-stone">
         Geschreven door{" "}
-        <Link href="/over-ons" className="font-semibold text-ink hover:text-lime-dark">
+        <Link href="/over-ons" className="font-semibold text-ink hover:text-navy">
           {author.name}
         </Link>
         <br />

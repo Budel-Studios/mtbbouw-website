@@ -106,10 +106,10 @@ export default function PrefabPage() {
       {/* ONDERDELEN — HSB, elementen, sneller bouwen, overkappingen */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Wat wij prefab bouwen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Van HSB tot overkapping — alles uit de fabriek
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
@@ -119,8 +119,8 @@ export default function PrefabPage() {
                 id={id}
                 className="scroll-mt-24 border-b border-r border-mist bg-white p-8"
               >
-                <Icon className="h-7 w-7 text-lime-dark" />
-                <h3 className="mt-5 text-xl font-extrabold">{title}</h3>
+                <Icon className="h-7 w-7 text-navy" />
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">{body}</p>
               </div>
             ))}

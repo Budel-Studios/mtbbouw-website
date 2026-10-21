@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { portfolio } from "#site/content";
 import { ProjectGrid } from "@/components/project-grid";
-import { ProjectSpotlight } from "@/components/sections/project-spotlight";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { publishedProjects, toProjectCard } from "@/lib/projects";
 
 const INTRO =
   "Ontdek een selectie van onze gerealiseerde projecten en zie hoe wij bouwen in de praktijk. Van renovaties en uitbouwen tot complete woningen, kozijnen en bedrijfspanden: elk project laat zien hoe wij kwaliteit, vakmanschap en duidelijke communicatie samenbrengen. Laat je inspireren door onze aanpak en ontdek wat er mogelijk is voor jouw woning of bedrijfsruimte.";
@@ -21,96 +20,68 @@ export const metadata: Metadata = {
   },
 };
 
+function Stat({ value, label }: { value: number; label: string }) {
+  return (
+    <div className="border-r border-mist py-6 pr-4 last:border-r-0 md:py-8 [&:not(:first-child)]:pl-4 md:[&:not(:first-child)]:pl-8">
+      <dd className="display text-3xl md:text-5xl">{String(value).padStart(2, "0")}</dd>
+      <dt className="label-mono mt-3 text-stone">{label}</dt>
+    </div>
+  );
+}
+
 export default function ProjectenPage() {
-  const live = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date));
-
-  // Spotlight = nieuwste uitgelichte project met beeld.
-  const s = live.find((p) => p.featured && (p.cover || p.coverVideo));
-  const spotlight = s
-    ? {
-        permalink: s.permalink,
-        title: s.title,
-        intro: s.intro || s.description,
-        cover: s.cover,
-        coverAlt: s.coverAlt,
-        coverVideo: s.coverVideo,
-        category: s.category,
-        location: s.location,
-        duration: s.duration,
-        clientType: s.clientType,
-        status: s.status,
-        // Quotes staan uit tot er een échte klantquote is; zet deze regel aan
-        // zodra die er is: testimonial: s.testimonial,
-      }
-    : undefined;
-
-  const projects = live
-    .map((p) => {
-      // Hover-diashow: cover eerst, aangevuld met gallery-foto's (ontdubbeld, max 3).
-      const images = [
-        ...(p.cover ? [{ src: p.cover, alt: p.coverAlt || p.title }] : []),
-        ...p.gallery.map((g) => ({ src: g.src, alt: g.alt })),
-      ]
-        .filter(
-          (img, i, arr) => arr.findIndex((x) => x.src === img.src) === i
-        )
-        .slice(0, 3);
-
-      return {
-        slug: p.slug,
-        permalink: p.permalink,
-        title: p.title,
-        description: p.description,
-        category: p.category,
-        location: p.location,
-        featured: p.featured,
-        images,
-      };
-    })
+  // Alleen projecten met beeld: dit is een foto-eerst overzicht.
+  const projects = publishedProjects()
+    .map(toProjectCard)
     .filter((p) => p.images.length > 0);
 
+  const places = new Set(
+    projects.map((p) => p.location?.replace(/\s*\(.*\)$/, "")).filter(Boolean)
+  ).size;
+  const kinds = new Set(projects.map((p) => p.category).filter(Boolean)).size;
+
   return (
-    <div className="bg-canvas">
+    <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
           { name: "Gerealiseerde projecten", url: "/projecten" },
         ]}
       />
-      {/* De uitgelichte case ís de header van deze pagina */}
-      <ProjectSpotlight
-        eyebrow="Ons werk"
-        pageTitle={
-          <>
-            Gerealiseerde
-            <br />
-            projecten
-          </>
-        }
-        project={spotlight}
-      />
 
-      <div className="mx-auto max-w-7xl px-6 pb-16 pt-14 md:px-16 md:pb-24 md:pt-16">
-        <h2 className="mb-8 font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
-          Alle projecten
-        </h2>
-        <ProjectGrid
-          projects={projects}
-          intro={INTRO}
-          spotlightSlug={s?.slug}
-        />
-      </div>
+      <section className="container-page pb-14 pt-16 md:pb-20 md:pt-24">
+        <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="animate-fade-up md:col-span-8">
+            <p className="label-mono text-stone">Ons werk — recent werk uit Twente</p>
+            <h1 className="display mt-6 text-[2.75rem] sm:text-6xl md:text-6xl lg:text-8xl xl:text-[7.5rem]">
+              Gerealiseerde projecten
+            </h1>
+          </div>
+          <p
+            className="animate-fade-up max-w-md text-base leading-relaxed text-stone md:col-span-4"
+            style={{ animationDelay: "120ms" }}
+          >
+            {INTRO}
+          </p>
+        </div>
+
+        <dl className="mt-16 grid grid-cols-3 border-t border-mist">
+          <Stat value={projects.length} label="Uitgelichte projecten" />
+          <Stat value={places} label="Plaatsen" />
+          <Stat value={kinds} label="Soorten werk" />
+        </dl>
+      </section>
+
+      <ProjectGrid projects={projects} />
 
       <CtaBanner
         eyebrow="Zelf iets te bouwen?"
         title="Benieuwd wat we voor jou kunnen betekenen?"
         text="Vertel kort wat je van plan bent — we denken vrijblijvend mee en komen graag bij je langs voor een intake op locatie."
-        cta={{ label: "Vraag een offerte aan", drawer: true }}
-        secondary={{ label: "Neem contact op", href: "/contact" }}
+        cta={{ label: "Plan een intake", drawer: true }}
+        secondary={{ label: "053 206 50 71", href: "tel:+31532065071" }}
         align="center"
       />
-    </div>
+    </>
   );
 }

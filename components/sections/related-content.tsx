@@ -38,10 +38,10 @@ export function RelatedContent({
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime">
+            <p className="eyebrow text-white/65">
               {eyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
           </div>
           <ArrowLink href={projects.length > 0 ? "/projecten" : "/kennisbank"} onDark>
             {projects.length > 0 ? "Alle projecten" : "Alle artikelen"}
@@ -64,7 +64,7 @@ export function RelatedContent({
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
-              <h3 className="absolute bottom-5 left-5 right-5 text-lg font-extrabold text-white">
+              <h3 className="absolute bottom-5 left-5 right-5 text-lg font-semibold text-white">
                 {project.title}
               </h3>
             </Link>
@@ -87,7 +87,7 @@ export function RelatedContent({
                 </div>
               )}
               <div className="p-6">
-                <h3 className="text-xl font-extrabold leading-snug group-hover:underline">
+                <h3 className="text-xl font-semibold leading-snug group-hover:underline">
                   {article.title}
                 </h3>
                 <p className="mt-3 text-sm font-semibold text-white/70">Lees meer</p>

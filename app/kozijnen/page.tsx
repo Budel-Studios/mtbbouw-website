@@ -62,17 +62,17 @@ export default function KozijnenPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-stone">
+          <p className="eyebrow text-stone">
             Waarom De Kozijnstudio
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Eén specialist, volledig gericht op kozijnen
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-3">
             {HIGHLIGHTS.map(({ title, body }) => (
               <div key={title} className="border-b border-r border-mist bg-white p-8">
-                <CheckIcon className="h-7 w-7 text-lime-dark" />
-                <h3 className="mt-5 text-xl font-extrabold">{title}</h3>
+                <CheckIcon className="h-7 w-7 text-navy" />
+                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">{body}</p>
               </div>
             ))}
@@ -87,8 +87,8 @@ export default function KozijnenPage() {
 
       <section className="border-y border-mist bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 text-center sm:py-24">
-          <WindowIcon className="mx-auto h-10 w-10 text-lime-dark" />
-          <h2 className="mt-6 font-display text-3xl font-extrabold sm:text-4xl">
+          <WindowIcon className="mx-auto h-10 w-10 text-navy" />
+          <h2 className="mt-6 font-display text-3xl font-semibold sm:text-4xl">
             Vraag advies of een offerte aan bij De Kozijnstudio
           </h2>
           <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-stone">
@@ -100,7 +100,7 @@ export default function KozijnenPage() {
               href="https://kozijnstudio.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-ink px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-ink/85"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-ink bg-ink px-5 py-3.5 text-paper transition-colors hover:bg-transparent hover:text-ink"
             >
               <EuroIcon className="h-4 w-4" />
               Naar kozijnstudio.com

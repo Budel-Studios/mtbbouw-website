@@ -63,10 +63,10 @@ export default function BouwbedrijfEnschedePage() {
       {/* DE VIER LABELS */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Wat we bouwen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Eén bouwbedrijf, vier expertises
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -81,12 +81,12 @@ export default function BouwbedrijfEnschedePage() {
                 href={e.href}
                 className="group border-b border-r border-mist bg-white p-8 transition-colors hover:bg-paper"
               >
-                <e.icon className="h-7 w-7 text-lime-dark" />
-                <h3 className="mt-5 text-xl font-extrabold">{e.title}</h3>
+                <e.icon className="h-7 w-7 text-navy" />
+                <h3 className="mt-5 text-xl font-semibold">{e.title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">
                   {e.subtitle}
                 </p>
-                <span className="mt-4 inline-block text-sm font-bold group-hover:text-lime-dark">
+                <span className="mt-4 inline-block text-sm font-bold group-hover:text-navy">
                   Bekijk {e.title} →
                 </span>
               </Link>
@@ -98,16 +98,16 @@ export default function BouwbedrijfEnschedePage() {
       {/* HET BEDRIJF */}
       <section className="border-y border-mist bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Het bedrijf
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Vakmanschap uit Enschede, opgeleid in eigen huis
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <div className="border-t-2 border-lime pt-6">
               <UsersIcon className="h-8 w-8 text-ink" />
-              <h3 className="mt-5 text-2xl font-extrabold">Vast kernteam</h3>
+              <h3 className="mt-5 text-2xl font-semibold">Vast kernteam</h3>
               <p className="mt-3 leading-relaxed text-stone">
                 Uitvoering, timmerwerk en werkvoorbereiding in eigen hand,
                 aangevuld met vaste regionale partners voor installatie en
@@ -116,7 +116,7 @@ export default function BouwbedrijfEnschedePage() {
             </div>
             <div className="border-t-2 border-lime pt-6">
               <GraduationIcon className="h-8 w-8 text-ink" />
-              <h3 className="mt-5 text-2xl font-extrabold">Erkend leerbedrijf</h3>
+              <h3 className="mt-5 text-2xl font-semibold">Erkend leerbedrijf</h3>
               <p className="mt-3 leading-relaxed text-stone">
                 MTB Bouw B.V. is een door SBB erkend leerbedrijf (ID
                 100812726). We leiden jonge vakmensen uit de regio zelf op —
@@ -125,7 +125,7 @@ export default function BouwbedrijfEnschedePage() {
             </div>
             <div className="border-t-2 border-lime pt-6">
               <BuildingIcon className="h-8 w-8 text-ink" />
-              <h3 className="mt-5 text-2xl font-extrabold">Particulier én zakelijk</h3>
+              <h3 className="mt-5 text-2xl font-semibold">Particulier én zakelijk</h3>
               <p className="mt-3 leading-relaxed text-stone">
                 Woningen in Enschede en Twente, en zakelijke afbouwprojecten
                 tot in Zwolle en Apeldoorn — zoals de lunchrooms van De

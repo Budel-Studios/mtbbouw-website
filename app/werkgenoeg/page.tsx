@@ -183,10 +183,10 @@ export default async function WerkGenoegPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+            <p className="eyebrow text-stone">
               Hoe we voor elkaar zorgen
             </p>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
               Veilig en verantwoord werken
             </h2>
             <p className="mt-6 text-base leading-relaxed text-stone md:text-lg">
@@ -245,9 +245,9 @@ export default async function WerkGenoegPage() {
             ].map(({ Icon, title, text }) => (
               <div
                 key={title}
-                className="border border-mist bg-white p-6 transition-colors hover:border-lime"
+                className="border border-mist bg-white p-6 transition-colors hover:border-ink"
               >
-                <Icon className="h-8 w-8 text-lime-dark" />
+                <Icon className="h-8 w-8 text-navy" />
                 <h3 className="mt-5 text-base font-bold leading-snug text-ink">
                   {title}
                 </h3>
@@ -266,10 +266,10 @@ export default async function WerkGenoegPage() {
       {/* OPENSTAANDE FUNCTIES */}
       <section id="vacatures" className="scroll-mt-20 bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Openstaande functies
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
             Waar we nu naar op zoek zijn
           </h2>
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
@@ -323,7 +323,7 @@ export default async function WerkGenoegPage() {
       {/* Interne links */}
       <section className="border-t border-mist py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Meer weten
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

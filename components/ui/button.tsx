@@ -1,26 +1,31 @@
 import Link from "next/link";
+import { ContactDrawerButton } from "@/components/contact-drawer";
+
+/** Knoppen naar deze URL openen de offerte-drawer i.p.v. te navigeren. */
+const CONTACT_HREF = "/contact";
 import type { ComponentProps } from "react";
 
-type Variant = "primary" | "outline-light" | "outline-dark";
+type Variant = "primary" | "lime" | "outline-light" | "outline-dark";
 type Size = "md" | "sm";
 
 /*
  * Eén uniforme knopstijl voor de hele site, afgestemd op de live site:
- * vierkante hoeken, lime-vlak met donkere tekst en pijl, of omlijnd (wit op
+ * vierkante hoeken, inktzwart vlak met lichte tekst en pijl, of omlijnd (wit op
  * foto's/donkere secties, donker op licht).
  */
 const base =
-  "inline-flex items-center justify-center gap-2 font-display font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-dark disabled:cursor-not-allowed disabled:opacity-60";
+  "label-mono inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-lime text-ink hover:bg-lime-dark",
+  primary: "border border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",
+  lime: "border border-lime bg-lime text-ink hover:border-white hover:bg-white",
   "outline-light": "border border-white/80 text-white hover:bg-white/10",
-  "outline-dark": "border border-ink/25 text-ink hover:bg-ink/5",
+  "outline-dark": "border border-ink text-ink hover:bg-ink hover:text-paper",
 };
 
 const sizes: Record<Size, string> = {
-  md: "px-6 py-3.5 text-sm",
-  sm: "px-5 py-2.5 text-sm",
+  md: "px-5 py-3.5",
+  sm: "px-4 py-2.5",
 };
 
 type BaseProps = {
@@ -75,6 +80,13 @@ export function Button({
     </>
   );
 
+  // Contactknoppen openen sitebreed de offerte-drawer (het contactformulier).
+  if ("href" in props && props.href === CONTACT_HREF) {
+    return (
+      <ContactDrawerButton className={`cursor-pointer ${cls}`}>{content}</ContactDrawerButton>
+    );
+  }
+
   if ("href" in props && props.href !== undefined) {
     const { href, ...rest } = props;
     const isExternal = /^(https?:|tel:|mailto:)/.test(href);
@@ -100,29 +112,46 @@ export function Button({
 }
 
 /**
- * Tekstlink met pijl en lime onderstreping — het "Meer info →" /
- * "Bekijk alle projecten →"-patroon van de live site.
+ * Actieknop met pijl. Sitebreed één knoppensysteem:
+ * - contact/offerte (opent de drawer) = gevuld (inkt op licht, lime op donker)
+ * - overige links = omlijnd (inkt op licht, wit op donker)
+ * Onderstreping is alleen nog voor links ín lopende tekst.
  */
 export function ArrowLink({
   href,
+  drawer = false,
   children,
   className = "",
   onDark = false,
 }: {
-  href: string;
+  href?: string;
+  /** Opent de offerte-drawer i.p.v. te navigeren. */
+  drawer?: boolean;
   children: React.ReactNode;
   className?: string;
   onDark?: boolean;
 }) {
-  const cls = `inline-flex items-center gap-1.5 border-b-2 border-lime pb-1 text-sm font-bold ${
-    onDark ? "text-white" : "text-ink"
-  } transition-colors hover:text-lime-dark ${className}`.trim();
+  const opensDrawer = drawer || !href || href === CONTACT_HREF;
+  const tone = opensDrawer
+    ? onDark
+      ? variants.lime
+      : variants.primary
+    : onDark
+      ? "border border-white/80 text-white hover:bg-white hover:text-ink"
+      : variants["outline-dark"];
+  const cls = `${base} ${tone} ${sizes.md} ${className}`.trim();
   const content = (
     <>
       {children}
       <Arrow />
     </>
   );
+
+  if (opensDrawer || !href) {
+    return (
+      <ContactDrawerButton className={`cursor-pointer ${cls}`}>{content}</ContactDrawerButton>
+    );
+  }
 
   // Anker- en externe links (#anker, tel:, mailto:, http(s):) als gewone <a>,
   // zodat de browser native hash-scroll/telefoon-app-gedrag afhandelt i.p.v.

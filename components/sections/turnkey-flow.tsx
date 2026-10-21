@@ -41,11 +41,11 @@ export function TurnkeyFlow({
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-2xl">
           {eyebrow && (
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-lime">
+            <p className="eyebrow text-white/65">
               {eyebrow}
             </p>
           )}
-          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{title}</h2>
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
           {intro && <p className="mt-4 text-white/75">{intro}</p>}
         </div>
 

@@ -71,10 +71,10 @@ export default function VerduurzamenEnschedePage() {
       {/* MAATREGELEN */}
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+          <p className="eyebrow text-stone">
             Wat we doen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
             Verduurzamen met bouwkundige logica
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -84,8 +84,8 @@ export default function VerduurzamenEnschedePage() {
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
             {MAATREGELEN.map(({ icon: Icon, title, text }) => (
               <div key={title} className="border-b border-r border-mist bg-white p-8 md:p-10">
-                <Icon className="h-8 w-8 text-lime-dark" />
-                <h3 className="mt-6 text-2xl font-extrabold">{title}</h3>
+                <Icon className="h-8 w-8 text-navy" />
+                <h3 className="mt-6 text-2xl font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-stone">{text}</p>
               </div>
             ))}
@@ -98,10 +98,10 @@ export default function VerduurzamenEnschedePage() {
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="eyebrow text-stone">
                 Subsidie
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 ISDE: subsidie op isolatie en glas
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -112,32 +112,32 @@ export default function VerduurzamenEnschedePage() {
                   href="https://www.rvo.nl/subsidies-financiering/isde"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-ink underline hover:text-lime-dark"
+                  className="font-semibold text-ink underline hover:text-navy"
                 >
                   rvo.nl
                 </a>
                 . Wij denken mee over welke maatregelen in aanmerking komen en
                 helpen bij de aanvraag. Lees ook onze{" "}
-                <Link href="/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk" className="font-semibold text-ink underline hover:text-lime-dark">
+                <Link href="/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk" className="font-semibold text-ink underline hover:text-navy">
                   gids over verbouwen en verduurzamen tegelijk
                 </Link>
                 .
               </p>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone">
+              <p className="eyebrow text-stone">
                 Waarom combineren
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
                 Eén bouwstroom, dubbele winst
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Ligt het dak open voor een dakkapel of wordt de gevel
-                aangepakt bij een <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-lime-dark">aanbouw</Link>?
+                aangepakt bij een <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-navy">aanbouw</Link>?
                 Dan zijn de meerkosten van isolatie een fractie van wat een
                 losse verduurzamingsklus later kost: de steiger, de aannemer en
                 het sloopwerk zijn er al. Daarom nemen we verduurzaming
-                standaard mee in elk <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-lime-dark">verbouwadvies</Link>.
+                standaard mee in elk <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-navy">verbouwadvies</Link>.
               </p>
             </div>
           </div>

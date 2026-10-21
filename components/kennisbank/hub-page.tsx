@@ -18,7 +18,7 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
   const kind = type === "category" ? "Onderwerp" : "Bouwdeel";
 
   return (
-    <div className="bg-canvas">
+    <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
@@ -27,35 +27,30 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
         ]}
       />
 
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-16 md:py-24">
-        <nav aria-label="Kruimelpad" className="mb-8 text-sm text-stone">
-          <Link href="/kennisbank" className="hover:text-ink">
+      <div className="container-page pb-24 pt-10 md:pb-32 md:pt-14">
+        <nav aria-label="Kruimelpad" className="label-mono text-stone">
+          <Link href="/kennisbank" className="link-line hover:text-navy">
             Kennisbank
           </Link>
           <span className="mx-2" aria-hidden="true">/</span>
-          <span>{kind}</span>
+          <span className="text-navy">{kind}</span>
         </nav>
 
-        <h1
-          style={{ fontWeight: 600 }}
-          className="font-display text-4xl leading-[0.95] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[3.5rem]"
-        >
-          {item.label}
-        </h1>
+        <h1 className="display mt-14 text-6xl md:mt-20 md:text-8xl">{item.label}</h1>
 
-        <div className="mt-8 max-w-3xl space-y-4 text-sm leading-relaxed text-ink/80 md:text-base">
+        <div className="mt-10 max-w-3xl space-y-4 text-base leading-relaxed text-stone">
           {(item.intro ?? [item.description]).map((paragraph) => (
             <p key={paragraph.slice(0, 32)}>{paragraph}</p>
           ))}
         </div>
 
         {item.links && item.links.length > 0 && (
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="mt-6 flex flex-wrap gap-3">
             {item.links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-flex items-center gap-1.5 border-b-2 border-lime pb-0.5 text-sm font-bold text-ink transition-colors hover:text-lime-dark"
+                  className="label-mono inline-flex items-center gap-2 border border-ink px-4 py-2.5 text-ink transition-colors hover:bg-ink hover:text-paper"
                 >
                   {link.label} →
                 </Link>
@@ -64,12 +59,12 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
           </ul>
         )}
 
-        <p className="mt-10 text-sm text-stone">
+        <p className="label-mono mt-12 border-t border-mist pt-4 text-stone">
           {articles.length} {articles.length === 1 ? "artikel" : "artikelen"}
         </p>
         <ArticleGrid articles={articles} filterable={false} />
 
-        <div className="mt-16 border-t border-mist pt-10">
+        <div className="mt-24 border-t border-ink pt-10">
           <HubLinks current={path} />
         </div>
       </div>
@@ -81,6 +76,6 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: `Bel ${site.telephone}`, href: `tel:${site.telephoneHref}` }}
       />
-    </div>
+    </>
   );
 }
