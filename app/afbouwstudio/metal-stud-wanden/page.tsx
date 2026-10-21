@@ -8,6 +8,7 @@ import { ArrowLink } from "@/components/ui/button";
 import { WallIcon, ClockIcon, BulbIcon } from "@/components/icons";
 import { faqMetalStud } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Metal stud-wanden plaatsen | Afbouwstudio — MTB Bouw" },
@@ -43,7 +44,7 @@ export default function MetalStudPage() {
         eyebrow="Afbouwstudio · Wanden"
         title="Metal stud-wanden: een nieuwe kantoorindeling in dagen"
         intro="Metal stud is dé manier om een kantoor of bedrijfsruimte opnieuw in te delen: licht, snel en droog gebouwd, geluidwerend uit te voeren en later eenvoudig aan te passen. Afbouwstudio plaatst metal stud-wanden inclusief glasstroken, deuren en volledige afwerking."
-        cta={<ArrowLink href="/contact#formulier" onDark>Vraag een vaste prijs aan</ArrowLink>}
+        cta={<ArrowLink drawer onDark>Vraag een vaste prijs aan</ArrowLink>}
       />
 
       <FeatureGrid
@@ -120,12 +121,9 @@ export default function MetalStudPage() {
             er een vaste prijs.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Vraag offerte aan
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

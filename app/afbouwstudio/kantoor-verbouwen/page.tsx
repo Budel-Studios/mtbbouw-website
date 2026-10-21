@@ -16,6 +16,7 @@ import {
 } from "@/components/icons";
 import { faqKantoorVerbouwen } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio" },
@@ -99,7 +100,7 @@ export default function KantoorVerbouwenPage() {
         intro="Een kantoor verbouwen betekent voor ons: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt — met een vaste prijs binnen vijf werkdagen na de intake. Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede, werkzaam in heel Oost-Nederland."
         cta={
           <>
-            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
+            <ArrowLink drawer onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk onze cases</ArrowLink>
           </>
         }
@@ -273,12 +274,9 @@ export default function KantoorVerbouwenPage() {
             .
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Plan intake
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

@@ -8,6 +8,7 @@ import { ArrowLink } from "@/components/ui/button";
 import { BuildingIcon, BoltIcon, ChatIcon } from "@/components/icons";
 import { faqSysteemplafonds } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Systeemplafonds voor kantoren | Afbouwstudio — MTB Bouw" },
@@ -43,7 +44,7 @@ export default function SysteemplafondsPage() {
         eyebrow="Afbouwstudio · Plafonds"
         title="Systeemplafonds: rust, licht en techniek in één plafond"
         intro="Een systeemplafond is de snelste verbetering van een werkruimte: de galm verdwijnt, de verlichting wordt in één keer goed en alle techniek blijft bereikbaar. Afbouwstudio plaatst (akoestische) systeemplafonds in kantoren, winkels en horeca — zoals het zwarte akoestiekplafond bij De Broodbode."
-        cta={<ArrowLink href="/contact#formulier" onDark>Vraag een vaste prijs aan</ArrowLink>}
+        cta={<ArrowLink drawer onDark>Vraag een vaste prijs aan</ArrowLink>}
       />
 
       <FeatureGrid
@@ -119,12 +120,9 @@ export default function SysteemplafondsPage() {
             binnen 5 werkdagen ligt er een vaste prijs.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Vraag offerte aan
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

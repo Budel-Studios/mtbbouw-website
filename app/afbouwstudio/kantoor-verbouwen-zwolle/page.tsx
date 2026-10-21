@@ -7,6 +7,7 @@ import { ArrowLink } from "@/components/ui/button";
 import { CheckIcon } from "@/components/icons";
 import { faqKantoorZwolle } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Zwolle | Afbouwstudio — MTB Bouw" },
@@ -45,7 +46,7 @@ export default function KantoorZwollePage() {
         intro="In de Zwolse wijk Wezenlanden bouwden we een leeg casco-pand in 7 weken om tot een complete, werkende zaak. Datzelfde casco-naar-turn-key-traject voeren we uit voor kantoren in Zwolle: wanden, plafonds, vloeren, installaties en afwerking — één team, één vaste prijs."
         cta={
           <>
-            <ArrowLink href="/contact#formulier" onDark>Plan een intake in Zwolle</ArrowLink>
+            <ArrowLink drawer onDark>Plan een intake in Zwolle</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk de Zwolle-case</ArrowLink>
           </>
         }
@@ -133,12 +134,9 @@ export default function KantoorZwollePage() {
             sturen binnen 5 werkdagen een vaste offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Plan intake
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

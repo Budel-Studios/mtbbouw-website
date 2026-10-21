@@ -7,6 +7,7 @@ import { ArrowLink } from "@/components/ui/button";
 import { CheckIcon } from "@/components/icons";
 import { faqKantoorHengelo } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Hengelo | Afbouwstudio — MTB Bouw" },
@@ -45,7 +46,7 @@ export default function KantoorHengeloPage() {
         intro="Hengelo is onze directe buurstad: vanaf de werkplaats in Enschede staan we er in een kwartier. Typerend voor Hengelo is de combinatie van kantoor en bedrijfsruimte in één pand — precies waar Afbouwstudio sterk in is: wij bouwen beide af, in één planning en met één vaste prijs."
         cta={
           <>
-            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
+            <ArrowLink drawer onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk onze cases</ArrowLink>
           </>
         }
@@ -133,12 +134,9 @@ export default function KantoorHengeloPage() {
             en sturen binnen 5 werkdagen een vaste offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Plan intake
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

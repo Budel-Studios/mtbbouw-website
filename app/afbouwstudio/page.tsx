@@ -18,6 +18,7 @@ import {
 } from "@/components/icons";
 import { faqZakelijkeAfbouw } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Kantoorafbouw & afbouw bedrijfspanden | Afbouwstudio" },
@@ -140,7 +141,7 @@ export default function AfbouwstudioPage() {
         intro="Afbouwstudio is het label van MTB Bouw voor zakelijke afbouw: van casco tot sleutelklaar. Wij bouwen bedrijfspanden en horeca-locaties af in Enschede, Twente en ver daarbuiten — strak, snel en met één team dat doet wat het belooft."
         cta={
           <>
-            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
+            <ArrowLink drawer onDark>Plan een intake</ArrowLink>
             <ArrowLink href="#cases" onDark>Bekijk onze cases</ArrowLink>
           </>
         }
@@ -426,12 +427,9 @@ export default function AfbouwstudioPage() {
             offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Plan intake
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

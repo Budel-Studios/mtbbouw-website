@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 import type { ComponentProps } from "react";
 
 type Variant = "primary" | "outline-light" | "outline-dark";
@@ -105,11 +106,14 @@ export function Button({
  */
 export function ArrowLink({
   href,
+  drawer = false,
   children,
   className = "",
   onDark = false,
 }: {
-  href: string;
+  href?: string;
+  /** Opent de offerte-drawer i.p.v. te navigeren. */
+  drawer?: boolean;
   children: React.ReactNode;
   className?: string;
   onDark?: boolean;
@@ -123,6 +127,12 @@ export function ArrowLink({
       <Arrow />
     </>
   );
+
+  if (drawer || !href) {
+    return (
+      <ContactDrawerButton className={`cursor-pointer ${cls}`}>{content}</ContactDrawerButton>
+    );
+  }
 
   // Anker- en externe links (#anker, tel:, mailto:, http(s):) als gewone <a>,
   // zodat de browser native hash-scroll/telefoon-app-gedrag afhandelt i.p.v.

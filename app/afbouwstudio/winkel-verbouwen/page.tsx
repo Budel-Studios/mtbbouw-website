@@ -7,6 +7,7 @@ import { ArrowLink } from "@/components/ui/button";
 import { BuildingIcon, ClockIcon, PaintIcon, UsersIcon } from "@/components/icons";
 import { faqWinkelVerbouwen } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 export const metadata: Metadata = {
   title: { absolute: "Winkel verbouwen in Twente | Afbouwstudio" },
@@ -67,7 +68,7 @@ export default function WinkelVerbouwenPage() {
         intro="Bij een winkelverbouwing telt elke dag: elke dag dicht is omzetverlies. Afbouwstudio bouwt winkels, showrooms en concept stores af in Twente en Oost-Nederland — gefaseerd of buiten openingstijden, met een vaste prijs en een planning die staat."
         cta={
           <>
-            <ArrowLink href="/contact#formulier" onDark>Plan een intake</ArrowLink>
+            <ArrowLink drawer onDark>Plan een intake</ArrowLink>
             <ArrowLink href="/afbouwstudio#cases" onDark>Bekijk onze cases</ArrowLink>
           </>
         }
@@ -130,12 +131,9 @@ export default function WinkelVerbouwenPage() {
             .
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href="/contact#formulier"
-              className="inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark"
-            >
+            <ContactDrawerButton className="cursor-pointer inline-flex items-center justify-center gap-2 bg-navy px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-navy-dark">
               Plan intake
-            </a>
+            </ContactDrawerButton>
             <a
               href="tel:+31532065071"
               className="inline-flex items-center justify-center gap-2 border border-white/30 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"

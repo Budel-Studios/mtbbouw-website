@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
-
 import {
   createContext,
   useCallback,
+  useContext,
   useEffect,
   useState,
   type ReactNode,
@@ -376,12 +375,16 @@ type Errors = Partial<Record<keyof ContactFormData, string>>;
 
 const ContactDrawerContext = createContext<{ open: () => void } | null>(null);
 
-/** Waar alle contactknoppen naartoe gaan: het formulier op /contact. */
-export const CONTACT_FORM_HREF = "/contact#formulier";
+function useContactDrawer() {
+  const ctx = useContext(ContactDrawerContext);
+  if (!ctx) throw new Error("useContactDrawer must be used within ContactDrawerProvider");
+  return ctx;
+}
 
 /**
- * Contactknop. Leidt (sitebreed) naar het contactformulier op /contact;
- * de offerte-drawer hieronder wordt daardoor niet meer geopend.
+ * Contactknop: opent sitebreed de offerte-drawer (het formulier in 3 stappen).
+ * Alle contact-, intake- en offerteknoppen gebruiken deze knop; alleen
+ * telefoonnummers bellen direct.
  */
 export function ContactDrawerButton({
   className,
@@ -390,13 +393,21 @@ export function ContactDrawerButton({
 }: {
   className?: string;
   children: ReactNode;
-  /** Runs before navigating (e.g. to close a menu first) */
+  /** Runs before the drawer opens (e.g. to close a menu first) */
   onClick?: () => void;
 }) {
+  const { open } = useContactDrawer();
   return (
-    <Link href={CONTACT_FORM_HREF} onClick={onClick} className={className}>
+    <button
+      type="button"
+      onClick={() => {
+        onClick?.();
+        open();
+      }}
+      className={className}
+    >
       {children}
-    </Link>
+    </button>
   );
 }
 

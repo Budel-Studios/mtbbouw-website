@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Logo } from "@/components/logo";
+import { ContactDrawerButton } from "@/components/contact-drawer";
 
 function WhatsAppIcon() {
   return (
@@ -61,13 +62,10 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
             <p className="label-mono text-white/65">Bouwen doen we samen</p>
-            <Link
-              href="/contact#formulier"
-              className="display group mt-6 block text-5xl md:text-7xl lg:text-8xl"
-            >
+            <ContactDrawerButton className="display group mt-6 block cursor-pointer text-left text-5xl md:text-7xl lg:text-8xl">
               Klaar om te bouwen?{" "}
               <ArrowUpRight className="inline-block size-10 align-baseline transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 md:size-14" />
-            </Link>
+            </ContactDrawerButton>
           </div>
           <div className="md:col-span-4">
             <p className="max-w-sm text-base leading-relaxed text-white/80">
@@ -82,12 +80,9 @@ export function SiteFooter() {
               >
                 {site.telephone}
               </a>
-              <Link
-                href="/contact#formulier"
-                className="label-mono inline-flex items-center border border-white/40 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy"
-              >
-                Stuur een bericht
-              </Link>
+              <ContactDrawerButton className="label-mono inline-flex cursor-pointer items-center border border-white/40 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy">
+                Plan een intake
+              </ContactDrawerButton>
             </div>
           </div>
         </div>
