@@ -66,7 +66,7 @@ export function HomeHero({
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-cover motion-safe:animate-hero-zoom"
+            className="-z-20 object-cover object-[68%_center] motion-safe:animate-hero-zoom"
           />
         )}
         <div className="hero-scrim absolute inset-0 -z-10" aria-hidden="true" />

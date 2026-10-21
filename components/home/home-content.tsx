@@ -174,11 +174,11 @@ export async function HomeContent({
   hand?: string;
 }) {
   // Herobeeld is wisselbaar via Supabase (site_assets → "home-hero");
-  // zonder die asset tonen we de luxe overkapping.
+  // zonder die asset tonen we een vakman van MTB Bouw aan het werk op het dak.
   const hero = await getAsset(
     "home-hero",
-    "/images/projects/luxe-overkapping-twente/cover.jpg",
-    "Luxe glazen overkapping in een tuin in Twente, gebouwd door MTB Bouw"
+    "/images/home/hero-dak.jpg",
+    "Vakman van MTB Bouw legt dakpannen op een dak in Twente"
   );
   // Optionele video-loop: Supabase-asset "home-hero-video", anders
   // public/images/home/hero-loop.mp4 (alleen als dat bestand bestaat).
@@ -206,7 +206,7 @@ export async function HomeContent({
       <HomeHero
         image={{ src: hero.url, alt: hero.alt }}
         video={heroVideo.url ? { mp4: heroVideo.url } : undefined}
-        project={{ href: "/projecten/luxe-overkapping-twente", title: "Luxe overkapping", city: "Twente" }}
+        project={{ href: "/projecten", title: "Vakmanschap op het dak", city: "Twente" }}
         badge={
           playful ? (
             <SpinBadge className="absolute right-6 top-1/2 hidden -translate-y-1/2 md:block md:right-14" />

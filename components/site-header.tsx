@@ -276,7 +276,7 @@ function MobileSubmenu({
         <button
           type="button"
           onClick={onBack}
-          className="label-mono mb-6 flex items-center text-stone transition-colors hover:text-navy"
+          className="label-nav mb-6 flex items-center text-stone transition-colors hover:text-navy"
         >
           <ArrowLeft /> Terug
         </button>
@@ -288,7 +288,7 @@ function MobileSubmenu({
             <Link
               href={intro.href}
               onClick={onClose}
-              className="label-mono mb-10 flex w-full items-center justify-center border border-ink py-3.5 text-ink transition-colors hover:bg-ink hover:text-white"
+              className="label-nav mb-10 flex w-full items-center justify-center border border-ink py-3.5 text-ink transition-colors hover:bg-ink hover:text-white"
             >
               {intro.button} <ArrowRight />
             </Link>
@@ -473,13 +473,13 @@ export function SiteHeader() {
             </Link>
             <ContactDrawerButton
               onClick={closeAll}
-              className={`label-mono mr-3 flex cursor-pointer items-center self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink"}`}
+              className={`label-nav mr-3 flex cursor-pointer items-center self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink"}`}
             >
               Contact
             </ContactDrawerButton>
             <a
               href={`tel:${site.telephoneHref}`}
-              className={`label-mono mr-5 whitespace-nowrap flex items-center gap-2 self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white/80 text-white hover:bg-white hover:text-ink" : "border-ink text-ink hover:bg-ink hover:text-paper"}`}
+              className={`label-nav mr-5 whitespace-nowrap flex items-center gap-2 self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white/80 text-white hover:bg-white hover:text-ink" : "border-ink text-ink hover:bg-ink hover:text-paper"}`}
             >
               <Phone size={14} />
               <span className="sr-only xl:not-sr-only">{site.telephone}</span>
@@ -490,7 +490,7 @@ export function SiteHeader() {
           <div className="ml-auto flex items-stretch lg:hidden">
             <a
               href={`tel:${site.telephoneHref}`}
-              className="label-mono flex items-center gap-2 self-center border border-ink px-3 py-2 text-ink"
+              className="label-nav flex items-center gap-2 self-center border border-ink px-3 py-2 text-ink"
               aria-label="Bel ons"
             >
               <Phone size={14} />
@@ -505,7 +505,7 @@ export function SiteHeader() {
               className="flex cursor-pointer items-center gap-3 px-5 text-ink"
             >
               {mobileOpen ? <X /> : <Menu />}
-              <span className="label-mono">Menu</span>
+              <span className="label-nav">Menu</span>
             </button>
           </div>
         </div>
@@ -561,7 +561,7 @@ export function SiteHeader() {
               <div className="mt-8 flex flex-col gap-4 pb-20">
                 <ContactDrawerButton
                   onClick={closeAll}
-                  className="label-mono flex w-full cursor-pointer items-center justify-center border border-ink bg-ink py-4 text-paper transition-transform active:scale-95"
+                  className="label-nav flex w-full cursor-pointer items-center justify-center border border-ink bg-ink py-4 text-paper transition-transform active:scale-95"
                 >
                   Contact
                 </ContactDrawerButton>
@@ -569,14 +569,14 @@ export function SiteHeader() {
                   <Link
                     href="/gratis-brochure"
                     onClick={closeAll}
-                    className="label-mono border border-mist bg-white py-4 text-center transition-transform active:scale-95"
+                    className="label-nav border border-mist bg-white py-4 text-center transition-transform active:scale-95"
                   >
                     Gratis brochure
                   </Link>
                   {/* MijnMTB — klantportaal, nog geen pagina (live knop is ook een placeholder) */}
                   <button
                     type="button"
-                    className="label-mono flex items-center justify-center gap-2 border border-mist bg-white py-4 transition-transform active:scale-95"
+                    className="label-nav flex items-center justify-center gap-2 border border-mist bg-white py-4 transition-transform active:scale-95"
                   >
                     <User /> MijnMTB
                   </button>
