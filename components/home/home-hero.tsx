@@ -64,7 +64,7 @@ export function HomeHero({
             src={image.src}
             alt={image.alt}
             fill
-            priority
+            preload
             sizes="100vw"
             className="-z-20 object-cover object-[68%_center] motion-safe:animate-hero-zoom"
           />
@@ -73,18 +73,21 @@ export function HomeHero({
 
         {/* Boven: kop */}
         <div className="flex items-start justify-between gap-6 px-5 pt-10 md:px-10 md:pt-14 xl:px-14">
-          <div className="animate-fade-up">
-            <p className="label-mono flex items-center gap-3 text-white/85">
+          {/* Eén H1 met het zoekwoord vóór de slogan: Google leest
+              "Aannemer in Enschede & Twente — Bouwen doen we samen." */}
+          <h1 className="animate-fade-up">
+            <span className="label-mono flex items-center gap-3 text-white/85">
               <span className="relative flex size-2" aria-hidden="true">
                 <span className="absolute inline-flex size-full animate-ping bg-lime opacity-70" />
                 <span className="relative inline-flex size-2 bg-lime" />
               </span>
-              Bouwbedrijf in Enschede &amp; Twente
-            </p>
-            <h1 className="display mt-6 block max-w-[14ch] text-[3.4rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]">
+              Aannemer in Enschede &amp; Twente
+              <span className="sr-only"> — </span>
+            </span>
+            <span className="display mt-6 block max-w-[14ch] text-[3.4rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]">
               Bouwen doen we <span className="mark-lime motion-safe:animate-mark-draw">samen.</span>
-            </h1>
-          </div>
+            </span>
+          </h1>
 
           {project && (
             <Link
