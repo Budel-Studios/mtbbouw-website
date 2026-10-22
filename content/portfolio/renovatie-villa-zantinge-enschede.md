@@ -86,6 +86,10 @@ gallery:
     alt: "Nieuw toilet met natuursteenlook tegelwerk, verlichte nis en hangend toilet in een Van Zantinge-villa"
     caption: "Nieuw toilet met tegelwerk en verlichte nis"
     phase: "eind"
+  - src: "/images/projects/renovatie-villa-zantinge-enschede/13.jpg"
+    alt: "Buitenkant van de gerenoveerde Van Zantinge-bungalow in Enschede met gele baksteen, rode dakpannen en nieuwe zwarte kozijnen"
+    caption: "De bungalow van buiten, met de nieuwe kozijnen"
+    phase: "eind"
 relatedServices:
   - { href: "/verbouwing", label: "Renovatie & verbouw" }
   - { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" }
