@@ -10,6 +10,10 @@ contractors: ["Gevelaar", "BMN Bouwmaterialen", "Elektriciteit-Tech", "Installat
 testimonial:
   text: "MTB Bouw heeft onze bedrijfshal professioneel en transparant gerealiseerd. Vanaf de planning tot de oplevering was alles duidelijk afgestemd. Wij werkten graag met hen samen."
   attribution: "Directie Bedrijf Borne"
+relatedServices:
+  - { href: "/nieuwbouw", label: "Nieuwbouw" }
+  - { href: "/afbouwstudio/bedrijfspand-verbouwen", label: "Bedrijfspand verbouwen" }
+  - { href: "/aannemer-borne", label: "Aannemer in Borne" }
 tags: [bedrijfsbouw, nieuwbouw]
 draft: false
 ---

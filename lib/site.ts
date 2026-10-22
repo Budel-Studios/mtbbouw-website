@@ -38,9 +38,16 @@ export const site = {
   footerColumns: [
     {
       title: "Wat we bouwen",
+      // De verkooppagina's staan hier bewust los: de footer staat op elke
+      // pagina en is daarmee de sterkste interne link die we hebben.
       links: [
         { href: "/wonen-en-verbouwen", label: "Wonen & Verbouwen" },
+        { href: "/verbouwing", label: "Verbouwing & renovatie" },
+        { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
+        { href: "/nieuwbouw", label: "Nieuwbouw" },
+        { href: "/verduurzamen-enschede", label: "Verduurzamen" },
         { href: "/afbouwstudio", label: "Zakelijk" },
+        { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
         { href: "/kozijnen", label: "Kozijnen" },
         { href: "/prefab", label: "Prefab Bouwen" },
       ],
@@ -49,14 +56,19 @@ export const site = {
       title: "Werkgebied",
       links: [
         { href: "/aannemer-enschede", label: "Aannemer Enschede" },
-        { href: "/bouwbedrijf-enschede", label: "Bouwbedrijf Enschede" },
-        { href: "/aannemer-twente", label: "Aannemer Twente" },
-        { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
+        { href: "/aannemer-hengelo", label: "Aannemer Hengelo" },
+        { href: "/aannemer-almelo", label: "Aannemer Almelo" },
+        { href: "/aannemer-oldenzaal", label: "Aannemer Oldenzaal" },
+        { href: "/aannemer-borne", label: "Aannemer Borne" },
+        { href: "/aannemer-haaksbergen", label: "Aannemer Haaksbergen" },
+        { href: "/aannemer-losser", label: "Aannemer Losser" },
+        { href: "/aannemer-twente", label: "Heel Twente" },
       ],
     },
     {
       title: "Over ons",
       links: [
+        { href: "/bouwbedrijf-enschede", label: "Bouwbedrijf Enschede" },
         { href: "/hoe-wij-werken", label: "Onze werkwijze" },
         { href: "/veilig-verantwoord-bouwen", label: "Veilig & verantwoord bouwen" },
         { href: "/regionale-partners", label: "Regionale partners" },

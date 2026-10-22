@@ -102,6 +102,27 @@ const EXPERTISES = [
   },
 ];
 
+/** Directe links naar de verkooppagina's (interne links voor SEO én bezoekers). */
+const SERVICE_LINKS = [
+  { href: "/verbouwing", label: "Verbouwing & renovatie" },
+  { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
+  { href: "/nieuwbouw", label: "Nieuwbouw" },
+  { href: "/verduurzamen-enschede", label: "Verduurzamen" },
+  { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
+];
+
+/** Werkgebied — elke plaats linkt naar z'n eigen pagina. */
+const AREAS = [
+  { href: "/aannemer-enschede", city: "Enschede", note: "Onze thuisbasis" },
+  { href: "/aannemer-hengelo", city: "Hengelo", note: "Binnen een kwartier" },
+  { href: "/aannemer-almelo", city: "Almelo", note: "Veranda, verbouw, uitbouw" },
+  { href: "/aannemer-oldenzaal", city: "Oldenzaal", note: "Renovatie & aanbouw" },
+  { href: "/aannemer-borne", city: "Borne", note: "Woningen & bedrijfspanden" },
+  { href: "/aannemer-haaksbergen", city: "Haaksbergen", note: "Verbouw & verduurzamen" },
+  { href: "/aannemer-losser", city: "Losser", note: "Uitbouw & renovatie" },
+  { href: "/aannemer-twente", city: "Heel Twente", note: "Alle plaatsen" },
+];
+
 const WHY_ITEMS = [
   { title: "Eén aanspreekpunt", desc: "Mathijs of Robbert — je vaste contact van eerste bezoek tot nazorg." },
   { title: "Eigen vakmensen", desc: "Een vast kernteam dat elkaar en het werk door en door kent." },
@@ -276,6 +297,19 @@ export async function HomeContent({
             ))}
           </Slider>
         </div>
+        <nav aria-label="Diensten" className="mt-12 flex flex-wrap items-center gap-x-2 gap-y-3 border-t border-mist pt-8">
+          <span className="label-mono mr-2 text-stone">Direct naar</span>
+          {SERVICE_LINKS.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="label-mono inline-flex items-center gap-2 border border-mist px-4 py-3 transition-colors hover:border-navy hover:bg-navy hover:text-white"
+            >
+              {l.label}
+              <ArrowRight className="size-3" />
+            </Link>
+          ))}
+        </nav>
       </section>
 
       {/* RECENT WERK — slider op warmgrijs */}
@@ -329,10 +363,18 @@ export async function HomeContent({
               korte lijnen, één vast aanspreekpunt en heldere afspraken vooraf.
             </p>
             <p>
-              Of je nu je woning wil verbouwen, een bedrijfspand casco op wil
-              laten leveren of prefab wil bouwen: bij MTB kom je binnen op één
-              plek en werk je met mensen die luisteren, meedenken en doen wat ze
-              beloven.
+              Of je nu je woning wil{" "}
+              <Link href="/verbouwing" className="link-line text-ink">verbouwen</Link>, een{" "}
+              <Link href="/aanbouw-uitbouw" className="link-line text-ink">uitbouw</Link> wil laten
+              bouwen, een{" "}
+              <Link href="/afbouwstudio" className="link-line text-ink">bedrijfspand</Link> casco
+              op wil laten leveren of{" "}
+              <Link href="/prefab" className="link-line text-ink">prefab</Link> wil bouwen: bij
+              MTB kom je binnen op één plek en werk je met mensen die luisteren,
+              meedenken en doen wat ze beloven. Als{" "}
+              <Link href="/aannemer-enschede" className="link-line text-ink">aannemer in Enschede</Link>{" "}
+              werken we in{" "}
+              <Link href="/aannemer-twente" className="link-line text-ink">heel Twente</Link>.
             </p>
             {playful && (
               <HandNote hand={hand} className="-rotate-2 pt-2">
@@ -340,6 +382,32 @@ export async function HomeContent({
               </HandNote>
             )}
           </div>
+        </div>
+      </section>
+
+      {/* WERKGEBIED — elke plaats een eigen pagina */}
+      <section id="werkgebied" className="scroll-mt-20 border-t border-mist">
+        <div className="container-page py-24 md:py-32">
+          <SectionHeading
+            eyebrow="Werkgebied"
+            title="Aannemer in heel Twente."
+            intro="Vanuit Enschede werken we in de hele regio. Kies je plaats voor projecten, prijzen en de aanpak bij jou in de buurt."
+          />
+          <ul className="mt-14 grid gap-px bg-mist sm:grid-cols-2 lg:grid-cols-4">
+            {AREAS.map((a) => (
+              <li key={a.href} className="bg-paper">
+                <Link href={a.href} className="group flex h-full items-start justify-between gap-4 p-6 transition-colors hover:bg-tint">
+                  <span>
+                    <span className="display block text-2xl">
+                      {a.city === "Heel Twente" ? a.city : `Aannemer ${a.city}`}
+                    </span>
+                    <span className="mt-2 block text-sm text-stone">{a.note}</span>
+                  </span>
+                  <ArrowUpRight className="size-5 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

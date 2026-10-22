@@ -7,17 +7,33 @@ import { HomeContent } from "@/components/home/home-content";
  * dus afgekapt in Google) en de sitebrede omschrijving.
  */
 export const metadata: Metadata = {
+  // Titel ≤ 60 tekens: zoekwoord + regio voorop, diensten erachter, merk als
+  // afsluiter. Zo blijft hij in Google volledig zichtbaar.
   title: {
-    absolute: "Aannemer in Enschede & Twente | MTB Bouw",
+    absolute: "Aannemer Enschede & Twente — verbouw & uitbouw | MTB Bouw",
   },
   description:
-    "Aannemer uit Enschede voor verbouwing, aanbouw, renovatie en zakelijke afbouw in heel Twente. Vaste prijs vooraf, één aanspreekpunt, intake bij je op locatie.",
+    "Aannemer uit Enschede voor verbouwing, uitbouw, renovatie en nieuwbouw in heel Twente. Vaste prijs vooraf, één aanspreekpunt en een intake bij jou thuis.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "MTB Bouw — aannemer in Enschede & Twente",
     description:
-      "Verbouwing, aanbouw, renovatie en zakelijke afbouw. Eén team, één planning, één aanspreekpunt.",
+      "Verbouwing, uitbouw, renovatie en zakelijke afbouw. Eén team, één planning, één aanspreekpunt.",
     url: "/",
+    // Eigen openGraph-blok overschrijft dat van de layout volledig, dus de
+    // deelafbeelding moet hier opnieuw staan (anders geen foto in WhatsApp).
+    images: [
+      {
+        url: "/images/home/og-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Vakman van MTB Bouw legt dakpannen op een dak in Twente",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/home/og-home.jpg"],
   },
 };
 
