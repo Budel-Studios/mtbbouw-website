@@ -40,7 +40,7 @@ export const site = {
       title: "Wat we bouwen",
       links: [
         { href: "/wonen-en-verbouwen", label: "Wonen & Verbouwen" },
-        { href: "/afbouwstudio", label: "Afbouwstudio" },
+        { href: "/afbouwstudio", label: "Zakelijk" },
         { href: "/kozijnen", label: "Kozijnen" },
         { href: "/prefab", label: "Prefab Bouwen" },
       ],

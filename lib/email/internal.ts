@@ -17,7 +17,7 @@ import {
   section,
   wrapEmail,
 } from "./shell";
-import type { BrochurePayload, ContactPayload, QuotePayload } from "./types";
+import type { ApplicationPayload, BrochurePayload, ContactPayload, QuotePayload } from "./types";
 
 /** Bel/mail-knoppen bovenaan: de site belooft de klant een telefoontje. */
 function actions(name: string, email: string, phone?: string) {
@@ -107,7 +107,31 @@ export function buildBrochureInternal(f: BrochurePayload, brochureSent: boolean)
   });
 }
 
+export function buildApplicationInternal(f: ApplicationPayload) {
+  const body =
+    actions(f.name, f.email, f.phone) +
+    section(
+      "Sollicitant",
+      row("Naam", f.name) +
+        row("E-mail", f.email) +
+        row("Telefoon", f.phone) +
+        row("Vacature", f.job || "Open sollicitatie") +
+        linkRow("CV / portfolio", f.cvLink)
+    ) +
+    section("Motivatie", "") +
+    paragraph(esc(f.message).replaceAll("\n", "<br />"));
+
+  return wrapEmail({
+    preheader: `${f.name} · ${f.job || "Open sollicitatie"}`,
+    heading: "Nieuwe sollicitatie",
+    intro: "Binnengekomen via de pagina Werken bij op mtbbouw.com.",
+    body,
+  });
+}
+
 export const INTERNAL_SUBJECTS = {
+  sollicitatie: (f: ApplicationPayload) =>
+    `Sollicitatie — ${f.name} (${f.job || "open sollicitatie"})`,
   offerte: (f: QuotePayload) =>
     `Nieuwe offerteaanvraag — ${f.name}${f.postcode ? `, ${f.postcode}` : ""}`,
   contact: (f: ContactPayload) => `Nieuw contactbericht — ${f.name}`,

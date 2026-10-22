@@ -22,11 +22,13 @@ Elk artikel heeft één onderwerp (`category`), 0–3 bouwdelen (`subcategories`
 | Datum | Serie | Titel (werktitel) | Onderwerp | Bouwdeel | Zoekwoord | Slug | Status |
 |---|---|---|---|---|---|---|---|
 | 2026-10-06 | Kozijnen 1 (pijler) | Kozijnen kiezen: hout, kunststof of aluminium? Alles over duurzame kozijnen | technische-keuzes | kozijnen-glas | kozijnen kiezen | kozijnen-kiezen-hout-kunststof-aluminium | live |
+| 2026-10-22 | Plannen (los) | Opstookprotocol vloerverwarming: nieuwe dekvloer, en nu? | plannen-aanpak | vloeren, installaties-ventilatie | opstookprotocol vloerverwarming | opstookprotocol-vloerverwarming-nieuwe-dekvloer | live |
+| 2026-10-22 | Plannen (los) | Er is gestuukt, en nu? Zo schilder je zelf op sausklaar stucwerk | plannen-aanpak | wanden-plafonds | schilderen op stucwerk / gestuukt wat nu | gestuukt-wat-nu-schilderen-op-stucwerk | live |
 | 2026-10-20 | Uitbouw 1 (pijler) | Uitbouw in houtskeletbouw of traditioneel: wat is het verschil? | technische-keuzes | fundering-constructie, gevels | houtskeletbouw of traditioneel bouwen | uitbouw-houtskeletbouw-of-traditioneel | idee |
 | 2026-10-27 | Offertes 1 (pijler) | Offertes van aannemers vergelijken: zo vergelijk je appels met appels | kosten-offertes | — | offertes vergelijken aannemer | offertes-aannemer-vergelijken | idee |
 | 2026-11-03 | Los | Huis isoleren: dak, vloer of spouw — waar begin je? | verduurzamen | daken, vloeren, gevels | woning isoleren waar beginnen | huis-isoleren-waar-begin-je | idee |
 | 2026-11-10 | Kozijnen 2 | Houten kozijnen: meranti, accoya of eiken? Houtsoorten, onderhoud en levensduur | technische-keuzes | kozijnen-glas | houten kozijnen | houten-kozijnen-houtsoorten-onderhoud | idee |
-| 2026-11-17 | Uitbouw 2 | Zo is een houtskeletbouwwand opgebouwd, laag voor laag | technische-keuzes | fundering-constructie | houtskeletbouw opbouw | houtskeletbouw-wand-opbouw | idee |
+| 2026-10-22 | Uitbouw 2 | Wat is HSB (houtskeletbouw) en hoe wordt het gemaakt? (met animatie; vervangt "Zo is een houtskeletbouwwand opgebouwd") | technische-keuzes | fundering-constructie, gevels | wat is hsb / houtskeletbouw opbouw | wat-is-hsb-houtskeletbouw | live |
 | 2026-11-24 | Plannen 1 (pijler) | Je verbouwing plannen in 7 stappen: van idee tot oplevering | plannen-aanpak | — | verbouwing plannen | verbouwing-plannen-stappenplan | idee |
 | 2026-12-01 | Offertes 2 | Stelposten in je offerte: wat zijn het en waar let je op? | kosten-offertes | — | stelpost offerte | stelposten-offerte | idee |
 | 2026-12-08 | Kozijnen 3 | Kunststof kozijnen: verdiept of vlak, kleuren en het eerlijke verhaal over duurzaamheid | technische-keuzes | kozijnen-glas | kunststof kozijnen | kunststof-kozijnen | idee |

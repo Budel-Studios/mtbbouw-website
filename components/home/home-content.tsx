@@ -69,8 +69,8 @@ const EXPERTISES = [
   },
   {
     sticker: "zakelijk",
-    eyebrow: "Voor bedrijven",
-    title: "Afbouwstudio",
+    eyebrow: "Afbouwstudio",
+    title: "Zakelijk",
     desc: "Complete zakelijke afbouw van kantoren, winkels en horeca — van casco tot turn-key.",
     href: "/afbouwstudio",
     image: {
@@ -292,7 +292,7 @@ export async function HomeContent({
             </div>
             <Link
               href="/projecten"
-              className="label-mono group inline-flex items-center gap-2 border border-ink px-5 py-3.5 transition-colors hover:bg-ink hover:text-paper"
+              className="label-mono group inline-flex items-center gap-2 border border-navy px-5 py-3.5 transition-colors hover:bg-navy hover:text-white"
             >
               Bekijk alle {projects.length} projecten
               <ArrowRight className="size-3.5 transition-transform duration-500 group-hover:translate-x-1" />
@@ -417,7 +417,7 @@ export async function HomeContent({
                 <span className="label-mono hidden text-stone sm:block">
                   Blok voor blok gebouwd — {PARTNERS.length} vaste partners
                 </span>
-                <Link href="/regionale-partners" className="label-mono inline-flex items-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper">
+                <Link href="/regionale-partners" className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white">
                   Ontmoet al onze partners <ArrowUpRight className="size-3.5" />
                 </Link>
               </span>
@@ -432,7 +432,7 @@ export async function HomeContent({
           <div className="container-page py-24 md:py-32">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading eyebrow="Inspiratie & kennis" title="Kennisbank." />
-              <Link href="/kennisbank" className="label-mono inline-flex items-center gap-2 border border-ink px-5 py-3.5 text-ink transition-colors hover:bg-ink hover:text-paper">
+              <Link href="/kennisbank" className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white">
                 Alle artikelen <ArrowUpRight className="size-3.5" />
               </Link>
             </div>

@@ -1,4 +1,4 @@
-export type FormType = "offerte" | "contact" | "brochure";
+export type FormType = "offerte" | "contact" | "brochure" | "sollicitatie";
 
 export type QuotePayload = {
   name: string;
@@ -33,10 +33,22 @@ export type BrochurePayload = {
   email: string;
 };
 
+export type ApplicationPayload = {
+  name: string;
+  email: string;
+  phone?: string;
+  /** Vacature waarop gesolliciteerd wordt; leeg = open sollicitatie. */
+  job?: string;
+  message: string;
+  /** Optionele link naar cv/portfolio (bijv. LinkedIn of een gedeelde map). */
+  cvLink?: string;
+};
+
 /** Honeypot-veld `website`: ingevuld = bot. */
 export type Body = { type?: FormType; website?: string } & QuotePayload &
   ContactPayload &
-  BrochurePayload;
+  BrochurePayload &
+  ApplicationPayload;
 
 /** Voornaam voor de aanhef; valt terug op de hele naam. */
 export function firstName(name: string): string {

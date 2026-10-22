@@ -19,8 +19,14 @@ import {
 import { AuthorByline } from "@/components/kennisbank/author-byline";
 import { SeriesNav } from "@/components/kennisbank/series-nav";
 import { ArticleCard } from "@/components/kennisbank/article-card";
+import { HsbAnimation } from "@/components/kennisbank/hsb-animation";
 
 type Params = { slug: string };
+
+/** Interactieve blokken die een artikel kan insluiten met "[[naam]]". */
+const EMBEDS: Record<string, React.ReactNode> = {
+  "hsb-animatie": <HsbAnimation />,
+};
 
 // Statische generatie: één pagina per artikel, vooraf gebouwd. Concepten
 // (draft: true) krijgen geen pagina; de scheduled task zet ze live.
@@ -142,7 +148,7 @@ export default async function ArticlePage({
             <li>
               <Link
                 href={category.href}
-                className="label-mono inline-flex items-center bg-ink px-3 py-2 text-white transition-colors hover:bg-ink/85"
+                className="label-mono inline-flex items-center bg-navy px-3 py-2 text-white transition-colors hover:bg-navy-dark"
               >
                 {category.label}
               </Link>
@@ -162,10 +168,23 @@ export default async function ArticlePage({
           {author && <AuthorByline author={author} />}
         </header>
 
-        <div
-          className="prose prose-stone mx-auto max-w-3xl text-[1.0625rem] leading-[1.75] prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-[-0.02em] prose-h2:mt-14 prose-h2:text-3xl prose-a:text-navy prose-a:decoration-navy/40 prose-blockquote:border-navy prose-strong:text-ink"
-          dangerouslySetInnerHTML={{ __html: article.body }}
-        />
+        {/* Embeds: een alinea "[[naam]]" in de markdown wordt vervangen door
+            een interactief component (bijv. de HSB-animatie). */}
+        {article.body.split(/<p>\[\[([a-z0-9-]+)\]\]<\/p>/).map((part, i) =>
+          i % 2 === 1 ? (
+            EMBEDS[part] ? (
+              <div key={i} className="mx-auto max-w-4xl">
+                {EMBEDS[part]}
+              </div>
+            ) : null
+          ) : (
+            <div
+              key={i}
+              className="prose prose-stone mx-auto max-w-3xl text-[1.0625rem] leading-[1.75] prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-[-0.02em] prose-h2:mt-14 prose-h2:text-3xl prose-a:text-navy prose-a:decoration-navy/40 prose-blockquote:border-navy prose-strong:text-ink"
+              dangerouslySetInnerHTML={{ __html: part }}
+            />
+          )
+        )}
 
         {article.series && (
           <div className="mx-auto max-w-3xl">

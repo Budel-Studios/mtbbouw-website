@@ -19,6 +19,7 @@ import {
 } from "./shell";
 import {
   firstName,
+  type ApplicationPayload,
   type BrochurePayload,
   type ContactPayload,
   type QuotePayload,
@@ -144,7 +145,32 @@ export function buildBrochureCustomer(
   });
 }
 
+export function buildApplicationCustomer(f: ApplicationPayload) {
+  const body =
+    section(
+      "Dit heb je gestuurd",
+      row("Naam", f.name) +
+        row("E-mail", f.email) +
+        row("Telefoon", f.phone) +
+        row("Vacature", f.job || "Open sollicitatie")
+    ) +
+    note("Je motivatie", esc(f.message).replaceAll("\n", "<br />")) +
+    paragraph("Wil je nog iets aanvullen, zoals je cv? Antwoord gewoon op deze mail.") +
+    contactButtons();
+
+  return wrapEmail({
+    preheader: "Je sollicitatie is binnen. We nemen snel contact met je op.",
+    heading: `Bedankt voor je sollicitatie, ${firstName(f.name)}`,
+    intro:
+      "Leuk dat je bij MTB Bouw wilt komen werken! Je sollicitatie is binnen en we nemen zo snel mogelijk contact met je op.",
+    body,
+    footerNote:
+      "Je ontvangt deze mail omdat je hebt gesolliciteerd via mtbbouw.com.",
+  });
+}
+
 export const CUSTOMER_SUBJECTS = {
+  sollicitatie: "Je sollicitatie bij MTB Bouw is binnen",
   offerte: "Je aanvraag bij MTB Bouw is binnen",
   contact: "We hebben je bericht ontvangen",
   brochure: BROCHURE_READY

@@ -100,15 +100,15 @@ function TomButton({ text, href, onClick }: { text: string; href: string; onClic
     <Link
       href={href}
       onClick={onClick}
-      className="group flex w-fit items-center gap-2 border border-ink px-5 py-2.5 transition-colors duration-300 hover:bg-ink"
+      className="group flex w-fit items-center gap-2 border border-navy px-5 py-2.5 transition-colors duration-300 hover:bg-navy"
     >
-      <span className="label-nav text-ink transition-colors duration-300 group-hover:text-paper">
+      <span className="label-nav text-navy transition-colors duration-300 group-hover:text-white">
         {text}
       </span>
       <span className="relative block h-[15px] w-[15px] overflow-hidden">
         <span className="relative block transition-transform duration-300 ease-in-out group-hover:-translate-y-3 group-hover:translate-x-3">
-          <ArrowUpRight className="text-ink transition-colors duration-300 group-hover:text-paper" />
-          <ArrowUpRight className="absolute -left-3 top-3 text-ink transition-colors duration-300 group-hover:text-paper" />
+          <ArrowUpRight className="text-navy transition-colors duration-300 group-hover:text-white" />
+          <ArrowUpRight className="absolute -left-3 top-3 text-navy transition-colors duration-300 group-hover:text-white" />
         </span>
       </span>
     </Link>
@@ -288,7 +288,7 @@ function MobileSubmenu({
             <Link
               href={intro.href}
               onClick={onClose}
-              className="label-nav mb-10 flex w-full items-center justify-center border border-ink py-3.5 text-ink transition-colors hover:bg-ink hover:text-white"
+              className="label-nav mb-10 flex w-full items-center justify-center border border-navy py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
             >
               {intro.button} <ArrowRight />
             </Link>
@@ -473,13 +473,13 @@ export function SiteHeader() {
             </Link>
             <ContactDrawerButton
               onClick={closeAll}
-              className={`label-nav mr-3 flex cursor-pointer items-center self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink"}`}
+              className={`label-nav mr-3 flex cursor-pointer items-center self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-navy bg-navy text-white hover:border-navy-dark hover:bg-navy-dark"}`}
             >
               Contact
             </ContactDrawerButton>
             <a
               href={`tel:${site.telephoneHref}`}
-              className={`label-nav mr-5 whitespace-nowrap flex items-center gap-2 self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white/80 text-white hover:bg-white hover:text-ink" : "border-ink text-ink hover:bg-ink hover:text-paper"}`}
+              className={`label-nav mr-5 whitespace-nowrap flex items-center gap-2 self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white/80 text-white hover:bg-white hover:text-navy" : "border-navy text-navy hover:bg-navy hover:text-white"}`}
             >
               <Phone size={14} />
               <span className="sr-only xl:not-sr-only">{site.telephone}</span>
@@ -561,7 +561,7 @@ export function SiteHeader() {
               <div className="mt-8 flex flex-col gap-4 pb-20">
                 <ContactDrawerButton
                   onClick={closeAll}
-                  className="label-nav flex w-full cursor-pointer items-center justify-center border border-ink bg-ink py-4 text-paper transition-transform active:scale-95"
+                  className="label-nav flex w-full cursor-pointer items-center justify-center border border-navy bg-navy py-4 text-white transition-transform active:scale-95"
                 >
                   Contact
                 </ContactDrawerButton>

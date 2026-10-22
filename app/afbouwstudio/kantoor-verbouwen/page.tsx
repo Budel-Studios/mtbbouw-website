@@ -220,7 +220,7 @@ export default function KantoorVerbouwenPage() {
                 {s.href ? (
                   <Link
                     href={s.href}
-                    className="flex items-center gap-1.5 border border-ink/15 bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+                    className="flex items-center gap-1.5 border border-navy/20 bg-white px-4 py-2 text-sm font-medium text-navy transition-colors hover:border-navy hover:bg-navy hover:text-white"
                   >
                     <MapPinIcon className="h-3.5 w-3.5 text-navy" />
                     {s.name}
@@ -279,7 +279,7 @@ export default function KantoorVerbouwenPage() {
             </ContactDrawerButton>
             <a
               href="tel:+31532065071"
-              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-ink"
+              className="label-mono inline-flex items-center justify-center gap-2 border border-white/80 px-5 py-3.5 text-white transition-colors hover:bg-white hover:text-navy"
             >
               Bel direct: 053 206 50 71
             </a>

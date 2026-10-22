@@ -32,7 +32,7 @@ export function HubLinks({ current }: { current?: string }) {
                     aria-current={isCurrent ? "page" : undefined}
                     className={`label-mono inline-flex items-center border px-3 py-2 transition-colors ${
                       isCurrent
-                        ? "border-ink bg-ink text-white"
+                        ? "border-navy bg-navy text-white"
                         : "border-mist bg-white text-ink hover:border-ink hover:text-navy"
                     }`}
                   >

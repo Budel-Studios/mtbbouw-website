@@ -49,7 +49,7 @@ export const mainNav: NavItem[] = [
         },
         {
           id: 2,
-          title: "Afbouwstudio",
+          title: "Zakelijk",
           href: "/afbouwstudio",
           subtitle: "Kantoorpanden, winkels of horeca. Dat is wat we het liefste doen!",
         },

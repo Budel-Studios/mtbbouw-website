@@ -2,18 +2,21 @@ import { NextResponse } from "next/server";
 import {
   BROCHURE_READY,
   CUSTOMER_SUBJECTS,
+  buildApplicationCustomer,
   buildBrochureCustomer,
   buildContactCustomer,
   buildQuoteCustomer,
 } from "@/lib/email/customer";
 import {
   INTERNAL_SUBJECTS,
+  buildApplicationInternal,
   buildBrochureInternal,
   buildContactInternal,
   buildQuoteInternal,
 } from "@/lib/email/internal";
 import { sendFormEmails } from "@/lib/email/send";
 import type { Body, FormType } from "@/lib/email/types";
+import { site } from "@/lib/site";
 
 /**
  * Formulier-inzendingen (offerte-drawer, contactformulier, brochure-aanvraag).
@@ -39,7 +42,7 @@ function validate(type: FormType, body: Body): string | null {
       return "Missing required quote fields";
     }
   }
-  if (type === "contact" && !body.message) {
+  if ((type === "contact" || type === "sollicitatie") && !body.message) {
     return "Missing message";
   }
   return null;
@@ -66,7 +69,13 @@ export async function POST(request: Request) {
   }
 
   const mails =
-    type === "contact"
+    type === "sollicitatie"
+      ? {
+          internalSubject: INTERNAL_SUBJECTS.sollicitatie(body),
+          internalHtml: buildApplicationInternal(body),
+          customerHtml: buildApplicationCustomer(body),
+        }
+      : type === "contact"
       ? {
           internalSubject: INTERNAL_SUBJECTS.contact(body),
           internalHtml: buildContactInternal(body),
@@ -90,6 +99,8 @@ export async function POST(request: Request) {
         subject: mails.internalSubject,
         html: mails.internalHtml,
         replyTo: body.email,
+        // Sollicitaties altijd naar de algemene inbox info@mtbbouw.com.
+        ...(type === "sollicitatie" ? { to: site.email } : {}),
       },
       customer: {
         to: body.email,
