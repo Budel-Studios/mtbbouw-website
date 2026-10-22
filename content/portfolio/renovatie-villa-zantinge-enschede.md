@@ -30,9 +30,9 @@ partners:
   - name: "Gevelaar"
     role: "Badkamers & keuken"
     description: "Leverde de twee nieuwe badkamers en de keuken voor deze villa, vanuit Enschede."
-  - name: "Green Solutions"
-    role: "Partner"
-    description: "Partner in de renovatie van deze Van Zantinge-villa."
+  - name: "Green Solutions Installatietechniek"
+    role: "Installatietechniek"
+    description: "Installatiepartner bij de renovatie van deze Van Zantinge-villa."
 gallery:
   - src: "/images/projects/renovatie-villa-zantinge-enschede/cover.jpg"
     alt: "Van Zantinge-villa in Enschede met bouwhekken van MTB Bouw tijdens de renovatie"
@@ -155,4 +155,4 @@ Al met al een enorm complex en groot project, dat in totaal zes maanden heeft ge
 
 ## Zelf een woning met karakter renoveren?
 
-Heb je een Van Zantinge-woning of een ander huis met karakter in Enschede, Hengelo of elders in Twente? Wij denken graag met je mee. Bekijk [renovatie & verbouw](/verbouwing), lees meer over [kozijnen op maat](/kozijnen) of lees hoe je [verbouwen en verduurzamen slim combineert](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk). Of [plan direct een vrijblijvende intake](/contact).
+Heb je een Van Zantinge-woning of een ander huis met karakter in Enschede, Hengelo of elders in Twente? Wij denken graag met je mee. Bekijk [renovatie & verbouw](/verbouwing), lees meer over [kozijnen op maat](/kozijnen) of lees hoe je [verbouwen en verduurzamen slim combineert](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk). Krijg je ook een nieuwe dekvloer met vloerverwarming? Lees dan eerst ons artikel over het [opstookprotocol](/kennisbank/opstookprotocol-vloerverwarming-nieuwe-dekvloer). Of [plan direct een vrijblijvende intake](/contact).

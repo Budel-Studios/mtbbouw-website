@@ -98,4 +98,4 @@ En onze stagiair? Die was uiteindelijk super trots op dit project. Zo zie je maa
 
 ## Zelf een uitbouw of renovatie in Enschede?
 
-Staat er bij jou ook een uitbouw die zijn beste tijd heeft gehad, of wil je juist meer ruimte? We denken mee vanuit jouw budget. Lees meer over [aanbouw & uitbouw](/aanbouw-uitbouw), [renovatie & verbouw](/verbouwing) of [plan een vrijblijvende intake](/contact).
+Staat er bij jou ook een uitbouw die zijn beste tijd heeft gehad, of wil je juist meer ruimte? We denken mee vanuit jouw budget. Benieuwd hoe zo'n wand in elkaar zit? Lees [wat HSB is en hoe het gemaakt wordt](/kennisbank/wat-is-hsb-houtskeletbouw), met een animatie die de wand laag voor laag opbouwt. Lees meer over [aanbouw & uitbouw](/aanbouw-uitbouw), [renovatie & verbouw](/verbouwing) of [plan een vrijblijvende intake](/contact).
