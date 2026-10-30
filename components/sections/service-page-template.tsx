@@ -206,7 +206,7 @@ export function ServicePageTemplate({
               {caseImage ? (
                 <Image
                   src={caseImage}
-                  alt={data.hero.heroImageAlt}
+                  alt={data.caseStudy.imageAlt ?? data.hero.heroImageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -242,16 +242,28 @@ export function ServicePageTemplate({
                   </li>
                 ))}
               </ul>
+              {data.caseStudy.href ? (
+                <Link
+                  href={data.caseStudy.href}
+                  className="mt-6 inline-block text-sm font-semibold text-ink underline hover:text-navy"
+                >
+                  Bekijk het hele project
+                </Link>
+              ) : null}
             </div>
           </div>
-          <blockquote className="mt-12 border-l-4 border-lime bg-white p-8 md:p-12">
-            <p className="font-display text-xl leading-snug text-ink md:text-2xl">
-              &ldquo;{data.caseStudy.quote}&rdquo;
-            </p>
-            <footer className="mt-4 text-sm font-semibold text-stone">
-              — {data.caseStudy.quoteAuthor}
-            </footer>
-          </blockquote>
+          {data.caseStudy.quote ? (
+            <blockquote className="mt-12 border-l-4 border-lime bg-white p-8 md:p-12">
+              <p className="font-display text-xl leading-snug text-ink md:text-2xl">
+                &ldquo;{data.caseStudy.quote}&rdquo;
+              </p>
+              {data.caseStudy.quoteAuthor ? (
+                <footer className="mt-4 text-sm font-semibold text-stone">
+                  — {data.caseStudy.quoteAuthor}
+                </footer>
+              ) : null}
+            </blockquote>
+          ) : null}
         </div>
       </section>
 

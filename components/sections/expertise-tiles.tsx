@@ -5,7 +5,7 @@ import type { Expertise } from "@/lib/expertises";
 /**
  * 4-tegel-grid voor de expertises onder MTB Bouw — gebruikt op de homepage
  * (compact) en op /diensten ("Wat we bouwen"-portaal, met sub-item pills via
- * `showSubItems`). Grote foto, emoji-badge, hoekige kaders — geen ronde
+ * `showSubItems`). Grote foto, icoon-badge, hoekige kaders — geen ronde
  * hoeken, in lijn met het bestaande tegelpatroon (ProjectGrid/RelatedContent).
  */
 export function ExpertiseTiles({
@@ -38,9 +38,9 @@ export function ExpertiseTiles({
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
               <span
                 aria-hidden="true"
-                className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center bg-white text-2xl shadow-sm"
+                className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center bg-white shadow-sm"
               >
-                {item.emoji}
+                <Icon className="h-5 w-5 text-navy" />
               </span>
               <div className="absolute inset-x-0 bottom-0 p-6">
                 {/* h2: op /diensten (enige gebruiker) volgen de tegels direct

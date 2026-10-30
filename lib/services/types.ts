@@ -39,7 +39,12 @@ export interface ServiceData {
   caseStudy: {
     eyebrow: string; h2: string; location: string; duration: string;
     delivered: string; story: string; didList: string[];
-    quote: string; quoteAuthor: string;
+    /** Alleen echte quotes van echte projecten. Leeg laten mag. */
+    quote?: string; quoteAuthor?: string;
+    /** Alt-tekst van de casefoto (valt terug op de hero-alt). */
+    imageAlt?: string;
+    /** Link naar de projectpagina in de portfolio. */
+    href?: string;
   };
   sketchBreak: { bigQuote: string };
   typeWoningen: { eyebrow: string; h2: string; pills: string[] };

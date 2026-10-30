@@ -13,7 +13,6 @@ export type ExpertiseSubItem = { label: string; href: string };
 
 export type Expertise = {
   id: string;
-  emoji: string;
   icon: ComponentType<{ className?: string }>;
   title: string;
   subtitle: string;
@@ -26,7 +25,6 @@ export type Expertise = {
 export const expertises: Expertise[] = [
   {
     id: "wonen",
-    emoji: "🏡",
     icon: HouseIcon,
     title: "Wonen & Verbouwen",
     subtitle: "Voor particulieren.",
@@ -41,7 +39,6 @@ export const expertises: Expertise[] = [
   },
   {
     id: "afbouwstudio",
-    emoji: "🏢",
     icon: BuildingIcon,
     title: "Zakelijke Afbouw",
     subtitle: "Voor kantoren, winkels en bedrijfsruimtes.",
@@ -56,7 +53,6 @@ export const expertises: Expertise[] = [
   },
   {
     id: "kozijnen",
-    emoji: "🪟",
     icon: WindowIcon,
     title: "Kozijnen",
     subtitle: "Eigen specialist.",
@@ -67,7 +63,6 @@ export const expertises: Expertise[] = [
   },
   {
     id: "prefab",
-    emoji: "🏭",
     icon: LayersIcon,
     title: "Prefab Bouwen",
     subtitle: "Sneller, slimmer en duurzamer bouwen.",
