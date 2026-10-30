@@ -137,7 +137,7 @@ const PARTNERS = [
   { name: "BMN Bouwmaterialen", role: "Bouwmaterialen" },
   { name: "De Kozijnstudio", role: "Kozijnen" },
   { name: "RN Afbouw", role: "Afbouw" },
-  { name: "Gevelaar", role: "Gevels" },
+  { name: "Gevelaar", role: "Badkamers & keukens" },
   { name: "Zebrano Studio", role: "Interieur" },
   { name: "Meuleman Hoveniers", role: "Tuin & buitenruimte" },
   { name: "Jongeneel Hengelo", role: "Bouwmaterialen" },
