@@ -36,7 +36,8 @@ export const renovatieData: ServiceData = {
       { sketchIcon: "kitchen", title: "Keuken renovatie",
         desc: "Een nieuwe keuken met aandacht voor leidingen, elektra, ventilatie en afwerking. Wij plaatsen ook keukens van IKEA, Bruynzeel en Mandemakers." },
       { sketchIcon: "sustainability", title: "Renoveren én verduurzamen",
-        desc: "Combineer renovatie met isolatie, warmtepomp en zonnepanelen. Subsidies regelen we, je woont straks comfortabeler én goedkoper." },
+        desc: "Combineer renovatie met isolatie, warmtepomp en zonnepanelen. Subsidies regelen we, je woont straks comfortabeler én goedkoper.",
+        href: "/verduurzamen-enschede" },
     ],
   },
   werkwijze: {
@@ -105,12 +106,25 @@ export const renovatieData: ServiceData = {
     secondaryCta: { label: "Bel direct: 053 206 50 71", href: "tel:+31532065071" },
     note: "Of mail naar info@mtbbouw.com — we reageren binnen één werkdag.",
   },
+  projects: {
+    eyebrow: "Ons werk",
+    h2: "Renovaties die we deden",
+    slugs: ["renovatie-villa-zantinge-enschede", "renovatie-schuur-behoud-karakter", "uitbouw-houtskeletbouw-enschede"],
+  },
+  partners: {
+    h2: "Vaste partners bij een renovatie",
+    intro:
+      "Bij een renovatie komt veel samen. Bij de Van Zantinge-villa werkten we met vaste partners voor tegel- en stucwerk, badkamers en keuken, en installaties.",
+    names: ["Van Galen Tegelzetters", "Gevelaar", "Green Solutions Installatietechniek", "KUality Schilders"],
+  },
+  werkgebied: {
+    label: "Renovatie",
+    intro:
+      "Vanuit Enschede renoveren we woningen in heel Twente. Op de pagina van jouw plaats vind je projecten, regels en vragen uit de buurt.",
+  },
   related: [
     { label: "Aanbouw & uitbouw", href: "/aanbouw-uitbouw" },
     { label: "Kozijnen", href: "/kozijnen" },
-    { label: "Renovatie in Hengelo", href: "/aannemer-hengelo" },
-    { label: "Renovatie in Almelo", href: "/aannemer-almelo" },
-    { label: "Renovatie in Oldenzaal", href: "/aannemer-oldenzaal" },
     { label: "Alle veelgestelde vragen", href: "/veelgestelde-vragen" },
   ],
 };

@@ -10,6 +10,11 @@ import {
 } from "@/components/json-ld";
 import type { ServiceData } from "@/lib/services/types";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { QuoteButton } from "@/components/ui/quote-button";
+import { RelatedContent } from "@/components/sections/related-content";
+import { LocalPartners } from "@/components/sections/local-partners";
+import { ServiceAreaLinks } from "@/components/sections/service-area-links";
+import { portfolio } from "#site/content";
 import type { KennisbankMatch } from "@/lib/kennisbank";
 
 /**
@@ -81,9 +86,13 @@ export function ServicePageTemplate({
             {data.hero.subtitle}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href={data.hero.primaryCta.href} arrow>
-              {data.hero.primaryCta.label}
-            </Button>
+            {data.hero.primaryCta.href === "/contact" ? (
+              <QuoteButton>{data.hero.primaryCta.label}</QuoteButton>
+            ) : (
+              <Button href={data.hero.primaryCta.href} arrow>
+                {data.hero.primaryCta.label}
+              </Button>
+            )}
             <a
               href={data.hero.secondaryCta.href}
               className="label-mono inline-flex items-center justify-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
@@ -122,12 +131,14 @@ export function ServicePageTemplate({
                 <ServiceSketch name={c.sketchIcon} className="mb-5 h-14 w-14" />
                 <h3 className="text-xl font-semibold">{c.title}</h3>
                 <p className="mt-3 leading-relaxed text-stone">{c.desc}</p>
-                <Link
-                  href="/contact"
-                  className="mt-6 label-mono inline-flex items-center gap-2 border border-navy px-4 py-2.5 text-navy transition-colors hover:bg-navy hover:text-white"
-                >
-                  Lees meer <ArrowIcon />
-                </Link>
+                {c.href ? (
+                  <Link
+                    href={c.href}
+                    className="mt-6 label-mono inline-flex items-center gap-2 border border-navy px-4 py-2.5 text-navy transition-colors hover:bg-navy hover:text-white"
+                  >
+                    Lees meer <ArrowIcon />
+                  </Link>
+                ) : null}
               </div>
             ))}
           </div>
@@ -313,6 +324,26 @@ export function ServicePageTemplate({
         </div>
       </section>
 
+      {/* PROJECTEN — echt werk van deze dienst */}
+      {data.projects ? (
+        <RelatedContent
+          projects={data.projects.slugs
+            .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+            .filter((p): p is NonNullable<typeof p> => Boolean(p))}
+          eyebrow={data.projects.eyebrow}
+          title={data.projects.h2}
+        />
+      ) : null}
+
+      {/* PARTNERS */}
+      {data.partners ? (
+        <LocalPartners
+          title={data.partners.h2}
+          intro={data.partners.intro}
+          names={data.partners.names}
+        />
+      ) : null}
+
       {/* FAQ */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <Eyebrow>{data.faq.eyebrow}</Eyebrow>
@@ -355,15 +386,24 @@ export function ServicePageTemplate({
         <KennisbankBlock match={kennisbank.match} title={kennisbank.title} />
       )}
 
+      {/* WERKGEBIED */}
+      {data.werkgebied ? (
+        <ServiceAreaLinks label={data.werkgebied.label} intro={data.werkgebied.intro} />
+      ) : null}
+
       {/* CTA */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">{data.cta.h2}</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/75">{data.cta.subtitle}</p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <Button href={data.cta.primaryCta.href} variant="lime" arrow>
-              {data.cta.primaryCta.label}
-            </Button>
+            {data.cta.primaryCta.href === "/contact" ? (
+              <QuoteButton variant="lime">{data.cta.primaryCta.label}</QuoteButton>
+            ) : (
+              <Button href={data.cta.primaryCta.href} variant="lime" arrow>
+                {data.cta.primaryCta.label}
+              </Button>
+            )}
             <Button href={data.cta.secondaryCta.href} variant="outline-light">
               {data.cta.secondaryCta.label}
             </Button>

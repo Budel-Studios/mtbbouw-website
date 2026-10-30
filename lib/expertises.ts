@@ -29,8 +29,8 @@ export const expertises: Expertise[] = [
     title: "Wonen & Verbouwen",
     subtitle: "Voor particulieren.",
     href: "/wonen-en-verbouwen",
-    image: "/images/projects/project-1.jpg",
-    imageAlt: "Verbouwde woning door MTB Bouw",
+    image: "/images/projects/renovatie-villa-zantinge-enschede/06.jpg",
+    imageAlt: "Nieuwe keuken met kookeiland in een door MTB Bouw gerenoveerde villa in Enschede",
     subItems: [
       { label: "Renovatie & verbouw", href: "/verbouwing" },
       { label: "Aanbouw & uitbouw", href: "/aanbouw-uitbouw" },
@@ -43,8 +43,8 @@ export const expertises: Expertise[] = [
     title: "Zakelijke Afbouw",
     subtitle: "Voor kantoren, winkels en bedrijfsruimtes.",
     href: "/afbouwstudio",
-    image: "/images/projects/project-2.jpg",
-    imageAlt: "Afgebouwd bedrijfspand door Afbouwstudio",
+    image: "/images/projects/broodbode-zwolle-lunchroom/01-counter.jpg",
+    imageAlt: "Verlichte counter met houten lamellen in lunchroom De Broodbode Zwolle, afgebouwd door Afbouwstudio",
     subItems: [
       { label: "Kantoren", href: "/afbouwstudio#specialismen" },
       { label: "Winkels & horeca", href: "/afbouwstudio#specialismen" },
@@ -57,8 +57,8 @@ export const expertises: Expertise[] = [
     title: "Kozijnen",
     subtitle: "Eigen specialist.",
     href: "/kozijnen",
-    image: "/images/projects/project-3.jpg",
-    imageAlt: "Nieuwe kozijnen geplaatst door De Kozijnstudio",
+    image: "/images/projects/uitbouw-houtskeletbouw-enschede/02.jpg",
+    imageAlt: "Zwarte houten kozijnen met triple glas in een uitbouw in Enschede",
     subItems: [],
   },
   {

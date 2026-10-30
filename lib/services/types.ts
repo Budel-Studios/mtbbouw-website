@@ -12,7 +12,11 @@ export type SketchIcon =
 
 interface CtaLink { label: string; href: string }
 interface Stat { value: string; label: string }
-interface SubServiceCard { sketchIcon: SketchIcon; title: string; desc: string }
+interface SubServiceCard {
+  sketchIcon: SketchIcon; title: string; desc: string;
+  /** Alleen een link als er een echte vervolgpagina is (nooit naar /contact). */
+  href?: string;
+}
 interface Pillar { sketchIcon: SketchIcon; title: string; desc: string }
 interface FaqItem { q: string; a: string }
 
@@ -55,6 +59,12 @@ export interface ServiceData {
     primaryCta: CtaLink; secondaryCta: CtaLink; note: string;
   };
   related: { label: string; href: string }[];
+  /** Echte projecten uit de portfolio (slugs), getoond als "werk van ons". */
+  projects?: { eyebrow: string; h2: string; slugs: string[] };
+  /** Partners die bij deze dienst meewerken (namen uit lib/partners.ts). */
+  partners?: { h2: string; intro: string; names: string[] };
+  /** Werkgebied: links naar de stadspagina's met de dienst in de linktekst. */
+  werkgebied?: { label: string; intro: string };
 }
 
 export const sharedPillars: Pillar[] = [

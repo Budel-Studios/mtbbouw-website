@@ -1,23 +1,36 @@
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import Link from "next/link";
+import { portfolio } from "#site/content";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/json-ld";
+import { CityStory } from "@/components/sections/city-story";
+import { RelatedContent } from "@/components/sections/related-content";
+import { ServiceAreaLinks } from "@/components/sections/service-area-links";
 import { PageHero } from "@/components/sections/page-hero";
 import { ArrowLink } from "@/components/ui/button";
 import { WindowIcon, CheckIcon, EuroIcon } from "@/components/icons";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kozijnen | De Kozijnstudio — het kozijnen-label van MTB Bouw" },
+  title: { absolute: "Kozijnen vervangen in Twente | De Kozijnstudio van MTB Bouw" },
   description:
-    "Hout, kunststof en aluminium kozijnen via De Kozijnstudio, het kozijnen-label van MTB Bouw. Eerlijk advies, heldere prijzen en uitleg over ISDE-subsidie.",
+    "Hout, kunststof of aluminium kozijnen in Twente via De Kozijnstudio, het kozijnenlabel van MTB Bouw. Eerlijk advies, all-in prijs, hulp bij ISDE-subsidie.",
   alternates: { canonical: "/kozijnen" },
   openGraph: {
     type: "website",
-    title: "Kozijnen — De Kozijnstudio, het kozijnen-label van MTB Bouw",
+    title: "Kozijnen vervangen in Twente | De Kozijnstudio van MTB Bouw",
     description:
       "Hout, kunststof en aluminium kozijnen met eerlijk advies. Volledig aanbod op kozijnstudio.com.",
     url: "/kozijnen",
+    images: [
+      {
+        url: "/images/projects/uitbouw-houtskeletbouw-enschede/02.jpg",
+        alt: "Zwarte houten kozijnen met triple glas in een uitbouw in Enschede, door MTB Bouw",
+      },
+    ],
   },
 };
+
+const linkClass = "font-semibold text-ink underline hover:text-navy";
 
 const HIGHLIGHTS = [
   {
@@ -35,8 +48,18 @@ const HIGHLIGHTS = [
 ];
 
 export default function KozijnenPage() {
+  const projects = ["uitbouw-houtskeletbouw-enschede", "renovatie-villa-zantinge-enschede"]
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
   return (
     <>
+      <ServiceJsonLd
+        name="Kozijnen vervangen"
+        description="Hout, kunststof en aluminium kozijnen vervangen in Twente via De Kozijnstudio, het kozijnenlabel van MTB Bouw."
+        url="/kozijnen"
+        serviceType="Kozijnen vervangen"
+      />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
@@ -47,10 +70,10 @@ export default function KozijnenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/project-3.jpg",
-          alt: "Nieuwe kozijnen geplaatst door De Kozijnstudio",
+          src: "/images/projects/uitbouw-houtskeletbouw-enschede/02.jpg",
+          alt: "Hoekpartij met zwarte houten kozijnen en triple glas in een uitbouw in Enschede",
         }}
-        eyebrow="Kozijnen · Eigen specialist"
+        eyebrow="Kozijnen vervangen in Twente"
         title="Voor kozijnen heeft MTB Bouw een eigen specialist: De Kozijnstudio."
         intro="Tochtende kozijnen, slecht sluitende ramen, oude enkelglas? De Kozijnstudio is het label van MTB Bouw dat zich volledig richt op kozijnen — met eerlijk advies en een heldere prijsopgave, geen wilde marges."
         cta={
@@ -80,6 +103,37 @@ export default function KozijnenPage() {
         </div>
       </section>
 
+      <CityStory
+        eyebrow="Hoe De Kozijnstudio begon"
+        title="Zoveel kozijnen geplaatst dat we er een eigen label voor startten"
+        image={{
+          src: "/images/projects/renovatie-villa-zantinge-enschede/01.jpg",
+          alt: "Glazen patio met zelfgemaakte zwarte kozijnen en een olijfboom in een Van Zantinge-villa in Enschede",
+          caption: "De kozijnen van deze glazen patio zaagde en maakte Mathijs zelf",
+        }}
+      >
+        <p>
+          Bij verbouwingen en uitbouwen plaatsten we zoveel kozijnen, dat we er
+          een eigen label voor begonnen: De Kozijnstudio. Hout, kunststof of
+          aluminium, we leggen ons niet vast op één materiaal. Het plaatsen is
+          hetzelfde vakwerk, alleen de inkoop verschilt. Zelf hebben we wel een
+          zwak voor hout.
+        </p>
+        <p>
+          Soms maken we ze zelfs zelf. Bij{" "}
+          <Link href="/projecten/renovatie-villa-zantinge-enschede" className={linkClass}>
+            de Van Zantinge-villa in Enschede
+          </Link>{" "}
+          zaagde en maakte Mathijs de kozijnen van de glazen patio met de hand.
+        </p>
+      </CityStory>
+
+      <RelatedContent
+        projects={projects}
+        eyebrow="Ons werk"
+        title="Kozijnen in onze projecten"
+      />
+
       <KennisbankBlock
         match={{ subcategories: ["kozijnen-glas"], audience: "thuis" }}
         title="Meer over kozijnen en glas"
@@ -108,6 +162,11 @@ export default function KozijnenPage() {
           </div>
         </div>
       </section>
+
+      <ServiceAreaLinks
+        label="Kozijnen"
+        intro="Vanuit Enschede plaatsen we kozijnen in heel Twente. Op de pagina van jouw plaats vind je projecten en vragen uit de buurt."
+      />
     </>
   );
 }

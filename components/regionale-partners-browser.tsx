@@ -42,7 +42,23 @@ function hostnameOf(url?: string) {
   }
 }
 
-function PartnerTile({ partner }: { partner: Partner }) {
+type ProjectRef = { title: string; permalink: string; location?: string };
+
+/** "Bedrijfshal — Borne" → "Bedrijfshal Borne"; lange titels tot aan de streep. */
+function shortTitle(p: ProjectRef) {
+  const head = p.title.split(" — ")[0];
+  return p.location && !head.includes(p.location.split(" ")[0])
+    ? `${head} ${p.location.split(" ")[0]}`
+    : head;
+}
+
+function PartnerTile({
+  partner,
+  projects = [],
+}: {
+  partner: Partner;
+  projects?: ProjectRef[];
+}) {
   const host = hostnameOf(partner.url);
   const span = partner.featured
     ? "sm:col-span-2 sm:row-span-2"
@@ -91,6 +107,11 @@ function PartnerTile({ partner }: { partner: Partner }) {
           <p className="mt-3 text-sm leading-snug text-white/70">
             {partner.description}
           </p>
+          {projects.length > 0 && (
+            <p className="mt-2 text-xs leading-snug text-lime">
+              Bouwde mee aan: {projects.map(shortTitle).join(", ")}
+            </p>
+          )}
         </div>
         <div className="flex items-end justify-between gap-3 text-xs text-white/70">
           {partner.region ? (
@@ -130,7 +151,12 @@ function PartnerTile({ partner }: { partner: Partner }) {
 
 const TABS: Bucket[] = ["onderaannemers", "toeleveranciers", "partners"];
 
-export function RegionalePartnersBrowser() {
+export function RegionalePartnersBrowser({
+  projectsByPartner = {},
+}: {
+  /** Per partnernaam de projecten uit de portfolio (server-side bepaald). */
+  projectsByPartner?: Record<string, ProjectRef[]>;
+}) {
   const [active, setActive] = useState<Bucket>("onderaannemers");
 
   return (
@@ -180,7 +206,11 @@ export function RegionalePartnersBrowser() {
 
             <div className="mt-6 grid auto-rows-[170px] grid-cols-2 gap-3 md:auto-rows-[180px] md:grid-cols-4">
               {items.map((p) => (
-                <PartnerTile key={p.name} partner={p} />
+                <PartnerTile
+                  key={p.name}
+                  partner={p}
+                  projects={projectsByPartner[p.name]}
+                />
               ))}
             </div>
           </div>

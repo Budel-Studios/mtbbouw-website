@@ -11,6 +11,7 @@ import { ProjectCard } from "@/components/project/project-cards";
 import { Slider } from "@/components/slider";
 import { HomeHero } from "@/components/home/home-hero";
 import { ContactDrawerButton } from "@/components/contact-drawer";
+import { allPartners } from "@/lib/partners";
 import {
   HandNote,
   PlacesMarquee,
@@ -483,7 +484,7 @@ export async function HomeContent({
               </ContactDrawerButton>
               <span className="flex items-center gap-6">
                 <span className="label-mono hidden text-stone sm:block">
-                  Blok voor blok gebouwd — {PARTNERS.length} vaste partners
+                  Blok voor blok gebouwd — {allPartners.length} vaste partners
                 </span>
                 <Link href="/regionale-partners" className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white">
                   Ontmoet al onze partners <ArrowUpRight className="size-3.5" />

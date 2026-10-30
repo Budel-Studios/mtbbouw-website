@@ -13,6 +13,7 @@ const base =
 const variants = {
   primary: "border border-navy bg-navy text-white hover:border-navy-dark hover:bg-navy-dark",
   "outline-light": "border border-white/80 text-white hover:bg-white/10",
+  lime: "border border-lime bg-lime text-ink hover:border-white hover:bg-white",
 } as const;
 
 export function QuoteButton({

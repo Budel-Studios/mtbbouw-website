@@ -34,7 +34,8 @@ export const uitbouwData: ServiceData = {
       { sketchIcon: "pitched-roof", title: "Uitbouw met schuin dak",
         desc: "Past bij klassieke woningen of waar de gemeente Enschede een hellend dak vraagt. Karaktervol en tijdloos." },
       { sketchIcon: "prefab", title: "Prefab uitbouw",
-        desc: "In de fabriek voorbereid, in 1–2 weken op locatie gemonteerd. Sneller, strakker en vaak voordeliger." },
+        desc: "In de fabriek voorbereid, in 1–2 weken op locatie gemonteerd. Sneller, strakker en vaak voordeliger.",
+        href: "/prefab" },
       { sketchIcon: "mantelzorg", title: "Mantelzorg-uitbouw",
         desc: "Een zelfstandige ruimte voor familie, met eigen ingang, sanitair en keuken. Slim, duurzaam en met behoud van privacy." },
     ],
@@ -105,12 +106,25 @@ export const uitbouwData: ServiceData = {
     secondaryCta: { label: "Bel direct: 053 206 50 71", href: "tel:+31532065071" },
     note: "Of mail naar info@mtbbouw.com — we reageren binnen één werkdag.",
   },
+  projects: {
+    eyebrow: "Ons werk",
+    h2: "Uitbouwen die we bouwden",
+    slugs: ["uitbouw-houtskeletbouw-enschede", "dubbele-uitbouw-enschede", "veranda-bouwen-almelo"],
+  },
+  partners: {
+    h2: "Vaste partners bij een uitbouw",
+    intro:
+      "Een uitbouw bouwen we met ons eigen kernteam. Voor beton, dakbedekking, hout en kozijnen werken we met vaste partners uit de regio.",
+    names: ["Rouwmaat Betoncentrale", "Kamphuis Dakbedekking", "Jongeneel Hengelo", "De Kozijnstudio"],
+  },
+  werkgebied: {
+    label: "Uitbouw",
+    intro:
+      "Vanuit Enschede bouwen we uitbouwen in heel Twente. Op de pagina van jouw plaats vind je projecten, regels en vragen uit de buurt.",
+  },
   related: [
     { label: "Kozijnen vervangen", href: "/kozijnen" },
     { label: "Renovatie & verbouwing", href: "/verbouwing" },
-    { label: "Uitbouw in Hengelo", href: "/aannemer-hengelo" },
-    { label: "Uitbouw in Almelo", href: "/aannemer-almelo" },
-    { label: "Uitbouw in Oldenzaal", href: "/aannemer-oldenzaal" },
     { label: "Alle veelgestelde vragen", href: "/veelgestelde-vragen" },
   ],
 };
