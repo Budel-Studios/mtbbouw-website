@@ -18,7 +18,8 @@ import {
 } from "@/lib/kennisbank";
 import { AuthorByline } from "@/components/kennisbank/author-byline";
 import { SeriesNav } from "@/components/kennisbank/series-nav";
-import { ArticleCard } from "@/components/kennisbank/article-card";
+import { CardSlider } from "@/components/sections/card-slider";
+import { articleToCard } from "@/lib/article-slide";
 import { HsbAnimation } from "@/components/kennisbank/hsb-animation";
 
 type Params = { slug: string };
@@ -85,7 +86,7 @@ export default async function ArticlePage({
     href: hubHref("category", article.category),
   };
   const parts = article.series ? seriesParts(article.series) : [];
-  const related = relatedArticles(article).map(toCard);
+  const related = relatedArticles(article, 6).map((a) => articleToCard(toCard(a)));
 
   return (
     <>
@@ -193,21 +194,14 @@ export default async function ArticlePage({
         )}
       </article>
 
-      {related.length > 0 && (
-        <section aria-labelledby="lees-ook" className="bg-tint">
-          <div className="container-page py-20 md:py-28">
-            <p className="eyebrow text-stone">Verder lezen</p>
-            <h2 id="lees-ook" className="display mt-4 text-4xl md:text-6xl">
-              Lees ook
-            </h2>
-            <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((r) => (
-                <ArticleCard key={r.slug} article={r} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      <CardSlider
+        items={related}
+        label="Meer artikelen"
+        eyebrow="Verder lezen"
+        title="Lees ook"
+        headingId="lees-ook"
+        link={{ href: "/kennisbank", label: "Alle artikelen" }}
+      />
     </>
   );
 }

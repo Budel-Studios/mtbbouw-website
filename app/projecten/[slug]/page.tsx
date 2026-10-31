@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import {
@@ -10,7 +9,8 @@ import {
 } from "@/components/json-ld";
 import { PartnerCards } from "@/components/project/partner-cards";
 import { ProjectVisuals } from "@/components/project/project-gallery";
-import { publishedProjects } from "@/lib/projects";
+import { publishedProjects, toProjectCard } from "@/lib/projects";
+import { CardSlider } from "@/components/sections/card-slider";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 
@@ -109,24 +109,6 @@ function Block({
   );
 }
 
-function ArrowUpRight({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.25"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M7 7h10v10" />
-      <path d="M7 17 17 7" />
-    </svg>
-  );
-}
-
 /** Specificatieregel (materialen, onderaannemers, leveranciers). */
 function SpecRow({ label, items }: { label: string; items: string[] }) {
   if (items.length === 0) return null;
@@ -158,7 +140,13 @@ export default async function ProjectPage({
 
   const all = publishedProjects();
   const idx = all.findIndex((p) => p.slug === project.slug);
-  const next = all.length > 1 ? all[(idx + 1) % all.length] : undefined;
+  // Meer projecten: vanaf het volgende project verder door de lijst.
+  const more = all
+    .slice(idx + 1)
+    .concat(all.slice(0, Math.max(idx, 0)))
+    .map(toProjectCard)
+    .filter((p) => p.images.length > 0)
+    .slice(0, 6);
 
   const facts = [
     { label: "Locatie", value: project.location },
@@ -383,37 +371,14 @@ export default async function ProjectPage({
         secondary={{ label: "053 206 50 71", href: "tel:+31532065071" }}
       />
 
-      {/* Volgend project */}
-      {next && (
-        <section className="border-t border-mist">
-          <Link
-            href={next.permalink}
-            className="container-page group grid gap-8 py-16 md:grid-cols-12 md:items-center md:py-24"
-          >
-            <div className="md:col-span-5">
-              <p className="eyebrow text-stone">Volgend project</p>
-              <p className="display mt-5 flex items-end gap-3 text-4xl transition-colors group-hover:text-navy md:text-6xl">
-                {next.title}
-                <ArrowUpRight className="mb-1 size-8 shrink-0 text-navy transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 md:size-12" />
-              </p>
-              <p className="label-mono mt-5 text-stone">
-                {[next.location, next.category].filter(Boolean).join(" · ")}
-              </p>
-            </div>
-            {next.cover && (
-              <div className="relative aspect-[16/9] overflow-hidden bg-mist md:col-span-7">
-                <Image
-                  src={next.cover}
-                  alt={next.coverAlt || next.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 58vw"
-                  className="img-zoom object-cover"
-                />
-              </div>
-            )}
-          </Link>
-        </section>
-      )}
+      {/* Meer projecten */}
+      <CardSlider
+        items={more}
+        label="Meer projecten"
+        eyebrow="Volgend project"
+        title="Meer van ons werk"
+        link={{ href: "/projecten", label: "Alle projecten" }}
+      />
     </article>
   );
 }

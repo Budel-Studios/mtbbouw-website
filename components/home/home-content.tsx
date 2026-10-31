@@ -2,12 +2,12 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
-import { kennisbank } from "#site/content";
-import { categoryLabel } from "@/lib/kennisbank-taxonomy";
+import { publishedArticles, toCard } from "@/lib/kennisbank";
+import { articleToCard } from "@/lib/article-slide";
 import { getAsset } from "@/lib/assets";
 import { WebSiteJsonLd } from "@/components/json-ld";
 import { publishedProjects, toProjectCard } from "@/lib/projects";
-import { ProjectCard } from "@/components/project/project-cards";
+import { CardSlides, SliderLink } from "@/components/sections/card-slider";
 import { Slider } from "@/components/slider";
 import { HomeHero } from "@/components/home/home-hero";
 import { ContactDrawerButton } from "@/components/contact-drawer";
@@ -201,10 +201,9 @@ export async function HomeContent({
     "home-hero-video",
     existsSync(path.join(process.cwd(), "public", localVideo)) ? localVideo : ""
   );
-  const latestArticles = kennisbank
-    .filter((a) => !a.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+  const latestArticles = publishedArticles()
+    .slice(0, 6)
+    .map((a) => articleToCard(toCard(a)));
   const projects = publishedProjects().map(toProjectCard).filter((p) => p.images.length > 0);
 
   // Partnermuur: rijen van 3 (vanaf sm) of 2 (mobiel), om en om ingesprongen.
@@ -317,22 +316,10 @@ export async function HomeContent({
                 </HandNote>
               )}
             </div>
-            <Link
-              href="/projecten"
-              className="label-mono group inline-flex items-center gap-2 border border-navy px-5 py-3.5 transition-colors hover:bg-navy hover:text-white"
-            >
-              Bekijk alle {projects.length} projecten
-              <ArrowRight className="size-3.5 transition-transform duration-500 group-hover:translate-x-1" />
-            </Link>
+            <SliderLink href="/projecten">Bekijk alle {projects.length} projecten</SliderLink>
           </div>
           <div className={playful ? "mt-20" : "mt-14"}>
-            <Slider label="Recente projecten">
-              {projects.map((p) => (
-                <li key={p.slug} className="w-[82%] shrink-0 snap-start sm:w-[55%] lg:w-[38%]">
-                  <ProjectCard project={p} />
-                </li>
-              ))}
-            </Slider>
+            <CardSlides items={projects} label="Recente projecten" />
           </div>
         </div>
       </section>
@@ -470,38 +457,20 @@ export async function HomeContent({
           <div className="container-page py-24 md:py-32">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading eyebrow="Inspiratie & kennis" title="Kennisbank." />
-              <Link href="/kennisbank" className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white">
-                Alle artikelen <ArrowUpRight className="size-3.5" />
-              </Link>
+              <SliderLink href="/kennisbank">Alle artikelen</SliderLink>
             </div>
             <div className="mt-14">
-              <Slider label="Kennisbank-artikelen" until="md" className="md:grid-cols-3">
-                {latestArticles.map((a, i) => (
-                  <li key={a.slug} className="relative w-[85%] shrink-0 snap-start sm:w-[60%] md:w-auto">
-                    {playful && i === 0 && (
-                      <Sticker tone="navy" rotate="rotate-6" className="absolute -top-4 right-6 z-10">
-                        nieuw
-                      </Sticker>
-                    )}
-                    <Link
-                      href={a.permalink}
-                      className="group flex h-full flex-col border-t-2 border-lime bg-paper p-6 transition-colors hover:bg-white md:p-8"
-                    >
-                      {a.category && (
-                        <span className="label-mono text-stone">{categoryLabel(a.category)}</span>
-                      )}
-                      <h3 className="mt-6 text-xl font-semibold leading-snug tracking-[-0.02em]">
-                        {a.title}
-                      </h3>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-stone">{a.description}</p>
-                      <span className="label-mono mt-8 inline-flex items-center gap-2">
-                        Lees artikel
-                        <ArrowRight className="size-3.5 transition-transform duration-500 group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </Slider>
+              <CardSlides
+                items={latestArticles}
+                label="Kennisbank-artikelen"
+                badge={(i) =>
+                  playful && i === 0 ? (
+                    <Sticker tone="navy" rotate="rotate-6" className="absolute right-4 top-4 z-10">
+                      nieuw
+                    </Sticker>
+                  ) : null
+                }
+              />
             </div>
           </div>
         </section>

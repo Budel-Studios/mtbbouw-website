@@ -1,47 +1,39 @@
-import { ArrowLink } from "@/components/ui/button";
-import { ArticleCard } from "@/components/kennisbank/article-card";
+import { CardSlider } from "@/components/sections/card-slider";
 import { articlesFor, toCard, type KennisbankMatch } from "@/lib/kennisbank";
+import { articleToCard } from "@/lib/article-slide";
 
 /**
  * "Uit de kennisbank" op dienst- en stadspagina's. Kiest automatisch de best
  * passende gepubliceerde artikelen (zie articlesFor), dus nieuwe artikelen
- * verschijnen hier vanzelf zodra ze live gaan. Rendert niets zonder artikelen.
+ * verschijnen hier vanzelf zodra ze live gaan. Zelfde slider en kaarten als
+ * de projecten. Rendert niets zonder artikelen.
  */
 export function KennisbankBlock({
   match,
   eyebrow = "Uit de kennisbank",
   title = "Lees je alvast in",
   intro,
-  limit = 3,
+  limit = 6,
+  tone = "tint",
 }: {
   match: KennisbankMatch;
   eyebrow?: string;
   title?: string;
   intro?: string;
   limit?: number;
+  tone?: "tint" | "plain";
 }) {
-  const articles = articlesFor(match, limit).map(toCard);
-  if (articles.length === 0) return null;
+  const items = articlesFor(match, limit).map((a) => articleToCard(toCard(a)));
 
   return (
-    <section className="bg-tint">
-      <div className="container-page py-20 md:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="eyebrow text-stone">{eyebrow}</p>
-            <h2 className="display mt-4 text-4xl md:text-5xl">
-              {title}
-            </h2>
-            {intro && <p className="mt-4 leading-relaxed text-stone">{intro}</p>}
-          </div>
-          <ArrowLink href="/kennisbank">Alle artikelen</ArrowLink>
-        </div>
-        <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <CardSlider
+      items={items}
+      label="Kennisbank-artikelen"
+      eyebrow={eyebrow}
+      title={title}
+      intro={intro}
+      link={{ href: "/kennisbank", label: "Alle artikelen" }}
+      tone={tone}
+    />
   );
 }
