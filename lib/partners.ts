@@ -135,12 +135,6 @@ const craftsman: Partner[] = [
     region: "Enschede",
   },
   {
-    name: "Van Galen Tegelzetters",
-    category: "stukadoor",
-    description:
-      "Tegel- en stucwerk. Betegelde en stukadoorde de complete Van Zantinge-villa in Enschede.",
-  },
-  {
     name: "Green Solutions Installatietechniek",
     category: "installatie",
     description:
@@ -235,10 +229,10 @@ const suppliers: Partner[] = [
     region: "Enschede",
   },
   {
-    name: "Dukato",
+    name: "Dukato Hypotheken",
     category: "overig",
     description: "Hypotheek- en financieel advies, ook als je een verbouwing wilt financieren.",
-    url: "https://dukato.nl",
+    url: "https://dukatohypotheken.nl/",
     region: "Enschede",
   },
   {

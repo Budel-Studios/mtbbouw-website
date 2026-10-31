@@ -96,7 +96,7 @@ const CASES = [
 ];
 
 const SECTORS = ["Lunchrooms", "Bakkerijen", "Restaurants", "Cafés", "Showrooms", "Winkels", "Kantoren", "Werkplaatsen", "Kapsalons", "Sportscholen", "Praktijken", "Bedrijfshallen"];
-const PARTNERS = ["Broodbode", "Dukato", "BMN", "Gevelaar", "VvE Beheer Twente", "Kuality"];
+const PARTNERS = ["Broodbode", "Dukato Hypotheken", "BMN", "Gevelaar", "VvE Beheer Twente", "Kuality"];
 
 const PILLARS = [
   { icon: UsersIcon, title: "Eén aanspreekpunt", body: "Geen onderaannemers-circus. Mathijs of Robbert is jouw vaste contact. Bel, app, mail — je krijgt antwoord." },

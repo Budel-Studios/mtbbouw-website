@@ -12,6 +12,9 @@ import { Slider } from "@/components/slider";
 import { HomeHero } from "@/components/home/home-hero";
 import { ContactDrawerButton } from "@/components/contact-drawer";
 import { allPartners } from "@/lib/partners";
+import { mapPlaces } from "@/lib/werkgebied";
+import { TwenteMapSvg } from "@/components/twente-map/twente-map-svg";
+import { TwenteMapSection } from "@/components/twente-map/twente-map-section";
 import {
   HandNote,
   PlacesMarquee,
@@ -112,17 +115,6 @@ const SERVICE_LINKS = [
   { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
 ];
 
-/** Werkgebied — elke plaats linkt naar z'n eigen pagina. */
-const AREAS = [
-  { href: "/aannemer-enschede", city: "Enschede", note: "Onze thuisbasis" },
-  { href: "/aannemer-hengelo", city: "Hengelo", note: "Binnen een kwartier" },
-  { href: "/aannemer-almelo", city: "Almelo", note: "Veranda, verbouw, uitbouw" },
-  { href: "/aannemer-oldenzaal", city: "Oldenzaal", note: "Renovatie & aanbouw" },
-  { href: "/aannemer-borne", city: "Borne", note: "Woningen & bedrijfspanden" },
-  { href: "/aannemer-haaksbergen", city: "Haaksbergen", note: "Verbouw & verduurzamen" },
-  { href: "/aannemer-losser", city: "Losser", note: "Uitbouw & renovatie" },
-  { href: "/aannemer-twente", city: "Heel Twente", note: "Alle plaatsen" },
-];
 
 const WHY_ITEMS = [
   { title: "Eén aanspreekpunt", desc: "Mathijs of Robbert — je vaste contact van eerste bezoek tot nazorg." },
@@ -147,7 +139,7 @@ const PARTNERS = [
   { name: "Het Vloerenhof", role: "Vloeren & coatings" },
   { name: "Kamphuis Dakbedekking", role: "Dakwerk" },
   { name: "Brouwer Containers", role: "Afvoer & containers" },
-  { name: "Dukato", role: "Partner" },
+  { name: "Dukato Hypotheken", role: "Hypotheekadvies" },
 ];
 
 /* ------------------------------ Bouwstenen ----------------------------- */
@@ -386,31 +378,8 @@ export async function HomeContent({
         </div>
       </section>
 
-      {/* WERKGEBIED — elke plaats een eigen pagina */}
-      <section id="werkgebied" className="scroll-mt-20 border-t border-mist">
-        <div className="container-page py-24 md:py-32">
-          <SectionHeading
-            eyebrow="Werkgebied"
-            title="Aannemer in heel Twente."
-            intro="Vanuit Enschede werken we in de hele regio. Kies je plaats voor projecten, prijzen en de aanpak bij jou in de buurt."
-          />
-          <ul className="mt-14 grid gap-px bg-mist sm:grid-cols-2 lg:grid-cols-4">
-            {AREAS.map((a) => (
-              <li key={a.href} className="bg-paper">
-                <Link href={a.href} className="group flex h-full items-start justify-between gap-4 p-6 transition-colors hover:bg-tint">
-                  <span>
-                    <span className="display block text-2xl">
-                      {a.city === "Heel Twente" ? a.city : `Aannemer ${a.city}`}
-                    </span>
-                    <span className="mt-2 block text-sm text-stone">{a.note}</span>
-                  </span>
-                  <ArrowUpRight className="size-5 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      {/* WERKGEBIED — kaart van Twente, elke plaats een eigen pagina */}
+      <TwenteMapSection svg={<TwenteMapSvg />} places={mapPlaces} />
 
       {/* WAAROM MTB BOUW — donker */}
       <section className="bg-inverse text-white">

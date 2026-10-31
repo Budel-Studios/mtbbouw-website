@@ -114,8 +114,8 @@ export const renovatieData: ServiceData = {
   partners: {
     h2: "Vaste partners bij een renovatie",
     intro:
-      "Bij een renovatie komt veel samen. Bij de Van Zantinge-villa werkten we met vaste partners voor tegel- en stucwerk, badkamers en keuken, en installaties.",
-    names: ["Van Galen Tegelzetters", "Gevelaar", "Green Solutions Installatietechniek", "KUality Schilders"],
+      "Bij een renovatie komt veel samen. Bij de Van Zantinge-villa werkten we met vaste partners voor badkamers en keuken, en voor installaties.",
+    names: ["Gevelaar", "Green Solutions Installatietechniek", "KUality Schilders", "Het Vloerenhof"],
   },
   werkgebied: {
     label: "Renovatie",

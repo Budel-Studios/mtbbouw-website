@@ -81,7 +81,7 @@ export const team = [
 
 export const partners = [
   "Zebrano Studio",
-  "Dukato",
+  "Dukato Hypotheken",
   "Gevelaar",
   "VvE Beheer Twente",
   "BMN Bouwmaterialen",
