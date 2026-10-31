@@ -1,5 +1,8 @@
 """Maakt de Twente-kaartdata lichter: wegsegmenten aan elkaar plakken en
-Douglas-Peucker-vereenvoudiging. Leest het Lovable-bestand, schrijft TS."""
+Douglas-Peucker-vereenvoudiging. Leest het Lovable-bestand, schrijft TS.
+
+Gebruik: python3 scripts/simplify-twente-map.py <lovable twente-map.ts> lib/twente-map-data.ts public/images/twente-wegen.svg
+"""
 import json, re, sys, math
 
 src, out = sys.argv[1], sys.argv[2]
@@ -79,6 +82,30 @@ for k, eps in (("roadsMajor", 0.6), ("roadsMinor", 0.8)):
     lines = [l for l in lines if math.hypot(l[-1][0] - l[0][0], l[-1][1] - l[0][1]) > 0.8 or len(l) > 2]
     j[k] = to_d(lines)
     print(k, before, "->", len(j[k]), "paths", len(lines))
+
+# Wegen als los, cachebaar SVG-bestand (met eigen teken-animatie), zodat ze
+# niet in elke pagina en in de RSC-payload terechtkomen.
+roads_svg = sys.argv[3] if len(sys.argv) > 3 else None
+if roads_svg:
+    css = (
+        "path{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;"
+        "stroke-dasharray:1;stroke-dashoffset:1}"
+        ".mi{stroke-width:1.1;opacity:.85;animation:d 2.6s cubic-bezier(.45,0,.2,1) .5s forwards}"
+        ".ma{stroke-width:2.3;animation:d 2.2s cubic-bezier(.45,0,.2,1) .3s forwards}"
+        "@keyframes d{to{stroke-dashoffset:0}}"
+        "@media (prefers-reduced-motion:reduce){path{animation:none!important;stroke-dashoffset:0}}"
+    )
+    svg = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{j["viewBox"]}">'
+        f"<style>{css}</style>"
+        f'<path class="mi" pathLength="1" d="{j["roadsMinor"]}"/>'
+        f'<path class="ma" pathLength="1" d="{j["roadsMajor"]}"/>'
+        "</svg>"
+    )
+    open(roads_svg, "w").write(svg)
+    print("roads svg", len(svg))
+    j["roadsMajor"] = ""
+    j["roadsMinor"] = ""
 
 header = s[: s.index("export const twenteMap")]
 header = header.replace("// Do not edit by hand.", "// Do not edit by hand. Wegen vereenvoudigd (aaneengeplakt + Douglas-Peucker)\n// met scripts/simplify_map.py om de pagina licht te houden.")

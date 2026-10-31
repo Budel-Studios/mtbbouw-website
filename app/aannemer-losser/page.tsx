@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerLosser } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
@@ -42,12 +41,19 @@ export default function AannemerLosserPage() {
       />
       <FaqJsonLd items={faqAannemerLosser} />
 
-      <PageHero
+      <CityMapHero
+        slug="losser"
         eyebrow="Aannemer Losser"
         title="Aannemer in Losser en de kerkdorpen — dichtbij en vertrouwd"
-        intro="MTB Bouw verbouwt woningen in de hele gemeente Losser: het dorp zelf, Overdinkel, De Lutte en Beuningen. Vanaf onze werkplaats in Enschede zijn we er binnen een kwartier — met een vaste prijs en zonder voorrijkosten."
-        cta={<QuoteButton />}
-      />
+        kernen={["Losser", "Overdinkel", "Glane", "De Lutte", "Beuningen"]}
+      >
+        <p>
+          De gemeente Losser ligt tegen de Duitse grens, en dat zie je aan de dorpen. Overdinkel en Glane groeiden rond 1900 met mensen die in de textielfabrieken over de grens werkten. De Lutte en Beuningen hielden hun agrarische karakter.
+        </p>
+        <p>
+          Losser zelf was lang een esdorp met boerderijen, tot in 1926 de fabriek van Van Heek kwam. Oude boerderijen, arbeiderswoningen en nieuwere rijtjes: elke verbouwing is hier anders, dus we kijken eerst wat er staat.
+        </p>
+      </CityMapHero>
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">

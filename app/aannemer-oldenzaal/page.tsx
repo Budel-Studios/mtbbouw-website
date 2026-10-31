@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
@@ -10,7 +10,6 @@ import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { CityServices } from "@/components/sections/city-services";
 import { LocalPartners } from "@/components/sections/local-partners";
 import { CityStory } from "@/components/sections/city-story";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 import { faqAannemerOldenzaal } from "@/lib/faq";
 
@@ -69,12 +68,19 @@ export default function AannemerOldenzaalPage() {
       />
       <FaqJsonLd items={faqAannemerOldenzaal} />
 
-      <PageHero
+      <CityMapHero
+        slug="oldenzaal"
         eyebrow="Aannemer Oldenzaal"
         title="Aannemer in Oldenzaal — vakwerk met oog voor karakter"
-        intro="Oldenzaal is een oude stad met veel huizen met karakter. Wij verbouwen en renoveren er woningen, van de oudere wijken rond de binnenstad tot de nieuwere buurten. Vanaf onze werkplaats in Enschede, met een vaste prijs en zonder voorrijkosten."
-        cta={<QuoteButton />}
-      />
+        kernen={["Binnenstad", "De Thij", "De Lutte", "Rossum"]}
+      >
+        <p>
+          Oldenzaal is een van de oudste steden van Twente. De binnenstad ligt nog bijna rond om de Plechelmusbasiliek, met stadsrechten van rond 1250. Bij een monument stemmen we het plan vooraf af met de gemeente.
+        </p>
+        <p>
+          Aan straten als de Wilhelminastraat staan woningen uit de jaren dertig, en ten noorden van de rondweg groeide vanaf de jaren zestig De Thij. Twee heel verschillende huizen, met dezelfde vraag: meer comfort zonder het karakter te verliezen.
+        </p>
+      </CityMapHero>
 
       {/* Onze aanpak */}
       <CityStory
@@ -102,24 +108,6 @@ export default function AannemerOldenzaalPage() {
           Oldenzaal.
         </p>
       </CityStory>
-
-      {/* Woningen in Oldenzaal */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-        <p className="eyebrow text-stone">Woningen in Oldenzaal</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-          Van de binnenstad tot de nieuwere wijken
-        </h2>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          In de oudere wijken rond de binnenstad draait een verbouwing om
-          behoud van detail, en om goed isoleren zonder dat het aanzicht
-          verandert. In de nieuwere wijken gaat het vaker om een uitbouw,
-          nieuwe kozijnen of een extra kamer.
-        </p>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          We komen eerst bij je langs voor een intake op locatie. Daarna
-          ontvang je een offerte met een vaste prijs.
-        </p>
-      </section>
 
       <CityServices
         eyebrow="Wat we in Oldenzaal doen"

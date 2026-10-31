@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerBorne } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
@@ -47,17 +46,19 @@ export default function AannemerBornePage() {
       />
       <FaqJsonLd items={faqAannemerBorne} />
 
-      <PageHero
-        variant="image"
-        image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Door MTB Bouw afgebouwde bedrijfshal in Borne",
-        }}
+      <CityMapHero
+        slug="borne"
         eyebrow="Aannemer Borne"
         title="Aannemer in Borne — we hebben er al gebouwd"
-        intro="In Borne is ons werk te zien: wij bouwden er een complete bedrijfshal af. Diezelfde vakmensen verbouwen woningen in Borne en Zenderen — renovatie, aanbouw, kozijnen en prefab, met een vaste prijs en zonder voorrijkosten."
-        cta={<QuoteButton />}
-      />
+        kernen={["Oud Borne", "Bornsche Maten", "Zenderen", "Hertme"]}
+      >
+        <p>
+          Borne geldt als de bakermat van de Twentse textielindustrie. Oud Borne, rond de kerk en de Meiershof, is een beschermd dorpsgezicht: kleine huizen van één laag met een kap, Twentse boerderijen en panden uit het textielverleden.
+        </p>
+        <p>
+          Daar tegenover staat de Bornsche Maten, de nieuwe wijk die vanaf 2002 is gepland, met buurten als Nieuw Borne, Tuinstad en Singelwonen. Daar vraagt men eerder om een uitbouw, een overkapping of nieuwe kozijnen. In Borne bouwden we ook een complete bedrijfshal.
+        </p>
+      </CityMapHero>
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">

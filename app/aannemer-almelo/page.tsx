@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
@@ -10,7 +10,6 @@ import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { CityServices } from "@/components/sections/city-services";
 import { LocalPartners } from "@/components/sections/local-partners";
 import { CityStory } from "@/components/sections/city-story";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 import { faqAannemerAlmelo } from "@/lib/faq";
 
@@ -68,12 +67,19 @@ export default function AannemerAlmeloPage() {
       />
       <FaqJsonLd items={faqAannemerAlmelo} />
 
-      <PageHero
+      <CityMapHero
+        slug="almelo"
         eyebrow="Aannemer Almelo"
         title="Aannemer in Almelo — van veranda tot verbouwing"
-        intro="Almelo hoort bij ons vaste werkgebied. Vanaf onze werkplaats in Enschede zijn we er in zo'n halfuur. We bouwen er grote en kleine klussen, voor woningen in Almelo en de dorpen eromheen. Met een vaste prijs en zonder voorrijkosten."
-        cta={<QuoteButton />}
-      />
+        kernen={["De Riet", "Boomhoek", "Ossenkoppelerhoek", "Schelfhorst", "Aadorp", "Bornerbroek", "Mariaparochie"]}
+      >
+        <p>
+          Almelo is een textielstad, en dat lees je nog af aan de wijken. Tuindorp De Riet kreeg in 1918 zijn eerste woningen. Rond de Tijhofslaan staan dubbele en vrijstaande woningen uit de jaren twintig, aan de Wierdensestraat villa&apos;s uit dezelfde tijd.
+        </p>
+        <p>
+          In de Ossenkoppelerhoek staat veel uit de jaren zestig, in de Schelfhorst vooral rijtjes en hofjes uit de jaren zeventig. Daar gaat het meestal om isoleren, nieuwe kozijnen of een uitbouw. En kleine klussen pakken we net zo graag op.
+        </p>
+      </CityMapHero>
 
       {/* Verhaal uit de praktijk */}
       <CityStory
@@ -101,25 +107,6 @@ export default function AannemerAlmeloPage() {
           .
         </p>
       </CityStory>
-
-      {/* Woningen in Almelo */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-        <p className="eyebrow text-stone">Verbouwen in Almelo</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-          Meer ruimte, meer licht, minder energie
-        </h2>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          Of je nu in een rijwoning in een van de oudere wijken woont of in een
-          nieuwer huis aan de rand van de stad: de vraag is vaak dezelfde. Meer
-          ruimte, meer licht, of een huis dat minder energie kost. Daarom nemen
-          we isoleren graag mee in hetzelfde plan, zodat je maar één keer de
-          bouw over de vloer hebt.
-        </p>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          Ook in Almelo komen we eerst bij je langs voor een intake op locatie.
-          Daarna ontvang je een offerte met een vaste prijs.
-        </p>
-      </section>
 
       <CityServices
         eyebrow="Wat we in Almelo doen"

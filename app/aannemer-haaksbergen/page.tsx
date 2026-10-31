@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { faqAannemerHaaksbergen } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
@@ -42,12 +41,19 @@ export default function AannemerHaaksbergenPage() {
       />
       <FaqJsonLd items={faqAannemerHaaksbergen} />
 
-      <PageHero
+      <CityMapHero
+        slug="haaksbergen"
         eyebrow="Aannemer Haaksbergen"
         title="Aannemer in Haaksbergen — van dorpswoning tot erf in het buitengebied"
-        intro="MTB Bouw verbouwt in Haaksbergen en de omliggende buurtschappen: woningen in het dorp én erven in het buitengebied, waar aanbouwen, overkappingen en bijgebouwen goed tot hun recht komen. Vanaf Enschede zijn we er in een kwartier."
-        cta={<QuoteButton />}
-      />
+        kernen={["Haaksbergen", "Buurse", "Sint Isidorushoeve"]}
+      >
+        <p>
+          Haaksbergen is een dorp van eengezinswoningen en eigen huizen. Negen op de tien huishoudens wonen in de kern, de rest in Buurse en Sint Isidorushoeve. Daaromheen ligt een groot buitengebied met verspreide boerderijen en vrijstaande woningen.
+        </p>
+        <p>
+          In het dorp gaat het vaak om een uitbouw, nieuwe kozijnen of isoleren. In het buitengebied om het erf: een schuur verbouwen, een overkapping of een bijgebouw dat past bij het landschap.
+        </p>
+      </CityMapHero>
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">

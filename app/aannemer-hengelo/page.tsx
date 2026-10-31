@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
@@ -10,7 +10,6 @@ import { NearbyPlaces } from "@/components/sections/nearby-places";
 import { CityServices } from "@/components/sections/city-services";
 import { LocalPartners } from "@/components/sections/local-partners";
 import { CityStory } from "@/components/sections/city-story";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 import { faqAannemerHengelo } from "@/lib/faq";
 
@@ -69,12 +68,19 @@ export default function AannemerHengeloPage() {
       />
       <FaqJsonLd items={faqAannemerHengelo} />
 
-      <PageHero
+      <CityMapHero
+        slug="hengelo"
         eyebrow="Aannemer Hengelo"
         title="Aannemer in Hengelo — hier groeiden we op"
-        intro="Hengelo is voor ons geen stip op de kaart. Mathijs en Robbert groeiden op in het grote Van Zantinge-huis van hun opa in Hengelo. Nu verbouwen, renoveren en bouwen we er aan, vanuit onze werkplaats in Enschede op een kwartier rijden. Met een vaste prijs en zonder voorrijkosten."
-        cta={<QuoteButton />}
-      />
+        kernen={["'t Lansink", "'t Wilbert", "Berflo Es", "Bloemenbuurt", "Elsbeek", "Beckum", "Oele"]}
+      >
+        <p>
+          Hengelo is groot geworden met Stork, en dat zie je aan de huizen. Tuindorp &apos;t Lansink, vanaf 1911 aangelegd op initiatief van de familie Stork, is een beschermd dorpsgezicht. Wie daar verbouwt, houdt rekening met het aanzicht.
+        </p>
+        <p>
+          In de vooroorlogse wijken als &apos;t Wilbert, Elsbeek en de Bloemenbuurt staan woningen uit de jaren twintig en dertig, van arbeiderswoning tot vrijstaande villa. De Berflo Es groeide al in de negentiende eeuw als arbeiderswijk rond de fabrieken. Na zo&apos;n honderd jaar zijn dak, kozijnen en isolatie daar aan de beurt.
+        </p>
+      </CityMapHero>
 
       {/* Ons verhaal */}
       <CityStory
@@ -102,27 +108,6 @@ export default function AannemerHengeloPage() {
           halen? Dan denken we graag met je mee.
         </p>
       </CityStory>
-
-      {/* Woningen in Hengelo */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-        <p className="eyebrow text-stone">Verbouwen in Hengelo</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-          Van tuindorp tot nieuwbouwwijk
-        </h2>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          Hengelo is groot geworden met de industrie, en dat zie je aan de
-          huizen. In tuindorp &apos;t Lansink, ooit gebouwd voor de mensen van
-          Stork, staan karakteristieke woningen waar je bij een verbouwing
-          zorgvuldig mee omgaat. In de wijken uit de jaren zestig en zeventig
-          gaat het vaak om ruimte en isolatie. In de nieuwere buurten om een
-          uitbouw of een extra kamer.
-        </p>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          Welke woning je ook hebt, we beginnen altijd bij jou thuis. We
-          leggen elke wand, vloer en plafond vast in onze eigen app en kijken
-          wat er kan. Daarna krijg je een offerte met een vaste prijs.
-        </p>
-      </section>
 
       <CityServices
         eyebrow="Wat we in Hengelo doen"

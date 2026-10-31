@@ -111,6 +111,9 @@ export function TwenteMapFigure({
       ([entry]) => {
         if (entry?.isIntersecting) {
           svgEl.dataset.inview = "true";
+          const roads = svgEl.querySelector<SVGImageElement>("image.map-roads");
+          const src = roads?.dataset.src;
+          if (roads && src) roads.setAttribute("href", src);
           io.disconnect();
         }
       },

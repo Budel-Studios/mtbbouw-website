@@ -10,7 +10,7 @@ import { mapPlaces } from "@/lib/werkgebied";
  * Bron: CBS/PDOK gemeentegrenzen 2024 en OpenStreetMap (ODbL).
  */
 export function TwenteMapSvg({ activeSlug = null }: { activeSlug?: string | null }) {
-  const { viewBox, outline, roadsMajor, roadsMinor, municipalities } = twenteMap;
+  const { viewBox, width, height, outline, municipalities } = twenteMap;
   const hrefFor = (slug: string) => mapPlaces.find((p) => p.slug === slug)?.href ?? "/aannemer-twente";
 
   return (
@@ -21,6 +21,13 @@ export function TwenteMapSvg({ activeSlug = null }: { activeSlug?: string | null
       role="group"
       aria-label="Kaart van Twente met alle gemeenten"
     >
+      {/* Elke gemeentegrens één keer gedefinieerd; vlak en stippellijn
+          verwijzen ernaar. Scheelt de helft van de kaartdata in de pagina. */}
+      <defs>
+        {municipalities.map((m) => (
+          <path key={m.slug} id={`tm-${m.slug}`} d={m.d} />
+        ))}
+      </defs>
       <g className="map-land-in">
         <path d={outline} className="map-outline" />
         {municipalities.map((m) => (
@@ -31,8 +38,8 @@ export function TwenteMapSvg({ activeSlug = null }: { activeSlug?: string | null
             data-slug={m.slug}
             className="map-link"
           >
-            <path
-              d={m.d}
+            <use
+              href={`#tm-${m.slug}`}
               className="map-region"
               data-slug={m.slug}
               data-active={m.slug === activeSlug}
@@ -40,12 +47,21 @@ export function TwenteMapSvg({ activeSlug = null }: { activeSlug?: string | null
           </a>
         ))}
         {municipalities.map((m) => (
-          <path key={`b-${m.slug}`} d={m.d} className="map-border" />
+          <use key={`b-${m.slug}`} href={`#tm-${m.slug}`} className="map-border" />
         ))}
       </g>
 
-      <path d={roadsMinor} pathLength={1} className="map-road map-road--minor" />
-      <path d={roadsMajor} pathLength={1} className="map-road map-road--major" />
+      {/* Wegen als los, gecachet bestand; TwenteMapFrame laadt het zodra de
+          kaart in beeld komt, dan tekent het zichzelf. */}
+      <image
+        className="map-roads"
+        x={0}
+        y={0}
+        width={width}
+        height={height}
+        data-src="/images/twente-wegen.svg"
+        aria-hidden="true"
+      />
 
       {municipalities.map((m, i) => (
         <g key={`t-${m.slug}`}>
