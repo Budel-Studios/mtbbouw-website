@@ -34,7 +34,7 @@ export function SplitSection({
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
+      <h2 className="display mt-4 text-4xl md:text-5xl">{title}</h2>
       <div
         className={`mt-5 max-w-lg space-y-4 leading-relaxed ${
           dark ? "text-white/75" : "text-stone"
@@ -54,7 +54,7 @@ export function SplitSection({
 
   return (
     <section className={dark ? "bg-ink text-white" : undefined}>
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="container-page py-20 md:py-28">
         {image ? (
           <div className="grid items-center gap-12 md:grid-cols-2">
             {imageSide === "left" && (

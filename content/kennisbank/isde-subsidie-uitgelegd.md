@@ -144,7 +144,7 @@ Wie de volgorde omdraait, betaalt een te grote installatie voor een lek huis.
 4. **Dien de aanvraag in** via mijn.rvo.nl, met DigiD, facturen, betaalbewijzen en foto's.
 5. **Uitbetaling** volgt na goedkeuring door RVO.
 
-Naast de subsidie levert het je een lagere energierekening op, minder tocht en geluid, en een beter energielabel. Woon je in de buurt? Kijk dan ook bij [verduurzamen in Enschede](/verduurzamen-enschede).
+Naast de subsidie levert het je een lagere energierekening op, minder tocht en geluid, en een beter energielabel. Woon je in de buurt? Kijk dan ook bij [verduurzamen in Enschede](/verduurzamen).
 
 Leuk weetje: een goed geïsoleerd huis is niet alleen in de winter fijn. In de zomer houdt diezelfde isolatie de hitte buiten. Twee vliegen, één klap.
 

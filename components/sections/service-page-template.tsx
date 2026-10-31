@@ -77,7 +77,7 @@ export function ServicePageTemplate({
 
       {/* HERO */}
       <section className="border-b border-mist">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>{data.hero.eyebrow}</Eyebrow>
           <h1 className="mt-4 max-w-4xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-5xl">
             {data.hero.h1}
@@ -120,9 +120,9 @@ export function ServicePageTemplate({
 
       {/* SUB-SERVICES */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>{data.subServices.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             {data.subServices.h2}
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
@@ -146,11 +146,11 @@ export function ServicePageTemplate({
       </section>
 
       {/* WERKWIJZE */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-page py-20 md:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <Eyebrow>{data.werkwijze.eyebrow}</Eyebrow>
-            <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+            <h2 className="display mt-4 text-4xl md:text-5xl">
               {data.werkwijze.h2}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-stone">
@@ -207,9 +207,9 @@ export function ServicePageTemplate({
 
       {/* CASE STUDY */}
       <section id="case" className="scroll-mt-24 border-y border-mist bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>{data.caseStudy.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             {data.caseStudy.h2}
           </h2>
           <div className="mt-12 grid gap-12 lg:grid-cols-2">
@@ -288,9 +288,9 @@ export function ServicePageTemplate({
       </section>
 
       {/* TYPE WONINGEN */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-page py-20 md:py-28">
         <Eyebrow>{data.typeWoningen.eyebrow}</Eyebrow>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           {data.typeWoningen.h2}
         </h2>
         <ul className="mt-8 flex flex-wrap gap-2">
@@ -307,9 +307,9 @@ export function ServicePageTemplate({
 
       {/* WAAROM */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>{data.waarom.eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             {data.waarom.h2}
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -345,9 +345,9 @@ export function ServicePageTemplate({
       ) : null}
 
       {/* FAQ */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-page py-20 md:py-28">
         <Eyebrow>{data.faq.eyebrow}</Eyebrow>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           {data.faq.h2}
         </h2>
         <div className="mt-10 max-w-3xl divide-y divide-mist border-y border-mist">
@@ -415,7 +415,7 @@ export function ServicePageTemplate({
       {/* RELATED */}
       {data.related.length > 0 && (
         <section className="border-t border-mist py-12">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="container-page">
             <p className="eyebrow text-stone">
               Gerelateerd
             </p>

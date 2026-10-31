@@ -53,7 +53,8 @@ export function buildQuoteInternal(f: QuotePayload) {
         row("Budgetrange", label(BUDGET_LABELS, f.budgetRange)) +
         linkRow("Link naar bestanden", f.fileLink) +
         row("Vergunning", f.vergunning) +
-        row("Bewoond tijdens werkzaamheden", f.bewoond)
+        row("Bewoond tijdens werkzaamheden", f.bewoond) +
+        row("Aangevraagd via", f.sourcePage)
     ) +
     (f.remarks?.trim()
       ? section("Opmerkingen", "") + paragraph(esc(f.remarks))

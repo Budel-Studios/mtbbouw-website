@@ -37,6 +37,13 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
 
+      // Verduurzamen is een algemene dienstpagina geworden (Enschede & Twente).
+      {
+        source: "/verduurzamen-enschede",
+        destination: "/verduurzamen",
+        statusCode: 301,
+      },
+
       // Oude Yoast-sitemapnamen → de Next.js-sitemap. Zonder deze redirect
       // krijgt Google de 404-HTML-pagina en meldt hij "Your Sitemap appears
       // to be an HTML page".

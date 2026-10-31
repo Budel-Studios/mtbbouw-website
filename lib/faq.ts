@@ -62,7 +62,7 @@ const faqAanbouw: Faq[] = [
   {
     question: "Werken jullie met een vaste prijs?",
     answer:
-      "In 99% van onze projecten werken we met een vaste aanneemsom. Eventuele stelposten benoemen we transparant in de offerte.",
+      "We werken met een vaste aanneemsom. Eventuele stelposten benoemen we transparant in de offerte.",
   },
 ];
 
@@ -152,17 +152,17 @@ export const faqNieuwbouw: Faq[] = [
   {
     question: "Bouwen jullie energieneutraal (BENG)?",
     answer:
-      "Nieuwbouw voldoet standaard aan BENG: warmtepomp, triple glas, balansventilatie, hoge isolatiewaarden (Rc 6,3+) en voorbereiding voor zonnepanelen.",
+      "Ja. Nieuwbouw moet sinds 2021 voldoen aan de BENG-eisen. Hoe we daar komen, met isolatie, glas, ventilatie en een warmtepomp, stemmen we af op je ontwerp en budget.",
   },
   {
     question: "Wat staat er in de aannemingsovereenkomst?",
     answer:
-      "Wat we bouwen, de vaste prijs, de planning met opleverdatum, garanties en opleveringseisen. Vertraging die aan ons ligt kent een boeteclausule per dag.",
+      "Wat we bouwen, de vaste prijs, de planning met opleverdatum, de garantie en de afspraken over oplevering en vertraging.",
   },
   {
     question: "Welke garanties krijg ik bij nieuwbouw?",
     answer:
-      "6 jaar op verborgen gebreken, 20 jaar op de constructie en 5 jaar op installaties. Optioneel bouwen we onder Woningborg-garantie.",
+      "Op de uitvoering geven we 1 jaar garantie, tenzij we in de overeenkomst iets anders afspreken. Op materialen geldt de garantie van de fabrikant of leverancier. Zo staat het ook in onze algemene voorwaarden.",
   },
   {
     question: "Kan ik tijdens de bouw nog wijzigen?",

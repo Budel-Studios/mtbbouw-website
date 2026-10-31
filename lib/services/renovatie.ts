@@ -37,7 +37,7 @@ export const renovatieData: ServiceData = {
         desc: "Een nieuwe keuken met aandacht voor leidingen, elektra, ventilatie en afwerking. Wij plaatsen ook keukens van IKEA, Bruynzeel en Mandemakers." },
       { sketchIcon: "sustainability", title: "Renoveren én verduurzamen",
         desc: "Combineer renovatie met isolatie, warmtepomp en zonnepanelen. Subsidies regelen we, je woont straks comfortabeler én goedkoper.",
-        href: "/verduurzamen-enschede" },
+        href: "/verduurzamen" },
     ],
   },
   werkwijze: {

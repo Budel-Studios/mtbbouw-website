@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/afbouwstudio/metal-stud-wanden",
     "/afbouwstudio/systeemplafonds",
     "/wonen-en-verbouwen",
-    "/verduurzamen-enschede",
+    "/verduurzamen",
     "/aannemer-enschede",
     "/bouwbedrijf-enschede",
     "/aannemer-twente",

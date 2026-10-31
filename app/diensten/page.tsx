@@ -40,7 +40,7 @@ const diensten = [
     text: "Bouwen vanaf de fundering, met één team van vergunning tot sleutel.",
   },
   {
-    href: "/verduurzamen-enschede",
+    href: "/verduurzamen",
     label: "Verduurzamen",
     text: "Isoleren en verduurzamen, het liefst meegenomen in dezelfde verbouwing.",
   },
@@ -98,15 +98,15 @@ export default function DienstenPage() {
       </section>
 
       {/* Expertise-tegels met sub-items */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="container-page pb-16">
         <ExpertiseTiles items={expertises} showSubItems />
       </section>
 
       {/* Alle diensten op een rij */}
       <section className="border-y border-mist bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">Alle diensten</p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Alles wat we doen, op een rij
           </h2>
           <ul className="mt-10 grid gap-px border border-mist bg-mist sm:grid-cols-2">
@@ -127,9 +127,9 @@ export default function DienstenPage() {
       </section>
 
       {/* Werkgebied */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-page py-20 md:py-28">
         <p className="eyebrow text-stone">Werkgebied</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           Vanuit Enschede, door heel Twente
         </h2>
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">

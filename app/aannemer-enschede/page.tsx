@@ -3,6 +3,7 @@ import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { CityMapHero } from "@/components/twente-map/city-map-hero";
+import { LocalPartners } from "@/components/sections/local-partners";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { RelatedContent } from "@/components/sections/related-content";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
@@ -13,15 +14,17 @@ import { faqAannemerEnschede } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aannemer in Enschede — verbouw & renovatie | MTB Bouw" },
+  title: { absolute: "Aannemer Enschede | verbouw, uitbouw & renovatie | MTB Bouw" },
   description:
     "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
   alternates: { canonical: "/aannemer-enschede" },
   openGraph: {
     type: "website",
-    title: "Aannemer in Enschede — verbouw & renovatie | MTB Bouw",
-    description: "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
+    title: "Aannemer Enschede | verbouw, uitbouw & renovatie | MTB Bouw",
+    description:
+      "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
     url: "/aannemer-enschede",
+    images: [{ url: "/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg", alt: "Nieuwe uitbouw in houtskeletbouw met zwarte kozijnen in Enschede, door MTB Bouw" }],
   },
 };
 
@@ -53,10 +56,10 @@ const DIENSTEN = [
 ];
 
 export default function AannemerEnschedePage() {
-  const projects = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+  // Echte projecten uit Enschede.
+  const projects = ["renovatie-villa-zantinge-enschede", "uitbouw-houtskeletbouw-enschede", "dubbele-uitbouw-enschede"]
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
@@ -71,6 +74,7 @@ export default function AannemerEnschedePage() {
         description="Aannemersbedrijf gevestigd in Enschede voor verbouw, renovatie, aanbouw, uitbouw en kozijnen. Vaste prijs en één aanspreekpunt."
         url="/aannemer-enschede"
         serviceType="Aannemer"
+        city="Enschede"
       />
       <FaqJsonLd items={faqAannemerEnschede} />
 
@@ -93,11 +97,11 @@ export default function AannemerEnschedePage() {
 
       {/* DIENSTEN IN ENSCHEDE */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Wat we voor je doen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Verbouwen in Enschede — alles onder één dak
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -126,13 +130,13 @@ export default function AannemerEnschedePage() {
 
       {/* VERGUNNING & LOKALE KENNIS */}
       <section className="border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
               <p className="eyebrow text-stone">
                 Vergunningen in Enschede
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Wij kennen de regels van de gemeente
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -148,7 +152,7 @@ export default function AannemerEnschedePage() {
               <p className="eyebrow text-stone">
                 Kosten
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Vaste prijs, vooraf helder
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -161,7 +165,7 @@ export default function AannemerEnschedePage() {
                   kostengids voor aanbouwen
                 </Link>{" "}
                 en{" "}
-                <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-navy">
+                <Link href="/verduurzamen" className="font-semibold text-ink underline hover:text-navy">
                   verduurzamen tijdens de verbouwing
                 </Link>
                 .
@@ -195,7 +199,13 @@ export default function AannemerEnschedePage() {
       <RelatedContent
         projects={projects}
         eyebrow="Eerder werk"
-        title="Recente projecten in Enschede en omgeving"
+        title="Projecten in Enschede"
+      />
+
+      <LocalPartners
+        title="Partners uit Enschede"
+        intro="Onze schilder, vloerenspecialist, dakdekker en badkamerzaak komen allemaal uit Enschede. Korte lijnen, met mensen die we kennen van de bouw en niet van een lijstje."
+        names={["KUality Schilders", "Het Vloerenhof", "Kamphuis Dakbedekking", "Gevelaar"]}
       />
 
       <FaqAccordion

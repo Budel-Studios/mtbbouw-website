@@ -24,7 +24,7 @@ export function ProcessSteps({
   columns?: 5 | 7;
 }) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="container-page py-20 md:py-28">
       <p className="eyebrow text-stone">
         {eyebrow}
       </p>

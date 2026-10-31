@@ -15,9 +15,9 @@ const steden = [
 export function ServiceAreaLinks({ label, intro }: { label: string; intro: string }) {
   return (
     <section className="border-t border-mist bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="container-page py-20 md:py-28">
         <p className="eyebrow text-stone">Werkgebied</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           {label} in jouw plaats
         </h2>
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">{intro}</p>

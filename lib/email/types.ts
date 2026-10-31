@@ -19,6 +19,8 @@ export type QuotePayload = {
   bewoond: string;
   remarks: string;
   agreement: boolean;
+  /** Pagina waarop de drawer werd geopend, voor meten per stadspagina. */
+  sourcePage?: string;
 };
 
 export type ContactPayload = {

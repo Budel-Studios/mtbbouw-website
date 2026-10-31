@@ -77,11 +77,11 @@ export default function HorecaVerbouwenPage() {
 
       {/* PIJLERS */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             01 — Waarom Afbouwstudio
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Gebouwd rond jouw openingstijden
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
@@ -98,7 +98,7 @@ export default function HorecaVerbouwenPage() {
 
       {/* CASE-VERWIJZING */}
       <section className="border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden bg-ink">
               <Image
@@ -116,7 +116,7 @@ export default function HorecaVerbouwenPage() {
               <p className="eyebrow text-stone">
                 02 — Bewezen in de praktijk
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Twee zaken, één signatuur
               </h2>
               <p className="mt-5 leading-relaxed text-stone">

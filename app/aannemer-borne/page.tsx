@@ -3,6 +3,7 @@ import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { CityMapHero } from "@/components/twente-map/city-map-hero";
+import { LocalPartners } from "@/components/sections/local-partners";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
@@ -11,10 +12,18 @@ import { faqAannemerBorne } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aannemer in Borne | MTB Bouw — wonen & zakelijk" },
+  title: { absolute: "Aannemer Borne | verbouw & bedrijfspanden | MTB Bouw" },
   description:
     "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. We bouwden er al een bedrijfshal af. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-borne" },
+  openGraph: {
+    type: "website",
+    title: "Aannemer Borne | verbouw & bedrijfspanden | MTB Bouw",
+    description:
+      "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. We bouwden er al een bedrijfshal af. Vaste prijs, geen voorrijkosten.",
+    url: "/aannemer-borne",
+    images: [{ url: "/images/projects/bedrijfshal-borne.webp", alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering" }],
+  },
 };
 
 export default function AannemerBornePage() {
@@ -43,6 +52,7 @@ export default function AannemerBornePage() {
         description="Verbouw, renovatie, aanbouw en zakelijke bouw in Borne door MTB Bouw uit Enschede — inclusief gerealiseerde bedrijfshal in Borne."
         url="/aannemer-borne"
         serviceType="Aannemer"
+        city="Borne"
       />
       <FaqJsonLd items={faqAannemerBorne} />
 
@@ -61,11 +71,11 @@ export default function AannemerBornePage() {
       </CityMapHero>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Verbouwen in Borne
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Wonen én zakelijk, met lokaal bewijs
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -90,6 +100,12 @@ export default function AannemerBornePage() {
           </p>
         </div>
       </section>
+
+      <LocalPartners
+        title="Dezelfde vaste partners"
+        intro="In Borne bouwen we met dezelfde vaste partners als in de rest van Twente. Zo weet iedereen wat de ander doet, en blijft de planning strak."
+        names={["Kamphuis Dakbedekking", "BMN Bouwmaterialen", "Rouwmaat Betoncentrale", "Brouwer Containers"]}
+      />
 
       <FaqAccordion
         items={faqAannemerBorne}

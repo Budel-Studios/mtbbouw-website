@@ -110,11 +110,11 @@ export default function PrefabPage() {
 
       {/* ONDERDELEN — HSB, elementen, sneller bouwen, overkappingen */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Wat wij prefab bouwen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Van HSB tot overkapping — alles uit de fabriek
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">

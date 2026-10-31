@@ -43,7 +43,7 @@ export const CATEGORIES = [
       "Verduurzamen begint bij de schil van je huis: dak, gevel, vloer en glas. Pas als die goed geïsoleerd zijn, haal je echt het meeste uit een warmtepomp of andere installatie. In deze artikelen leggen we uit welke maatregelen het meeste opleveren, in welke volgorde je ze aanpakt en hoe je subsidie zoals de ISDE aanvraagt.",
       "Ons standpunt: verduurzamen is het voordeligst als je het combineert met een verbouwing. De steiger staat er dan al en het dak of de vloer ligt toch al open. Daarom nemen we isolatie standaard mee in ons advies, bij klussen in Enschede en de rest van Twente.",
     ],
-    links: [{ href: "/verduurzamen-enschede", label: "Woning verduurzamen in Enschede" }],
+    links: [{ href: "/verduurzamen", label: "Woning verduurzamen in Enschede" }],
   },
   {
     slug: "technische-keuzes",
@@ -130,7 +130,7 @@ export const SUBCATEGORIES = [
     ],
     links: [
       { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
-      { href: "/verduurzamen-enschede", label: "Verduurzamen" },
+      { href: "/verduurzamen", label: "Verduurzamen" },
     ],
   },
   {
@@ -167,7 +167,7 @@ export const SUBCATEGORIES = [
       "Koude voeten en een vochtige kruipruimte: de vloer is een onderschat deel van je huis. In deze artikelen lees je over vloerisolatie, de kruipruimte, dekvloeren en vloerverwarming, en wanneer welke aanpak zinvol is.",
       "Een goed geïsoleerde vloer scheelt niet alleen energie. Je merkt het ook meteen aan je comfort.",
     ],
-    links: [{ href: "/verduurzamen-enschede", label: "Verduurzamen" }],
+    links: [{ href: "/verduurzamen", label: "Verduurzamen" }],
   },
   {
     slug: "wanden-plafonds",
@@ -210,7 +210,7 @@ export const SUBCATEGORIES = [
       "Het installatiewerk nemen we mee in dezelfde planning als de rest van de verbouwing, zodat alles op elkaar aansluit.",
     ],
     links: [
-      { href: "/verduurzamen-enschede", label: "Verduurzamen" },
+      { href: "/verduurzamen", label: "Verduurzamen" },
       { href: "/afbouwstudio/bedrijfspand-verbouwen", label: "Bedrijfspand verbouwen" },
     ],
   },

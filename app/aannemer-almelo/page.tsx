@@ -133,7 +133,7 @@ export default function AannemerAlmeloPage() {
             text: "Hout, kunststof of aluminium, all-in via De Kozijnstudio.",
           },
           {
-            href: "/verduurzamen-enschede",
+            href: "/verduurzamen",
             label: "Verduurzamen",
             text: "Dak, vloer en gevel isoleren, het liefst tijdens de verbouwing.",
           },
@@ -146,9 +146,9 @@ export default function AannemerAlmeloPage() {
       />
 
       {/* Regels */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <section className="container-page py-20 md:py-28">
         <p className="eyebrow text-stone">Vergunning en regels</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           Regels in de gemeente Almelo
         </h2>
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">

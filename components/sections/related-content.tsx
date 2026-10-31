@@ -35,13 +35,13 @@ export function RelatedContent({
 
   return (
     <section className="bg-ink text-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="container-page py-20 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="eyebrow text-white/65">
               {eyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
+            <h2 className="display mt-4 text-4xl md:text-5xl">{title}</h2>
           </div>
           <ArrowLink href={projects.length > 0 ? "/projecten" : "/kennisbank"} onDark>
             {projects.length > 0 ? "Alle projecten" : "Alle artikelen"}

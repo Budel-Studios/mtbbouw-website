@@ -149,9 +149,9 @@ export default function AfbouwstudioPage() {
 
       {/* 01 — SPECIALISMEN */}
       <section id="specialismen" className="scroll-mt-24 bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>01 — Specialismen</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Onze focus: afbouw die werkt voor jouw business
           </h2>
           {/* Kaarten linken door naar de sector-subpagina's — bewust géén
@@ -178,11 +178,11 @@ export default function AfbouwstudioPage() {
 
       {/* 02 — WERKWIJZE */}
       <section id="werkwijze" className="scroll-mt-24 border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <Eyebrow>02 — Werkwijze</Eyebrow>
-              <h2 className="mt-4 text-3xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Wand. Vloer. Plafond. Live in onze eigen app.
               </h2>
               <p className="mt-6 leading-relaxed text-stone">
@@ -260,7 +260,7 @@ export default function AfbouwstudioPage() {
 
       {/* 03 — CASE STUDY */}
       <section id="cases" className="scroll-mt-24 bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>03 — Case study</Eyebrow>
           <h2 className="mt-4 max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.03em] sm:text-5xl">
             De Broodbode. Twee locaties, één signatuur.
@@ -328,12 +328,12 @@ export default function AfbouwstudioPage() {
 
           <blockquote className="mt-16 border-l-4 border-lime bg-white p-10 md:p-14">
             <p className="font-display text-2xl font-bold leading-[1.15] text-ink md:text-3xl">
-              &ldquo;Afbouwstudio was van het eerste pandbezoek tot oplevering
-              helder, snel en vakkundig. De app waarmee ze elke wand vastlegden
-              voelde als een professional move — geen verrassingen achteraf.&rdquo;
+              &ldquo;Een pittig project met een strakke planning, maar juist daar
+              zijn we trots op. In ongeveer zeven weken hebben we het pand in
+              Apeldoorn volledig getransformeerd.&rdquo;
             </p>
             <footer className="mt-5 text-sm font-semibold text-stone">
-              — Team De Broodbode
+              — Team MTB Bouw, over De Broodbode Apeldoorn
             </footer>
           </blockquote>
         </div>
@@ -341,7 +341,7 @@ export default function AfbouwstudioPage() {
 
       {/* SCHETS BREAK */}
       <section className="bg-ink text-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="container-page py-20 md:py-28">
           <h2 className="max-w-4xl font-display text-4xl font-medium leading-[1.02] tracking-[-0.03em] sm:text-6xl">
             Niet bouwen op gevoel. Bouwen op plan.
           </h2>
@@ -354,9 +354,9 @@ export default function AfbouwstudioPage() {
 
       {/* 04 — SECTOREN */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>04 — Sectoren</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Voor ondernemers in Twente, Overijssel en daarbuiten
           </h2>
           <ul className="mt-10 flex flex-wrap gap-2.5">
@@ -383,9 +383,9 @@ export default function AfbouwstudioPage() {
 
       {/* 05 — WAAROM */}
       <section className="border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <Eyebrow>05 — Waarom</Eyebrow>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Geen bouwsoap. Een team dat doet wat het zegt.
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">

@@ -13,7 +13,7 @@ import { CityStory } from "@/components/sections/city-story";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 import { faqAannemerOldenzaal } from "@/lib/faq";
 
-const title = "Aannemer Oldenzaal | renovatie, verbouw & uitbouw | MTB Bouw";
+const title = "Aannemer Oldenzaal | renovatie & verbouw | MTB Bouw";
 const description =
   "Bouwbedrijf voor Oldenzaal: renovatie en verbouw met behoud van karakter, uitbouw en kozijnen. Vast team uit Enschede. Vaste prijs, geen voorrijkosten.";
 const ogImage = "/images/projects/renovatie-schuur-behoud-karakter/cover.jpg";
@@ -129,7 +129,7 @@ export default function AannemerOldenzaalPage() {
             text: "Nieuwe kozijnen in de stijl van het origineel, in hout, kunststof of aluminium.",
           },
           {
-            href: "/verduurzamen-enschede",
+            href: "/verduurzamen",
             label: "Verduurzamen",
             text: "Isoleren zonder dat het aanzicht van je woning verandert.",
           },
@@ -147,9 +147,9 @@ export default function AannemerOldenzaalPage() {
       />
 
       {/* Regels */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <section className="container-page py-20 md:py-28">
         <p className="eyebrow text-stone">Vergunning en regels</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           Regels in de gemeente Oldenzaal
         </h2>
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">

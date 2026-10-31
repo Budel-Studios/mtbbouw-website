@@ -40,7 +40,7 @@ export function FaqQuickNav({
       aria-label="Snel naar categorie"
       className="sticky top-16 z-20 border-y border-mist bg-paper/95 backdrop-blur"
     >
-      <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-6 py-3">
+      <div className="container-page flex gap-1 overflow-x-auto py-3">
         {categories.map((cat) => {
           const isActive = cat.slug === active;
           return (

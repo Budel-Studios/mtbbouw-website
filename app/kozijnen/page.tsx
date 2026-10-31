@@ -84,11 +84,11 @@ export default function KozijnenPage() {
       />
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Waarom De Kozijnstudio
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Eén specialist, volledig gericht op kozijnen
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-3">

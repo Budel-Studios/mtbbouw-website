@@ -30,13 +30,13 @@ export default function GratisBrochurePage() {
       />
 
       {/* Tekst + formulier naast elkaar */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="container-page pb-16">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <div>
             <p className="eyebrow text-stone">
               Wat je leert
             </p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
+            <h2 className="display mt-4 text-4xl md:text-5xl">
               Goed voorbereid begint bij overzicht
             </h2>
             <div className="mt-5 max-w-lg space-y-4 leading-relaxed text-stone">

@@ -25,6 +25,7 @@ partners:
 relatedServices:
   - { href: "/verbouwing", label: "Renovatie & verbouw" }
   - { href: "/regionale-partners", label: "Onze regionale partners" }
+  - { href: "/aannemer-twente", label: "Aannemer in Twente" }
 tags: [maatwerk, interieur, hout, zebrano]
 draft: false
 ---

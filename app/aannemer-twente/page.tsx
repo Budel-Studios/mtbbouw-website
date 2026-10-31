@@ -19,8 +19,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "Aannemer in Twente | MTB Bouw — verbouwen in de hele regio",
-    description: "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, lokale partners.",
+    description:
+      "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, lokale partners.",
     url: "/aannemer-twente",
+    images: [{ url: "/images/projects/luxe-overkapping-twente/cover.jpg", alt: "Luxe houten overkapping in een tuin in Twente, gebouwd door MTB Bouw" }],
   },
 };
 
@@ -40,10 +42,10 @@ const PLAATSEN: { name: string; href?: string }[] = [
 ];
 
 export default function AannemerTwentePage() {
-  const projects = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+  // Echte projecten uit Twente.
+  const projects = ["renovatie-villa-zantinge-enschede", "veranda-bouwen-almelo", "bedrijfshal-borne"]
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
@@ -76,11 +78,11 @@ export default function AannemerTwentePage() {
 
       {/* WERKGEBIED */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Werkgebied
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Actief in heel Twente
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
