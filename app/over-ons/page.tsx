@@ -3,23 +3,23 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { SplitSection } from "@/components/sections/split-section";
 import { TeamGrid } from "@/components/sections/team-grid";
-import { LogoRow } from "@/components/sections/logo-row";
 import { FeatureGrid } from "@/components/sections/feature-grid";
-import { CtaBanner } from "@/components/sections/cta-banner";
+import { ArrowLink } from "@/components/ui/button";
 import { site } from "@/lib/site";
 import { pillars } from "@/lib/data";
 import { getAsset } from "@/lib/assets";
 import { CheckIcon, ChatIcon, HammerIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: { absolute: "Over ons — het team achter MTB Bouw" },
+  title: { absolute: "Over ons: de mensen achter MTB Bouw in Enschede" },
   description:
-    "Maak kennis met het team achter MTB Bouw: vaste vakmensen uit Twente, korte lijnen en één filosofie — Bouw. Samen.",
+    "Maak kennis met Mathijs, Robbert en het vaste team van MTB Bouw uit Enschede. Korte lijnen, één aanspreekpunt en vakmensen uit Twente.",
   alternates: { canonical: "/over-ons" },
   openGraph: {
     type: "website",
-    title: "Over ons — het team achter MTB Bouw",
-    description: "Maak kennis met het team achter MTB Bouw: vaste vakmensen uit Twente, korte lijnen en één filosofie — Bouw. Samen.",
+    title: "Over ons: de mensen achter MTB Bouw in Enschede",
+    description:
+      "Maak kennis met Mathijs, Robbert en het vaste team van MTB Bouw uit Enschede. Korte lijnen, één aanspreekpunt en vakmensen uit Twente.",
     url: "/over-ons",
   },
 };
@@ -44,9 +44,21 @@ export default async function OverOnsPage() {
       <PageHero
         variant="image"
         image={{ src: "/images/brand/hero.png", alt: "Het team van MTB Bouw aan het werk" }}
-        eyebrow="Over ons"
-        title="Bouw. Samen."
-        intro="Al meer dan 10 jaar bouwen we mee aan Overijssel en Gelderland — met een vast team, korte lijnen en oog voor hoe mensen écht wonen en werken."
+        eyebrow="Over ons · Bouw. Samen."
+        title="De mensen achter MTB Bouw"
+        intro="Achter MTB Bouw staan Mathijs en Robbert, met een vast team en vaste partners uit de regio. Geen anonieme aannemer, maar mensen die je leert kennen en die je gewoon kunt bellen."
+      />
+
+      <TeamGrid
+        eyebrow="Het team"
+        title="Dit zijn wij"
+        intro="Samen hebben we jaren ervaring in uitvoering, ruwbouw, timmerwerk en installatie, ieder met z'n eigen specialiteit. Op de bouw zie je steeds dezelfde gezichten."
+        footer={
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            <ArrowLink href="/regionale-partners">Onze partners uit de regio</ArrowLink>
+            <ArrowLink href="/werkgenoeg">Werken bij MTB Bouw</ArrowLink>
+          </div>
+        }
       />
 
       <SplitSection
@@ -90,10 +102,6 @@ export default async function OverOnsPage() {
         ]}
       />
 
-      <TeamGrid
-        title="Het team"
-        intro="Samen hebben we jaren ervaring in uitvoering, ruwbouw, timmerwerk en installatie — ieder met z'n eigen specialiteit."
-      />
 
       <FeatureGrid
         eyebrow="Waar we voor staan"
@@ -103,16 +111,6 @@ export default async function OverOnsPage() {
           title: pillar.title,
           text: pillar.text,
         }))}
-      />
-
-      <LogoRow />
-
-      <CtaBanner
-        eyebrow="Kennismaken?"
-        title="We komen graag bij je langs"
-        text="Plan een vrijblijvende intake op locatie. Dan bekijken we de situatie direct goed en kunnen we gericht adviseren."
-        cta={{ label: "Neem contact op", href: "/contact" }}
-        secondary={{ label: "Werken bij MTB Bouw", href: "/werkgenoeg" }}
       />
     </>
   );

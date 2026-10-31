@@ -1,64 +1,94 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
-import { FeatureGrid } from "@/components/sections/feature-grid";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
-import { CtaBanner } from "@/components/sections/cta-banner";
 import { QuoteButton } from "@/components/ui/quote-button";
-import { pillars } from "@/lib/data";
-import { CheckIcon, ChatIcon, HammerIcon, ShieldIcon } from "@/components/icons";
+import { ShieldIcon } from "@/components/icons";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { site } from "@/lib/site";
+
+const description =
+  "Zo verloopt bouwen met MTB Bouw: gratis intake op locatie, inmeten, een volledig gespecificeerde offerte, projectplan in Mijn Blauwdruk, bouwen en nazorg.";
 
 export const metadata: Metadata = {
-  title: "Hoe wij werken — van kennismaking tot nazorg",
-  description:
-    "Bouwen begint bij communicatie. Onze werkwijze in acht heldere stappen: van gratis intake op locatie tot oplevering — met vaste afspraken en één aanspreekpunt.",
+  title: "Hoe wij werken: van gratis intake tot oplevering",
+  description,
   alternates: { canonical: "/hoe-wij-werken" },
+  openGraph: {
+    type: "website",
+    title: "Hoe wij werken: van gratis intake tot oplevering | MTB Bouw",
+    description,
+    url: "/hoe-wij-werken",
+  },
 };
 
-const pillarIcons = [CheckIcon, ChatIcon, HammerIcon];
+type Step = {
+  id: string;
+  title: string;
+  tag?: string;
+  text: string[];
+  links?: { href: string; label: string }[];
+};
 
-/** De acht stappen van de live site, uitgeschreven. */
-const steps = [
+/** De klantreis: van de eerste kop koffie tot na de oplevering. */
+const steps: Step[] = [
   {
-    step: "01",
+    id: "intake",
     title: "Intake op locatie",
-    text: "We komen kosteloos en vrijblijvend bij je langs. Aan de keukentafel of in het pand bespreken we je wensen, ideeën en de mogelijkheden — en we vertellen eerlijk wat er kan.",
+    tag: "Gratis",
+    text: [
+      "We komen bij je langs, thuis of op de zaak. We lopen samen rond, luisteren naar wat je wilt en vertellen eerlijk wat er kan en wat niet.",
+      "Dat uitgebreide advies kost je niets. Eerlijk is eerlijk: dit is onze marketing. We zitten liever een uur aan je keukentafel dan dat we een advertentie kopen.",
+    ],
   },
   {
-    step: "02",
-    title: "Meten is weten",
-    text: "We meten wanden, ruimtes, kozijnen of kavel nauwkeurig op. Die technische basis voorkomt verrassingen later in het traject.",
+    id: "inmeten",
+    title: "Inmeten en uittekenen",
+    text: [
+      "Daarna meten we alles in. Elke wand, vloer en elk plafond leggen we vast in onze eigen app, en we tekenen de bestaande situatie uit. Zo weten we allebei precies waar we het over hebben, en voorkomen we verrassingen later.",
+    ],
   },
   {
-    step: "03",
-    title: "Werksamenvatting",
-    text: "Je ontvangt een schriftelijke samenvatting met alle details, werkzaamheden en uitgangspunten. Zo weten we zeker dat we hetzelfde voor ogen hebben.",
+    id: "offerte",
+    title: "Een offerte die je kunt volgen",
+    text: [
+      "Je krijgt een volledig gespecificeerde offerte. Geen ronde bedragen, maar hoeveelheden: zoveel m² wand, zoveel m² dak, kozijnen per stuk en de uren werkvoorbereiding. Zo zie je wat elk onderdeel kost en kun je eerlijk vergelijken.",
+      "Vraag gerust ook bij een ander een offerte op. Dat raden we zelf aan.",
+    ],
+    links: [
+      { href: "/kennisbank/offertes-vergelijken-verbouwing", label: "Offertes vergelijken: zo doe je dat" },
+      { href: "/kennisbank/wat-kost-een-aanbouw-2026", label: "Wat kost een aanbouw?" },
+      { href: "/kennisbank/kantoor-verbouwen-kosten-2026", label: "Wat kost een kantoorverbouwing?" },
+    ],
   },
   {
-    step: "04",
-    title: "Ontwerp & visualisatie",
-    text: "Optioneel maken we vloertekeningen en 3D-beelden. Voor complexere projecten werken we samen met lokale architecten.",
+    id: "projectplan",
+    title: "Projectplan en Mijn Blauwdruk",
+    text: [
+      "Ga je akkoord, dan volgt het projectplan: planning, afspraken, veiligheid en garanties, zwart op wit.",
+      "In Mijn Blauwdruk, onze eigen app, volg je je bouw en zie je alles terug: tekeningen, keuzes en planning. En wat er wel in de offerte zit, maar ook wat niet. Dat is net zo belangrijk.",
+    ],
+    links: [{ href: "/mijn-blauwdruk", label: "Over Mijn Blauwdruk" }],
   },
   {
-    step: "05",
-    title: "Offerte",
-    text: "Een gedetailleerde offerte met persoonlijke toelichting — eerlijk en transparant, in 99% van de projecten met een vaste aanneemsom.",
+    id: "bouwen",
+    title: "Bouwen",
+    text: [
+      "Dan gaan we bouwen. Je hebt één vast aanspreekpunt, Mathijs of Robbert, en op de bouw staat ons vaste team met partners uit de regio die we al jaren kennen.",
+      "Gebeurt er iets onverwachts? Dan hoor je het meteen, en bespreken we samen hoe we verder gaan.",
+    ],
+    links: [
+      { href: "/over-ons", label: "Wie we zijn" },
+      { href: "/regionale-partners", label: "Onze partners" },
+    ],
   },
   {
-    step: "06",
-    title: "Projectplan",
-    text: "Bij akkoord volgt een projectplan met termijnen, planning, veiligheidseisen en garanties. Alles zwart op wit.",
-  },
-  {
-    step: "07",
-    title: "De bouw",
-    text: "Eén vast team voert het werk uit. Onverwachte zaken kunnen voorkomen — maar door heldere communicatie weet je altijd waar je aan toe bent.",
-  },
-  {
-    step: "08",
-    title: "Oplevering & nazorg",
-    text: "We lopen samen alle punten na, leggen ze vast en tekenen af. En daarna blijven we gewoon bereikbaar.",
+    id: "oplevering",
+    title: "Oplevering en nazorg",
+    text: [
+      "We lopen samen alle punten na, leggen ze vast en tekenen af. Op de uitvoering krijg je een jaar garantie, op materialen geldt de fabrieksgarantie. En daarna blijven we gewoon bereikbaar.",
+    ],
+    links: [{ href: "/veelgestelde-vragen", label: "Veelgestelde vragen" }],
   },
 ];
 
@@ -76,7 +106,7 @@ const procesFaq = [
   {
     question: "Doen jullie ook totaalprojecten?",
     answer:
-      "Ja. Met ons vaste netwerk van partners en onderaannemers regelen we het complete traject — van constructie tot installaties en afwerking.",
+      "Ja. Met ons vaste netwerk van partners en onderaannemers regelen we het complete traject, van constructie tot installaties en afwerking.",
   },
   {
     question: "Kan ik thuis blijven wonen tijdens de bouw?",
@@ -84,6 +114,17 @@ const procesFaq = [
       "Meestal wel. We bespreken dit vooraf en plannen het werk zo dat de overlast beperkt blijft.",
   },
 ];
+
+function Arrow() {
+  return (
+    <svg className="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
+}
+
+const pad = (n: number) => String(n).padStart(2, "0");
 
 export default function HoeWijWerkenPage() {
   return (
@@ -96,40 +137,112 @@ export default function HoeWijWerkenPage() {
       />
       <FaqJsonLd items={procesFaq} />
 
-      <PageHero
-        eyebrow="Samen bouwen"
-        title="Bouwen begint bij communicatie"
-        intro="Duidelijke afspraken en een goed plan vooraf voorkomen misverstanden achteraf. Dat levert jou rust, overzicht en vertrouwen op — en ons efficiënt werk en een tevreden klant."
-        cta={<QuoteButton>Plan een gratis intake</QuoteButton>}
-      />
+      {/* Kop en klantreis op tekenpapier dat in- en uitfadet */}
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="blueprint-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_85%,transparent)]"
+        />
+        <div className="container-page relative pb-20 pt-14 md:pb-28 md:pt-20">
+          <p className="eyebrow text-stone">Samen bouwen</p>
+          <h1 className="display mt-6 max-w-4xl text-5xl md:text-7xl">
+            Hoe wij werken, van intake tot oplevering.
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-stone">
+            Verbouwen is spannend. Daarom zetten we elke stap voor je op een
+            rij, zodat je vooraf weet wat er gebeurt, wie je over de vloer
+            krijgt en wat het kost. Dit is de klantreis bij MTB Bouw.
+          </p>
 
-      {/* De acht stappen — uitgeschreven, verticaal */}
-      <section className="container-page py-20 md:py-28">
-        <p className="eyebrow text-stone">
-          Stap voor stap
-        </p>
-        <h2 className="display mt-4 text-4xl md:text-5xl">
-          Van kennismaking tot nazorg
-        </h2>
-        <ol className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2">
-          {steps.map((s) => (
-            <li key={s.step} className="border-t border-mist pt-6">
-              <span className="text-2xl font-semibold text-navy">{s.step}</span>
-              <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 leading-relaxed text-stone">{s.text}</p>
-            </li>
-          ))}
-        </ol>
+          <div className="mt-16 grid gap-12 md:mt-20 md:grid-cols-12">
+            {/* Inhoud van de reis, blijft staan tijdens het scrollen */}
+            <nav aria-label="Stappen van de klantreis" className="md:col-span-4">
+              <div className="md:sticky md:top-24">
+                <p className="eyebrow text-stone">De klantreis</p>
+                <h2 className="display mt-4 text-3xl md:text-4xl">
+                  Zes stappen, één aanspreekpunt
+                </h2>
+                <ol className="mt-8 border-t border-ink">
+                  {steps.map((s, i) => (
+                    <li key={s.id} className="border-b border-mist">
+                      <a
+                        href={`#${s.id}`}
+                        className="flex items-baseline gap-4 py-3 text-sm font-semibold text-ink transition-colors hover:text-navy"
+                      >
+                        <span className="label-num text-navy">{pad(i + 1)}</span>
+                        {s.title}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </nav>
+
+            <ol className="relative border-l border-ink/15 md:col-span-7 md:col-start-6">
+              {/* Stap 0: de eerste stap zet jij */}
+              <li className="relative pb-14 pl-8 md:pl-12">
+                <span aria-hidden="true" className="absolute -left-[6px] top-2 size-3 bg-lime" />
+                <div className="border border-ink/15 bg-white p-6 md:p-8">
+                  <p className="label-mono text-stone">00 · Jij</p>
+                  <h3 className="display mt-3 text-3xl md:text-4xl">De eerste stap zet jij</h3>
+                  <p className="mt-4 leading-relaxed text-stone">
+                    Bel, app of laat je gegevens achter, dan plannen we de intake.
+                    De rest doen we samen.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <QuoteButton>Plan je gratis intake</QuoteButton>
+                    <a
+                      href={`tel:${site.telephoneHref}`}
+                      className="label-mono inline-flex items-center justify-center border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white"
+                    >
+                      Bel {site.telephone}
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              {steps.map((s, i) => (
+                <li key={s.id} id={s.id} className="relative scroll-mt-28 pb-14 pl-8 last:pb-0 md:pl-12">
+                  <span aria-hidden="true" className="absolute -left-[6px] top-2 size-3 border-2 border-navy bg-white" />
+                  <p className="label-mono flex items-center gap-3 text-navy">
+                    <span className="label-num">{pad(i + 1)}</span>
+                    {s.tag && (
+                      <span className="bg-lime px-2 py-0.5 text-ink">{s.tag}</span>
+                    )}
+                  </p>
+                  <h3 className="display mt-3 text-3xl md:text-4xl">{s.title}</h3>
+                  <div className="mt-4 max-w-2xl space-y-4 leading-relaxed text-stone">
+                    {s.text.map((t) => (
+                      <p key={t}>{t}</p>
+                    ))}
+                  </div>
+                  {s.links && (
+                    <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+                      {s.links.map((l) => (
+                        <li key={l.href}>
+                          <Link
+                            href={l.href}
+                            className="label-mono inline-flex items-center gap-1.5 text-navy underline decoration-lime decoration-2 underline-offset-4 hover:text-navy-dark"
+                          >
+                            {l.label} <Arrow />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </section>
 
       {/* Veilig en verantwoord — vangt ook de oude nav-link op */}
-      <section id="veilig-en-verantwoord" className="bg-paper">
+      <section id="veilig-en-verantwoord" className="border-y border-mist bg-white">
         <div className="container-page py-20 md:py-28">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
-              <p className="eyebrow text-stone">
-                Veilig en verantwoord
-              </p>
+              <p className="eyebrow text-stone">Een stukje veiligheid</p>
               <h2 className="display mt-4 text-4xl md:text-5xl">
                 Veiligheid is geen bijzaak
               </h2>
@@ -139,15 +252,19 @@ export default function HoeWijWerkenPage() {
                 beschermingsmiddelen. Veiligheidseisen leggen we vast in het
                 projectplan, zodat iedereen weet waar hij aan toe is.
               </p>
+              <Link
+                href="/veilig-verantwoord-bouwen"
+                className="label-mono mt-6 inline-flex items-center gap-1.5 text-navy underline decoration-lime decoration-2 underline-offset-4"
+              >
+                Veilig en verantwoord bouwen <Arrow />
+              </Link>
             </div>
             <div className="border-t-2 border-lime pt-8">
               <ShieldIcon className="h-7 w-7" />
-              <h3 className="mt-4 text-xl font-semibold">
-                SBB-erkend leerbedrijf
-              </h3>
+              <h3 className="mt-4 text-xl font-semibold">SBB-erkend leerbedrijf</h3>
               <p className="mt-2 text-stone">
                 MTB Bouw is door SBB erkend als leerbedrijf (ID 100812726). We
-                leiden de vakmensen van morgen op — op onze eigen bouwplaatsen,
+                leiden de vakmensen van morgen op, op onze eigen bouwplaatsen en
                 onder begeleiding van ervaren collega&apos;s.
               </p>
             </div>
@@ -155,29 +272,11 @@ export default function HoeWijWerkenPage() {
         </div>
       </section>
 
-      <FeatureGrid
-        eyebrow="Waar we voor staan"
-        title="Drie beloftes"
-        items={pillars.map((pillar, i) => ({
-          icon: pillarIcons[i],
-          title: pillar.title,
-          text: pillar.text,
-        }))}
-      />
-
       <FaqAccordion items={procesFaq} title="Veelgestelde vragen over het proces" />
 
       <KennisbankBlock
         match={{ categories: ["kosten-offertes", "plannen-aanpak"] }}
         title="Meer over kosten en aanpak"
-      />
-
-      <CtaBanner
-        eyebrow="Kennismaken?"
-        title="Plan een gratis intake op locatie"
-        text="Vrijblijvend in gesprek over jouw plan — wij vertellen eerlijk wat er kan."
-        cta={{ label: "Ontvang offerte", drawer: true }}
-        secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />
     </>
   );

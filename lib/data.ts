@@ -51,30 +51,35 @@ export const team = [
     name: "Mathijs",
     role: "Projectleider",
     image: "/images/team/mathijs.webp",
+    position: "45% 18%", // gezicht in beeld bij bijsnijden
     text: "Na jaren als uitvoerder bij Koopmans Bouw begon Mathijs voor zichzelf. Inmiddels leidt hij met een vast team grote verbouwingen en bouwprojecten.",
   },
   {
     name: "Niels",
     role: "Timmerman (ZZP)",
     image: "", // PLACEHOLDER: foto ontbreekt op huidige site
+    position: "50% 50%",
     text: "Niels komt uit de installatietechniek en weet precies hoe alles achter de muren werkt. Zijn technische inzicht komt dagelijks van pas.",
   },
   {
     name: "Rick",
     role: "Afbouw (ZZP — RN Afbouw)",
     image: "/images/team/rick.jpg",
+    position: "50% 22%",
     text: "Gespecialiseerd in houtwerk en een vertrouwd gezicht op de bouw. Leert bij ons steeds meer van de ruwbouwfase.",
   },
   {
     name: "Leroy",
     role: "Timmerman i.o.",
     image: "", // PLACEHOLDER: foto ontbreekt op huidige site
+    position: "50% 50%",
     text: "Met zijn 16 jaar onze stagiair die razendsnel uitgroeit tot vakman. Komt uit een echte bouwfamilie.",
   },
   {
     name: "Robbert",
     role: "Werkvoorbereiding",
     image: "/images/team/robbert.jpg",
+    position: "55% 20%",
     text: "Zorgt dat alles vóór en tijdens de bouw klopt: planning, materiaal en voorbereiding — zodat het op de bouw soepel loopt.",
   },
 ] as const;
