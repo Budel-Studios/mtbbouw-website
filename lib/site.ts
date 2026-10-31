@@ -25,6 +25,19 @@ export const site = {
   },
   openingHours: "Ma–Vr 08:00–17:00",
   areaServed: ["Twente", "Oost-Nederland"],
+  /**
+   * Plaatsen waar we werken, voor de schema-code. De Wikipedia-link haalt
+   * dubbelzinnigheid weg: er is ook een Hengelo in Gelderland.
+   */
+  serviceCities: [
+    { name: "Enschede", sameAs: "https://nl.wikipedia.org/wiki/Enschede" },
+    { name: "Hengelo", sameAs: "https://nl.wikipedia.org/wiki/Hengelo_(Overijssel)" },
+    { name: "Almelo", sameAs: "https://nl.wikipedia.org/wiki/Almelo" },
+    { name: "Oldenzaal", sameAs: "https://nl.wikipedia.org/wiki/Oldenzaal" },
+    { name: "Borne" },
+    { name: "Haaksbergen" },
+    { name: "Losser" },
+  ] as { name: string; sameAs?: string }[],
   kvk: "42148321",
   sbb: "SBB-erkend leerbedrijf · ID 100812726",
   social: {

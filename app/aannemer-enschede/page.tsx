@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { RelatedContent } from "@/components/sections/related-content";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { UsersIcon, EuroIcon, ClockIcon, HammerIcon, HouseIcon, WindowIcon, LayersIcon } from "@/components/icons";
 import { faqAannemerEnschede } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
@@ -75,17 +74,22 @@ export default function AannemerEnschedePage() {
       />
       <FaqJsonLd items={faqAannemerEnschede} />
 
-      <PageHero
-        variant="image"
-        image={{
-          src: "/images/projects/project-1.jpg",
-          alt: "Verbouwing door aannemer MTB Bouw in Enschede",
-        }}
+      <CityMapHero
+        slug="enschede"
         eyebrow="Aannemer Enschede"
-        title="Aannemer in Enschede voor verbouw, aanbouw en renovatie"
-        intro="MTB Bouw is een aannemersbedrijf uit Enschede. Wij verbouwen woningen door de hele stad — van Twekkelerveld tot Glanerbrug — met een vast team, een vaste prijs en één aanspreekpunt. We komen graag bij je langs voor een intake op locatie."
-        cta={<QuoteButton />}
-      />
+        title="Aannemer in Enschede — onze thuisbasis"
+        kernen={["Pathmos", "Getfert", "Hogeland", "Dolphia", "Wesselerbrink", "Stroinkslanden", "Glanerbrug", "Boekelo", "Lonneker"]}
+      >
+        <p>
+          Enschede is onze thuisbasis, en elke wijk vraagt hier iets anders. In Pathmos, het tuindorp dat vanaf 1914 voor textielarbeiders werd gebouwd, draait een verbouwing om behoud van karakter. Een deel van de woningen is er gemeentelijk monument.
+        </p>
+        <p>
+          Langs de singel en in wijken als het Getfert, Hogeland en Dolphia staan de erkerwoningen uit de jaren dertig. Aan de Lasondersingel staan villa&apos;s uit dezelfde tijd. Mooie huizen, maar na bijna honderd jaar zijn kozijnen, daken en isolatie vaak aan vervanging toe.
+        </p>
+        <p>
+          In de wijken uit de jaren zestig tot tachtig, zoals de Wesselerbrink en de Stroinkslanden, gaat het vooral om isoleren, nieuwe kozijnen en een uitbouw voor meer ruimte.
+        </p>
+      </CityMapHero>
 
       {/* DIENSTEN IN ENSCHEDE */}
       <section className="bg-paper">

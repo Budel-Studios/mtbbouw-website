@@ -12,9 +12,10 @@ import { QuoteButton } from "@/components/ui/quote-button";
 import { ClockIcon, RulerIcon, CheckIcon, WallIcon, ShedIcon } from "@/components/icons";
 import { faqPrefab } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { ServiceAreaLinks } from "@/components/sections/service-area-links";
 
 export const metadata: Metadata = {
-  title: "Prefab bouwen in Twente",
+  title: { absolute: "Prefab & houtskeletbouw in Twente | MTB Bouw" },
   description:
     "Houtskeletbouw, prefab daken en wanden, overkappingen en buitengebouwen. Ruwbouw in dagen in plaats van weken, maatvast uit de fabriek.",
   alternates: { canonical: "/prefab" },
@@ -54,10 +55,14 @@ const ONDERDELEN = [
 ];
 
 export default function PrefabPage() {
-  const relatedProjects = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+  // Echte prefab- en houtskeletbouwprojecten, niet zomaar de nieuwste drie.
+  const relatedProjects = [
+    "uitbouw-houtskeletbouw-enschede",
+    "overkapping-paardenstal-enschede",
+    "luxe-overkapping-twente",
+  ]
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
@@ -131,7 +136,10 @@ export default function PrefabPage() {
       <SplitSection
         eyebrow="Hoe het werkt"
         title="Van fabriek naar fundering"
-        image={{ src: "/images/projects/project-3.jpg", alt: "Prefab bouwproject" }}
+        image={{
+          src: "/images/projects/overkapping-paardenstal-enschede/cover.png",
+          alt: "Grote houten overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw",
+        }}
         cta={{ href: "/bouwmethodes", label: "Vergelijk: traditioneel bouwen" }}
       >
         <p>
@@ -152,7 +160,7 @@ export default function PrefabPage() {
       <RelatedContent
         projects={relatedProjects}
         eyebrow="Gerealiseerd"
-        title="Recente projecten"
+        title="Houtskeletbouw en overkappingen van ons"
       />
 
       <FaqAccordion items={faqPrefab} title="Veelgestelde vragen over prefab" />
@@ -160,6 +168,11 @@ export default function PrefabPage() {
       <KennisbankBlock
         match={{ categories: ["technische-keuzes"], subcategories: ["fundering-constructie"], audience: "thuis" }}
         title="Meer over bouwmethodes"
+      />
+
+      <ServiceAreaLinks
+        label="Prefab bouwen"
+        intro="Vanuit Enschede bouwen we prefab en in houtskeletbouw door heel Twente. Op de pagina van jouw plaats vind je projecten en vragen uit de buurt."
       />
 
       <CtaBanner

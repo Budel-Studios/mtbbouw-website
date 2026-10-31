@@ -24,9 +24,6 @@ materials:
   - "Nieuw licht- en elektraplan en meterkast"
   - "Badkamers en keuken van Gevelaar"
 partners:
-  - name: "Van Galen Tegelzetters"
-    role: "Tegelwerk & stucwerk"
-    description: "Heeft de complete woning betegeld en gestukadoord."
   - name: "Gevelaar"
     role: "Badkamers & keuken"
     description: "Leverde de twee nieuwe badkamers en de keuken voor deze villa, vanuit Enschede."
@@ -134,7 +131,7 @@ Uiteindelijk hebben we de villa volledig gerenoveerd, van binnen en van buiten.
 - Maatwerk wandbekleding
 - Maatwerk banken in de kenmerkende zitkuil
 - De trap aangepakt
-- Volledig betegeld en gestukadoord door onze partner Van Galen
+- Volledig betegeld en gestukadoord
 
 **Dak, gevel en buiten**
 

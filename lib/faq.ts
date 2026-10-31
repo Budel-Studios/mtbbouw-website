@@ -52,12 +52,12 @@ const faqAanbouw: Faq[] = [
   {
     question: "Heb ik een vergunning nodig voor een aanbouw?",
     answer:
-      "Aanbouwen aan de achterkant zijn vaak (deels) vergunningsvrij — in de meeste Twentse gemeenten onder voorwaarden tot zo'n 30 m² op het achtererf. Grotere of vanaf de straat zichtbare aanbouwen vereisen een omgevingsvergunning. Wij adviseren je hier eerlijk over.",
+      "Vaak niet. Een aanbouw aan de achterkant is meestal vergunningvrij als hij in het achtererfgebied staat, niet dieper is dan 4 meter vanaf de oorspronkelijke achtergevel en binnen de hoogte-eisen blijft. Gemeenten kunnen in hun omgevingsplan eigen regels hebben, dus we checken het altijd voor jouw adres.",
   },
   {
     question: "Verhoogt een aanbouw de waarde van mijn woning?",
     answer:
-      "Ja. Extra leefruimte is aantrekkelijk voor kopers; een goed uitgevoerde aanbouw vertaalt zich doorgaans in een waardestijging van 70–90% van de bouwkosten.",
+      "Vaak wel. Extra leefruimte is aantrekkelijk voor kopers. Hoeveel het oplevert hangt af van je woning en de buurt; een taxateur kan dat het best inschatten.",
   },
   {
     question: "Werken jullie met een vaste prijs?",
@@ -82,7 +82,7 @@ const faqUitbouw: Faq[] = [
   {
     question: "Kan ik thuis blijven wonen tijdens de bouw?",
     answer:
-      "Ja — in ongeveer 90% van onze uitbouwprojecten blijven klanten gewoon thuis wonen. De doorbraak naar de bestaande woning plannen we zo laat mogelijk in het proces.",
+      "Meestal wel. De doorbraak naar de bestaande woning plannen we zo laat mogelijk in het proces, en we schermen de werkzone af.",
   },
   {
     question: "Welke materialen gebruiken jullie?",
@@ -782,24 +782,29 @@ export const faqVerduurzamen: Faq[] = [
 
 export const faqAannemerOldenzaal: Faq[] = [
   {
-    question: "Werken jullie vaker in Oldenzaal?",
+    question: "Werken jullie in Oldenzaal?",
     answer:
-      "Ja, Oldenzaal hoort bij ons vaste werkgebied — vanaf onze werkplaats in Enschede zijn we er binnen een kwartier.",
+      "Ja, Oldenzaal hoort bij ons vaste werkgebied, net als De Lutte en Rossum. Vanaf onze werkplaats in Enschede zijn we er in zo'n twintig minuten.",
   },
   {
-    question: "Hebben jullie ervaring met oudere woningen, zoals jaren-30-huizen?",
+    question: "Kunnen jullie een oudere woning verbouwen met behoud van karakter?",
     answer:
-      "Zeker. Bij karakteristieke woningen zoals in de oudere wijken van Oldenzaal draait het om verbouwen mét behoud van detail — profileringen, metselwerk en kapvormen nemen we mee in het plan.",
+      "Ja. Bij karakteristieke woningen draait het om verbouwen met behoud van detail: profileringen, metselwerk en kapvormen nemen we mee in het plan. Eerst kijken wat er is, dan pas slopen.",
+  },
+  {
+    question: "Wat als mijn woning een monument is of in het centrum staat?",
+    answer:
+      "Dan stemmen we het plan vooraf af met de gemeente Oldenzaal, zodat de vergunning rond komt. Bij de Van Zantinge-villa in Enschede werkten we op dezelfde manier samen met welstand.",
   },
   {
     question: "Rekenen jullie voorrijkosten naar Oldenzaal?",
     answer:
-      "Nee — we werken met een vaste projectprijs waar alles in zit.",
+      "Nee, we werken met een vaste projectprijs waar alles in zit.",
   },
   {
-    question: "Voor welke klussen kan ik jullie in Oldenzaal inschakelen?",
+    question: "Doen jullie in Oldenzaal ook zakelijke projecten?",
     answer:
-      "Renovatie en verbouw, aanbouwen en uitbouwen, kozijnen (via De Kozijnstudio) en prefab bouwen — hetzelfde aanbod als in Enschede.",
+      "Ja. Via Afbouwstudio bouwen we kantoren, winkels en horeca af, van casco tot sleutelklaar.",
   },
 ];
 
@@ -874,24 +879,29 @@ export const faqAannemerLosser: Faq[] = [
 
 export const faqAannemerHengelo: Faq[] = [
   {
-    question: "Werken jullie vaak in Hengelo?",
+    question: "Hoe snel zijn jullie in Hengelo?",
     answer:
-      "Ja, Hengelo is onze directe buurstad en hoort bij ons vaste werkgebied. Vanaf onze werkplaats in Enschede zijn we er binnen een kwartier.",
+      "Vanaf onze werkplaats in Enschede zijn we binnen een kwartier in Hengelo. We werken in heel Hengelo, en ook in Beckum en Oele. De intake doen we altijd bij jou thuis.",
+  },
+  {
+    question: "Kunnen jullie een oudere woning in Hengelo verbouwen met behoud van karakter?",
+    answer:
+      "Ja, daar hebben we een zwak voor. We kijken eerst wat er is en wat goed is, en verbouwen daaromheen. De renovatie van de Van Zantinge-villa in Enschede is daar een goed voorbeeld van.",
+  },
+  {
+    question: "Heb ik in Hengelo een vergunning nodig voor een uitbouw?",
+    answer:
+      "Vaak niet, als de uitbouw aan de achterkant staat, niet dieper is dan 4 meter vanaf de oorspronkelijke achtergevel en binnen de hoogte-eisen blijft. Het omgevingsplan van de gemeente Hengelo kan eigen regels hebben. We checken het altijd voor jouw adres.",
   },
   {
     question: "Rekenen jullie voorrijkosten naar Hengelo?",
     answer:
-      "Nee, we werken met een vaste projectprijs waar alles in zit.",
-  },
-  {
-    question: "Voor welke klussen kan ik jullie in Hengelo inschakelen?",
-    answer:
-      "Renovatie en verbouw, aanbouwen en uitbouwen, kozijnen via De Kozijnstudio en prefab bouwen. Dat doen we in heel Hengelo, en ook in Beckum en Oele.",
+      "Nee. Alles zit in de vaste projectprijs.",
   },
   {
     question: "Doen jullie in Hengelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio bouwen we kantoren, winkels en bedrijfspanden af, van casco tot turn-key, met één team en één vaste prijs.",
+      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één vaste prijs.",
   },
 ];
 
@@ -899,7 +909,17 @@ export const faqAannemerAlmelo: Faq[] = [
   {
     question: "Hoort Almelo bij jullie werkgebied?",
     answer:
-      "Ja. Almelo ligt op zo'n halfuur van onze werkplaats in Enschede en hoort bij ons vaste Twentse werkgebied, net als Aadorp, Bornerbroek en Mariaparochie.",
+      "Ja. Almelo ligt op zo'n halfuur van onze werkplaats in Enschede en hoort bij ons vaste werkgebied, net als Aadorp, Bornerbroek en Mariaparochie.",
+  },
+  {
+    question: "Doen jullie in Almelo ook kleine klussen, zoals een veranda?",
+    answer:
+      "Ja. De houten veranda die we in Almelo bouwden stond er in twee dagen. Klein of groot, je krijgt dezelfde vaste mensen en een vaste prijs.",
+  },
+  {
+    question: "Heb ik in Almelo een vergunning nodig voor een veranda of overkapping?",
+    answer:
+      "Vaak niet, als hij in de achtertuin staat en binnen de regels voor diepte en hoogte blijft. Het omgevingsplan van de gemeente Almelo kan eigen regels hebben. We checken het vooraf voor jouw adres.",
   },
   {
     question: "Rekenen jullie voorrijkosten naar Almelo?",
@@ -907,14 +927,9 @@ export const faqAannemerAlmelo: Faq[] = [
       "Nee, alles zit in de vaste projectprijs.",
   },
   {
-    question: "Kan ik in Almelo ook prefab laten bouwen?",
-    answer:
-      "Ja. Via ons Prefab-label staat de ruwbouw van een aanbouw vaak binnen een week, met minder overlast voor jou en de buren.",
-  },
-  {
     question: "Doen jullie in Almelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio bouwen we kantoren, winkels en bedrijfspanden af, van casco tot turn-key, met één team en één vaste prijs.",
+      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één vaste prijs.",
   },
 ];
 

@@ -2,28 +2,53 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { QuoteButton } from "@/components/ui/quote-button";
-import { faqAannemerOldenzaal } from "@/lib/faq";
+import { CityServices } from "@/components/sections/city-services";
+import { LocalPartners } from "@/components/sections/local-partners";
+import { CityStory } from "@/components/sections/city-story";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { faqAannemerOldenzaal } from "@/lib/faq";
+
+const title = "Aannemer Oldenzaal | renovatie, verbouw & uitbouw | MTB Bouw";
+const description =
+  "Bouwbedrijf voor Oldenzaal: renovatie en verbouw met behoud van karakter, uitbouw en kozijnen. Vast team uit Enschede. Vaste prijs, geen voorrijkosten.";
+const ogImage = "/images/projects/renovatie-schuur-behoud-karakter/cover.jpg";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aannemer in Oldenzaal | MTB Bouw — verbouw & renovatie" },
-  description:
-    "Aannemer in Oldenzaal: renovatie, verbouw, aanbouw en kozijnen, met oog voor karakteristieke woningen. Vaste prijs, geen voorrijkosten.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/aannemer-oldenzaal" },
+  openGraph: {
+    type: "website",
+    title,
+    description,
+    url: "/aannemer-oldenzaal",
+    images: [
+      {
+        url: ogImage,
+        alt: "Gerenoveerde schuur met behoud van het originele karakter, door MTB Bouw in Twente",
+      },
+    ],
+  },
 };
 
+const linkClass = "font-semibold text-ink underline hover:text-navy";
+
+/** Echte projecten met karakter; er staat nog geen Oldenzaalse klus in de portfolio. */
+const projectSlugs = [
+  "renovatie-villa-zantinge-enschede",
+  "renovatie-schuur-behoud-karakter",
+  "uitbouw-houtskeletbouw-enschede",
+];
+
 export default function AannemerOldenzaalPage() {
-  // Echte projecten uit de regio — geen verzonnen lokale referenties.
-  const projects = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+  const projects = projectSlugs
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
@@ -36,44 +61,127 @@ export default function AannemerOldenzaalPage() {
       />
       <ServiceJsonLd
         name="Aannemer in Oldenzaal"
-        description="Verbouw, renovatie, aanbouw en kozijnen in Oldenzaal door MTB Bouw uit Enschede."
+        description="Renovatie en verbouw met behoud van karakter, uitbouw en kozijnen in Oldenzaal door MTB Bouw uit Enschede."
         url="/aannemer-oldenzaal"
         serviceType="Aannemer"
+        city="Oldenzaal"
       />
       <FaqJsonLd items={faqAannemerOldenzaal} />
 
-      <PageHero
+      <CityMapHero
+        slug="oldenzaal"
         eyebrow="Aannemer Oldenzaal"
         title="Aannemer in Oldenzaal — vakwerk met oog voor karakter"
-        intro="MTB Bouw verbouwt woningen in Oldenzaal: van de karakteristieke oudere wijken rond de binnenstad tot de nieuwere buurten. Vanaf onze werkplaats in Enschede zijn we er binnen een kwartier — met een vaste prijs en zonder voorrijkosten."
-        cta={<QuoteButton />}
+        kernen={["Binnenstad", "De Thij", "De Lutte", "Rossum"]}
+      >
+        <p>
+          Oldenzaal is een van de oudste steden van Twente. De binnenstad ligt nog bijna rond om de Plechelmusbasiliek, met stadsrechten van rond 1250. Bij een monument stemmen we het plan vooraf af met de gemeente.
+        </p>
+        <p>
+          Aan straten als de Wilhelminastraat staan woningen uit de jaren dertig, en ten noorden van de rondweg groeide vanaf de jaren zestig De Thij. Twee heel verschillende huizen, met dezelfde vraag: meer comfort zonder het karakter te verliezen.
+        </p>
+      </CityMapHero>
+
+      {/* Onze aanpak */}
+      <CityStory
+        eyebrow="Verbouwen in Oldenzaal"
+        title="Eerst kijken wat er is, dan pas slopen"
+        image={{
+          src: "/images/projects/renovatie-villa-zantinge-enschede/04.jpg",
+          alt: "Zitkuil met maatwerk banken, haard en baksteenwand in een gerenoveerde Van Zantinge-villa",
+          caption: "De zitkuil met haard bleef behouden bij de renovatie van een Van Zantinge-villa",
+        }}
+      >
+        <p>
+          Oldenzaal kent veel woningen met karakter: metselwerkdetails,
+          kapvormen en profileringen die je bij een verbouwing wilt houden.
+          Daarom beginnen we altijd met kijken. Wat is goed, wat moet weg, en
+          hoe laat je het nieuwe aansluiten op het oude?
+        </p>
+        <p>
+          Zo renoveerden we in Enschede{" "}
+          <Link href="/projecten/renovatie-villa-zantinge-enschede" className={linkClass}>
+            een Van Zantinge-villa
+          </Link>
+          . Het typische dak en de zitkuil bleven, de rest van de woning werd
+          vernieuwd en geïsoleerd. Diezelfde aanpak nemen we mee naar
+          Oldenzaal.
+        </p>
+      </CityStory>
+
+      <CityServices
+        eyebrow="Wat we in Oldenzaal doen"
+        title="Renoveren, uitbouwen en verduurzamen"
+        items={[
+          {
+            href: "/verbouwing",
+            label: "Renovatie & verbouw",
+            text: "Een oudere woning vernieuwen met behoud van metselwerk, kapvorm en details.",
+          },
+          {
+            href: "/aanbouw-uitbouw",
+            label: "Aanbouw & uitbouw",
+            text: "Een uitbouw die aansluit op de stijl van het huis.",
+          },
+          {
+            href: "/kozijnen",
+            label: "Kozijnen",
+            text: "Nieuwe kozijnen in de stijl van het origineel, in hout, kunststof of aluminium.",
+          },
+          {
+            href: "/verduurzamen-enschede",
+            label: "Verduurzamen",
+            text: "Isoleren zonder dat het aanzicht van je woning verandert.",
+          },
+          {
+            href: "/prefab",
+            label: "Prefab & houtskeletbouw",
+            text: "Snel op de bouw als het om een uitbouw of bijgebouw gaat.",
+          },
+          {
+            href: "/afbouwstudio",
+            label: "Zakelijke afbouw",
+            text: "Voor bedrijven: kantoren, winkels en horeca, van casco tot sleutelklaar.",
+          },
+        ]}
       />
 
-      <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-          <p className="eyebrow text-stone">
-            Verbouwen in Oldenzaal
-          </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-            Van jaren-30-renovatie tot moderne aanbouw
-          </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-            Oldenzaal kent veel woningen met karakter — metselwerkdetails,
-            kapvormen en profileringen die je bij een verbouwing wilt behouden.
-            Wij renoveren en verbouwen mét dat karakter: een{" "}
-            <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-navy">renovatie</Link>{" "}
-            die past bij het huis, een{" "}
-            <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-navy">aanbouw of uitbouw</Link>{" "}
-            die aansluit op de bestaande stijl, nieuwe{" "}
-            <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">kozijnen</Link>{" "}
-            via De Kozijnstudio, of{" "}
-            <Link href="/prefab" className="font-semibold text-ink underline hover:text-navy">prefab bouwen</Link>{" "}
-            als snelheid telt. Ook{" "}
-            <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-navy">verduurzamen</Link>{" "}
-            nemen we het voordeligst mee tijdens de verbouwing zelf.
-          </p>
-        </div>
+      {/* Regels */}
+      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+        <p className="eyebrow text-stone">Vergunning en regels</p>
+        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          Regels in de gemeente Oldenzaal
+        </h2>
+        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
+          Voor veel verbouwingen aan de achterkant heb je geen vergunning
+          nodig. Bij een monument, een pand in het centrum of een wijziging
+          aan de voorkant kunnen extra regels gelden voor het aanzicht. Die
+          staan in het omgevingsplan van de gemeente Oldenzaal. We kijken ze
+          met je na voordat we beginnen, en stemmen het plan waar nodig af met
+          de gemeente. Zelf alvast kijken kan in het{" "}
+          <a
+            href="https://omgevingswet.overheid.nl/"
+            target="_blank"
+            rel="noopener"
+            className={linkClass}
+          >
+            Omgevingsloket
+          </a>
+          .
+        </p>
       </section>
+
+      <RelatedContent
+        projects={projects}
+        eyebrow="Werk met karakter"
+        title="Renovaties uit de regio"
+      />
+
+      <LocalPartners
+        title="Dezelfde vaste partners"
+        intro="In Oldenzaal bouwen we met dezelfde vaste partners als in de rest van Twente. Zo weet iedereen wat de ander doet, en blijft de planning strak."
+        names={["Kamphuis Dakbedekking", "KUality Schilders", "BMN Bouwmaterialen", "Brouwer Containers"]}
+      />
 
       <FaqAccordion
         items={faqAannemerOldenzaal}
@@ -81,14 +189,8 @@ export default function AannemerOldenzaalPage() {
         title="Vragen aan een aannemer in Oldenzaal"
       />
 
-      <RelatedContent
-        projects={projects}
-        eyebrow="Werk uit de regio"
-        title="Recent werk in Twente"
-      />
-
       <KennisbankBlock
-        match={{ audience: "thuis" }}
+        match={{ categories: ["verduurzamen"], subcategories: ["kozijnen-glas"], audience: "thuis" }}
         title="Lees je in voor je gaat verbouwen"
       />
 
@@ -97,7 +199,7 @@ export default function AannemerOldenzaalPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Verbouwplannen in Oldenzaal?"
-        text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een offerte met vaste prijs."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

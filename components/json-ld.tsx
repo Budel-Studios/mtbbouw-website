@@ -20,6 +20,25 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
  */
 export const ORG_ID = `${site.url}/#organization`;
 
+/** Een plaats in Overijssel als schema.org City. */
+export function cityNode(name: string) {
+  const known = site.serviceCities.find((c) => c.name === name);
+  return {
+    "@type": "City",
+    name,
+    containedInPlace: { "@type": "AdministrativeArea", name: "Overijssel" },
+    ...(known?.sameAs && { sameAs: known.sameAs }),
+  };
+}
+
+/** Volledig werkgebied: de steden plus de regio's eromheen. */
+function areaServedNodes() {
+  return [
+    ...site.serviceCities.map((c) => cityNode(c.name)),
+    ...site.areaServed.map((name) => ({ "@type": "Place", name })),
+  ];
+}
+
 /**
  * Provincie bij een projectlocatie. Stond eerder hardgecodeerd op Overijssel,
  * wat onjuist was voor Hilversum (Noord-Holland) en Apeldoorn (Gelderland).
@@ -71,7 +90,7 @@ export function OrganizationJsonLd() {
         image: `${site.url}/images/brand/hero.png`,
         // Werkgebied als Place, zodat Google er een regio in herkent in
         // plaats van losse woorden.
-        areaServed: site.areaServed.map((name) => ({ "@type": "Place", name })),
+        areaServed: areaServedNodes(),
         identifier: {
           "@type": "PropertyValue",
           propertyID: "KVK",
@@ -212,11 +231,14 @@ export function ServiceJsonLd({
   description,
   url,
   serviceType,
+  city,
 }: {
   name: string;
   description: string;
   url: string;
   serviceType: string;
+  /** Stadspagina: alleen deze plaats als werkgebied. */
+  city?: string;
 }) {
   return (
     <JsonLd
@@ -227,9 +249,10 @@ export function ServiceJsonLd({
         description,
         serviceType,
         url: `${site.url}${url}`,
-        areaServed: site.areaServed,
+        areaServed: city ? cityNode(city) : areaServedNodes(),
         provider: {
           "@type": "GeneralContractor",
+          "@id": ORG_ID,
           name: site.legalName,
           url: site.url,
         },

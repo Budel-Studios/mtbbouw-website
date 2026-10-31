@@ -18,7 +18,7 @@ export default function VerbouwingPage() {
   return (
     <ServicePageTemplate
       data={renovatieData}
-      caseImage="/images/projects/project-1.jpg"
+      caseImage="/images/projects/renovatie-villa-zantinge-enschede/06.jpg"
       kennisbank={{
         match: { categories: ["plannen-aanpak", "kosten-offertes"], audience: "thuis" },
         title: "Lees je in voor je gaat verbouwen",

@@ -14,6 +14,7 @@ type PartnerCategory =
   | "bouwmaterialen"
   | "afvoer"
   | "gevels"
+  | "sanitair"
   | "tuin"
   | "interieur"
   | "beheer"
@@ -44,6 +45,7 @@ export const partnerCategories: Record<PartnerCategory, string> = {
   bouwmaterialen: "Bouwmaterialen",
   afvoer: "Afvoer & Containers",
   gevels: "Gevels & Kozijnen",
+  sanitair: "Badkamers & Keukens",
   tuin: "Tuin & Buitenruimte",
   interieur: "Interieur",
   beheer: "VvE & Beheer",
@@ -81,6 +83,7 @@ export const categoryToBucket: Record<PartnerCategory, Bucket> = {
   bouwmaterialen: "toeleveranciers",
   afvoer: "toeleveranciers",
   gevels: "toeleveranciers",
+  sanitair: "toeleveranciers",
   bouwbedrijven: "partners",
   tuin: "partners",
   interieur: "partners",
@@ -129,7 +132,15 @@ const craftsman: Partner[] = [
     description:
       "Onze partner voor platte daken en dakbedekking op renovatie- en nieuwbouwprojecten.",
     url: "https://kamphuis-dakbedekking.nl/",
-    region: "Twente",
+    region: "Enschede",
+  },
+  {
+    name: "Green Solutions Installatietechniek",
+    category: "installatie",
+    description:
+      "Elektra, zonnepanelen en warmtepompen. Installatiepartner bij de Van Zantinge-villa.",
+    url: "https://www.greensolutionsit.nl/",
+    region: "Enschede",
   },
 ];
 
@@ -148,7 +159,7 @@ const suppliers: Partner[] = [
     description:
       "Groothandel voor de bouw: bevestiging, gereedschap en beslag uit een zeer breed assortiment.",
     url: "https://www.voskampgroep.nl/bouw-en-industrie",
-    region: "Oost-Nederland",
+    region: "Enschede · Almelo",
   },
   {
     name: "Rouwmaat Betoncentrale",
@@ -156,7 +167,7 @@ const suppliers: Partner[] = [
     description:
       "Beton voor funderingen en vloeren, geleverd en gestort vanuit de eigen betoncentrale.",
     url: "https://www.rouwmaat.nl/",
-    region: "Oost-Nederland",
+    region: "Enschede",
   },
   {
     name: "Brouwer Containers",
@@ -164,7 +175,7 @@ const suppliers: Partner[] = [
     description:
       "Containers en afvalafvoer op de bouw — zo blijft het werk netjes en de planning strak.",
     url: "https://www.brouwercontainers.nl/",
-    region: "Twente",
+    region: "Enschede",
   },
   {
     name: "BMN Bouwmaterialen",
@@ -172,15 +183,16 @@ const suppliers: Partner[] = [
     description:
       "Onze vaste leverancier van bouwmaterialen — betrouwbaar en snel op de bouw.",
     url: "https://www.bmn.nl/",
-    region: "Twente",
+    region: "Enschede · Hengelo",
     size: 2,
   },
   {
     name: "Gevelaar",
-    category: "gevels",
-    description: "Partner voor gevels en kozijnen op onze grotere projecten.",
+    category: "sanitair",
+    description:
+      "Badkamers, sanitair en tegels uit Enschede. Leverde de badkamers en de keuken voor de Van Zantinge-villa.",
     url: "https://gevelaar.nl",
-    region: "Twente",
+    region: "Enschede",
   },
   {
     name: "De Kozijnstudio",
@@ -188,7 +200,7 @@ const suppliers: Partner[] = [
     description:
       "All-in en transparante kozijnvervanging. Onze kennispartner voor advies over glas en isolatie.",
     url: "https://kozijnstudio.com",
-    region: "Oost-Nederland",
+    region: "Enschede",
     featured: true,
   },
   {
@@ -197,7 +209,7 @@ const suppliers: Partner[] = [
     description:
       "Voor tuinaanleg, bestrating en buitenruimte rondom onze projecten.",
     url: "https://www.meulemanhoveniers.nl/",
-    region: "Twente",
+    region: "Enschede",
   },
   {
     name: "Zebrano Studio",
@@ -214,14 +226,14 @@ const suppliers: Partner[] = [
     category: "beheer",
     description: "VvE- en vastgoedbeheer in de regio Twente.",
     url: "https://vvebeheer-twente.nl/",
-    region: "Twente",
+    region: "Enschede",
   },
   {
-    name: "Dukato",
+    name: "Dukato Hypotheken",
     category: "overig",
-    description: "Vaste partner in de bouwregio Twente.",
-    url: "https://dukato.nl",
-    region: "Twente",
+    description: "Hypotheek- en financieel advies, ook als je een verbouwing wilt financieren.",
+    url: "https://dukatohypotheken.nl/",
+    region: "Enschede",
   },
   {
     name: "tien98",
@@ -229,7 +241,7 @@ const suppliers: Partner[] = [
     description:
       "Onze partner voor branding en merkidentiteit — het merk MTB Bouw is door hen neergezet.",
     url: "https://tien98.nl",
-    region: "Twente",
+    region: "Enschede",
   },
 ];
 

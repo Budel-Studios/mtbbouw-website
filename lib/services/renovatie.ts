@@ -18,11 +18,11 @@ export const renovatieData: ServiceData = {
     primaryCta: { label: "Plan een intake", href: "/contact" },
     secondaryCta: { label: "Bekijk onze case", href: "#case" },
     heroImageAlt:
-      "Volledig gerenoveerd jaren-30 woonhuis in Enschede door MTB Bouw met behoud karakter",
+      "Gerenoveerde Van Zantinge-villa in Enschede met behoud van karakter, door MTB Bouw",
     stats: [
-      { value: "75+", label: "Renovaties uitgevoerd" },
+      { value: "1 aanspreekpunt", label: "Mathijs of Robbert" },
       { value: "Jaren-30", label: "Karakter behouden" },
-      { value: "Duurzaam", label: "BENG-renovatie mogelijk" },
+      { value: "Duurzaam", label: "Isoleren in één keer mee" },
     ],
   },
   subServices: {
@@ -36,7 +36,8 @@ export const renovatieData: ServiceData = {
       { sketchIcon: "kitchen", title: "Keuken renovatie",
         desc: "Een nieuwe keuken met aandacht voor leidingen, elektra, ventilatie en afwerking. Wij plaatsen ook keukens van IKEA, Bruynzeel en Mandemakers." },
       { sketchIcon: "sustainability", title: "Renoveren én verduurzamen",
-        desc: "Combineer renovatie met isolatie, warmtepomp en zonnepanelen. Subsidies regelen we, je woont straks comfortabeler én goedkoper." },
+        desc: "Combineer renovatie met isolatie, warmtepomp en zonnepanelen. Subsidies regelen we, je woont straks comfortabeler én goedkoper.",
+        href: "/verduurzamen-enschede" },
     ],
   },
   werkwijze: {
@@ -47,25 +48,27 @@ export const renovatieData: ServiceData = {
   },
   caseStudy: {
     eyebrow: "03 — Case",
-    h2: "Een jaren-30 woning gemoderniseerd zonder zijn karakter te verliezen",
-    location: "Oldenzaal — Vrijstaande jaren-30 woning",
-    duration: "16 weken",
-    delivered: "Winter 2025",
+    h2: "Een Van Zantinge-villa gerenoveerd met behoud van karakter",
+    location: "Enschede — Van Zantinge-villa",
+    duration: "6 maanden",
+    delivered: "In overleg met welstand",
     story:
-      "Het echtpaar wilde de charme van hun jaren-30 woning behouden, maar dan zonder enkelglas, vochtige kruipruimte en gedateerd interieur. Wij isoleerden de vloer en het dak, plaatsten nieuwe houten kozijnen in originele stijl, vernieuwden de hele installatie inclusief warmtepomp, en bouwden een nieuwe badkamer en keuken. De woonkamer kreeg zijn originele schoorsteen terug — als statement.",
+      "Veel aannemers zagen deze klus niet zitten. Wij wel: de volledige renovatie van de villa waar architect Van Zantinge zelf woonde. Binnenschil, buitenschil, dak, kozijnen en patio, in zes maanden. Het typische flauwe dak met houten bekleding en de zitkuil met haard bleven behouden en zijn hersteld.",
     didList: [
-      "Sloop binnenmuren + nieuwe indeling",
-      "Vloerisolatie + dakisolatie",
-      "Houten kozijnen op maat (originele stijl)",
-      "Nieuwe elektra en loodvrij sanitair",
-      "Warmtepomp + vloerverwarming",
-      "Compleet nieuwe badkamer en keuken",
-      "Stuc, vloeren, schilderwerk",
-      "Originele schoorsteen hersteld",
+      "Binnen- en buitenschil vernieuwd",
+      "Nieuw geïsoleerd dak en plafond",
+      "Maatwerk kozijnen en een glazen patio",
+      "Vloerverwarming en nieuwe dekvloer",
+      "Nieuw licht- en elektraplan en meterkast",
+      "Twee badkamers en een nieuwe keuken",
+      "Gevelimpregnatie en nieuw voegwerk",
     ],
     quote:
-      "Het voelt nog steeds als ons huis — maar dan beter geïsoleerd, mooier én warmer. MTB Bouw begreep wat we wilden behouden en wat moest weg.",
-    quoteAuthor: "Familie V.D. — Oldenzaal",
+      "Al met al een enorm complex en groot project. Maar de klanten zijn enorm tevreden met het resultaat, en daar doen we het voor.",
+    quoteAuthor: "Team MTB Bouw",
+    imageAlt:
+      "Nieuwe keuken met houten kastenwand, kookeiland en zicht op de glazen patio in de gerenoveerde Van Zantinge-villa in Enschede",
+    href: "/projecten/renovatie-villa-zantinge-enschede",
   },
   sketchBreak: { bigQuote: "Eerst kijken wat er is. Dan pas slopen." },
   typeWoningen: {
@@ -83,13 +86,13 @@ export const renovatieData: ServiceData = {
     h2: "De 5 vragen die we bij elke renovatie krijgen",
     items: [
       { q: "Wat kost een renovatie in Twente?",
-        a: "Een totaalrenovatie kost gemiddeld €1.200–€2.000 per m². Voor een woning van 130 m² praat je dus over €160.000–€260.000. Een badkamer alleen: €15.000–€35.000. Wij maken altijd een transparante offerte." },
+        a: "Als indicatie kost een totaalrenovatie €1.200 tot €2.000 per m². Voor een woning van 130 m² praat je dan over €160.000 tot €260.000. Een badkamer alleen ligt vaak tussen €15.000 en €35.000. Na de intake krijg je een offerte met heldere posten." },
       { q: "Hoe lang duurt een renovatie?",
         a: "Een badkamer renoveren: 3–4 weken. Een keuken: 2–3 weken. Een totaalrenovatie: 12–20 weken. Wij plannen alles strak en delen wekelijks de voortgang." },
       { q: "Kan ik in mijn huis blijven wonen tijdens de renovatie?",
         a: "Bij een badkamer- of keukenrenovatie meestal wel. Bij een totaalrenovatie raden we aan om tijdelijk elders te verblijven (4–8 weken intensief werk). We bespreken de mogelijkheden vooraf." },
       { q: "Doen jullie ook monumentale renovaties?",
-        a: "Ja — wij hebben ervaring met monumenten in Enschede, Oldenzaal en omgeving. We werken samen met de gemeente en monumentencommissie zodat je vergunning rond komt." },
+        a: "We werken graag aan woningen met karakter. De Van Zantinge-villa in Enschede renoveerden we in overleg met welstand. Bij een monument stemmen we het plan vooraf af met de gemeente, zodat je vergunning rond komt." },
       { q: "Krijg ik een vaste prijs of richtprijs?",
         a: "Wij werken met vaste aanneemsommen waar het kan. Bij oudere woningen reserveren we een transparante post voor onvoorzien (asbest, fundering) — vooraf besproken en onderbouwd." },
     ],
@@ -102,6 +105,22 @@ export const renovatieData: ServiceData = {
     primaryCta: { label: "Plan intake", href: "/contact" },
     secondaryCta: { label: "Bel direct: 053 206 50 71", href: "tel:+31532065071" },
     note: "Of mail naar info@mtbbouw.com — we reageren binnen één werkdag.",
+  },
+  projects: {
+    eyebrow: "Ons werk",
+    h2: "Renovaties die we deden",
+    slugs: ["renovatie-villa-zantinge-enschede", "renovatie-schuur-behoud-karakter", "uitbouw-houtskeletbouw-enschede"],
+  },
+  partners: {
+    h2: "Vaste partners bij een renovatie",
+    intro:
+      "Bij een renovatie komt veel samen. Bij de Van Zantinge-villa werkten we met vaste partners voor badkamers en keuken, en voor installaties.",
+    names: ["Gevelaar", "Green Solutions Installatietechniek", "KUality Schilders", "Het Vloerenhof"],
+  },
+  werkgebied: {
+    label: "Renovatie",
+    intro:
+      "Vanuit Enschede renoveren we woningen in heel Twente. Op de pagina van jouw plaats vind je projecten, regels en vragen uit de buurt.",
   },
   related: [
     { label: "Aanbouw & uitbouw", href: "/aanbouw-uitbouw" },

@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
-import { PageHero } from "@/components/sections/page-hero";
+import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { SplitSection } from "@/components/sections/split-section";
 import { RelatedContent } from "@/components/sections/related-content";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { QuoteButton } from "@/components/ui/quote-button";
 import { MapPinIcon } from "@/components/icons";
 import { faqAannemerTwente } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
@@ -62,17 +61,18 @@ export default function AannemerTwentePage() {
       />
       <FaqJsonLd items={faqAannemerTwente} />
 
-      <PageHero
-        variant="image"
-        image={{
-          src: "/images/projects/project-2.jpg",
-          alt: "Verbouwing door aannemer MTB Bouw in Twente",
-        }}
+      <CityMapHero
         eyebrow="Aannemer Twente"
         title="Aannemer in Twente — verbouwen met een vast team uit Enschede"
-        intro="MTB Bouw is een aannemersbedrijf uit Enschede dat in heel Twente verbouwt: van renovatie en aanbouw tot kozijnen en prefab. Met vaste regionale partners, een vaste prijs en één aanspreekpunt — waar in de regio je ook woont."
-        cta={<QuoteButton />}
-      />
+        kernen={["Enschede", "Hengelo", "Almelo", "Oldenzaal", "Borne", "Haaksbergen", "Losser"]}
+      >
+        <p>
+          Twente is een regio van textielsteden en esdorpen. Van de tuindorpen in Enschede, Hengelo en Almelo tot de boerderijen in het buitengebied: elk huis vraagt iets anders.
+        </p>
+        <p>
+          We zijn een klein bouwbedrijf uit Enschede en werken het liefst dicht bij huis. Kies je plaats op de kaart voor projecten en vragen uit jouw buurt.
+        </p>
+      </CityMapHero>
 
       {/* WERKGEBIED */}
       <section className="bg-paper">

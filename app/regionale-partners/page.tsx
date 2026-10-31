@@ -3,23 +3,30 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RegionalePartnersBrowser } from "@/components/regionale-partners-browser";
+import Link from "next/link";
 import { site } from "@/lib/site";
+import { projectsByPartner, projectsWithPartners } from "@/lib/partner-projects";
+
+const title = "Regionale bouwpartners in Twente | MTB Bouw";
+const description =
+  "Met deze vaste vakmensen en leveranciers uit Twente bouwt MTB Bouw. Geen wisselende onderaannemers, maar partners uit de buurt die we kennen.";
 
 export const metadata: Metadata = {
-  title: "Regionale partners — samen bouwen met de regio",
-  description:
-    "MTB Bouw werkt met een vast netwerk van regionale vakmensen en leveranciers in Twente. Korte lijnen, hoge kwaliteit, lokaal verankerd.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/regionale-partners" },
   openGraph: {
     type: "website",
-    title: "Samen bouwen met de regio — MTB Bouw",
-    description:
-      "MTB Bouw werkt samen met een vast netwerk van regionale vakmensen en leveranciers in Twente. Korte lijnen, hoge kwaliteit en lokaal verankerd.",
+    title,
+    description,
     url: "/regionale-partners",
   },
 };
 
 export default function RegionalePartnersPage() {
+  const byPartner = projectsByPartner();
+  const samenGebouwd = projectsWithPartners();
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -32,10 +39,37 @@ export default function RegionalePartnersPage() {
       <PageHero
         eyebrow="Ons netwerk in Twente"
         title="Samen bouwen met de regio"
-        intro="Wij werken met korte lijnen en vertrouwde lokale vakmensen. Door samen op te trekken met mensen uit de regio houden we de flexibiliteit hoog en de kwaliteit gegarandeerd — van de eerste schop tot het laatste verfstreekje."
+        intro="We zijn een klein bouwbedrijf en dat willen we graag zo houden. Voor wat we niet zelf doen, werken we met vaste mensen en bedrijven uit de buurt. Geen wisselende onderaannemers, maar partners die we kennen en die elkaar kennen."
       />
 
-      <RegionalePartnersBrowser />
+      <RegionalePartnersBrowser projectsByPartner={byPartner} />
+
+      {/* Samen gebouwd — partners gekoppeld aan echte projecten */}
+      {samenGebouwd.length > 0 && (
+        <section className="border-y border-mist bg-paper">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <p className="eyebrow text-stone">Samen gebouwd</p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              Waar onze partners meebouwden
+            </h2>
+            <ul className="mt-10 grid gap-px border border-mist bg-mist sm:grid-cols-2">
+              {samenGebouwd.map((p) => (
+                <li key={p.permalink} className="bg-white p-6">
+                  <Link
+                    href={p.permalink}
+                    className="font-display text-lg font-semibold text-ink underline hover:text-navy"
+                  >
+                    {p.title}
+                  </Link>
+                  <p className="mt-2 text-sm leading-relaxed text-stone">
+                    {p.location ? `${p.location} · ` : ""}met {p.partners.join(", ")}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Word partner van MTB — opvallend lime-blok */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
@@ -97,7 +131,7 @@ export default function RegionalePartnersPage() {
         eyebrow="Samen bouwen"
         title="Bouwen met een betrouwbaar regionaal team"
         text="Benieuwd wat we samen voor jouw project kunnen betekenen? Neem vrijblijvend contact op."
-        cta={{ label: "Bespreek jouw project", href: "/contact" }}
+        cta={{ label: "Bespreek jouw project", drawer: true }}
         secondary={{ label: `Bel ${site.telephone}`, href: `tel:${site.telephoneHref}` }}
       />
     </>
