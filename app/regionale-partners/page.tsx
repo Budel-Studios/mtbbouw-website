@@ -56,7 +56,7 @@ export default function RegionalePartnersPage() {
       {/* Word partner van MTB — opvallend lime-blok */}
       <section className="container-page py-16">
         <a
-          href="/contact#formulier"
+          href="/contact"
           className="group block bg-lime text-ink transition-colors hover:bg-lime-dark"
         >
           <div className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:gap-10 md:p-12">

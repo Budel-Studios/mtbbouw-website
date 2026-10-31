@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
-import { ProcessSteps } from "@/components/sections/process-steps";
-import { CtaBanner } from "@/components/sections/cta-banner";
 import { CardSlider } from "@/components/sections/card-slider";
 import type { ProjectCardData } from "@/components/project/project-cards";
 import { DrawOnView } from "@/components/blueprint/draw-on-view";
-import { NumberBox } from "@/components/blueprint/marks";
 import {
   HouseDrawing,
   LunchroomDrawing,
@@ -158,14 +155,13 @@ const steden = [
   { href: "/aannemer-twente", label: "Heel Twente" },
 ];
 
-/** De twee hoofdrichtingen, bovenaan de pagina, elk met een schets. */
-const HOOFD = [
+/** De vier expertises, naast elkaar bovenaan de pagina, elk met een schets. */
+const EXPERTISES = [
   {
-    n: 1,
     label: "Voor thuis",
     title: "Wonen & Verbouwen",
     href: "/wonen-en-verbouwen",
-    text: "Renoveren, uitbouwen, verduurzamen of nieuw bouwen. Of je nu in een jaren-30 woning woont of in een huis uit de jaren zeventig: we kijken eerst wat goed is, en maken de rest weer van nu.",
+    text: "Renoveren, uitbouwen, verduurzamen of nieuw bouwen. Van jaren-30 woning tot huis uit de jaren zeventig.",
     links: [
       { href: "/verbouwing", label: "Renovatie & verbouw" },
       { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
@@ -175,11 +171,10 @@ const HOOFD = [
     Drawing: HouseDrawing,
   },
   {
-    n: 2,
     label: "Voor bedrijven",
     title: "Zakelijke afbouw",
     href: "/afbouwstudio",
-    text: "Kantoren, winkels en horeca, van casco tot sleutelklaar. We plannen het werk rond je bedrijf, zodat je zo kort mogelijk dicht bent.",
+    text: "Kantoren, winkels en horeca, van casco tot sleutelklaar. Gepland rond je bedrijf.",
     links: [
       { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
       { href: "/afbouwstudio/winkel-verbouwen", label: "Winkel verbouwen" },
@@ -188,33 +183,29 @@ const HOOFD = [
     ],
     Drawing: LunchroomDrawing,
   },
-];
-
-/** De twee specialismen die bij allebei horen. */
-const SPECIALISMEN = [
   {
-    n: 3,
     label: "Eigen label",
     title: "Kozijnen",
     href: "/kozijnen",
-    text: "Hout, kunststof of aluminium, all-in via ons eigen label De Kozijnstudio. Los geplaatst of meegenomen in je verbouwing.",
+    text: "Hout, kunststof of aluminium, all-in via ons eigen label De Kozijnstudio.",
+    links: [
+      { href: "/kennisbank/kozijnen-kiezen-hout-kunststof-aluminium", label: "Welk materiaal kies je?" },
+      { href: "/kennisbank/kozijnen-vervangen-wanneer", label: "Wanneer vervangen?" },
+    ],
     Drawing: WindowDrawing,
   },
   {
-    n: 4,
     label: "Slim en snel",
     title: "Prefab bouwen",
     href: "/prefab",
-    text: "Wanden, daken en overkappingen maken we vooraf in de werkplaats. Op de bouw staat het dan snel, met weinig overlast voor jou en de buren.",
+    text: "Wanden, daken en overkappingen, vooraf gemaakt in de werkplaats. Snel geplaatst, weinig overlast.",
+    links: [
+      { href: "/prefab#hsb", label: "Houtskeletbouw" },
+      { href: "/prefab#elementen", label: "Prefab daken & wanden" },
+      { href: "/prefab#overkappingen", label: "Overkappingen" },
+    ],
     Drawing: PrefabDrawing,
   },
-];
-
-const KENGETALLEN = [
-  { value: "4", label: "expertises onder één dak" },
-  { value: "1", label: "vast aanspreekpunt" },
-  { value: "1", label: "offerte met een vaste prijs" },
-  { value: "0", label: "voorrijkosten in Twente" },
 ];
 
 function ArrowUpRight({ className = "size-4" }: { className?: string }) {
@@ -236,13 +227,11 @@ export default function DienstenPage() {
         ]}
       />
 
-      {/* HERO op licht tekenpapier, met meteen de twee hoofdrichtingen */}
-      <section className="blueprint-grid relative overflow-hidden border-b border-mist">
-        <div className="container-page relative pb-16 pt-14 md:pb-24 md:pt-20">
+      {/* HERO op licht tekenpapier, met meteen de vier expertises */}
+      <section className="blueprint-grid border-b border-mist">
+        <div className="container-page pb-16 pt-14 md:pb-24 md:pt-20">
           <p className="eyebrow text-stone">Bouwbedrijf uit Enschede</p>
-          <h1 className="display mt-6 text-5xl md:text-7xl">
-            Wat we <span className="mark-lime">bouwen</span> in Twente.
-          </h1>
+          <h1 className="display mt-6 text-5xl md:text-7xl">Wat we bouwen in Twente.</h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-stone">
             MTB Bouw is een klein bouwbedrijf uit Enschede, met een vast team
             en vaste partners uit de regio. We bouwen voor thuis en voor
@@ -251,75 +240,45 @@ export default function DienstenPage() {
             koffie tot de oplevering.
           </p>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
-            {HOOFD.map(({ n, label, title, href, text, links, Drawing }) => (
-              <article key={href} className="flex flex-col border border-ink/15">
-                <DrawOnView className="relative border-b border-ink/10 px-4 py-6 md:px-8">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {EXPERTISES.map(({ label, title, href, text, links, Drawing }, i) => (
+              <article key={href} className="flex flex-col border border-ink/15 bg-white">
+                <DrawOnView className="h-44 border-b border-ink/10 px-4 py-5 md:h-48">
                   <Drawing />
                 </DrawOnView>
-                <div className="flex flex-1 flex-col bg-white p-6 md:p-8">
-                  <NumberBox n={n} label={label} />
-                  <h2 className="display mt-5 text-4xl md:text-5xl">
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="label-mono text-navy">
+                    {String(i + 1).padStart(2, "0")} · {label}
+                  </p>
+                  <h2 className="display mt-4 text-3xl">
                     <Link href={href} className="transition-colors hover:text-navy">
                       {title}
                     </Link>
                   </h2>
-                  <p className="mt-4 max-w-xl leading-relaxed text-stone">{text}</p>
-                  <ul className="mt-6 grid gap-x-6 border-t border-ink sm:grid-cols-2">
+                  <p className="mt-3 text-sm leading-relaxed text-stone">{text}</p>
+                  <ul className="mt-5 border-t border-ink">
                     {links.map((l) => (
                       <li key={l.href} className="border-b border-mist">
                         <Link
                           href={l.href}
-                          className="group flex items-center justify-between gap-3 py-3 font-display text-base font-semibold text-ink transition-colors hover:text-navy"
+                          className="group flex items-center justify-between gap-3 py-2.5 text-sm font-semibold text-ink transition-colors hover:text-navy"
                         >
                           {l.label}
-                          <ArrowUpRight className="size-4 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
+                          <ArrowUpRight className="size-3.5 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
                         </Link>
                       </li>
                     ))}
                   </ul>
                   <Link
                     href={href}
-                    className="label-mono mt-8 inline-flex items-center gap-2 self-start border border-navy bg-navy px-5 py-3.5 text-white transition-colors hover:border-navy-dark hover:bg-navy-dark"
+                    className="label-mono mt-auto inline-flex items-center gap-2 self-start pt-6 text-navy"
                   >
-                    Alles over {title} <ArrowUpRight className="size-3.5" />
+                    Alles over {title.toLowerCase()} <ArrowUpRight className="size-3.5" />
                   </Link>
                 </div>
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* KOZIJNEN EN PREFAB */}
-      <section className="container-page py-20 md:py-28">
-        <p className="eyebrow text-stone">Ook in huis</p>
-        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
-          Kozijnen en prefab, onder hetzelfde dak
-        </h2>
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {SPECIALISMEN.map(({ n, label, title, href, text, Drawing }) => (
-            <article key={href} className="grid border border-ink/15 bg-white sm:grid-cols-2">
-              <DrawOnView className="blueprint-grid relative flex items-center border-b border-ink/10 p-4 sm:border-b-0 sm:border-r">
-                <Drawing />
-              </DrawOnView>
-              <div className="flex flex-col p-6 md:p-8">
-                <NumberBox n={n} label={label} />
-                <h3 className="display mt-5 text-3xl md:text-4xl">
-                  <Link href={href} className="transition-colors hover:text-navy">
-                    {title}
-                  </Link>
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-stone">{text}</p>
-                <Link
-                  href={href}
-                  className="label-mono mt-auto inline-flex items-center gap-2 self-start pt-6 text-navy"
-                >
-                  Alles over {title.toLowerCase()} <ArrowUpRight className="size-3.5" />
-                </Link>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 
@@ -331,7 +290,7 @@ export default function DienstenPage() {
         title="Alles wat we doen, op een rij"
       />
 
-      {/* EÉN BOUWBEDRIJF — verhaal en kengetallen */}
+      {/* EÉN BOUWBEDRIJF */}
       <section className="container-page py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -367,27 +326,10 @@ export default function DienstenPage() {
             </p>
           </div>
         </div>
-        <dl className="mt-16 grid grid-cols-2 border-t border-ink md:grid-cols-4">
-          {KENGETALLEN.map((k, i) => (
-            <div
-              key={k.label}
-              className={`flex flex-col gap-3 border-mist py-6 pr-4 md:py-8 ${i % 2 === 1 ? "pl-4 md:pl-6" : ""} ${i > 0 ? "md:border-l md:pl-6" : ""}`}
-            >
-              <dt className="sr-only">{k.label}</dt>
-              <dd className="display text-5xl text-navy md:text-6xl" aria-hidden="true">
-                {k.value}
-              </dd>
-              <dd className="text-sm leading-snug text-stone">
-                <span className="sr-only">{k.value} </span>
-                {k.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </section>
 
       {/* WERKGEBIED */}
-      <section className="border-y border-mist bg-white">
+      <section className="border-t border-mist bg-white">
         <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">Werkgebied</p>
           <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
@@ -412,17 +354,6 @@ export default function DienstenPage() {
           </div>
         </div>
       </section>
-
-      {/* Werkwijze */}
-      <ProcessSteps compact />
-
-      <CtaBanner
-        eyebrow="Vrijblijvend kennismaken"
-        title="Iets te bouwen in Twente?"
-        text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
-        cta={{ label: "Neem contact op", drawer: true }}
-        secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
-      />
     </>
   );
 }

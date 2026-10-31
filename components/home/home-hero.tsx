@@ -85,7 +85,7 @@ export function HomeHero({
               <span className="sr-only"> — </span>
             </span>
             <span className="display mt-6 block max-w-[14ch] text-[3.4rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]">
-              Bouwen doen we <span className="mark-lime motion-safe:animate-mark-draw">samen.</span>
+              Bouwen doen we samen.
             </span>
           </h1>
 

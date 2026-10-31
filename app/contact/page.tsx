@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
-import { ContactForm } from "@/components/contact-form";
+import { QuoteButton } from "@/components/ui/quote-button";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -26,18 +26,14 @@ export default function ContactPage() {
         ]}
       />
 
-      <p className="eyebrow text-stone">
-        Contact
-      </p>
-      <h1 className="mt-3 text-4xl font-medium tracking-[-0.03em]">
-        Neem contact op
-      </h1>
-      <p className="mt-3 max-w-2xl text-stone">
-        Vrijblijvend in gesprek over jullie plan? Bel, mail of stuur een bericht
-        — we denken graag mee.
+      <p className="eyebrow text-stone">Contact</p>
+      <h1 className="display mt-6 text-5xl md:text-7xl">Neem contact op</h1>
+      <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone">
+        Vrijblijvend in gesprek over je plan? Doe een aanvraag, bel of mail.
+        We denken graag mee.
       </p>
 
-      <div className="mt-12 grid gap-12 lg:grid-cols-2">
+      <div className="mt-14 grid gap-12 border-t border-ink pt-10 lg:grid-cols-2">
         {/* Gegevens */}
         <div className="space-y-8">
           <div>
@@ -54,7 +50,9 @@ export default function ContactPage() {
               Oost-Nederland.
             </p>
           </div>
+        </div>
 
+        <div className="space-y-8">
           <dl className="space-y-4 text-lg">
             <div>
               <dt className="label-mono text-stone">
@@ -116,31 +114,31 @@ export default function ContactPage() {
             </div>
           </dl>
 
-          <div className="flex gap-4">
-            <Button
-              href={`https://wa.me/${site.whatsapp.replace(/[^0-9]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp
-            </Button>
-            <Button href={`tel:${site.telephoneHref}`} variant="outline-dark">
-              Bel direct
-            </Button>
-          </div>
-
           <p className="text-xs text-stone">
             KVK {site.kvk} · {site.sbb}
           </p>
         </div>
+      </div>
 
-        {/* Formulier */}
-        <div id="formulier" className="scroll-mt-24 border-t-2 border-lime bg-white p-8">
-          <h2 className="text-xl font-bold">Stuur een bericht</h2>
-          <p className="mt-1 text-sm text-stone">
-            We reageren doorgaans binnen één werkdag.
-          </p>
-          <ContactForm />
+      {/* Onderin: dezelfde aanvraag als "Neem contact op" rechtsboven */}
+      <div className="mt-16 flex flex-col gap-6 border-t border-mist pt-10 md:flex-row md:items-center md:justify-between">
+        <div>
+          <h2 className="display text-3xl md:text-4xl">Liever meteen een aanvraag doen?</h2>
+          <p className="mt-2 text-stone">Binnen 2 minuten ingevuld. We bellen je zo snel mogelijk terug.</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <QuoteButton>Neem contact op</QuoteButton>
+          <Button href={`tel:${site.telephoneHref}`} variant="outline-dark">
+            Bel {site.telephone}
+          </Button>
+          <Button
+            href={`https://wa.me/${site.whatsapp.replace(/[^0-9]/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline-dark"
+          >
+            WhatsApp
+          </Button>
         </div>
       </div>
     </div>

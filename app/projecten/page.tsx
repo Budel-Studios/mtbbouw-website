@@ -20,25 +20,20 @@ export const metadata: Metadata = {
   },
 };
 
-function Stat({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="border-r border-mist py-6 pr-4 last:border-r-0 md:py-8 [&:not(:first-child)]:pl-4 md:[&:not(:first-child)]:pl-8">
-      <dd className="display text-3xl md:text-5xl">{String(value).padStart(2, "0")}</dd>
-      <dt className="label-mono mt-3 text-stone">{label}</dt>
-    </div>
-  );
-}
+/** De drie sterkste projecten openen de pagina; daarna de vaste volgorde. */
+const OPENERS = ["broodbode-zwolle-lunchroom", "luxe-overkapping-twente", "dubbele-uitbouw-enschede"];
 
 export default function ProjectenPage() {
   // Alleen projecten met beeld: dit is een foto-eerst overzicht.
-  const projects = publishedProjects()
+  const all = publishedProjects()
     .map(toProjectCard)
     .filter((p) => p.images.length > 0);
-
-  const places = new Set(
-    projects.map((p) => p.location?.replace(/\s*\(.*\)$/, "")).filter(Boolean)
-  ).size;
-  const kinds = new Set(projects.map((p) => p.category).filter(Boolean)).size;
+  const projects = [
+    ...OPENERS.map((slug) => all.find((p) => p.slug === slug)).filter(
+      (p): p is NonNullable<typeof p> => Boolean(p)
+    ),
+    ...all.filter((p) => !OPENERS.includes(p.slug)),
+  ];
 
   return (
     <>
@@ -49,11 +44,11 @@ export default function ProjectenPage() {
         ]}
       />
 
-      <section className="container-page pb-14 pt-16 md:pb-20 md:pt-24">
+      <section className="container-page pb-10 pt-16 md:pb-14 md:pt-24">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="animate-fade-up md:col-span-8">
             <p className="label-mono text-stone">Ons werk — recent werk uit Twente</p>
-            <h1 className="display mt-6 text-[2.75rem] sm:text-6xl md:text-6xl lg:text-8xl xl:text-[7.5rem]">
+            <h1 className="display mt-6 text-[2.5rem] sm:text-6xl lg:text-7xl xl:text-[6.5rem]">
               Gerealiseerde projecten
             </h1>
           </div>
@@ -64,12 +59,6 @@ export default function ProjectenPage() {
             {INTRO}
           </p>
         </div>
-
-        <dl className="mt-16 grid grid-cols-3 border-t border-mist">
-          <Stat value={projects.length} label="Uitgelichte projecten" />
-          <Stat value={places} label="Plaatsen" />
-          <Stat value={kinds} label="Soorten werk" />
-        </dl>
       </section>
 
       <ProjectGrid projects={projects} />
