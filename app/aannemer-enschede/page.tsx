@@ -9,7 +9,8 @@ import { RelatedContent } from "@/components/sections/related-content";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { UsersIcon, EuroIcon, ClockIcon, HammerIcon, HouseIcon, WindowIcon, LayersIcon } from "@/components/icons";
+import { UsersIcon, EuroIcon, ClockIcon } from "@/components/icons";
+import { CityServices } from "@/components/sections/city-services";
 import { faqAannemerEnschede } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
@@ -27,33 +28,6 @@ export const metadata: Metadata = {
     images: [{ url: "/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg", alt: "Nieuwe uitbouw in houtskeletbouw met zwarte kozijnen in Enschede, door MTB Bouw" }],
   },
 };
-
-const DIENSTEN = [
-  {
-    icon: HammerIcon,
-    title: "Renovatie & verbouw",
-    text: "Van badkamer en keuken tot complete woningrenovatie — met oog voor het karakter van je huis.",
-    href: "/verbouwing",
-  },
-  {
-    icon: HouseIcon,
-    title: "Aanbouw & uitbouw",
-    text: "Meer ruimte zonder te verhuizen. Traditioneel gemetseld of prefab — de ruwbouw staat dan vaak binnen een week.",
-    href: "/aanbouw-uitbouw",
-  },
-  {
-    icon: WindowIcon,
-    title: "Kozijnen",
-    text: "Via ons eigen label De Kozijnstudio: hout, kunststof of aluminium, met eerlijk advies.",
-    href: "/kozijnen",
-  },
-  {
-    icon: LayersIcon,
-    title: "Prefab bouwen",
-    text: "Houtskeletbouw, prefab daken en wanden en overkappingen — snel geplaatst, weinig overlast.",
-    href: "/prefab",
-  },
-];
 
 export default function AannemerEnschedePage() {
   // Echte projecten uit Enschede.
@@ -96,37 +70,43 @@ export default function AannemerEnschedePage() {
       </CityMapHero>
 
       {/* DIENSTEN IN ENSCHEDE */}
-      <section className="bg-paper">
-        <div className="container-page py-20 md:py-28">
-          <p className="eyebrow text-stone">
-            Wat we voor je doen
-          </p>
-          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
-            Verbouwen in Enschede — alles onder één dak
-          </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-            Als aannemer in Enschede nemen we het hele traject uit handen: van
-            eerste schets en vergunningscheck tot uitvoering en oplevering.
-            Deze diensten voeren we het meest uit:
-          </p>
-          <div className="mt-12 grid gap-px border-l border-t border-mist sm:grid-cols-2">
-            {DIENSTEN.map(({ icon: Icon, title, text, href }) => (
-              <Link
-                key={title}
-                href={href}
-                className="group border-b border-r border-mist bg-white p-8 transition-colors hover:bg-paper"
-              >
-                <Icon className="h-7 w-7 text-navy" />
-                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-stone">{text}</p>
-                <span className="mt-4 inline-block text-sm font-bold group-hover:text-navy">
-                  Meer info →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CityServices
+        eyebrow="Wat we in Enschede doen"
+        title="Verbouwen in Enschede, alles onder één dak"
+        intro="Eén vast team voor het hele traject, van de eerste schets tot de oplevering."
+        items={[
+          {
+            href: "/verbouwing",
+            label: "Renovatie & verbouw",
+            text: "Van badkamer tot hele woning, met oog voor het karakter van je huis.",
+          },
+          {
+            href: "/aanbouw-uitbouw",
+            label: "Aanbouw & uitbouw",
+            text: "Meer ruimte aan de achterkant, gemetseld of in houtskeletbouw.",
+          },
+          {
+            href: "/kozijnen",
+            label: "Kozijnen",
+            text: "Hout, kunststof of aluminium via ons eigen label De Kozijnstudio.",
+          },
+          {
+            href: "/verduurzamen",
+            label: "Verduurzamen",
+            text: "Dak, vloer en gevel isoleren, het liefst in dezelfde verbouwing.",
+          },
+          {
+            href: "/prefab",
+            label: "Prefab & houtskeletbouw",
+            text: "Vooraf gemaakt in de werkplaats, snel geplaatst en weinig overlast.",
+          },
+          {
+            href: "/afbouwstudio/kantoor-verbouwen-enschede",
+            label: "Kantoor verbouwen in Enschede",
+            text: "Voor bedrijven: kantoren en bedrijfspanden, van casco tot sleutelklaar.",
+          },
+        ]}
+      />
 
       {/* VERGUNNING & LOKALE KENNIS */}
       <section className="border-y border-mist bg-white">
