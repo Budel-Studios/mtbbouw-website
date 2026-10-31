@@ -1,27 +1,21 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type RefObject,
+} from "react";
 
 /**
- * Horizontale swipe-slider met scroll-snap, een dunne lime voortgangsbalk en
- * vorige/volgende-knoppen. Kinderen zijn <li>-elementen met een eigen breedte
- * (bijv. "w-[82%] sm:w-[48%]"). Met `until` wordt hij vanaf dat breekpunt een
- * gewoon raster (geef de kolommen mee via className).
+ * Scrollstand van een horizontale rail: hoe breed de lime balk is, waar hij
+ * staat en of we aan het begin of eind zitten. Gedeeld door Slider en de
+ * partnermuur op de homepage.
  */
-export function Slider({
-  children,
-  label,
-  className = "",
-  until,
-  tone = "default",
-}: {
-  children: ReactNode;
-  label: string;
-  className?: string;
-  until?: "md" | "lg";
-  tone?: "default" | "inverse";
-}) {
-  const ref = useRef<HTMLUListElement>(null);
+export function useScrollRail<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
   const [state, setState] = useState({ thumb: 1, offset: 0, atStart: true, atEnd: false });
 
   const measure = useCallback(() => {
@@ -45,16 +39,91 @@ export function Slider({
     return () => ro.disconnect();
   }, [measure]);
 
-  const go = (dir: -1 | 1) => {
+  const go = (dir: -1 | 1, itemSelector = "li") => {
     const el = ref.current;
     if (!el) return;
-    const first = el.querySelector("li");
+    const first = el.querySelector(itemSelector);
     const step = first ? first.getBoundingClientRect().width + 24 : el.clientWidth * 0.8;
     el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
 
+  return { ref, state, measure, go };
+}
+
+/** Lime voortgangsbalk met vorige/volgende-knoppen onder een rail. */
+export function RailControls({
+  state,
+  onGo,
+  inverse = false,
+  className = "",
+}: {
+  state: { thumb: number; offset: number; atStart: boolean; atEnd: boolean };
+  onGo: (dir: -1 | 1) => void;
+  inverse?: boolean;
+  className?: string;
+}) {
   const scrollable = state.thumb < 0.999;
-  const inverse = tone === "inverse";
+  return (
+    <div
+      className={`mt-8 flex items-center gap-6 transition-opacity ${
+        scrollable ? "" : "pointer-events-none opacity-0"
+      } ${className}`}
+      aria-hidden={!scrollable}
+    >
+      <div className={`relative h-px flex-1 ${inverse ? "bg-inverse-border" : "bg-ink/15"}`}>
+        <span
+          className="absolute top-1/2 h-[3px] -translate-y-1/2 bg-lime transition-[left] duration-150"
+          style={{ width: `${state.thumb * 100}%`, left: `${state.offset * 100}%` }}
+        />
+      </div>
+      <div className="flex gap-2">
+        {([-1, 1] as const).map((dir) => {
+          const disabled = dir === -1 ? state.atStart : state.atEnd;
+          return (
+            <button
+              key={dir}
+              type="button"
+              onClick={() => onGo(dir)}
+              disabled={disabled}
+              aria-label={dir === -1 ? "Vorige" : "Volgende"}
+              className={`grid size-11 cursor-pointer place-items-center border transition-colors disabled:cursor-default disabled:opacity-30 ${
+                inverse
+                  ? "border-inverse-border hover:border-white enabled:hover:bg-white enabled:hover:text-ink"
+                  : "border-navy/25 hover:border-navy enabled:hover:bg-navy enabled:hover:text-white"
+              }`}
+            >
+              <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                {dir === -1 ? <path d="M19 12H5M12 19l-7-7 7-7" /> : <path d="M5 12h14M12 5l7 7-7 7" />}
+              </svg>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Horizontale swipe-slider met scroll-snap, een dunne lime voortgangsbalk en
+ * vorige/volgende-knoppen. Kinderen zijn <li>-elementen met een eigen breedte
+ * (bijv. "w-[82%] sm:w-[48%]"). Met `until` wordt hij vanaf dat breekpunt een
+ * gewoon raster (geef de kolommen mee via className).
+ */
+export function Slider({
+  children,
+  label,
+  className = "",
+  until,
+  tone = "default",
+}: {
+  children: ReactNode;
+  label: string;
+  className?: string;
+  until?: "md" | "lg";
+  tone?: "default" | "inverse";
+}) {
+  const { ref, state, measure, go } = useScrollRail<HTMLUListElement>();
+
   const layout =
     until === "md"
       ? "-mx-5 scroll-px-5 px-5 md:mx-0 md:grid md:snap-none md:overflow-visible md:px-0"
@@ -65,50 +134,19 @@ export function Slider({
   return (
     <div>
       <ul
-        ref={ref}
+        ref={ref as RefObject<HTMLUListElement>}
         aria-label={label}
         onScroll={measure}
         className={`no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain md:gap-6 ${layout} ${className}`}
       >
         {children}
       </ul>
-
-      <div
-        className={`mt-8 flex items-center gap-6 transition-opacity ${
-          scrollable ? "" : "pointer-events-none opacity-0"
-        } ${until === "md" ? "md:hidden" : until === "lg" ? "lg:hidden" : ""}`}
-        aria-hidden={!scrollable}
-      >
-        <div className={`relative h-px flex-1 ${inverse ? "bg-inverse-border" : "bg-ink/15"}`}>
-          <span
-            className="absolute top-1/2 h-[3px] -translate-y-1/2 bg-lime transition-[left] duration-150"
-            style={{ width: `${state.thumb * 100}%`, left: `${state.offset * 100}%` }}
-          />
-        </div>
-        <div className="flex gap-2">
-          {([-1, 1] as const).map((dir) => {
-            const disabled = dir === -1 ? state.atStart : state.atEnd;
-            return (
-              <button
-                key={dir}
-                type="button"
-                onClick={() => go(dir)}
-                disabled={disabled}
-                aria-label={dir === -1 ? "Vorige" : "Volgende"}
-                className={`grid size-11 cursor-pointer place-items-center border transition-colors disabled:cursor-default disabled:opacity-30 ${
-                  inverse
-                    ? "border-inverse-border hover:border-white enabled:hover:bg-white enabled:hover:text-ink"
-                    : "border-navy/25 hover:border-navy enabled:hover:bg-navy enabled:hover:text-white"
-                }`}
-              >
-                <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  {dir === -1 ? <path d="M19 12H5M12 19l-7-7 7-7" /> : <path d="M5 12h14M12 5l7 7-7 7" />}
-                </svg>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      <RailControls
+        state={state}
+        onGo={(dir) => go(dir)}
+        inverse={tone === "inverse"}
+        className={until === "md" ? "md:hidden" : until === "lg" ? "lg:hidden" : ""}
+      />
     </div>
   );
 }

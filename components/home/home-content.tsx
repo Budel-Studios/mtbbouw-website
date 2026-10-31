@@ -11,6 +11,7 @@ import { CardSlides, SliderLink } from "@/components/sections/card-slider";
 import { Slider } from "@/components/slider";
 import { HomeHero } from "@/components/home/home-hero";
 import { ContactDrawerButton } from "@/components/contact-drawer";
+import { PartnerWall } from "@/components/home/partner-wall";
 import { allPartners } from "@/lib/partners";
 import { mapPlaces } from "@/lib/werkgebied";
 import { TwenteMapSvg } from "@/components/twente-map/twente-map-svg";
@@ -206,12 +207,6 @@ export async function HomeContent({
     .map((a) => articleToCard(toCard(a)));
   const projects = publishedProjects().map(toProjectCard).filter((p) => p.images.length > 0);
 
-  // Partnermuur: rijen van 3 (vanaf sm) of 2 (mobiel), om en om ingesprongen.
-  const rows = (size: number) =>
-    Array.from({ length: Math.ceil(PARTNERS.length / size) }, (_, r) =>
-      PARTNERS.slice(r * size, r * size + size)
-    );
-
   return (
     <>
       <WebSiteJsonLd />
@@ -324,34 +319,38 @@ export async function HomeContent({
         </div>
       </section>
 
-      {/* OVER MTB BOUW */}
+      {/* OVER MTB BOUW — waarom we begonnen */}
       <section id="over" className="scroll-mt-20">
         <div className="container-page grid gap-14 py-24 md:grid-cols-12 md:py-32">
           <div className="md:col-span-5">
             <p className="eyebrow text-stone">Over MTB Bouw</p>
             <h2 className="display mt-4 text-4xl md:text-6xl">
-              Eén bouwbedrijf, vier expertises, honderden vertrouwde handen.
+              Eerlijk en transparant. Bouwen <span className="mark-lime">makkelijk</span> gemaakt.
             </h2>
           </div>
           <div className="space-y-6 text-base leading-[1.75] text-stone md:col-span-6 md:col-start-7 md:pt-10">
             <p className="text-2xl leading-snug tracking-[-0.02em] text-ink md:text-[1.9rem]">
-              MTB Bouw begon als klassieke aannemer in Enschede en groeide uit
-              tot het overkoepelende merk voor alles wat we bouwen.
+              Verbouwen is spannend. Je haalt mensen in huis en moet erop
+              kunnen vertrouwen dat het goed komt. Daarom zijn we MTB Bouw
+              begonnen.
             </p>
             <p>
-              Onder ons dak werken vier specialistische labels samen — met
-              korte lijnen, één vast aanspreekpunt en heldere afspraken vooraf.
+              Die vertrouwde partij willen we voor je zijn. Dat doen we door
+              alles goed en duidelijk uit te leggen. Je krijgt een volledig
+              gespecificeerde offerte en een{" "}
+              <Link href="/mijn-blauwdruk" className="link-line text-ink">eigen online omgeving</Link>{" "}
+              waarin staat wat we wel doen, en ook wat niet. Dat laatste is net
+              zo belangrijk.
             </p>
             <p>
-              Of je nu je woning wil{" "}
+              Of je nu wilt{" "}
               <Link href="/verbouwing" className="link-line text-ink">verbouwen</Link>, een{" "}
-              <Link href="/aanbouw-uitbouw" className="link-line text-ink">uitbouw</Link> wil laten
-              bouwen, een{" "}
-              <Link href="/afbouwstudio" className="link-line text-ink">bedrijfspand</Link> casco
-              op wil laten leveren of{" "}
-              <Link href="/prefab" className="link-line text-ink">prefab</Link> wil bouwen: bij
-              MTB kom je binnen op één plek en werk je met mensen die luisteren,
-              meedenken en doen wat ze beloven. Als{" "}
+              <Link href="/aanbouw-uitbouw" className="link-line text-ink">uitbouw</Link> of dakopbouw
+              wilt, of een{" "}
+              <Link href="/afbouwstudio" className="link-line text-ink">bedrijfspand</Link> laat
+              afbouwen, en of je nu in een nieuwere woning woont of in een
+              jaren-30 huis: we hebben de expertise in huis. Met eigen vakmensen
+              en vaste partners uit de regio maken we het waar. Als{" "}
               <Link href="/aannemer-enschede" className="link-line text-ink">aannemer in Enschede</Link>{" "}
               werken we in{" "}
               <Link href="/aannemer-twente" className="link-line text-ink">heel Twente</Link>.
@@ -402,51 +401,22 @@ export async function HomeContent({
             title="Sterk door lokale samenwerking."
             intro="Kwaliteit komt niet uit één set handen — het komt uit een goed netwerk. Wij bouwen met vaste, regionale partners die net zo scherp op hun vak zijn als wij."
           />
-          <div className="mt-16 flex flex-col-reverse gap-2 md:gap-3">
-            {[2, 3].map((size) => (
-              <div
-                key={size}
-                className={`flex-col-reverse gap-2 md:gap-3 ${size === 2 ? "flex sm:hidden" : "hidden sm:flex"}`}
-              >
-                {rows(size).map((row, r) => (
-                  <ul
-                    key={r}
-                    className={`grid gap-2 md:gap-3 ${size === 2 ? "grid-cols-2" : "grid-cols-3"} ${
-                      r % 2 === 1 ? "ml-8 sm:ml-[16.66%]" : "mr-8 sm:mr-[16.66%]"
-                    }`}
-                  >
-                    {row.map((p, i) => (
-                      <li
-                        key={p.name}
-                        className="animate-fade-up"
-                        style={{ animationDelay: `${(r * size + i) * 90}ms` }}
-                      >
-                        <div className="flex h-full min-h-24 flex-col justify-between border border-mist bg-paper p-4 transition-all duration-500 hover:-translate-y-1.5 hover:border-ink sm:min-h-28 sm:p-5 md:p-7">
-                          <span className="label-mono text-stone">{p.role}</span>
-                          <span className="mt-5 text-base leading-tight tracking-[-0.02em] sm:text-lg md:text-xl">
-                            {p.name}
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                ))}
-              </div>
-            ))}
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <ContactDrawerButton className="group flex cursor-pointer items-center gap-4 bg-lime px-5 py-4 text-ink transition-transform duration-500 hover:-translate-y-1.5">
-                <span className="label-mono">+ Jouw project</span>
-                <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
-              </ContactDrawerButton>
-              <span className="flex items-center gap-6">
-                <span className="label-mono hidden text-stone sm:block">
-                  Blok voor blok gebouwd — {allPartners.length} vaste partners
-                </span>
-                <Link href="/regionale-partners" className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white">
-                  Ontmoet al onze partners <ArrowUpRight className="size-3.5" />
-                </Link>
+          <div className="mt-16 flex flex-wrap items-end justify-between gap-6">
+            <ContactDrawerButton className="group flex cursor-pointer items-center gap-4 bg-lime px-5 py-4 text-ink transition-transform duration-500 hover:-translate-y-1.5">
+              <span className="label-mono">+ Jouw project</span>
+              <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </ContactDrawerButton>
+            <span className="flex items-center gap-6">
+              <span className="label-mono hidden text-stone sm:block">
+                Blok voor blok gebouwd: {allPartners.length} vaste partners
               </span>
-            </div>
+              <Link href="/regionale-partners" className="label-mono inline-flex items-center gap-2 border border-navy px-5 py-3.5 text-navy transition-colors hover:bg-navy hover:text-white">
+                Ontmoet al onze partners <ArrowUpRight className="size-3.5" />
+              </Link>
+            </span>
+          </div>
+          <div className="mt-3">
+            <PartnerWall partners={PARTNERS} />
           </div>
         </div>
       </section>

@@ -46,23 +46,20 @@ export const site = {
     linkedin: "",
     youtube: "",
   },
-  // Footer-kolommen — óók de crawlbare vangnet-navigatie voor pagina's die
-  // in het (client-side) mega-menu hangen. Hoofdnavigatie staat in lib/nav.ts.
+  // Footer: bewust rustig. De hoofddiensten en de focussteden staan op elke
+  // pagina (de footer is een sterke interne link); de overige plaatsen zijn
+  // bereikbaar via Heel Twente en de stadspagina's, de rest via het menu.
   footerColumns: [
     {
       title: "Wat we bouwen",
-      // De verkooppagina's staan hier bewust los: de footer staat op elke
-      // pagina en is daarmee de sterkste interne link die we hebben.
       links: [
-        { href: "/wonen-en-verbouwen", label: "Wonen & Verbouwen" },
         { href: "/verbouwing", label: "Verbouwing & renovatie" },
         { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
         { href: "/nieuwbouw", label: "Nieuwbouw" },
         { href: "/verduurzamen", label: "Verduurzamen" },
-        { href: "/afbouwstudio", label: "Zakelijk" },
-        { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
         { href: "/kozijnen", label: "Kozijnen" },
-        { href: "/prefab", label: "Prefab Bouwen" },
+        { href: "/prefab", label: "Prefab bouwen" },
+        { href: "/afbouwstudio", label: "Zakelijke afbouw" },
       ],
     },
     {
@@ -72,32 +69,17 @@ export const site = {
         { href: "/aannemer-hengelo", label: "Aannemer Hengelo" },
         { href: "/aannemer-almelo", label: "Aannemer Almelo" },
         { href: "/aannemer-oldenzaal", label: "Aannemer Oldenzaal" },
-        { href: "/aannemer-borne", label: "Aannemer Borne" },
-        { href: "/aannemer-haaksbergen", label: "Aannemer Haaksbergen" },
-        { href: "/aannemer-losser", label: "Aannemer Losser" },
         { href: "/aannemer-twente", label: "Heel Twente" },
       ],
     },
-    {
-      title: "Over ons",
-      links: [
-        { href: "/bouwbedrijf-enschede", label: "Bouwbedrijf Enschede" },
-        { href: "/hoe-wij-werken", label: "Onze werkwijze" },
-        { href: "/veilig-verantwoord-bouwen", label: "Veilig & verantwoord bouwen" },
-        { href: "/regionale-partners", label: "Regionale partners" },
-        { href: "/bouwmethodes", label: "Bouwmethodes" },
-        { href: "/kennisbank", label: "Blog" },
-        { href: "/over-ons", label: "Over ons" },
-      ],
-    },
-    {
-      title: "Support",
-      links: [
-        { href: "/contact", label: "Contact" },
-        { href: "/werkgenoeg", label: "Werken bij" },
-        { href: "/veelgestelde-vragen", label: "FAQ" },
-        { href: "/privacy-policy", label: "Privacy" },
-      ],
-    },
+  ],
+  // Kleine links in de onderbalk van de footer.
+  footerLinks: [
+    { href: "/over-ons", label: "Over ons" },
+    { href: "/bouwbedrijf-enschede", label: "Bouwbedrijf Enschede" },
+    { href: "/kennisbank", label: "Kennisbank" },
+    { href: "/gratis-brochure", label: "Gratis brochure" },
+    { href: "/werkgenoeg", label: "Werken bij" },
+    { href: "/privacy-policy", label: "Privacy" },
   ],
 } as const;
