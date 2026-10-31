@@ -47,9 +47,9 @@ export default function RegionalePartnersPage() {
       {/* Samen gebouwd — partners gekoppeld aan echte projecten */}
       {samenGebouwd.length > 0 && (
         <section className="border-y border-mist bg-paper">
-          <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="container-page py-20 md:py-28">
             <p className="eyebrow text-stone">Samen gebouwd</p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+            <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
               Waar onze partners meebouwden
             </h2>
             <ul className="mt-10 grid gap-px border border-mist bg-mist sm:grid-cols-2">
@@ -72,7 +72,7 @@ export default function RegionalePartnersPage() {
       )}
 
       {/* Word partner van MTB — opvallend lime-blok */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="container-page pb-16">
         <a
           href="/contact#formulier"
           className="group block bg-lime text-ink transition-colors hover:bg-lime-dark"

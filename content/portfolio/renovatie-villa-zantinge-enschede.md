@@ -92,6 +92,7 @@ relatedServices:
   - { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" }
   - { href: "/kozijnen", label: "Kozijnen op maat" }
   - { href: "/aannemer-enschede", label: "Aannemer in Enschede" }
+  - { href: "/verduurzamen", label: "Verduurzamen" }
 testimonial:
   text: "Al met al een enorm complex en groot project. Maar de klanten zijn enorm tevreden met het resultaat — en dáár doen we het voor. De foto's spreken voor zich."
   attribution: "Team MTB Bouw"

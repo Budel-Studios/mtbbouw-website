@@ -130,7 +130,7 @@ Denk aan:
 - **Kierdichting** op de aansluiting met het bestaande huis, dé plek waar warmte lekt
 - **Ventilatie** niet vergeten: goed geïsoleerd zonder ventilatie = vochtproblemen
 
-Slim: pak meteen de rest van je huis mee. Als de steiger er toch staat en de vloer toch open ligt, is dát het moment om ook de bestaande gevel of vloer aan te pakken. Voor isolatiemaatregelen aan de bestaande woning bestaat bovendien ISDE-subsidie — de bedragen en voorwaarden wisselen per jaar, dus check de actuele regeling op rvo.nl. Meer hierover lees je op [verduurzamen in Enschede](/verduurzamen-enschede) en in ons artikel over [verbouwen en verduurzamen met ISDE](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk).
+Slim: pak meteen de rest van je huis mee. Als de steiger er toch staat en de vloer toch open ligt, is dát het moment om ook de bestaande gevel of vloer aan te pakken. Voor isolatiemaatregelen aan de bestaande woning bestaat bovendien ISDE-subsidie — de bedragen en voorwaarden wisselen per jaar, dus check de actuele regeling op rvo.nl. Meer hierover lees je op [verduurzamen in Enschede](/verduurzamen) en in ons artikel over [verbouwen en verduurzamen met ISDE](/kennisbank/isde-subsidie-uitgelegd#verbouwen-en-verduurzamen-tegelijk).
 
 ## Veelgemaakte fouten (checklist)
 

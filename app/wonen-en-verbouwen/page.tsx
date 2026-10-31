@@ -61,7 +61,7 @@ const SUB_ITEMS = [
 
 const OOK_VOOR_THUIS = [
   { href: "/kozijnen", label: "Kozijnen vervangen" },
-  { href: "/verduurzamen-enschede", label: "Verduurzamen" },
+  { href: "/verduurzamen", label: "Verduurzamen" },
   { href: "/prefab#overkappingen", label: "Veranda's en overkappingen" },
 ];
 
@@ -103,9 +103,9 @@ export default function WonenEnVerbouwenPage() {
       />
 
       {/* Zo gaat het bij ons */}
-      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <section className="container-page py-20 md:py-28">
         <p className="eyebrow text-stone">Zo gaat het bij ons</p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
           Het begint bij jou thuis
         </h2>
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -121,9 +121,9 @@ export default function WonenEnVerbouwenPage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">Onze specialismen</p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-2xl text-4xl md:text-5xl">
             Drie manieren om je woning te verbeteren
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

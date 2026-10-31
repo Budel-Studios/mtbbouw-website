@@ -482,7 +482,12 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "offerte", ...form }),
+        body: JSON.stringify({
+          type: "offerte",
+          ...form,
+          // Voor meten: welke pagina levert aanvragen op (alleen intern zichtbaar).
+          sourcePage: window.location.pathname,
+        }),
       });
       const data = await res.json();
       if (data.success) setSuccess(true);

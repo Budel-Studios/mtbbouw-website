@@ -3,6 +3,7 @@ import Link from "next/link";
 import { portfolio } from "#site/content";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { CityMapHero } from "@/components/twente-map/city-map-hero";
+import { LocalPartners } from "@/components/sections/local-partners";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RelatedContent } from "@/components/sections/related-content";
@@ -11,18 +12,25 @@ import { faqAannemerHaaksbergen } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aannemer in Haaksbergen | MTB Bouw — dorp & buitengebied" },
+  title: { absolute: "Aannemer Haaksbergen | verbouw, uitbouw & erf | MTB Bouw" },
   description:
     "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-haaksbergen" },
+  openGraph: {
+    type: "website",
+    title: "Aannemer Haaksbergen | verbouw, uitbouw & erf | MTB Bouw",
+    description:
+      "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Vaste prijs, geen voorrijkosten.",
+    url: "/aannemer-haaksbergen",
+    images: [{ url: "/images/projects/overkapping-paardenstal-enschede/cover.png", alt: "Grote houten overkapping met paardenstal in het buitengebied, door MTB Bouw" }],
+  },
 };
 
 export default function AannemerHaaksbergenPage() {
-  // Echte projecten uit de regio — geen verzonnen lokale referenties.
-  const projects = portfolio
-    .filter((p) => !p.draft)
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
+  // Echte projecten die passen bij dorp en buitengebied.
+  const projects = ["overkapping-paardenstal-enschede", "renovatie-schuur-behoud-karakter", "luxe-overkapping-twente"]
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>
@@ -38,6 +46,7 @@ export default function AannemerHaaksbergenPage() {
         description="Verbouw, renovatie, aanbouw, overkappingen en prefab bijgebouwen in Haaksbergen en het buitengebied door MTB Bouw."
         url="/aannemer-haaksbergen"
         serviceType="Aannemer"
+        city="Haaksbergen"
       />
       <FaqJsonLd items={faqAannemerHaaksbergen} />
 
@@ -56,11 +65,11 @@ export default function AannemerHaaksbergenPage() {
       </CityMapHero>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Verbouwen in Haaksbergen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Ruimte om het huis? Ruimte voor plannen.
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -77,11 +86,17 @@ export default function AannemerHaaksbergenPage() {
             ,{" "}
             <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">kozijnen</Link>{" "}
             en{" "}
-            <Link href="/verduurzamen-enschede" className="font-semibold text-ink underline hover:text-navy">verduurzaming</Link>{" "}
+            <Link href="/verduurzamen" className="font-semibold text-ink underline hover:text-navy">verduurzaming</Link>{" "}
             — het voordeligst gecombineerd met de verbouwing zelf.
           </p>
         </div>
       </section>
+
+      <LocalPartners
+        title="Dezelfde vaste partners"
+        intro="Ook in Haaksbergen bouwen we met vaste partners uit de regio, van dakdekker tot hovenier voor het erf eromheen."
+        names={["Meuleman Hoveniers", "Kamphuis Dakbedekking", "BMN Bouwmaterialen", "Brouwer Containers"]}
+      />
 
       <FaqAccordion
         items={faqAannemerHaaksbergen}
@@ -92,7 +107,7 @@ export default function AannemerHaaksbergenPage() {
       <RelatedContent
         projects={projects}
         eyebrow="Werk uit de regio"
-        title="Recent werk in Twente"
+        title="Erven, schuren en overkappingen"
       />
 
       <KennisbankBlock

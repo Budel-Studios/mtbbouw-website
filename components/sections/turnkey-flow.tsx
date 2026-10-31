@@ -38,14 +38,14 @@ export function TurnkeyFlow({
 }) {
   return (
     <section className="bg-ink text-white">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="container-page py-20">
         <div className="max-w-2xl">
           {eyebrow && (
             <p className="eyebrow text-white/65">
               {eyebrow}
             </p>
           )}
-          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
+          <h2 className="display mt-4 text-4xl md:text-5xl">{title}</h2>
           {intro && <p className="mt-4 text-white/75">{intro}</p>}
         </div>
 

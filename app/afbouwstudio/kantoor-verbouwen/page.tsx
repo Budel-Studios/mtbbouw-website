@@ -108,11 +108,11 @@ export default function KantoorVerbouwenPage() {
 
       {/* WERKZAAMHEDEN */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             01 — Wat we doen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Complete kantoorafbouw, één planning
           </h2>
           <div className="mt-12 grid gap-px border-l border-t border-mist md:grid-cols-2">
@@ -144,13 +144,13 @@ export default function KantoorVerbouwenPage() {
 
       {/* CASCO → TURN-KEY + KOSTEN */}
       <section className="border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
               <p className="eyebrow text-stone">
                 02 — Casco gehuurd?
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Van lege betonnen doos naar werkend kantoor
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -179,7 +179,7 @@ export default function KantoorVerbouwenPage() {
               <p className="eyebrow text-stone">
                 03 — Kosten
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Wat kost een kantoorverbouwing?
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -202,11 +202,11 @@ export default function KantoorVerbouwenPage() {
 
       {/* WERKGEBIED */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             04 — Werkgebied
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Kantoren verbouwen we in heel Oost-Nederland
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">

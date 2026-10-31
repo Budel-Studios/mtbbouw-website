@@ -16,7 +16,7 @@ export function IconServicesGrid({
 }) {
   return (
     <section className="bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="container-page py-20 md:py-28">
         {(eyebrow || title) && (
           <div className="mb-12">
             {eyebrow && (
@@ -25,7 +25,7 @@ export function IconServicesGrid({
               </p>
             )}
             {title && (
-              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 {title}
               </h2>
             )}

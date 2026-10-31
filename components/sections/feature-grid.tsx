@@ -31,7 +31,7 @@ export function FeatureGrid({
   const ItemHeading = headingLevel === "h2" && !title ? "h2" : "h3";
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="container-page py-20 md:py-28">
       {(eyebrow || title || intro) && (
         <div className="mb-12 max-w-3xl">
           {eyebrow && (
@@ -40,7 +40,7 @@ export function FeatureGrid({
             </p>
           )}
           {title && (
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
+            <h2 className="display mt-4 text-4xl md:text-5xl">{title}</h2>
           )}
           {intro && (
             <p className="mt-5 text-base leading-relaxed text-stone md:text-lg">

@@ -53,13 +53,13 @@ export default function KantoorZwollePage() {
       />
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
               <p className="eyebrow text-stone">
                 01 — Waarom Afbouwstudio in Zwolle
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Twentse nuchterheid, bewezen in Zwolle
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -87,7 +87,7 @@ export default function KantoorZwollePage() {
               <p className="eyebrow text-stone">
                 02 — Wat we doen
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Complete kantoorafbouw
               </h2>
               <p className="mt-5 leading-relaxed text-stone">

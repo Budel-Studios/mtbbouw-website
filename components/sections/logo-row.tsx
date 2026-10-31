@@ -13,7 +13,7 @@ export function LogoRow({
 }) {
   return (
     <section className="border-y border-mist bg-paper">
-      <div className="mx-auto max-w-6xl px-6 py-12">
+      <div className="container-page py-12">
         <p className="text-center label-mono text-stone">
           {title}
         </p>

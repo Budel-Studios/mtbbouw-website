@@ -174,12 +174,12 @@ export default async function WerkGenoegPage() {
 
       {/* VEILIG EN VERANTWOORD WERKEN */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <div className="container-page md:py-20 py-20 md:py-28">
           <div className="max-w-3xl">
             <p className="eyebrow text-stone">
               Hoe we voor elkaar zorgen
             </p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
+            <h2 className="display mt-4 text-4xl md:text-5xl">
               Veilig en verantwoord werken
             </h2>
             <p className="mt-6 text-base leading-relaxed text-stone md:text-lg">
@@ -258,11 +258,11 @@ export default async function WerkGenoegPage() {
 
       {/* OPENSTAANDE FUNCTIES */}
       <section id="vacatures" className="scroll-mt-20 bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Openstaande functies
           </p>
-          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
+          <h2 className="display mt-4 text-4xl md:text-5xl">
             Waar we nu naar op zoek zijn
           </h2>
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
@@ -315,7 +315,7 @@ export default async function WerkGenoegPage() {
 
       {/* Interne links */}
       <section className="border-t border-mist py-12">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="container-page">
           <p className="eyebrow text-stone">
             Meer weten
           </p>

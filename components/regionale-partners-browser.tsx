@@ -160,7 +160,7 @@ export function RegionalePartnersBrowser({
   const [active, setActive] = useState<Bucket>("onderaannemers");
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-16">
+    <section className="container-page pb-16">
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 md:gap-3">
         {TABS.map((t) => {

@@ -62,11 +62,11 @@ export default function BouwbedrijfEnschedePage() {
 
       {/* DE VIER LABELS */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Wat we bouwen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Eén bouwbedrijf, vier expertises
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -97,11 +97,11 @@ export default function BouwbedrijfEnschedePage() {
 
       {/* HET BEDRIJF */}
       <section className="border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Het bedrijf
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Vakmanschap uit Enschede, opgeleid in eigen huis
           </h2>
           <div className="mt-12 grid gap-8 md:grid-cols-3">

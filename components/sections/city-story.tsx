@@ -18,10 +18,10 @@ export function CityStory({
 }) {
   return (
     <section className="bg-paper">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:py-24 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16 py-20 md:py-28">
         <div>
           <p className="eyebrow text-stone">{eyebrow}</p>
-          <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 text-4xl md:text-5xl">
             {title}
           </h2>
           <div className="mt-5 space-y-5 leading-relaxed text-stone">{children}</div>

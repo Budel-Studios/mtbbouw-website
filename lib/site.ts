@@ -58,7 +58,7 @@ export const site = {
         { href: "/verbouwing", label: "Verbouwing & renovatie" },
         { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
         { href: "/nieuwbouw", label: "Nieuwbouw" },
-        { href: "/verduurzamen-enschede", label: "Verduurzamen" },
+        { href: "/verduurzamen", label: "Verduurzamen" },
         { href: "/afbouwstudio", label: "Zakelijk" },
         { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
         { href: "/kozijnen", label: "Kozijnen" },

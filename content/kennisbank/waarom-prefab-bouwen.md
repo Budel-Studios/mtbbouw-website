@@ -52,7 +52,7 @@ Daar komen nog een paar dingen bij:
 - **Kortere bouwtijd.** De ruwbouw van een prefab aanbouw staat vaak binnen een week. Dat scheelt weken overlast.
 - **Maatvastheid.** In de fabriek wordt op de millimeter gewerkt, droog en onder gecontroleerde omstandigheden. Geen kromgetrokken hout omdat het drie weken heeft geregend.
 - **Minder weersafhankelijk.** De planning schuift niet op omdat het vriest of stortregent.
-- **Betere isolatie.** HSB-elementen halen makkelijk hoge isolatiewaarden, en de aansluitingen zijn strak. Fijn voor je energierekening — en als je toch bezig bent met [verduurzamen](/verduurzamen-enschede) sla je twee vliegen in één klap.
+- **Betere isolatie.** HSB-elementen halen makkelijk hoge isolatiewaarden, en de aansluitingen zijn strak. Fijn voor je energierekening — en als je toch bezig bent met [verduurzamen](/verduurzamen) sla je twee vliegen in één klap.
 - **Minder bouwafval.** Zagen en passen gebeurt in de fabriek, waar restmateriaal netjes hergebruikt wordt.
 
 Dat horen we ook terug van klanten: de grootste verrassing is niet de kwaliteit, maar de rust. Geen maandenlange bouwput, maar een paar hectische dagen en dan staat het.

@@ -8,12 +8,28 @@ import { QuoteButton } from "@/components/ui/quote-button";
 import { HouseIcon, WindowIcon, LayersIcon, RecycleIcon } from "@/components/icons";
 import { faqVerduurzamen } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
+import { RelatedContent } from "@/components/sections/related-content";
+import { ServiceAreaLinks } from "@/components/sections/service-area-links";
+import { portfolio } from "#site/content";
 
 export const metadata: Metadata = {
-  title: { absolute: "Woning verduurzamen in Enschede | MTB Bouw" },
+  title: { absolute: "Woning verduurzamen in Enschede & Twente | MTB Bouw" },
   description:
-    "Woning verduurzamen in Enschede: isolatie, HR++ glas en dakrenovatie gecombineerd met je verbouwing. Inclusief hulp bij de ISDE-subsidieaanvraag.",
-  alternates: { canonical: "/verduurzamen-enschede" },
+    "Woning verduurzamen in Enschede en Twente: isolatie, HR++ glas en dakrenovatie gecombineerd met je verbouwing. Inclusief hulp bij de ISDE-subsidie.",
+  alternates: { canonical: "/verduurzamen" },
+  openGraph: {
+    type: "website",
+    title: "Woning verduurzamen in Enschede & Twente | MTB Bouw",
+    description:
+      "Isolatie, HR++ of triple glas en dakrenovatie, gecombineerd met je verbouwing. Eén planning, één vaste prijs, hulp bij de ISDE-subsidie.",
+    url: "/verduurzamen",
+    images: [
+      {
+        url: "/images/projects/renovatie-villa-zantinge-enschede/03.jpg",
+        alt: "Woonruimte met nieuwe glazen pui en vloerverwarming in een gerenoveerde villa in Enschede",
+      },
+    ],
+  },
 };
 
 const MAATREGELEN = [
@@ -39,19 +55,23 @@ const MAATREGELEN = [
   },
 ];
 
-export default function VerduurzamenEnschedePage() {
+export default function VerduurzamenPage() {
+  const projects = ["renovatie-villa-zantinge-enschede", "uitbouw-houtskeletbouw-enschede", "renovatie-schuur-behoud-karakter"]
+    .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
   return (
     <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
-          { name: "Verduurzamen in Enschede", url: "/verduurzamen-enschede" },
+          { name: "Verduurzamen", url: "/verduurzamen" },
         ]}
       />
       <ServiceJsonLd
-        name="Woning verduurzamen in Enschede"
+        name="Woning verduurzamen in Enschede en Twente"
         description="Verduurzaming van woningen in Enschede en Twente: isolatie, HR++/triple glas en kozijnen, gecombineerd met verbouw of renovatie."
-        url="/verduurzamen-enschede"
+        url="/verduurzamen"
         serviceType="Woningverduurzaming"
       />
       <FaqJsonLd items={faqVerduurzamen} />
@@ -59,22 +79,22 @@ export default function VerduurzamenEnschedePage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/project-1.jpg",
-          alt: "Verduurzaamde woning in Enschede na renovatie door MTB Bouw",
+          src: "/images/projects/renovatie-villa-zantinge-enschede/03.jpg",
+          alt: "Woonruimte met nieuwe glazen pui, dekvloer en vloerverwarming in een gerenoveerde villa in Enschede",
         }}
         eyebrow="Verduurzamen · Enschede & Twente"
-        title="Woning verduurzamen in Enschede — het slimst tijdens je verbouwing"
+        title="Woning verduurzamen in Enschede en Twente — het slimst tijdens je verbouwing"
         intro="Verduurzamen is het voordeligst op het moment dat de aannemer er toch al is. MTB Bouw combineert isolatie, beter glas en dakrenovatie met je verbouwing of aanbouw — één planning, één vaste prijs, en hulp bij de ISDE-subsidieaanvraag waar die van toepassing is."
         cta={<QuoteButton />}
       />
 
       {/* MAATREGELEN */}
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
             Wat we doen
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Verduurzamen met bouwkundige logica
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
@@ -95,13 +115,13 @@ export default function VerduurzamenEnschedePage() {
 
       {/* SUBSIDIE */}
       <section className="border-y border-mist bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
               <p className="eyebrow text-stone">
                 Subsidie
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 ISDE: subsidie op isolatie en glas
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -128,7 +148,7 @@ export default function VerduurzamenEnschedePage() {
               <p className="eyebrow text-stone">
                 Waarom combineren
               </p>
-              <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Eén bouwstroom, dubbele winst
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
@@ -144,6 +164,12 @@ export default function VerduurzamenEnschedePage() {
         </div>
       </section>
 
+      <RelatedContent
+        projects={projects}
+        eyebrow="Ons werk"
+        title="Isoleren en verduurzamen in onze projecten"
+      />
+
       <FaqAccordion
         items={faqVerduurzamen}
         eyebrow="Veelgesteld"
@@ -155,9 +181,14 @@ export default function VerduurzamenEnschedePage() {
         title="Meer over verduurzamen"
       />
 
+      <ServiceAreaLinks
+        label="Verduurzamen"
+        intro="Vanuit Enschede verduurzamen we woningen in heel Twente. Op de pagina van jouw plaats vind je de huizen en wijken waar we werken."
+      />
+
       <CtaBanner
         eyebrow="Vrijblijvend advies"
-        title="Verbouwen én verduurzamen in Enschede?"
+        title="Verbouwen én verduurzamen?"
         text="We rekenen eerlijk voor wat combineren je scheelt — inclusief subsidiecheck."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}

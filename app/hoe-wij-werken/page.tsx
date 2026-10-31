@@ -104,11 +104,11 @@ export default function HoeWijWerkenPage() {
       />
 
       {/* De acht stappen — uitgeschreven, verticaal */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="container-page py-20 md:py-28">
         <p className="eyebrow text-stone">
           Stap voor stap
         </p>
-        <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
+        <h2 className="display mt-4 text-4xl md:text-5xl">
           Van kennismaking tot nazorg
         </h2>
         <ol className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2">
@@ -124,13 +124,13 @@ export default function HoeWijWerkenPage() {
 
       {/* Veilig en verantwoord — vangt ook de oude nav-link op */}
       <section id="veilig-en-verantwoord" className="bg-paper">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="container-page py-20 md:py-28">
           <div className="grid items-start gap-12 md:grid-cols-2">
             <div>
               <p className="eyebrow text-stone">
                 Veilig en verantwoord
               </p>
-              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
+              <h2 className="display mt-4 text-4xl md:text-5xl">
                 Veiligheid is geen bijzaak
               </h2>
               <p className="mt-5 max-w-lg leading-relaxed text-stone">

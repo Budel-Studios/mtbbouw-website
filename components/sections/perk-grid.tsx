@@ -15,7 +15,7 @@ export function PerkGrid({
   title?: string;
 }) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="container-page py-20 md:py-28">
       {(eyebrow || title) && (
         <div className="mb-12 max-w-2xl">
           {eyebrow && (
@@ -24,7 +24,7 @@ export function PerkGrid({
             </p>
           )}
           {title && (
-            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">{title}</h2>
+            <h2 className="display mt-4 text-4xl md:text-5xl">{title}</h2>
           )}
         </div>
       )}

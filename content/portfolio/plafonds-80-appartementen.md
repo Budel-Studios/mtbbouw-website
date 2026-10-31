@@ -11,6 +11,7 @@ intro: "Tachtig appartementen, tachtig huishoudens, één opdracht: overal nieuw
 relatedServices:
   - { href: "/afbouwstudio/systeemplafonds", label: "Systeemplafonds" }
   - { href: "/afbouwstudio", label: "Afbouwstudio" }
+  - { href: "/aannemer-twente", label: "Aannemer in Twente" }
 tags: [plafonds, appartementen, zakelijk, afbouw]
 draft: false
 ---

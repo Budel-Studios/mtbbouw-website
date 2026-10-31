@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <div className="container-page py-20 md:py-28">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
