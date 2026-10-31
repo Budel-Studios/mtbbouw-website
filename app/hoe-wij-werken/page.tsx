@@ -138,11 +138,7 @@ export default function HoeWijWerkenPage() {
       <FaqJsonLd items={procesFaq} />
 
       {/* Kop en klantreis op tekenpapier dat in- en uitfadet */}
-      <section className="relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="blueprint-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_85%,transparent)]"
-        />
+      <section className="blueprint-grid relative">
         <div className="container-page relative pb-20 pt-14 md:pb-28 md:pt-20">
           <p className="eyebrow text-stone">Samen bouwen</p>
           <h1 className="display mt-6 max-w-4xl text-5xl md:text-7xl">

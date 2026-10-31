@@ -264,17 +264,29 @@
   -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
 
-/* Raster zoals op bouwtekeningen en in de brochure (SAMEN.): fijne lijnen
-   om de 12px, een sterkere lijn om de 48px. */
+/* Raster zoals op bouwtekeningen en in de brochure (SAMEN.): warmgrijze
+   lijnen op de papierkleur van de pagina, die boven en onder uitfaden.
+   Het raster zit op een ::before achter de inhoud, zodat alleen het raster
+   vervaagt en de inhoud niet. Geef het element zelf een positie (relative). */
 @utility blueprint-grid {
-  background-color: #ffffff;
-  background-image:
-    linear-gradient(color-mix(in oklab, var(--color-navy) 6%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--color-navy) 6%, transparent) 1px, transparent 1px),
-    linear-gradient(color-mix(in oklab, var(--color-navy) 2.5%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--color-navy) 2.5%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
-  background-position: -1px -1px;
+  background-color: var(--color-paper);
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--color-mist) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-mist) 1px, transparent 1px),
+      linear-gradient(color-mix(in oklab, var(--color-mist) 45%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--color-mist) 45%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
+    background-position: -1px -1px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 70%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 70%, transparent);
+  }
 }
 
 /* Hetzelfde raster op navy, met hemelsblauwe lijnen (brochure, opening). */
