@@ -8,8 +8,7 @@ import Link from "next/link";
  * Projectkaarten in de minimalistische, foto-eerst stijl. Gedeeld door de
  * homepage ("Recent werk uit Twente") en /projecten.
  *
- * - ProjectCards: editoriaal raster, 2 kolommen; de eerste kaart (uitgelicht)
- *   loopt over de volle breedte.
+ * - ProjectCards: verspringend raster in rijen van 3, 1 en 2 kaarten.
  * - ProjectRows: compacte lijstweergave met miniatuur.
  *
  * Bij hover bladert een kaart automatisch door max. 3 projectfoto's (cover +
@@ -118,72 +117,112 @@ function PhotoStack({
   );
 }
 
+/** Rijen van 3, 1 en 2 kaarten om en om: verspringend, met ruimte voor staande foto's. */
+const PATTERN = [3, 1, 2] as const;
+
+function toRows<T>(items: T[]): T[][] {
+  const rows: T[][] = [];
+  let i = 0;
+  let p = 0;
+  while (i < items.length) {
+    const size = Math.min(PATTERN[p % PATTERN.length], items.length - i);
+    rows.push(items.slice(i, i + size));
+    i += size;
+    p += 1;
+  }
+  return rows;
+}
+
+const ASPECT: Record<number, string> = {
+  3: "aspect-[4/5]",
+  2: "aspect-[4/3]",
+  1: "aspect-[4/3] md:aspect-[21/9]",
+};
+const SIZES: Record<number, string> = {
+  3: "(max-width: 768px) 100vw, 33vw",
+  2: "(max-width: 768px) 100vw, 50vw",
+  1: "100vw",
+};
+
 export function ProjectCards({
   items,
   headingLevel = "h2",
-  featureFirst = true,
-  priorityCount = 2,
+  priorityCount = 3,
 }: {
   items: ProjectCardData[];
   headingLevel?: "h2" | "h3";
-  /** Eerste kaart over de volle breedte (bij meer dan één project). */
-  featureFirst?: boolean;
   priorityCount?: number;
 }) {
   const Heading = headingLevel;
+  const rows = toRows(items);
+  let index = 0;
   return (
-    <div className="grid gap-x-8 gap-y-16 md:grid-cols-2 md:gap-y-24">
-      {items.map((p, i) => {
-        // Eerste kaart breed; bij een oneven rest ook de laatste, zodat het
-        // raster nooit eindigt met één losse halve kaart.
-        const lastOdd = i === items.length - 1 && i > 0 && (items.length - 1) % 2 === 1;
-        const wide = featureFirst && items.length > 1 && (i === 0 || lastOdd);
+    <div className="space-y-16 md:space-y-20">
+      {rows.map((row, r) => {
+        const size = row.length;
+        const wide = size === 1;
         return (
-          <Link
-            key={p.slug}
-            href={p.permalink}
-            className={`group block animate-fade-up ${wide ? "md:col-span-2" : ""}`}
-            style={{ animationDelay: `${Math.min(i, 4) * 80}ms` }}
+          <div
+            key={r}
+            className={`grid gap-x-6 gap-y-16 ${size === 3 ? "md:grid-cols-3" : size === 2 ? "md:grid-cols-2" : ""}`}
           >
-            <PhotoStack
-              images={p.images}
-              sizes={wide ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
-              priority={i < priorityCount}
-              className={wide ? "aspect-[4/3] md:aspect-[21/9]" : "aspect-[4/3]"}
-            />
-            <div className="mt-5 grid grid-cols-12 items-start gap-x-4 gap-y-3">
-              <div className="col-span-12 flex flex-wrap gap-x-3 pt-1.5 md:order-3 md:col-span-3 md:flex-col md:items-end md:gap-1 md:text-right">
-                {p.location && <span className="label-mono text-ink">{p.location}</span>}
-                {p.category && <span className="label-mono text-stone">{p.category}</span>}
-              </div>
-              <div className="col-span-12 md:order-2 md:col-span-9">
-                <Heading
-                  className={`display ${
-                    wide ? "text-3xl md:text-5xl" : "text-2xl md:text-3xl"
-                  }`}
+            {row.map((p) => {
+              const i = index++;
+              return (
+                <Link
+                  key={p.slug}
+                  href={p.permalink}
+                  className="group block animate-fade-up"
+                  style={{ animationDelay: `${Math.min(i % 6, 4) * 80}ms` }}
                 >
-                  {p.title}
-                </Heading>
-                <p className="mt-2 max-w-lg text-sm leading-relaxed text-stone">
-                  {p.description}
-                </p>
-              </div>
-            </div>
-          </Link>
+                  <PhotoStack
+                    images={p.images}
+                    sizes={SIZES[size]}
+                    priority={i < priorityCount}
+                    className={ASPECT[size]}
+                  />
+                  <div className="mt-5 flex items-baseline justify-between gap-4">
+                    <span className="label-mono text-stone">{p.category}</span>
+                    {p.location && <span className="label-mono shrink-0 text-ink">{p.location}</span>}
+                  </div>
+                  <Heading
+                    className={`display mt-3 flex items-start justify-between gap-3 ${
+                      wide ? "text-3xl md:text-5xl" : "text-2xl md:text-3xl"
+                    }`}
+                  >
+                    {p.title}
+                    <ArrowUpRight className="mt-1 size-5 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
+                  </Heading>
+                  <p className={`mt-2 line-clamp-2 text-sm leading-relaxed text-stone ${wide ? "max-w-2xl" : ""}`}>
+                    {p.description}
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
         );
       })}
     </div>
   );
 }
 
-export function ProjectRows({ items }: { items: ProjectCardData[] }) {
+export function ProjectRows({
+  items,
+  columns = { location: "Locatie", category: "Werkzaamheden", extra: "Klant" },
+  itemLabel = "Project",
+}: {
+  items: ProjectCardData[];
+  /** Kolomkoppen; de kennisbank gebruikt leestijd, onderwerp en datum. */
+  columns?: { location: string; category: string; extra: string };
+  itemLabel?: string;
+}) {
   return (
     <div className="border-t border-ink">
       <div className="label-mono hidden grid-cols-12 gap-4 border-b border-mist py-3 text-stone md:grid">
-        <span className="col-span-6">Project</span>
-        <span className="col-span-2">Locatie</span>
-        <span className="col-span-2">Werkzaamheden</span>
-        <span className="col-span-1">Klant</span>
+        <span className="col-span-6">{itemLabel}</span>
+        <span className="col-span-2">{columns.location}</span>
+        <span className="col-span-2">{columns.category}</span>
+        <span className="col-span-1">{columns.extra}</span>
         <span className="col-span-1" />
       </div>
       {items.map((p) => (

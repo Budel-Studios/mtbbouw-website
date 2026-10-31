@@ -369,7 +369,8 @@ export async function HomeContent({
 
       {/* WAAROM MTB BOUW — donker */}
       <section className="bg-inverse text-white">
-        <div className="container-page py-24 md:py-32">
+        <div className="container-page pb-24 md:pb-32">
+          <div className="border-t border-inverse-border pt-14 md:pt-16" />
           <SectionHeading eyebrow="Waarom MTB Bouw" title="Bouwen zoals het hoort." tone="inverse" />
           <div className="mt-14">
             <Slider

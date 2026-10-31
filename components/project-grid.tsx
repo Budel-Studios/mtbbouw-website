@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { FilterDropdown } from "@/components/filter-dropdown";
 import {
   ProjectCards,
   ProjectRows,
@@ -8,12 +9,12 @@ import {
 } from "@/components/project/project-cards";
 
 /**
- * Projecten-browser voor /projecten: sticky balk met categoriefilter (met
- * aantallen) en een wissel tussen raster- en lijstweergave. Het raster is
- * foto-eerst; de eerste kaart loopt over de volle breedte.
+ * Projecten-browser voor /projecten: een rustige balk met het aantal, een
+ * dropdown-filter op soort werk en een wissel tussen raster en lijst.
+ * Het raster verspringt in rijen van 3, 1 en 2 kaarten.
  */
-const ALL = "Alle";
-type View = "grid" | "list";
+const ALL = "Alle projecten";
+export type View = "grid" | "list";
 
 function GridIcon() {
   return (
@@ -34,29 +35,29 @@ function ListIcon() {
   );
 }
 
-function ViewButton({
-  active,
-  onClick,
-  label,
-  children,
-}: {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-  children: React.ReactNode;
-}) {
+/** Wissel tussen raster- en lijstweergave; gedeeld met de kennisbank. */
+export function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => void }) {
+  const options: { value: View; label: string; icon: React.ReactNode }[] = [
+    { value: "grid", label: "Rasterweergave", icon: <GridIcon /> },
+    { value: "list", label: "Lijstweergave", icon: <ListIcon /> },
+  ];
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={label}
-      aria-pressed={active}
-      className={`grid size-9 cursor-pointer place-items-center transition-colors ${
-        active ? "bg-navy text-white" : "text-stone hover:text-ink"
-      }`}
-    >
-      {children}
-    </button>
+    <div className="flex shrink-0 items-center border border-mist bg-white">
+      {options.map((o) => (
+        <button
+          key={o.value}
+          type="button"
+          onClick={() => onChange(o.value)}
+          aria-label={o.label}
+          aria-pressed={view === o.value}
+          className={`grid size-11 cursor-pointer place-items-center transition-colors ${
+            view === o.value ? "bg-navy text-white" : "text-stone hover:text-ink"
+          }`}
+        >
+          {o.icon}
+        </button>
+      ))}
+    </div>
   );
 }
 
@@ -77,47 +78,23 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
   );
 
   return (
-    <>
-      <div className="sticky top-16 z-30 border-y border-mist bg-paper/90 backdrop-blur-md">
-        <div className="container-page flex items-center justify-between gap-6 py-4">
-          <div
-            role="group"
-            aria-label="Filter op type project"
-            className="no-scrollbar -mx-1 flex gap-1 overflow-x-auto"
-          >
-            {categories.map((c) => {
-              const count =
-                c === ALL ? projects.length : projects.filter((p) => p.category === c).length;
-              const isActive = active === c;
-              return (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => setActive(c)}
-                  aria-pressed={isActive}
-                  className={`label-mono shrink-0 cursor-pointer border-b-2 px-3 py-2 transition-colors ${
-                    isActive ? "border-lime text-ink" : "border-transparent text-stone hover:text-ink"
-                  }`}
-                >
-                  {c}
-                  <sup className="ml-1 opacity-60">{count}</sup>
-                </button>
-              );
-            })}
-          </div>
-          <div className="flex shrink-0 items-center gap-1">
-            <ViewButton active={view === "grid"} onClick={() => setView("grid")} label="Rasterweergave">
-              <GridIcon />
-            </ViewButton>
-            <ViewButton active={view === "list"} onClick={() => setView("list")} label="Lijstweergave">
-              <ListIcon />
-            </ViewButton>
-          </div>
+    <section aria-label="Projecten" className="container-page pb-20 md:pb-28">
+      <div className="flex flex-col gap-3 border-y border-mist py-4 md:flex-row md:items-center md:justify-between">
+        <p className="label-mono text-stone" aria-live="polite">
+          {visible.length} {visible.length === 1 ? "project" : "projecten"}
+        </p>
+        <div className="flex gap-3">
+          <FilterDropdown
+            label="Filter op soort werk"
+            options={categories}
+            active={active}
+            onChange={setActive}
+          />
+          <ViewToggle view={view} onChange={setView} />
         </div>
       </div>
 
-      <section aria-label="Projecten">
-        <div className="container-page py-14 md:py-20">
+      <div className="mt-12 md:mt-16">
         {visible.length === 0 ? (
           <p className="text-stone">Geen projecten in deze categorie.</p>
         ) : view === "grid" ? (
@@ -125,8 +102,7 @@ export function ProjectGrid({ projects }: { projects: ProjectCardData[] }) {
         ) : (
           <ProjectRows items={visible} />
         )}
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

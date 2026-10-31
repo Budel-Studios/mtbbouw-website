@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useMemo, useSyncExternalStore } from "react";
+import { useCallback, useMemo, useState, useSyncExternalStore } from "react";
 import { FilterDropdown } from "@/components/filter-dropdown";
-import { ProjectCards } from "@/components/project/project-cards";
+import { ProjectCards, ProjectRows } from "@/components/project/project-cards";
+import { ViewToggle, type View } from "@/components/project-grid";
 import { articleToCard } from "@/lib/article-slide";
 import {
   AUDIENCES,
@@ -17,10 +18,10 @@ import {
  * /projecten (ProjectCards): cover met hover-zoom, displaykop en mono-meta
  * met leestijd en onderwerp. Het nieuwste artikel krijgt een brede kaart.
  *
- * Drie filters, gecombineerd (EN): voor wie, onderwerp en bouwdeel. De actieve
- * filters staan in de URL (?voor=thuis&onderwerp=verduurzamen&bouwdeel=daken),
- * zodat elke gefilterde weergave deelbaar is en de kluswijzer of een artikel
- * er direct naartoe kan linken.
+ * Zichtbaar filter: onderwerp (dropdown), plus een wissel tussen raster en
+ * lijst. Bouwdeel en doelgroep werken nog via de URL
+ * (?onderwerp=verduurzamen&bouwdeel=daken&voor=thuis), zodat links vanuit de
+ * kluswijzer of een artikel blijven werken.
  */
 type Article = {
   slug: string;
@@ -39,7 +40,6 @@ type Article = {
 type Filters = { category: string; subcategory: string; audience: string };
 
 const ALL_CATEGORIES = "Alle onderwerpen";
-const ALL_SUBCATEGORIES = "Alle bouwdelen";
 
 /* ---------- Filters in de URL ----------------------------------------- */
 
@@ -105,41 +105,6 @@ function useFilters() {
 
 /* ---------- UI --------------------------------------------------------- */
 
-function AudienceToggle({
-  active,
-  onChange,
-}: {
-  active: string;
-  onChange: (value: string) => void;
-}) {
-  const options = [{ slug: "", label: "Alles" }, ...AUDIENCES];
-  return (
-    <div
-      role="radiogroup"
-      aria-label="Voor wie"
-      className="inline-flex w-full gap-1 md:w-auto"
-    >
-      {options.map((opt) => {
-        const isActive = opt.slug === active;
-        return (
-          <button
-            key={opt.slug || "all"}
-            type="button"
-            role="radio"
-            aria-checked={isActive}
-            onClick={() => onChange(opt.slug)}
-            className={`label-mono flex-1 whitespace-nowrap px-3 py-2 transition-colors md:flex-none ${
-              isActive ? "bg-navy text-white" : "text-stone hover:text-navy"
-            }`}
-          >
-            {opt.label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 export function ArticleGrid({
   articles,
   intro,
@@ -147,25 +112,19 @@ export function ArticleGrid({
 }: {
   articles: Article[];
   intro?: string;
-  /** false op hubpagina's: daar is de selectie al gemaakt, dus geen filters. */
+  /** false op hubpagina's: daar is de selectie al gemaakt, dus geen filter. */
   filterable?: boolean;
 }) {
   const { filters: urlFilters, setFilter, reset } = useFilters();
   const filters = filterable
     ? urlFilters
     : { category: "", subcategory: "", audience: "" };
+  const [view, setView] = useState<View>("grid");
 
-  // Alleen opties tonen waar ook echt artikelen onder staan, in de vaste
+  // Alleen onderwerpen waar ook echt artikelen onder staan, in de vaste
   // volgorde van de taxonomie (niet alfabetisch).
   const categoryOptions = useMemo(
     () => CATEGORIES.filter((c) => articles.some((a) => a.category === c.slug)),
-    [articles]
-  );
-  const subcategoryOptions = useMemo(
-    () =>
-      SUBCATEGORIES.filter((s) =>
-        articles.some((a) => a.subcategories.includes(s.slug))
-      ),
     [articles]
   );
 
@@ -176,14 +135,19 @@ export function ArticleGrid({
       (!filters.audience || a.audience.includes(filters.audience))
   );
 
-  const anyActive = Boolean(
-    filters.category || filters.subcategory || filters.audience
-  );
+  // Bouwdeel en doelgroep kunnen nog via een link meekomen (bijv. vanuit de
+  // kluswijzer); die tonen we als regel met "Wis filters".
+  const hiddenFilters = [
+    filters.subcategory && SUBCATEGORIES.find((s) => s.slug === filters.subcategory)?.label,
+    filters.audience && AUDIENCES.find((s) => s.slug === filters.audience)?.label,
+  ].filter(Boolean);
 
-  const labelFor = (list: readonly TaxonomyItem[], slug: string, all: string) =>
-    list.find((i) => i.slug === slug)?.label ?? all;
-  const slugFor = (list: readonly TaxonomyItem[], label: string) =>
-    list.find((i) => i.label === label)?.slug ?? "";
+  const labelFor = (slug: string) =>
+    CATEGORIES.find((c) => c.slug === slug)?.label ?? ALL_CATEGORIES;
+  const slugFor = (label: string) =>
+    CATEGORIES.find((c) => c.label === label)?.slug ?? "";
+
+  const cards = visible.map(articleToCard);
 
   return (
     <div>
@@ -193,47 +157,13 @@ export function ArticleGrid({
         </p>
       )}
 
-      {filterable && (
-        <div className="mt-8 flex flex-col gap-3 border-y border-mist py-3 lg:flex-row lg:items-center lg:justify-between">
-          <AudienceToggle
-            active={filters.audience}
-            onChange={(v) => setFilter("audience", v)}
-          />
-
-          <div className="flex flex-col gap-3 md:flex-row">
-            {categoryOptions.length > 1 && (
-              <FilterDropdown
-                label="Filter op onderwerp"
-                options={[ALL_CATEGORIES, ...categoryOptions.map((c) => c.label)]}
-                active={labelFor(CATEGORIES, filters.category, ALL_CATEGORIES)}
-                onChange={(label) =>
-                  setFilter("category", slugFor(CATEGORIES, label))
-                }
-              />
-            )}
-            {subcategoryOptions.length > 1 && (
-              <FilterDropdown
-                label="Filter op bouwdeel"
-                options={[
-                  ALL_SUBCATEGORIES,
-                  ...subcategoryOptions.map((s) => s.label),
-                ]}
-                active={labelFor(SUBCATEGORIES, filters.subcategory, ALL_SUBCATEGORIES)}
-                onChange={(label) =>
-                  setFilter("subcategory", slugFor(SUBCATEGORIES, label))
-                }
-              />
-            )}
-          </div>
-        </div>
-      )}
-
-      {filterable && (
-        <p className="label-mono mt-4 flex items-center gap-3 text-stone" aria-live="polite">
+      <div className="flex flex-col gap-3 border-y border-mist py-4 md:flex-row md:items-center md:justify-between">
+        <p className="label-mono flex flex-wrap items-center gap-3 text-stone" aria-live="polite">
           <span>
             {visible.length} {visible.length === 1 ? "artikel" : "artikelen"}
           </span>
-          {anyActive && (
+          {hiddenFilters.length > 0 && <span>· {hiddenFilters.join(" · ")}</span>}
+          {filterable && (filters.category || hiddenFilters.length > 0) && (
             <button
               type="button"
               onClick={reset}
@@ -243,11 +173,30 @@ export function ArticleGrid({
             </button>
           )}
         </p>
-      )}
+        <div className="flex gap-3">
+          {filterable && categoryOptions.length > 1 && (
+            <FilterDropdown
+              label="Filter op onderwerp"
+              options={[ALL_CATEGORIES, ...categoryOptions.map((c) => c.label)]}
+              active={labelFor(filters.category)}
+              onChange={(label) => setFilter("category", slugFor(label))}
+            />
+          )}
+          <ViewToggle view={view} onChange={setView} />
+        </div>
+      </div>
 
       {visible.length > 0 ? (
-        <div className="mt-10">
-          <ProjectCards items={visible.map(articleToCard)} />
+        <div className="mt-12 md:mt-16">
+          {view === "grid" ? (
+            <ProjectCards items={cards} />
+          ) : (
+            <ProjectRows
+              items={cards}
+              itemLabel="Artikel"
+              columns={{ location: "Leestijd", category: "Onderwerp", extra: "Datum" }}
+            />
+          )}
         </div>
       ) : (
         <div className="mt-12 text-center text-stone">

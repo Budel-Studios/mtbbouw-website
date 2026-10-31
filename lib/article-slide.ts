@@ -8,6 +8,7 @@ type ArticleLike = {
   description: string;
   category: string;
   readingTime: number;
+  date?: string;
   cover?: string;
   coverAlt?: string;
 };
@@ -26,6 +27,9 @@ export function articleToCard(a: ArticleLike): ProjectCardData {
     description: a.description,
     category: categoryLabel(a.category),
     location: `${a.readingTime} min lezen`,
+    clientType: a.date
+      ? new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(a.date))
+      : undefined,
     images: a.cover ? [{ src: a.cover, alt: a.coverAlt || a.title }] : [],
   };
 }

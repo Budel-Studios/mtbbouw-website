@@ -39,7 +39,7 @@ export function TwenteMapSection({
 
   return (
     <section id="werkgebied" aria-labelledby="werkgebied-title" className="scroll-mt-20 overflow-hidden bg-inverse text-white">
-      <div className="container-page py-24 md:py-32">
+      <div className="container-page pb-16 pt-24 md:pb-20 md:pt-32">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="eyebrow text-inverse-muted">{eyebrow}</p>

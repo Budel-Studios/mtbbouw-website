@@ -1,11 +1,15 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { team } from "@/lib/data";
 import { getSiteAssets } from "@/lib/assets";
+import { Slider } from "@/components/slider";
 
 /**
- * Teamportretten (grayscale, fallback-initiaal) — extractie van het
- * homepage-teamblok. Foto's komen uit site_assets (Supabase, key
- * `team-<naam>`) met het lokale bestand uit lib/data.ts als fallback.
+ * Het team als horizontale slider, in dezelfde opbouw als de expertises op
+ * de homepage: staande foto met een lime lijn bij hover, rol in mono, naam
+ * als displaykop en een korte tekst. Foto's komen uit site_assets (Supabase,
+ * key `team-<naam>`) met het lokale bestand uit lib/data.ts als fallback;
+ * `position` houdt het gezicht in beeld bij het bijsnijden.
  */
 export async function TeamGrid({
   members = team,
@@ -13,51 +17,69 @@ export async function TeamGrid({
   eyebrow = "Het team",
   title = "Ontdek de mensen die samen bouwen",
   intro,
+  footer,
 }: {
   members?: typeof team;
   showBio?: boolean;
   eyebrow?: string;
   title?: string;
   intro?: string;
+  /** Optionele regel onder de slider, bijv. links naar werken bij. */
+  footer?: ReactNode;
 }) {
   const assets = await getSiteAssets();
   return (
     <section className="container-page py-20 md:py-28">
-      <p className="eyebrow text-stone">
-        {eyebrow}
-      </p>
-      <h2 className="display mt-4 max-w-2xl text-4xl md:text-5xl">{title}</h2>
-      {intro && <p className="mt-4 max-w-2xl text-stone">{intro}</p>}
-      <div className="mt-12 grid divide-mist border-mist sm:grid-cols-2 sm:divide-x sm:border-x lg:grid-cols-5">
-        {members.map((member) => {
-          const photo =
-            assets[`team-${member.name.toLowerCase()}`]?.url || member.image;
-          return (
-          <div key={member.name} className="px-5 py-2 first:pl-0 last:pr-0">
-            <div className="relative aspect-[3/4] bg-paper">
-              {photo ? (
-                <Image
-                  src={photo}
-                  alt={`${member.name} — ${member.role}`}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 20vw"
-                  className="object-cover grayscale"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center text-5xl font-semibold text-mist">
-                  {member.name.charAt(0)}
-                </div>
-              )}
-            </div>
-            <h3 className="mt-5 text-lg font-semibold">{member.name}</h3>
-            <p className="mt-1 text-sm font-semibold text-stone">{member.role}</p>
-            {showBio && (
-              <p className="mt-3 text-sm leading-relaxed text-stone">{member.text}</p>
-            )}
-          </div>
-          );
-        })}
+      <div className="grid gap-6 md:grid-cols-12 md:items-end">
+        <div className="md:col-span-7">
+          <p className="eyebrow text-stone">{eyebrow}</p>
+          <h2 className="display mt-4 text-4xl md:text-5xl">{title}</h2>
+        </div>
+        {intro && (
+          <p className="leading-relaxed text-stone md:col-span-4 md:col-start-9">{intro}</p>
+        )}
       </div>
+      <div className="mt-12 md:mt-14">
+        <Slider label={title}>
+          {members.map((member, i) => {
+            const photo = assets[`team-${member.name.toLowerCase()}`]?.url || member.image;
+            return (
+              <li
+                key={member.name}
+                className="group w-[78%] shrink-0 snap-start animate-fade-up sm:w-[45%] lg:w-[30%] xl:w-[23%]"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-mist">
+                  {photo ? (
+                    <Image
+                      src={photo}
+                      alt={`${member.name}, ${member.role.toLowerCase()} bij MTB Bouw`}
+                      fill
+                      sizes="(max-width: 640px) 78vw, (max-width: 1024px) 45vw, 25vw"
+                      style={{ objectPosition: member.position }}
+                      className="img-zoom object-cover grayscale"
+                    />
+                  ) : (
+                    <div className="blueprint-grid flex h-full items-center justify-center">
+                      <span className="display text-8xl text-navy/25">{member.name.charAt(0)}</span>
+                    </div>
+                  )}
+                  <span
+                    className="absolute bottom-0 left-0 h-1 w-0 bg-lime transition-[width] duration-700 group-hover:w-full"
+                    aria-hidden="true"
+                  />
+                </div>
+                <p className="label-mono mt-5 text-stone">{member.role}</p>
+                <h3 className="display mt-3 text-2xl md:text-3xl">{member.name}</h3>
+                {showBio && (
+                  <p className="mt-3 text-sm leading-relaxed text-stone">{member.text}</p>
+                )}
+              </li>
+            );
+          })}
+        </Slider>
+      </div>
+      {footer && <div className="mt-10">{footer}</div>}
     </section>
   );
 }

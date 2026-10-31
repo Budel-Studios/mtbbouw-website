@@ -59,10 +59,9 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
           </ul>
         )}
 
-        <p className="label-mono mt-12 border-t border-mist pt-4 text-stone">
-          {articles.length} {articles.length === 1 ? "artikel" : "artikelen"}
-        </p>
-        <ArticleGrid articles={articles} filterable={false} />
+        <div className="mt-12">
+          <ArticleGrid articles={articles} filterable={false} />
+        </div>
 
         <div className="mt-24 border-t border-ink pt-10">
           <HubLinks current={path} />
