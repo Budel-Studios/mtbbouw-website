@@ -122,6 +122,7 @@ export default function AannemerBornePage() {
       <KennisbankBlock
         match={{ audience: "thuis" }}
         title="Lees je in voor je gaat verbouwen"
+        tone="plain"
       />
 
       <NearbyPlaces currentSlug="aannemer-borne" />
