@@ -56,6 +56,7 @@ export function buildQuoteCustomer(f: QuotePayload) {
         row("Afmetingen / aantallen", f.dimensions) +
         row("Werkonderdelen", (f.workParts ?? []).join(", ")) +
         row("Postcode + plaats", f.postcode) +
+        row("Huisnummer", f.houseNumber) +
         row("Type woning / pand", label(PROPERTY_TYPE_LABELS, f.propertyType)) +
         row("Gewenst startmoment", f.startTime) +
         row("Deadline", f.deadline) +

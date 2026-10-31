@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useRef,
   createContext,
   useCallback,
   useContext,
@@ -338,6 +339,7 @@ type ContactFormData = {
   dimensions: string;
   workParts: string[];
   postcode: string;
+  houseNumber: string;
   propertyType: string;
   startTime: string;
   deadline: string;
@@ -359,6 +361,7 @@ const INITIAL_FORM: ContactFormData = {
   dimensions: "",
   workParts: [],
   postcode: "",
+  houseNumber: "",
   propertyType: "",
   startTime: "",
   deadline: "",
@@ -424,7 +427,14 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
   const [form, setForm] = useState<ContactFormData>(INITIAL_FORM);
   const [errors, setErrors] = useState<Errors>({});
 
-  const open = useCallback(() => setIsOpen(true), []);
+  // Botbeveiliging: verborgen honeypot-veld en de tijd tussen openen en versturen.
+  const openedAt = useRef<number | null>(null);
+  const honeyRef = useRef<HTMLInputElement>(null);
+
+  const open = useCallback(() => {
+    if (openedAt.current === null) openedAt.current = Date.now();
+    setIsOpen(true);
+  }, []);
   const close = useCallback(() => setIsOpen(false), []);
 
   // Close on Escape
@@ -465,6 +475,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
     if (step === 2 && !form.description) errs.description = "Omschrijving is verplicht";
     if (step === 3) {
       if (!form.postcode) errs.postcode = "Postcode is verplicht";
+      if (!form.houseNumber) errs.houseNumber = "Huisnummer is verplicht";
       if (!form.startTime) errs.startTime = "Selecteer een startmoment";
       if (!form.agreement) errs.agreement = "Akkoord gaan is verplicht";
     }
@@ -486,6 +497,8 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
         body: JSON.stringify({
           type: "offerte",
           ...form,
+          website: honeyRef.current?.value ?? "",
+          elapsed: openedAt.current ? Date.now() - openedAt.current : undefined,
           // Voor meten: welke pagina levert aanvragen op (alleen intern zichtbaar).
           sourcePage: window.location.pathname,
         }),
@@ -502,6 +515,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
 
   const closeSuccess = () => {
     close();
+    openedAt.current = null;
     setSuccess(false);
     setForm(INITIAL_FORM);
     setStep(1);
@@ -603,6 +617,16 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
 
               {/* Step body */}
               <form onSubmit={submit} className="flex min-h-0 flex-1 flex-col">
+                {/* Honeypot: onzichtbaar voor mensen, bots vullen het in. */}
+                <input
+                  ref={honeyRef}
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div className="flex-1 overflow-y-auto p-6">
                   {step === 1 && (
                     <div key="step1" className="animate-step-in space-y-5">
@@ -705,14 +729,24 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
 
                   {step === 3 && (
                     <div key="step3" className="animate-step-in space-y-6">
-                      <InputField
-                        label="Postcode + plaats *"
-                        name="postcode"
-                        value={form.postcode}
-                        onChange={handleChange}
-                        error={errors.postcode}
-                        placeholder="1234 AB Amsterdam"
-                      />
+                      <div className="grid grid-cols-[1fr_7.5rem] gap-3">
+                        <InputField
+                          label="Postcode + plaats *"
+                          name="postcode"
+                          value={form.postcode}
+                          onChange={handleChange}
+                          error={errors.postcode}
+                          placeholder="7546 PG Enschede"
+                        />
+                        <InputField
+                          label="Huisnummer *"
+                          name="houseNumber"
+                          value={form.houseNumber}
+                          onChange={handleChange}
+                          error={errors.houseNumber}
+                          placeholder="12a"
+                        />
+                      </div>
                       <SelectField
                         label="Type woning / pand"
                         name="propertyType"

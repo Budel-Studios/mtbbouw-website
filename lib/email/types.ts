@@ -10,6 +10,7 @@ export type QuotePayload = {
   dimensions: string;
   workParts: string[];
   postcode: string;
+  houseNumber: string;
   propertyType: string;
   startTime: string;
   deadline: string;
@@ -46,8 +47,11 @@ export type ApplicationPayload = {
   cvLink?: string;
 };
 
-/** Honeypot-veld `website`: ingevuld = bot. */
-export type Body = { type?: FormType; website?: string } & QuotePayload &
+/**
+ * Honeypot-veld `website`: ingevuld = bot. `elapsed`: ms tussen openen en
+ * versturen van het formulier (te snel = bot).
+ */
+export type Body = { type?: FormType; website?: string; elapsed?: number } & QuotePayload &
   ContactPayload &
   BrochurePayload &
   ApplicationPayload;
