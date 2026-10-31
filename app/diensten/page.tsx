@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { ProcessSteps } from "@/components/sections/process-steps";
-import { ExpertiseTiles } from "@/components/sections/expertise-tiles";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { expertises } from "@/lib/expertises";
 import { CardSlider } from "@/components/sections/card-slider";
 import type { ProjectCardData } from "@/components/project/project-cards";
+import { DrawOnView } from "@/components/blueprint/draw-on-view";
+import { Crosshairs, DimensionLine, NumberBox, SheetTag } from "@/components/blueprint/marks";
+import {
+  HouseDrawing,
+  LunchroomDrawing,
+  PrefabDrawing,
+  WindowDrawing,
+} from "@/components/blueprint/drawings";
 
 const title = "Diensten: verbouw, uitbouw & afbouw in Twente | MTB Bouw";
 const description =
@@ -152,6 +158,74 @@ const steden = [
   { href: "/aannemer-twente", label: "Heel Twente" },
 ];
 
+/** De twee hoofdrichtingen, bovenaan de pagina, elk met een schets. */
+const HOOFD = [
+  {
+    n: 1,
+    label: "Voor thuis",
+    title: "Wonen & Verbouwen",
+    href: "/wonen-en-verbouwen",
+    text: "Renoveren, uitbouwen, verduurzamen of nieuw bouwen. Of je nu in een jaren-30 woning woont of in een huis uit de jaren zeventig: we kijken eerst wat goed is, en maken de rest weer van nu.",
+    links: [
+      { href: "/verbouwing", label: "Renovatie & verbouw" },
+      { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
+      { href: "/verduurzamen", label: "Verduurzamen" },
+      { href: "/nieuwbouw", label: "Nieuwbouw" },
+    ],
+    Drawing: HouseDrawing,
+  },
+  {
+    n: 2,
+    label: "Voor bedrijven",
+    title: "Zakelijke afbouw",
+    href: "/afbouwstudio",
+    text: "Kantoren, winkels en horeca, van casco tot sleutelklaar. We plannen het werk rond je bedrijf, zodat je zo kort mogelijk dicht bent.",
+    links: [
+      { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
+      { href: "/afbouwstudio/winkel-verbouwen", label: "Winkel verbouwen" },
+      { href: "/afbouwstudio/horeca-verbouwen", label: "Horeca verbouwen" },
+      { href: "/afbouwstudio/bedrijfspand-verbouwen", label: "Bedrijfspand verbouwen" },
+    ],
+    Drawing: LunchroomDrawing,
+  },
+];
+
+/** De twee specialismen die bij allebei horen. */
+const SPECIALISMEN = [
+  {
+    n: 3,
+    label: "Eigen label",
+    title: "Kozijnen",
+    href: "/kozijnen",
+    text: "Hout, kunststof of aluminium, all-in via ons eigen label De Kozijnstudio. Los geplaatst of meegenomen in je verbouwing.",
+    Drawing: WindowDrawing,
+  },
+  {
+    n: 4,
+    label: "Slim en snel",
+    title: "Prefab bouwen",
+    href: "/prefab",
+    text: "Wanden, daken en overkappingen maken we vooraf in de werkplaats. Op de bouw staat het dan snel, met weinig overlast voor jou en de buren.",
+    Drawing: PrefabDrawing,
+  },
+];
+
+const KENGETALLEN = [
+  { value: "4", label: "expertises onder één dak" },
+  { value: "1", label: "vast aanspreekpunt" },
+  { value: "1", label: "offerte met een vaste prijs" },
+  { value: "0", label: "voorrijkosten in Twente" },
+];
+
+function ArrowUpRight({ className = "size-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
+}
+
 export default function DienstenPage() {
   return (
     <>
@@ -162,22 +236,108 @@ export default function DienstenPage() {
         ]}
       />
 
-      {/* Intro */}
-      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
-        <p className="eyebrow text-stone">Wat we bouwen</p>
-        <h1 className="mt-3 text-4xl font-medium tracking-[-0.03em]">
-          Wat we bouwen in Twente
-        </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-lg text-stone">
-          MTB Bouw is een bouwbedrijf uit Enschede, met een vast kernteam en
-          vaste partners uit de regio. We bouwen voor thuis en voor bedrijven.
-          Je hebt één aanspreekpunt, van de eerste koffie tot de oplevering.
-        </p>
+      {/* HERO op tekenpapier, met meteen de twee hoofdrichtingen */}
+      <section className="blueprint-grid relative overflow-hidden border-b border-mist">
+        <Crosshairs />
+        <div className="container-page relative pb-16 pt-14 md:pb-24 md:pt-20">
+          <div className="flex items-start justify-between gap-6">
+            <p className="eyebrow text-stone">Bouwbedrijf uit Enschede</p>
+            <span className="label-mono hidden text-stone md:block">52.22° N · 6.89° E</span>
+          </div>
+          <h1 className="display mt-6 text-6xl sm:text-7xl md:text-8xl xl:text-[8.5rem]">
+            Wat we <span className="mark-lime">bouwen</span>
+            <span className="block text-navy">in Twente.</span>
+          </h1>
+          <div className="mt-10 grid gap-8 md:grid-cols-12 md:items-end">
+            <p className="text-lg leading-relaxed text-ink/80 md:col-span-6 md:text-xl">
+              MTB Bouw is een klein bouwbedrijf uit Enschede, met een vast team
+              en vaste partners uit de regio. We bouwen voor thuis en voor
+              bedrijven: van een uitbouw aan een jaren-30 woning tot de afbouw
+              van een lunchroom. Je hebt één aanspreekpunt, van de eerste kop
+              koffie tot de oplevering.
+            </p>
+            <DimensionLine
+              label="Enschede · Hengelo · Almelo · Oldenzaal"
+              className="md:col-span-5 md:col-start-8"
+            />
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            {HOOFD.map(({ n, label, title, href, text, links, Drawing }) => (
+              <article key={href} className="flex flex-col border border-ink/15">
+                <DrawOnView className="relative border-b border-ink/10 px-4 pb-4 pt-12 md:px-8">
+                  <span className="absolute right-4 top-4">
+                    <SheetTag n={n} of={4} />
+                  </span>
+                  <Drawing />
+                </DrawOnView>
+                <div className="flex flex-1 flex-col bg-white p-6 md:p-8">
+                  <NumberBox n={n} label={label} />
+                  <h2 className="display mt-5 text-4xl md:text-5xl">
+                    <Link href={href} className="transition-colors hover:text-navy">
+                      {title}
+                    </Link>
+                  </h2>
+                  <p className="mt-4 max-w-xl leading-relaxed text-stone">{text}</p>
+                  <ul className="mt-6 grid gap-x-6 border-t border-ink sm:grid-cols-2">
+                    {links.map((l) => (
+                      <li key={l.href} className="border-b border-mist">
+                        <Link
+                          href={l.href}
+                          className="group flex items-center justify-between gap-3 py-3 font-display text-base font-semibold text-ink transition-colors hover:text-navy"
+                        >
+                          {l.label}
+                          <ArrowUpRight className="size-4 shrink-0 text-stone transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={href}
+                    className="label-mono mt-8 inline-flex items-center gap-2 self-start border border-navy bg-navy px-5 py-3.5 text-white transition-colors hover:border-navy-dark hover:bg-navy-dark"
+                  >
+                    Alles over {title} <ArrowUpRight className="size-3.5" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Expertise-tegels; de losse diensten staan in de slider eronder */}
-      <section className="container-page pb-16">
-        <ExpertiseTiles items={expertises} />
+      {/* KOZIJNEN EN PREFAB */}
+      <section className="container-page py-20 md:py-28">
+        <p className="eyebrow text-stone">Ook in huis</p>
+        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
+          Kozijnen en prefab, onder hetzelfde dak
+        </h2>
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {SPECIALISMEN.map(({ n, label, title, href, text, Drawing }) => (
+            <article key={href} className="grid border border-ink/15 bg-white sm:grid-cols-2">
+              <DrawOnView className="blueprint-grid relative flex items-center border-b border-ink/10 px-3 pb-3 pt-12 sm:border-b-0 sm:border-r">
+                <span className="absolute right-3 top-3">
+                  <SheetTag n={n} of={4} />
+                </span>
+                <Drawing />
+              </DrawOnView>
+              <div className="flex flex-col p-6 md:p-8">
+                <NumberBox n={n} label={label} />
+                <h3 className="display mt-5 text-3xl md:text-4xl">
+                  <Link href={href} className="transition-colors hover:text-navy">
+                    {title}
+                  </Link>
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-stone">{text}</p>
+                <Link
+                  href={href}
+                  className="label-mono mt-auto inline-flex items-center gap-2 self-start pt-6 text-navy"
+                >
+                  Alles over {title.toLowerCase()} <ArrowUpRight className="size-3.5" />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* Alle diensten op een rij */}
@@ -188,28 +348,87 @@ export default function DienstenPage() {
         title="Alles wat we doen, op een rij"
       />
 
-      {/* Werkgebied */}
+      {/* EÉN BOUWBEDRIJF — verhaal en kengetallen */}
       <section className="container-page py-20 md:py-28">
-        <p className="eyebrow text-stone">Werkgebied</p>
-        <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
-          Vanuit Enschede, door heel Twente
-        </h2>
-        <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-          We zijn een klein bedrijf en dat willen we graag zo houden. Daarom
-          werken we vooral dicht bij huis: in Enschede, Hengelo, Almelo,
-          Oldenzaal en de dorpen eromheen. Kies je plaats voor projecten en
-          vragen uit jouw buurt.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          {steden.map((s) => (
-            <Link
-              key={s.href}
-              href={s.href}
-              className="border border-mist bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-ink/30 hover:text-navy"
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <p className="eyebrow text-stone">Eén bouwbedrijf</p>
+            <h2 className="display mt-4 text-4xl md:text-5xl">
+              Aannemer voor het hele plaatje
+            </h2>
+          </div>
+          <div className="space-y-5 leading-relaxed text-stone md:col-span-6 md:col-start-7">
+            <p className="text-xl leading-snug tracking-[-0.01em] text-ink md:text-2xl">
+              Renoveren, uitbouwen, verduurzamen en nieuwbouw lopen vaak in
+              elkaar over. Wie uitbouwt, isoleert meteen mee. Wie renoveert,
+              kijkt ook naar de kozijnen.
+            </p>
+            <p>
+              Je hoeft dus niet te kiezen. Je hebt één vast aanspreekpunt,
+              Mathijs of Robbert, en wij stemmen de rest af. Op de bouwplaats
+              staat ons vaste team, samen met{" "}
+              <Link href="/regionale-partners" className="font-semibold text-ink underline hover:text-navy">
+                partners uit de regio
+              </Link>{" "}
+              die we al jaren kennen.
+            </p>
+            <p>
+              Na een kennismaking bij jou thuis of op de zaak krijg je een
+              offerte met een vaste prijs, volledig gespecificeerd. Zo weet je
+              vooraf wat er wel gebeurt, en ook wat niet. Hoe dat verder loopt,
+              lees je bij{" "}
+              <Link href="/hoe-wij-werken" className="font-semibold text-ink underline hover:text-navy">
+                hoe wij werken
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+        <dl className="mt-16 grid grid-cols-2 border-t border-ink md:grid-cols-4">
+          {KENGETALLEN.map((k, i) => (
+            <div
+              key={k.label}
+              className={`flex flex-col gap-3 border-mist py-6 pr-4 md:py-8 ${i % 2 === 1 ? "pl-4 md:pl-6" : ""} ${i > 0 ? "md:border-l md:pl-6" : ""}`}
             >
-              {s.label}
-            </Link>
+              <dt className="sr-only">{k.label}</dt>
+              <dd className="display hatch-text text-6xl md:text-7xl" aria-hidden="true">
+                {k.value}
+              </dd>
+              <dd className="text-sm leading-snug text-stone">
+                <span className="sr-only">{k.value} </span>
+                {k.label}
+              </dd>
+            </div>
           ))}
+        </dl>
+      </section>
+
+      {/* WERKGEBIED op navy tekenpapier */}
+      <section className="blueprint-navy relative overflow-hidden text-white">
+        <Crosshairs className="text-white/50" />
+        <div className="container-page relative py-20 md:py-28">
+          <p className="eyebrow text-white/80">Werkgebied</p>
+          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
+            Vanuit Enschede, door heel Twente
+          </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-white/85">
+            We zijn een klein bedrijf en dat willen we graag zo houden. Daarom
+            werken we vooral dicht bij huis: in Enschede, Hengelo, Almelo,
+            Oldenzaal en de dorpen eromheen. Kies je plaats voor projecten en
+            vragen uit jouw buurt.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {steden.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="label-nav border border-white/60 px-4 py-2.5 text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
+          <DimensionLine label="Twente · Overijssel" className="mt-14 text-white/50" />
         </div>
       </section>
 
@@ -220,7 +439,7 @@ export default function DienstenPage() {
         eyebrow="Vrijblijvend kennismaken"
         title="Iets te bouwen in Twente?"
         text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
-        cta={{ label: "Ontvang offerte", drawer: true }}
+        cta={{ label: "Neem contact op", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />
     </>

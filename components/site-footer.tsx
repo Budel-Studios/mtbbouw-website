@@ -48,9 +48,9 @@ function ArrowUpRight({ className }: { className?: string }) {
 }
 
 /**
- * Footer — navy vlak met lime merklijn bovenaan. Grote "Klaar om te bouwen?"
- * als afsluiter op elke pagina, daaronder de crawlbare vangnet-navigatie
- * (lib/site.ts → footerColumns), contactgegevens en de onderbalk.
+ * Footer: navy vlak met grote "Klaar om te bouwen?" als afsluiter, daaronder
+ * een rustige rij met diensten, werkgebied en contact (lib/site.ts), en een
+ * onderbalk met de overige links, socials en copyright.
  */
 export function SiteFooter() {
   const year = 2026; // jaarlijks bijwerken of via build-var
@@ -70,8 +70,7 @@ export function SiteFooter() {
           <div className="md:col-span-4">
             <p className="max-w-sm text-base leading-relaxed text-white/80">
               Vraag vrijblijvend een kennismaking aan. We komen graag bij je
-              langs voor een intake op locatie — in Enschede, Twente en heel
-              Oost-Nederland.
+              langs voor een intake op locatie, in Enschede en heel Twente.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -87,14 +86,13 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Kolommen — vangnet-navigatie + contact */}
-        <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/20 pt-10 sm:grid-cols-3 lg:grid-cols-6">
-          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
+        {/* Kolommen: merk, diensten, werkgebied, contact */}
+        <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/20 pt-10 lg:grid-cols-12">
+          <div className="col-span-2 lg:col-span-4">
             <Logo uid="ftr" tone="light" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">
-              {site.tagline}{" "}
-              Overkoepelend bouwmerk uit Enschede: Wonen &amp;
-              Verbouwen · Afbouwstudio · Kozijnstudio · Prefab Bouwen.
+              {site.tagline} Bouwbedrijf uit Enschede, voor thuis en voor
+              bedrijven in heel Twente.
             </p>
             <p className="mt-3 text-sm text-white/70">
               Zie ook ons interieurmerk{" "}
@@ -109,7 +107,7 @@ export function SiteFooter() {
             </p>
           </div>
           {site.footerColumns.map((col) => (
-            <div key={col.title}>
+            <div key={col.title} className="lg:col-span-3">
               <h3 className="label-mono text-white/65">{col.title}</h3>
               <ul className="mt-4 space-y-2 text-sm">
                 {col.links.map((link) => (
@@ -122,13 +120,11 @@ export function SiteFooter() {
               </ul>
             </div>
           ))}
-          <div>
+          <div className="col-span-2 lg:col-span-2">
             <h3 className="label-mono text-white/65">Contact</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <address className="not-italic leading-relaxed">
-                  {site.legalName}
-                  <br />
                   {site.address.streetAddress}
                   <br />
                   {site.address.postalCode} {site.address.addressLocality}
@@ -137,13 +133,13 @@ export function SiteFooter() {
                 </address>
               </li>
               <li>
-                <a href={`mailto:${site.email}`} className="link-line whitespace-nowrap">
-                  {site.email}
+                <a href={`tel:${site.telephoneHref}`} className="link-line whitespace-nowrap">
+                  {site.telephone}
                 </a>
               </li>
               <li>
-                <a href={`tel:${site.telephoneHref}`} className="link-line whitespace-nowrap">
-                  {site.telephone}
+                <a href={`mailto:${site.email}`} className="link-line whitespace-nowrap">
+                  {site.email}
                 </a>
               </li>
             </ul>
@@ -151,7 +147,15 @@ export function SiteFooter() {
         </div>
 
         {/* Onderbalk: social links + copyright */}
-        <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-white/20 pt-8 sm:flex-row sm:items-center">
+        <nav aria-label="Overige links" className="mt-14 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/75">
+          {site.footerLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="link-line whitespace-nowrap hover:text-white">
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mt-8 flex flex-col items-start justify-between gap-6 border-t border-white/20 pt-8 sm:flex-row sm:items-center">
           <div className="flex gap-2">
             <a
               href={`https://wa.me/${site.whatsapp.replace(/[^0-9]/g, "")}`}

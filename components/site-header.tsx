@@ -454,7 +454,8 @@ export function SiteHeader() {
             ))}
           </div>
 
-          {/* Rechts: brochure, Contact (offerte-drawer) en omlijnde telefoonknop */}
+          {/* Rechts: Mijn Blauwdruk (klantomgeving) en één contactknop. De
+              knop opent het formulier; bellen staat daar bovenaan. */}
           <div
             className={`relative z-30 ml-auto hidden items-stretch transition-colors lg:flex ${
               activeMega ? "text-white" : "text-ink"
@@ -465,37 +466,30 @@ export function SiteHeader() {
             }}
           >
             <Link
-              href="/gratis-brochure"
+              href="/mijn-blauwdruk"
               onClick={closeAll}
-              className={`label-nav mr-6 hidden items-center whitespace-nowrap transition-colors xl:flex ${activeMega ? "text-white/85 hover:text-white" : "text-ink/70 hover:text-navy"}`}
+              className={`label-nav mr-6 hidden items-center gap-2 whitespace-nowrap transition-colors xl:flex ${activeMega ? "text-white/85 hover:text-white" : "text-ink/70 hover:text-navy"}`}
             >
-              Gratis brochure
+              <User />
+              Mijn Blauwdruk
             </Link>
             <ContactDrawerButton
               onClick={closeAll}
-              className={`label-nav mr-3 flex cursor-pointer items-center self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-navy bg-navy text-white hover:border-navy-dark hover:bg-navy-dark"}`}
+              className={`label-nav mr-5 flex cursor-pointer items-center self-center whitespace-nowrap border px-5 py-2.5 transition-colors ${activeMega ? "border-white bg-white text-ink hover:border-lime hover:bg-lime" : "border-navy bg-navy text-white hover:border-navy-dark hover:bg-navy-dark"}`}
             >
-              Contact
+              Neem contact op
             </ContactDrawerButton>
-            <a
-              href={`tel:${site.telephoneHref}`}
-              className={`label-nav mr-5 whitespace-nowrap flex items-center gap-2 self-center border px-4 py-2.5 transition-colors ${activeMega ? "border-white/80 text-white hover:bg-white hover:text-navy" : "border-navy text-navy hover:bg-navy hover:text-white"}`}
-            >
-              <Phone size={14} />
-              <span className="sr-only xl:not-sr-only">{site.telephone}</span>
-            </a>
           </div>
 
-          {/* Mobiel: telefoon + Menu-knop (zoals live: icoon + "Menu"-tekst) */}
+          {/* Mobiel: dezelfde contactknop + Menu-knop */}
           <div className="ml-auto flex items-stretch lg:hidden">
-            <a
-              href={`tel:${site.telephoneHref}`}
-              className="label-nav flex items-center gap-2 self-center border border-ink px-3 py-2 text-ink"
-              aria-label="Bel ons"
+            <ContactDrawerButton
+              onClick={closeAll}
+              className="label-nav flex cursor-pointer items-center self-center whitespace-nowrap border border-navy bg-navy px-3 py-2 text-white"
             >
-              <Phone size={14} />
-              Bel
-            </a>
+              <span className="sm:hidden">Contact</span>
+              <span className="hidden sm:inline">Neem contact op</span>
+            </ContactDrawerButton>
             <button
               type="button"
               onClick={() => {
@@ -563,9 +557,22 @@ export function SiteHeader() {
                   onClick={closeAll}
                   className="label-nav flex w-full cursor-pointer items-center justify-center border border-navy bg-navy py-4 text-white transition-transform active:scale-95"
                 >
-                  Contact
+                  Neem contact op
                 </ContactDrawerButton>
+                <a
+                  href={`tel:${site.telephoneHref}`}
+                  className="label-nav flex w-full items-center justify-center gap-2 border border-navy py-4 text-navy transition-transform active:scale-95"
+                >
+                  <Phone size={14} /> Bel {site.telephone}
+                </a>
                 <div className="grid grid-cols-2 gap-4">
+                  <Link
+                    href="/mijn-blauwdruk"
+                    onClick={closeAll}
+                    className="label-nav flex items-center justify-center gap-2 border border-mist bg-white py-4 transition-transform active:scale-95"
+                  >
+                    <User /> Mijn Blauwdruk
+                  </Link>
                   <Link
                     href="/gratis-brochure"
                     onClick={closeAll}
@@ -573,13 +580,6 @@ export function SiteHeader() {
                   >
                     Gratis brochure
                   </Link>
-                  {/* MijnMTB — klantportaal, nog geen pagina (live knop is ook een placeholder) */}
-                  <button
-                    type="button"
-                    className="label-nav flex items-center justify-center gap-2 border border-mist bg-white py-4 transition-transform active:scale-95"
-                  >
-                    <User /> MijnMTB
-                  </button>
                 </div>
               </div>
             </div>

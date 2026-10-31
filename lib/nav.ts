@@ -112,6 +112,7 @@ export const mainNav: NavItem[] = [
     },
   },
   { title: "Projecten", id: "woningen", href: "/projecten" },
+  { title: "Werkgebied", id: "werkgebied", href: "/aannemer-twente" },
   {
     title: "Over ons",
     id: "over-ons",

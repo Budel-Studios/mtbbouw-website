@@ -239,7 +239,7 @@ export const SERIES = [
   {
     slug: "offertes-prijzen",
     label: "Offertes & prijzen",
-    pillar: "offertes-aannemer-vergelijken",
+    pillar: "offertes-vergelijken-verbouwing",
   },
   {
     slug: "klus-plannen",

@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 /**
@@ -530,6 +531,16 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
                 Je wordt zo snel mogelijk door een collega gebeld.
               </p>
               <p className="mb-6 text-lg font-bold text-ink">Groet MTB Bouw</p>
+              <p className="mb-6 text-sm text-stone">
+                Alvast lezen?{" "}
+                <Link
+                  href="/gratis-brochure"
+                  onClick={closeSuccess}
+                  className="font-semibold text-navy underline underline-offset-4"
+                >
+                  Download onze gratis brochure
+                </Link>
+              </p>
               <button
                 type="button"
                 onClick={closeSuccess}
@@ -543,7 +554,7 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
             <div
               role="dialog"
               aria-modal="true"
-              aria-label="Aanvraag doen"
+              aria-label="Neem contact op"
               className="flex h-full w-full max-w-lg animate-drawer-in flex-col bg-white shadow-2xl"
             >
               {/* Header + progress */}
@@ -556,8 +567,19 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
                 >
                   <XIcon />
                 </button>
-                <h2 className="text-2xl font-bold text-ink">Aanvraag doen</h2>
-                <p className="mt-1 text-sm text-stone">Binnen 2 minuten ingevuld</p>
+                <h2 className="text-2xl font-bold text-ink">Neem contact op</h2>
+                <p className="mt-1 text-sm text-stone">
+                  Binnen 2 minuten ingevuld. We bellen je zo snel mogelijk terug.
+                </p>
+                <a
+                  href={`tel:${site.telephoneHref}`}
+                  className="mt-4 mr-8 flex items-center justify-between gap-3 border border-navy px-4 py-3 text-navy transition-colors hover:bg-navy hover:text-white"
+                >
+                  <span className="text-sm font-medium">Liever direct bellen?</span>
+                  <span className="flex items-center gap-2 font-display text-base font-semibold whitespace-nowrap">
+                    <PhoneIcon /> {site.telephone}
+                  </span>
+                </a>
                 <div className="mt-6 flex gap-2">
                   {STEP_LABELS.map((label, i) => (
                     <div key={label} className="flex-1">
