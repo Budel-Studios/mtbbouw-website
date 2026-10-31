@@ -60,7 +60,7 @@ export async function TeamGrid({
                       className="img-zoom object-cover grayscale"
                     />
                   ) : (
-                    <div className="blueprint-grid flex h-full items-center justify-center">
+                    <div className="blueprint-grid relative flex h-full items-center justify-center">
                       <span className="display text-8xl text-navy/25">{member.name.charAt(0)}</span>
                     </div>
                   )}

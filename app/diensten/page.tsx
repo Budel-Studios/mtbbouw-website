@@ -228,7 +228,7 @@ export default function DienstenPage() {
       />
 
       {/* HERO op licht tekenpapier, met meteen de vier expertises */}
-      <section className="blueprint-grid border-b border-mist">
+      <section className="blueprint-grid relative border-b border-mist">
         <div className="container-page pb-16 pt-14 md:pb-24 md:pt-20">
           <p className="eyebrow text-stone">Bouwbedrijf uit Enschede</p>
           <h1 className="display mt-6 text-5xl md:text-7xl">Wat we bouwen in Twente.</h1>
