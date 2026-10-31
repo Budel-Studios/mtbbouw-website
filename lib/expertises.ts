@@ -67,8 +67,8 @@ export const expertises: Expertise[] = [
     title: "Prefab Bouwen",
     subtitle: "Sneller, slimmer en duurzamer bouwen.",
     href: "/prefab",
-    image: "/images/projects/bedrijfshal-borne.webp",
-    imageAlt: "Prefab bouwproject van MTB Bouw",
+    image: "/images/projects/overkapping-paardenstal-enschede/cover.png",
+    imageAlt: "Grote houten overkapping met paardenstal in het buitengebied van Enschede",
     subItems: [
       { label: "HSB", href: "/prefab#hsb" },
       { label: "Prefab daken & wanden", href: "/prefab#elementen" },

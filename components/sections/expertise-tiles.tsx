@@ -3,10 +3,10 @@ import Link from "next/link";
 import type { Expertise } from "@/lib/expertises";
 
 /**
- * 4-tegel-grid voor de expertises onder MTB Bouw — gebruikt op de homepage
- * (compact) en op /diensten ("Wat we bouwen"-portaal, met sub-item pills via
- * `showSubItems`). Grote foto, icoon-badge, hoekige kaders — geen ronde
- * hoeken, in lijn met het bestaande tegelpatroon (ProjectGrid/RelatedContent).
+ * 4-tegel-grid voor de expertises onder MTB Bouw, gebruikt op /diensten.
+ * Met `showSubItems` komen de sub-diensten als labels onder elke tegel; op
+ * /diensten staan die nu in een eigen slider. Grote foto, icoon-badge,
+ * hoekige kaders zonder ronde hoeken.
  */
 export function ExpertiseTiles({
   items,

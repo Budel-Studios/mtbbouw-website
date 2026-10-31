@@ -5,6 +5,8 @@ import { ProcessSteps } from "@/components/sections/process-steps";
 import { ExpertiseTiles } from "@/components/sections/expertise-tiles";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { expertises } from "@/lib/expertises";
+import { CardSlider } from "@/components/sections/card-slider";
+import type { ProjectCardData } from "@/components/project/project-cards";
 
 const title = "Diensten: verbouw, uitbouw & afbouw in Twente | MTB Bouw";
 const description =
@@ -22,47 +24,123 @@ export const metadata: Metadata = {
   },
 };
 
-/** Alle diensten met één zin uitleg — de ingang naar de dienstpagina's. */
-const diensten = [
+/**
+ * Alle diensten met één zin uitleg en een foto uit eigen werk — de ingang
+ * naar de dienstpagina's. Getoond als slider met dezelfde kaart als de
+ * projecten: label links, voor wie rechts.
+ */
+const diensten: ProjectCardData[] = [
   {
-    href: "/verbouwing",
-    label: "Renovatie & verbouw",
-    text: "Van een nieuwe badkamer tot een complete woning, binnen en buiten. Wat goed is, laten we staan.",
+    slug: "verbouwing",
+    permalink: "/verbouwing",
+    title: "Renovatie & verbouw",
+    description: "Van een nieuwe badkamer tot een complete woning, binnen en buiten. Wat goed is, laten we staan.",
+    category: "Wonen & Verbouwen",
+    location: "Thuis",
+    images: [
+      {
+        src: "/images/projects/renovatie-villa-zantinge-enschede/04.jpg",
+        alt: "Zitkuil met maatwerk banken, haard en baksteenwand in een gerenoveerde Van Zantinge-villa in Enschede",
+      },
+    ],
   },
   {
-    href: "/aanbouw-uitbouw",
-    label: "Aanbouw & uitbouw",
-    text: "Meer ruimte zonder te verhuizen, traditioneel gemetseld of in houtskeletbouw.",
+    slug: "aanbouw-uitbouw",
+    permalink: "/aanbouw-uitbouw",
+    title: "Aanbouw & uitbouw",
+    description: "Meer ruimte zonder te verhuizen, traditioneel gemetseld of in houtskeletbouw.",
+    category: "Wonen & Verbouwen",
+    location: "Thuis",
+    images: [
+      {
+        src: "/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg",
+        alt: "Nieuwe uitbouw in houtskeletbouw met Finiplus-gevel en zwarte kozijnen in Enschede",
+      },
+    ],
   },
   {
-    href: "/nieuwbouw",
-    label: "Nieuwbouw",
-    text: "Bouwen vanaf de fundering, met één team van vergunning tot sleutel.",
+    slug: "nieuwbouw",
+    permalink: "/nieuwbouw",
+    title: "Nieuwbouw",
+    description: "Bouwen vanaf de fundering, met één team van vergunning tot sleutel.",
+    category: "Wonen & Verbouwen",
+    location: "Thuis & zakelijk",
+    images: [
+      {
+        src: "/images/projects/bedrijfshal-borne.webp",
+        alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering",
+      },
+    ],
   },
   {
-    href: "/verduurzamen",
-    label: "Verduurzamen",
-    text: "Isoleren en verduurzamen, het liefst meegenomen in dezelfde verbouwing.",
+    slug: "verduurzamen",
+    permalink: "/verduurzamen",
+    title: "Verduurzamen",
+    description: "Isoleren en verduurzamen, het liefst meegenomen in dezelfde verbouwing.",
+    category: "Wonen & Verbouwen",
+    location: "Thuis",
+    images: [
+      {
+        src: "/images/projects/renovatie-villa-zantinge-enschede/03.jpg",
+        alt: "Woonruimte met nieuwe glazen pui en vloerverwarming in een gerenoveerde villa in Enschede",
+      },
+    ],
   },
   {
-    href: "/kozijnen",
-    label: "Kozijnen",
-    text: "Hout, kunststof of aluminium, all-in via ons eigen label De Kozijnstudio.",
+    slug: "kozijnen",
+    permalink: "/kozijnen",
+    title: "Kozijnen",
+    description: "Hout, kunststof of aluminium, all-in via ons eigen label De Kozijnstudio.",
+    category: "De Kozijnstudio",
+    location: "Thuis & zakelijk",
+    images: [
+      {
+        src: "/images/projects/renovatie-villa-zantinge-enschede/01.jpg",
+        alt: "Glazen patio met zelfgemaakte zwarte kozijnen en een olijfboom in een Van Zantinge-villa in Enschede",
+      },
+    ],
   },
   {
-    href: "/prefab",
-    label: "Prefab & houtskeletbouw",
-    text: "Wanden, daken en overkappingen die we vooraf in de werkplaats maken.",
+    slug: "prefab",
+    permalink: "/prefab",
+    title: "Prefab & houtskeletbouw",
+    description: "Wanden, daken en overkappingen die we vooraf in de werkplaats maken.",
+    category: "Prefab bouwen",
+    location: "Thuis & zakelijk",
+    images: [
+      {
+        src: "/images/projects/luxe-overkapping-twente/cover.jpg",
+        alt: "Luxe houten overkapping met zitgedeelte in de tuin",
+      },
+    ],
   },
   {
-    href: "/afbouwstudio",
-    label: "Zakelijke afbouw",
-    text: "Kantoren, winkels en horeca, van casco tot sleutelklaar.",
+    slug: "afbouwstudio",
+    permalink: "/afbouwstudio",
+    title: "Zakelijke afbouw",
+    description: "Kantoren, winkels en horeca, van casco tot sleutelklaar.",
+    category: "Afbouwstudio",
+    location: "Zakelijk",
+    images: [
+      {
+        src: "/images/projects/broodbode-apeldoorn/01.jpg",
+        alt: "Sfeervol zitgedeelte van huiskamer-lunchroom De Broodbode in Apeldoorn met vintage behang en houten meubels",
+      },
+    ],
   },
   {
-    href: "/afbouwstudio/kantoor-verbouwen",
-    label: "Kantoor verbouwen",
-    text: "Een nieuwe indeling, plafonds en installaties, gepland rond je bedrijf.",
+    slug: "kantoor-verbouwen",
+    permalink: "/afbouwstudio/kantoor-verbouwen",
+    title: "Kantoor verbouwen",
+    description: "Een nieuwe indeling, plafonds en installaties, gepland rond je bedrijf.",
+    category: "Afbouwstudio",
+    location: "Zakelijk",
+    images: [
+      {
+        src: "/images/projects/broodbode-zwolle-lunchroom/02.jpg",
+        alt: "Vakman richt een houten maatwerk wandkast in tijdens de afbouw van een lunchroom in Zwolle",
+      },
+    ],
   },
 ];
 
@@ -97,34 +175,18 @@ export default function DienstenPage() {
         </p>
       </section>
 
-      {/* Expertise-tegels met sub-items */}
+      {/* Expertise-tegels; de losse diensten staan in de slider eronder */}
       <section className="container-page pb-16">
-        <ExpertiseTiles items={expertises} showSubItems />
+        <ExpertiseTiles items={expertises} />
       </section>
 
       {/* Alle diensten op een rij */}
-      <section className="border-y border-mist bg-paper">
-        <div className="container-page py-20 md:py-28">
-          <p className="eyebrow text-stone">Alle diensten</p>
-          <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
-            Alles wat we doen, op een rij
-          </h2>
-          <ul className="mt-10 grid gap-px border border-mist bg-mist sm:grid-cols-2">
-            {diensten.map((d) => (
-              <li key={d.href} className="bg-white">
-                <Link href={d.href} className="group block h-full p-6">
-                  <span className="font-display text-lg font-semibold text-ink group-hover:text-navy">
-                    {d.label}
-                  </span>
-                  <span className="mt-2 block text-sm leading-relaxed text-stone">
-                    {d.text}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <CardSlider
+        items={diensten}
+        label="Alle diensten"
+        eyebrow="Alle diensten"
+        title="Alles wat we doen, op een rij"
+      />
 
       {/* Werkgebied */}
       <section className="container-page py-20 md:py-28">
