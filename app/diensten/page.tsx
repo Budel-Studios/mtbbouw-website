@@ -6,7 +6,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { CardSlider } from "@/components/sections/card-slider";
 import type { ProjectCardData } from "@/components/project/project-cards";
 import { DrawOnView } from "@/components/blueprint/draw-on-view";
-import { Crosshairs, DimensionLine, NumberBox, SheetTag } from "@/components/blueprint/marks";
+import { NumberBox } from "@/components/blueprint/marks";
 import {
   HouseDrawing,
   LunchroomDrawing,
@@ -236,39 +236,25 @@ export default function DienstenPage() {
         ]}
       />
 
-      {/* HERO op tekenpapier, met meteen de twee hoofdrichtingen */}
+      {/* HERO op licht tekenpapier, met meteen de twee hoofdrichtingen */}
       <section className="blueprint-grid relative overflow-hidden border-b border-mist">
-        <Crosshairs />
         <div className="container-page relative pb-16 pt-14 md:pb-24 md:pt-20">
-          <div className="flex items-start justify-between gap-6">
-            <p className="eyebrow text-stone">Bouwbedrijf uit Enschede</p>
-            <span className="label-mono hidden text-stone md:block">52.22° N · 6.89° E</span>
-          </div>
-          <h1 className="display mt-6 text-6xl sm:text-7xl md:text-8xl xl:text-[8.5rem]">
-            Wat we <span className="mark-lime">bouwen</span>
-            <span className="block text-navy">in Twente.</span>
+          <p className="eyebrow text-stone">Bouwbedrijf uit Enschede</p>
+          <h1 className="display mt-6 text-5xl md:text-7xl">
+            Wat we <span className="mark-lime">bouwen</span> in Twente.
           </h1>
-          <div className="mt-10 grid gap-8 md:grid-cols-12 md:items-end">
-            <p className="text-lg leading-relaxed text-ink/80 md:col-span-6 md:text-xl">
-              MTB Bouw is een klein bouwbedrijf uit Enschede, met een vast team
-              en vaste partners uit de regio. We bouwen voor thuis en voor
-              bedrijven: van een uitbouw aan een jaren-30 woning tot de afbouw
-              van een lunchroom. Je hebt één aanspreekpunt, van de eerste kop
-              koffie tot de oplevering.
-            </p>
-            <DimensionLine
-              label="Enschede · Hengelo · Almelo · Oldenzaal"
-              className="md:col-span-5 md:col-start-8"
-            />
-          </div>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-stone">
+            MTB Bouw is een klein bouwbedrijf uit Enschede, met een vast team
+            en vaste partners uit de regio. We bouwen voor thuis en voor
+            bedrijven: van een uitbouw aan een jaren-30 woning tot de afbouw
+            van een lunchroom. Je hebt één aanspreekpunt, van de eerste kop
+            koffie tot de oplevering.
+          </p>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
             {HOOFD.map(({ n, label, title, href, text, links, Drawing }) => (
               <article key={href} className="flex flex-col border border-ink/15">
-                <DrawOnView className="relative border-b border-ink/10 px-4 pb-4 pt-12 md:px-8">
-                  <span className="absolute right-4 top-4">
-                    <SheetTag n={n} of={4} />
-                  </span>
+                <DrawOnView className="relative border-b border-ink/10 px-4 py-6 md:px-8">
                   <Drawing />
                 </DrawOnView>
                 <div className="flex flex-1 flex-col bg-white p-6 md:p-8">
@@ -314,10 +300,7 @@ export default function DienstenPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {SPECIALISMEN.map(({ n, label, title, href, text, Drawing }) => (
             <article key={href} className="grid border border-ink/15 bg-white sm:grid-cols-2">
-              <DrawOnView className="blueprint-grid relative flex items-center border-b border-ink/10 px-3 pb-3 pt-12 sm:border-b-0 sm:border-r">
-                <span className="absolute right-3 top-3">
-                  <SheetTag n={n} of={4} />
-                </span>
+              <DrawOnView className="blueprint-grid relative flex items-center border-b border-ink/10 p-4 sm:border-b-0 sm:border-r">
                 <Drawing />
               </DrawOnView>
               <div className="flex flex-col p-6 md:p-8">
@@ -391,7 +374,7 @@ export default function DienstenPage() {
               className={`flex flex-col gap-3 border-mist py-6 pr-4 md:py-8 ${i % 2 === 1 ? "pl-4 md:pl-6" : ""} ${i > 0 ? "md:border-l md:pl-6" : ""}`}
             >
               <dt className="sr-only">{k.label}</dt>
-              <dd className="display hatch-text text-6xl md:text-7xl" aria-hidden="true">
+              <dd className="display text-5xl text-navy md:text-6xl" aria-hidden="true">
                 {k.value}
               </dd>
               <dd className="text-sm leading-snug text-stone">
@@ -403,15 +386,14 @@ export default function DienstenPage() {
         </dl>
       </section>
 
-      {/* WERKGEBIED op navy tekenpapier */}
-      <section className="blueprint-navy relative overflow-hidden text-white">
-        <Crosshairs className="text-white/50" />
-        <div className="container-page relative py-20 md:py-28">
-          <p className="eyebrow text-white/80">Werkgebied</p>
+      {/* WERKGEBIED */}
+      <section className="border-y border-mist bg-white">
+        <div className="container-page py-20 md:py-28">
+          <p className="eyebrow text-stone">Werkgebied</p>
           <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
             Vanuit Enschede, door heel Twente
           </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-white/85">
+          <p className="mt-5 max-w-2xl leading-relaxed text-stone">
             We zijn een klein bedrijf en dat willen we graag zo houden. Daarom
             werken we vooral dicht bij huis: in Enschede, Hengelo, Almelo,
             Oldenzaal en de dorpen eromheen. Kies je plaats voor projecten en
@@ -422,13 +404,12 @@ export default function DienstenPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="label-nav border border-white/60 px-4 py-2.5 text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
+                className="border border-mist bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-ink/30 hover:text-navy"
               >
                 {s.label}
               </Link>
             ))}
           </div>
-          <DimensionLine label="Twente · Overijssel" className="mt-14 text-white/50" />
         </div>
       </section>
 
