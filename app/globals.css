@@ -269,10 +269,10 @@
 @utility blueprint-grid {
   background-color: #ffffff;
   background-image:
-    linear-gradient(color-mix(in oklab, var(--color-navy) 10%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--color-navy) 10%, transparent) 1px, transparent 1px),
-    linear-gradient(color-mix(in oklab, var(--color-navy) 4%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--color-navy) 4%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in oklab, var(--color-navy) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-navy) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in oklab, var(--color-navy) 2.5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-navy) 2.5%, transparent) 1px, transparent 1px);
   background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
   background-position: -1px -1px;
 }
