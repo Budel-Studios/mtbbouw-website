@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { portfolio } from "#site/content";
+import { publishedProjects } from "@/lib/projects";
 import {
   BreadcrumbJsonLd,
   JobPostingJsonLd,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
 export default async function WerkGenoegPage() {
   const mathijs = await getAsset("team-mathijs", "/images/team/mathijs.webp");
-  const projects = portfolio.filter((p) => !p.draft).slice(0, 3);
+  const projects = publishedProjects().slice(0, 6);
 
   return (
     <>
@@ -289,12 +289,7 @@ export default async function WerkGenoegPage() {
 
       {/* PROJECTEN WAAR JIJ AAN WERKT */}
       <RelatedContent
-        projects={projects.map((p) => ({
-          slug: p.slug,
-          permalink: p.permalink,
-          title: p.title,
-          cover: p.cover,
-        }))}
+        projects={projects}
         eyebrow="Aan de slag"
         title="Projecten waar jij aan werkt"
       />

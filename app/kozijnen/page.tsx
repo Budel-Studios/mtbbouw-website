@@ -137,6 +137,7 @@ export default function KozijnenPage() {
       <KennisbankBlock
         match={{ subcategories: ["kozijnen-glas"], audience: "thuis" }}
         title="Meer over kozijnen en glas"
+        tone="plain"
       />
 
       <section className="border-y border-mist bg-white">

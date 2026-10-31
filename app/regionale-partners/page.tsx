@@ -3,9 +3,9 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { RegionalePartnersBrowser } from "@/components/regionale-partners-browser";
-import Link from "next/link";
 import { site } from "@/lib/site";
 import { projectsByPartner, projectsWithPartners } from "@/lib/partner-projects";
+import { CardSlider } from "@/components/sections/card-slider";
 
 const title = "Regionale bouwpartners in Twente | MTB Bouw";
 const description =
@@ -45,34 +45,16 @@ export default function RegionalePartnersPage() {
       <RegionalePartnersBrowser projectsByPartner={byPartner} />
 
       {/* Samen gebouwd — partners gekoppeld aan echte projecten */}
-      {samenGebouwd.length > 0 && (
-        <section className="border-y border-mist bg-paper">
-          <div className="container-page py-20 md:py-28">
-            <p className="eyebrow text-stone">Samen gebouwd</p>
-            <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
-              Waar onze partners meebouwden
-            </h2>
-            <ul className="mt-10 grid gap-px border border-mist bg-mist sm:grid-cols-2">
-              {samenGebouwd.map((p) => (
-                <li key={p.permalink} className="bg-white p-6">
-                  <Link
-                    href={p.permalink}
-                    className="font-display text-lg font-semibold text-ink underline hover:text-navy"
-                  >
-                    {p.title}
-                  </Link>
-                  <p className="mt-2 text-sm leading-relaxed text-stone">
-                    {p.location ? `${p.location} · ` : ""}met {p.partners.join(", ")}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
+      <CardSlider
+        items={samenGebouwd}
+        label="Projecten met onze partners"
+        eyebrow="Samen gebouwd"
+        title="Waar onze partners meebouwden"
+        link={{ href: "/projecten", label: "Alle projecten" }}
+      />
 
       {/* Word partner van MTB — opvallend lime-blok */}
-      <section className="container-page pb-16">
+      <section className="container-page py-16">
         <a
           href="/contact#formulier"
           className="group block bg-lime text-ink transition-colors hover:bg-lime-dark"

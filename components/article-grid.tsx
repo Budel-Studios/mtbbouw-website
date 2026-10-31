@@ -1,22 +1,21 @@
 "use client";
 
 import { useCallback, useMemo, useSyncExternalStore } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { FilterDropdown } from "@/components/filter-dropdown";
+import { ProjectCards } from "@/components/project/project-cards";
+import { articleToCard } from "@/lib/article-slide";
 import {
   AUDIENCES,
   CATEGORIES,
   FILTER_PARAMS,
   SUBCATEGORIES,
-  categoryLabel,
   type TaxonomyItem,
 } from "@/lib/kennisbank-taxonomy";
 
 /**
- * Kennisbank-browser — zelfde editoriale, foto-eerst kaartstijl als
- * /projecten: cover met hover-zoom, mono-meta (onderwerp, leestijd, datum)
- * en een displaykop. Het nieuwste artikel krijgt een brede kaart.
+ * Kennisbank-browser met exact dezelfde kaarten en hetzelfde raster als
+ * /projecten (ProjectCards): cover met hover-zoom, displaykop en mono-meta
+ * met leestijd en onderwerp. Het nieuwste artikel krijgt een brede kaart.
  *
  * Drie filters, gecombineerd (EN): voor wie, onderwerp en bouwdeel. De actieve
  * filters staan in de URL (?voor=thuis&onderwerp=verduurzamen&bouwdeel=daken),
@@ -41,14 +40,6 @@ type Filters = { category: string; subcategory: string; audience: string };
 
 const ALL_CATEGORIES = "Alle onderwerpen";
 const ALL_SUBCATEGORIES = "Alle bouwdelen";
-
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat("nl-NL", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date));
-}
 
 /* ---------- Filters in de URL ----------------------------------------- */
 
@@ -146,60 +137,6 @@ function AudienceToggle({
         );
       })}
     </div>
-  );
-}
-
-function Card({
-  article,
-  wide,
-  priority,
-}: {
-  article: Article;
-  wide: boolean;
-  priority: boolean;
-}) {
-  return (
-    <Link
-      href={article.permalink}
-      className={`group block animate-fade-up ${wide ? "md:col-span-2" : ""}`}
-    >
-      <div
-        className={`relative overflow-hidden bg-mist ${
-          wide ? "aspect-[4/3] md:aspect-[16/9]" : "aspect-[4/3]"
-        }`}
-      >
-        {article.cover ? (
-          <Image
-            src={article.cover}
-            alt={article.coverAlt || article.title}
-            fill
-            sizes={wide ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
-            priority={priority}
-            className="img-zoom object-cover"
-          />
-        ) : (
-          // Geen cover: rustig navy vlak i.p.v. kapotte afbeelding.
-          <div className="absolute inset-0 bg-ink" />
-        )}
-      </div>
-      <p className="label-mono mt-5 flex flex-wrap gap-x-3 gap-y-1">
-        <span className="text-navy">{categoryLabel(article.category)}</span>
-        <span className="text-stone">{article.readingTime} min lezen</span>
-      </p>
-      <h2
-        className={`display mt-3 transition-colors group-hover:text-navy ${
-          wide ? "text-3xl md:text-5xl" : "text-2xl"
-        }`}
-      >
-        {article.title}
-      </h2>
-      <p className="mt-3 line-clamp-3 max-w-xl text-sm leading-relaxed text-stone">
-        {article.description}
-      </p>
-      <time dateTime={article.date} className="label-mono mt-4 block text-stone">
-        {formatDate(article.date)}
-      </time>
-    </Link>
   );
 }
 
@@ -309,15 +246,8 @@ export function ArticleGrid({
       )}
 
       {visible.length > 0 ? (
-        <div className="mt-10 grid gap-x-8 gap-y-16 md:grid-cols-3">
-          {visible.map((article, i) => (
-            <Card
-              key={article.slug}
-              article={article}
-              wide={i === 0 && visible.length > 2}
-              priority={i < 2}
-            />
-          ))}
+        <div className="mt-10">
+          <ProjectCards items={visible.map(articleToCard)} />
         </div>
       ) : (
         <div className="mt-12 text-center text-stone">

@@ -1,5 +1,7 @@
 import { portfolio } from "#site/content";
 import { allPartners } from "@/lib/partners";
+import { toProjectCard } from "@/lib/projects";
+import type { ProjectCardData } from "@/components/project/project-cards";
 
 /**
  * Koppelt partners aan projecten in de portfolio. De bron is de portfolio
@@ -54,18 +56,29 @@ export function projectsByPartner(): Record<string, PartnerProject[]> {
   return map;
 }
 
-/** Projecten met minstens één partner van de partnerlijst, met die partners. */
-export function projectsWithPartners() {
+function joinNames(names: string[]) {
+  return names.length < 2
+    ? names.join("")
+    : `${names.slice(0, -1).join(", ")} en ${names[names.length - 1]}`;
+}
+
+/**
+ * Projecten met minstens één partner van de partnerlijst, als projectkaart.
+ * De omschrijving noemt wie er meebouwde.
+ */
+export function projectsWithPartners(): ProjectCardData[] {
   return portfolio
     .filter((p) => !p.draft)
     .sort((a, b) => b.date.localeCompare(a.date))
-    .map((p) => ({
-      title: p.title,
-      permalink: p.permalink,
-      location: p.location,
-      partners: allPartners
+    .map((p) => {
+      const partners = allPartners
         .filter((partner) => namesInProject(p).some((n) => sameParty(n, partner.name)))
-        .map((partner) => partner.name),
-    }))
-    .filter((p) => p.partners.length > 0);
+        .map((partner) => partner.name);
+      return { card: toProjectCard(p), partners };
+    })
+    .filter(({ card, partners }) => partners.length > 0 && card.images.length > 0)
+    .map(({ card, partners }) => ({
+      ...card,
+      description: `Gebouwd met ${joinNames(partners)}.`,
+    }));
 }
