@@ -8,14 +8,14 @@ const INTRO =
   "Ontdek een selectie van onze gerealiseerde projecten en zie hoe wij bouwen in de praktijk. Van renovaties en uitbouwen tot complete woningen, kozijnen en bedrijfspanden: elk project laat zien hoe wij kwaliteit, vakmanschap en duidelijke communicatie samenbrengen. Laat je inspireren door onze aanpak en ontdek wat er mogelijk is voor jouw woning of bedrijfsruimte.";
 
 export const metadata: Metadata = {
-  title: "Gerealiseerde projecten",
+  title: "Projecten in Enschede en Twente",
   description:
-    "Ontdek een selectie van onze gerealiseerde projecten: van renovaties en uitbouwen tot complete woningen, kozijnen en bedrijfspanden in Twente en Oost-Nederland.",
+    "Projecten van MTB Bouw in Enschede en Twente: renovaties, uitbouwen, overkappingen, kozijnen en bedrijfspanden. Met foto's, looptijd en wat we precies deden.",
   alternates: { canonical: "/projecten" },
   openGraph: {
     type: "website",
-    title: "Gerealiseerde projecten | MTB Bouw",
-    description: "Ontdek een selectie van onze gerealiseerde projecten: van renovaties en uitbouwen tot complete woningen, kozijnen en bedrijfspanden in Twente en Oost-Nederland.",
+    title: "Projecten in Enschede en Twente | MTB Bouw",
+    description: "Projecten van MTB Bouw in Enschede en Twente: renovaties, uitbouwen, overkappingen, kozijnen en bedrijfspanden. Met foto's, looptijd en wat we precies deden.",
     url: "/projecten",
   },
 };
@@ -40,7 +40,7 @@ export default function ProjectenPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
-          { name: "Gerealiseerde projecten", url: "/projecten" },
+          { name: "Projecten", url: "/projecten" },
         ]}
       />
 
@@ -49,7 +49,7 @@ export default function ProjectenPage() {
           <div className="animate-fade-up md:col-span-8">
             <p className="label-mono text-stone">Ons werk — recent werk uit Twente</p>
             <h1 className="display mt-6 text-[2.5rem] sm:text-6xl lg:text-7xl xl:text-[6.5rem]">
-              Gerealiseerde projecten
+              Projecten in Enschede en Twente
             </h1>
           </div>
           <p

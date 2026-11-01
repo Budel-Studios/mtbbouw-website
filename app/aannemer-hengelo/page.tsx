@@ -174,7 +174,7 @@ export default function AannemerHengeloPage() {
       <RelatedContent
         projects={projects}
         eyebrow="Werk uit de buurt"
-        title="Projecten in Enschede en Borne"
+        title="Projecten in de buurt van Hengelo"
       />
 
       <LocalPartners

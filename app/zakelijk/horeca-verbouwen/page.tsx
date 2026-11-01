@@ -12,7 +12,7 @@ import { facts } from "@/lib/facts";
 import { faqHoreca } from "@/lib/faq";
 
 const URL = "/zakelijk/horeca-verbouwen";
-const TITLE = "Horeca afbouw & verbouwen in Twente | MTB Bouw";
+const TITLE = "Horeca afbouw & verbouwen in Enschede & Twente | MTB Bouw";
 const DESCRIPTION =
   "Een lunchroom, restaurant of horecapand verbouwen in Enschede of Twente? Bekijk de aanpak van MTB Bouw en onze afbouwprojecten voor De Broodbode.";
 
