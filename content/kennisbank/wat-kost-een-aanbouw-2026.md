@@ -3,7 +3,7 @@ title: "Wat kost een aanbouw in 2026? Prijzen per m² en rekenvoorbeelden"
 seoTitle: "Wat kost een aanbouw in 2026? Prijzen per m²"
 description: "Een aanbouw kost in 2026 indicatief €2.200 tot €3.200 per m² inclusief btw. Met alle kostenposten, drie rekenvoorbeelden en tips om te besparen."
 date: 2026-07-04
-category: kosten-offertes
+category: bouwvoorbereiding
 subcategories: []
 audience: [thuis]
 series: offertes-prijzen

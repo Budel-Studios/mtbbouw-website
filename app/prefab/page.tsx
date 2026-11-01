@@ -166,7 +166,7 @@ export default function PrefabPage() {
       <FaqAccordion items={faqPrefab} title="Veelgestelde vragen over prefab" />
 
       <KennisbankBlock
-        match={{ categories: ["technische-keuzes"], subcategories: ["fundering-constructie"], audience: "thuis" }}
+        match={{ categories: ["bouw-constructie"], subcategories: ["fundering-constructie"], audience: "thuis" }}
         title="Meer over bouwmethodes"
       />
 

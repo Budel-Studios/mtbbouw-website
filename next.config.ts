@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { withBotId } from "botid/next/config";
+import { LEGACY_HUB_REDIRECTS } from "./lib/kennisbank-taxonomy";
 
 const nextConfig: NextConfig = {
   images: {
@@ -99,6 +100,14 @@ const nextConfig: NextConfig = {
       { source: "/portfolio-item/renovatie-van-zantinge-villa-enschede", destination: "/projecten/renovatie-villa-zantinge-enschede", permanent: true },
       { source: "/portfolio-item/vervanging-plafonds-in-80-appartementen", destination: "/projecten/plafonds-80-appartementen", permanent: true },
       { source: "/portfolio-item/bouwbedrijf-aannemer-twente-enschede-overijssel-zebrano-houten-schuifdeur-project", destination: "/projecten/houten-schuifdeur-zebrano", permanent: true },
+
+      // Bouwgids (nov 2026): zes hoofdcategorieën, geen bouwdeelpagina's meer.
+      // Oude onderwerp- en bouwdeelpagina's wijzen naar de nieuwe indeling.
+      ...LEGACY_HUB_REDIRECTS.map((r) => ({
+        source: r.from,
+        destination: r.to,
+        permanent: true,
+      })),
 
       // Oude WordPress-archieven (wildcards).
       { source: "/portfolio-item/:slug", destination: "/projecten", permanent: true },

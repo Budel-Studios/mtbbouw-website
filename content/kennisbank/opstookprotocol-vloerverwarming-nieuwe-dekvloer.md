@@ -3,7 +3,7 @@ title: "Opstookprotocol vloerverwarming: nieuwe dekvloer, en nu?"
 seoTitle: "Opstookprotocol vloerverwarming: zo doe je het"
 description: "Net verbouwd, nieuwe dekvloer of schuimbeton met vloerverwarming? Zo werkt een opstookprotocol, hoe lang het duurt en welke tips MTB Bouw uit Twente hanteert."
 date: 2026-10-22
-category: plannen-aanpak
+category: installaties-energie
 subcategories: [vloeren, installaties-ventilatie]
 audience: [thuis, bedrijven]
 series: klus-plannen
@@ -11,6 +11,7 @@ author: robbert
 cover: /images/projects/renovatie-villa-zantinge-enschede/03.jpg
 coverAlt: "Nieuwe tegelvloer met vloerverwarming op een nieuwe dekvloer in een gerenoveerde villa in Enschede"
 tags: [opstookprotocol, opwarmprotocol, vloerverwarming, dekvloer, anhydriet, schuimbeton, restvocht, pvc vloer, Twente]
+projects: [renovatie-villa-zantinge-enschede]
 draft: false
 ---
 

@@ -20,7 +20,7 @@ export default function VerbouwingPage() {
       data={renovatieData}
       caseImage="/images/projects/renovatie-villa-zantinge-enschede/06.jpg"
       kennisbank={{
-        match: { categories: ["plannen-aanpak", "kosten-offertes"], audience: "thuis" },
+        match: { categories: ["bouwvoorbereiding", "tijdens-na-de-bouw"], audience: "thuis" },
         title: "Lees je in voor je gaat verbouwen",
       }}
     />

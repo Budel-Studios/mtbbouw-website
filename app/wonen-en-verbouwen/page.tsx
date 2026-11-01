@@ -187,7 +187,7 @@ export default function WonenEnVerbouwenPage() {
       />
 
       <KennisbankBlock
-        match={{ categories: ["plannen-aanpak", "kosten-offertes"], audience: "thuis" }}
+        match={{ categories: ["bouwvoorbereiding", "tijdens-na-de-bouw"], audience: "thuis" }}
         title="Lees je in voor je gaat verbouwen"
         tone="plain"
       />

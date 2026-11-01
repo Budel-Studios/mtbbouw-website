@@ -3,7 +3,7 @@ title: "Kozijnen vervangen: wanneer is het tijd?"
 description: "Tocht, condens, houtrot of klemmende ramen? Dit zijn de signalen dat je kozijnen aan vervanging toe zijn, en wanneer repareren of alleen nieuw glas genoeg is."
 date: 2026-06-10
 updated: 2026-10-02
-category: technische-keuzes
+category: materialen-keuzes
 subcategories: [kozijnen-glas]
 audience: [thuis]
 series: kozijnen

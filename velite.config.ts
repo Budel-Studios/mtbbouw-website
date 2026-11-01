@@ -47,6 +47,32 @@ const kennisbank = defineCollection({
       coverAlt: s.string().optional(), // alt-tekst cover (valt terug op titel)
       tags: s.array(s.string()).default([]),
       draft: s.boolean().default(false),
+
+      // ---- Bouwgids: bewijs, controle en koppelingen ----
+      // Projecten (slugs uit content/portfolio) die in het artikel als
+      // praktijkvoorbeeld dienen. De projectpagina linkt automatisch terug.
+      projects: s.array(s.string()).default([]),
+      // Doelpagina('s): de dienst- of stadspagina waar het artikel naartoe leidt.
+      services: s.array(s.string()).default([]),
+      // Inhoudelijke controle: wie en wanneer, en wanneer het weer moet.
+      reviewer: s.string().optional(),
+      reviewed: s.isodate().optional(),
+      nextReview: s.isodate().optional(),
+      // Bronnen onder het artikel.
+      sources: s
+        .array(s.object({ title: s.string(), url: s.string().url().optional() }))
+        .default([]),
+      // Labels voor Mijn Verbouwplan (persoonlijke leeslijst, later).
+      labels: s
+        .object({
+          werkzaamheden: s.array(s.string()).default([]),
+          woningtype: s.array(s.string()).default([]),
+          bouwperiode: s.string().optional(),
+          materiaal: s.array(s.string()).default([]),
+          fase: s.string().optional(),
+        })
+        .optional(),
+
       path: s.path(),
       body: s.markdown(), // -> rendered HTML string
       metadata: s.metadata(), // -> { readingTime, wordCount }

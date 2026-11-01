@@ -190,7 +190,7 @@ export default function AannemerOldenzaalPage() {
       />
 
       <KennisbankBlock
-        match={{ categories: ["verduurzamen"], subcategories: ["kozijnen-glas"], audience: "thuis" }}
+        match={{ categories: ["installaties-energie"], subcategories: ["kozijnen-glas"], audience: "thuis" }}
         title="Lees je in voor je gaat verbouwen"
       />
 

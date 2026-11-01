@@ -1,5 +1,7 @@
 # SEO-aanpak kennisbank
 
+> November 2026: de regels uit dit document zitten nu ook als automatische SEO- en GEO-controle in de Artikelstudio. De kennisbank heet op de site De Bouwgids en heeft zes categorieën; bouwdeelpagina's zijn vervallen (301 naar de categorie).
+>
 > Opgesteld 2 oktober 2026. Hoort bij [seo-strategie-mtbbouw.md](seo-strategie-mtbbouw.md) (site-breed, juli 2026) en [kennisbank-planning.md](kennisbank-planning.md) (wat wanneer verschijnt). Dit document gaat alleen over de artikelen: hoe elk artikel bijdraagt aan vindbaarheid in Enschede en Twente.
 
 ---
@@ -114,7 +116,8 @@ Elke serie heeft een **pijler** (het brede overzichtsartikel) en clusterartikele
 | Lengte | Pijler 2.000+ woorden, cluster 1.000–1.500 |
 | Beeld | Eigen omslagfoto (min. 1600 px breed) + 1–3 foto's in de tekst, alle met alt-tekst |
 | Bronnen | 1–3 links naar gezaghebbende bronnen (rvo.nl, iplo.nl, Milieu Centraal) |
-| Indeling | `category`, `subcategories`, `audience` volgens lib/kennisbank-taxonomy.ts |
+| Indeling | Eén van de zes Bouwgids-categorieën (`category`), bouwdelen (`subcategories`, alleen voor dienstpagina's) en `audience`, volgens lib/kennisbank-taxonomy.ts |
+| Bewijs | `projects` (echte projecten, de projectpagina linkt terug), `reviewer` + `reviewed`, `sources` |
 | Serie | `series` (kozijnen, uitbouw, offertes-prijzen, klus-plannen) als het artikel bij een serie hoort. Serienavigatie en "Lees ook" volgen automatisch |
 | Auteur | `author: mathijs` of `author: robbert` (lib/authors.ts). Zonder auteur is MTB Bouw de auteur |
 | Datum | `updated` invullen bij elke inhoudelijke update |

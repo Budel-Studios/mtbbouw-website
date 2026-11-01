@@ -20,7 +20,7 @@ export default function AanbouwUitbouwPage() {
       data={uitbouwData}
       caseImage="/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg"
       kennisbank={{
-        match: { subcategories: ["fundering-constructie", "gevels", "daken"], categories: ["regels-vergunningen"], audience: "thuis" },
+        match: { subcategories: ["fundering-constructie", "gevels", "daken"], categories: ["bouw-constructie"], audience: "thuis" },
         title: "Meer over aanbouwen en uitbouwen",
       }}
     />
