@@ -22,6 +22,7 @@ sources:
     url: https://iplo.nl/thema/bouw/bouwen-vergunning-melding/bijbehorende-bouwwerken/informatie-particulieren/
   - title: "Omgevingsloket: Vergunningcheck"
     url: https://omgevingswet.overheid.nl/checken
+author: robbert
 draft: false
 ---
 

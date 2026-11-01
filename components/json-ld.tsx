@@ -31,6 +31,41 @@ export function cityNode(name: string) {
   };
 }
 
+type PersonInput = { name: string; jobTitle: string; image?: string };
+
+/** Vaste identiteit van een teamlid, zodat auteur, reviewer en Over ons één persoon zijn. */
+export function personId(name: string) {
+  return `${site.url}/over-ons#${name.toLowerCase()}`;
+}
+
+function personNode(p: PersonInput) {
+  return {
+    "@type": "Person",
+    "@id": personId(p.name),
+    name: p.name,
+    jobTitle: p.jobTitle,
+    url: `${site.url}/over-ons`,
+    ...(p.image && { image: `${site.url}${p.image}` }),
+    worksFor: { "@id": ORG_ID },
+  };
+}
+
+/** Person-schema voor de teamleden op Over ons; artikelen verwijzen hiernaar. */
+export function TeamJsonLd({ members }: { members: PersonInput[] }) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@graph": members.map((m) => ({
+          ...personNode(m),
+          knowsAbout: ["verbouwing", "aanbouw en uitbouw", "kozijnen", "houtskeletbouw", "zakelijke afbouw"],
+          workLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressLocality: "Enschede", addressRegion: "Overijssel", addressCountry: "NL" } },
+        })),
+      }}
+    />
+  );
+}
+
 /** Volledig werkgebied: de steden plus de regio's eromheen. */
 function areaServedNodes() {
   return [
@@ -156,6 +191,7 @@ export function ArticleJsonLd({
   image,
   section,
   author,
+  reviewer,
 }: {
   title: string;
   description: string;
@@ -166,7 +202,9 @@ export function ArticleJsonLd({
   image?: string;
   section?: string;
   /** Teamlid als auteur (Person); zonder auteur is het bedrijf de auteur. */
-  author?: { name: string; jobTitle: string; image?: string };
+  author?: PersonInput;
+  /** Teamlid dat het artikel inhoudelijk heeft gecontroleerd. */
+  reviewer?: PersonInput;
 }) {
   const absolute = image
     ? image.startsWith("http")
@@ -188,16 +226,8 @@ export function ArticleJsonLd({
         inLanguage: "nl-NL",
         ...(absolute && { image: [absolute] }),
         ...(section && { articleSection: section }),
-        author: author
-          ? {
-              "@type": "Person",
-              name: author.name,
-              jobTitle: author.jobTitle,
-              url: `${site.url}/over-ons`,
-              ...(author.image && { image: `${site.url}${author.image}` }),
-              worksFor: { "@id": ORG_ID },
-            }
-          : { "@id": ORG_ID },
+        author: author ? personNode(author) : { "@id": ORG_ID },
+        ...(reviewer && { reviewedBy: personNode(reviewer) }),
         publisher: { "@id": ORG_ID },
       }}
     />

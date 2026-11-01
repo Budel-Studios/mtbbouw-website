@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Link from "next/link";
 import { portfolio } from "#site/content";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/json-ld";
+import { ServiceJsonLd } from "@/components/json-ld";
 import { CityStory } from "@/components/sections/city-story";
 import { RelatedContent } from "@/components/sections/related-content";
 import { ServiceAreaLinks } from "@/components/sections/service-area-links";
@@ -60,7 +61,7 @@ export default function KozijnenPage() {
         url="/kozijnen"
         serviceType="Kozijnen vervangen"
       />
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Kozijnen", url: "/kozijnen" },

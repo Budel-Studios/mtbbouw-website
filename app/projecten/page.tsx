@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { ProjectGrid } from "@/components/project-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { publishedProjects, toProjectCard } from "@/lib/projects";
 
 const INTRO =
@@ -37,7 +37,7 @@ export default function ProjectenPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Projecten", url: "/projecten" },

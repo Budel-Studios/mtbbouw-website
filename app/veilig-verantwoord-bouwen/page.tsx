@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
+import { FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { SplitSection } from "@/components/sections/split-section";
@@ -62,7 +63,7 @@ export default async function VeiligVerantwoordBouwenPage() {
   const rick = await getAsset("team-rick", "/images/team/rick.jpg");
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Veilig & verantwoord bouwen", url: "/veilig-verantwoord-bouwen" },

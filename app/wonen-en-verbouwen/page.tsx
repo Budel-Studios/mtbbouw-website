@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
 import { portfolio } from "#site/content";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/json-ld";
+import { ServiceJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { RelatedContent } from "@/components/sections/related-content";
 import { ServiceAreaLinks } from "@/components/sections/service-area-links";
@@ -78,7 +79,7 @@ export default function WonenEnVerbouwenPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Wonen & Verbouwen", url: "/wonen-en-verbouwen" },

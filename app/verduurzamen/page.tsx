@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Link from "next/link";
-import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
@@ -62,7 +63,7 @@ export default function VerduurzamenPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Verduurzamen", url: "/verduurzamen" },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { PageHero } from "@/components/sections/page-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function GratisBrochurePage() {
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Gratis brochure", url: "/gratis-brochure" },
@@ -26,7 +26,7 @@ export default function GratisBrochurePage() {
       <PageHero
         eyebrow="Gratis brochure"
         title="Zo pak je jouw (ver)bouwproject aan"
-        intro="Duidelijkheid, planning en vakmanschap in elke fase — nu alvast op papier. Vraag de brochure aan en begin goed voorbereid."
+        intro="Duidelijkheid, planning en vakmanschap in elke fase, nu alvast op papier. Geschreven door ons team in Enschede, voor iedereen in Twente die gaat verbouwen. Vraag de brochure aan en begin goed voorbereid."
       />
 
       {/* Tekst + formulier naast elkaar */}

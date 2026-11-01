@@ -1,10 +1,10 @@
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ServiceSketch } from "@/components/sections/service-sketch";
 import { CheckIcon, MapPinIcon, ClockIcon } from "@/components/icons";
 import {
-  BreadcrumbJsonLd,
   FaqJsonLd,
   ServiceJsonLd,
 } from "@/components/json-ld";
@@ -60,7 +60,7 @@ export function ServicePageTemplate({
 }) {
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Diensten", url: "/diensten" },

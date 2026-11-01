@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Link from "next/link";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { FaqJsonLd } from "@/components/json-ld";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { ShieldIcon } from "@/components/icons";
@@ -129,7 +130,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 export default function HoeWijWerkenPage() {
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Hoe wij werken", url: "/hoe-wij-werken" },
@@ -147,7 +148,8 @@ export default function HoeWijWerkenPage() {
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-stone">
             Verbouwen is spannend. Daarom zetten we elke stap voor je op een
             rij, zodat je vooraf weet wat er gebeurt, wie je over de vloer
-            krijgt en wat het kost. Dit is de klantreis bij MTB Bouw.
+            krijgt en wat het kost. Dit is de klantreis bij MTB Bouw, of je nu
+            in Enschede woont of ergens anders in Twente.
           </p>
 
           <div className="mt-16 grid gap-12 md:mt-20 md:grid-cols-12">

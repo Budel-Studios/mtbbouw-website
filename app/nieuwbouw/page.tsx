@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { portfolio } from "#site/content";
-import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { SplitSection } from "@/components/sections/split-section";
@@ -35,7 +36,7 @@ export default function NieuwbouwPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Wat we bouwen", url: "/diensten" },

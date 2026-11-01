@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Link from "next/link";
 import { portfolio } from "#site/content";
-import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { ServiceJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { CityMapHero } from "@/components/twente-map/city-map-hero";
 import { LocalPartners } from "@/components/sections/local-partners";
 import { FeatureGrid } from "@/components/sections/feature-grid";
@@ -37,7 +38,7 @@ export default function AannemerEnschedePage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Aannemer in Enschede", url: "/aannemer-enschede" },

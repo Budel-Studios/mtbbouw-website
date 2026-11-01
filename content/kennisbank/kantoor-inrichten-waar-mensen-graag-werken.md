@@ -11,6 +11,7 @@ coverAlt: "Sfeervol ingericht interieur met akoestisch zwart plafond, maatwerk c
 tags: ["kantoor inrichten", "kantoor indeling", "akoestiek", "kantoor verbouwen", "afbouw"]
 projects: [broodbode-zwolle-lunchroom, broodbode-apeldoorn-lunchroom]
 updated: 2026-11-01
+author: robbert
 draft: false
 ---
 

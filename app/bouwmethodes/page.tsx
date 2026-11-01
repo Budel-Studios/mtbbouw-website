@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { PageHero } from "@/components/sections/page-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { SplitSection } from "@/components/sections/split-section";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function BouwmethodesPage() {
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Traditioneel bouwen", url: "/bouwmethodes" },

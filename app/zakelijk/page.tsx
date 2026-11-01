@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
-import { BreadcrumbJsonLd, FaqJsonLd, WebPageJsonLd } from "@/components/json-ld";
+import { FaqJsonLd, WebPageJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { ArrowLink } from "@/components/ui/button";
@@ -122,7 +123,7 @@ const REGIO = [
 export default function ZakelijkPage() {
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Zakelijk", url: "/zakelijk" },
