@@ -1,6 +1,7 @@
 ---
 title: "Renovatie Van Zantinge-villa in Enschede"
 description: "Complete renovatie van een Van Zantinge-villa in Enschede, waar de architect zelf woonde: binnen- en buitenschil, nieuw dak, maatwerk kozijnen en patio, met welstand. 6 maanden."
+seoDescription: "Complete renovatie van een Van Zantinge-villa in Enschede: binnen- en buitenschil, nieuw dak, maatwerk kozijnen en patio, afgestemd met welstand. Zes maanden."
 date: 2025-11-05
 location: "Enschede"
 category: "Renovatie"

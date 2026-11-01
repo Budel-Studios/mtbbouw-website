@@ -1,6 +1,8 @@
 ---
 title: "De Broodbode Zwolle — van casco pand tot sfeervolle lunchroom"
 description: "In de Zwolse wijk Wezenlanden bouwden we een leeg casco-pand in 7 weken om tot de complete lunchroom van De Broodbode: keuken, counter, zitruimte en sanitair."
+seoTitle: "Casco pand afgebouwd tot lunchroom in Zwolle"
+seoDescription: "Een leeg casco pand in Zwolle in 7 weken afgebouwd tot de lunchroom van De Broodbode: tegelwerk, maatwerk counter, akoestisch plafond, sanitair en keuken."
 date: 2025-12-11
 location: "Zwolle"
 category: "Horeca-afbouw"

@@ -1,6 +1,7 @@
 ---
 title: "Carport verlengen in Enschede"
 description: "Een bestaande carport in Enschede verlengd tot een royale overkapping — naadloos aangesloten op de bestaande constructie, alsof het nooit anders is geweest."
+seoDescription: "Een bestaande carport in Enschede verlengd tot een royale overkapping, naadloos aangesloten op de bestaande constructie. Door MTB Bouw uit Enschede."
 date: 2025-06-05
 location: "Enschede"
 category: "Overkapping"

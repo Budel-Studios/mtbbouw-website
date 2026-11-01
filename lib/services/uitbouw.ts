@@ -12,7 +12,7 @@ export const uitbouwData: ServiceData = {
   },
   hero: {
     eyebrow: "Voor particulieren",
-    h1: "Uitbouw in Enschede & Twente — meer ruimte, meer leefplezier.",
+    h1: "Aanbouw en uitbouw in Enschede & Twente — meer ruimte, meer leefplezier.",
     subtitle:
       "Een keuken die uitkomt op de tuin, een werkkamer waar je écht werkt, een speelhoek voor de kinderen — wij maken jouw woning ruimer, lichter en logischer. Zonder gedoe en zonder verrassingen.",
     primaryCta: { label: "Plan een intake", href: "/contact" },

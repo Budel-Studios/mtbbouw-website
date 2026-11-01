@@ -1,6 +1,8 @@
 ---
 title: "De Broodbode Apeldoorn — complete transformatie naar huiskamer-lunchroom"
 description: "Een verouderd winkelpand uit de jaren '40–'50 in Apeldoorn in circa 7 weken volledig getransformeerd tot warme huiskamer-lunchroom: sloop, herindeling, elektra, 180 m² tegelwerk en maatwerk."
+seoTitle: "Lunchroom verbouwen: De Broodbode Apeldoorn"
+seoDescription: "Winkelpand uit de jaren '40–'50 in Apeldoorn in circa 7 weken verbouwd tot huiskamer-lunchroom: sloop, herindeling, nieuwe elektra, 180 m² tegelwerk, maatwerk."
 date: 2026-08-18
 location: "Apeldoorn"
 category: "Horeca-afbouw"

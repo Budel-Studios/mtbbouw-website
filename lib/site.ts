@@ -76,7 +76,6 @@ export const site = {
   // Kleine links in de onderbalk van de footer.
   footerLinks: [
     { href: "/over-ons", label: "Over ons" },
-    { href: "/bouwbedrijf-enschede", label: "Bouwbedrijf Enschede" },
     { href: "/kennisbank", label: "Bouwgids" },
     { href: "/gratis-brochure", label: "Gratis brochure" },
     { href: "/werkgenoeg", label: "Werken bij" },

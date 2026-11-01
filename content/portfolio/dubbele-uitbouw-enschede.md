@@ -1,6 +1,8 @@
 ---
 title: "Dubbele uitbouw in Enschede — ruimte voor twee gezinnen"
 description: "Twee naast elkaar gelegen woningen in Enschede kregen tegelijk een uitbouw. Eén bouwstroom, twee blije gezinnen — en een hoop extra leefruimte."
+seoTitle: "Dubbele uitbouw in Enschede, twee woningen"
+seoDescription: "Twee naast elkaar gelegen woningen in Enschede kregen tegelijk een uitbouw. Eén bouwstroom, twee gezinnen en een hoop extra leefruimte."
 date: 2025-12-11
 location: "Enschede"
 category: "Uitbouw"

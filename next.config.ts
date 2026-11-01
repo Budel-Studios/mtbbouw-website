@@ -142,6 +142,10 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
 
+      // Bouwbedrijf Enschede en aannemer Enschede zijn dezelfde zoekvraag;
+      // samengevoegd (nov 2026).
+      { source: "/bouwbedrijf-enschede", destination: "/aannemer-enschede", permanent: true },
+
       // Oude WordPress-archieven (wildcards).
       { source: "/portfolio-item/:slug", destination: "/projecten", permanent: true },
       { source: "/category/:slug", destination: "/kennisbank", permanent: true },
