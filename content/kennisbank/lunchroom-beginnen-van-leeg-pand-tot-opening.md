@@ -10,6 +10,7 @@ cover: /images/projects/broodbode-zwolle-lunchroom/cover.jpg
 coverAlt: "Complete lunchroom van De Broodbode in Zwolle, verbouwd vanuit een casco pand"
 tags: ["lunchroom beginnen", "horeca verbouwen", "horecapand", "afbouw", "zwolle"]
 projects: [broodbode-zwolle-lunchroom, broodbode-apeldoorn-lunchroom]
+author: robbert
 draft: false
 ---
 

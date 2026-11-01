@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { site } from "@/lib/site";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { QuoteButton } from "@/components/ui/quote-button";
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="container-page py-20 md:py-28">
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Contact", url: "/contact" },
@@ -31,6 +31,12 @@ export default function ContactPage() {
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone">
         Vrijblijvend in gesprek over je plan? Doe een aanvraag, bel of mail.
         We denken graag mee.
+      </p>
+      <p className="mt-4 max-w-2xl leading-relaxed text-stone">
+        We zitten aan de Heersenkampweg in Enschede en komen voor een intake
+        bij je langs, in Enschede, Hengelo, Almelo, Oldenzaal of elders in
+        Twente. Handig om alvast te hebben: foto&apos;s, een plattegrond of
+        tekening en een idee van wanneer je wilt starten.
       </p>
 
       <div className="mt-14 grid gap-12 border-t border-ink pt-10 lg:grid-cols-2">

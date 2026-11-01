@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Link from "next/link";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { CardSlider } from "@/components/sections/card-slider";
 import type { ProjectCardData } from "@/components/project/project-cards";
 import { DrawOnView } from "@/components/blueprint/draw-on-view";
@@ -218,7 +218,7 @@ function ArrowUpRight({ className = "size-4" }: { className?: string }) {
 export default function DienstenPage() {
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Wat we bouwen", url: "/diensten" },

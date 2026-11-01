@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { PageHero } from "@/components/sections/page-hero";
 import { SplitSection } from "@/components/sections/split-section";
 import { TeamGrid } from "@/components/sections/team-grid";
@@ -7,6 +7,8 @@ import { FeatureGrid } from "@/components/sections/feature-grid";
 import { ArrowLink } from "@/components/ui/button";
 import { site } from "@/lib/site";
 import { pillars } from "@/lib/data";
+import { AUTHORS } from "@/lib/authors";
+import { TeamJsonLd } from "@/components/json-ld";
 import { getAsset } from "@/lib/assets";
 import { CheckIcon, ChatIcon, HammerIcon } from "@/components/icons";
 
@@ -34,7 +36,8 @@ export default async function OverOnsPage() {
   );
   return (
     <>
-      <BreadcrumbJsonLd
+      <TeamJsonLd members={AUTHORS.map((a) => ({ name: a.name, jobTitle: a.role, image: a.image }))} />
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Over ons", url: "/over-ons" },
@@ -46,7 +49,7 @@ export default async function OverOnsPage() {
         image={{ src: "/images/brand/hero.png", alt: "Het team van MTB Bouw aan het werk" }}
         eyebrow="Over ons · Bouw. Samen."
         title="De mensen achter MTB Bouw"
-        intro="Achter MTB Bouw staan Mathijs en Robbert, met een vast team en vaste partners uit de regio. Geen anonieme aannemer, maar mensen die je leert kennen en die je gewoon kunt bellen."
+        intro="Achter MTB Bouw staan Mathijs en Robbert, met een vast team en vaste partners uit de regio. Vanuit de Heersenkampweg in Enschede werken we in heel Twente. Geen anonieme aannemer, maar mensen die je leert kennen en die je gewoon kunt bellen."
       />
 
       <TeamGrid

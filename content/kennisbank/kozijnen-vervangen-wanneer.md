@@ -10,6 +10,7 @@ series: kozijnen
 cover: "/images/projects/project-3.jpg" # PLACEHOLDER — vervang door een echte artikelfoto
 coverAlt: "Close-up van een kunststof kozijn met HR++ beglazing"
 tags: [kozijnen vervangen, wanneer kozijnen vervangen, condens tussen glas, houtrot kozijn, tocht ramen]
+author: robbert
 draft: false
 ---
 

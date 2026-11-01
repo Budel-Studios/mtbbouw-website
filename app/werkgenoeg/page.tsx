@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import { publishedProjects } from "@/lib/projects";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { SplitSection } from "@/components/sections/split-section";
@@ -51,7 +52,7 @@ export default async function WerkGenoegPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Werken bij", url: "/werkgenoeg" },

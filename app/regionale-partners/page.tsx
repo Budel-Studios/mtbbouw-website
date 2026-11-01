@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
 import Link from "next/link";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { PartnerWall, type WallItem } from "@/components/home/partner-wall";
 import { CardSlider } from "@/components/sections/card-slider";
@@ -60,7 +60,7 @@ export default function RegionalePartnersPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Regionale partners", url: "/regionale-partners" },

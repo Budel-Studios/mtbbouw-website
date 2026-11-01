@@ -94,6 +94,7 @@ export default async function ArticlePage({
   // FAQPage-schema, zodat er maar één bron van waarheid is.
   const faq = extractFaq(article.body);
   const author = getAuthor(article.author);
+  const reviewer = article.reviewer ? getAuthor(article.reviewer.toLowerCase()) : undefined;
   const category = {
     label: categoryLabel(article.category),
     hasHub: hubExists("category", article.category),
@@ -124,6 +125,9 @@ export default async function ArticlePage({
           section={category.label}
           author={
             author && { name: author.name, jobTitle: author.role, image: author.image }
+          }
+          reviewer={
+            reviewer && { name: reviewer.name, jobTitle: reviewer.role, image: reviewer.image }
           }
         />
         {faq.length > 0 && <FaqJsonLd items={faq} />}

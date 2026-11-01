@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/sections/breadcrumbs";
+import { FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { FaqQuickNav } from "@/components/sections/faq-quick-nav";
@@ -31,7 +32,7 @@ export default function FaqPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
+      <Breadcrumbs
         items={[
           { name: "Home", url: "/" },
           { name: "Veelgestelde vragen", url: "/veelgestelde-vragen" },
