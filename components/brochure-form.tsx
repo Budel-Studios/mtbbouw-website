@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -12,6 +12,11 @@ export function BrochureForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
     "idle"
   );
+  // Botbeveiliging: tijd tussen tonen en versturen van het formulier.
+  const shownAt = useRef(0);
+  useEffect(() => {
+    shownAt.current = Date.now();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,6 +33,7 @@ export function BrochureForm() {
           name: data.get("name"),
           email: data.get("email"),
           website: data.get("website"),
+          elapsed: shownAt.current ? Date.now() - shownAt.current : undefined,
         }),
       });
       const json = await res.json();

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Solliciteerknop + formulier (Werken bij). Opent een paneel met een kort
@@ -51,6 +51,11 @@ export function ApplyButton({
 
 function ApplyPanel({ job, onClose }: { job?: string; onClose: () => void }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  // Botbeveiliging: tijd tussen openen en versturen van het formulier.
+  const openedAt = useRef(0);
+  useEffect(() => {
+    openedAt.current = Date.now();
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -81,6 +86,7 @@ function ApplyPanel({ job, onClose }: { job?: string; onClose: () => void }) {
           message: data.get("message"),
           cvLink: data.get("cvLink"),
           website: data.get("website"),
+          elapsed: openedAt.current ? Date.now() - openedAt.current : undefined,
         }),
       });
       const json = await res.json();

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { checkBotId } from "botid/server";
 import {
   BROCHURE_READY,
   CUSTOMER_SUBJECTS,
@@ -17,12 +18,21 @@ import {
 import { sendFormEmails } from "@/lib/email/send";
 import type { Body, FormType } from "@/lib/email/types";
 import { site } from "@/lib/site";
+import {
+  clientIp,
+  filledTooFast,
+  rateLimited,
+  sameOrigin,
+  tooLong,
+  validPhone,
+} from "@/lib/form-guard";
 
 /**
  * Formulier-inzendingen (offerte-drawer, contactformulier, brochure-aanvraag).
  *
  * Elke inzending levert twee mails op: de lead naar info@ en een bevestiging
- * naar de aanvrager. De opmaak staat in lib/email/.
+ * naar de aanvrager. De opmaak staat in lib/email/. De beveiliging tegen bots
+ * en misbruik staat in lib/form-guard.ts.
  */
 const EMAIL_RE = /^\S+@\S+\.\S+$/;
 
@@ -30,12 +40,16 @@ function validate(type: FormType, body: Body): string | null {
   if (!body.name || !body.email || !EMAIL_RE.test(body.email)) {
     return "Missing or invalid name/email";
   }
+  const long = tooLong(body as unknown as Record<string, unknown>);
+  if (long) return `Field too long: ${long}`;
+  if (body.phone && !validPhone(body.phone)) return "Invalid phone";
   if (type === "offerte") {
     if (
       !body.phone ||
       !body.projectTypes?.length ||
       !body.description ||
       !body.postcode ||
+      !body.houseNumber ||
       !body.startTime ||
       body.agreement !== true
     ) {
@@ -59,6 +73,26 @@ export async function POST(request: Request) {
   // Honeypot — moet vóór elke verzending blijven staan, anders is dit een
   // open relay die op verzoek naar willekeurige adressen mailt.
   if (body.website) {
+    return NextResponse.json({ success: true });
+  }
+
+  // Alleen vanaf onze eigen pagina's.
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ success: false, error: "Forbidden" }, { status: 403 });
+  }
+
+  // Onzichtbare botcheck van Vercel (lokaal altijd "mens").
+  const verdict = await checkBotId();
+  if (verdict.isBot) {
+    return NextResponse.json({ success: false, error: "Forbidden" }, { status: 403 });
+  }
+
+  if (rateLimited(clientIp(request))) {
+    return NextResponse.json({ success: false, error: "Too many requests" }, { status: 429 });
+  }
+
+  // Binnen een paar seconden ingevuld: geen mens. Doe alsof het gelukt is.
+  if (filledTooFast(body.elapsed)) {
     return NextResponse.json({ success: true });
   }
 

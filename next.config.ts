@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withBotId } from "botid/next/config";
 
 const nextConfig: NextConfig = {
   images: {
@@ -107,4 +108,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// withBotId voegt de proxy-routes toe die Vercel BotID nodig heeft.
+export default withBotId(nextConfig);

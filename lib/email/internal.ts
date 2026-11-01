@@ -47,6 +47,7 @@ export function buildQuoteInternal(f: QuotePayload) {
     section(
       "Locatie & planning",
       row("Postcode + plaats", f.postcode) +
+        row("Huisnummer", f.houseNumber) +
         row("Type woning / pand", label(PROPERTY_TYPE_LABELS, f.propertyType)) +
         row("Gewenst startmoment", f.startTime) +
         row("Deadline", f.deadline) +
@@ -134,7 +135,7 @@ export const INTERNAL_SUBJECTS = {
   sollicitatie: (f: ApplicationPayload) =>
     `Sollicitatie — ${f.name} (${f.job || "open sollicitatie"})`,
   offerte: (f: QuotePayload) =>
-    `Nieuwe offerteaanvraag — ${f.name}${f.postcode ? `, ${f.postcode}` : ""}`,
+    `Nieuwe offerteaanvraag — ${f.name}${f.postcode ? `, ${f.postcode}` : ""}${f.houseNumber ? ` ${f.houseNumber}` : ""}`,
   contact: (f: ContactPayload) => `Nieuw contactbericht — ${f.name}`,
   brochure: (f: BrochurePayload) => `Brochure-aanvraag — ${f.name}`,
 };
