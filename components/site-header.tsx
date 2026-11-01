@@ -116,7 +116,7 @@ function TomButton({ text, href, onClick }: { text: string; href: string; onClic
 }
 
 function StepItem({ step, onClick }: { step: NavLink; onClick: () => void }) {
-  const link = (
+  return (
     <Link
       href={step.href}
       onClick={onClick}
@@ -132,21 +132,6 @@ function StepItem({ step, onClick }: { step: NavLink; onClick: () => void }) {
         )}
       </span>
     </Link>
-  );
-  if (!step.items?.length) return link;
-  return (
-    <div>
-      {link}
-      <ul className="mt-2 pl-8">
-        {step.items.map((item) => (
-          <li key={item.href} className="py-1">
-            <Link href={item.href} onClick={onClick} className="text-stone transition-colors hover:text-navy">
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
 
@@ -254,7 +239,7 @@ function MegaPanel({ content, onClose }: { content: MegaContent; onClose: () => 
 /* ----------------------------------- mobile menu ----------------------------------- */
 
 function MobileStepRow({ step, onClick }: { step: NavLink; onClick: () => void }) {
-  const row = (
+  return (
     <Link
       href={step.href}
       onClick={onClick}
@@ -270,21 +255,6 @@ function MobileStepRow({ step, onClick }: { step: NavLink; onClick: () => void }
         )}
       </span>
     </Link>
-  );
-  if (!step.items?.length) return row;
-  return (
-    <div>
-      {row}
-      <ul className="mt-3 flex flex-col gap-3 pl-8">
-        {step.items.map((item) => (
-          <li key={item.href}>
-            <Link href={item.href} onClick={onClick} className="text-stone">
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
 

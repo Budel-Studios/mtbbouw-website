@@ -5,14 +5,7 @@
  *
  */
 
-export type NavLink = {
-  id: number;
-  title: string;
-  href: string;
-  subtitle?: string;
-  /** Subpagina's, ingesprongen onder de stap (desktop én mobiel). */
-  items?: { title: string; href: string }[];
-};
+export type NavLink = { id: number; title: string; href: string; subtitle?: string };
 export type NavColumn = NavLink & { items: { title: string; href: string }[] };
 
 export type MegaContent = {
@@ -59,10 +52,6 @@ export const mainNav: NavItem[] = [
           title: "Zakelijk",
           href: "/zakelijk",
           subtitle: "Horeca, kantoren, winkels en bedrijfspanden in Enschede en Twente.",
-          items: [
-            { title: "Horeca afbouw & verbouwen", href: "/zakelijk/horeca-verbouwen" },
-            { title: "Bedrijfspanden verbouwen", href: "/zakelijk/bedrijfspand-verbouwen" },
-          ],
         },
       ],
       stepsPro: [
