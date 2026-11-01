@@ -74,10 +74,10 @@ const EXPERTISES = [
   },
   {
     sticker: "zakelijk",
-    eyebrow: "Afbouwstudio",
+    eyebrow: "MTB Bouw Zakelijk",
     title: "Zakelijk",
-    desc: "Complete zakelijke afbouw van kantoren, winkels en horeca — van casco tot turn-key.",
-    href: "/afbouwstudio",
+    desc: "Horeca, kantoren, winkels en bedrijfspanden verbouwen of afbouwen, van casco tot gebruiksklaar.",
+    href: "/zakelijk",
     image: {
       src: "/images/projects/broodbode-apeldoorn/04.jpg",
       alt: "Maatwerk zitbanken bij De Broodbode Apeldoorn",
@@ -113,7 +113,7 @@ const SERVICE_LINKS = [
   { href: "/aanbouw-uitbouw", label: "Aanbouw & uitbouw" },
   { href: "/nieuwbouw", label: "Nieuwbouw" },
   { href: "/verduurzamen", label: "Verduurzamen" },
-  { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
+  { href: "/zakelijk", label: "Zakelijk verbouwen" },
 ];
 
 
@@ -348,7 +348,7 @@ export async function HomeContent({
               <Link href="/verbouwing" className="link-line text-ink">verbouwen</Link>, een{" "}
               <Link href="/aanbouw-uitbouw" className="link-line text-ink">uitbouw</Link> of dakopbouw
               wilt, of een{" "}
-              <Link href="/afbouwstudio" className="link-line text-ink">bedrijfspand</Link> laat
+              <Link href="/zakelijk/bedrijfspand-verbouwen" className="link-line text-ink">bedrijfspand</Link> laat
               afbouwen, en of je nu in een nieuwere woning woont of in een
               jaren-30 huis: we hebben de expertise in huis. Met eigen vakmensen
               en vaste partners uit de regio maken we het waar. Als{" "}

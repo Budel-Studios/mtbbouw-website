@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ContactDrawerButton } from "@/components/contact-drawer";
+import { ContactDrawerButton, type DrawerPreset } from "@/components/contact-drawer";
 
 /** Knoppen naar deze URL openen de offerte-drawer i.p.v. te navigeren. */
 const CONTACT_HREF = "/contact";
@@ -120,6 +120,7 @@ export function Button({
 export function ArrowLink({
   href,
   drawer = false,
+  preset,
   children,
   className = "",
   onDark = false,
@@ -127,6 +128,8 @@ export function ArrowLink({
   href?: string;
   /** Opent de offerte-drawer i.p.v. te navigeren. */
   drawer?: boolean;
+  /** Vult de offerte-drawer alvast in voor deze context. */
+  preset?: DrawerPreset;
   children: React.ReactNode;
   className?: string;
   onDark?: boolean;
@@ -149,7 +152,9 @@ export function ArrowLink({
 
   if (opensDrawer || !href) {
     return (
-      <ContactDrawerButton className={`cursor-pointer ${cls}`}>{content}</ContactDrawerButton>
+      <ContactDrawerButton preset={preset} className={`cursor-pointer ${cls}`}>
+        {content}
+      </ContactDrawerButton>
     );
   }
 

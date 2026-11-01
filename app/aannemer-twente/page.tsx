@@ -114,10 +114,10 @@ export default function AannemerTwentePage() {
             <Link href="/aannemer-enschede" className="font-semibold text-ink underline hover:text-navy">
               aannemer in Enschede
             </Link>
-            . Zakelijk project buiten Twente? Voor kantoor- en horeca-afbouw
-            werken we in heel Oost-Nederland —{" "}
-            <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
-              lees meer over kantoor verbouwen
+            . Een zakelijk project, ook buiten Twente? Dat is bespreekbaar.
+            Lees meer over{" "}
+            <Link href="/zakelijk" className="font-semibold text-ink underline hover:text-navy">
+              zakelijk verbouwen
             </Link>
             .
           </p>

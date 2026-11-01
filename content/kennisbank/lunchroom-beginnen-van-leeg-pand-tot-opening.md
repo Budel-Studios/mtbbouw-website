@@ -43,7 +43,7 @@ Waar je op let:
 - **Elektra-aansluiting.** Horeca-apparatuur trekt veel stroom. Check wat de huidige aansluiting is; verzwaren kan, maar kost tijd en geld.
 - **Bestemming.** Staat er al horeca op het pand? Zo niet, dan heb je een functiewijziging nodig — en dat kost maanden.
 
-> **Let op:** neem iemand met bouwkennis mee bij de bezichtiging. Een uurtje meelopen kan je tienduizenden euro's aan verrassingen schelen. Dat doen we bij [MTB Bouw](/afbouwstudio/horeca-verbouwen) regelmatig voor klanten die twijfelen tussen twee panden.
+> **Let op:** neem iemand met bouwkennis mee bij de bezichtiging. Een uurtje meelopen kan je tienduizenden euro's aan verrassingen schelen. Dat doen we bij [MTB Bouw](/zakelijk/horeca-verbouwen) regelmatig voor klanten die twijfelen tussen twee panden.
 
 ## Vergunningen en regels: begin hier écht op tijd mee
 
@@ -88,7 +88,7 @@ Voor De Broodbode maakten we een maatwerk counter die precies in dat plaatje pas
 
 Een leuk weetje: harde materialen — beton, glas, tegels — zijn precies de materialen die in een lunchroom mooi staan én het geluid keihard terugkaatsen. Zonder plan wordt je zaak op een druk moment één grote galmbak. Gasten gaan harder praten, waardoor het nóg luider wordt, en niemand blijft voor een tweede kop koffie.
 
-De oplossing hoeft niet lelijk te zijn. In Zwolle kozen we voor een akoestisch zwart plafond: het dempt het geluid én geeft de zaak dat stoere, industriële karakter. Twee vliegen in één klap. Meer weten over plafondopties? Kijk eens bij [systeemplafonds](/afbouwstudio/systeemplafonds).
+De oplossing hoeft niet lelijk te zijn. In Zwolle kozen we voor een akoestisch zwart plafond: het dempt het geluid én geeft de zaak dat stoere, industriële karakter. Twee vliegen in één klap. Meer weten over plafondopties? Kijk eens bij [wanden en plafonds](/zakelijk/bedrijfspand-verbouwen#plafonds).
 
 ## Planning: reken terug vanaf je openingsdatum
 
@@ -156,4 +156,4 @@ We denken mee over wat er bouwkundig nodig is voor de vergunning en leveren de s
 
 Een lunchroom beginnen in een leeg pand is goed te doen — als je in de juiste volgorde werkt. Check het pand technisch vóór je tekent (ventilatie, afvoer, elektra, bestemming). Start meteen met de vergunning. Steek je budget eerst in installaties, dan in afwerking. Denk aan antislip tegelwerk, een maatwerk counter met logische looplijnen en een akoestiekplan. En reken terug vanaf je openingsdatum, met marge. Dat het kan, bewijst De Broodbode: casco pand in Zwolle, 7 weken later een complete lunchroom.
 
-Loop je rond met plannen voor een eigen zaak? Kijk eens bij [horeca verbouwen](/afbouwstudio/horeca-verbouwen) of bij onze [Afbouwstudio](/afbouwstudio), of stuur ons een berichtje via [contact](/contact). Ook als je alleen even wilt sparren over een pand dat je op het oog hebt — daar zijn we voor.
+Loop je rond met plannen voor een eigen zaak? Kijk eens bij [horeca afbouw en verbouwen](/zakelijk/horeca-verbouwen), of stuur ons een berichtje via [contact](/contact). Ook als je alleen even wilt sparren over een pand dat je op het oog hebt — daar zijn we voor.

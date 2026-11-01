@@ -139,9 +139,9 @@ export default function AannemerOldenzaalPage() {
             text: "Snel op de bouw als het om een uitbouw of bijgebouw gaat.",
           },
           {
-            href: "/afbouwstudio",
-            label: "Zakelijke afbouw",
-            text: "Voor bedrijven: kantoren, winkels en horeca, van casco tot sleutelklaar.",
+            href: "/zakelijk",
+            label: "Zakelijk verbouwen",
+            text: "Voor bedrijven: horeca, kantoren, winkels en bedrijfspanden, met één aanspreekpunt.",
           },
         ]}
       />

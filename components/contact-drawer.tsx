@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { site } from "@/lib/site";
 
 /**
@@ -277,6 +278,9 @@ function ContactChip({ icon, text, href }: { icon: ReactNode; text: string; href
 
 /* -------------------------------------- options ------------------------------------ */
 
+/** Projecttype dat de zakelijke pagina's alvast aanvinken. */
+const ZAKELIJK_TYPE = "Zakelijk: horeca, kantoor of bedrijfspand";
+
 const PROJECT_TYPES = [
   "Renovatie / verbouwing",
   "Uitbouw / aanbouw",
@@ -287,6 +291,7 @@ const PROJECT_TYPES = [
   "Dak / dakkapel / dakopbouw",
   "Isolatie / verduurzaming",
   "Afbouw (wanden/plafonds/vloeren)",
+  ZAKELIJK_TYPE,
 ];
 
 const SITUATIONS = ["Nieuwbouw", "Bestaande woning", "Bedrijfspand", "Anders"];
@@ -377,7 +382,13 @@ type Errors = Partial<Record<keyof ContactFormData, string>>;
 
 /* ------------------------------------ context/API ---------------------------------- */
 
-const ContactDrawerContext = createContext<{ open: () => void } | null>(null);
+/**
+ * Vooraf ingevulde context, bijvoorbeeld vanaf de zakelijke pagina's. Vult
+ * alleen velden die de bezoeker nog niet zelf heeft ingevuld.
+ */
+export type DrawerPreset = "zakelijk";
+
+const ContactDrawerContext = createContext<{ open: (preset?: DrawerPreset) => void } | null>(null);
 
 function useContactDrawer() {
   const ctx = useContext(ContactDrawerContext);
@@ -394,11 +405,14 @@ export function ContactDrawerButton({
   className,
   children,
   onClick,
+  preset,
 }: {
   className?: string;
   children: ReactNode;
   /** Runs before the drawer opens (e.g. to close a menu first) */
   onClick?: () => void;
+  /** Vult het formulier alvast in voor deze context (bijv. zakelijk). */
+  preset?: DrawerPreset;
 }) {
   const { open } = useContactDrawer();
   return (
@@ -406,7 +420,7 @@ export function ContactDrawerButton({
       type="button"
       onClick={() => {
         onClick?.();
-        open();
+        open(preset);
       }}
       className={className}
     >
@@ -431,8 +445,18 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
   const openedAt = useRef<number | null>(null);
   const honeyRef = useRef<HTMLInputElement>(null);
 
-  const open = useCallback(() => {
+  const open = useCallback((preset?: DrawerPreset) => {
     if (openedAt.current === null) openedAt.current = Date.now();
+    if (preset === "zakelijk") {
+      setForm((f) => ({
+        ...f,
+        projectTypes: f.projectTypes.length ? f.projectTypes : [ZAKELIJK_TYPE],
+        situation: f.situation || "Bedrijfspand",
+        propertyType: f.propertyType || "bedrijfspand",
+      }));
+    }
+    // Meting zonder persoonsgegevens: alleen de pagina waarop de intake start.
+    track("intake_gestart", { pagina: window.location.pathname });
     setIsOpen(true);
   }, []);
   const close = useCallback(() => setIsOpen(false), []);
@@ -504,7 +528,10 @@ export function ContactDrawerProvider({ children }: { children: ReactNode }) {
         }),
       });
       const data = await res.json();
-      if (data.success) setSuccess(true);
+      if (data.success) {
+        setSuccess(true);
+        track("aanvraag_ontvangen", { pagina: window.location.pathname });
+      }
       else alert("Versturen mislukt. Probeer het later opnieuw of bel ons.");
     } catch {
       alert("Versturen mislukt. Probeer het later opnieuw of bel ons.");

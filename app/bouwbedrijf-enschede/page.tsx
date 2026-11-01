@@ -16,12 +16,12 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Bouwbedrijf in Enschede | MTB Bouw" },
   description:
-    "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, heldere offertes.",
+    "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Zakelijk, Kozijnen en Prefab. Erkend leerbedrijf, heldere offertes.",
   alternates: { canonical: "/bouwbedrijf-enschede" },
   openGraph: {
     type: "website",
     title: "Bouwbedrijf in Enschede | MTB Bouw",
-    description: "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, heldere offertes.",
+    description: "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Zakelijk, Kozijnen en Prefab. Erkend leerbedrijf, heldere offertes.",
     url: "/bouwbedrijf-enschede",
   },
 };

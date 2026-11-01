@@ -1,5 +1,7 @@
 # SEO-strategie MTB Bouw 2026–2027
 
+> Let op (november 2026): de zakelijke structuur in dit document is vervangen. De dertien Afbouwstudio-pagina's zijn teruggebracht naar /zakelijk, /zakelijk/horeca-verbouwen en /zakelijk/bedrijfspand-verbouwen. Zie docs/zakelijk-migratie.md.
+
 > Opgesteld 4 juli 2026 op basis van live SERP-onderzoek (Google, juli 2026): 30+ zoekopdrachten geanalyseerd, 8 Twentse concurrenten doorgelicht, local-SEO- en AI-vindbaarheidsonderzoek. **Kanttekening:** er is geen zoekvolumedata gebruikt (vergt tools als Ahrefs/Semrush); prioriteiten zijn gebaseerd op waargenomen concurrentiedruk in de zoekresultaten — dat is voor een lokale strategie betrouwbaarder dan landelijke volumeschattingen.
 
 ---

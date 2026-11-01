@@ -52,7 +52,7 @@ Krijg je die drie goed, dan ben je al 80% op weg. De mooie stoelen komen daarna 
 
 Daglicht is gratis en niets komt erbij in de buurt. Dus voordat je over lampen nadenkt: kijk waar het daglicht binnenkomt en zet daar de vaste werkplekken. Een fout die we vaak zien: de mooiste plek aan het raam wordt de printerhoek, en het team zit achterin bij de tl-buizen. Draai dat om.
 
-Glaswanden helpen ook enorm. Wil je een aparte vergaderruimte, maar geen donker hok? Met [glaswanden op een metal stud-basis](/afbouwstudio/metal-stud-wanden) loopt het daglicht gewoon door naar de rest van de vloer.
+Glaswanden helpen ook enorm. Wil je een aparte vergaderruimte, maar geen donker hok? Met [glaswanden op een metal stud-basis](/zakelijk/bedrijfspand-verbouwen#wanden) loopt het daglicht gewoon door naar de rest van de vloer.
 
 ### Dan pas kunstlicht — met een plan
 
@@ -72,7 +72,7 @@ Vraag in een willekeurige kantoortuin wat mensen het meest stoort, en je krijgt 
 
 Waar komt dat gegalm vandaan? Harde vlakken. Beton, glas, gladde wanden: geluid kaatst er vrolijk op rond. De oplossing is dus zachte, absorberende vlakken toevoegen. In volgorde van effect:
 
-1. **Akoestisch plafond.** Het plafond is het grootste ononderbroken vlak in de ruimte. Een [systeemplafond met akoestische panelen](/afbouwstudio/systeemplafonds) vangt het meeste geluid weg — dit adviseren we eigenlijk bijna altijd als eerste stap.
+1. **Akoestisch plafond.** Het plafond is het grootste ononderbroken vlak in de ruimte. Een [systeemplafond met akoestische panelen](/zakelijk/bedrijfspand-verbouwen#plafonds) vangt het meeste geluid weg — dit adviseren we eigenlijk bijna altijd als eerste stap.
 2. **Wandpanelen.** Akoestische panelen op strategische plekken (achter belplekken, naast overlegzones) halen de scherpe randjes van het geluid. En ze kunnen er nog mooi uitzien ook.
 3. **Zonering.** Zet lawaai-activiteiten (bellen, overleggen) fysiek weg van focuswerk. Een paar goed geplaatste wanden doen meer dan honderd "graag stilte"-bordjes.
 
@@ -94,7 +94,7 @@ Een goede kantoorindeling heeft grofweg drie soorten zones:
 | Overlegzone | Vergaderen, bellen, brainstormen | Afsluitbaar, akoestisch gedempt, scherm/whiteboard |
 | Ontmoetingszone | Koffie, lunch, informeel overleg | Centraal, mag levendig, tafels om aan te staan |
 
-Die zones maak je met wanden — en dat hoeft geen groot bouwproject te zijn. [Metal stud-wanden](/afbouwstudio/metal-stud-wanden) staan er snel, kunnen met glas voor daglicht, en (belangrijk) kunnen er later ook weer net zo makkelijk uit. Handig als je team groeit of anders gaat werken.
+Die zones maak je met wanden — en dat hoeft geen groot bouwproject te zijn. [Metal stud-wanden](/zakelijk/bedrijfspand-verbouwen#wanden) staan er snel, kunnen met glas voor daglicht, en (belangrijk) kunnen er later ook weer net zo makkelijk uit. Handig als je team groeit of anders gaat werken.
 
 ## Het plafond: het meest onderschatte vlak van je kantoor
 
@@ -104,7 +104,7 @@ Even eerlijk: wanneer heb jij voor het laatst bewust naar je kantoorplafond geke
 - **Licht** — daar zit je verlichting in of aan.
 - **Uitstraling** — een vergeeld plafond uit 1995 maakt élke inrichting sjofel.
 
-Daarom is een nieuw [systeemplafond](/afbouwstudio/systeemplafonds) vaak de slimste eerste ingreep bij een opknapbeurt: je pakt geluid, licht en uitstraling in één klap.
+Daarom is een nieuw [systeemplafond](/zakelijk/bedrijfspand-verbouwen#plafonds) vaak de slimste eerste ingreep bij een opknapbeurt: je pakt geluid, licht en uitstraling in één klap.
 
 **Leuk weetje:** een plafond hoeft niet wit en saai te zijn. Bij De Broodbode in Zwolle kozen we voor een akoestisch zwart plafond — dat geeft diepte aan de ruimte én dempt het geluid van een volle zaak. Werkt in een kantoor net zo goed als in een lunchroom.
 
@@ -156,7 +156,7 @@ Eerlijk verhaal: dat hangt af van hoe ver je gaat. Grofweg zijn er drie niveaus:
 
 Een prijs per m² zegt weinig: het pand, de installaties en het afwerkingsniveau bepalen de kosten. Na een intake op locatie rekenen we jouw situatie uit.
 
-Bij [onze Afbouwstudio](/afbouwstudio) krijg je na die intake een gespecificeerde offerte. Stelposten en uitsluitingen staan er duidelijk in, en meerwerk doen we alleen na jouw akkoord. Zo weet je vooraf waar je aan toe bent.
+Bij [een kantoorverbouwing door MTB Bouw](/zakelijk/bedrijfspand-verbouwen#kantoor) krijg je na die intake een gespecificeerde offerte. Stelposten en uitsluitingen staan er duidelijk in, en meerwerk doen we alleen na jouw akkoord. Zo weet je vooraf waar je aan toe bent.
 
 ## Veelgestelde vragen
 
@@ -182,7 +182,7 @@ Dat hangt af van het aantal wanden, de geluidseisen, deuren en glas, en de insta
 
 ### Hebben we een architect of interieurontwerper nodig?
 
-Voor de meeste kantoorverbouwingen niet per se. Wij denken bij [een kantoorverbouwing](/afbouwstudio/kantoor-verbouwen) mee over indeling, licht en akoestiek en werken dat uit tot een plan. Bij hele grote of complexe projecten kan een ontwerper wél meerwaarde hebben — dat zeggen we er dan eerlijk bij.
+Voor de meeste kantoorverbouwingen niet per se. Wij denken bij [een kantoorverbouwing](/zakelijk/bedrijfspand-verbouwen#kantoor) mee over indeling, licht en akoestiek en werken dat uit tot een plan. Bij hele grote of complexe projecten kan een ontwerper wél meerwaarde hebben — dat zeggen we er dan eerlijk bij.
 
 ### Is dit ook interessant als we huren?
 
@@ -192,4 +192,4 @@ Zeker. Systeemplafonds en metal stud-wanden zijn juist populair in huurpanden: r
 
 Een kantoor waar mensen graag werken, draait niet om dure meubels maar om drie basiszaken: **licht** (daglicht op de werkplekken, een doordacht LED-plan), **akoestiek** (akoestisch plafond, wandpanelen, zonering — dé oplossing voor de kantoortuin-klacht) en **indeling** (looproutes langs de reuring, focus en overleg gescheiden). Het plafond is daarbij je geheime wapen: één ingreep, drie problemen opgelost. Bouw flexibel met metal stud, dan kan het over twee jaar zó weer anders. En reken realistisch: laat je pand opnemen en vraag een gespecificeerde offerte.
 
-Twijfel je waar je bij jouw kantoor moet beginnen? Loop de checklist hierboven eens door — of [stuur ons een berichtje](/contact). Dan kijken we vrijblijvend mee en zeggen we eerlijk wat wél en niet nodig is. Zo doen we dat bij [MTB Bouw Afbouwstudio](/afbouwstudio): eerst normaal uitleggen, dan pas bouwen.
+Twijfel je waar je bij jouw kantoor moet beginnen? Loop de checklist hierboven eens door — of [stuur ons een berichtje](/contact). Dan kijken we vrijblijvend mee en zeggen we eerlijk wat wél en niet nodig is. Zo doen we dat bij [MTB Bouw Zakelijk](/zakelijk): eerst normaal uitleggen, dan pas bouwen.

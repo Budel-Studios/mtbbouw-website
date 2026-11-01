@@ -9,26 +9,26 @@ clientType: "Zakelijk"
 featured: true
 spotlight: true
 cover: "/images/projects/broodbode-zwolle-lunchroom/01-counter.jpg"
-coverAlt: "Verlichte counter met houten lamellen en het logo van De Broodbode in Zwolle, afgebouwd door Afbouwstudio (MTB Bouw)"
+coverAlt: "Verlichte counter met houten lamellen en het logo van De Broodbode in Zwolle, afgebouwd door MTB Bouw"
 coverPosition: "50% 66%"
-intro: "Een lege betonnen doos aan de Schuurmansstraat. Zeven weken later: een lunchroom waar de focaccia's over de toonbank vliegen. Dit is het casco-naar-turn-key-werk waar ons label Afbouwstudio voor bestaat."
+intro: "Een lege betonnen doos aan de Schuurmansstraat. Zeven weken later: een lunchroom waar de focaccia's over de toonbank vliegen. Van casco tot gebruiksklaar: zo bouwen we voor ondernemers."
 gallery:
   - src: "/images/projects/broodbode-zwolle-lunchroom/cover.jpg"
-    alt: "Interieur van lunchroom De Broodbode in Zwolle, afgebouwd door Afbouwstudio (MTB Bouw)"
+    alt: "Wandkast met hanglamp en lange tafel in lunchroom De Broodbode Zwolle, afgebouwd door MTB Bouw"
     phase: "eind"
   - src: "/images/projects/broodbode-zwolle-lunchroom/02.jpg"
-    alt: "Counter en zitgedeelte van De Broodbode Zwolle"
-    phase: "eind"
+    alt: "Vakman richt de houten wandkast in tijdens de afbouw van De Broodbode Zwolle"
+    phase: "tijdens"
   - src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg"
     alt: "Sfeervol interieur met akoestisch plafond bij De Broodbode Zwolle"
     phase: "eind"
   - src: "/images/projects/broodbode-zwolle-lunchroom/04.jpg"
-    alt: "Afbouwwerkzaamheden in het casco-pand van De Broodbode Zwolle"
-    phase: "tijdens"
+    alt: "Gastruimte van De Broodbode Zwolle met lambrisering langs de counter"
+    phase: "eind"
 materials: ["Tegelwerk vloer & wanden", "Maatwerk counter", "Akoestisch plafond", "Verlichtingsplan", "Sanitair"]
 relatedServices:
-  - { href: "/afbouwstudio/horeca-verbouwen", label: "Horeca verbouwen" }
-  - { href: "/afbouwstudio", label: "Afbouwstudio" }
+  - { href: "/zakelijk/horeca-verbouwen", label: "Horeca afbouw & verbouwen" }
+  - { href: "/zakelijk", label: "Zakelijk verbouwen" }
 tags: [horeca, zwolle, afbouw, casco]
 draft: false
 ---
@@ -50,4 +50,4 @@ Tijdens het eerste pandbezoek legden we met onze eigen app elke wand, vloer en p
 
 Opgeleverd vóór de opening. Een zaak met de warme uitstraling van een ambachtelijke bakker, gebouwd op een strakke planning. De Broodbode was zo tevreden dat we daarna ook [hun vestiging in Apeldoorn volledig mochten transformeren](/projecten/broodbode-apeldoorn-lunchroom) tot huiskamer-lunchroom.
 
-Zelf een horecazaak of casco pand af te bouwen? Bekijk [horeca verbouwen](/afbouwstudio/horeca-verbouwen) of plan direct een intake via [Afbouwstudio](/afbouwstudio).
+Zelf een horecazaak of casco pand af te bouwen? Bekijk [horeca afbouw en verbouwen](/zakelijk/horeca-verbouwen) of lees meer over [zakelijk verbouwen](/zakelijk).

@@ -392,6 +392,52 @@ export function JobPostingJsonLd({
   );
 }
 
+/**
+ * WebPage of CollectionPage — beschrijft de pagina zelf en koppelt die aan de
+ * website en aan MTB Bouw (vaste @id's). Met `parts` komt er een ItemList bij
+ * van de onderliggende pagina's, bijvoorbeeld de twee zakelijke diensten.
+ */
+export function WebPageJsonLd({
+  type = "WebPage",
+  name,
+  description,
+  url,
+  parts,
+}: {
+  type?: "WebPage" | "CollectionPage";
+  name: string;
+  description: string;
+  url: string;
+  parts?: { name: string; url: string }[];
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": type,
+        "@id": `${site.url}${url}#webpage`,
+        name,
+        description,
+        url: `${site.url}${url}`,
+        inLanguage: "nl-NL",
+        isPartOf: { "@id": `${site.url}/#website` },
+        about: { "@id": ORG_ID },
+        ...(parts && {
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: parts.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: p.name,
+              url: `${site.url}${p.url}`,
+            })),
+          },
+        }),
+      }}
+    />
+  );
+}
+
 /** BreadcrumbList — helpt Google de sitestructuur begrijpen. */
 export function BreadcrumbJsonLd({
   items,

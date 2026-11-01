@@ -98,5 +98,5 @@ Doelgroep: alles `thuis`, behalve "Plafonds 80 appartementen" en "Casco bedrijfs
 
 - ✅ De twee ISDE-artikelen zijn samengevoegd in `isde-subsidie-uitgelegd`; de oude URL verwijst door (301).
 - `wat-kost-een-aanbouw-2026` in januari bijwerken naar 2027 en uitbreiden met rekenvoorbeelden.
-- `kantoor-verbouwen-kosten-2026` is offline gehaald (nov 2026): geen m²-prijzen voor panden. De URL verwijst door naar /afbouwstudio/kantoor-verbouwen.
+- `kantoor-verbouwen-kosten-2026` is offline gehaald (nov 2026): geen m²-prijzen voor panden. De URL verwijst door naar /zakelijk/bedrijfspand-verbouwen.
 - `kozijnen-vervangen-wanneer` gebruikt nog een placeholderfoto.
