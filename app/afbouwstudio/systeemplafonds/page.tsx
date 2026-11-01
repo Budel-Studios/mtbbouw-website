@@ -13,7 +13,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Systeemplafonds voor kantoren | Afbouwstudio — MTB Bouw" },
   description:
-    "Systeemplafonds voor kantoren, winkels en horeca in Twente: akoestisch, met LED-verlichting en klimaat. Geplaatst in dagen, vaste prijs.",
+    "Systeemplafonds voor kantoren, winkels en horeca in Twente: akoestisch, met LED-verlichting en klimaat. Gespecificeerde offerte na een intake.",
   alternates: { canonical: "/afbouwstudio/systeemplafonds" },
 };
 
@@ -44,7 +44,7 @@ export default function SysteemplafondsPage() {
         eyebrow="Afbouwstudio · Plafonds"
         title="Systeemplafonds: rust, licht en techniek in één plafond"
         intro="Een systeemplafond is de snelste verbetering van een werkruimte: de galm verdwijnt, de verlichting wordt in één keer goed en alle techniek blijft bereikbaar. Afbouwstudio plaatst (akoestische) systeemplafonds in kantoren, winkels en horeca — zoals het zwarte akoestiekplafond bij De Broodbode."
-        cta={<ArrowLink drawer onDark>Vraag een vaste prijs aan</ArrowLink>}
+        cta={<ArrowLink drawer onDark>Vraag een offerte aan</ArrowLink>}
       />
 
       <FeatureGrid
@@ -76,10 +76,9 @@ export default function SysteemplafondsPage() {
             Wat kost een systeemplafond?
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-            Als marktindicatie (2026) kost een standaard systeemplafond circa
-            €40–80 per m²; inclusief LED-verlichting reken je op €65–120 per
-            m². Een gemiddelde kantoorvloer is in enkele dagen voorzien — vaak
-            gecombineerd met{" "}
+            Dat hangt af van het type plaat, de verlichting en installaties
+            erboven, en of er een oud plafond uit moet. Een prijs per m² zegt
+            daarom weinig. We plaatsen plafonds vaak samen met{" "}
             <Link href="/afbouwstudio/metal-stud-wanden" className="font-semibold text-ink underline hover:text-navy">
               metal stud-wanden
             </Link>{" "}
@@ -87,11 +86,7 @@ export default function SysteemplafondsPage() {
             <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
               kantoorverbouwing
             </Link>
-            . Zie ook de{" "}
-            <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-              kostengids 2026
-            </Link>
-            .
+            . Na een intake ontvang je een gespecificeerde offerte.
           </p>
         </div>
       </section>
@@ -110,14 +105,13 @@ export default function SysteemplafondsPage() {
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
           <p className="eyebrow text-white/65">
-            Vaste prijs
+            Offerte
           </p>
           <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
             Plafond aan vervanging toe?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            Stuur de oppervlakte en een paar foto&apos;s of plan een intake —
-            binnen 5 werkdagen ligt er een vaste prijs.
+            Stuur de oppervlakte en een paar foto&apos;s of plan een intake. Daarna volgt een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

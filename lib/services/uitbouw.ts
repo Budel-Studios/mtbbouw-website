@@ -4,9 +4,9 @@ import { sharedPillars } from "./types";
 export const uitbouwData: ServiceData = {
   slug: "/aanbouw-uitbouw",
   seo: {
-    title: "Aanbouw & uitbouw Enschede & Twente | MTB Bouw vaste prijs",
+    title: "Aanbouw & uitbouw in Enschede & Twente | MTB Bouw",
     description:
-      "Aanbouw of uitbouw plannen in Enschede, Hengelo of Twente? MTB Bouw realiseert je extra ruimte met één team, vaste prijs en duidelijke planning.",
+      "Aanbouw of uitbouw plannen in Enschede, Hengelo of Twente? MTB Bouw realiseert je extra ruimte met één team, een heldere offerte en een duidelijke planning.",
     canonical: "/aanbouw-uitbouw",
     focusKeyword: "aanbouw Enschede",
   },
@@ -22,7 +22,7 @@ export const uitbouwData: ServiceData = {
     stats: [
       { value: "1 aanspreekpunt", label: "Mathijs of Robbert" },
       { value: "Twente-breed", label: "Enschede tot Oldenzaal" },
-      { value: "Vaste prijs", label: "Geen meerwerk-verrassingen" },
+      { value: "Heldere offerte", label: "Meerwerk alleen na akkoord" },
     ],
   },
   subServices: {
@@ -86,11 +86,11 @@ export const uitbouwData: ServiceData = {
     h2: "De 5 vragen die we bij elke uitbouw krijgen",
     items: [
       { q: "Wat kost een uitbouw in Enschede of Twente?",
-        a: "Als indicatie: €2.200 tot €3.200 per m² inclusief btw, afhankelijk van afwerking, dakvorm en isolatie. Voor 20 m² kom je dan rond €45.000 tot €65.000. Na de intake krijg je een vaste prijs op maat." },
+        a: "Als indicatie: €2.200 tot €3.200 per m² inclusief btw, afhankelijk van afwerking, dakvorm en isolatie. Voor 20 m² kom je dan rond €45.000 tot €65.000. Na de intake krijg je een gespecificeerde offerte op maat." },
       { q: "Hoe lang duurt het bouwen van een uitbouw?",
         a: "Reken op 8 tot 14 weken uitvoering, afhankelijk van de grootte en de fundering. In houtskeletbouw gaat het sneller: onze uitbouw in Enschede stond er in vijf weken. Je krijgt de planning vooraf en we houden je wekelijks op de hoogte." },
       { q: "Heb ik een vergunning nodig voor een uitbouw?",
-        a: "Vaak niet. Een uitbouw aan de achterkant is meestal vergunningvrij als hij in het achtererfgebied staat, niet dieper is dan 4 meter vanaf de oorspronkelijke achtergevel en binnen de hoogte-eisen blijft. Gemeenten kunnen in hun omgevingsplan eigen regels hebben, dus we checken het altijd voor jouw adres. Is er wel een vergunning nodig, dan regelen wij de aanvraag." },
+        a: "Vaak niet, maar een vaste maat die overal geldt is er niet. Het hangt af van onder meer waar op het erf de uitbouw komt, hoe diep en hoe hoog hij wordt, hoeveel er al gebouwd is en wat het omgevingsplan van je gemeente zegt. Doe voor een eerste beeld de Vergunningcheck in het Omgevingsloket; wij checken het altijd voor jouw adres. Ook zonder vergunning gelden de technische bouwregels. Is er wel een vergunning nodig, dan regelen wij de aanvraag." },
       { q: "Kan ik in mijn huis blijven wonen tijdens de uitbouw?",
         a: "Meestal wel. We schermen de werkzone af, beperken stof en geluid, en houden het openmaken van de bestaande gevel zo kort mogelijk." },
       { q: "Verhoogt een uitbouw de waarde van mijn woning?",
@@ -101,7 +101,7 @@ export const uitbouwData: ServiceData = {
   cta: {
     h2: "Klaar om je woning ruimer te maken?",
     subtitle:
-      "Plan een vrijblijvende intake. We komen langs, leggen alles vast met onze app, en sturen binnen 5 werkdagen een vaste offerte.",
+      "Plan een vrijblijvende intake. We komen langs, leggen alles vast met onze app, en sturen daarna een gespecificeerde offerte.",
     primaryCta: { label: "Plan intake", href: "/contact" },
     secondaryCta: { label: "Bel direct: 053 206 50 71", href: "tel:+31532065071" },
     note: "Of mail naar info@mtbbouw.com — we reageren binnen één werkdag.",

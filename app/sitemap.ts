@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { portfolio } from "#site/content";
 import { existingHubs, hubArticles, hubPath, publishedArticles } from "@/lib/kennisbank";
 import { site } from "@/lib/site";
+import { jobPath, openJobs } from "@/lib/jobs";
 
 // Genereert sitemap.xml automatisch bij elke build.
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -63,6 +64,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  // Alleen bevestigd openstaande vacatures hebben een eigen pagina.
+  const jobRoutes = openJobs().map((job) => ({
+    url: `${site.url}${jobPath(job.slug)}`,
+    lastModified: job.datePosted,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
+
   const staticRoutes = [
     ...["", "/diensten", "/projecten", "/kennisbank", "/contact"].map((path) => ({
       url: `${site.url}${path}`,
@@ -112,5 +121,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticRoutes, ...articleRoutes, ...hubRoutes, ...projectRoutes];
+  return [...staticRoutes, ...articleRoutes, ...hubRoutes, ...projectRoutes, ...jobRoutes];
 }

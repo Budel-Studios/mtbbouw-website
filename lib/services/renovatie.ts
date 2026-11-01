@@ -4,7 +4,7 @@ import { sharedPillars } from "./types";
 export const renovatieData: ServiceData = {
   slug: "/verbouwing",
   seo: {
-    title: "Verbouwing in Enschede & Twente | MTB Bouw — vaste prijs",
+    title: "Verbouwing in Enschede & Twente | MTB Bouw",
     description:
       "Verbouwen of renoveren in Enschede en Twente? MTB Bouw begeleidt je verbouwing van eerste idee tot oplevering. Eén team, eerlijke prijs, geen gedoe.",
     canonical: "/verbouwing",
@@ -93,15 +93,15 @@ export const renovatieData: ServiceData = {
         a: "Bij een badkamer- of keukenrenovatie meestal wel. Bij een totaalrenovatie raden we aan om tijdelijk elders te verblijven (4–8 weken intensief werk). We bespreken de mogelijkheden vooraf." },
       { q: "Doen jullie ook monumentale renovaties?",
         a: "We werken graag aan woningen met karakter. De Van Zantinge-villa in Enschede renoveerden we in overleg met welstand. Bij een monument stemmen we het plan vooraf af met de gemeente, zodat je vergunning rond komt." },
-      { q: "Krijg ik een vaste prijs of richtprijs?",
-        a: "Wij werken met vaste aanneemsommen waar het kan. Bij oudere woningen reserveren we een transparante post voor onvoorzien (asbest, fundering) — vooraf besproken en onderbouwd." },
+      { q: "Krijg ik een vaste prijs of een richtprijs?",
+        a: "Je krijgt een gespecificeerde offerte voor de afgesproken werkzaamheden, geen losse richtprijs. Bij oudere woningen nemen we een stelpost op voor onvoorzien, zoals asbest of fundering; die bespreken en onderbouwen we vooraf. Wijzigingen in werk, prijs en planning bespreken we altijd eerst met je." },
     ],
     fullFaqLink: "/veelgestelde-vragen",
   },
   cta: {
     h2: "Klaar om jouw huis te transformeren?",
     subtitle:
-      "Plan een vrijblijvende intake. We komen langs, leggen alles vast met onze app en sturen binnen 5 werkdagen een vaste offerte.",
+      "Plan een vrijblijvende intake. We komen langs, leggen alles vast met onze app en sturen daarna een gespecificeerde offerte.",
     primaryCta: { label: "Plan intake", href: "/contact" },
     secondaryCta: { label: "Bel direct: 053 206 50 71", href: "tel:+31532065071" },
     note: "Of mail naar info@mtbbouw.com — we reageren binnen één werkdag.",

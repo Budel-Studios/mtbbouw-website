@@ -12,23 +12,24 @@ import { ServiceAreaLinks } from "@/components/sections/service-area-links";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { HammerIcon, ShieldIcon, LayersIcon } from "@/components/icons";
 import { faqNieuwbouw } from "@/lib/faq";
+import { garantieTekst } from "@/lib/facts";
 
 export const metadata: Metadata = {
   title: "Nieuwbouw in Enschede en Twente",
   description:
-    "Energiezuinige nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een vaste opleverdatum en heldere garantieafspraken.",
+    "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een gespecificeerde offerte, een heldere planning en heldere garantieafspraken.",
   alternates: { canonical: "/nieuwbouw" },
   openGraph: {
     type: "website",
     title: "Nieuwbouw in Enschede en Twente | MTB Bouw",
-    description: "Energiezuinige nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een vaste opleverdatum en heldere garantieafspraken.",
+    description: "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een gespecificeerde offerte, een heldere planning en heldere garantieafspraken.",
     url: "/nieuwbouw",
   },
 };
 
 export default function NieuwbouwPage() {
   // Echt bouwwerk van de grond af en grote bouwstromen, niet zomaar de nieuwste drie.
-  const relatedProjects = ["bedrijfshal-borne", "uitbouw-houtskeletbouw-enschede", "dubbele-uitbouw-enschede"]
+  const relatedProjects = ["overkapping-paardenstal-enschede", "uitbouw-houtskeletbouw-enschede", "dubbele-uitbouw-enschede"]
     .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
@@ -60,13 +61,13 @@ export default function NieuwbouwPage() {
         items={[
           {
             icon: ShieldIcon,
-            title: "Vaste prijs én opleverdatum",
-            text: "Een aannemingsovereenkomst met vaste aanneemsom, vaste opleverdatum en heldere garantieafspraken.",
+            title: "Prijs en planning op papier",
+            text: "Een aannemingsovereenkomst met de aanneemsom, stelposten en uitsluitingen op een rij, een planning met de beoogde opleverdatum en heldere garantieafspraken.",
           },
           {
             icon: LayersIcon,
-            title: "Energiezuinig standaard",
-            text: "Nieuwbouw voldoet aan BENG: warmtepomp, triple glas, balansventilatie en isolatiewaarden vanaf Rc 6,3.",
+            title: "Bijna energieneutraal (BENG)",
+            text: "Nieuwbouw moet voldoen aan de BENG-eisen. Welke mix van isolatie, glas, ventilatie en installaties daarbij past, kiezen we per ontwerp.",
           },
           {
             icon: HammerIcon,
@@ -79,7 +80,7 @@ export default function NieuwbouwPage() {
       <SplitSection
         eyebrow="Van kavel tot sleutel"
         title="Eén team dat alles regelt"
-        image={{ src: "/images/projects/bedrijfshal-borne.webp", alt: "Nieuwbouwproject van MTB Bouw" }}
+        image={{ src: "/images/projects/overkapping-paardenstal-enschede/04.jpg", alt: "Nieuwe overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw" }}
         cta={{ href: "/hoe-wij-werken", label: "Zo werken wij" }}
       >
         <p>
@@ -98,17 +99,15 @@ export default function NieuwbouwPage() {
         eyebrow="Zeker bouwen"
         title="Garanties en vergunningen goed geregeld"
         imageSide="left"
-        image={{ src: "/images/projects/bedrijfshal-borne.webp", alt: "Nieuwbouw van een bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering" }}
+        image={{ src: "/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg", alt: "Uitbouw in houtskeletbouw in Enschede, opnieuw opgebouwd door MTB Bouw" }}
       >
         <p>
           <strong>Vergunningen.</strong> De omgevingsvergunning heeft een
           doorlooptijd van 8 tot 26 weken. Wij begeleiden de aanvraag en stemmen
-          het ontwerp af op het bestemmingsplan.
+          het ontwerp af op het omgevingsplan van de gemeente.
         </p>
         <p>
-          <strong>Garanties.</strong> Op de uitvoering geven we 1 jaar
-          garantie, tenzij we in de overeenkomst iets anders afspreken. Op
-          materialen geldt de garantie van de fabrikant of leverancier.
+          <strong>Garanties.</strong> {garantieTekst}
         </p>
         <p>
           <strong>Fundering en grond.</strong> Betonnen strookfundering bij

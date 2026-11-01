@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { publishedProjects } from "@/lib/projects";
-import {
-  BreadcrumbJsonLd,
-  JobPostingJsonLd,
-  FaqJsonLd,
-} from "@/components/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { FeatureGrid } from "@/components/sections/feature-grid";
 import { SplitSection } from "@/components/sections/split-section";
@@ -30,7 +26,7 @@ import {
   CupIcon,
 } from "@/components/icons";
 import { faqWerkenBij } from "@/lib/faq";
-import { jobs } from "@/lib/jobs";
+import { openJobs, visibleJobs } from "@/lib/jobs";
 import { getAsset } from "@/lib/assets";
 
 export const metadata: Metadata = {
@@ -48,6 +44,8 @@ export const metadata: Metadata = {
 };
 
 export default async function WerkGenoegPage() {
+  const jobs = visibleJobs();
+  const hasOpen = openJobs().length > 0;
   const mathijs = await getAsset("team-mathijs", "/images/team/mathijs.webp");
   const projects = publishedProjects().slice(0, 6);
 
@@ -60,25 +58,14 @@ export default async function WerkGenoegPage() {
         ]}
       />
       <FaqJsonLd items={faqWerkenBij} />
-      {jobs.map((job) => (
-        <JobPostingJsonLd
-          key={job.slug}
-          title={job.title}
-          description={job.intro}
-          datePosted={job.datePosted}
-          validThrough={job.validThrough}
-          employmentType={job.employmentType}
-          salaryMin={job.salaryMin}
-          salaryMax={job.salaryMax}
-        />
-      ))}
+      {/* Geen JobPosting op het overzicht: die staat op /werkgenoeg/[slug]. */}
 
       {/* HERO */}
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Timmerman van MTB Bouw aan het werk op de bouwplaats",
+          src: "/images/mtb-bouw-bus.webp",
+          alt: "Vakman van MTB Bouw laadt materiaal op de bedrijfsbus",
         }}
         eyebrow="Werken bij MTB Bouw"
         title="Werk genoeg. Zin om mee te bouwen?"
@@ -260,11 +247,17 @@ export default async function WerkGenoegPage() {
       <section id="vacatures" className="scroll-mt-20 bg-paper">
         <div className="container-page py-20 md:py-28">
           <p className="eyebrow text-stone">
-            Openstaande functies
+            {hasOpen ? "Openstaande functies" : "Functies bij MTB Bouw"}
           </p>
           <h2 className="display mt-4 text-4xl md:text-5xl">
-            Waar we nu naar op zoek zijn
+            {hasOpen ? "Waar we nu naar op zoek zijn" : "Waar we graag mensen voor zoeken"}
           </h2>
+          {!hasOpen && (
+            <p className="mt-5 max-w-2xl leading-relaxed text-stone">
+              Benieuwd of een van deze functies op dit moment openstaat? Bel of
+              app ons, of stuur een open sollicitatie.
+            </p>
+          )}
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             {jobs.map((job) => (
               <JobCard key={job.slug} job={job} />

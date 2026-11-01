@@ -13,7 +13,7 @@ import {
 
 const title = "Diensten: verbouw, uitbouw & afbouw in Twente | MTB Bouw";
 const description =
-  "Wat MTB Bouw bouwt in Twente: renovatie, aanbouw en uitbouw, nieuwbouw, kozijnen, prefab en zakelijke afbouw. Vast team uit Enschede, vaste prijs vooraf.";
+  "Wat MTB Bouw bouwt in Twente: renovatie, aanbouw en uitbouw, nieuwbouw, kozijnen, prefab en zakelijke afbouw. Vast team uit Enschede, heldere offerte.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -70,8 +70,8 @@ const diensten: ProjectCardData[] = [
     location: "Thuis & zakelijk",
     images: [
       {
-        src: "/images/projects/bedrijfshal-borne.webp",
-        alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering",
+        src: "/images/projects/overkapping-paardenstal-enschede/04.jpg",
+        alt: "Nieuwe overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw",
       },
     ],
   },
@@ -316,8 +316,8 @@ export default function DienstenPage() {
             </p>
             <p>
               Na een kennismaking bij jou thuis of op de zaak krijg je een
-              offerte met een vaste prijs, volledig gespecificeerd. Zo weet je
-              vooraf wat er wel gebeurt, en ook wat niet. Hoe dat verder loopt,
+              gespecificeerde offerte. Zo weet je vooraf wat er wel gebeurt, en
+              ook wat niet. Meerwerk doen we alleen na jouw akkoord. Hoe dat verder loopt,
               lees je bij{" "}
               <Link href="/hoe-wij-werken" className="font-semibold text-ink underline hover:text-navy">
                 hoe wij werken

@@ -11,6 +11,12 @@ cover: /images/projects/dubbele-uitbouw-enschede/cover.webp
 coverAlt: "Dubbele uitbouw aan een woning in Enschede, gebouwd door MTB Bouw"
 tags: ["uitbouw", "aanbouw", "verbouwen", "prefab", "vergunning", "fundering"]
 projects: [broodbode-zwolle-lunchroom]
+updated: 2026-11-01
+sources:
+  - title: "IPLO: informatie voor particulieren over aanbouw, uitbouw of bijgebouw"
+    url: https://iplo.nl/thema/bouw/bouwen-vergunning-melding/bijbehorende-bouwwerken/informatie-particulieren/
+  - title: "Omgevingsloket: Vergunningcheck"
+    url: https://omgevingswet.overheid.nl/checken
 draft: false
 ---
 
@@ -34,7 +40,7 @@ Geen zorgen, dat leggen we uit. In deze gids nemen we je mee door het hele verha
 
 ## Wanneer is een uitbouw slim (en wanneer niet)?
 
-De klassieke afweging: verhuizen of verbouwen. Verhuizen kost je overdrachtsbelasting, makelaarskosten, een verhuizing én — vaak vergeten — je huidige lage hypotheekrente. Een [uitbouw](/aanbouw-uitbouw) kost geld, maar dat geld gaat grotendeels in je eigen stenen zitten. De waardestijging van je woning is doorgaans 70 tot 90% van de bouwkosten. Je "verliest" dus maar een klein deel, en je woont ondertussen wel een stuk fijner.
+De klassieke afweging: verhuizen of verbouwen. Verhuizen kost je overdrachtsbelasting, makelaarskosten, een verhuizing én — vaak vergeten — je huidige lage hypotheekrente. Een [uitbouw](/aanbouw-uitbouw) kost geld, maar dat geld gaat wel in je eigen huis zitten. Een uitbouw kan de woningwaarde verhogen; hoeveel, hangt af van de woning, de locatie en de uitvoering. En je woont ondertussen wel een stuk fijner.
 
 Een uitbouw is meestal slim als:
 
@@ -69,11 +75,11 @@ Het complete rekenwerk — wat zit er in die prijs, waar zitten de knoppen om aa
 
 ## Uitbouw vergunningvrij: mag dat?
 
-Vaak wel! Een uitbouw aan het achtererf is in veel gevallen **vergunningvrij tot ongeveer 30 m²**, onder voorwaarden. Denk aan: het moet aan de achterkant, binnen bepaalde hoogtes, en niet bij een monument of beschermd stadsgezicht.
+Vaak wel, maar een vaste maat die overal geldt is er niet. Of jouw uitbouw vergunningvrij kan, hangt af van onder meer waar op het erf hij komt (meestal het achtererfgebied), hoe diep en hoe hoog hij wordt, hoeveel er al gebouwd is, waarvoor je hem gebruikt en wat het omgevingsplan van je gemeente zegt. Bij een monument of in een beschermd stadsgezicht gelden vaak extra regels. IPLO zet het op een rij in de [uitleg voor particulieren over aanbouw, uitbouw of bijgebouw](https://iplo.nl/thema/bouw/bouwen-vergunning-melding/bijbehorende-bouwwerken/informatie-particulieren/).
 
 Waarschijnlijk vraag je je nu af: hoe weet ik of mijn situatie eronder valt? Zo check je het:
 
-1. Doe de vergunningcheck op omgevingswet.overheid.nl
+1. Doe de [Vergunningcheck in het Omgevingsloket](https://omgevingswet.overheid.nl/checken)
 2. Kijk in het omgevingsplan van je gemeente (kan afwijkende regels bevatten)
 3. Twijfel je? Bel de gemeente — of vraag het ons, wij doen deze check bij elke offerte standaard
 
@@ -103,7 +109,7 @@ Meer weten over het verschil? Lees onze pagina over [bouwmethodes](/bouwmethodes
 Hoe lang duurt een uitbouw nou echt? Van eerste gesprek tot oplevering reken je op **8 tot 14 weken bouwtijd**, plus de voorbereiding daarvoor. Zo ziet het traject eruit:
 
 1. **Kennismaking en schets (week 0).** We komen langs, kijken naar je huis en je tuin, en praten over wat je wilt. Aan de keukentafel, letterlijk.
-2. **Ontwerp en offerte (2–4 weken).** Tekeningen, materiaalkeuzes en een vaste projectprijs. Geen stelposten waar je later van schrikt.
+2. **Ontwerp en offerte (2–4 weken).** Tekeningen, materiaalkeuzes en een gespecificeerde offerte. Stelposten staan er duidelijk in, zodat je later niet schrikt.
 3. **Vergunning of check (0–8 weken).** Vergunningvrij? Dan alleen de bouwtechnische check. Anders vraagt onze werkvoorbereider (dat is Robbert) de vergunning aan.
 4. **Grondonderzoek en constructie (parallel).** Sondering en constructieberekening — hierover zo meer.
 5. **Werkvoorbereiding en inkoop (4–8 weken).** Kozijnen, staal en prefab-elementen hebben levertijd. Dit loopt grotendeels parallel met stap 3.
@@ -159,7 +165,7 @@ Reken op 8 tot 14 weken bouwtijd. Kies je voor prefab, dan staat de ruwbouw vaak
 
 ### Is een uitbouw van 3 meter vergunningvrij?
 
-Vaak wel, als hij aan het achtererf komt en binnen de voorwaarden blijft (maximale hoogte, totaal bebouwd oppervlak tot ±30 m², geen monument). Check het altijd even via omgevingswet.overheid.nl of vraag het ons — wij nemen die check standaard mee.
+Vaak wel, maar de diepte alleen bepaalt het niet. Het hangt ook af van de plek op het erf, de hoogte, wat er al gebouwd is en het omgevingsplan van je gemeente. Check het via de [Vergunningcheck](https://omgevingswet.overheid.nl/checken) of vraag het ons: wij nemen die check standaard mee.
 
 ### Wat kost een uitbouw per m²?
 
@@ -179,14 +185,14 @@ Dat kan, want de ruimte wordt dieper. De oplossing zit meestal in het dak van de
 
 ### Stijgt mijn huis in waarde door een uitbouw?
 
-Doorgaans komt 70 tot 90% van de bouwkosten terug in de woningwaarde. Je woont dus niet alleen fijner, het grootste deel van je investering zit gewoon in je huis. Vergelijk dat eens met de kosten van verhuizen.
+Een uitbouw kan de woningwaarde verhogen. Hoeveel dat is, hangt onder meer af van de woning, de locatie, de extra gebruiksruimte en de kwaliteit van de uitvoering. Voor een inschatting van jouw situatie is een taxatie nodig.
 
 ## Samenvatting
 
-- Een uitbouw is vaak slimmer dan verhuizen: 70–90% van de bouwkosten komt terug in je woningwaarde
+- Een uitbouw is vaak een goed alternatief voor verhuizen; wat het aan woningwaarde toevoegt, verschilt per woning
 - 3 meter diep over 5 meter breed = 15 m² erbij, en het voelt als meer
 - Reken op €2.200–3.200 per m² incl. btw; details in de [kostengids](/kennisbank/wat-kost-een-aanbouw-2026)
-- Achtererf tot ±30 m² is vaak vergunningvrij — maar altijd checken
+- Aan de achterkant is een uitbouw vaak vergunningvrij, maar dat hangt af van je situatie en je gemeente: altijd checken
 - Prefab ruwbouw staat vaak binnen een week; totale bouwtijd 8–14 weken
 - Grondonderzoek en goede isolatie zijn de twee dingen waar je nooit op bezuinigt
 

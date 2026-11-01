@@ -21,12 +21,12 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio" },
   description:
-    "Kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Door Afbouwstudio (MTB Bouw). Vaste prijs binnen 5 werkdagen.",
+    "Kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Door Afbouwstudio (MTB Bouw). Gespecificeerde offerte na een intake op locatie.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen" },
   openGraph: {
     type: "website",
     title: "Kantoor verbouwen in Enschede & Twente | Afbouwstudio",
-    description: "Kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Door Afbouwstudio (MTB Bouw). Vaste prijs binnen 5 werkdagen.",
+    description: "Kantoorafbouw van casco tot turn-key in Twente, Deventer, Apeldoorn en Zwolle. Door Afbouwstudio (MTB Bouw). Gespecificeerde offerte na een intake op locatie.",
     url: "/afbouwstudio/kantoor-verbouwen",
   },
 };
@@ -92,12 +92,12 @@ export default function KantoorVerbouwenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Kantoorafbouw door Afbouwstudio, het zakelijke label van MTB Bouw",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Kantoorafbouw"
         title="Kantoor verbouwen in Enschede en Twente: van casco tot turn-key"
-        intro="Een kantoor verbouwen betekent voor ons: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt — met een vaste prijs binnen vijf werkdagen na de intake. Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede, werkzaam in heel Oost-Nederland."
+        intro="Een kantoor verbouwen betekent voor ons: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt — met een gespecificeerde offerte na de intake. Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede, werkzaam in heel Oost-Nederland."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>
@@ -158,15 +158,14 @@ export default function KantoorVerbouwenPage() {
                 wanden, geen plafond. Wij nemen de complete afbouw uit handen —
                 van indelingsplan en installaties tot pantry en sanitair. Tijdens
                 het eerste pandbezoek leggen we met onze eigen app elke wand,
-                vloer en plafond vast; binnen vijf werkdagen ligt er een vaste
-                prijs.
+                vloer en plafond vast; daarna volgt een gespecificeerde offerte.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
                   "Eén aanspreekpunt: Mathijs of Robbert",
-                  "Vaste prijs en realistische planning",
-                  "Gefaseerd werken — je kantoor blijft bereikbaar",
-                  "Oplevering met 5 jaar garantie",
+                  "Gespecificeerde offerte en een realistische planning",
+                  "Gefaseerd werken, zodat je kantoor zoveel mogelijk bereikbaar blijft",
+                  "Oplevering met vastgelegde garantieafspraken",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
                     <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-navy" />
@@ -183,17 +182,13 @@ export default function KantoorVerbouwenPage() {
                 Wat kost een kantoorverbouwing?
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
-                Gangbare marktindicaties (2026): een cosmetische opknapbeurt
-                kost circa €150–400 per m², een grondige kantoorrenovatie
-                €300–600 per m², en een complete casco-afbouw tot turn-key
-                kantoor €600–1.500 per m² — afhankelijk van installaties en
-                afwerkingsniveau. In Twente liggen de uitvoeringskosten
-                doorgaans gunstiger dan in de Randstad.
+                Dat hangt af van het pand, de installaties en het
+                afwerkingsniveau. Een prijs per m² zegt daarom weinig: we
+                rekenen jouw situatie uit na een intake op locatie.
               </p>
               <p className="mt-4 leading-relaxed text-stone">
-                Wat jouw pand kost? Na één intake met onze inventarisatie-app
-                ontvang je binnen vijf werkdagen een offerte met vaste prijs —
-                geen stelposten-verrassingen.
+                Wat jouw pand kost? Na één intake op locatie
+                ontvang je een gespecificeerde offerte. Stelposten en uitsluitingen staan er duidelijk in.
               </p>
             </div>
           </div>
@@ -266,8 +261,8 @@ export default function KantoorVerbouwenPage() {
             Kantoorplannen? Plan een intake.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen 7 dagen langs met onze app, leggen alles vast en
-            sturen binnen 5 werkdagen een vaste offerte. Bekijk ook{" "}
+            We komen langs met onze app, leggen alles vast en
+            sturen daarna een gespecificeerde offerte. Bekijk ook{" "}
             <Link href="/afbouwstudio" className="underline hover:text-white">
               alles over Afbouwstudio
             </Link>

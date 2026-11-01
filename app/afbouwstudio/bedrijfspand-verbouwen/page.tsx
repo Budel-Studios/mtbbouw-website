@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Bedrijfspand verbouwen in Twente | Afbouwstudio — MTB Bouw" },
   description:
-    "Bedrijfshallen, werkplaatsen en utiliteitspanden verbouwen in Twente. Vaste prijs en gefaseerd uitgevoerd, terwijl jouw bedrijf gewoon doordraait.",
+    "Bedrijfshallen, werkplaatsen en utiliteitspanden verbouwen in Twente. Gefaseerd uitgevoerd, zodat je bedrijf zoveel mogelijk door kan draaien.",
   alternates: { canonical: "/afbouwstudio/bedrijfspand-verbouwen" },
 };
 
@@ -60,12 +60,12 @@ export default function BedrijfspandVerbouwenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Verbouwd bedrijfspand in Borne door Afbouwstudio (MTB Bouw)",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Bedrijfspanden"
-        title="Bedrijfspand verbouwen in Twente — zonder dat je bedrijf stilvalt"
-        intro="Een bedrijfspand verbouwen betekent bij Afbouwstudio: gefaseerd werken terwijl jouw bedrijfsvoering doordraait, met een vaste prijs binnen vijf werkdagen na de intake. Van bedrijfshal tot utiliteitspand, in Enschede, Twente en heel Oost-Nederland."
+        title="Bedrijfspand verbouwen in Twente — met zo min mogelijk stilstand"
+        intro="Een bedrijfspand verbouwen betekent bij Afbouwstudio: gefaseerd werken, zodat je bedrijfsvoering zoveel mogelijk doorgaat, met een gespecificeerde offerte na de intake. Van bedrijfshal tot utiliteitspand, in Enschede, Twente en heel Oost-Nederland."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>
@@ -124,15 +124,10 @@ export default function BedrijfspandVerbouwenPage() {
                 Wat kost het?
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
-                Als marktindicatie (2026, excl. btw): een opknapbeurt begint
-                rond €150–400 per m², een complete casco-afbouw loopt tot
-                €600–1.500 per m² — afhankelijk van installaties en afwerking.
-                Lees ook onze{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids voor zakelijke verbouwingen
-                </Link>
-                . Na één intake met onze inventarisatie-app ontvang je binnen
-                vijf werkdagen een vaste prijs.
+                Dat hangt af van het pand, de installaties en de afwerking.
+                Een prijs per m² zegt daarom weinig. Na één intake op locatie
+                ontvang je een gespecificeerde offerte, met stelposten en
+                uitsluitingen duidelijk op een rij.
               </p>
             </div>
           </div>
@@ -161,7 +156,7 @@ export default function BedrijfspandVerbouwenPage() {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
             We komen langs met onze app, leggen elke wand, vloer en plafond vast
-            en sturen binnen 5 werkdagen een vaste offerte. Bekijk ook{" "}
+            en sturen daarna een gespecificeerde offerte. Bekijk ook{" "}
             <Link href="/afbouwstudio" className="underline hover:text-white">
               alles over Afbouwstudio
             </Link>

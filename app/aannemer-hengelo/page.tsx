@@ -15,7 +15,7 @@ import { faqAannemerHengelo } from "@/lib/faq";
 
 const title = "Aannemer Hengelo | verbouw, uitbouw & renovatie | MTB Bouw";
 const description =
-  "Bouwbedrijf voor Hengelo: renovatie, uitbouw, kozijnen en verduurzamen. Vast team uit Enschede, een kwartier rijden. Vaste prijs, geen voorrijkosten.";
+  "Bouwbedrijf voor Hengelo: renovatie, uitbouw, kozijnen en verduurzamen. Vast team uit Enschede, een kwartier rijden. Heldere offerte, geen voorrijkosten.";
 const ogImage = "/images/projects/renovatie-villa-zantinge-enschede/06.jpg";
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ const linkClass = "font-semibold text-ink underline hover:text-navy";
 const projectSlugs = [
   "renovatie-villa-zantinge-enschede",
   "uitbouw-houtskeletbouw-enschede",
-  "bedrijfshal-borne",
+  "dubbele-uitbouw-enschede",
 ];
 
 export default function AannemerHengeloPage() {
@@ -155,12 +155,12 @@ export default function AannemerHengeloPage() {
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">
           Voor veel verbouwingen aan de achterkant heb je geen vergunning
           nodig. Wil je aan de voorkant iets veranderen, een dakkapel plaatsen
-          of verder uitbouwen dan 4 meter? Dan gelden de regels uit het
+          of een grotere uitbouw? Dan gelden de regels uit het
           omgevingsplan van de gemeente Hengelo (Overijssel). Die kijken we
           met je na voordat we beginnen, en waar nodig regelen we de aanvraag.
           Zelf alvast kijken kan in het{" "}
           <a
-            href="https://omgevingswet.overheid.nl/"
+            href="https://omgevingswet.overheid.nl/checken"
             target="_blank"
             rel="noopener"
             className={linkClass}
@@ -199,7 +199,7 @@ export default function AannemerHengeloPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Verbouwplannen in Hengelo?"
-        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een offerte met vaste prijs."
+        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

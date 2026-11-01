@@ -55,7 +55,7 @@ function ArrowUpRight({ className = "size-5" }: { className?: string }) {
 
 const TRUST_POINTS = [
   "SBB-erkend leerbedrijf",
-  "Vaste prijs, geen verrassingen",
+  "Heldere offerte vooraf",
   "Werkzaam in heel Twente",
   "Eigen kernteam + lokale partners",
 ];
@@ -122,7 +122,7 @@ const WHY_ITEMS = [
   { title: "Eigen vakmensen", desc: "Een vast kernteam dat elkaar en het werk door en door kent." },
   { title: "Sterk regionaal netwerk", desc: "We werken met vaste, lokale partners uit heel Twente." },
   { title: "Heldere communicatie", desc: "Korte lijnen, snelle antwoorden — bel, app of mail." },
-  { title: "Transparante offertes", desc: "Vaste prijs vooraf. Geen meerwerk-verrassingen achteraf." },
+  { title: "Transparante offertes", desc: "Gespecificeerde offerte vooraf. Meerwerk alleen na jouw akkoord." },
   { title: "Hoogwaardige afwerking", desc: "We leveren pas op als het klopt tot in de laatste hoek." },
 ];
 
@@ -337,10 +337,11 @@ export async function HomeContent({
             <p>
               Die vertrouwde partij willen we voor je zijn. Dat doen we door
               alles goed en duidelijk uit te leggen. Je krijgt een volledig
-              gespecificeerde offerte en een{" "}
-              <Link href="/mijn-blauwdruk" className="link-line text-ink">eigen online omgeving</Link>{" "}
-              waarin staat wat we wel doen, en ook wat niet. Dat laatste is net
-              zo belangrijk.
+              gespecificeerde offerte waarin staat wat we wel doen, en ook wat
+              niet. Dat laatste is net zo belangrijk. Binnenkort zie je dat ook
+              terug in{" "}
+              <Link href="/mijn-blauwdruk" className="link-line text-ink">Mijn Blauwdruk</Link>,
+              je eigen online omgeving.
             </p>
             <p>
               Of je nu wilt{" "}

@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Enschede | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Enschede door Afbouwstudio, het zakelijke label van MTB Bouw. Casco tot turn-key, vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Enschede door Afbouwstudio, het zakelijke label van MTB Bouw. Casco tot turn-key, met een gespecificeerde offerte na de intake.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-enschede" },
 };
 
@@ -29,7 +29,7 @@ export default function KantoorEnschedePage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Enschede"
-        description="Kantoorverbouwing en kantoorafbouw in Enschede door Afbouwstudio (MTB Bouw), gevestigd in Enschede: van herindeling tot complete casco-afbouw met vaste prijs."
+        description="Kantoorverbouwing en kantoorafbouw in Enschede door Afbouwstudio (MTB Bouw), gevestigd in Enschede: van herindeling tot complete casco-afbouw met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-enschede"
         serviceType="Kantoorafbouw"
       />
@@ -38,12 +38,12 @@ export default function KantoorEnschedePage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Kantoorafbouw in Enschede door Afbouwstudio (MTB Bouw)",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Enschede"
         title="Kantoor verbouwen in Enschede — met de afbouwer uit je eigen stad"
-        intro="Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Voor kantoren in onze eigen stad betekent dat: intake bij jou op locatie, vaak nog dezelfde week, snel schakelen tijdens de bouw en één vast aanspreekpunt om de hoek — met een vaste prijs binnen vijf werkdagen."
+        intro="Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Voor kantoren in onze eigen stad betekent dat: intake bij jou op locatie, snel schakelen tijdens de bouw en één vast aanspreekpunt om de hoek, met een gespecificeerde offerte na de intake."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>
@@ -71,9 +71,9 @@ export default function KantoorEnschedePage() {
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
-                  "Gevestigd in Enschede — intake dezelfde week",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
-                  "Gefaseerd werken — je team werkt door",
+                  "Gevestigd in Enschede, intake op locatie",
+                  "Gespecificeerde offerte na de intake",
+                  "Gefaseerd werken, zodat je team zoveel mogelijk door kan werken",
                   "Ook kleinere kantooraanpassingen",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
@@ -96,14 +96,10 @@ export default function KantoorEnschedePage() {
                 en glaswanden,{" "}
                 <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
                 met LED, vloeren, pantry en installaties — of de complete
-                afbouw van casco gehuurde kantoorruimte. Kostenindicaties staan
-                op de{" "}
+                afbouw van casco gehuurde kantoorruimte. Hoe we werken en waar de
+                kosten van afhangen, lees je op de{" "}
                 <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   hoofdpagina kantoor verbouwen
-                </Link>{" "}
-                en in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
                 </Link>
                 .
               </p>
@@ -132,8 +128,8 @@ export default function KantoorEnschedePage() {
             Kantoorplannen in Enschede?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen deze week nog langs, inventariseren alles met onze app en
-            sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app en
+            sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

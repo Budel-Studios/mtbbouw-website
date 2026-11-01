@@ -65,7 +65,7 @@ Elk artikel krijgt vier dingen:
 | btw-9-procent-verbouwen | 9 procent btw verbouwing | — | /verduurzamen-enschede | — |
 | houtcomposiet-gevelbekleding | houtcomposiet gevelbekleding | — | /aanbouw-uitbouw | Leveranciers zoals Finiplus |
 | kozijnen-vervangen-zo-gaat-het | kozijnen vervangen | kozijnen vervangen Enschede | /kozijnen | Eigen montageproces |
-| casco-bedrijfspand-afbouw | casco bedrijfspand afbouw | bedrijfspand verbouwen Twente | /afbouwstudio/bedrijfspand-verbouwen | Project bedrijfshal Borne |
+| casco-bedrijfspand-afbouw | casco bedrijfspand afbouw | bedrijfspand verbouwen Twente | /afbouwstudio/bedrijfspand-verbouwen | — |
 | steenstrips-of-baksteen | steenstrips of baksteen | — | /aanbouw-uitbouw | — |
 | betalingstermijnen-verbouwing | termijnschema aannemer | — | /hoe-wij-werken | — |
 | wonen-tijdens-verbouwing | wonen tijdens verbouwing | — | /wonen-en-verbouwen | — |
@@ -156,7 +156,7 @@ Lokale vindbaarheid leunt op overal exact dezelfde bedrijfsgegevens. Op 2 oktobe
 Stand 2 oktober 2026: ISDE samengevoegd (301 actief), kozijnen-vervangen-wanneer uitgebreid, korte Google-titels toegevoegd. Kosten-artikelen bijwerken staat nog voor januari.
 
 - **ISDE:** `isde-subsidie-uitgelegd` en `verbouwen-en-verduurzamen-isde-2026` concurreren met elkaar. Samenvoegen en de kortste doorverwijzen (301).
-- **Kosten-artikelen** (`wat-kost-een-aanbouw-2026`, `kantoor-verbouwen-kosten-2026`): in januari bijwerken naar 2027 en uitbreiden met rekenvoorbeelden. URL blijft gelijk; titel en `updated` veranderen.
+- **Kostenartikel** `wat-kost-een-aanbouw-2026`: in januari bijwerken naar 2027 en uitbreiden met rekenvoorbeelden. URL blijft gelijk; titel en `updated` veranderen. Het kantoorkostenartikel is offline gehaald (nov 2026, geen m²-prijzen voor panden).
 - **kozijnen-vervangen-wanneer** is dun (1 minuut leestijd). Uitbreiden op de "wanneer"-vraag, zodat het naast kozijnen-vervangen-zo-gaat-het ("hoe") kan bestaan.
 - Interne links toevoegen naar de nieuwe pijlers zodra die live zijn.
 

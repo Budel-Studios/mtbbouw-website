@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Woning verduurzamen in Enschede & Twente | MTB Bouw",
     description:
-      "Isolatie, HR++ of triple glas en dakrenovatie, gecombineerd met je verbouwing. Eén planning, één vaste prijs, hulp bij de ISDE-subsidie.",
+      "Isolatie, HR++ of triple glas en dakrenovatie, gecombineerd met je verbouwing. Eén planning, één offerte, hulp bij de ISDE-subsidie.",
     url: "/verduurzamen",
     images: [
       {
@@ -84,7 +84,7 @@ export default function VerduurzamenPage() {
         }}
         eyebrow="Verduurzamen · Enschede & Twente"
         title="Woning verduurzamen in Enschede en Twente — het slimst tijdens je verbouwing"
-        intro="Verduurzamen is het voordeligst op het moment dat de aannemer er toch al is. MTB Bouw combineert isolatie, beter glas en dakrenovatie met je verbouwing of aanbouw — één planning, één vaste prijs, en hulp bij de ISDE-subsidieaanvraag waar die van toepassing is."
+        intro="Verduurzamen is het voordeligst op het moment dat de aannemer er toch al is. MTB Bouw combineert isolatie, beter glas en dakrenovatie met je verbouwing of aanbouw — één planning, één offerte, en hulp bij de ISDE-subsidieaanvraag waar die van toepassing is."
         cta={<QuoteButton />}
       />
 

@@ -4,6 +4,8 @@
  * indicaties (prijspeil 2026) — bij wijziging hier aanpassen.
  */
 
+import { facts, garantieTekst } from "@/lib/facts";
+
 type Faq = { question: string; answer: string };
 
 /* ------------------------------- Verbouw & renovatie ------------------------------- */
@@ -47,12 +49,12 @@ const faqAanbouw: Faq[] = [
   {
     question: "Wat kost een aanbouw in Enschede of Twente?",
     answer:
-      "Reken indicatief op €2.200 tot €3.200 per m² (incl. btw), afhankelijk van afwerking en constructie. Een aanbouw van 20 m² komt daarmee op circa €45.000 tot €65.000. Je ontvangt altijd een vaste aanneemsom vooraf.",
+      "Reken indicatief op €2.200 tot €3.200 per m² (incl. btw), afhankelijk van afwerking en constructie. Een aanbouw van 20 m² komt daarmee op circa €45.000 tot €65.000. Je ontvangt vooraf een gespecificeerde offerte voor de afgesproken werkzaamheden.",
   },
   {
     question: "Heb ik een vergunning nodig voor een aanbouw?",
     answer:
-      "Vaak niet. Een aanbouw aan de achterkant is meestal vergunningvrij als hij in het achtererfgebied staat, niet dieper is dan 4 meter vanaf de oorspronkelijke achtergevel en binnen de hoogte-eisen blijft. Gemeenten kunnen in hun omgevingsplan eigen regels hebben, dus we checken het altijd voor jouw adres.",
+      "Vaak niet, maar een vaste maat die overal geldt is er niet. Het hangt af van onder meer waar op het erf de aanbouw komt, hoe diep en hoe hoog hij wordt, hoeveel er al gebouwd is en wat het omgevingsplan van je gemeente zegt. Doe voor een eerste beeld de Vergunningcheck in het Omgevingsloket; wij checken het altijd voor jouw adres. Ook zonder vergunning gelden de technische bouwregels.",
   },
   {
     question: "Verhoogt een aanbouw de waarde van mijn woning?",
@@ -60,9 +62,9 @@ const faqAanbouw: Faq[] = [
       "Vaak wel. Extra leefruimte is aantrekkelijk voor kopers. Hoeveel het oplevert hangt af van je woning en de buurt; een taxateur kan dat het best inschatten.",
   },
   {
-    question: "Werken jullie met een vaste prijs?",
+    question: "Weet ik vooraf wat het gaat kosten?",
     answer:
-      "We werken met een vaste aanneemsom. Eventuele stelposten benoemen we transparant in de offerte.",
+      `${facts.offerte.standaard} Meerwerk voeren we alleen uit na jouw akkoord.`,
   },
 ];
 
@@ -107,7 +109,7 @@ const faqKozijnen: Faq[] = [
   {
     question: "Hoe lang duurt het plaatsen?",
     answer:
-      "Een gemiddelde woning is in 2 tot 4 werkdagen voorzien van nieuwe kozijnen. Je woning staat daarbij nooit langer dan enkele uren 'open' — we werken raam voor raam.",
+      "Een gemiddelde woning is in 2 tot 4 werkdagen voorzien van nieuwe kozijnen. Je woning staat daarbij meestal niet langer dan enkele uren 'open' — we werken raam voor raam.",
   },
   {
     question: "Is er subsidie op energiezuinige kozijnen?",
@@ -122,7 +124,7 @@ const faqKozijnen: Faq[] = [
   {
     question: "Welke garantie krijg ik?",
     answer:
-      "10 jaar fabrieksgarantie op kozijn en glas, 5 jaar plaatsingsgarantie van MTB Bouw, en gratis nazorg in het eerste jaar.",
+      `Op kozijn en glas geldt de garantie van de fabrikant; die termijn staat in de offerte. Op de plaatsing geven we garantie volgens de richtlijnen in de bouw. ${facts.garantie.wettelijk}`,
   },
   {
     question: "Kan vervangen zonder schade aan de muur?",
@@ -147,22 +149,22 @@ export const faqNieuwbouw: Faq[] = [
   {
     question: "Welke vergunningen heb ik nodig?",
     answer:
-      "Een omgevingsvergunning voor bouwen, en afhankelijk van de locatie ook voor afwijken van het bestemmingsplan of natuuractiviteiten. De doorlooptijd is 8 tot 26 weken — wij begeleiden dit traject.",
+      "Meestal een omgevingsvergunning voor de bouwactiviteit. Past het plan niet in het omgevingsplan van de gemeente, dan is ook een vergunning voor een omgevingsplanactiviteit nodig, en soms komen er andere activiteiten bij, zoals natuur. De beslistermijn is 8 weken bij de reguliere en 26 weken bij de uitgebreide procedure; de gemeente kan die verlengen. Wij begeleiden dit traject.",
   },
   {
-    question: "Bouwen jullie energieneutraal (BENG)?",
+    question: "Bouwen jullie volgens BENG (bijna energieneutraal)?",
     answer:
-      "Ja. Nieuwbouw moet sinds 2021 voldoen aan de BENG-eisen. Hoe we daar komen, met isolatie, glas, ventilatie en een warmtepomp, stemmen we af op je ontwerp en budget.",
+      "Ja. Nieuwbouw moet sinds 1 januari 2021 voldoen aan de BENG-eisen voor bijna energieneutrale gebouwen. Dat is iets anders dan volledig energieneutraal: BENG stelt grenzen aan de energiebehoefte, het fossiele energiegebruik en het aandeel hernieuwbare energie, en schrijft geen vaste maatregelen voor. Welke mix van isolatie, glas, ventilatie en installaties past, stemmen we af op je ontwerp en budget. Meer uitleg staat op rvo.nl.",
   },
   {
     question: "Wat staat er in de aannemingsovereenkomst?",
     answer:
-      "Wat we bouwen, de vaste prijs, de planning met opleverdatum, de garantie en de afspraken over oplevering en vertraging.",
+      "Wat we bouwen, de aanneemsom met eventuele stelposten, de planning met de beoogde opleverdatum, de garantie en de afspraken over oplevering en eventuele vertraging.",
   },
   {
     question: "Welke garanties krijg ik bij nieuwbouw?",
     answer:
-      "Op de uitvoering geven we 1 jaar garantie, tenzij we in de overeenkomst iets anders afspreken. Op materialen geldt de garantie van de fabrikant of leverancier. Zo staat het ook in onze algemene voorwaarden.",
+      `${garantieTekst} ${facts.nazorg.nabellen}`,
   },
   {
     question: "Kan ik tijdens de bouw nog wijzigen?",
@@ -227,7 +229,7 @@ const faqAfbouw: Faq[] = [
   {
     question: "Welke garantie geldt op afbouwwerk?",
     answer:
-      "5 jaar op stucwerk, tegelwerk en schilderwerk, 10 jaar op vloersystemen en 2 jaar op installaties.",
+      `${garantieTekst} De afspraken voor jouw project staan in de offerte.`,
   },
 ];
 
@@ -242,22 +244,22 @@ const faqBedrijven: Faq[] = [
   {
     question: "Wat kost een bedrijfspand?",
     answer:
-      "Indicatief: een hal €600–€1.100 per m² casco, een kantoor €1.300–€2.000 per m² turn-key. Een hal van 500 m² komt daarmee op circa €300.000 tot €550.000.",
+      "Dat hangt af van het soort pand, de staat waarin het is en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte voor jouw pand.",
   },
   {
     question: "Kunnen jullie verbouwen terwijl mijn bedrijf doordraait?",
     answer:
-      "Ja. We werken in fasen en passen ons aan op openingstijden — 's nachts werken kan ook. Over geluid, stof en bereikbaarheid maken we vooraf duidelijke afspraken.",
+      "Vaak wel. We werken waar het kan in fasen en stemmen de planning af op je openingstijden; werken buiten kantoortijden is bespreekbaar. Over geluid, stof en bereikbaarheid maken we vooraf duidelijke afspraken.",
   },
   {
     question: "Hoe snel kunnen jullie schakelen?",
     answer:
-      "Intake binnen 7 dagen, voorstel met offerte binnen 5 werkdagen. Tijdens de intake leggen we het pand digitaal vast met onze PandScan-app, zodat niets tussen wal en schip valt.",
+      "We plannen een intake op locatie en sturen daarna een gespecificeerde offerte. Tijdens de intake leggen we het pand nauwkeurig vast, zodat niets tussen wal en schip valt.",
   },
   {
     question: "Welke garanties gelden bij bedrijfsbouw?",
     answer:
-      "6 jaar op gebreken in de afwerking, 20 jaar op de constructie, 10 jaar op gevel en dak en 2–10 jaar op installaties. Na oplevering is een onderhoudscontract mogelijk.",
+      `${garantieTekst} De afspraken voor jouw pand leggen we vast in de overeenkomst.`,
   },
   {
     question: "Hoe zit het met veiligheid op de bouwplaats?",
@@ -400,7 +402,7 @@ export const faqAannemerEnschede: Faq[] = [
   {
     question: "Wat kost een aannemer in Enschede per uur of per project?",
     answer:
-      "Wij werken niet met losse uurtjes maar met een vaste projectprijs: je weet vooraf precies waar je aan toe bent. Na een kennismaking en opname op locatie ontvang je een heldere offerte zonder verrassingen achteraf.",
+      "Wij werken niet met losse uurtjes maar met een offerte per project. Na een kennismaking en opname op locatie ontvang je een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk op een rij. Meerwerk doen we alleen na jouw akkoord.",
   },
   {
     question: "Hoe snel kunnen jullie beginnen?",
@@ -448,12 +450,12 @@ export const faqBouwbedrijfEnschede: Faq[] = [
   {
     question: "Geven jullie garantie op het werk?",
     answer:
-      "Ja, op ons werk zit garantie en ook ná de oplevering blijven we bereikbaar voor nazorg. De precieze voorwaarden staan in de offerte, zodat alles vooraf duidelijk is.",
+      `Ja. ${facts.garantie.uitvoering} ${facts.nazorg.nabellen}`,
   },
   {
     question: "Hoe vraag ik een offerte aan?",
     answer:
-      "Bel 053 206 50 71, app ons of vul het contactformulier in. We plannen een vrijblijvende kennismaking, komen langs voor een opname en je ontvangt een offerte met vaste prijs.",
+      "Bel 053 206 50 71, app ons of vul het contactformulier in. We plannen een vrijblijvende kennismaking, komen langs voor een opname en je ontvangt een gespecificeerde offerte.",
   },
 ];
 
@@ -466,7 +468,7 @@ export const faqAannemerTwente: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten binnen Twente?",
     answer:
-      "Nee. We werken met een vaste projectprijs waarin alles is meegenomen — geen aparte voorrijkosten of verrassingen achteraf.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Waarom een aannemer uit de regio kiezen?",
@@ -486,15 +488,15 @@ export const faqAannemerTwente: Faq[] = [
   {
     question: "Hoe snel krijg ik een offerte?",
     answer:
-      "Na de kennismaking en opname op locatie ontvang je binnen enkele werkdagen een heldere offerte met vaste prijs en realistische planning.",
+      "Na de kennismaking en opname op locatie ontvang je een gespecificeerde offerte met een realistische planning.",
   },
 ];
 
 export const faqKantoorVerbouwen: Faq[] = [
   {
-    question: "Wat kost een kantoorverbouwing per m²?",
+    question: "Wat kost een kantoorverbouwing?",
     answer:
-      "Dat hangt sterk af van het startpunt en het afwerkingsniveau. Gangbare marktindicaties (2026) lopen van zo'n €150–400 per m² voor een opknapbeurt tot €600–1.500 per m² voor een complete casco-afbouw. Na een intake met onze inventarisatie-app ontvang je binnen vijf werkdagen een vaste prijs voor jouw pand.",
+      "Dat hangt sterk af van het startpunt, de installaties en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte voor jouw pand.",
   },
   {
     question: "Kunnen jullie verbouwen terwijl ons kantoor in gebruik blijft?",
@@ -504,7 +506,7 @@ export const faqKantoorVerbouwen: Faq[] = [
   {
     question: "Wij huren casco kantoorruimte — regelen jullie de complete afbouw?",
     answer:
-      "Ja, dat is precies ons specialisme: van casco naar turn-key. Metal stud-wanden, systeemplafonds, vloeren, verlichting, pantry en sanitair — één team, één planning, één vaste prijs.",
+      "Ja, dat is precies ons specialisme: van casco naar turn-key. Metal stud-wanden, systeemplafonds, vloeren, verlichting, pantry en sanitair — één team, één planning en één offerte.",
   },
   {
     question: "Hoe lang duurt een kantoorverbouwing?",
@@ -534,12 +536,12 @@ export const faqBedrijfspandVerbouwen: Faq[] = [
   {
     question: "Wat kost het verbouwen van een bedrijfspand?",
     answer:
-      "Dat hangt af van startpunt en scope: een opknapbeurt begint rond €150–400 per m², een complete afbouw van casco tot turn-key loopt tot €600–1.500 per m² (marktindicatie 2026, excl. btw). Na een intake met onze inventarisatie-app ontvang je binnen vijf werkdagen een vaste prijs.",
+      "Dat hangt af van het startpunt, de scope en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kan de verbouwing terwijl ons bedrijf doordraait?",
     answer:
-      "Ja. We faseren de werkzaamheden per zone en werken waar nodig 's avonds, 's nachts of in het weekend — zo blijft je bedrijfsvoering doorlopen.",
+      "Vaak wel. We faseren de werkzaamheden per zone en werken waar nodig buiten openingstijden, zodat je bedrijfsvoering zoveel mogelijk door kan lopen. Wat haalbaar is, spreken we vooraf af.",
   },
   {
     question: "Kunnen jullie een bedrijfshal ombouwen tot kantoor?",
@@ -567,7 +569,7 @@ export const faqHorecaVerbouwen: Faq[] = [
   {
     question: "Wat kost een horecaverbouwing?",
     answer:
-      "Sterk afhankelijk van casco of bestaand pand en het afwerkingsniveau — van een restyling tot een complete afbouw met keuken, bar en sanitair. Na een intake op locatie ontvang je binnen vijf werkdagen een vaste prijs, zodat je jouw businesscase rond kunt maken.",
+      "Sterk afhankelijk van casco of bestaand pand en het afwerkingsniveau — van een restyling tot een complete afbouw met keuken, bar en sanitair. Na een intake op locatie ontvang je een gespecificeerde offerte, zodat je jouw businesscase rond kunt maken.",
   },
   {
     question: "Bouwen jullie ook de bar en het keukenblok?",
@@ -590,7 +592,7 @@ export const faqWinkelVerbouwen: Faq[] = [
   {
     question: "Halen jullie mijn openingsdatum?",
     answer:
-      "Daar plannen we op. Bij retail rekenen we terug vanaf de openingsdatum en zetten we waar nodig avond- en weekendploegen in. Geen vertraging, wel resultaat.",
+      "Daar plannen we op. Bij retail rekenen we terug vanaf de openingsdatum en zetten we waar nodig avond- en weekendploegen in. Wat haalbaar is, bespreken we eerlijk vooraf.",
   },
   {
     question: "Werken jullie samen met onze retail-architect of formulebeheerder?",
@@ -600,7 +602,7 @@ export const faqWinkelVerbouwen: Faq[] = [
   {
     question: "Wat kost een winkelverbouwing?",
     answer:
-      "Van een restyling tot complete casco-afbouw: de bandbreedte is groot. Als indicatie (2026): grondige renovatie vanaf €300–600 per m², complete afbouw tot €600–1.500 per m² excl. btw. Je ontvangt altijd een vaste prijs vooraf.",
+      "Van een restyling tot een complete casco-afbouw: de bandbreedte is groot. Na een intake op locatie ontvang je een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk benoemd.",
   },
   {
     question: "Kan de winkel (deels) open blijven tijdens de verbouwing?",
@@ -625,7 +627,7 @@ export const faqKantoorDeventer: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Deventer?",
     answer:
-      "Dezelfde marktindicaties als elders in Oost-Nederland (2026, excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Als Twents bedrijf rekenen we doorgaans scherpere tarieven dan Randstad-partijen.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na een intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie gefaseerd verbouwen zodat ons kantoor in Deventer open blijft?",
@@ -635,7 +637,7 @@ export const faqKantoorDeventer: Faq[] = [
   {
     question: "Hoe snel ligt er een offerte?",
     answer:
-      "We komen binnen 7 dagen naar Deventer voor een intake met onze inventarisatie-app; binnen 5 werkdagen daarna ligt er een vaste prijs.",
+      "We komen naar Deventer voor een intake op locatie; daarna volgt een gespecificeerde offerte.",
   },
 ];
 
@@ -648,7 +650,7 @@ export const faqKantoorApeldoorn: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Apeldoorn?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na één intake ontvang je binnen vijf werkdagen een vaste prijs voor jouw pand.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na één intake ontvang je een gespecificeerde offerte voor jouw pand.",
   },
   {
     question: "Is de reisafstand vanuit Enschede geen probleem?",
@@ -671,17 +673,17 @@ export const faqKantoorZwolle: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Zwolle?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Als Twents bedrijf rekenen we doorgaans gunstiger dan Randstad-partijen die in Zwolle actief zijn.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na een intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie casco kantoorruimte in Zwolle volledig afbouwen?",
     answer:
-      "Ja — dat is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair, met één team en een vaste prijs.",
+      "Ja — dat is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair, met één team en één offerte.",
   },
   {
     question: "Hoe verloopt de intake op afstand?",
     answer:
-      "We komen binnen 7 dagen naar Zwolle en leggen met onze app elke wand, vloer en plafond vast. Binnen 5 werkdagen ligt er een vaste offerte.",
+      "We komen naar Zwolle en leggen met onze app elke wand, vloer en plafond vast. Daarna volgt een gespecificeerde offerte.",
   },
 ];
 
@@ -691,7 +693,7 @@ export const faqMetalStud: Faq[] = [
   {
     question: "Wat kost een metal stud-wand?",
     answer:
-      "Als marktindicatie (2026): een standaard metal stud-scheidingswand kost circa €70–120 per m² wandoppervlak inclusief afwerking; geluidwerende of beglaasde varianten liggen hoger. In de offerte krijg je een vaste prijs per wand.",
+      "Dat hangt af van de hoogte, de isolatie en geluidseisen, deuren en glas, en de afwerking. Een prijs per m² zegt daarom weinig. Na een intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Hoe snel staat een metal stud-wand?",
@@ -719,7 +721,7 @@ export const faqSysteemplafonds: Faq[] = [
   {
     question: "Wat kost een systeemplafond?",
     answer:
-      "Als marktindicatie (2026): een standaard systeemplafond kost circa €40–80 per m²; inclusief LED-verlichting reken je op €65–120 per m². Akoestische of design-panelen liggen hoger. Je ontvangt altijd een vaste prijs vooraf.",
+      "Dat hangt af van het type plaat, de verlichting en installaties erboven, en of er een oud plafond uit moet. Een prijs per m² zegt daarom weinig. Na een intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Wat is het voordeel van een systeemplafond in een kantoor?",
@@ -799,7 +801,7 @@ export const faqAannemerOldenzaal: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Oldenzaal?",
     answer:
-      "Nee, we werken met een vaste projectprijs waar alles in zit.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Doen jullie in Oldenzaal ook zakelijke projecten?",
@@ -812,17 +814,17 @@ export const faqAannemerBorne: Faq[] = [
   {
     question: "Zijn jullie snel ter plaatse in Borne?",
     answer:
-      "Ja — Borne ligt tussen Hengelo en Almelo, zo'n 20 minuten van onze werkplaats in Enschede. We hebben er ook al gebouwd: de bedrijfshal in Borne staat in ons portfolio.",
+      "Ja — Borne ligt tussen Hengelo en Almelo, zo'n 20 minuten van onze werkplaats in Enschede.",
   },
   {
     question: "Doen jullie in Borne ook zakelijke projecten?",
     answer:
-      "Ja, zowel woningen als bedrijfspanden — de afbouw van een bedrijfshal in Borne is een van onze recente projecten.",
+      "Ja, zowel woningen als bedrijfspanden. We komen graag langs voor een intake op locatie.",
   },
   {
     question: "Rekenen jullie voorrijkosten naar Borne?",
     answer:
-      "Nee — alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Kan ik een aanbouw in Borne ook prefab laten bouwen?",
@@ -845,7 +847,7 @@ export const faqAannemerHaaksbergen: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Haaksbergen?",
     answer:
-      "Nee — we werken met een vaste projectprijs waar alles in zit.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Kunnen jullie ook een overkapping of bijgebouw plaatsen?",
@@ -863,7 +865,7 @@ export const faqAannemerLosser: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Losser?",
     answer:
-      "Nee — alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Voor welke klussen kan ik jullie in Losser inschakelen?",
@@ -891,17 +893,17 @@ export const faqAannemerHengelo: Faq[] = [
   {
     question: "Heb ik in Hengelo een vergunning nodig voor een uitbouw?",
     answer:
-      "Vaak niet, als de uitbouw aan de achterkant staat, niet dieper is dan 4 meter vanaf de oorspronkelijke achtergevel en binnen de hoogte-eisen blijft. Het omgevingsplan van de gemeente Hengelo kan eigen regels hebben. We checken het altijd voor jouw adres.",
+      "Vaak niet, maar een vaste maat die overal geldt is er niet. Het hangt af van onder meer de plek op het erf, de diepte en hoogte, wat er al gebouwd is en het omgevingsplan van de gemeente Hengelo. Doe voor een eerste beeld de Vergunningcheck in het Omgevingsloket; wij checken het altijd voor jouw adres.",
   },
   {
     question: "Rekenen jullie voorrijkosten naar Hengelo?",
     answer:
-      "Nee. Alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Doen jullie in Hengelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één vaste prijs.",
+      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één offerte.",
   },
 ];
 
@@ -914,7 +916,7 @@ export const faqAannemerAlmelo: Faq[] = [
   {
     question: "Doen jullie in Almelo ook kleine klussen, zoals een veranda?",
     answer:
-      "Ja. De houten veranda die we in Almelo bouwden stond er in twee dagen. Klein of groot, je krijgt dezelfde vaste mensen en een vaste prijs.",
+      "Ja. De houten veranda die we in Almelo bouwden stond er in twee dagen. Klein of groot, je krijgt dezelfde vaste mensen en een heldere offerte.",
   },
   {
     question: "Heb ik in Almelo een vergunning nodig voor een veranda of overkapping?",
@@ -924,12 +926,12 @@ export const faqAannemerAlmelo: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Almelo?",
     answer:
-      "Nee, alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Doen jullie in Almelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één vaste prijs.",
+      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één offerte.",
   },
 ];
 
@@ -939,12 +941,12 @@ export const faqKantoorEnschede: Faq[] = [
   {
     question: "Hoe snel kunnen jullie bij ons kantoor in Enschede zijn?",
     answer:
-      "Snel — Enschede is onze thuisstad. Voor een intake op locatie, een tussentijdse schouw of nazorg zijn we er meestal dezelfde week nog.",
+      "Enschede is onze thuisstad, dus voor een intake op locatie, een tussentijdse schouw of nazorg zijn we er zonder lange reistijd.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Enschede?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na één intake met onze inventarisatie-app ontvang je binnen vijf werkdagen een vaste prijs.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na één intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie verbouwen terwijl ons team in Enschede doorwerkt?",
@@ -962,12 +964,12 @@ export const faqKantoorHengelo: Faq[] = [
   {
     question: "Werken jullie veel in Hengelo?",
     answer:
-      "Ja — Hengelo is onze directe buurstad, op een kwartier van onze werkplaats in Enschede. Voor kantoren en bedrijfspanden in Hengelo plannen we intakes doorgaans binnen een week.",
+      "Ja — Hengelo is onze directe buurstad, op een kwartier van onze werkplaats in Enschede. Voor kantoren en bedrijfspanden in Hengelo komen we graag langs voor een intake op locatie.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Hengelo?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Je ontvangt binnen vijf werkdagen na de intake een vaste prijs.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na de intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie een bedrijfspand in Hengelo combineren met kantoorafbouw?",
@@ -985,17 +987,17 @@ export const faqKantoorAlmelo: Faq[] = [
   {
     question: "Hoort Almelo bij jullie werkgebied?",
     answer:
-      "Ja — Almelo ligt op zo'n halfuur van onze werkplaats in Enschede en hoort bij ons vaste Twentse werkgebied. Intake binnen een week is de norm.",
+      "Ja — Almelo ligt op zo'n halfuur van onze werkplaats in Enschede en hoort bij ons vaste Twentse werkgebied.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Almelo?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na de intake ligt er binnen vijf werkdagen een vaste prijs.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na de intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie casco kantoorruimte in Almelo afbouwen?",
     answer:
-      "Ja — van casco naar turn-key is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair met één team en één vaste prijs.",
+      "Ja — van casco naar turn-key is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair met één team en één offerte.",
   },
   {
     question: "Werken jullie in Almelo ook 's avonds of in het weekend?",

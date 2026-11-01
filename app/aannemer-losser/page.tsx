@@ -14,13 +14,13 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer Losser | ook De Lutte & Overdinkel | MTB Bouw" },
   description:
-    "Aannemer in Losser, Overdinkel en De Lutte. MTB Bouw uit Enschede doet renovatie, aanbouw, kozijnen en prefab. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Losser, Overdinkel en De Lutte. MTB Bouw uit Enschede doet renovatie, aanbouw, kozijnen en prefab. Heldere offerte, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-losser" },
   openGraph: {
     type: "website",
     title: "Aannemer Losser | ook De Lutte & Overdinkel | MTB Bouw",
     description:
-      "Aannemer in Losser, Overdinkel en De Lutte. MTB Bouw uit Enschede doet renovatie, aanbouw, kozijnen en prefab. Vaste prijs, geen voorrijkosten.",
+      "Aannemer in Losser, Overdinkel en De Lutte. MTB Bouw uit Enschede doet renovatie, aanbouw, kozijnen en prefab. Heldere offerte, geen voorrijkosten.",
     url: "/aannemer-losser",
     images: [{ url: "/images/projects/dubbele-uitbouw-enschede/cover.webp", alt: "Dubbele uitbouw aan twee woningen in Enschede, door MTB Bouw" }],
   },
@@ -120,7 +120,7 @@ export default function AannemerLosserPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Bouwplannen in Losser?"
-        text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="We komen langs, denken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

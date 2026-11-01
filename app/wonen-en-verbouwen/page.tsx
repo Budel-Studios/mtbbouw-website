@@ -12,7 +12,7 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 const title = "Verbouwen in Twente | Wonen & Verbouwen van MTB Bouw";
 const description =
-  "Renovatie, aanbouw, uitbouw en nieuwbouw voor particulieren in Twente. Eén vast team uit Enschede, één aanspreekpunt en een vaste prijs vooraf.";
+  "Renovatie, aanbouw, uitbouw en nieuwbouw voor particulieren in Twente. Eén vast team uit Enschede, één aanspreekpunt en een gespecificeerde offerte.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -54,8 +54,8 @@ const SUB_ITEMS = [
     title: "Nieuwbouw",
     text: "Bouwen vanaf de fundering, met één team van vergunning tot sleutel.",
     href: "/nieuwbouw",
-    image: "/images/projects/bedrijfshal-borne.webp",
-    alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering",
+    image: "/images/projects/overkapping-paardenstal-enschede/04.jpg",
+    alt: "Nieuwe overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function WonenEnVerbouwenPage() {
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">
           Mathijs of Robbert komt langs en kijkt met je rond. Elke wand, vloer
           en elk plafond leggen we vast in onze eigen app, zodat je meteen ziet
-          wat we voorstellen. Daarna krijg je een offerte met een vaste prijs.
+          wat we voorstellen. Daarna krijg je een gespecificeerde offerte.
         </p>
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">
           We zijn een klein bedrijf met een vast kernteam en vaste partners uit
@@ -200,7 +200,7 @@ export default function WonenEnVerbouwenPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Plannen voor je huis?"
-        text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="We komen langs, denken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

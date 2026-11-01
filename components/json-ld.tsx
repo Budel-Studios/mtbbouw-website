@@ -322,10 +322,14 @@ export function ProjectJsonLd({
   );
 }
 
-/** JobPosting — voor vacaturekaarten op /werkgenoeg (rich results in Google Vacatures). */
+/**
+ * JobPosting — alleen op de pagina van één vacature (/werkgenoeg/[slug]),
+ * nooit op het overzicht. Zie lib/jobs.ts voor wanneer een vacature open is.
+ */
 export function JobPostingJsonLd({
   title,
   description,
+  url,
   datePosted,
   validThrough,
   employmentType,
@@ -333,8 +337,11 @@ export function JobPostingJsonLd({
   salaryMax,
 }: {
   title: string;
+  /** Volledige vacaturetekst (HTML toegestaan). */
   description: string;
+  url: string;
   datePosted: string;
+  /** Alleen een echte sluitingsdatum; weglaten als die er niet is. */
   validThrough?: string;
   employmentType: string;
   salaryMin?: number;
@@ -347,6 +354,7 @@ export function JobPostingJsonLd({
         "@type": "JobPosting",
         title,
         description,
+        url,
         datePosted,
         ...(validThrough && { validThrough }),
         employmentType,

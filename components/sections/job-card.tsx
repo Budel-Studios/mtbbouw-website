@@ -1,17 +1,18 @@
+import Link from "next/link";
 import { ApplyButton } from "@/components/apply-dialog";
 import { CheckIcon } from "@/components/icons";
-import type { Job } from "@/lib/jobs";
+import { jobPath, type Job } from "@/lib/jobs";
 
 /**
  * Grote vacaturekaart — werkzaamheden als chips, profiel als lijst,
  * arbeidsvoorwaarden als afvinklijst. Hoekig, veel witruimte, geen
  * standaard "vacaturebank"-uitstraling.
  */
-export function JobCard({ job }: { job: Job }) {
+export function JobCard({ job, detail = false }: { job: Job; detail?: boolean }) {
   return (
     <article className="border border-mist bg-white p-8 sm:p-10">
-      <h3 className="text-2xl font-semibold sm:text-3xl">{job.title}</h3>
-      <p className="mt-4 leading-relaxed text-stone">{job.intro}</p>
+      {!detail && <h3 className="text-2xl font-semibold sm:text-3xl">{job.title}</h3>}
+      <p className={`${detail ? "" : "mt-4 "}leading-relaxed text-stone`}>{job.intro}</p>
 
       {job.tasks.length > 0 && (
         <div className="mt-8">
@@ -73,8 +74,13 @@ export function JobCard({ job }: { job: Job }) {
         </div>
       )}
 
-      <div className="mt-9">
+      <div className="mt-9 flex flex-wrap items-center gap-5">
         <ApplyButton job={job.title} />
+        {job.status === "open" && !detail && (
+          <Link href={jobPath(job.slug)} className="link-line text-navy">
+            Bekijk de vacature
+          </Link>
+        )}
       </div>
     </article>
   );

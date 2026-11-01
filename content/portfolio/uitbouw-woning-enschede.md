@@ -143,7 +143,7 @@ gallery:
     alt: "Afgeronde uitbouw met leefkeuken en schuifpui naar de tuin"
     caption: "Het eindresultaat: een lichte leefkeuken."
     phase: "eind"
-  - src: "/images/projects/bedrijfshal-borne.webp" # PLACEHOLDER
+  - src: "/images/mtb-bouw-bus.webp" # PLACEHOLDER
     alt: "Detail van de naadloze overgang van binnenvloer naar terras"
     caption: "Drempelloze overgang naar de tuin."
     phase: "eind"

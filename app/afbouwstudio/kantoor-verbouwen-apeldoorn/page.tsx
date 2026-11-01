@@ -29,7 +29,7 @@ export default function KantoorApeldoornPage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Apeldoorn"
-        description="Kantoorverbouwing en kantoorafbouw in Apeldoorn door Afbouwstudio (MTB Bouw): gefaseerd verbouwen terwijl het werk doorgaat, met vaste prijs."
+        description="Kantoorverbouwing en kantoorafbouw in Apeldoorn door Afbouwstudio (MTB Bouw): gefaseerd verbouwen terwijl het werk zoveel mogelijk doorgaat, met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-apeldoorn"
         serviceType="Kantoorafbouw"
       />
@@ -43,7 +43,7 @@ export default function KantoorApeldoornPage() {
         }}
         eyebrow="Afbouwstudio · Apeldoorn"
         title="Kantoor verbouwen in Apeldoorn — met minimale verstoring van je werk"
-        intro="In het centrum van Apeldoorn transformeerden we De Broodbode volledig — herindeling, elektra en 180 m² tegelwerk — strak gepland in de zomervakantie zodat de zaak zo kort mogelijk dicht was. Diezelfde aanpak gebruiken we voor kantoren in Apeldoorn: je team werkt door terwijl wij verbouwen, tegen een vaste prijs."
+        intro="In het centrum van Apeldoorn transformeerden we De Broodbode volledig — herindeling, elektra en 180 m² tegelwerk — strak gepland in de zomervakantie zodat de zaak zo kort mogelijk dicht was. Diezelfde aanpak gebruiken we voor kantoren in Apeldoorn: je team werkt zoveel mogelijk door terwijl wij verbouwen, met een gespecificeerde offerte vooraf."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake in Apeldoorn</ArrowLink>
@@ -65,15 +65,15 @@ export default function KantoorApeldoornPage() {
               <p className="mt-5 leading-relaxed text-stone">
                 Onze kracht in Apeldoorn is bewezen: bij De Broodbode planden we
                 de complete transformatie precies in de zomervakantie, zodat de
-                heropening vaststond. Voor kantoren betekent dat: werkplekken
-                blijven bereikbaar, deadlines staan vast, en je krijgt vooraf
-                een vaste prijs.
+                heropening vaststond. Voor kantoren betekent dat: we plannen rond
+                je werkplekken, stemmen de planning vooraf met je af en je krijgt
+                een gespecificeerde offerte.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
                   "Bewezen referentie in het centrum van Apeldoorn",
                   "Gefaseerd, 's avonds of in het weekend werken",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
+                  "Gespecificeerde offerte na de intake",
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
@@ -95,14 +95,10 @@ export default function KantoorApeldoornPage() {
                 <Link href="/afbouwstudio/metal-stud-wanden" className="font-semibold text-ink underline hover:text-navy">metal stud-wanden</Link>
                 ,{" "}
                 <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
-                met LED, vloeren, pantry en installaties. Alle kostenindicaties
-                staan op de{" "}
+                met LED, vloeren, pantry en installaties. Waar de kosten van
+                afhangen, lees je op de{" "}
                 <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   hoofdpagina kantoor verbouwen
-                </Link>{" "}
-                en in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
                 </Link>
                 .
               </p>
@@ -131,8 +127,8 @@ export default function KantoorApeldoornPage() {
             Kantoorplannen in Apeldoorn?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen 7 dagen langs, inventariseren alles met onze app en
-            sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app en
+            sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

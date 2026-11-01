@@ -10,12 +10,18 @@ series: offertes-prijzen
 cover: "/images/projects/project-2.jpg"
 coverAlt: "Aanbouw aan een woning, gebouwd door MTB Bouw in Twente"
 tags: [aanbouw, uitbouw, kosten, prijzen]
+updated: 2026-11-01
+sources:
+  - title: "IPLO: informatie voor particulieren over aanbouw, uitbouw of bijgebouw"
+    url: https://iplo.nl/thema/bouw/bouwen-vergunning-melding/bijbehorende-bouwwerken/informatie-particulieren/
+  - title: "Omgevingsloket: Vergunningcheck"
+    url: https://omgevingswet.overheid.nl/checken
 draft: false
 ---
 
 Een aanbouw of uitbouw kost in 2026 indicatief **€2.200 tot €3.200 per m², inclusief btw en afwerking**. Voor een gangbare aanbouw van 20 m² kom je daarmee op circa €45.000 tot €65.000. In deze gids leggen we uit waar dat bedrag uit bestaat, wat de prijs omhoog of omlaag duwt, en hoe je slim bespaart.
 
-> **Over deze cijfers:** dit zijn onze indicaties op prijspeil 2026 voor de regio Twente, bedoeld om richting te geven. Elke woning en elk plan is anders — een vaste prijs voor jouw situatie krijg je na een vrijblijvende opname bij je thuis.
+> **Over deze cijfers:** dit zijn onze indicaties op prijspeil 2026 voor de regio Twente, bedoeld om richting te geven. Elke woning en elk plan is anders — een gespecificeerde offerte voor jouw situatie krijg je na een vrijblijvende opname bij je thuis.
 
 ## Prijzen per m² in 2026
 
@@ -49,19 +55,19 @@ Bij een [prefab aanbouw](/prefab) worden de wanden en het dak in de fabriek gema
 
 ## Heb ik een vergunning nodig?
 
-Veel aanbouwen aan het achtererf zijn (deels) vergunningvrij — in de meeste Twentse gemeenten onder voorwaarden tot zo'n 30 m². Grotere of vanaf de straat zichtbare aanbouwen vereisen een omgevingsvergunning. Wij toetsen dit standaard in het voortraject en verzorgen de aanvraag als dat nodig is.
+Veel aanbouwen aan het achtererf zijn vergunningvrij, maar een vaste maat die overal geldt is er niet. Het hangt af van onder meer de plek op het erf, de diepte en hoogte, wat er al gebouwd is, het gebruik en het omgevingsplan van je gemeente. Doe voor een eerste beeld de [Vergunningcheck in het Omgevingsloket](https://omgevingswet.overheid.nl/checken); [IPLO legt de regels uit voor particulieren](https://iplo.nl/thema/bouw/bouwen-vergunning-melding/bijbehorende-bouwwerken/informatie-particulieren/). Vergunningvrij betekent niet regelvrij: de technische bouwregels gelden altijd. Wij toetsen dit standaard in het voortraject en verzorgen de aanvraag als dat nodig is.
 
 ## Vier tips om te besparen
 
 1. **Kies een plat dak** in plaats van een schuin dak — scheelt al snel duizenden euro's.
 2. **Beperk het aantal maatwerk-elementen**: standaardmaten voor kozijnen en pui zijn fors voordeliger.
 3. **Combineer met verduurzaming**: als de aannemer er toch is, zijn isolatie en HR++-glas relatief goedkoop mee te nemen — en soms subsidiabel (check [rvo.nl](https://www.rvo.nl) voor actuele ISDE-voorwaarden).
-4. **Werk met een vaste aanneemsom**: dan weet je vooraf waar je aan toe bent en voorkom je meerwerk-verrassingen.
+4. **Vraag een gespecificeerde offerte**: met stelposten en uitsluitingen op een rij weet je vooraf waar je aan toe bent. Spreek af dat meerwerk alleen na jouw akkoord wordt uitgevoerd.
 
 ## Wat levert een aanbouw op?
 
-Extra leefruimte is aantrekkelijk voor kopers: een goed uitgevoerde aanbouw vertaalt zich doorgaans in een **waardestijging van 70–90% van de bouwkosten** — nog los van het dagelijkse woonplezier.
+Een aanbouw kan de woningwaarde verhogen. Hoeveel dat is, hangt onder meer af van de woning, de locatie, de extra gebruiksruimte en de kwaliteit van de uitvoering. Voor een inschatting van jouw situatie is een taxatie nodig. Het dagelijkse woonplezier heb je in elk geval meteen.
 
-## Vaste prijs voor jouw aanbouw?
+## Een offerte voor jouw aanbouw?
 
-MTB Bouw bouwt aanbouwen en uitbouwen in [Enschede](/aannemer-enschede) en heel [Twente](/aannemer-twente), traditioneel én prefab. Na een vrijblijvende kennismaking en opname ontvang je een offerte met vaste prijs. Bekijk onze [aanbouw & uitbouw-pagina](/aanbouw-uitbouw) of [neem contact op](/contact).
+MTB Bouw bouwt aanbouwen en uitbouwen in [Enschede](/aannemer-enschede) en heel [Twente](/aannemer-twente), traditioneel én prefab. Na een vrijblijvende kennismaking en opname ontvang je een gespecificeerde offerte. Bekijk onze [aanbouw & uitbouw-pagina](/aanbouw-uitbouw) of [neem contact op](/contact).
