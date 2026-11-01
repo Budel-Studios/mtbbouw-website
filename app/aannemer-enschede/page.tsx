@@ -166,7 +166,7 @@ export default function AannemerEnschedePage() {
           {
             icon: EuroIcon,
             title: "Vaste prijs",
-            text: "Heldere offerte vooraf, geen meerwerk-verrassingen achteraf.",
+            text: "Gespecificeerde offerte vooraf. Meerwerk alleen na jouw akkoord.",
           },
           {
             icon: ClockIcon,

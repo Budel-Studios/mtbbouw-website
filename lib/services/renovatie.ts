@@ -101,7 +101,7 @@ export const renovatieData: ServiceData = {
   cta: {
     h2: "Klaar om jouw huis te transformeren?",
     subtitle:
-      "Plan een vrijblijvende intake. We komen langs, leggen alles vast met onze app en sturen binnen 5 werkdagen een vaste offerte.",
+      "Plan een vrijblijvende intake. We komen langs, leggen alles vast met onze app en sturen daarna een gespecificeerde offerte.",
     primaryCta: { label: "Plan intake", href: "/contact" },
     secondaryCta: { label: "Bel direct: 053 206 50 71", href: "tel:+31532065071" },
     note: "Of mail naar info@mtbbouw.com — we reageren binnen één werkdag.",

@@ -16,6 +16,12 @@ tags:
   - aanbouw
   - bouwmethodes
 projects: [broodbode-zwolle-lunchroom, broodbode-apeldoorn-lunchroom]
+updated: 2026-11-01
+sources:
+  - title: "IPLO: informatie voor particulieren over aanbouw, uitbouw of bijgebouw"
+    url: https://iplo.nl/thema/bouw/bouwen-vergunning-melding/bijbehorende-bouwwerken/informatie-particulieren/
+  - title: "Omgevingsloket: Vergunningcheck"
+    url: https://omgevingswet.overheid.nl/checken
 draft: false
 ---
 
@@ -72,7 +78,7 @@ Let wel: de tijd die je op de bouwplaats wint, verschuift deels naar voren. Het 
 
 Prefab past uitstekend bij:
 
-- **Aanbouw of uitbouw** — de klassieker. Snel geplaatst, minimale overlast. Goed om te weten: een aanbouw op het achtererf is vaak vergunningvrij tot zo'n 30 m² (onder voorwaarden).
+- **Aanbouw of uitbouw** — de klassieker. Snel geplaatst, minimale overlast. Goed om te weten: een aanbouw op het achtererf is vaak vergunningvrij, maar dat hangt af van je situatie en het omgevingsplan van je gemeente.
 - **Dakopbouw** — extra verdieping erop, dak er in dagen weer dicht.
 - **Bijgebouw of overkapping** — garage, tuinkantoor, carport, paardenstal: prefab is hier bijna altijd de logische keuze.
 - **Complete woning** — houtskeletbouw is volwassen genoeg voor een heel huis, van casco tot instapklaar.
@@ -97,7 +103,7 @@ Waar zit de winst dan? Niet in de aanneemsom, maar eromheen:
 - **Maatvastheid** = minder faalkosten en verrassingen tijdens de bouw.
 - **Vaste prijs is beter te geven** = de fabriek werkt met exacte calculaties, dus wij kunnen een vaste projectprijs afgeven zonder dikke risico-opslag.
 
-Wil je precies weten waar je aan toe bent met een aanbouw? Lees dan ook [wat kost een aanbouw in 2026](/kennisbank/wat-kost-een-aanbouw-2026). Leuk om te weten: een aanbouw verdient zich deels terug — de waardestijging van je woning is doorgaans 70–90% van de bouwkosten.
+Wil je precies weten waar je aan toe bent met een aanbouw? Lees dan ook [wat kost een aanbouw in 2026](/kennisbank/wat-kost-een-aanbouw-2026).
 
 ## Prefab vs. traditioneel bouwen
 
@@ -136,7 +142,7 @@ Een fout die we vaak zien: mensen kiezen prefab om de voordelen, maar onderschat
 
 1. **Kennismaking en plan.** We komen langs, kijken naar de situatie en bespreken wat je wilt. Aan de keukentafel, letterlijk.
 2. **Ontwerp en engineering.** Alles wordt tot op de millimeter uitgewerkt. Hier vallen alle beslissingen — kozijnen (die regelen we via [De Kozijnstudio](/kozijnen)), leidingen, afwerking.
-3. **Vergunning of vergunningscheck.** Vaak vergunningvrij bij een aanbouw tot ±30 m², maar dat checken we altijd even.
+3. **Vergunning of vergunningscheck.** Een aanbouw is vaak vergunningvrij, maar dat hangt af van je situatie. Dat checken we altijd even, en zelf kijken kan met de [Vergunningcheck](https://omgevingswet.overheid.nl/checken).
 4. **Productie in de fabriek.** Jij merkt er weinig van; wij bewaken de planning.
 5. **Fundering op locatie.** Terwijl de elementen gemaakt worden, ligt de fundering er al.
 6. **Montage.** De vrachtwagen komt, de kraan tilt, en binnen dagen staat de ruwbouw wind- en waterdicht.
@@ -164,7 +170,7 @@ Jazeker. HSB gaat generaties mee, isoleert standaard erg goed en is constructief
 
 ### Kan een prefab aanbouw vergunningvrij?
 
-Vaak wel: op het achtererf is een aanbouw tot zo'n 30 m² onder voorwaarden vergunningvrij. We checken dat altijd vooraf voor je situatie.
+Vaak wel, maar een vaste maat die overal geldt is er niet. Het hangt af van onder meer de plek op het erf, de afmetingen, wat er al staat en het omgevingsplan van je gemeente. Doe de [Vergunningcheck](https://omgevingswet.overheid.nl/checken) voor een eerste beeld; wij checken het altijd vooraf voor je situatie. En ook vergunningvrij moet de aanbouw voldoen aan de technische bouwregels.
 
 ### Kan ik tijdens de bouw nog dingen wijzigen?
 

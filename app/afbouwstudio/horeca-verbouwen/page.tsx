@@ -166,8 +166,7 @@ export default function HorecaVerbouwenPage() {
             Wanneer wil je open?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            Vertel ons je openingsdatum — wij plannen terug. Intake binnen 7
-            dagen, vaste offerte binnen 5 werkdagen. Bekijk ook{" "}
+            Vertel ons je openingsdatum, dan plannen we terug. Na een intake op locatie volgt een gespecificeerde offerte. Bekijk ook{" "}
             <Link href="/afbouwstudio" className="underline hover:text-white">
               alles over Afbouwstudio
             </Link>

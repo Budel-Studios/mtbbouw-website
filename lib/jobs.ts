@@ -1,8 +1,20 @@
 /**
- * Openstaande functies — content voor /werkgenoeg. `datePosted` bepaalt of
- * Google de vacature als "actueel" toont in Google Vacatures; werk deze
- * (en `validThrough`) periodiek bij zolang de vacature openstaat.
+ * Functies voor /werkgenoeg en de vacaturepagina's onder /werkgenoeg/[slug].
+ *
+ * `status` bepaalt alles:
+ * - "open": bevestigd openstaand. Krijgt een eigen vacaturepagina met
+ *   JobPosting-markup (Google Vacatures) en staat in de sitemap.
+ * - "te-bevestigen": nog niet bevestigd door Robbert of Mathijs. Wel zichtbaar
+ *   op /werkgenoeg, maar zonder vacaturepagina en zonder JobPosting.
+ * - "gesloten": niet meer zichtbaar en geen markup.
+ *
+ * `datePosted` is de echte publicatiedatum. `closingDate` alleen invullen als
+ * er echt een sluitingsdatum is (wordt dan `validThrough`); nooit een datum
+ * verzinnen of automatisch vooruitzetten. Zie
+ * https://developers.google.com/search/docs/appearance/structured-data/job-posting
  */
+export type JobStatus = "open" | "te-bevestigen" | "gesloten";
+
 export type Job = {
   slug: string;
   title: string;
@@ -11,8 +23,10 @@ export type Job = {
   profile: string[];
   extra: string[];
   benefits: string[];
+  status: JobStatus;
   datePosted: string;
-  validThrough: string;
+  /** Echte sluitingsdatum (ISO), alleen als die er is. */
+  closingDate?: string;
   employmentType: string;
   salaryMin?: number;
   salaryMax?: number;
@@ -55,8 +69,9 @@ export const jobs: Job[] = [
       "Opleidingen",
       "Doorgroeien naar voorman of projectleider",
     ],
+    // Status nog te bevestigen (audit 1 nov 2026: validThrough was verlopen).
+    status: "te-bevestigen",
     datePosted: "2026-07-03",
-    validThrough: "2026-10-01",
     employmentType: "FULL_TIME",
     salaryMin: 2700,
     salaryMax: 3800,
@@ -84,8 +99,29 @@ export const jobs: Job[] = [
       "Praktijkervaring op echte projecten",
       "Uitzicht op een vast contract na je diploma",
     ],
+    // Status nog te bevestigen (audit 1 nov 2026: validThrough was verlopen).
+    status: "te-bevestigen",
     datePosted: "2026-07-03",
-    validThrough: "2026-10-01",
     employmentType: "FULL_TIME",
   },
 ];
+
+/** Functies die op /werkgenoeg zichtbaar zijn. */
+export const visibleJobs = () => jobs.filter((j) => j.status !== "gesloten");
+
+/** Bevestigd openstaande vacatures: alleen deze krijgen een eigen pagina en markup. */
+export const openJobs = () => jobs.filter((j) => j.status === "open");
+
+export const jobPath = (slug: string) => `/werkgenoeg/${slug}`;
+
+/** Volledige vacaturetekst als HTML voor de JobPosting-description. */
+export function jobDescriptionHtml(job: Job): string {
+  const list = (items: string[]) => `<ul>${items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+  return [
+    `<p>${job.intro}</p>`,
+    job.tasks.length ? `<p>Werkzaamheden:</p>${list(job.tasks)}` : "",
+    job.profile.length ? `<p>Wij zoeken iemand die:</p>${list(job.profile)}` : "",
+    ...job.extra.map((e) => `<p>${e}</p>`),
+    job.benefits.length ? `<p>Arbeidsvoorwaarden:</p>${list(job.benefits)}` : "",
+  ].join("");
+}

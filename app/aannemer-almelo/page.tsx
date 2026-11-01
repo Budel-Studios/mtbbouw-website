@@ -158,7 +158,7 @@ export default function AannemerAlmeloPage() {
           gemeente Almelo. Die kijken we tijdens de intake met je na, en waar
           nodig regelen we de aanvraag. Zelf alvast kijken kan in het{" "}
           <a
-            href="https://omgevingswet.overheid.nl/"
+            href="https://omgevingswet.overheid.nl/checken"
             target="_blank"
             rel="noopener"
             className={linkClass}

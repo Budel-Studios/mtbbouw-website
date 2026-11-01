@@ -155,12 +155,12 @@ export default function AannemerHengeloPage() {
         <p className="mt-5 max-w-2xl leading-relaxed text-stone">
           Voor veel verbouwingen aan de achterkant heb je geen vergunning
           nodig. Wil je aan de voorkant iets veranderen, een dakkapel plaatsen
-          of verder uitbouwen dan 4 meter? Dan gelden de regels uit het
+          of een grotere uitbouw? Dan gelden de regels uit het
           omgevingsplan van de gemeente Hengelo (Overijssel). Die kijken we
           met je na voordat we beginnen, en waar nodig regelen we de aanvraag.
           Zelf alvast kijken kan in het{" "}
           <a
-            href="https://omgevingswet.overheid.nl/"
+            href="https://omgevingswet.overheid.nl/checken"
             target="_blank"
             rel="noopener"
             className={linkClass}

@@ -12,16 +12,17 @@ import { ServiceAreaLinks } from "@/components/sections/service-area-links";
 import { QuoteButton } from "@/components/ui/quote-button";
 import { HammerIcon, ShieldIcon, LayersIcon } from "@/components/icons";
 import { faqNieuwbouw } from "@/lib/faq";
+import { garantieTekst } from "@/lib/facts";
 
 export const metadata: Metadata = {
   title: "Nieuwbouw in Enschede en Twente",
   description:
-    "Energiezuinige nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een vaste opleverdatum en heldere garantieafspraken.",
+    "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een afgesproken opleverdatum en heldere garantieafspraken.",
   alternates: { canonical: "/nieuwbouw" },
   openGraph: {
     type: "website",
     title: "Nieuwbouw in Enschede en Twente | MTB Bouw",
-    description: "Energiezuinige nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een vaste opleverdatum en heldere garantieafspraken.",
+    description: "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een afgesproken opleverdatum en heldere garantieafspraken.",
     url: "/nieuwbouw",
   },
 };
@@ -60,13 +61,13 @@ export default function NieuwbouwPage() {
         items={[
           {
             icon: ShieldIcon,
-            title: "Vaste prijs én opleverdatum",
-            text: "Een aannemingsovereenkomst met vaste aanneemsom, vaste opleverdatum en heldere garantieafspraken.",
+            title: "Prijs en opleverdatum op papier",
+            text: "Een aannemingsovereenkomst met een vaste aanneemsom, een afgesproken opleverdatum en heldere garantieafspraken.",
           },
           {
             icon: LayersIcon,
-            title: "Energiezuinig standaard",
-            text: "Nieuwbouw voldoet aan BENG: warmtepomp, triple glas, balansventilatie en isolatiewaarden vanaf Rc 6,3.",
+            title: "Bijna energieneutraal (BENG)",
+            text: "Nieuwbouw moet voldoen aan de BENG-eisen. Welke mix van isolatie, glas, ventilatie en installaties daarbij past, kiezen we per ontwerp.",
           },
           {
             icon: HammerIcon,
@@ -103,12 +104,10 @@ export default function NieuwbouwPage() {
         <p>
           <strong>Vergunningen.</strong> De omgevingsvergunning heeft een
           doorlooptijd van 8 tot 26 weken. Wij begeleiden de aanvraag en stemmen
-          het ontwerp af op het bestemmingsplan.
+          het ontwerp af op het omgevingsplan van de gemeente.
         </p>
         <p>
-          <strong>Garanties.</strong> Op de uitvoering geven we 1 jaar
-          garantie, tenzij we in de overeenkomst iets anders afspreken. Op
-          materialen geldt de garantie van de fabrikant of leverancier.
+          <strong>Garanties.</strong> {garantieTekst}
         </p>
         <p>
           <strong>Fundering en grond.</strong> Betonnen strookfundering bij

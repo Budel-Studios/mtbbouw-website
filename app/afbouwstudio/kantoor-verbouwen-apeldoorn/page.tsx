@@ -73,7 +73,7 @@ export default function KantoorApeldoornPage() {
                 {[
                   "Bewezen referentie in het centrum van Apeldoorn",
                   "Gefaseerd, 's avonds of in het weekend werken",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
+                  "Gespecificeerde offerte na de intake",
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
@@ -131,8 +131,8 @@ export default function KantoorApeldoornPage() {
             Kantoorplannen in Apeldoorn?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen 7 dagen langs, inventariseren alles met onze app en
-            sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app en
+            sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

@@ -70,8 +70,8 @@ export interface ServiceData {
 export const sharedPillars: Pillar[] = [
   { sketchIcon: "team", title: "Eén aanspreekpunt",
     desc: "Geen onderaannemers-circus. Mathijs of Robbert is jouw vaste contact. Bel, app, mail — je krijgt antwoord." },
-  { sketchIcon: "price-tag", title: "Vaste prijs, vaste planning",
-    desc: "Wij geven offertes met een vaste prijs en realistische planning. Geen meerwerk-verrassingen tenzij je zelf iets wijzigt." },
+  { sketchIcon: "price-tag", title: "Heldere offerte, eerlijke planning",
+    desc: "Een gespecificeerde offerte en een realistische planning. Meerwerk voeren we alleen uit na jouw akkoord." },
   { sketchIcon: "house-life", title: "Bouwen rond jullie leven",
     desc: "Je woont vaak gewoon door tijdens het project. Wij plannen werkzaamheden rond jullie ritme — schoolweken, vakanties, weekenden." },
 ];

@@ -159,9 +159,9 @@ export function ServicePageTemplate({
             <ol className="mt-10 space-y-5">
               {[
                 { n: "01", t: "Intake op locatie", d: "Wij komen langs en leggen alles vast in onze app." },
-                { n: "02", t: "Voorstel + offerte", d: "Binnen 5 werkdagen een vaste prijs en planning." },
-                { n: "03", t: "Uitvoering", d: "Eén team, wekelijkse updates, geen verrassingen." },
-                { n: "04", t: "Oplevering + nazorg", d: "Wij leveren op én komen na 1 jaar gratis langs." },
+                { n: "02", t: "Voorstel + offerte", d: "Gespecificeerde offerte met planning." },
+                { n: "03", t: "Uitvoering", d: "Eén team, wekelijkse updates, wijzigingen vooraf besproken." },
+                { n: "04", t: "Oplevering + nazorg", d: "Samen de oplevering nalopen, daarna bereikbaar voor nazorg." },
               ].map((s) => (
                 <li key={s.n} className="flex gap-4">
                   <span className="w-10 shrink-0 font-display text-2xl font-semibold text-navy">

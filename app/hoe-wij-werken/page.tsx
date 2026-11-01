@@ -6,9 +6,10 @@ import { QuoteButton } from "@/components/ui/quote-button";
 import { ShieldIcon } from "@/components/icons";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 import { site } from "@/lib/site";
+import { facts } from "@/lib/facts";
 
 const description =
-  "Zo verloopt bouwen met MTB Bouw: gratis intake op locatie, inmeten, een volledig gespecificeerde offerte, projectplan in Mijn Blauwdruk, bouwen en nazorg.";
+  "Zo verloopt bouwen met MTB Bouw: gratis intake op locatie, inmeten, een volledig gespecificeerde offerte, projectplan, bouwen en nazorg.";
 
 export const metadata: Metadata = {
   title: "Hoe wij werken: van gratis intake tot oplevering",
@@ -66,7 +67,7 @@ const steps: Step[] = [
     title: "Projectplan en Mijn Blauwdruk",
     text: [
       "Ga je akkoord, dan volgt het projectplan: planning, afspraken, veiligheid en garanties, zwart op wit.",
-      "In Mijn Blauwdruk, onze eigen app, volg je je bouw en zie je alles terug: tekeningen, keuzes en planning. En wat er wel in de offerte zit, maar ook wat niet. Dat is net zo belangrijk.",
+      "In Blauwdruk, onze eigen app, leggen we tekeningen, keuzes en planning vast. En wat er wel in de offerte zit, maar ook wat niet. Dat is net zo belangrijk. Mijn Blauwdruk, de online omgeving waarin je dat zelf kunt volgen, komt binnenkort.",
     ],
     links: [{ href: "/mijn-blauwdruk", label: "Over Mijn Blauwdruk" }],
   },
@@ -86,7 +87,7 @@ const steps: Step[] = [
     id: "oplevering",
     title: "Oplevering en nazorg",
     text: [
-      "We lopen samen alle punten na, leggen ze vast en tekenen af. Op de uitvoering krijg je een jaar garantie, op materialen geldt de fabrieksgarantie. En daarna blijven we gewoon bereikbaar.",
+      `We lopen samen alle punten na, leggen ze vast en tekenen af. ${facts.garantie.uitvoering} ${facts.garantie.materialen} ${facts.garantie.wettelijk} En daarna blijven we gewoon bereikbaar.`,
     ],
     links: [{ href: "/veelgestelde-vragen", label: "Veelgestelde vragen" }],
   },

@@ -43,7 +43,7 @@ export default function KantoorAlmeloPage() {
         }}
         eyebrow="Afbouwstudio · Almelo"
         title="Kantoor verbouwen in Almelo: van casco tot turn-key"
-        intro="Voor kantoren in Almelo en Noord-Twente is Afbouwstudio het zakelijke label van MTB Bouw: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt, met een vaste prijs binnen vijf werkdagen na de intake — en werkzaamheden die zich voegen naar jouw openingstijden."
+        intro="Voor kantoren in Almelo en Noord-Twente is Afbouwstudio het zakelijke label van MTB Bouw: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt, met een gespecificeerde offerte na de intake — en werkzaamheden die zich voegen naar jouw openingstijden."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>
@@ -64,14 +64,13 @@ export default function KantoorAlmeloPage() {
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Almelo hoort bij ons vaste werkgebied: op een halfuur van onze
-                werkplaats plannen we intakes binnen een week en bouwen we met
-                dezelfde vaste vakmensen als in Enschede en Hengelo. Afspraak
-                is afspraak — vaste prijs, vaste planning, wekelijkse update.
+                werkplaats plannen we intakes op locatie en bouwen we met
+                dezelfde vaste vakmensen als in Enschede en Hengelo. Scope, prijs en planning leggen we vast, en je krijgt een wekelijkse update.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
-                  "Intake in Almelo binnen een week",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
+                  "Intake op locatie in Almelo",
+                  "Gespecificeerde offerte na de intake",
                   "Gefaseerd of buiten kantoortijden werken",
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
@@ -131,8 +130,8 @@ export default function KantoorAlmeloPage() {
             Kantoorplannen in Almelo?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen een week langs, inventariseren alles met onze app
-            en sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app
+            en sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

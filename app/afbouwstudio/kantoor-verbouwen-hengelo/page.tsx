@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Hengelo | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Hengelo: kantoorafbouw van casco tot turn-key, ook bij bedrijfshallen. Vaste prijs binnen 5 werkdagen na de intake.",
+    "Kantoor verbouwen in Hengelo: kantoorafbouw van casco tot turn-key, ook bij bedrijfshallen. Gespecificeerde offerte na de intake.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-hengelo" },
 };
 
@@ -64,14 +64,14 @@ export default function KantoorHengeloPage() {
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Op vijftien minuten van ons eigen pand plannen we intakes en
-                schouwen in Hengelo binnen een week. Werkt je team door tijdens
+                schouwen in Hengelo zonder lange reistijd. Werkt je team door tijdens
                 de verbouwing? We faseren per zone en werken waar nodig buiten
                 kantoortijden.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
-                  "Intake in Hengelo binnen een week",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
+                  "Intake op locatie in Hengelo",
+                  "Gespecificeerde offerte na de intake",
                   "Kantoor én bedrijfshal in één planning",
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
@@ -130,8 +130,8 @@ export default function KantoorHengeloPage() {
             Kantoorplannen in Hengelo?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen een week langs, inventariseren alles met onze app
-            en sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app
+            en sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

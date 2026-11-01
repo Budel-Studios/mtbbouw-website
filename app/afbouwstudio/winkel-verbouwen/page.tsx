@@ -20,7 +20,7 @@ const PIJLERS = [
   {
     icon: ClockIcon,
     title: "Klaar vóór de openingsdatum",
-    text: "We plannen terug vanaf jouw opening en zetten waar nodig avond- en weekendploegen in. Geen vertraging, wel resultaat.",
+    text: "We plannen terug vanaf jouw opening en zetten waar nodig avond- en weekendploegen in.",
   },
   {
     icon: PaintIcon,
@@ -123,8 +123,7 @@ export default function WinkelVerbouwenPage() {
             Wanneer moet de winkel open?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            Vertel ons je deadline — wij plannen terug. Intake binnen 7 dagen,
-            vaste offerte binnen 5 werkdagen. Bekijk ook{" "}
+            Vertel ons je deadline, dan plannen we terug. Na een intake op locatie volgt een gespecificeerde offerte. Bekijk ook{" "}
             <Link href="/afbouwstudio" className="underline hover:text-white">
               alles over Afbouwstudio
             </Link>

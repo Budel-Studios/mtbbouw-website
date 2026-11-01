@@ -160,7 +160,7 @@ export default function AannemerOldenzaalPage() {
           met je na voordat we beginnen, en stemmen het plan waar nodig af met
           de gemeente. Zelf alvast kijken kan in het{" "}
           <a
-            href="https://omgevingswet.overheid.nl/"
+            href="https://omgevingswet.overheid.nl/checken"
             target="_blank"
             rel="noopener"
             className={linkClass}

@@ -117,8 +117,7 @@ export default function MetalStudPage() {
             Nieuwe indeling nodig?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            Stuur een plattegrond of plan een intake — binnen 5 werkdagen ligt
-            er een vaste prijs.
+            Stuur een plattegrond of plan een intake. Daarna volgt een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

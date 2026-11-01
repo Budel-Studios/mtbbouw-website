@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Zwolle | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Zwolle: we bouwden er een compleet casco-pand af voor De Broodbode. Casco tot turn-key, vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Zwolle: we bouwden er een compleet casco-pand af voor De Broodbode. Casco tot turn-key, met een gespecificeerde offerte na de intake.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-zwolle" },
 };
 
@@ -71,9 +71,9 @@ export default function KantoorZwollePage() {
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
-                  "Intake in Zwolle binnen 7 dagen",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
-                  "Gefaseerd werken — je kantoor blijft bereikbaar",
+                  "Intake op locatie in Zwolle",
+                  "Gespecificeerde offerte na de intake",
+                  "Gefaseerd werken, zodat je kantoor zoveel mogelijk bereikbaar blijft",
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
@@ -130,8 +130,8 @@ export default function KantoorZwollePage() {
             Kantoorplannen in Zwolle?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen 7 dagen langs, inventariseren alles met onze app en
-            sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app en
+            sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Deventer | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Deventer: metal stud, systeemplafonds, installaties en afwerking. Van casco tot turn-key, vaste prijs binnen 5 werkdagen.",
+    "Kantoor verbouwen in Deventer: metal stud, systeemplafonds, installaties en afwerking. Van casco tot turn-key, met een gespecificeerde offerte na de intake.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-deventer" },
 };
 
@@ -43,7 +43,7 @@ export default function KantoorDeventerPage() {
         }}
         eyebrow="Afbouwstudio · Deventer"
         title="Kantoor verbouwen in Deventer: van casco tot turn-key"
-        intro="Een kantoor verbouwen in Deventer betekent bij Afbouwstudio: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt — met een vaste prijs binnen vijf werkdagen na de intake. Wij zijn het zakelijke label van MTB Bouw en werken door heel Oost-Nederland, van Twente tot de IJssel."
+        intro="Een kantoor verbouwen in Deventer betekent bij Afbouwstudio: één team dat wanden, plafonds, vloeren, installaties en afwerking regelt — met een gespecificeerde offerte na de intake. Wij zijn het zakelijke label van MTB Bouw en werken door heel Oost-Nederland, van Twente tot de IJssel."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake in Deventer</ArrowLink>
@@ -60,7 +60,7 @@ export default function KantoorDeventerPage() {
                 01 — Waarom Afbouwstudio in Deventer
               </p>
               <h2 className="display mt-4 text-4xl md:text-5xl">
-                Oost-Nederlands team, geen Randstad-tarieven
+                Oost-Nederlands team, korte lijnen
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Deventer ligt midden in ons werkgebied: onze teams werken
@@ -71,9 +71,9 @@ export default function KantoorDeventerPage() {
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
-                  "Intake in Deventer binnen 7 dagen",
-                  "Vaste prijs binnen 5 werkdagen na de intake",
-                  "Gefaseerd werken — je kantoor blijft in bedrijf",
+                  "Intake op locatie in Deventer",
+                  "Gespecificeerde offerte na de intake",
+                  "Gefaseerd werken, zodat je kantoor zoveel mogelijk in bedrijf blijft",
                   "Eén aanspreekpunt: Mathijs of Robbert",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 text-[15px] text-ink">
@@ -131,8 +131,8 @@ export default function KantoorDeventerPage() {
             Kantoorplannen in Deventer?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            We komen binnen 7 dagen langs, inventariseren alles met onze app en
-            sturen binnen 5 werkdagen een vaste offerte.
+            We komen langs, inventariseren alles met onze app en
+            sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

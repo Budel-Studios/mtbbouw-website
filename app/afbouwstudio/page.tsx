@@ -23,7 +23,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoorafbouw & afbouw bedrijfspanden | Afbouwstudio" },
   description:
-    "Afbouw van kantoren, winkels en horeca in Enschede, Twente en heel Overijssel. Van casco tot turn-key, met een vaste prijs binnen vijf werkdagen.",
+    "Afbouw van kantoren, winkels en horeca in Enschede, Twente en heel Overijssel. Van casco tot turn-key, met een gespecificeerde offerte na een intake op locatie.",
   alternates: { canonical: "/afbouwstudio" },
   openGraph: {
     type: "website",
@@ -44,7 +44,7 @@ const SPECIALISMS = [
   {
     icon: BuildingIcon,
     title: "Retail & winkels",
-    body: "Showrooms, winkelpanden en concept stores. We werken met retail-architecten en zorgen dat de afbouw klaar is vóór je openingsdatum. Geen vertraging, wel resultaat.",
+    body: "Showrooms, winkelpanden en concept stores. We werken met retail-architecten en plannen de afbouw terug vanaf je openingsdatum.",
     href: "/afbouwstudio/winkel-verbouwen",
   },
   {
@@ -63,9 +63,9 @@ const SPECIALISMS = [
 
 const STEPS = [
   { icon: MapPinIcon, title: "Intake op locatie", body: "We komen langs met de app — alles direct vastgelegd." },
-  { icon: ClockIcon, title: "Voorstel + offerte", body: "Binnen 5 werkdagen een vaste prijs op tafel." },
+  { icon: ClockIcon, title: "Voorstel + offerte", body: "Een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk benoemd." },
   { icon: UsersIcon, title: "Uitvoering", body: "Eén team, één planning, wekelijkse update." },
-  { icon: ShieldIcon, title: "Oplevering + nazorg", body: "Sleutel + 5 jaar garantie." },
+  { icon: ShieldIcon, title: "Oplevering + nazorg", body: "Samen de oplevering nalopen. Garantie volgens de overeenkomst." },
 ];
 
 const CASES = [
@@ -100,7 +100,7 @@ const PARTNERS = ["Broodbode", "Dukato Hypotheken", "BMN", "Gevelaar", "VvE Behe
 
 const PILLARS = [
   { icon: UsersIcon, title: "Eén aanspreekpunt", body: "Geen onderaannemers-circus. Mathijs of Robbert is jouw vaste contact. Bel, app, mail — je krijgt antwoord." },
-  { icon: ShieldIcon, title: "Vaste prijs, vaste planning", body: "Wij geven offertes met vaste prijs en realistische planningen. Geen meerwerk-verrassingen tenzij jij iets wijzigt." },
+  { icon: ShieldIcon, title: "Heldere offerte, eerlijke planning", body: "Een gespecificeerde offerte en een realistische planning. Meerwerk alleen na jouw akkoord." },
   { icon: ClockIcon, title: "Bouwen rond jouw business", body: "Werkzaamheden 's nachts? In fasen? In één weekend? Voor horeca en retail in Enschede en Twente passen wij ons aan jouw openingstijden aan." },
 ];
 
@@ -422,9 +422,7 @@ export default function AfbouwstudioPage() {
             Klaar voor de intake?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-white/70">
-            Stuur ons een bericht of bel direct. We komen binnen 7 dagen langs met
-            onze app, leggen alles vast en sturen binnen 5 werkdagen een vaste
-            offerte.
+            Stuur ons een bericht of bel direct. We komen langs met onze app, leggen alles vast en sturen daarna een gespecificeerde offerte.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <ContactDrawerButton className="label-mono inline-flex items-center justify-center gap-2 cursor-pointer border border-lime bg-lime px-5 py-3.5 text-ink transition-colors hover:border-white hover:bg-white">

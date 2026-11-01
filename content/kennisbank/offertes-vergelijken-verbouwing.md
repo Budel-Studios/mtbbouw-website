@@ -57,7 +57,7 @@ Dan krijg je uiteenlopende prijzen. De ene aannemer rekent scherp en zet de rest
 
 ## Hoe wij het oplossen
 
-Het zou niet ons verhaal zijn als we onszelf hier niet een klein beetje verkochten. Bij MTB Bouw werken we met [Blauwdruk](/mijn-blauwdruk), onze eigen app. Daarin zie je met de complete meetstaat precies wat er wel en niet in je offerte zit. Online en altijd bereikbaar, zodat je dezelfde informatie hebt als wij.
+Het zou niet ons verhaal zijn als we onszelf hier niet een klein beetje verkochten. Bij MTB Bouw werken we met Blauwdruk, onze eigen app. Daarin staat de complete meetstaat, zodat precies duidelijk is wat er wel en niet in je offerte zit. Binnenkort kun je dat ook zelf online bekijken in [Mijn Blauwdruk](/mijn-blauwdruk), zodat je dezelfde informatie hebt als wij.
 
 Twijfel je over een offerte die je hebt liggen, van ons of van een ander? Bel of app gerust. We kijken graag even mee.
 

@@ -14,7 +14,7 @@ draft: false
 
 Een kantoorverbouwing kost in 2026 indicatief **€150 tot €400 per m² voor een cosmetische opknapbeurt**, **€300 tot €600 per m² voor een grondige renovatie** en **€600 tot €1.500 per m² voor een complete afbouw van casco tot turn-key** — afhankelijk van installaties en afwerkingsniveau. In Twente en Oost-Nederland liggen de uitvoeringskosten doorgaans gunstiger dan in de Randstad.
 
-> **Over deze cijfers:** marktindicaties op prijspeil 2026, bedoeld om je budget richting te geven. Een vaste prijs voor jouw pand krijg je na één intake — wij inventariseren dan met onze eigen app elke wand, vloer en plafond en sturen binnen vijf werkdagen een offerte.
+> **Over deze cijfers:** marktindicaties op prijspeil 2026, bedoeld om je budget richting te geven. Een offerte voor jouw pand krijg je na één intake. Wij inventariseren dan met onze eigen app elke wand, vloer en plafond en sturen daarna een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk benoemd.
 
 ## Prijzen per m² in 2026
 

@@ -162,7 +162,7 @@ export default async function VeiligVerantwoordBouwenPage() {
             { icon: RecycleIcon, title: "Stofbeperking", text: "Waar mogelijk werken we stofarm, zeker bij bewoonde of in gebruik zijnde ruimtes." },
             { icon: LayersIcon, title: "Afvalscheiding", text: "Bouwafval scheiden we op locatie — geen alles-in-één-container." },
             { icon: BroomIcon, title: "Nette bouwplaats", text: "Aan het eind van de dag ruimen we op. Niet omdat het moet, maar omdat het hoort." },
-            { icon: CheckIcon, title: "Zorgvuldige oplevering", text: "Bij oplevering lopen we samen door het project — geen verrassingen achteraf." },
+            { icon: CheckIcon, title: "Zorgvuldige oplevering", text: "Bij oplevering lopen we samen door het project en leggen we openstaande punten vast." },
           ]}
         />
       </section>
