@@ -12,7 +12,7 @@ export const renovatieData: ServiceData = {
   },
   hero: {
     eyebrow: "Voor particulieren",
-    h1: "Renovatie in Enschede & Twente — van casco tot sleutelklaar.",
+    h1: "Verbouwing in Enschede & Twente — van casco tot sleutelklaar.",
     subtitle:
       "Een net gekocht jaren-30 huis dat schreeuwt om aandacht? Een gedateerde keuken, badkamer of een hele woning? Wij verbouwen het — met één plan, één team en één prijs. Zo wordt jouw huis van wie het al is.",
     primaryCta: { label: "Plan een intake", href: "/contact" },

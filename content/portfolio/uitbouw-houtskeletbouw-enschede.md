@@ -1,6 +1,8 @@
 ---
 title: "Vervallen uitbouw in Enschede opnieuw gebouwd in houtskeletbouw"
 description: "Een vervallen uitbouw in Enschede gesloopt en in 5 weken opnieuw opgebouwd in houtskeletbouw: Finiplus-gevel, houten kozijnen met triple glas, nieuw dak, badkamer en toilet."
+seoTitle: "Uitbouw in houtskeletbouw in Enschede"
+seoDescription: "Vervallen uitbouw in Enschede gesloopt en in 5 weken opnieuw gebouwd in houtskeletbouw: Finiplus-gevel, houten kozijnen met triple glas, nieuw dak en badkamer."
 date: 2026-07-09
 location: "Enschede"
 category: "Uitbouw"

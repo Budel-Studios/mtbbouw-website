@@ -1,6 +1,8 @@
 ---
 title: "Houten schuifdeur op maat — samen met Zebrano Studio"
 description: "Een maatwerk houten schuifdeur, ontworpen en gebouwd in samenwerking met ons interieurlabel Zebrano Studio: ambachtelijk houtwerk dat een ruimte compleet maakt."
+seoTitle: "Houten schuifdeur op maat met Zebrano Studio"
+seoDescription: "Maatwerk houten schuifdeur, ontworpen en gebouwd met ons interieurlabel Zebrano Studio: ambachtelijk houtwerk dat een ruimte afmaakt. Gemaakt in Enschede."
 date: 2025-12-11
 location: "Twente"
 category: "Interieur & maatwerk"

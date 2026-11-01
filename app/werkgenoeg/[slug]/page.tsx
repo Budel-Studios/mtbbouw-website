@@ -72,7 +72,7 @@ export default async function VacaturePage({ params }: { params: Promise<Params>
 
         <header className="mt-14 max-w-3xl md:mt-20">
           <p className="eyebrow text-stone">Vacature · MTB Bouw, Enschede</p>
-          <h1 className="display mt-6 text-5xl md:text-6xl">Vacature {job.title.toLowerCase()} in Enschede</h1>
+          <h1 className="display mt-6 text-5xl md:text-6xl">Vacature {/^[A-Z]{2,}/.test(job.title) ? job.title : job.title.toLowerCase()} in Enschede</h1>
         </header>
 
         <div className="mt-12 max-w-4xl">

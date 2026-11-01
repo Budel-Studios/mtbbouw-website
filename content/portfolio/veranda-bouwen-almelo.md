@@ -1,6 +1,7 @@
 ---
 title: "Veranda bouwen in Almelo"
 description: "Houten veranda in Almelo, in het verlengde van de woning gebouwd en gedekt met gebruikte dakpannen uit Buurse, zodat hij naadloos bij het huis past. In 2 dagen klaar."
+seoDescription: "Houten veranda in Almelo, in het verlengde van de woning en gedekt met gebruikte dakpannen, zodat hij naadloos bij het huis past. In twee dagen gebouwd."
 date: 2026-10-21
 location: "Almelo"
 category: "Overkapping"

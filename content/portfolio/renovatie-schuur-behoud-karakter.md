@@ -1,6 +1,8 @@
 ---
 title: "Renovatie van een bestaande schuur — mét behoud van karakter"
 description: "Een oude schuur renoveren zonder de ziel eruit te slopen: constructief herstel en nieuwe afwerking, met respect voor het originele karakter."
+seoTitle: "Schuur renoveren met behoud van karakter"
+seoDescription: "Een oude schuur in Twente gerenoveerd zonder de ziel eruit te slopen: constructief herstel en nieuwe afwerking, met respect voor het origineel."
 date: 2026-02-25
 location: "Twente"
 category: "Renovatie"

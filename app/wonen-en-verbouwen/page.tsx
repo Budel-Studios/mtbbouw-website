@@ -98,7 +98,7 @@ export default function WonenEnVerbouwenPage() {
           alt: "Woonruimte met glazen pui, grote vloertegels en gele baksteen in een gerenoveerde villa in Enschede",
         }}
         eyebrow="Wonen & Verbouwen · Voor particulieren"
-        title="Jouw huis, verbouwd zoals jij het voor ogen hebt."
+        title="Wonen en verbouwen in Enschede en Twente — jouw huis, zoals jij het voor ogen hebt"
         intro="Van een nieuwe badkamer tot een complete renovatie of een uitbouw. Eén vast team uit Enschede, één planning en één aanspreekpunt."
       />
 

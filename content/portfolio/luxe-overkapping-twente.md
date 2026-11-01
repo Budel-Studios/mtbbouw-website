@@ -1,6 +1,8 @@
 ---
 title: "Luxe overkapping — buitenleven het hele jaar rond"
 description: "Een luxe overkapping die van de tuin een tweede woonkamer maakt: strak houtwerk, geïntegreerde verlichting en afwerking tot in de details."
+seoTitle: "Luxe overkapping in Twente"
+seoDescription: "Een luxe houten overkapping in Twente die van de tuin een tweede woonkamer maakt: strak houtwerk, verlichting en afwerking tot in de details."
 date: 2026-03-05
 location: "Twente"
 category: "Overkapping"

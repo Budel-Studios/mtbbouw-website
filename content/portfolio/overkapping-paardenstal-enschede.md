@@ -1,6 +1,8 @@
 ---
 title: "Grote overkapping met paardenstal in het buitengebied van Enschede"
 description: "In het buitengebied van Enschede bouwden we een royale overkapping gecombineerd met een paardenstal — robuust houtwerk dat past bij het erf en het Twentse landschap."
+seoTitle: "Overkapping met paardenstal in Enschede"
+seoDescription: "In het buitengebied van Enschede bouwden we een grote overkapping met paardenstal: robuust houtwerk dat past bij het erf en het Twentse landschap."
 date: 2025-12-16
 location: "Enschede (buitengebied)"
 category: "Overkapping"

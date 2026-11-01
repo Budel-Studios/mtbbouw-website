@@ -68,15 +68,17 @@ export async function generateMetadata({
     ...localSeoKeywords(project.category, project.location),
   ].filter((k): k is string => !!k);
 
+  const title = project.seoTitle ?? project.title;
+  const description = project.seoDescription ?? project.description;
   return {
-    title: project.title,
-    description: project.description,
+    title,
+    description,
     keywords,
     alternates: { canonical: project.permalink },
     openGraph: {
       type: "article",
-      title: project.title,
-      description: project.description,
+      title,
+      description,
       url: project.permalink,
       ...(project.cover && { images: [project.cover] }),
     },

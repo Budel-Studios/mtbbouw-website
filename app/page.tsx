@@ -7,13 +7,13 @@ import { HomeContent } from "@/components/home/home-content";
  * dus afgekapt in Google) en de sitebrede omschrijving.
  */
 export const metadata: Metadata = {
-  // Titel ≤ 60 tekens: zoekwoord + regio voorop, diensten erachter, merk als
-  // afsluiter. Zo blijft hij in Google volledig zichtbaar.
+  // Merk voorop: de homepage wint de merkvraag. De zoekvraag "aannemer
+  // Enschede" is van /aannemer-enschede (SEO-analyse 1 nov 2026).
   title: {
-    absolute: "Aannemer Enschede & Twente — verbouw & uitbouw | MTB Bouw",
+    absolute: "MTB Bouw | Aannemer in Enschede en Twente",
   },
   description:
-    "Aannemer uit Enschede voor verbouwing, uitbouw, renovatie en nieuwbouw in heel Twente. Een gespecificeerde offerte, één aanspreekpunt en een intake bij jou thuis.",
+    "MTB Bouw, het bouwbedrijf van Mathijs en Robbert uit Enschede: verbouwing, uitbouw, kozijnen, prefab en zakelijk, in heel Twente. Eén aanspreekpunt, heldere offerte.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "MTB Bouw — aannemer in Enschede & Twente",

@@ -109,7 +109,11 @@ const portfolio = defineCollection({
     .object({
       // ---- Kern & SEO ----
       title: s.string().max(120), // Projecttitel — wordt de H1
+      /** Korte titel voor Google (zonder " | MTB Bouw"); valt terug op title. */
+      seoTitle: s.string().max(MAX_TITLE_TAG - TITLE_SUFFIX.length).optional(),
       description: s.string().max(200), // Meta description
+      /** Korte metabeschrijving (max 160); valt terug op description. */
+      seoDescription: s.string().max(160).optional(),
       date: s.isodate(), // Voor sortering (nieuwste eerst)
 
       // ---- Projectfeiten (kaarten "Project in het kort") ----

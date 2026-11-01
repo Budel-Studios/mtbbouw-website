@@ -9,13 +9,13 @@ import { RelatedContent } from "@/components/sections/related-content";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { NearbyPlaces } from "@/components/sections/nearby-places";
-import { UsersIcon, EuroIcon, ClockIcon } from "@/components/icons";
+import { UsersIcon, EuroIcon, ClockIcon, GraduationIcon } from "@/components/icons";
 import { CityServices } from "@/components/sections/city-services";
 import { faqAannemerEnschede } from "@/lib/faq";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
-  title: { absolute: "Aannemer Enschede | verbouw, uitbouw & renovatie | MTB Bouw" },
+  title: { absolute: "Aannemer in Enschede | verbouw & uitbouw | MTB Bouw" },
   description:
     "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een gespecificeerde offerte en één vast aanspreekpunt.",
   alternates: { canonical: "/aannemer-enschede" },
@@ -173,8 +173,42 @@ export default function AannemerEnschedePage() {
             title: "Lokaal en snel",
             text: "Gevestigd in Enschede: korte lijnen, snel ter plaatse en bekend met de stad.",
           },
+          {
+            icon: GraduationIcon,
+            title: "Erkend leerbedrijf",
+            text: "MTB Bouw B.V. is een door SBB erkend leerbedrijf. We leiden jonge vakmensen uit de regio zelf op.",
+          },
         ]}
       />
+
+      {/* HET BEDRIJF (overgenomen van de oude pagina bouwbedrijf-enschede) */}
+      <section className="border-y border-mist bg-white">
+        <div className="container-page grid gap-10 py-20 md:py-28 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="eyebrow text-stone">Bouwbedrijf in Enschede</p>
+            <h2 className="display mt-4 text-4xl md:text-5xl">Eén bouwbedrijf, vier expertises</h2>
+          </div>
+          <div className="space-y-4 leading-relaxed text-stone lg:col-span-7">
+            <p>
+              MTB Bouw is een allround bouwbedrijf uit Enschede. Particulieren
+              helpen we met{" "}
+              <Link href="/wonen-en-verbouwen" className="font-semibold text-ink underline hover:text-navy">verbouw, renovatie en aanbouw</Link>
+              , bedrijven met{" "}
+              <Link href="/zakelijk" className="font-semibold text-ink underline hover:text-navy">horeca, kantoren en bedrijfspanden</Link>
+              . Voor kozijnen hebben we een eigen label,{" "}
+              <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">De Kozijnstudio</Link>
+              , en voor houtskeletbouw werken we{" "}
+              <Link href="/prefab" className="font-semibold text-ink underline hover:text-navy">prefab</Link>
+              .
+            </p>
+            <p>
+              Uitvoering, timmerwerk en werkvoorbereiding doen we zelf, met een
+              vast kernteam. Voor installaties en afwerking werken we met vaste
+              partners uit de regio. Zo zie je op elke klus dezelfde gezichten.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <RelatedContent
         projects={projects}

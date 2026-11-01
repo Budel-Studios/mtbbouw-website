@@ -488,40 +488,13 @@ export const faqAannemerEnschede: Faq[] = [
     answer:
       "Ja — op onze projectenpagina staan recente projecten in Enschede en omgeving, waaronder renovaties en uitbouwen. Op verzoek brengen we je in contact met eerdere opdrachtgevers.",
   },
-];
-
-export const faqBouwbedrijfEnschede: Faq[] = [
-  {
-    question: "Wat voor soort bouwbedrijf is MTB Bouw?",
-    answer:
-      "MTB Bouw is een allround bouwbedrijf uit Enschede met vier specialismen onder één dak: Wonen & Verbouwen (particulier), Zakelijk (horeca, kantoren en bedrijfspanden), Kozijnen (via ons eigen label De Kozijnstudio) en Prefab Bouwen.",
-  },
-  {
-    question: "Bouwen jullie voor particulieren én bedrijven?",
-    answer:
-      "Ja. Particulieren helpen we met verbouw, renovatie, aanbouw en nieuwbouw; bedrijven met de complete afbouw van kantoren, winkels en horeca — van casco tot turn-key.",
-  },
-  {
+{
     question: "Is MTB Bouw een erkend leerbedrijf?",
     answer:
       "Ja, MTB Bouw B.V. is een door SBB erkend leerbedrijf (ID 100812726). We leiden zelf jonge vakmensen op — zo borgen we vakmanschap voor de lange termijn.",
   },
-  {
-    question: "Hoe groot is jullie team?",
-    answer:
-      "We werken met een compact kernteam van uitvoerders, timmermannen en werkvoorbereiding, aangevuld met vaste regionale partners. Klein genoeg voor korte lijnen, groot genoeg voor complete projecten.",
-  },
-  {
-    question: "Geven jullie garantie op het werk?",
-    answer:
-      `Ja. ${facts.garantie.uitvoering} ${facts.nazorg.nabellen}`,
-  },
-  {
-    question: "Hoe vraag ik een offerte aan?",
-    answer:
-      "Bel 053 206 50 71, app ons of vul het contactformulier in. We plannen een vrijblijvende kennismaking, komen langs voor een opname en je ontvangt een gespecificeerde offerte.",
-  },
 ];
+
 
 export const faqAannemerTwente: Faq[] = [
   {

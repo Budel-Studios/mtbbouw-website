@@ -11,13 +11,13 @@ import { WindowIcon, CheckIcon, EuroIcon } from "@/components/icons";
 import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kozijnen vervangen in Twente | De Kozijnstudio van MTB Bouw" },
+  title: { absolute: "Kozijnen vervangen in Enschede & Twente | De Kozijnstudio" },
   description:
     "Hout, kunststof of aluminium kozijnen in Twente via De Kozijnstudio, het kozijnenlabel van MTB Bouw. Eerlijk advies, all-in prijs, hulp bij ISDE-subsidie.",
   alternates: { canonical: "/kozijnen" },
   openGraph: {
     type: "website",
-    title: "Kozijnen vervangen in Twente | De Kozijnstudio van MTB Bouw",
+    title: "Kozijnen vervangen in Enschede & Twente | De Kozijnstudio",
     description:
       "Hout, kunststof en aluminium kozijnen met eerlijk advies. Volledig aanbod op kozijnstudio.com.",
     url: "/kozijnen",
@@ -73,8 +73,8 @@ export default function KozijnenPage() {
           src: "/images/projects/uitbouw-houtskeletbouw-enschede/02.jpg",
           alt: "Hoekpartij met zwarte houten kozijnen en triple glas in een uitbouw in Enschede",
         }}
-        eyebrow="Kozijnen vervangen in Twente"
-        title="Voor kozijnen heeft MTB Bouw een eigen specialist: De Kozijnstudio."
+        eyebrow="De Kozijnstudio · het kozijnenlabel van MTB Bouw"
+        title="Kozijnen vervangen in Enschede en Twente"
         intro="Tochtende kozijnen, slecht sluitende ramen, oude enkelglas? De Kozijnstudio is het label van MTB Bouw dat zich volledig richt op kozijnen — met eerlijk advies en een heldere prijsopgave, geen wilde marges."
         cta={
           <ArrowLink href="https://kozijnstudio.com" onDark>
