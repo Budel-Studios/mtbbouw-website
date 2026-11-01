@@ -60,7 +60,7 @@ export const jobs: Job[] = [
       "Een rijbewijs is wenselijk, maar we denken graag mee.",
     ],
     benefits: [
-      "Salaris €2.700 – €3.800",
+      "Salaris €3.000 – €4.500 bruto per maand",
       "CAO Bouw",
       "Vast contract mogelijk",
       "Vierdaagse werkweek mogelijk",
@@ -73,8 +73,8 @@ export const jobs: Job[] = [
     status: "te-bevestigen",
     datePosted: "2026-07-03",
     employmentType: "FULL_TIME",
-    salaryMin: 2700,
-    salaryMax: 3800,
+    salaryMin: 3000,
+    salaryMax: 4500,
   },
   {
     slug: "bbl-leerling",

@@ -65,7 +65,7 @@ Elk artikel krijgt vier dingen:
 | btw-9-procent-verbouwen | 9 procent btw verbouwing | — | /verduurzamen-enschede | — |
 | houtcomposiet-gevelbekleding | houtcomposiet gevelbekleding | — | /aanbouw-uitbouw | Leveranciers zoals Finiplus |
 | kozijnen-vervangen-zo-gaat-het | kozijnen vervangen | kozijnen vervangen Enschede | /kozijnen | Eigen montageproces |
-| casco-bedrijfspand-afbouw | casco bedrijfspand afbouw | bedrijfspand verbouwen Twente | /afbouwstudio/bedrijfspand-verbouwen | Project bedrijfshal Borne |
+| casco-bedrijfspand-afbouw | casco bedrijfspand afbouw | bedrijfspand verbouwen Twente | /afbouwstudio/bedrijfspand-verbouwen | — |
 | steenstrips-of-baksteen | steenstrips of baksteen | — | /aanbouw-uitbouw | — |
 | betalingstermijnen-verbouwing | termijnschema aannemer | — | /hoe-wij-werken | — |
 | wonen-tijdens-verbouwing | wonen tijdens verbouwing | — | /wonen-en-verbouwen | — |

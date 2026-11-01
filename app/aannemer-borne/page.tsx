@@ -14,20 +14,20 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer Borne | verbouw & bedrijfspanden | MTB Bouw" },
   description:
-    "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. We bouwden er al een bedrijfshal af. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. Vanuit Enschede in zo'n 20 minuten ter plaatse. Vaste prijs, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-borne" },
   openGraph: {
     type: "website",
     title: "Aannemer Borne | verbouw & bedrijfspanden | MTB Bouw",
     description:
-      "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. We bouwden er al een bedrijfshal af. Vaste prijs, geen voorrijkosten.",
+      "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. Vanuit Enschede in zo'n 20 minuten ter plaatse. Vaste prijs, geen voorrijkosten.",
     url: "/aannemer-borne",
-    images: [{ url: "/images/projects/bedrijfshal-borne.webp", alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering" }],
+    images: [{ url: "/images/mtb-bouw-bus.webp", alt: "Bedrijfsbus van MTB Bouw uit Enschede" }],
   },
 };
 
 export default function AannemerBornePage() {
-  // Echte projecten: het Borne-project voorop, aangevuld met recent
+  // Echte projecten: eventuele Borne-projecten voorop, aangevuld met recent
   // regiowerk. Geen verzonnen lokale referenties.
   const live = portfolio.filter((p) => !p.draft);
   const inBorne = live.filter((p) => p.location?.includes("Borne"));
@@ -49,7 +49,7 @@ export default function AannemerBornePage() {
       />
       <ServiceJsonLd
         name="Aannemer in Borne"
-        description="Verbouw, renovatie, aanbouw en zakelijke bouw in Borne door MTB Bouw uit Enschede — inclusief gerealiseerde bedrijfshal in Borne."
+        description="Verbouw, renovatie, aanbouw en zakelijke bouw in Borne door MTB Bouw uit Enschede."
         url="/aannemer-borne"
         serviceType="Aannemer"
         city="Borne"
@@ -76,15 +76,12 @@ export default function AannemerBornePage() {
             Verbouwen in Borne
           </p>
           <h2 className="display mt-4 max-w-3xl text-4xl md:text-5xl">
-            Wonen én zakelijk, met lokaal bewijs
+            Wonen én zakelijk, dichtbij
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
             Borne ligt precies tussen Hengelo en Almelo — vanaf onze werkplaats
-            in Enschede zijn we er in zo&apos;n 20 minuten. Bekijk{" "}
-            <Link href="/projecten/bedrijfshal-borne" className="font-semibold text-ink underline hover:text-navy">
-              de bedrijfshal die we in Borne afbouwden
-            </Link>{" "}
-            of vraag ons naar de mogelijkheden voor jouw woning: van{" "}
+            in Enschede zijn we er in zo&apos;n 20 minuten. Vraag ons naar de
+            mogelijkheden voor jouw woning of bedrijfspand: van{" "}
             <Link href="/verbouwing" className="font-semibold text-ink underline hover:text-navy">renovatie</Link>{" "}
             en{" "}
             <Link href="/aanbouw-uitbouw" className="font-semibold text-ink underline hover:text-navy">aanbouw</Link>{" "}

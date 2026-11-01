@@ -64,8 +64,8 @@ export default async function WerkGenoegPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Timmerman van MTB Bouw aan het werk op de bouwplaats",
+          src: "/images/mtb-bouw-bus.webp",
+          alt: "Vakman van MTB Bouw laadt materiaal op de bedrijfsbus",
         }}
         eyebrow="Werken bij MTB Bouw"
         title="Werk genoeg. Zin om mee te bouwen?"

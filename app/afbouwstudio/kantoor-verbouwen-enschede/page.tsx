@@ -38,12 +38,12 @@ export default function KantoorEnschedePage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Kantoorafbouw in Enschede door Afbouwstudio (MTB Bouw)",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Enschede"
         title="Kantoor verbouwen in Enschede — met de afbouwer uit je eigen stad"
-        intro="Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Voor kantoren in onze eigen stad betekent dat: intake bij jou op locatie, vaak nog dezelfde week, snel schakelen tijdens de bouw en één vast aanspreekpunt om de hoek, met een gespecificeerde offerte na de intake."
+        intro="Afbouwstudio is het zakelijke label van MTB Bouw uit Enschede. Voor kantoren in onze eigen stad betekent dat: intake bij jou op locatie, snel schakelen tijdens de bouw en één vast aanspreekpunt om de hoek, met een gespecificeerde offerte na de intake."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>

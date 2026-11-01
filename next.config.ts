@@ -109,6 +109,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
 
+      // Project bedrijfshal Borne bleek geen MTB-project en is verwijderd (nov 2026).
+      { source: "/projecten/bedrijfshal-borne", destination: "/projecten", permanent: true },
+
       // Oude WordPress-archieven (wildcards).
       { source: "/portfolio-item/:slug", destination: "/projecten", permanent: true },
       { source: "/category/:slug", destination: "/kennisbank", permanent: true },

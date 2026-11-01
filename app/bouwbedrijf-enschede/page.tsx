@@ -51,8 +51,8 @@ export default function BouwbedrijfEnschedePage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Bouwproject van bouwbedrijf MTB Bouw uit Enschede",
+          src: "/images/mtb-bouw-bus.webp",
+          alt: "Bedrijfsbus van MTB Bouw uit Enschede, met een vakman op locatie",
         }}
         eyebrow="Bouwbedrijf Enschede"
         title="Het bouwbedrijf uit Enschede met vier specialismen onder één dak"

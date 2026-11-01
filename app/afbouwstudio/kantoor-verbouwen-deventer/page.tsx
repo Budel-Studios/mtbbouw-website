@@ -38,8 +38,8 @@ export default function KantoorDeventerPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Zakelijke afbouw door Afbouwstudio, het zakelijke label van MTB Bouw",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Deventer"
         title="Kantoor verbouwen in Deventer: van casco tot turn-key"

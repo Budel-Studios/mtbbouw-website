@@ -74,8 +74,8 @@ export default async function VeiligVerantwoordBouwenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Bouwplaats van MTB Bouw",
+          src: "/images/mtb-bouw-bus.webp",
+          alt: "Vakman van MTB Bouw bij de bedrijfsbus op locatie",
         }}
         eyebrow="Hoe wij werken"
         title="Veilig bouwen begint met verantwoordelijkheid."

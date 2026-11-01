@@ -40,7 +40,7 @@ const linkClass = "font-semibold text-ink underline hover:text-navy";
 
 const projectSlugs = [
   "veranda-bouwen-almelo",
-  "bedrijfshal-borne",
+  "luxe-overkapping-twente",
   "uitbouw-houtskeletbouw-enschede",
 ];
 

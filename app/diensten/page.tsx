@@ -70,8 +70,8 @@ const diensten: ProjectCardData[] = [
     location: "Thuis & zakelijk",
     images: [
       {
-        src: "/images/projects/bedrijfshal-borne.webp",
-        alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering",
+        src: "/images/projects/overkapping-paardenstal-enschede/04.jpg",
+        alt: "Nieuwe overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw",
       },
     ],
   },

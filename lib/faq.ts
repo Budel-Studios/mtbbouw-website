@@ -124,7 +124,7 @@ const faqKozijnen: Faq[] = [
   {
     question: "Welke garantie krijg ik?",
     answer:
-      `Op kozijn en glas geldt de garantie van de fabrikant; die termijn staat in de offerte. ${facts.garantie.uitvoering} ${facts.garantie.wettelijk}`,
+      `Op kozijn en glas geldt de garantie van de fabrikant; die termijn staat in de offerte. Op de plaatsing geven we garantie volgens de richtlijnen in de bouw. ${facts.garantie.wettelijk}`,
   },
   {
     question: "Kan vervangen zonder schade aan de muur?",
@@ -159,12 +159,12 @@ export const faqNieuwbouw: Faq[] = [
   {
     question: "Wat staat er in de aannemingsovereenkomst?",
     answer:
-      "Wat we bouwen, de vaste prijs, de planning met opleverdatum, de garantie en de afspraken over oplevering en vertraging.",
+      "Wat we bouwen, de vaste prijs, de planning met de beoogde opleverdatum, de garantie en de afspraken over oplevering en eventuele vertraging.",
   },
   {
     question: "Welke garanties krijg ik bij nieuwbouw?",
     answer:
-      `${garantieTekst} Zo staat het ook in onze algemene voorwaarden.`,
+      `${garantieTekst} ${facts.nazorg.nabellen}`,
   },
   {
     question: "Kan ik tijdens de bouw nog wijzigen?",
@@ -244,7 +244,7 @@ const faqBedrijven: Faq[] = [
   {
     question: "Wat kost een bedrijfspand?",
     answer:
-      "Indicatief: een hal €600–€1.100 per m² casco, een kantoor €1.300–€2.000 per m² turn-key. Een hal van 500 m² komt daarmee op circa €300.000 tot €550.000.",
+      "Dat hangt af van het soort pand, de staat waarin het is en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte voor jouw pand.",
   },
   {
     question: "Kunnen jullie verbouwen terwijl mijn bedrijf doordraait?",
@@ -254,7 +254,7 @@ const faqBedrijven: Faq[] = [
   {
     question: "Hoe snel kunnen jullie schakelen?",
     answer:
-      "We plannen een intake op locatie en sturen daarna een gespecificeerde offerte. Tijdens de intake leggen we het pand digitaal vast met onze PandScan-app, zodat niets tussen wal en schip valt.",
+      "We plannen een intake op locatie en sturen daarna een gespecificeerde offerte. Tijdens de intake leggen we het pand nauwkeurig vast, zodat niets tussen wal en schip valt.",
   },
   {
     question: "Welke garanties gelden bij bedrijfsbouw?",
@@ -450,7 +450,7 @@ export const faqBouwbedrijfEnschede: Faq[] = [
   {
     question: "Geven jullie garantie op het werk?",
     answer:
-      "Ja, op ons werk zit garantie en ook ná de oplevering blijven we bereikbaar voor nazorg. De precieze voorwaarden staan in de offerte, zodat alles vooraf duidelijk is.",
+      `Ja. ${facts.garantie.uitvoering} ${facts.nazorg.nabellen}`,
   },
   {
     question: "Hoe vraag ik een offerte aan?",
@@ -494,9 +494,9 @@ export const faqAannemerTwente: Faq[] = [
 
 export const faqKantoorVerbouwen: Faq[] = [
   {
-    question: "Wat kost een kantoorverbouwing per m²?",
+    question: "Wat kost een kantoorverbouwing?",
     answer:
-      "Dat hangt sterk af van het startpunt en het afwerkingsniveau. Gangbare marktindicaties (2026) lopen van zo'n €150–400 per m² voor een opknapbeurt tot €600–1.500 per m² voor een complete casco-afbouw. Na een intake met onze inventarisatie-app ontvang je een gespecificeerde offerte voor jouw pand.",
+      "Dat hangt sterk af van het startpunt, de installaties en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte voor jouw pand.",
   },
   {
     question: "Kunnen jullie verbouwen terwijl ons kantoor in gebruik blijft?",
@@ -536,7 +536,7 @@ export const faqBedrijfspandVerbouwen: Faq[] = [
   {
     question: "Wat kost het verbouwen van een bedrijfspand?",
     answer:
-      "Dat hangt af van startpunt en scope: een opknapbeurt begint rond €150–400 per m², een complete afbouw van casco tot turn-key loopt tot €600–1.500 per m² (marktindicatie 2026, excl. btw). Na een intake met onze inventarisatie-app ontvang je een gespecificeerde offerte.",
+      "Dat hangt af van het startpunt, de scope en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kan de verbouwing terwijl ons bedrijf doordraait?",
@@ -602,7 +602,7 @@ export const faqWinkelVerbouwen: Faq[] = [
   {
     question: "Wat kost een winkelverbouwing?",
     answer:
-      "Van een restyling tot complete casco-afbouw: de bandbreedte is groot. Als indicatie (2026): grondige renovatie vanaf €300–600 per m², complete afbouw tot €600–1.500 per m² excl. btw. Je ontvangt altijd een vaste prijs vooraf.",
+      "Van een restyling tot een complete casco-afbouw: de bandbreedte is groot. Na een intake op locatie ontvang je een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk benoemd.",
   },
   {
     question: "Kan de winkel (deels) open blijven tijdens de verbouwing?",
@@ -627,7 +627,7 @@ export const faqKantoorDeventer: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Deventer?",
     answer:
-      "Dezelfde marktindicaties als elders in Oost-Nederland (2026, excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m².",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na een intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie gefaseerd verbouwen zodat ons kantoor in Deventer open blijft?",
@@ -637,7 +637,7 @@ export const faqKantoorDeventer: Faq[] = [
   {
     question: "Hoe snel ligt er een offerte?",
     answer:
-      "We komen naar Deventer voor een intake met onze inventarisatie-app; daarna volgt een gespecificeerde offerte.",
+      "We komen naar Deventer voor een intake op locatie; daarna volgt een gespecificeerde offerte.",
   },
 ];
 
@@ -650,7 +650,7 @@ export const faqKantoorApeldoorn: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Apeldoorn?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na één intake ontvang je een gespecificeerde offerte voor jouw pand.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na één intake ontvang je een gespecificeerde offerte voor jouw pand.",
   },
   {
     question: "Is de reisafstand vanuit Enschede geen probleem?",
@@ -673,7 +673,7 @@ export const faqKantoorZwolle: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Zwolle?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m².",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na een intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie casco kantoorruimte in Zwolle volledig afbouwen?",
@@ -721,7 +721,7 @@ export const faqSysteemplafonds: Faq[] = [
   {
     question: "Wat kost een systeemplafond?",
     answer:
-      "Als marktindicatie (2026): een standaard systeemplafond kost circa €40–80 per m²; inclusief LED-verlichting reken je op €65–120 per m². Akoestische of design-panelen liggen hoger. Je ontvangt altijd een vaste prijs vooraf.",
+      "Als marktindicatie (2026): een standaard systeemplafond kost circa €40–80 per m²; inclusief LED-verlichting reken je op €65–120 per m². Akoestische of design-panelen liggen hoger. Na een intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Wat is het voordeel van een systeemplafond in een kantoor?",
@@ -814,12 +814,12 @@ export const faqAannemerBorne: Faq[] = [
   {
     question: "Zijn jullie snel ter plaatse in Borne?",
     answer:
-      "Ja — Borne ligt tussen Hengelo en Almelo, zo'n 20 minuten van onze werkplaats in Enschede. We hebben er ook al gebouwd: de bedrijfshal in Borne staat in ons portfolio.",
+      "Ja — Borne ligt tussen Hengelo en Almelo, zo'n 20 minuten van onze werkplaats in Enschede.",
   },
   {
     question: "Doen jullie in Borne ook zakelijke projecten?",
     answer:
-      "Ja, zowel woningen als bedrijfspanden — de afbouw van een bedrijfshal in Borne is een van onze recente projecten.",
+      "Ja, zowel woningen als bedrijfspanden. We komen graag langs voor een intake op locatie.",
   },
   {
     question: "Rekenen jullie voorrijkosten naar Borne?",
@@ -941,12 +941,12 @@ export const faqKantoorEnschede: Faq[] = [
   {
     question: "Hoe snel kunnen jullie bij ons kantoor in Enschede zijn?",
     answer:
-      "Snel — Enschede is onze thuisstad. Voor een intake op locatie, een tussentijdse schouw of nazorg zijn we er meestal dezelfde week nog.",
+      "Enschede is onze thuisstad, dus voor een intake op locatie, een tussentijdse schouw of nazorg zijn we er zonder lange reistijd.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Enschede?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na één intake met onze inventarisatie-app ontvang je een gespecificeerde offerte.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na één intake op locatie ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie verbouwen terwijl ons team in Enschede doorwerkt?",
@@ -964,12 +964,12 @@ export const faqKantoorHengelo: Faq[] = [
   {
     question: "Werken jullie veel in Hengelo?",
     answer:
-      "Ja — Hengelo is onze directe buurstad, op een kwartier van onze werkplaats in Enschede. Voor kantoren en bedrijfspanden in Hengelo plannen we intakes doorgaans binnen een week.",
+      "Ja — Hengelo is onze directe buurstad, op een kwartier van onze werkplaats in Enschede. Voor kantoren en bedrijfspanden in Hengelo komen we graag langs voor een intake op locatie.",
   },
   {
     question: "Wat kost een kantoorverbouwing in Hengelo?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na de intake ontvang je een gespecificeerde offerte.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na de intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie een bedrijfspand in Hengelo combineren met kantoorafbouw?",
@@ -992,7 +992,7 @@ export const faqKantoorAlmelo: Faq[] = [
   {
     question: "Wat kost een kantoorverbouwing in Almelo?",
     answer:
-      "Marktindicaties 2026 (excl. btw): opknapbeurt €150–400 per m², renovatie €300–600 per m², complete casco-afbouw €600–1.500 per m². Na de intake ontvang je een gespecificeerde offerte.",
+      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na de intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Kunnen jullie casco kantoorruimte in Almelo afbouwen?",

@@ -1,7 +1,7 @@
 ---
 title: "Een kantoor inrichten waar mensen graag werken: zo pak je het aan"
 seoTitle: "Kantoor inrichten: zo pak je het aan"
-description: "Kantoor inrichten? Het draait om licht, akoestiek en indeling — niet om dure bureaus. Praktische tips, een checklist en eerlijke prijzen uit de praktijk."
+description: "Kantoor inrichten? Het draait om licht, akoestiek en indeling — niet om dure bureaus. Praktische tips, een checklist en ervaringen uit de praktijk."
 date: 2026-07-05
 category: bouwvoorbereiding
 subcategories: [wanden-plafonds]
@@ -145,13 +145,15 @@ Vijf of meer vinkjes? Netjes. Minder? Geen zorgen, daar is wat aan te doen — e
 
 ## Wat kost het eigenlijk?
 
-Eerlijk verhaal: dat hangt af van hoe ver je gaat. Grofweg (excl. btw):
+Eerlijk verhaal: dat hangt af van hoe ver je gaat. Grofweg zijn er drie niveaus:
 
-| Aanpak | Wat gebeurt er | Prijsindicatie per m² |
-|---|---|---|
-| Opknapbeurt | Plafond, verlichting, schilderwerk, vloer | €150–400 |
-| Renovatie | Plus nieuwe indeling, wanden, installaties aanpassen | €300–600 |
-| Casco → turn-key | Alles, van lege ruimte tot instapklaar | €600–1.500 |
+| Aanpak | Wat gebeurt er |
+|---|---|
+| Opknapbeurt | Plafond, verlichting, schilderwerk, vloer |
+| Renovatie | Plus nieuwe indeling, wanden, installaties aanpassen |
+| Casco → turn-key | Alles, van lege ruimte tot instapklaar |
+
+Een prijs per m² zegt weinig: het pand, de installaties en het afwerkingsniveau bepalen de kosten. Na een intake op locatie rekenen we jouw situatie uit.
 
 Wil je precies weten waar die verschillen in zitten en waar je op kunt besparen? Dat rekenen we voor in [wat kost een kantoor verbouwen in 2026](/kennisbank/kantoor-verbouwen-kosten-2026). En bij [onze Afbouwstudio](/afbouwstudio) werken we altijd met een vaste projectprijs — dan weet je vooraf waar je aan toe bent.
 
@@ -175,7 +177,7 @@ Glas is inderdaad een hard vlak, maar in combinatie met een akoestisch plafond e
 
 ### Wat kost een kantoor opnieuw indelen met wanden?
 
-Metal stud-wanden kosten indicatief €70–120 per m² wand (excl. btw). Een complete herindeling valt meestal in de renovatie-range van €300–600 per m² vloeroppervlak. De precieze getallen staan in [ons kostenartikel](/kennisbank/kantoor-verbouwen-kosten-2026).
+Metal stud-wanden kosten indicatief €70–120 per m² wand (excl. btw). Wat een complete herindeling kost, hangt af van het pand en de installaties; dat rekenen we uit na een intake op locatie.
 
 ### Hebben we een architect of interieurontwerper nodig?
 
@@ -187,6 +189,6 @@ Zeker. Systeemplafonds en metal stud-wanden zijn juist populair in huurpanden: r
 
 ## Samenvatting
 
-Een kantoor waar mensen graag werken, draait niet om dure meubels maar om drie basiszaken: **licht** (daglicht op de werkplekken, een doordacht LED-plan), **akoestiek** (akoestisch plafond, wandpanelen, zonering — dé oplossing voor de kantoortuin-klacht) en **indeling** (looproutes langs de reuring, focus en overleg gescheiden). Het plafond is daarbij je geheime wapen: één ingreep, drie problemen opgelost. Bouw flexibel met metal stud, dan kan het over twee jaar zó weer anders. En reken realistisch: van €150–400 per m² voor een opknapbeurt tot €600–1.500 per m² voor casco naar turn-key (excl. btw).
+Een kantoor waar mensen graag werken, draait niet om dure meubels maar om drie basiszaken: **licht** (daglicht op de werkplekken, een doordacht LED-plan), **akoestiek** (akoestisch plafond, wandpanelen, zonering — dé oplossing voor de kantoortuin-klacht) en **indeling** (looproutes langs de reuring, focus en overleg gescheiden). Het plafond is daarbij je geheime wapen: één ingreep, drie problemen opgelost. Bouw flexibel met metal stud, dan kan het over twee jaar zó weer anders. En reken realistisch: laat je pand opnemen en vraag een gespecificeerde offerte.
 
 Twijfel je waar je bij jouw kantoor moet beginnen? Loop de checklist hierboven eens door — of [stuur ons een berichtje](/contact). Dan kijken we vrijblijvend mee en zeggen we eerlijk wat wél en niet nodig is. Zo doen we dat bij [MTB Bouw Afbouwstudio](/afbouwstudio): eerst normaal uitleggen, dan pas bouwen.

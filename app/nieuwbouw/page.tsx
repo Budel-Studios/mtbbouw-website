@@ -17,19 +17,19 @@ import { garantieTekst } from "@/lib/facts";
 export const metadata: Metadata = {
   title: "Nieuwbouw in Enschede en Twente",
   description:
-    "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een afgesproken opleverdatum en heldere garantieafspraken.",
+    "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een heldere planning en heldere garantieafspraken.",
   alternates: { canonical: "/nieuwbouw" },
   openGraph: {
     type: "website",
     title: "Nieuwbouw in Enschede en Twente | MTB Bouw",
-    description: "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een afgesproken opleverdatum en heldere garantieafspraken.",
+    description: "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een heldere planning en heldere garantieafspraken.",
     url: "/nieuwbouw",
   },
 };
 
 export default function NieuwbouwPage() {
   // Echt bouwwerk van de grond af en grote bouwstromen, niet zomaar de nieuwste drie.
-  const relatedProjects = ["bedrijfshal-borne", "uitbouw-houtskeletbouw-enschede", "dubbele-uitbouw-enschede"]
+  const relatedProjects = ["overkapping-paardenstal-enschede", "uitbouw-houtskeletbouw-enschede", "dubbele-uitbouw-enschede"]
     .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
@@ -61,8 +61,8 @@ export default function NieuwbouwPage() {
         items={[
           {
             icon: ShieldIcon,
-            title: "Prijs en opleverdatum op papier",
-            text: "Een aannemingsovereenkomst met een vaste aanneemsom, een afgesproken opleverdatum en heldere garantieafspraken.",
+            title: "Prijs en planning op papier",
+            text: "Een aannemingsovereenkomst met een vaste aanneemsom, een planning met de beoogde opleverdatum en heldere garantieafspraken.",
           },
           {
             icon: LayersIcon,
@@ -80,7 +80,7 @@ export default function NieuwbouwPage() {
       <SplitSection
         eyebrow="Van kavel tot sleutel"
         title="Eén team dat alles regelt"
-        image={{ src: "/images/projects/bedrijfshal-borne.webp", alt: "Nieuwbouwproject van MTB Bouw" }}
+        image={{ src: "/images/projects/overkapping-paardenstal-enschede/04.jpg", alt: "Nieuwe overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw" }}
         cta={{ href: "/hoe-wij-werken", label: "Zo werken wij" }}
       >
         <p>
@@ -99,7 +99,7 @@ export default function NieuwbouwPage() {
         eyebrow="Zeker bouwen"
         title="Garanties en vergunningen goed geregeld"
         imageSide="left"
-        image={{ src: "/images/projects/bedrijfshal-borne.webp", alt: "Nieuwbouw van een bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering" }}
+        image={{ src: "/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg", alt: "Uitbouw in houtskeletbouw in Enschede, opnieuw opgebouwd door MTB Bouw" }}
       >
         <p>
           <strong>Vergunningen.</strong> De omgevingsvergunning heeft een

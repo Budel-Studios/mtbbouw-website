@@ -42,7 +42,7 @@ const linkClass = "font-semibold text-ink underline hover:text-navy";
 const projectSlugs = [
   "renovatie-villa-zantinge-enschede",
   "uitbouw-houtskeletbouw-enschede",
-  "bedrijfshal-borne",
+  "dubbele-uitbouw-enschede",
 ];
 
 export default function AannemerHengeloPage() {

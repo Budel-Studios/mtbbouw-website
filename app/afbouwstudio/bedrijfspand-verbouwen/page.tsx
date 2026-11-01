@@ -60,8 +60,8 @@ export default function BedrijfspandVerbouwenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Verbouwd bedrijfspand in Borne door Afbouwstudio (MTB Bouw)",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Bedrijfspanden"
         title="Bedrijfspand verbouwen in Twente — met zo min mogelijk stilstand"
@@ -124,14 +124,13 @@ export default function BedrijfspandVerbouwenPage() {
                 Wat kost het?
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
-                Als marktindicatie (2026, excl. btw): een opknapbeurt begint
-                rond €150–400 per m², een complete casco-afbouw loopt tot
-                €600–1.500 per m² — afhankelijk van installaties en afwerking.
+                Dat hangt af van het pand, de installaties en de afwerking.
+                Een prijs per m² zegt daarom weinig.
                 Lees ook onze{" "}
                 <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
                   kostengids voor zakelijke verbouwingen
                 </Link>
-                . Na één intake met onze inventarisatie-app ontvang je een gespecificeerde offerte.
+                . Na één intake op locatie ontvang je een gespecificeerde offerte.
               </p>
             </div>
           </div>

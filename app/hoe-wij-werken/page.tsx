@@ -87,7 +87,7 @@ const steps: Step[] = [
     id: "oplevering",
     title: "Oplevering en nazorg",
     text: [
-      `We lopen samen alle punten na, leggen ze vast en tekenen af. ${facts.garantie.uitvoering} ${facts.garantie.materialen} ${facts.garantie.wettelijk} En daarna blijven we gewoon bereikbaar.`,
+      `We lopen samen alle punten na, leggen ze vast en tekenen af. ${facts.garantie.uitvoering} ${facts.garantie.materialen} ${facts.garantie.wettelijk} ${facts.nazorg.nabellen}`,
     ],
     links: [{ href: "/veelgestelde-vragen", label: "Veelgestelde vragen" }],
   },

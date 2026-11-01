@@ -43,7 +43,7 @@ const PLAATSEN: { name: string; href?: string }[] = [
 
 export default function AannemerTwentePage() {
   // Echte projecten uit Twente.
-  const projects = ["renovatie-villa-zantinge-enschede", "veranda-bouwen-almelo", "bedrijfshal-borne"]
+  const projects = ["renovatie-villa-zantinge-enschede", "veranda-bouwen-almelo", "uitbouw-houtskeletbouw-enschede"]
     .map((slug) => portfolio.find((p) => p.slug === slug && !p.draft))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
 

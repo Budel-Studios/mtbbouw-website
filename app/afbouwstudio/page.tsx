@@ -65,7 +65,7 @@ const STEPS = [
   { icon: MapPinIcon, title: "Intake op locatie", body: "We komen langs met de app — alles direct vastgelegd." },
   { icon: ClockIcon, title: "Voorstel + offerte", body: "Een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk benoemd." },
   { icon: UsersIcon, title: "Uitvoering", body: "Eén team, één planning, wekelijkse update." },
-  { icon: ShieldIcon, title: "Oplevering + nazorg", body: "Samen de oplevering nalopen. Garantie volgens de overeenkomst." },
+  { icon: ShieldIcon, title: "Oplevering + nazorg", body: "Samen de oplevering nalopen. Daarna bellen we je na." },
 ];
 
 const CASES = [
@@ -133,8 +133,8 @@ export default function AfbouwstudioPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Afgebouwd bedrijfspand door Afbouwstudio, het zakelijke afbouw-label van MTB Bouw",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Zakelijke afbouw"
         title="Bedrijfspanden en horeca, afgebouwd zoals het hoort."
@@ -207,11 +207,11 @@ export default function AfbouwstudioPage() {
                 ))}
               </ul>
             </div>
-            {/* Statische PandScan-visual */}
+            {/* Statische visual: inmeten op locatie */}
             <div className="mx-auto w-full max-w-sm border border-mist bg-white">
               <div className="border-b border-mist px-5 py-4">
                 <p className="label-mono text-stone">
-                  Afbouwstudio · PandScan
+                  Afbouwstudio · inmeting
                 </p>
                 <p className="mt-1 font-display text-lg font-bold">Broodbode · Zwolle</p>
               </div>

@@ -54,8 +54,8 @@ const SUB_ITEMS = [
     title: "Nieuwbouw",
     text: "Bouwen vanaf de fundering, met één team van vergunning tot sleutel.",
     href: "/nieuwbouw",
-    image: "/images/projects/bedrijfshal-borne.webp",
-    alt: "Nieuwgebouwde bedrijfshal in Borne, door MTB Bouw van ruwbouw tot oplevering",
+    image: "/images/projects/overkapping-paardenstal-enschede/04.jpg",
+    alt: "Nieuwe overkapping met paardenstal in het buitengebied van Enschede, gebouwd door MTB Bouw",
   },
 ];
 

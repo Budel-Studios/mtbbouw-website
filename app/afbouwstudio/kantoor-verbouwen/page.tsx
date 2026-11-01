@@ -92,8 +92,8 @@ export default function KantoorVerbouwenPage() {
       <PageHero
         variant="image"
         image={{
-          src: "/images/projects/bedrijfshal-borne.webp",
-          alt: "Kantoorafbouw door Afbouwstudio, het zakelijke label van MTB Bouw",
+          src: "/images/projects/broodbode-zwolle-lunchroom/03.jpg",
+          alt: "Lunchroom van De Broodbode in Zwolle, door MTB Bouw afgebouwd vanuit een casco pand",
         }}
         eyebrow="Afbouwstudio · Kantoorafbouw"
         title="Kantoor verbouwen in Enschede en Twente: van casco tot turn-key"
@@ -182,14 +182,12 @@ export default function KantoorVerbouwenPage() {
                 Wat kost een kantoorverbouwing?
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
-                Gangbare marktindicaties (2026): een cosmetische opknapbeurt
-                kost circa €150–400 per m², een grondige kantoorrenovatie
-                €300–600 per m², en een complete casco-afbouw tot turn-key
-                kantoor €600–1.500 per m² — afhankelijk van installaties en
-                afwerkingsniveau.
+                Dat hangt af van het pand, de installaties en het
+                afwerkingsniveau. Een prijs per m² zegt daarom weinig: we
+                rekenen jouw situatie uit na een intake op locatie.
               </p>
               <p className="mt-4 leading-relaxed text-stone">
-                Wat jouw pand kost? Na één intake met onze inventarisatie-app
+                Wat jouw pand kost? Na één intake op locatie
                 ontvang je een gespecificeerde offerte. Stelposten en uitsluitingen staan er duidelijk in.
               </p>
             </div>

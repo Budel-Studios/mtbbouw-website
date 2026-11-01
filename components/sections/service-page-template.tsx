@@ -161,7 +161,7 @@ export function ServicePageTemplate({
                 { n: "01", t: "Intake op locatie", d: "Wij komen langs en leggen alles vast in onze app." },
                 { n: "02", t: "Voorstel + offerte", d: "Gespecificeerde offerte met planning." },
                 { n: "03", t: "Uitvoering", d: "Eén team, wekelijkse updates, wijzigingen vooraf besproken." },
-                { n: "04", t: "Oplevering + nazorg", d: "Samen de oplevering nalopen, daarna bereikbaar voor nazorg." },
+                { n: "04", t: "Oplevering + nazorg", d: "Samen de oplevering nalopen. Daarna bellen we je na." },
               ].map((s) => (
                 <li key={s.n} className="flex gap-4">
                   <span className="w-10 shrink-0 font-display text-2xl font-semibold text-navy">
