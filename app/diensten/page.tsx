@@ -11,7 +11,7 @@ import {
   WindowDrawing,
 } from "@/components/blueprint/drawings";
 
-const title = "Diensten: verbouw, uitbouw & afbouw in Twente | MTB Bouw";
+const title = "Wat we bouwen in Enschede en Twente | MTB Bouw";
 const description =
   "Wat MTB Bouw bouwt in Twente: renovatie, aanbouw en uitbouw, nieuwbouw, kozijnen, prefab en zakelijke afbouw. Vast team uit Enschede, heldere offerte.";
 

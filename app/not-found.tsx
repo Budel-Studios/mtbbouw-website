@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { expertises } from "@/lib/expertises";
+
+export const metadata: Metadata = {
+  title: "Pagina niet gevonden",
+  robots: { index: false, follow: true },
+};
 
 /**
  * Nederlandstalige 404 — vervangt de Engelse Next.js-default. Biedt de

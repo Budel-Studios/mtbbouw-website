@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const job = findJob(slug);
   if (!job) return {};
   const title = `Vacature ${job.title} in Enschede en Twente`;
-  const description = job.intro.length > 155 ? `${job.intro.slice(0, 152).trimEnd()}…` : job.intro;
+  const description = job.seoDescription;
   return {
     title,
     description,
@@ -72,7 +72,7 @@ export default async function VacaturePage({ params }: { params: Promise<Params>
 
         <header className="mt-14 max-w-3xl md:mt-20">
           <p className="eyebrow text-stone">Vacature · MTB Bouw, Enschede</p>
-          <h1 className="display mt-6 text-5xl md:text-6xl">{job.title}</h1>
+          <h1 className="display mt-6 text-5xl md:text-6xl">Vacature {job.title.toLowerCase()} in Enschede</h1>
         </header>
 
         <div className="mt-12 max-w-4xl">

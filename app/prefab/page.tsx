@@ -15,7 +15,7 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 import { ServiceAreaLinks } from "@/components/sections/service-area-links";
 
 export const metadata: Metadata = {
-  title: { absolute: "Prefab & houtskeletbouw in Twente | MTB Bouw" },
+  title: { absolute: "Prefab & houtskeletbouw in Enschede en Twente | MTB Bouw" },
   description:
     "Houtskeletbouw, prefab daken en wanden, overkappingen en buitengebouwen. Ruwbouw in dagen in plaats van weken, maatvast uit de fabriek.",
   alternates: { canonical: "/prefab" },

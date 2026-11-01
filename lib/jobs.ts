@@ -19,6 +19,8 @@ export type Job = {
   slug: string;
   title: string;
   intro: string;
+  /** Metabeschrijving voor Google (140 tot 155 tekens). */
+  seoDescription: string;
   tasks: string[];
   profile: string[];
   extra: string[];
@@ -36,6 +38,8 @@ export const jobs: Job[] = [
   {
     slug: "allround-timmerman",
     title: "Allround Timmerman",
+    seoDescription:
+      "Vacature allround timmerman bij MTB Bouw in Enschede: verbouw, uitbouw en kozijnen in heel Twente. Klein vast team, cao-loon, eigen gereedschap en doorgroeikansen.",
     intro:
       "Van ruwbouw tot laatste kwaststreek — jij pakt het hele traject op. Geen dag hetzelfde: de ene week een uitbouw, de andere week kozijnen of een complete renovatie.",
     tasks: [
@@ -69,7 +73,6 @@ export const jobs: Job[] = [
       "Opleidingen",
       "Doorgroeien naar voorman of projectleider",
     ],
-    // Status nog te bevestigen (audit 1 nov 2026: validThrough was verlopen).
     status: "open",
     datePosted: "2026-07-03",
     employmentType: "FULL_TIME",
@@ -79,6 +82,8 @@ export const jobs: Job[] = [
   {
     slug: "bbl-leerling",
     title: "BBL Leerling",
+    seoDescription:
+      "Vacature BBL-leerling timmerman bij MTB Bouw in Enschede. Leer het vak in de praktijk, in een klein vast team dat werkt in heel Twente. Welkom vanaf niveau 2.",
     intro:
       "Iedereen is welkom vanaf niveau 2. Wij leiden graag mensen op — je leert direct in de praktijk, loopt mee met ervaren vakmensen en krijgt al snel verantwoordelijkheid.",
     tasks: [
@@ -99,7 +104,6 @@ export const jobs: Job[] = [
       "Praktijkervaring op echte projecten",
       "Uitzicht op een vast contract na je diploma",
     ],
-    // Status nog te bevestigen (audit 1 nov 2026: validThrough was verlopen).
     status: "open",
     datePosted: "2026-07-03",
     employmentType: "FULL_TIME",
