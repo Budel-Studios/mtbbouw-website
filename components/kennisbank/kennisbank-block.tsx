@@ -10,7 +10,7 @@ import { articleToCard } from "@/lib/article-slide";
  */
 export function KennisbankBlock({
   match,
-  eyebrow = "Uit de kennisbank",
+  eyebrow = "Uit de bouwgids",
   title = "Lees je alvast in",
   intro,
   limit = 6,
@@ -28,7 +28,7 @@ export function KennisbankBlock({
   return (
     <CardSlider
       items={items}
-      label="Kennisbank-artikelen"
+      label="Artikelen uit de bouwgids"
       eyebrow={eyebrow}
       title={title}
       intro={intro}

@@ -427,13 +427,13 @@ export async function HomeContent({
         <section id="kennisbank" className="scroll-mt-20 bg-tint">
           <div className="container-page py-24 md:py-32">
             <div className="flex flex-wrap items-end justify-between gap-6">
-              <SectionHeading eyebrow="Inspiratie & kennis" title="Kennisbank." />
+              <SectionHeading eyebrow="Inspiratie & kennis" title="Bouwgids." />
               <SliderLink href="/kennisbank">Alle artikelen</SliderLink>
             </div>
             <div className="mt-14">
               <CardSlides
                 items={latestArticles}
-                label="Kennisbank-artikelen"
+                label="Artikelen uit de bouwgids"
                 badge={(i) =>
                   playful && i === 0 ? (
                     <Sticker tone="navy" rotate="rotate-6" className="absolute right-4 top-4 z-10">

@@ -22,7 +22,7 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
-          { name: "Kennisbank", url: "/kennisbank" },
+          { name: "Bouwgids", url: "/kennisbank" },
           { name: item.label, url: path },
         ]}
       />
@@ -30,7 +30,7 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
       <div className="container-page pb-24 pt-10 md:pb-32 md:pt-14">
         <nav aria-label="Kruimelpad" className="label-mono text-stone">
           <Link href="/kennisbank" className="link-line hover:text-navy">
-            Kennisbank
+            Bouwgids
           </Link>
           <span className="mx-2" aria-hidden="true">/</span>
           <span className="text-navy">{kind}</span>

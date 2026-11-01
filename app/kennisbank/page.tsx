@@ -8,14 +8,14 @@ const INTRO =
   "Praktische uitleg en advies over bouwen, verbouwen, renoveren en kozijnen. Van veelgestelde vragen tot achtergrondartikelen: hier vind je antwoorden zonder poeha, geschreven door het team dat het werk ook echt uitvoert.";
 
 export const metadata: Metadata = {
-  title: "Kennisbank",
+  title: "Bouwgids: uitleg over bouwen en verbouwen",
   description:
-    "Artikelen en praktische uitleg over bouwen, verbouwen, renovatie en kozijnen van MTB Bouw.",
+    "De bouwgids van MTB Bouw: praktische uitleg over bouwen, verbouwen, renovatie, kosten en kozijnen, geschreven door het team dat het werk uitvoert.",
   alternates: { canonical: "/kennisbank" },
   openGraph: {
     type: "website",
-    title: "Kennisbank | MTB Bouw",
-    description: "Artikelen en praktische uitleg over bouwen, verbouwen, renovatie en kozijnen van MTB Bouw.",
+    title: "Bouwgids | MTB Bouw",
+    description: "De bouwgids van MTB Bouw: praktische uitleg over bouwen, verbouwen, renovatie, kosten en kozijnen, geschreven door het team dat het werk uitvoert.",
     url: "/kennisbank",
   },
 };
@@ -28,7 +28,7 @@ export default function KennisbankPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
-          { name: "Kennisbank", url: "/kennisbank" },
+          { name: "Bouwgids", url: "/kennisbank" },
         ]}
       />
       {/* Kop en browser: zelfde opbouw als /projecten */}
@@ -37,7 +37,7 @@ export default function KennisbankPage() {
           <div className="animate-fade-up md:col-span-8">
             <p className="eyebrow text-stone">Inspiratie &amp; kennis</p>
             <h1 className="display mt-6 text-[2.5rem] sm:text-6xl lg:text-7xl xl:text-[6.5rem]">
-              Kennisbank &amp; artikelen
+              Bouwgids
             </h1>
           </div>
           <p
