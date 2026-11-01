@@ -89,11 +89,11 @@ export default function AannemerBornePage() {
             <Link href="/kozijnen" className="font-semibold text-ink underline hover:text-navy">kozijnen</Link>{" "}
             en een snelle{" "}
             <Link href="/prefab" className="font-semibold text-ink underline hover:text-navy">prefab uitbouw</Link>
-            . Zakelijk pand in Borne? Dan is{" "}
-            <Link href="/afbouwstudio/bedrijfspand-verbouwen" className="font-semibold text-ink underline hover:text-navy">
-              Afbouwstudio
-            </Link>{" "}
-            je aanspreekpunt.
+            . Een bedrijfspand in Borne verbouwen? Lees hoe we dat aanpakken bij{" "}
+            <Link href="/zakelijk/bedrijfspand-verbouwen" className="font-semibold text-ink underline hover:text-navy">
+              bedrijfspand verbouwen
+            </Link>
+            .
           </p>
         </div>
       </section>

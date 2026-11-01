@@ -71,8 +71,8 @@ gallery:
     alt: "Menukaart op tafel in de afgewerkte lunchroom van De Broodbode Apeldoorn"
     phase: "eind"
 relatedServices:
-  - { href: "/afbouwstudio/horeca-verbouwen", label: "Horeca verbouwen" }
-  - { href: "/afbouwstudio", label: "Afbouwstudio" }
+  - { href: "/zakelijk/horeca-verbouwen", label: "Horeca afbouw & verbouwen" }
+  - { href: "/zakelijk", label: "Zakelijk verbouwen" }
   - { href: "/verbouwing", label: "Renovatie & verbouw" }
 testimonial:
   text: "Dit was een pittig project met een strakke planning, maar juist daar zijn we trots op. In ongeveer zeven weken hebben we het pand volledig getransformeerd, nauw aangesloten op de planning en wensen van De Broodbode. De tevredenheid van de klant maakt dit project extra mooi om op terug te kijken."
@@ -83,7 +83,7 @@ faq:
   - question: "Wat is er allemaal vernieuwd in het pand?"
     answer: "Vrijwel alles: gedeeltelijke sloop en volledige herindeling met Ytong- en metal-studwanden, nieuwe elektra met krachtstroom en meterkast, vloercoating, een betonnen magazijnvloer, circa 180 m² tegelwerk, nieuwe toiletruimtes, een wasruimte, een complete spoelkeuken en veel maatwerk zoals twee ronde balies met doekglas."
   - question: "Doen jullie vaker dit soort horecaprojecten?"
-    answer: "Ja — voor De Broodbode bouwden we eerder al een casco pand in Zwolle om tot complete lunchroom. Horeca-afbouw van casco tot turn-key is precies waar ons label Afbouwstudio voor bestaat."
+    answer: "Ja. Voor De Broodbode bouwden we eerder al een casco pand in Zwolle af tot complete lunchroom."
 tags: [horeca, apeldoorn, afbouw, renovatie, lunchroom]
 draft: false
 ---
@@ -106,4 +106,4 @@ Een project als dit maak je niet alleen. De vloer kreeg zijn nieuwe coating in s
 
 ## Zelf een zakelijke renovatie of horecazaak?
 
-Of het nu gaat om een lunchroom, horecazaak, winkel of complete zakelijke renovatie: wij transformeren panden van verouderd naar klaar-voor-jaren — met één team, één planning en één aanspreekpunt. Bekijk [horeca verbouwen](/afbouwstudio/horeca-verbouwen), ontdek ons label [Afbouwstudio](/afbouwstudio) of [neem direct contact op](/contact) voor een vrijblijvende intake.
+Of het nu gaat om een lunchroom, horecazaak, winkel of complete zakelijke renovatie: wij transformeren panden van verouderd naar klaar-voor-jaren — met één team, één planning en één aanspreekpunt. Bekijk [horeca afbouw en verbouwen](/zakelijk/horeca-verbouwen), lees meer over [zakelijk verbouwen](/zakelijk) of [neem direct contact op](/contact) voor een vrijblijvende intake.

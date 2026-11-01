@@ -118,11 +118,11 @@ const diensten: ProjectCardData[] = [
     ],
   },
   {
-    slug: "afbouwstudio",
-    permalink: "/afbouwstudio",
-    title: "Zakelijke afbouw",
-    description: "Kantoren, winkels en horeca, van casco tot sleutelklaar.",
-    category: "Afbouwstudio",
+    slug: "zakelijk",
+    permalink: "/zakelijk",
+    title: "Zakelijk verbouwen",
+    description: "Horeca, kantoren, winkels en bedrijfspanden, van casco tot gebruiksklaar.",
+    category: "Zakelijk",
     location: "Zakelijk",
     images: [
       {
@@ -132,11 +132,11 @@ const diensten: ProjectCardData[] = [
     ],
   },
   {
-    slug: "kantoor-verbouwen",
-    permalink: "/afbouwstudio/kantoor-verbouwen",
-    title: "Kantoor verbouwen",
-    description: "Een nieuwe indeling, plafonds en installaties, gepland rond je bedrijf.",
-    category: "Afbouwstudio",
+    slug: "bedrijfspand-verbouwen",
+    permalink: "/zakelijk/bedrijfspand-verbouwen",
+    title: "Bedrijfspand verbouwen",
+    description: "Kantoor, winkel of bedrijfsruimte: indeling, wanden, plafonds en afwerking.",
+    category: "Zakelijk",
     location: "Zakelijk",
     images: [
       {
@@ -172,14 +172,12 @@ const EXPERTISES = [
   },
   {
     label: "Voor bedrijven",
-    title: "Zakelijke afbouw",
-    href: "/afbouwstudio",
-    text: "Kantoren, winkels en horeca, van casco tot sleutelklaar. Gepland rond je bedrijf.",
+    title: "Zakelijk verbouwen",
+    href: "/zakelijk",
+    text: "Horeca, kantoren, winkels en bedrijfspanden, van casco tot gebruiksklaar. Gepland rond je bedrijf.",
     links: [
-      { href: "/afbouwstudio/kantoor-verbouwen", label: "Kantoor verbouwen" },
-      { href: "/afbouwstudio/winkel-verbouwen", label: "Winkel verbouwen" },
-      { href: "/afbouwstudio/horeca-verbouwen", label: "Horeca verbouwen" },
-      { href: "/afbouwstudio/bedrijfspand-verbouwen", label: "Bedrijfspand verbouwen" },
+      { href: "/zakelijk/horeca-verbouwen", label: "Horeca afbouw & verbouwen" },
+      { href: "/zakelijk/bedrijfspand-verbouwen", label: "Bedrijfspand verbouwen" },
     ],
     Drawing: LunchroomDrawing,
   },

@@ -10,6 +10,7 @@ export function PageHero({
   variant = "plain",
   eyebrow,
   title,
+  tagline,
   intro,
   image,
   cta,
@@ -17,8 +18,11 @@ export function PageHero({
   variant?: "image" | "plain";
   eyebrow?: string;
   title: string;
+  /** Korte merkzin onder de H1 (alleen bij de beeldvariant). */
+  tagline?: string;
   intro?: string;
-  image?: { src: string; alt: string };
+  /** position: object-position van de foto, bijv. "50% 30%". */
+  image?: { src: string; alt: string; position?: string; caption?: string };
   cta?: ReactNode;
 }) {
   if (variant === "image" && image) {
@@ -30,6 +34,7 @@ export function PageHero({
           fill
           sizes="100vw"
           className="object-cover"
+          style={image.position ? { objectPosition: image.position } : undefined}
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/35 to-ink/10" />
@@ -38,6 +43,11 @@ export function PageHero({
           <h1 className="display mt-5 max-w-4xl text-5xl text-white md:text-7xl">
             {title}
           </h1>
+          {tagline && (
+            <p className="mt-4 font-display text-2xl font-medium tracking-[-0.02em] text-white md:text-3xl">
+              {tagline}
+            </p>
+          )}
           {intro && (
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/85">
               {intro}
@@ -45,6 +55,11 @@ export function PageHero({
           )}
           {cta && <div className="mt-9 flex flex-wrap items-center gap-6">{cta}</div>}
         </div>
+        {image.caption && (
+          <p className="absolute bottom-3 right-4 max-w-[60%] text-right text-[11px] leading-snug text-white/70">
+            {image.caption}
+          </p>
+        )}
       </section>
     );
   }

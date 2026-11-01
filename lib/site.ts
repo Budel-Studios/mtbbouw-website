@@ -10,7 +10,7 @@ export const site = {
   // een domeinbrede 301 van www → apex instellen.
   url: "https://mtbbouw.com",
   description:
-    "MTB Bouw is de aannemer uit Enschede achter vier expertises: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab Bouwen. Eén team, één aanspreekpunt in heel Twente.",
+    "MTB Bouw is de aannemer uit Enschede achter vier expertises: Wonen & Verbouwen, Zakelijk, Kozijnen en Prefab Bouwen. Eén team, één aanspreekpunt in heel Twente.",
   locale: "nl_NL",
   telephone: "053 206 50 71",
   telephoneHref: "+31532065071",
@@ -59,7 +59,7 @@ export const site = {
         { href: "/verduurzamen", label: "Verduurzamen" },
         { href: "/kozijnen", label: "Kozijnen" },
         { href: "/prefab", label: "Prefab bouwen" },
-        { href: "/afbouwstudio", label: "Zakelijke afbouw" },
+        { href: "/zakelijk", label: "Zakelijk verbouwen" },
       ],
     },
     {

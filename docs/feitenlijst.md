@@ -38,6 +38,7 @@ Besluiten van Robbert op 1 november 2026 zijn verwerkt. Wat nog open staat, staa
 
 1. AV art. 9.1 (1 jaar garantie) gelijktrekken met "garantie volgens de richtlijnen in de bouw" voordat de AV online gaan.
 2. Na publicatie van de AV: linken vanuit het contactformulier.
+3. Zakelijke punten (werk buiten Twente, nacht- en weekendwerk, meerdere locaties, Broodbode-details): zie `docs/zakelijk-migratie.md`, hoofdstuk 5.
 
 Afgehandeld op 1 november 2026: vaste prijs (vervangen), kostenartikel kantoorverbouwing (offline, 301), vacatures (open).
 

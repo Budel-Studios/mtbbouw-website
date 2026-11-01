@@ -138,9 +138,9 @@ export default function AannemerAlmeloPage() {
             text: "Dak, vloer en gevel isoleren, het liefst tijdens de verbouwing.",
           },
           {
-            href: "/afbouwstudio/kantoor-verbouwen-almelo",
-            label: "Kantoor verbouwen in Almelo",
-            text: "Voor bedrijven: kantoren en bedrijfspanden, van casco tot sleutelklaar.",
+            href: "/zakelijk",
+            label: "Zakelijk verbouwen",
+            text: "Voor bedrijven: horeca, kantoren, winkels en bedrijfspanden, met één aanspreekpunt.",
           },
         ]}
       />

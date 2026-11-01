@@ -9,8 +9,8 @@ cover: "/images/projects/plafonds-80-appartementen/cover.png"
 coverAlt: "Plafondvervanging in een van de 80 appartementen"
 intro: "Tachtig appartementen, tachtig huishoudens, één opdracht: overal nieuwe plafonds — terwijl de bewoners er gewoon wonen. Zo'n project draait maar voor de helft om bouwen; de andere helft is planning en communicatie."
 relatedServices:
-  - { href: "/afbouwstudio/systeemplafonds", label: "Systeemplafonds" }
-  - { href: "/afbouwstudio", label: "Afbouwstudio" }
+  - { href: "/zakelijk/bedrijfspand-verbouwen#plafonds", label: "Wanden en plafonds" }
+  - { href: "/zakelijk", label: "Zakelijk verbouwen" }
   - { href: "/aannemer-twente", label: "Aannemer in Twente" }
 tags: [plafonds, appartementen, zakelijk, afbouw]
 draft: false
@@ -28,4 +28,4 @@ Het efficiënte van 80 keer dezelfde klus is dat je routine opbouwt; het risico 
 
 Tachtig appartementen met een strak nieuw plafond, opgeleverd volgens planning — en bewoners die er zo min mogelijk last van hebben gehad.
 
-Vastgoedbeheerder of VvE met seriematig afbouwwerk? Bekijk [systeemplafonds](/afbouwstudio/systeemplafonds) of [plan een intake](/afbouwstudio) — we rekenen serieprojecten graag voor.
+Vastgoedbeheerder of VvE met seriematig afbouwwerk? Bekijk [wanden en plafonds](/zakelijk/bedrijfspand-verbouwen#plafonds) of lees meer over [zakelijk verbouwen](/zakelijk). We rekenen serieprojecten graag voor.

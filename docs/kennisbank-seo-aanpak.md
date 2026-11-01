@@ -51,7 +51,7 @@ Elk artikel krijgt vier dingen:
 | stelposten-offerte | stelpost offerte | — | /hoe-wij-werken | Hoe wij offertes opbouwen |
 | kunststof-kozijnen | kunststof kozijnen | kunststof kozijnen Enschede | /kozijnen | De Kozijnstudio |
 | traditionele-spouwmuur-opbouw | spouwmuur opbouw | aanbouw Enschede | /aanbouw-uitbouw | Project dubbele uitbouw Enschede (kalkzandsteen) |
-| plafonds-vervangen-80-appartementen | plafonds vervangen appartementen | — | /afbouwstudio/systeemplafonds | Project plafonds 80 appartementen |
+| plafonds-vervangen-80-appartementen | plafonds vervangen appartementen | — | /zakelijk/bedrijfspand-verbouwen#plafonds | Project plafonds 80 appartementen |
 | doorlooptijden-verbouwing-aanbouw | hoe lang duurt een aanbouw | aanbouw Twente | /aanbouw-uitbouw | Eigen planning in de praktijk |
 | vloer-isoleren-kruipruimte | vloerisolatie kruipruimte | vloerisolatie Enschede | /verduurzamen-enschede | — |
 | meerwerk-minderwerk-verbouwing | meerwerk aannemer | — | /hoe-wij-werken | Vaste prijs, geen verrassingen |
@@ -65,7 +65,7 @@ Elk artikel krijgt vier dingen:
 | btw-9-procent-verbouwen | 9 procent btw verbouwing | — | /verduurzamen-enschede | — |
 | houtcomposiet-gevelbekleding | houtcomposiet gevelbekleding | — | /aanbouw-uitbouw | Leveranciers zoals Finiplus |
 | kozijnen-vervangen-zo-gaat-het | kozijnen vervangen | kozijnen vervangen Enschede | /kozijnen | Eigen montageproces |
-| casco-bedrijfspand-afbouw | casco bedrijfspand afbouw | bedrijfspand verbouwen Twente | /afbouwstudio/bedrijfspand-verbouwen | — |
+| casco-bedrijfspand-afbouw | casco bedrijfspand afbouw | bedrijfspand verbouwen Twente | /zakelijk/bedrijfspand-verbouwen | — |
 | steenstrips-of-baksteen | steenstrips of baksteen | — | /aanbouw-uitbouw | — |
 | betalingstermijnen-verbouwing | termijnschema aannemer | — | /hoe-wij-werken | — |
 | wonen-tijdens-verbouwing | wonen tijdens verbouwing | — | /wonen-en-verbouwen | — |
@@ -93,7 +93,7 @@ Elke serie heeft een **pijler** (het brede overzichtsartikel) en clusterartikele
 | Offertes & prijzen | offertes-aannemer-vergelijken | /hoe-wij-werken, bestaande kosten-artikelen | /aannemer-twente |
 | Je klus plannen | verbouwing-plannen-stappenplan | /wonen-en-verbouwen, /verbouwing (later de kluswijzer) | /aannemer-enschede |
 | Verduurzamen (los) | huis-isoleren-waar-begin-je | /verduurzamen-enschede | /aannemer-enschede |
-| Zakelijk (los) | — | /afbouwstudio, /afbouwstudio/bedrijfspand-verbouwen | /afbouwstudio/kantoor-verbouwen-enschede |
+| Zakelijk (los) | — | /zakelijk, /zakelijk/horeca-verbouwen, /zakelijk/bedrijfspand-verbouwen | — |
 
 **Regels per artikel:**
 - 1 link naar de pijler van de serie (in de eerste helft van het artikel)

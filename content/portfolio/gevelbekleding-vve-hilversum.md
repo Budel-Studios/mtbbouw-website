@@ -19,7 +19,7 @@ gallery:
     alt: "Het VvE-complex met de afgeronde gevel"
     phase: "eind"
 relatedServices:
-  - { href: "/afbouwstudio/bedrijfspand-verbouwen", label: "Bedrijfspand verbouwen" }
+  - { href: "/zakelijk", label: "Zakelijk verbouwen" }
   - { href: "/verbouwing", label: "Renovatie & verbouw" }
 tags: [gevel, vve, hilversum, zakelijk]
 draft: false

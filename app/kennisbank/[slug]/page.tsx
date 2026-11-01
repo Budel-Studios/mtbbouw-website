@@ -32,6 +32,8 @@ const PAGE_LABELS = new Map<string, string>([
   ["/aannemer-borne", "Aannemer Borne"],
   ["/aannemer-haaksbergen", "Aannemer Haaksbergen"],
   ["/aannemer-losser", "Aannemer Losser"],
+  ["/zakelijk/horeca-verbouwen", "Horeca afbouw & verbouwen"],
+  ["/zakelijk/bedrijfspand-verbouwen", "Bedrijfspand verbouwen"],
 ]);
 
 type Params = { slug: string };

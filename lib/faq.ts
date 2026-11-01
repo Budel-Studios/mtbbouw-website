@@ -268,38 +268,102 @@ const faqBedrijven: Faq[] = [
   },
 ];
 
-/* ----------------------- Specifiek voor /afbouwstudio (zakelijke afbouw) ----------- */
+/* ----------------------- Zakelijk: /zakelijk en de twee dienstpagina's ------------- */
 
-export const faqZakelijkeAfbouw: Faq[] = [
+export const faqZakelijk: Faq[] = [
+  {
+    question: "Voor welke zakelijke verbouwingen kan ik bij MTB Bouw terecht?",
+    answer:
+      "Voor horeca, kantoren, winkels, showrooms en bedrijfsruimten. We maken een casco pand gebruiksklaar of passen een bestaand pand aan: indeling, wanden, plafonds, vloeren, tegelwerk, maatwerk en afwerking. Installaties stemmen we af met vaste partners.",
+  },
+  {
+    question: "Wat betekent één aanspreekpunt in de praktijk?",
+    answer:
+      "Mathijs of Robbert is je vaste contact, van de eerste opname tot de oplevering. Zij maken de planning, stemmen af met de installateurs en zijn degene die je belt als er iets is.",
+  },
+  {
+    question: "Hoe komt de offerte tot stand?",
+    answer: `We bekijken het pand op locatie en leggen vast wat er moet gebeuren. ${facts.offerte.standaard} Meerwerk voeren we alleen uit na jouw akkoord.`,
+  },
+  {
+    question: "Kan mijn bedrijf open blijven tijdens de verbouwing?",
+    answer:
+      "Dat hangt af van de ingreep. Faseren per zone kan soms. Bij sloopwerk, nieuwe installaties of vloeren is tijdelijk sluiten of uitwijken vaak verstandiger. We bespreken vooraf wat haalbaar is en nemen dat op in de planning.",
+  },
   {
     question: "Werken jullie ook buiten Twente?",
     answer:
-      "Onze basis ligt in Twente en Oost-Nederland, maar voor zakelijke projecten — zoals meerdere vestigingen van dezelfde opdrachtgever — rijden we ook daarbuiten. Denk aan projecten als De Broodbode in Zwolle en Apeldoorn.",
+      "Onze basis is Enschede en we werken vooral in Twente. Grotere zakelijke opdrachten daarbuiten zijn bespreekbaar; voor De Broodbode werkten we bijvoorbeeld in Zwolle en Apeldoorn.",
   },
   {
-    question: "Kunnen jullie turnkey opleveren?",
+    question: "Welke garantie krijg ik?",
+    answer: `${garantieTekst} ${facts.nazorg.nabellen}`,
+  },
+];
+
+export const faqHoreca: Faq[] = [
+  {
+    question: "Wat is het verschil tussen horeca-afbouw en horeca verbouwen?",
     answer:
-      "Ja. Van casco tot volledig gebruiksklaar: installaties, wanden, plafonds, vloeren, schilderwerk en interieur — allemaal onder één planning en één aanspreekpunt.",
+      "Bij afbouw begin je met een casco pand: een kale vloer, geen wanden en vaak nog geen voorzieningen. Wij maken het gebruiksklaar. Bij verbouwen is er al een zaak en pas je die aan, bijvoorbeeld met een nieuwe indeling, een andere bar, nieuw sanitair of een frisse afwerking.",
   },
   {
-    question: "Werken jullie buiten kantooruren?",
+    question: "Kunnen jullie een casco lunchroom afbouwen?",
     answer:
-      "Zeker. Bij horeca en retail werken we regelmatig 's nachts of in fasen, zodat de zaak open kan blijven of maar kort dicht hoeft. We stemmen dit vooraf duidelijk af.",
+      "Ja. In Zwolle bouwden we voor De Broodbode een casco pand in zeven weken af tot lunchroom, met tegelwerk, een maatwerk counter, een akoestisch plafond, verlichting, sanitair en een achterkeuken. Wat jouw pand nodig heeft, bepalen we na een opname op locatie.",
   },
   {
-    question: "Werken jullie met vaste partners?",
+    question: "Kan mijn zaak tijdens de verbouwing gedeeltelijk openblijven?",
     answer:
-      "Ja, we werken met een vaste schil van betrouwbare onderaannemers en leveranciers waar we al jaren mee samenwerken. Dat betekent constante kwaliteit en korte lijnen, ook onder tijdsdruk.",
+      "Soms. Kleine aanpassingen kunnen per zone of buiten openingstijden. Bij sloop, nieuwe installaties of vloeren is dat meestal niet verstandig voor gasten en personeel. In Apeldoorn viel het werk daarom in de zomervakantie, zodat de zaak zo kort mogelijk dicht hoefde. We bespreken vooraf wat bij jouw zaak past.",
   },
   {
-    question: "Kunnen jullie meerdere vestigingen tegelijk uitvoeren?",
+    question: "Wie regelt ontwerp, vergunningen en installaties?",
     answer:
-      "Ja. Bij projecten met meerdere locaties — zoals franchiseformules — plannen we de uitvoering per vestiging, met dezelfde uitstraling maar oog voor de technische situatie en planning van elk pand apart.",
+      "Dat spreken we per project vooraf af. Het ontwerp en de keukenapparatuur kunnen van jou, je ontwerper of je leverancier komen. Wij doen de bouwkundige uitvoering en afwerking, en stemmen af met de installateurs voor elektra, ventilatie en verlichting. Welke vergunningen nodig zijn, hangt af van je plan en je gemeente.",
   },
   {
-    question: "Doen jullie ook onderhoud?",
+    question: "Welke informatie hebben jullie nodig voor een offerte?",
     answer:
-      "Ja, na oplevering blijven we beschikbaar voor onderhoud en kleine aanpassingen — ook in contractvorm, bijvoorbeeld voor vastgoedbeheerders met meerdere panden.",
+      "Het adres, of het pand casco is of al in gebruik, wat je ermee wilt en je beoogde planning. Een plattegrond, ontwerp of foto's helpen; die kun je na het eerste contact met ons delen. Na de opname op locatie ontvang je een gespecificeerde offerte.",
+  },
+  {
+    question: "Werken jullie in Enschede en de rest van Twente?",
+    answer:
+      "Ja. We zitten aan de Heersenkampweg in Enschede en werken in heel Twente. Grotere opdrachten daarbuiten zijn bespreekbaar, zoals de projecten voor De Broodbode in Zwolle en Apeldoorn.",
+  },
+];
+
+export const faqBedrijfspand: Faq[] = [
+  {
+    question: "Kunnen we doorwerken tijdens de verbouwing?",
+    answer:
+      "Dat hangt af van de ingreep. Een nieuwe indeling of een plafond kan soms per zone, met het werkgebied afgeschermd. Bij ingrijpend werk aan installaties, vloeren of een hele verdieping is tijdelijk uitwijken vaak verstandiger. We maken daar vooraf samen een plan voor.",
+  },
+  {
+    question: "Wat hebben jullie nodig voor een offerte?",
+    answer:
+      "Het adres en het soort pand, hoe je de ruimte nu gebruikt, wat er moet veranderen en wanneer. Een plattegrond helpt. Na een opname op locatie ontvang je een gespecificeerde offerte, met stelposten en uitsluitingen op een rij.",
+  },
+  {
+    question: "Kunnen wanden en plafonds samen worden aangepakt?",
+    answer:
+      "Ja, en dat is vaak slim. Wanden, plafond, verlichting en installaties hangen met elkaar samen. Neem je ze mee in één planning, dan hoeft niets twee keer open.",
+  },
+  {
+    question: "Wie doet de installaties?",
+    answer:
+      "Elektra, data, verlichting, ventilatie en klimaat laten we uitvoeren door vaste installatiepartners. Wij stemmen het werk af en nemen het mee in de planning, zodat je één aanspreekpunt houdt.",
+  },
+  {
+    question: "We huren ons pand. Wat kan er?",
+    answer:
+      "Veel, maar overleg eerst met je verhuurder. Of je toestemming nodig hebt en wat er bij vertrek met de aanpassingen gebeurt, hangt af van je huurcontract. Wij denken mee over oplossingen die later aan te passen zijn, zoals metal stud-wanden en systeemplafonds.",
+  },
+  {
+    question: "Waar werken jullie?",
+    answer:
+      "Vanuit Enschede in heel Twente. Grotere zakelijke opdrachten buiten Twente zijn bespreekbaar; voor De Broodbode werkten we in Zwolle en Apeldoorn.",
   },
 ];
 
@@ -430,7 +494,7 @@ export const faqBouwbedrijfEnschede: Faq[] = [
   {
     question: "Wat voor soort bouwbedrijf is MTB Bouw?",
     answer:
-      "MTB Bouw is een allround bouwbedrijf uit Enschede met vier specialismen onder één dak: Wonen & Verbouwen (particulier), Afbouwstudio (zakelijke afbouw), Kozijnen (via ons eigen label De Kozijnstudio) en Prefab Bouwen.",
+      "MTB Bouw is een allround bouwbedrijf uit Enschede met vier specialismen onder één dak: Wonen & Verbouwen (particulier), Zakelijk (horeca, kantoren en bedrijfspanden), Kozijnen (via ons eigen label De Kozijnstudio) en Prefab Bouwen.",
   },
   {
     question: "Bouwen jullie voor particulieren én bedrijven?",
@@ -489,259 +553,6 @@ export const faqAannemerTwente: Faq[] = [
     question: "Hoe snel krijg ik een offerte?",
     answer:
       "Na de kennismaking en opname op locatie ontvang je een gespecificeerde offerte met een realistische planning.",
-  },
-];
-
-export const faqKantoorVerbouwen: Faq[] = [
-  {
-    question: "Wat kost een kantoorverbouwing?",
-    answer:
-      "Dat hangt sterk af van het startpunt, de installaties en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte voor jouw pand.",
-  },
-  {
-    question: "Kunnen jullie verbouwen terwijl ons kantoor in gebruik blijft?",
-    answer:
-      "Ja. We faseren de werkzaamheden, werken desgewenst 's avonds of in het weekend en zorgen dat werkplekken bereikbaar blijven. Dat hebben we ook gedaan bij horecazaken die maar enkele dagen dicht konden.",
-  },
-  {
-    question: "Wij huren casco kantoorruimte — regelen jullie de complete afbouw?",
-    answer:
-      "Ja, dat is precies ons specialisme: van casco naar turn-key. Metal stud-wanden, systeemplafonds, vloeren, verlichting, pantry en sanitair — één team, één planning en één offerte.",
-  },
-  {
-    question: "Hoe lang duurt een kantoorverbouwing?",
-    answer:
-      "Een gemiddelde kantoorafbouw duurt enkele weken tot een paar maanden, afhankelijk van omvang en installatiewerk. In de offerte staat een realistische planning — en die bewaken we wekelijks met een update.",
-  },
-  {
-    question: "Werken jullie ook buiten Enschede en Twente?",
-    answer:
-      "Ja. Voor zakelijke projecten werken we in heel Oost-Nederland — recent bijvoorbeeld in Zwolle en Apeldoorn (De Broodbode). Deventer, Apeldoorn en Zwolle horen tot ons vaste werkgebied voor kantoorafbouw.",
-  },
-  {
-    question: "Denken jullie mee over indeling en akoestiek?",
-    answer:
-      "Zeker. Tijdens de intake inventariseren we per wand, vloer en plafond wat er nodig is — inclusief akoestiek, licht en installaties. Waar nodig schakelen we onze vaste partners voor interieurontwerp in.",
-  },
-  {
-    question: "Krijgen we één aanspreekpunt?",
-    answer:
-      "Ja: Mathijs of Robbert is jouw vaste contact van intake tot oplevering, met een wekelijkse voortgangsupdate. Geen onderaannemers-circus.",
-  },
-];
-
-/* ----------------------- Afbouwstudio-sectorpagina's (fase 2 strategie) ------------ */
-
-export const faqBedrijfspandVerbouwen: Faq[] = [
-  {
-    question: "Wat kost het verbouwen van een bedrijfspand?",
-    answer:
-      "Dat hangt af van het startpunt, de scope en het afwerkingsniveau. Een prijs per m² zegt daarom weinig. Na een intake op locatie ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Kan de verbouwing terwijl ons bedrijf doordraait?",
-    answer:
-      "Vaak wel. We faseren de werkzaamheden per zone en werken waar nodig buiten openingstijden, zodat je bedrijfsvoering zoveel mogelijk door kan lopen. Wat haalbaar is, spreken we vooraf af.",
-  },
-  {
-    question: "Kunnen jullie een bedrijfshal ombouwen tot kantoor?",
-    answer:
-      "Ja — inpandige kantoren in bedrijfshallen zijn een specialiteit: geïsoleerde wanden (metal stud of HSB via ons Prefab-label), systeemplafonds, verlichting en klimaat, strak ingepast in de bestaande hal.",
-  },
-  {
-    question: "Regelen jullie ook de installaties?",
-    answer:
-      "Ja, elektra, data, verlichting en klimaat coördineren wij met onze vaste installatiepartners — één planning, één aanspreekpunt.",
-  },
-  {
-    question: "In welke regio verbouwen jullie bedrijfspanden?",
-    answer:
-      "In Enschede en heel Twente, en voor grotere projecten in heel Oost-Nederland — waaronder Deventer, Apeldoorn en Zwolle.",
-  },
-];
-
-export const faqHorecaVerbouwen: Faq[] = [
-  {
-    question: "Hoe lang moet mijn zaak dicht tijdens een horecaverbouwing?",
-    answer:
-      "Zo kort mogelijk. We rekenen in de planning terug vanaf jouw (her)openingsdatum en benutten rustige periodes: de complete transformatie van Broodbode Apeldoorn voerden we in circa 7 weken uit tijdens de zomervakantie.",
-  },
-  {
-    question: "Wat kost een horecaverbouwing?",
-    answer:
-      "Sterk afhankelijk van casco of bestaand pand en het afwerkingsniveau — van een restyling tot een complete afbouw met keuken, bar en sanitair. Na een intake op locatie ontvang je een gespecificeerde offerte, zodat je jouw businesscase rond kunt maken.",
-  },
-  {
-    question: "Bouwen jullie ook de bar en het keukenblok?",
-    answer:
-      "Ja — maatwerk counters, bars en keukenblok-installaties horen bij onze horeca-afbouw, net als tegelwerk, akoestische plafonds en verlichtingsplannen. Zie de Broodbode-cases in Zwolle en Apeldoorn.",
-  },
-  {
-    question: "Denken jullie mee met de brandveiligheid en vergunningen?",
-    answer:
-      "Ja. Horeca stelt eisen aan vluchtwegen, ventilatie en brandwerendheid; wij bouwen conform en stemmen waar nodig af met de gemeente en de brandweer.",
-  },
-  {
-    question: "Werken jullie ook buiten Twente?",
-    answer:
-      "Ja — onze recentste horecaprojecten (De Broodbode) staan in Zwolle en Apeldoorn. Voor horeca werken we in heel Oost-Nederland.",
-  },
-];
-
-export const faqWinkelVerbouwen: Faq[] = [
-  {
-    question: "Halen jullie mijn openingsdatum?",
-    answer:
-      "Daar plannen we op. Bij retail rekenen we terug vanaf de openingsdatum en zetten we waar nodig avond- en weekendploegen in. Wat haalbaar is, bespreken we eerlijk vooraf.",
-  },
-  {
-    question: "Werken jullie samen met onze retail-architect of formulebeheerder?",
-    answer:
-      "Ja, dat doen we vaak: wij vertalen het winkelconcept of merkboek naar de bouwkundige uitvoering — van vloer tot plafond en van pui tot magazijn.",
-  },
-  {
-    question: "Wat kost een winkelverbouwing?",
-    answer:
-      "Van een restyling tot een complete casco-afbouw: de bandbreedte is groot. Na een intake op locatie ontvang je een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk benoemd.",
-  },
-  {
-    question: "Kan de winkel (deels) open blijven tijdens de verbouwing?",
-    answer:
-      "Vaak wel: we faseren per zone en schermen het werkgebied netjes af. Volledig dicht? Dan maken we de sluitingsperiode zo kort mogelijk.",
-  },
-  {
-    question: "Doen jullie ook meerdere vestigingen volgens één formule?",
-    answer:
-      "Ja — bij De Broodbode bouwden we twee locaties (Zwolle en Apeldoorn) met één signatuur. Eén team dat je formule kent, scheelt tijd en bewaakt de consistentie.",
-  },
-];
-
-/* ----------------------- Fase 3: kantoor-stadspagina's ----------------------------- */
-
-export const faqKantoorDeventer: Faq[] = [
-  {
-    question: "Werken jullie echt in Deventer, of alleen in Twente?",
-    answer:
-      "We werken in heel Oost-Nederland. Deventer ligt op een klein uur van onze werkplaats in Enschede; voor zakelijke afbouwprojecten plannen we onze teams per project op locatie — net als bij onze horecaprojecten in Zwolle en Apeldoorn.",
-  },
-  {
-    question: "Wat kost een kantoorverbouwing in Deventer?",
-    answer:
-      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na een intake op locatie ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Kunnen jullie gefaseerd verbouwen zodat ons kantoor in Deventer open blijft?",
-    answer:
-      "Ja — we faseren per zone en werken desgewenst 's avonds of in het weekend, zodat je team gewoon kan doorwerken.",
-  },
-  {
-    question: "Hoe snel ligt er een offerte?",
-    answer:
-      "We komen naar Deventer voor een intake op locatie; daarna volgt een gespecificeerde offerte.",
-  },
-];
-
-export const faqKantoorApeldoorn: Faq[] = [
-  {
-    question: "Hebben jullie eerder in Apeldoorn gewerkt?",
-    answer:
-      "Ja — in het centrum van Apeldoorn transformeerden we het verouderde pand van lunchroom De Broodbode volledig tot huiskamer-lunchroom: herindeling, nieuwe elektra en 180 m² tegelwerk, in circa 7 weken tijdens de zomervakantie. Diezelfde strakke planning passen we toe bij kantoorverbouwingen.",
-  },
-  {
-    question: "Wat kost een kantoorverbouwing in Apeldoorn?",
-    answer:
-      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na één intake ontvang je een gespecificeerde offerte voor jouw pand.",
-  },
-  {
-    question: "Is de reisafstand vanuit Enschede geen probleem?",
-    answer:
-      "Nee. Onze teams werken projectmatig op locatie — De Broodbode in Apeldoorn transformeerden we volledig in circa 7 weken, strak op planning. Je merkt er niets van in planning of prijs.",
-  },
-  {
-    question: "Regelen jullie ook de installaties en het klimaat?",
-    answer:
-      "Ja, elektra, data, verlichting en klimaat coördineren we met onze vaste installatiepartners — één planning, één aanspreekpunt.",
-  },
-];
-
-export const faqKantoorZwolle: Faq[] = [
-  {
-    question: "Wat hebben jullie eerder in Zwolle gebouwd?",
-    answer:
-      "In de wijk Wezenlanden bouwden we een leeg casco-pand in 7 weken om tot de complete lunchroom van De Broodbode — inclusief counter, keuken, sanitair en akoestisch plafond. Exact het casco-naar-turn-key-traject dat we ook voor kantoren uitvoeren.",
-  },
-  {
-    question: "Wat kost een kantoorverbouwing in Zwolle?",
-    answer:
-      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na een intake op locatie ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Kunnen jullie casco kantoorruimte in Zwolle volledig afbouwen?",
-    answer:
-      "Ja — dat is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair, met één team en één offerte.",
-  },
-  {
-    question: "Hoe verloopt de intake op afstand?",
-    answer:
-      "We komen naar Zwolle en leggen met onze app elke wand, vloer en plafond vast. Daarna volgt een gespecificeerde offerte.",
-  },
-];
-
-/* ----------------------- Fase 3: productpagina's afbouw ---------------------------- */
-
-export const faqMetalStud: Faq[] = [
-  {
-    question: "Wat kost een metal stud-wand?",
-    answer:
-      "Dat hangt af van de hoogte, de isolatie en geluidseisen, deuren en glas, en de afwerking. Een prijs per m² zegt daarom weinig. Na een intake ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Hoe snel staat een metal stud-wand?",
-    answer:
-      "Snel: metal stud is licht, droog bouwen — geen metselwerk, nauwelijks droogtijd. Een kantoorindeling van meerdere wanden staat vaak binnen enkele dagen, inclusief afwerking.",
-  },
-  {
-    question: "Zijn metal stud-wanden geluiddicht te maken?",
-    answer:
-      "Ja. Met dubbele beplating, minerale wol en akoestische profielen halen we geluidsisolatie die geschikt is voor vergaderruimtes en spreekkamers.",
-  },
-  {
-    question: "Kunnen er glaswanden of deuren in?",
-    answer:
-      "Ja — glasstroken, volledige glaswanden en elk type deur integreren we in het wandsysteem. Zo blijft het kantoor licht en open.",
-  },
-  {
-    question: "Verplaatsbaar bij een nieuwe indeling later?",
-    answer:
-      "Metal stud is relatief eenvoudig aan te passen of te verwijderen — veel voordeliger dan gemetselde wanden bij een toekomstige herindeling.",
-  },
-];
-
-export const faqSysteemplafonds: Faq[] = [
-  {
-    question: "Wat kost een systeemplafond?",
-    answer:
-      "Dat hangt af van het type plaat, de verlichting en installaties erboven, en of er een oud plafond uit moet. Een prijs per m² zegt daarom weinig. Na een intake ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Wat is het voordeel van een systeemplafond in een kantoor?",
-    answer:
-      "Alle techniek (verlichting, klimaat, data) blijft bereikbaar boven de panelen, de akoestiek verbetert direct en beschadigde panelen wissel je los om.",
-  },
-  {
-    question: "Helpt een systeemplafond echt tegen galm?",
-    answer:
-      "Ja — akoestische plafondpanelen zijn de snelste manier om spraakverstaanbaarheid in kantoren en horeca te verbeteren. We adviseren per ruimte de juiste absorptiewaarde.",
-  },
-  {
-    question: "Kunnen jullie ook verlichting en klimaat meenemen?",
-    answer:
-      "Ja, dat is juist het moment: LED-panelen, spots, ventilatie en klimaat integreren we in één keer in het plafondplan, samen met onze installatiepartners.",
-  },
-  {
-    question: "Hoe snel is een systeemplafond geplaatst?",
-    answer:
-      "Een gemiddelde kantoorvloer is in enkele dagen voorzien — vaak gecombineerd met de metal stud-wanden in dezelfde planning.",
   },
 ];
 
@@ -806,7 +617,7 @@ export const faqAannemerOldenzaal: Faq[] = [
   {
     question: "Doen jullie in Oldenzaal ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio bouwen we kantoren, winkels en horeca af, van casco tot sleutelklaar.",
+      "Ja. We verbouwen en bouwen kantoren, winkels en horeca af, van casco tot gebruiksklaar.",
   },
 ];
 
@@ -903,7 +714,7 @@ export const faqAannemerHengelo: Faq[] = [
   {
     question: "Doen jullie in Hengelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één offerte.",
+      "Ja. We verbouwen kantoren, winkels en bedrijfspanden, van casco tot gebruiksklaar, met één aanspreekpunt en één offerte.",
   },
 ];
 
@@ -931,77 +742,6 @@ export const faqAannemerAlmelo: Faq[] = [
   {
     question: "Doen jullie in Almelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één offerte.",
-  },
-];
-
-/* ----------------------- Kantoor-stadspagina's Twente ------------------------------ */
-
-export const faqKantoorEnschede: Faq[] = [
-  {
-    question: "Hoe snel kunnen jullie bij ons kantoor in Enschede zijn?",
-    answer:
-      "Enschede is onze thuisstad, dus voor een intake op locatie, een tussentijdse schouw of nazorg zijn we er zonder lange reistijd.",
-  },
-  {
-    question: "Wat kost een kantoorverbouwing in Enschede?",
-    answer:
-      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na één intake op locatie ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Kunnen jullie verbouwen terwijl ons team in Enschede doorwerkt?",
-    answer:
-      "Ja — we faseren per zone en werken desgewenst 's avonds of in het weekend. Als lokaal bedrijf schakelen we bovendien snel als er tussentijds iets wijzigt.",
-  },
-  {
-    question: "Doen jullie ook kleinere kantooraanpassingen in Enschede?",
-    answer:
-      "Ja, van één extra vergaderruimte met metal stud en glas tot een complete herindeling — juist omdat we lokaal zitten, is klein werk goed te plannen.",
-  },
-];
-
-export const faqKantoorHengelo: Faq[] = [
-  {
-    question: "Werken jullie veel in Hengelo?",
-    answer:
-      "Ja — Hengelo is onze directe buurstad, op een kwartier van onze werkplaats in Enschede. Voor kantoren en bedrijfspanden in Hengelo komen we graag langs voor een intake op locatie.",
-  },
-  {
-    question: "Wat kost een kantoorverbouwing in Hengelo?",
-    answer:
-      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na de intake ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Kunnen jullie een bedrijfspand in Hengelo combineren met kantoorafbouw?",
-    answer:
-      "Ja — veel Hengelose panden combineren hal en kantoor. Wij bouwen beide: de hal via onze bedrijfspand-aanpak, het kantoor met metal stud, systeemplafonds en installaties in één planning.",
-  },
-  {
-    question: "Blijft ons kantoor bereikbaar tijdens de verbouwing?",
-    answer:
-      "Ja, we faseren per zone en werken waar nodig buiten kantoortijden — je team werkt gewoon door.",
-  },
-];
-
-export const faqKantoorAlmelo: Faq[] = [
-  {
-    question: "Hoort Almelo bij jullie werkgebied?",
-    answer:
-      "Ja — Almelo ligt op zo'n halfuur van onze werkplaats in Enschede en hoort bij ons vaste Twentse werkgebied.",
-  },
-  {
-    question: "Wat kost een kantoorverbouwing in Almelo?",
-    answer:
-      "Dat hangt af van het pand, de installaties en het afwerkingsniveau. Na de intake ontvang je een gespecificeerde offerte.",
-  },
-  {
-    question: "Kunnen jullie casco kantoorruimte in Almelo afbouwen?",
-    answer:
-      "Ja — van casco naar turn-key is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair met één team en één offerte.",
-  },
-  {
-    question: "Werken jullie in Almelo ook 's avonds of in het weekend?",
-    answer:
-      "Als dat nodig is om je bedrijfsvoering door te laten lopen: ja. We plannen de werkzaamheden rond jouw openingstijden.",
+      "Ja. We verbouwen kantoren, winkels en bedrijfspanden, van casco tot gebruiksklaar, met één aanspreekpunt en één offerte.",
   },
 ];

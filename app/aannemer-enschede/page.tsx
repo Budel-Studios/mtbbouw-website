@@ -101,9 +101,9 @@ export default function AannemerEnschedePage() {
             text: "Vooraf gemaakt in de werkplaats, snel geplaatst en weinig overlast.",
           },
           {
-            href: "/afbouwstudio/kantoor-verbouwen-enschede",
-            label: "Kantoor verbouwen in Enschede",
-            text: "Voor bedrijven: kantoren en bedrijfspanden, van casco tot sleutelklaar.",
+            href: "/zakelijk",
+            label: "Zakelijk verbouwen",
+            text: "Voor bedrijven: horeca, kantoren, winkels en bedrijfspanden, met één aanspreekpunt.",
           },
         ]}
       />

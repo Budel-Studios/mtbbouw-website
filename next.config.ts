@@ -55,9 +55,9 @@ const nextConfig: NextConfig = {
 
       // Oude "Werken bij"-URL → nieuwe recruitmentpagina.
       { source: "/werken-bij", destination: "/werkgenoeg", permanent: true },
-      // Merkstructuur-herpositionering: /voor-bedrijven is opgegaan in het
-      // nieuwe Afbouwstudio-label.
-      { source: "/voor-bedrijven", destination: "/afbouwstudio", permanent: true },
+      // Merkstructuur: /voor-bedrijven ging op in Afbouwstudio, sinds nov 2026
+      // MTB Bouw Zakelijk. Direct naar de eindbestemming, zonder keten.
+      { source: "/voor-bedrijven", destination: "/zakelijk", permanent: true },
 
       // Oude WordPress-pagina's (volledige Yoast page-sitemap, juli 2026).
       { source: "/aanbouw-uitbouw-enschede", destination: "/aanbouw-uitbouw", permanent: true },
@@ -65,7 +65,7 @@ const nextConfig: NextConfig = {
       { source: "/nieuwbouw-enschede", destination: "/nieuwbouw", permanent: true },
       { source: "/prefab-twente", destination: "/prefab", permanent: true },
       { source: "/kozijnen-enschede", destination: "/kozijnen", permanent: true },
-      { source: "/voor-bedrijven-twente", destination: "/afbouwstudio", permanent: true },
+      { source: "/voor-bedrijven-twente", destination: "/zakelijk", permanent: true },
       { source: "/vveilig-bouwen-enschede", destination: "/veilig-verantwoord-bouwen", permanent: true },
       { source: "/kennisbank-bouwen-twente", destination: "/kennisbank", permanent: true },
       // Kennisbank: twee ISDE-artikelen samengevoegd (okt 2026) om te
@@ -114,9 +114,33 @@ const nextConfig: NextConfig = {
       // Kostenartikel kantoorverbouwing draaide om m²-prijzen; offline gehaald (nov 2026).
       {
         source: "/kennisbank/kantoor-verbouwen-kosten-2026",
-        destination: "/afbouwstudio/kantoor-verbouwen",
+        destination: "/zakelijk/bedrijfspand-verbouwen",
         permanent: true,
       },
+
+      // Afbouwstudio → MTB Bouw Zakelijk (nov 2026): dertien pagina's
+      // teruggebracht naar drie. Elke bekende route expliciet, geen wildcard,
+      // zodat onbekende /afbouwstudio/*-URL's gewoon een 404 geven. Minimaal
+      // een jaar laten staan, liefst blijvend.
+      { source: "/afbouwstudio", destination: "/zakelijk", permanent: true },
+      { source: "/afbouwstudio/horeca-verbouwen", destination: "/zakelijk/horeca-verbouwen", permanent: true },
+      ...[
+        "bedrijfspand-verbouwen",
+        "kantoor-verbouwen",
+        "winkel-verbouwen",
+        "metal-stud-wanden",
+        "systeemplafonds",
+        "kantoor-verbouwen-enschede",
+        "kantoor-verbouwen-hengelo",
+        "kantoor-verbouwen-almelo",
+        "kantoor-verbouwen-deventer",
+        "kantoor-verbouwen-apeldoorn",
+        "kantoor-verbouwen-zwolle",
+      ].map((slug) => ({
+        source: `/afbouwstudio/${slug}`,
+        destination: "/zakelijk/bedrijfspand-verbouwen",
+        permanent: true,
+      })),
 
       // Oude WordPress-archieven (wildcards).
       { source: "/portfolio-item/:slug", destination: "/projecten", permanent: true },
