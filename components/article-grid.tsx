@@ -18,10 +18,11 @@ import {
  * /projecten (ProjectCards): cover met hover-zoom, displaykop en mono-meta
  * met leestijd en onderwerp. Het nieuwste artikel krijgt een brede kaart.
  *
- * Zichtbaar filter: onderwerp (dropdown), plus een wissel tussen raster en
- * lijst. Bouwdeel en doelgroep werken nog via de URL
- * (?onderwerp=verduurzamen&bouwdeel=daken&voor=thuis), zodat links vanuit de
- * kluswijzer of een artikel blijven werken.
+ * Zoeken (op titel, omschrijving, categorie en trefwoorden), een filter op
+ * categorie (dropdown) en een wissel tussen raster en lijst. De zoekterm
+ * blijft bewust buiten de URL: zoekresultaten horen niet in Google. Bouwdeel
+ * en doelgroep werken nog via de URL (?bouwdeel=daken&voor=thuis), zodat
+ * oude links blijven werken.
  */
 type Article = {
   slug: string;
@@ -35,11 +36,16 @@ type Article = {
   readingTime: number;
   cover?: string;
   coverAlt?: string;
+  tags?: string[];
 };
 
 type Filters = { category: string; subcategory: string; audience: string };
 
-const ALL_CATEGORIES = "Alle onderwerpen";
+const ALL_CATEGORIES = "Alle categorieën";
+
+/** Kleine letters zonder accenten, zodat "isolatie" ook "isolátie" vindt. */
+const normalize = (s: string) =>
+  s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
 /* ---------- Filters in de URL ----------------------------------------- */
 
@@ -120,6 +126,7 @@ export function ArticleGrid({
     ? urlFilters
     : { category: "", subcategory: "", audience: "" };
   const [view, setView] = useState<View>("grid");
+  const [query, setQuery] = useState("");
 
   // Alleen onderwerpen waar ook echt artikelen onder staan, in de vaste
   // volgorde van de taxonomie (niet alfabetisch).
@@ -128,8 +135,18 @@ export function ArticleGrid({
     [articles]
   );
 
+  const terms = normalize(query).split(/\s+/).filter(Boolean);
+  const matches = (a: Article) => {
+    if (terms.length === 0) return true;
+    const hay = normalize(
+      [a.title, a.description, CATEGORIES.find((c) => c.slug === a.category)?.label ?? "", ...(a.tags ?? [])].join(" ")
+    );
+    return terms.every((t) => hay.includes(t));
+  };
+
   const visible = articles.filter(
     (a) =>
+      matches(a) &&
       (!filters.category || a.category === filters.category) &&
       (!filters.subcategory || a.subcategories.includes(filters.subcategory)) &&
       (!filters.audience || a.audience.includes(filters.audience))
@@ -163,20 +180,46 @@ export function ArticleGrid({
             {visible.length} {visible.length === 1 ? "artikel" : "artikelen"}
           </span>
           {hiddenFilters.length > 0 && <span>· {hiddenFilters.join(" · ")}</span>}
-          {filterable && (filters.category || hiddenFilters.length > 0) && (
+          {filterable && (filters.category || hiddenFilters.length > 0 || query) && (
             <button
               type="button"
-              onClick={reset}
+              onClick={() => {
+                setQuery("");
+                reset();
+              }}
               className="text-navy underline decoration-lime underline-offset-4 hover:text-navy-dark"
             >
               Wis filters
             </button>
           )}
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
+          {filterable && (
+            <label className="relative block w-full md:w-72">
+              <span className="sr-only">Zoek in de Bouwgids</span>
+              <svg
+                className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-stone"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" />
+              </svg>
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Zoek in de Bouwgids"
+                className="w-full border border-mist bg-white py-3 pl-11 pr-4 text-ink placeholder:text-stone focus:border-ink focus:outline-none"
+              />
+            </label>
+          )}
           {filterable && categoryOptions.length > 1 && (
             <FilterDropdown
-              label="Filter op onderwerp"
+              label="Filter op categorie"
               options={[ALL_CATEGORIES, ...categoryOptions.map((c) => c.label)]}
               active={labelFor(filters.category)}
               onChange={(label) => setFilter("category", slugFor(label))}
@@ -200,10 +243,13 @@ export function ArticleGrid({
         </div>
       ) : (
         <div className="mt-12 text-center text-stone">
-          <p>Nog geen artikelen met deze combinatie.</p>
+          <p>{query ? `Niets gevonden voor "${query}".` : "Nog geen artikelen met deze combinatie."}</p>
           <button
             type="button"
-            onClick={reset}
+            onClick={() => {
+              setQuery("");
+              reset();
+            }}
             className="mt-3 font-medium text-ink underline decoration-lime decoration-2 underline-offset-4 hover:text-navy"
           >
             Bekijk alle artikelen

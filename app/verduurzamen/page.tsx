@@ -177,7 +177,7 @@ export default function VerduurzamenPage() {
       />
 
       <KennisbankBlock
-        match={{ categories: ["verduurzamen"], audience: "thuis" }}
+        match={{ categories: ["installaties-energie"], subcategories: ["daken", "vloeren", "kozijnen-glas"], audience: "thuis" }}
         title="Meer over verduurzamen"
       />
 

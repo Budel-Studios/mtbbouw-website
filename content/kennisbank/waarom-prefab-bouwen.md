@@ -3,7 +3,7 @@ title: "Waarom prefab bouwen zo populair wordt (en of het iets voor jou is)"
 seoTitle: "Prefab bouwen: werkwijze, snelheid en kosten"
 description: "Prefab bouwen groeit hard. Hoe werkt het, hoe snel is het echt, wat kost het en wanneer kies je er juist niet voor? We leggen het gewoon uit."
 date: 2026-07-05
-category: technische-keuzes
+category: bouw-constructie
 subcategories: [fundering-constructie]
 audience: [thuis, bedrijven]
 series: uitbouw
@@ -15,6 +15,7 @@ tags:
   - houtskeletbouw
   - aanbouw
   - bouwmethodes
+projects: [broodbode-zwolle-lunchroom, broodbode-apeldoorn-lunchroom]
 draft: false
 ---
 

@@ -271,7 +271,7 @@ export default function HoeWijWerkenPage() {
       <FaqAccordion items={procesFaq} title="Veelgestelde vragen over het proces" />
 
       <KennisbankBlock
-        match={{ categories: ["kosten-offertes", "plannen-aanpak"] }}
+        match={{ categories: ["bouwvoorbereiding", "tijdens-na-de-bouw"] }}
         title="Meer over kosten en aanpak"
       />
     </>

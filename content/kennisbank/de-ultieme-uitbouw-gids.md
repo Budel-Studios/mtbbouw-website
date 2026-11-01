@@ -3,13 +3,14 @@ title: "De ultieme uitbouw-gids: alles wat je wilt weten voordat je begint"
 seoTitle: "Uitbouw-gids: alles wat je moet weten"
 description: "Uitbouw plannen? Van vergunning tot fundering en isolatie: dit is de complete gids met stappenplan, kosten-indicatie en veelgemaakte fouten."
 date: 2026-07-05
-category: plannen-aanpak
+category: bouw-constructie
 subcategories: [fundering-constructie]
 audience: [thuis]
 series: uitbouw
 cover: /images/projects/dubbele-uitbouw-enschede/cover.webp
 coverAlt: "Dubbele uitbouw aan een woning in Enschede, gebouwd door MTB Bouw"
 tags: ["uitbouw", "aanbouw", "verbouwen", "prefab", "vergunning", "fundering"]
+projects: [broodbode-zwolle-lunchroom]
 draft: false
 ---
 

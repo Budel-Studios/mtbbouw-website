@@ -3,7 +3,7 @@ title: "Wat is HSB (houtskeletbouw) en hoe wordt het gemaakt?"
 seoTitle: "Wat is HSB? Houtskeletbouw uitgelegd"
 description: "Wat is HSB en hoe wordt een houtskeletbouwwand gemaakt? Bekijk de animatie: van houten frame tot gevel, laag voor laag uitgelegd door MTB Bouw uit Twente."
 date: 2026-10-22
-category: technische-keuzes
+category: bouw-constructie
 subcategories: [fundering-constructie, gevels]
 audience: [thuis, bedrijven]
 series: uitbouw
@@ -11,6 +11,7 @@ author: robbert
 cover: /images/projects/uitbouw-houtskeletbouw-enschede/01.jpg
 coverAlt: "Uitbouw in houtskeletbouw met Finiplus gevelbekleding en zwarte kozijnen in Enschede, gebouwd door MTB Bouw"
 tags: [HSB, houtskeletbouw, wat is HSB, HSB uitbouw, prefab, aanbouw, Twente, Enschede]
+projects: [uitbouw-houtskeletbouw-enschede]
 draft: false
 ---
 

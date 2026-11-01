@@ -15,7 +15,7 @@ import { site } from "@/lib/site";
 export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
   const path = hubPath(type, item.slug);
   const articles = hubArticles(type, item.slug).map(toCard);
-  const kind = type === "category" ? "Onderwerp" : "Bouwdeel";
+  const kind = "Categorie";
 
   return (
     <>

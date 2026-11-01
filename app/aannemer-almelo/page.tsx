@@ -188,7 +188,7 @@ export default function AannemerAlmeloPage() {
       />
 
       <KennisbankBlock
-        match={{ categories: ["regels-vergunningen"], subcategories: ["daken"], audience: "thuis" }}
+        match={{ categories: ["bouwvoorbereiding"], subcategories: ["daken"], audience: "thuis" }}
         title="Lees je in voor je gaat bouwen"
       />
 

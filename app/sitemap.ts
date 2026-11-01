@@ -97,7 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
   // Kennisbank-hubs: lastModified = nieuwste artikel in die hub.
-  const hubRoutes = (["category", "subcategory"] as const).flatMap((type) =>
+  const hubRoutes = (["category"] as const).flatMap((type) =>
     existingHubs(type).map((item) => {
       const newest = hubArticles(type, item.slug)
         .map((a) => a.updated ?? a.date)

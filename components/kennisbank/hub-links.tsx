@@ -2,20 +2,19 @@ import Link from "next/link";
 import { existingHubs, hubPath } from "@/lib/kennisbank";
 
 /**
- * Links naar alle bestaande onderwerp- en bouwdeelpagina's. Server-gerenderd,
+ * Links naar alle bestaande categoriepagina's. Server-gerenderd,
  * zodat Google de hubpagina's via /kennisbank (en andere hubs) vindt — de
  * client-filter met ?onderwerp= is daarvoor niet genoeg.
  */
 export function HubLinks({ current }: { current?: string }) {
   const groups = [
-    { title: "Per onderwerp", type: "category" as const, items: existingHubs("category") },
-    { title: "Per bouwdeel", type: "subcategory" as const, items: existingHubs("subcategory") },
+    { title: "Per categorie", type: "category" as const, items: existingHubs("category") },
   ].filter((g) => g.items.length > 0);
 
   if (groups.length === 0) return null;
 
   return (
-    <nav aria-label="Bouwgids per onderwerp en bouwdeel" className="grid gap-8 sm:grid-cols-2">
+    <nav aria-label="Bouwgids per categorie" className="grid gap-8 sm:grid-cols-2">
       {groups.map((group) => (
         <div key={group.type}>
           <p className="eyebrow text-stone">

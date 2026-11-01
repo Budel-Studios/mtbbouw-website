@@ -3,7 +3,7 @@ title: "Offertes vergelijken voor je verbouwing: zo doe je dat"
 seoTitle: "Offertes vergelijken voor je verbouwing"
 description: "Hoe vergelijk je offertes van aannemers eerlijk? Robbert van MTB Bouw legt uit waar je op let: eenheidsprijzen, wat er niet in zit en een praktijkverhaal."
 date: 2026-10-31
-category: kosten-offertes
+category: bouwvoorbereiding
 subcategories: []
 audience: [thuis]
 series: offertes-prijzen

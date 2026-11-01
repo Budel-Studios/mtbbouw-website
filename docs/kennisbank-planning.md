@@ -1,6 +1,8 @@
 # Kennisbank-planning
 
-Bron van waarheid voor wat er wanneer op /kennisbank verschijnt. De scheduled task leest dit bestand elke dinsdagochtend. Zoekwoorden, doelpagina's en SEO-regels per artikel: [kennisbank-seo-aanpak.md](kennisbank-seo-aanpak.md).
+> **November 2026: de planning staat nu in de Artikelstudio** (claude.ai-artifact "Bouwgids Artikelstudio"). Daar staan alle onderwerpen met briefing, praktijkinput, SEO-velden, status en publicatiedatum, en daar wordt elk artikel klaargezet voor een pull request. De tabel hieronder is het archief van de eerste planning; de ideeën eruit staan ook in de studio. De zes categorieën staan in `lib/kennisbank-taxonomy.ts`.
+
+Bron van waarheid (tot november 2026) voor wat er wanneer op /kennisbank verschijnt. De scheduled task leest dit bestand elke dinsdagochtend. Zoekwoorden, doelpagina's en SEO-regels per artikel: [kennisbank-seo-aanpak.md](kennisbank-seo-aanpak.md).
 
 ## Zo werkt het
 
@@ -70,14 +72,25 @@ Doelgroep: alles `thuis`, behalve "Plafonds 80 appartementen" en "Casco bedrijfs
   seoTitle: "Korte titel voor Google"   # alleen als titel + " | MTB Bouw" boven 60 tekens komt
   description: "140–160 tekens"
   date: 2026-10-20                      # geplande publicatiedatum
-  category: technische-keuzes
-  subcategories: [gevels]
+  category: materialen-keuzes            # een van de zes Bouwgids-categorieën
+  subcategories: [gevels]               # bouwdelen, alleen voor koppeling met dienstpagina's
   audience: [thuis]
   series: uitbouw                       # als het bij een serie hoort
   author: robbert                       # of mathijs; weglaten = MTB Bouw
   cover: /images/...
   coverAlt: "..."
-  draft: true                           # de scheduled task zet dit op false
+  projects: [dubbele-uitbouw-enschede]  # praktijkvoorbeelden; de projectpagina linkt terug
+  services: [/aanbouw-uitbouw]          # doelpagina('s)
+  reviewer: "Mathijs"                   # inhoudelijke controle
+  reviewed: 2026-11-01
+  nextReview: 2027-01-15                # verplicht bij subsidies, financiering, vergunningen
+  sources:
+    - title: "RVO: ISDE voor woningeigenaren"
+      url: https://www.rvo.nl/...
+  labels:                               # voor Mijn Verbouwplan (later)
+    werkzaamheden: [kozijnen vervangen]
+    fase: Vergelijken
+  draft: false
   ```
 - **Links naar concepten:** link vanuit een live artikel niet naar een concept; die pagina bestaat nog niet. Serienavigatie en "Lees ook" nemen nieuwe artikelen automatisch mee zodra ze live staan.
 

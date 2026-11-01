@@ -5,7 +5,6 @@ import {
   HUB_PATH,
   MIN_HUB_ARTICLES,
   SERIES,
-  SUBCATEGORIES,
   kennisbankFilterHref,
   type AudienceSlug,
   type CategorySlug,
@@ -35,6 +34,8 @@ export type ArticleCardData = {
   readingTime: number;
   cover?: string;
   coverAlt?: string;
+  /** Zoektermen voor de zoekfunctie op /kennisbank. */
+  tags: string[];
 };
 
 export function toCard(a: Article): ArticleCardData {
@@ -50,6 +51,7 @@ export function toCard(a: Article): ArticleCardData {
     readingTime: a.metadata.readingTime,
     cover: a.cover,
     coverAlt: a.coverAlt,
+    tags: [...a.tags],
   };
 }
 
@@ -64,19 +66,14 @@ export function getPublishedArticle(slug: string): Article | undefined {
   return publishedArticles().find((a) => a.slug === slug);
 }
 
-/* ---------- Hubpagina's (onderwerp / bouwdeel) ----------------------- */
+/* ---------- Categoriepagina's ----------------------------------------- */
 
 const HUB_ITEMS: Record<HubType, readonly TaxonomyItem[]> = {
   category: CATEGORIES,
-  subcategory: SUBCATEGORIES,
 };
 
-export function hubArticles(type: HubType, slug: string): Article[] {
-  return publishedArticles().filter((a) =>
-    type === "category"
-      ? a.category === slug
-      : (a.subcategories as readonly string[]).includes(slug)
-  );
+export function hubArticles(_type: HubType, slug: string): Article[] {
+  return publishedArticles().filter((a) => a.category === slug);
 }
 
 export function hubExists(type: HubType, slug: string): boolean {
@@ -123,9 +120,14 @@ export function seriesParts(seriesSlug: string): Article[] {
 const overlaps = (a: readonly string[], b: readonly string[]) =>
   a.some((x) => b.includes(x));
 
+/** Artikelen die dit project als praktijkvoorbeeld noemen (frontmatter `projects`). */
+export function articlesForProject(projectSlug: string): Article[] {
+  return publishedArticles().filter((a) => a.projects.includes(projectSlug));
+}
+
 /**
- * "Lees ook": eerst dezelfde serie, dan gedeelde bouwdelen, dan hetzelfde
- * onderwerp. Alleen artikelen voor dezelfde doelgroep, zodat een particulier
+ * "Lees ook": eerst dezelfde serie, dan een gedeeld project of bouwdeel, dan
+ * dezelfde categorie. Alleen artikelen voor dezelfde doelgroep, zodat een particulier
  * geen kantoorartikel aangeraden krijgt. Te weinig matches → aanvullen met
  * de nieuwste artikelen voor die doelgroep.
  */
@@ -136,6 +138,7 @@ export function relatedArticles(article: Article, limit = 3): Article[] {
 
   const score = (a: Article) =>
     (article.series && a.series === article.series ? 4 : 0) +
+    2 * a.projects.filter((p) => article.projects.includes(p)).length +
     2 *
       a.subcategories.filter((s) =>
         (article.subcategories as readonly string[]).includes(s)

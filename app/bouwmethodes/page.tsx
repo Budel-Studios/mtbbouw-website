@@ -90,7 +90,7 @@ export default function BouwmethodesPage() {
       </SplitSection>
 
       <KennisbankBlock
-        match={{ categories: ["technische-keuzes"], subcategories: ["fundering-constructie"] }}
+        match={{ categories: ["bouw-constructie"], subcategories: ["fundering-constructie"] }}
         title="Meer over bouwmethodes"
       />
 

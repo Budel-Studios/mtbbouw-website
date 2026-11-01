@@ -3,7 +3,7 @@ title: "Er is gestuukt, en nu? Zo schilder je zelf op sausklaar stucwerk"
 seoTitle: "Gestuukt, en nu? Schilderen op stucwerk"
 description: "Net gestuukt? Lees waarom wij behang als bescherming adviseren, en hoe je zelf goed schildert op sausklaar stucwerk: drogen, afnemen, voorstrijken en sauzen."
 date: 2026-10-22
-category: plannen-aanpak
+category: tijdens-na-de-bouw
 subcategories: [wanden-plafonds]
 audience: [thuis]
 series: klus-plannen

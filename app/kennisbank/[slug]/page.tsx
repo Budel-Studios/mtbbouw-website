@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { extractFaq } from "@/lib/article-faq";
 import { getAuthor } from "@/lib/authors";
-import { categoryLabel, subcategoryLabel } from "@/lib/kennisbank-taxonomy";
+import { categoryLabel } from "@/lib/kennisbank-taxonomy";
 import {
   getPublishedArticle,
   hubExists,
@@ -21,6 +21,18 @@ import { SeriesNav } from "@/components/kennisbank/series-nav";
 import { CardSlider } from "@/components/sections/card-slider";
 import { articleToCard } from "@/lib/article-slide";
 import { HsbAnimation } from "@/components/kennisbank/hsb-animation";
+import { publishedProjects, toProjectCard } from "@/lib/projects";
+
+/** Leesbare naam voor een doelpagina (frontmatter `services`). */
+const PAGE_LABELS = new Map<string, string>([
+  ...site.footerColumns.flatMap((col) => col.links.map((l) => [l.href, l.label] as [string, string])),
+  ["/wonen-en-verbouwen", "Wonen & verbouwen"],
+  ["/bouwmethodes", "Bouwmethodes"],
+  ["/hoe-wij-werken", "Zo werken wij"],
+  ["/aannemer-borne", "Aannemer Borne"],
+  ["/aannemer-haaksbergen", "Aannemer Haaksbergen"],
+  ["/aannemer-losser", "Aannemer Losser"],
+]);
 
 type Params = { slug: string };
 
@@ -87,6 +99,15 @@ export default async function ArticlePage({
   };
   const parts = article.series ? seriesParts(article.series) : [];
   const related = relatedArticles(article, 6).map((a) => articleToCard(toCard(a)));
+  // Praktijkvoorbeelden: alleen gepubliceerde projecten die het artikel noemt.
+  const practice = publishedProjects()
+    .filter((p) => article.projects.includes(p.slug))
+    .map(toProjectCard)
+    .filter((p) => p.images.length > 0);
+  const services = article.services.map((href) => ({
+    href,
+    label: PAGE_LABELS.get(href) ?? href,
+  }));
 
   return (
     <>
@@ -96,7 +117,7 @@ export default async function ArticlePage({
           description={article.description}
           url={`${site.url}${article.permalink}`}
           datePublished={article.date}
-          dateModified={article.updated}
+          dateModified={article.updated ?? article.reviewed}
           image={article.cover}
           section={category.label}
           author={
@@ -144,8 +165,8 @@ export default async function ArticlePage({
             {article.description}
           </p>
 
-          {/* Indeling — naar de hubpagina als die bestaat, anders de gefilterde kennisbank. */}
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Onderwerp en bouwdelen">
+          {/* Categorie — naar de categoriepagina als die bestaat. */}
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Categorie">
             <li>
               <Link
                 href={category.href}
@@ -154,19 +175,16 @@ export default async function ArticlePage({
                 {category.label}
               </Link>
             </li>
-            {article.subcategories.map((sub) => (
-              <li key={sub}>
-                <Link
-                  href={hubHref("subcategory", sub)}
-                  className="label-mono inline-flex items-center border border-mist bg-white px-3 py-2 text-stone transition-colors hover:border-ink hover:text-navy"
-                >
-                  {subcategoryLabel(sub)}
-                </Link>
-              </li>
-            ))}
           </ul>
 
           {author && <AuthorByline author={author} />}
+
+          {article.reviewer && article.reviewed && (
+            <p className="label-mono mt-6 text-stone">
+              Inhoudelijk gecontroleerd door {article.reviewer} op{" "}
+              <time dateTime={article.reviewed}>{formatDate(article.reviewed)}</time>
+            </p>
+          )}
         </header>
 
         {/* Embeds: een alinea "[[naam]]" in de markdown wordt vervangen door
@@ -187,12 +205,68 @@ export default async function ArticlePage({
           )
         )}
 
+        {article.sources.length > 0 && (
+          <section aria-labelledby="bronnen" className="mx-auto mt-16 max-w-3xl border-t border-mist pt-8">
+            <h2 id="bronnen" className="eyebrow text-stone">
+              Bronnen
+            </h2>
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-stone">
+              {article.sources.map((src) => (
+                <li key={src.title}>
+                  {src.url ? (
+                    <a
+                      href={src.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-navy underline decoration-navy/40 underline-offset-4 hover:decoration-navy"
+                    >
+                      {src.title}
+                    </a>
+                  ) : (
+                    src.title
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {services.length > 0 && (
+          <nav aria-label="Verder bij MTB Bouw" className="mx-auto mt-12 max-w-3xl">
+            <p className="eyebrow text-stone">Verder bij MTB Bouw</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {services.map((svc) => (
+                <li key={svc.href}>
+                  <Link
+                    href={svc.href}
+                    className="label-mono inline-flex items-center border border-navy px-4 py-2.5 text-navy transition-colors hover:bg-navy hover:text-white"
+                  >
+                    {svc.label} →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         {article.series && (
           <div className="mx-auto max-w-3xl">
             <SeriesNav series={article.series} parts={parts} currentSlug={article.slug} />
           </div>
         )}
       </article>
+
+      {practice.length > 0 && (
+        <CardSlider
+          items={practice}
+          label="Projecten bij dit artikel"
+          eyebrow="Uit de praktijk"
+          title={practice.length === 1 ? "Het project uit dit artikel" : "De projecten uit dit artikel"}
+          headingId="uit-de-praktijk"
+          link={{ href: "/projecten", label: "Alle projecten" }}
+          tone="plain"
+        />
+      )}
 
       <CardSlider
         items={related}

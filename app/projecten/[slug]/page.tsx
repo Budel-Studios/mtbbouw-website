@@ -11,6 +11,8 @@ import { PartnerCards } from "@/components/project/partner-cards";
 import { ProjectVisuals } from "@/components/project/project-gallery";
 import { publishedProjects, toProjectCard } from "@/lib/projects";
 import { CardSlider } from "@/components/sections/card-slider";
+import { articlesForProject, toCard } from "@/lib/kennisbank";
+import { articleToCard } from "@/lib/article-slide";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 
@@ -147,6 +149,10 @@ export default async function ProjectPage({
     .map(toProjectCard)
     .filter((p) => p.images.length > 0)
     .slice(0, 6);
+
+  // Bouwgids-artikelen die dit project als praktijkvoorbeeld gebruiken.
+  // Wederkerig: het artikel noemt het project, dus het project linkt terug.
+  const guide = articlesForProject(project.slug).map((a) => articleToCard(toCard(a)));
 
   const facts = [
     { label: "Locatie", value: project.location },
@@ -349,6 +355,19 @@ export default async function ProjectPage({
             </div>
           </div>
         </section>
+      )}
+
+      {/* Bouwgids: de artikelen waarin dit project terugkomt */}
+      {guide.length > 0 && (
+        <CardSlider
+          items={guide}
+          label="Bouwgids-artikelen bij dit project"
+          eyebrow="In de Bouwgids"
+          title="Lees meer over dit soort werk"
+          headingId="in-de-bouwgids"
+          link={{ href: "/kennisbank", label: "Naar de Bouwgids" }}
+          tone="plain"
+        />
       )}
 
       {/* FAQ */}
