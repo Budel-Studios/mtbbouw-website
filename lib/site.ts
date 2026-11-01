@@ -77,7 +77,7 @@ export const site = {
   footerLinks: [
     { href: "/over-ons", label: "Over ons" },
     { href: "/bouwbedrijf-enschede", label: "Bouwbedrijf Enschede" },
-    { href: "/kennisbank", label: "Kennisbank" },
+    { href: "/kennisbank", label: "Bouwgids" },
     { href: "/gratis-brochure", label: "Gratis brochure" },
     { href: "/werkgenoeg", label: "Werken bij" },
     { href: "/privacy-policy", label: "Privacy" },

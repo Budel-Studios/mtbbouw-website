@@ -107,7 +107,7 @@ export default async function ArticlePage({
         <BreadcrumbJsonLd
           items={[
             { name: "Home", url: "/" },
-            { name: "Kennisbank", url: "/kennisbank" },
+            { name: "Bouwgids", url: "/kennisbank" },
             ...(category.hasHub
               ? [{ name: category.label, url: hubPath("category", article.category) }]
               : []),
@@ -117,7 +117,7 @@ export default async function ArticlePage({
 
         <nav aria-label="Kruimelpad" className="label-mono text-stone">
           <Link href="/kennisbank" className="link-line hover:text-navy">
-            Kennisbank
+            Bouwgids
           </Link>
           <span className="mx-2" aria-hidden="true">/</span>
           <Link href={category.href} className="link-line text-navy">

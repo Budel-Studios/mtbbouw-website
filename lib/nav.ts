@@ -135,7 +135,7 @@ export const mainNav: NavItem[] = [
           title: "Veilig en verantwoord",
           href: "/veilig-verantwoord-bouwen",
         },
-        { id: 6, title: "Blogs", href: "/kennisbank" },
+        { id: 6, title: "Bouwgids", href: "/kennisbank" },
       ],
     },
   },

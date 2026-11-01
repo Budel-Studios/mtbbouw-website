@@ -15,7 +15,7 @@ export function HubLinks({ current }: { current?: string }) {
   if (groups.length === 0) return null;
 
   return (
-    <nav aria-label="Kennisbank per onderwerp en bouwdeel" className="grid gap-8 sm:grid-cols-2">
+    <nav aria-label="Bouwgids per onderwerp en bouwdeel" className="grid gap-8 sm:grid-cols-2">
       {groups.map((group) => (
         <div key={group.type}>
           <p className="eyebrow text-stone">
