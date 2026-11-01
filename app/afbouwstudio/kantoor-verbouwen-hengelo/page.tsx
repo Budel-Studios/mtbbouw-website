@@ -29,7 +29,7 @@ export default function KantoorHengeloPage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Hengelo"
-        description="Kantoorverbouwing en kantoorafbouw in Hengelo door Afbouwstudio (MTB Bouw): herindeling, casco-afbouw en kantoor-in-bedrijfshal met vaste prijs."
+        description="Kantoorverbouwing en kantoorafbouw in Hengelo door Afbouwstudio (MTB Bouw): herindeling, casco-afbouw en kantoor-in-bedrijfshal met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-hengelo"
         serviceType="Kantoorafbouw"
       />
@@ -43,7 +43,7 @@ export default function KantoorHengeloPage() {
         }}
         eyebrow="Afbouwstudio · Hengelo"
         title="Kantoor verbouwen in Hengelo — kantoor én hal in één hand"
-        intro="Hengelo is onze directe buurstad: vanaf de werkplaats in Enschede staan we er in een kwartier. Typerend voor Hengelo is de combinatie van kantoor en bedrijfsruimte in één pand — precies waar Afbouwstudio sterk in is: wij bouwen beide af, in één planning en met één vaste prijs."
+        intro="Hengelo is onze directe buurstad: vanaf de werkplaats in Enschede staan we er in een kwartier. Typerend voor Hengelo is de combinatie van kantoor en bedrijfsruimte in één pand — precies waar Afbouwstudio sterk in is: wij bouwen beide af, in één planning en met één offerte."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>
@@ -98,10 +98,6 @@ export default function KantoorHengeloPage() {
                 kantoren in bedrijfshallen. Bekijk daarvoor ook{" "}
                 <Link href="/afbouwstudio/bedrijfspand-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   bedrijfspand verbouwen
-                </Link>
-                . Kostenindicaties vind je in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
                 </Link>
                 .
               </p>

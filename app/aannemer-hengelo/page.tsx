@@ -15,7 +15,7 @@ import { faqAannemerHengelo } from "@/lib/faq";
 
 const title = "Aannemer Hengelo | verbouw, uitbouw & renovatie | MTB Bouw";
 const description =
-  "Bouwbedrijf voor Hengelo: renovatie, uitbouw, kozijnen en verduurzamen. Vast team uit Enschede, een kwartier rijden. Vaste prijs, geen voorrijkosten.";
+  "Bouwbedrijf voor Hengelo: renovatie, uitbouw, kozijnen en verduurzamen. Vast team uit Enschede, een kwartier rijden. Heldere offerte, geen voorrijkosten.";
 const ogImage = "/images/projects/renovatie-villa-zantinge-enschede/06.jpg";
 
 export const metadata: Metadata = {
@@ -199,7 +199,7 @@ export default function AannemerHengeloPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Verbouwplannen in Hengelo?"
-        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een offerte met vaste prijs."
+        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

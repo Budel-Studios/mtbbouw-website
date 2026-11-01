@@ -62,9 +62,9 @@ const faqAanbouw: Faq[] = [
       "Vaak wel. Extra leefruimte is aantrekkelijk voor kopers. Hoeveel het oplevert hangt af van je woning en de buurt; een taxateur kan dat het best inschatten.",
   },
   {
-    question: "Werken jullie met een vaste prijs?",
+    question: "Weet ik vooraf wat het gaat kosten?",
     answer:
-      "We werken met een vaste aanneemsom. Eventuele stelposten benoemen we transparant in de offerte.",
+      `${facts.offerte.standaard} Meerwerk voeren we alleen uit na jouw akkoord.`,
   },
 ];
 
@@ -159,7 +159,7 @@ export const faqNieuwbouw: Faq[] = [
   {
     question: "Wat staat er in de aannemingsovereenkomst?",
     answer:
-      "Wat we bouwen, de vaste prijs, de planning met de beoogde opleverdatum, de garantie en de afspraken over oplevering en eventuele vertraging.",
+      "Wat we bouwen, de aanneemsom met eventuele stelposten, de planning met de beoogde opleverdatum, de garantie en de afspraken over oplevering en eventuele vertraging.",
   },
   {
     question: "Welke garanties krijg ik bij nieuwbouw?",
@@ -402,7 +402,7 @@ export const faqAannemerEnschede: Faq[] = [
   {
     question: "Wat kost een aannemer in Enschede per uur of per project?",
     answer:
-      "Wij werken niet met losse uurtjes maar met een vaste projectprijs: je weet vooraf precies waar je aan toe bent. Na een kennismaking en opname op locatie ontvang je een heldere offerte zonder verrassingen achteraf.",
+      "Wij werken niet met losse uurtjes maar met een offerte per project. Na een kennismaking en opname op locatie ontvang je een gespecificeerde offerte, met stelposten en uitsluitingen duidelijk op een rij. Meerwerk doen we alleen na jouw akkoord.",
   },
   {
     question: "Hoe snel kunnen jullie beginnen?",
@@ -455,7 +455,7 @@ export const faqBouwbedrijfEnschede: Faq[] = [
   {
     question: "Hoe vraag ik een offerte aan?",
     answer:
-      "Bel 053 206 50 71, app ons of vul het contactformulier in. We plannen een vrijblijvende kennismaking, komen langs voor een opname en je ontvangt een offerte met vaste prijs.",
+      "Bel 053 206 50 71, app ons of vul het contactformulier in. We plannen een vrijblijvende kennismaking, komen langs voor een opname en je ontvangt een gespecificeerde offerte.",
   },
 ];
 
@@ -468,7 +468,7 @@ export const faqAannemerTwente: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten binnen Twente?",
     answer:
-      "Nee. We werken met een vaste projectprijs waarin alles is meegenomen — geen aparte voorrijkosten of verrassingen achteraf.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Waarom een aannemer uit de regio kiezen?",
@@ -506,7 +506,7 @@ export const faqKantoorVerbouwen: Faq[] = [
   {
     question: "Wij huren casco kantoorruimte — regelen jullie de complete afbouw?",
     answer:
-      "Ja, dat is precies ons specialisme: van casco naar turn-key. Metal stud-wanden, systeemplafonds, vloeren, verlichting, pantry en sanitair — één team, één planning, één vaste prijs.",
+      "Ja, dat is precies ons specialisme: van casco naar turn-key. Metal stud-wanden, systeemplafonds, vloeren, verlichting, pantry en sanitair — één team, één planning en één offerte.",
   },
   {
     question: "Hoe lang duurt een kantoorverbouwing?",
@@ -678,7 +678,7 @@ export const faqKantoorZwolle: Faq[] = [
   {
     question: "Kunnen jullie casco kantoorruimte in Zwolle volledig afbouwen?",
     answer:
-      "Ja — dat is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair, met één team en een vaste prijs.",
+      "Ja — dat is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair, met één team en één offerte.",
   },
   {
     question: "Hoe verloopt de intake op afstand?",
@@ -693,7 +693,7 @@ export const faqMetalStud: Faq[] = [
   {
     question: "Wat kost een metal stud-wand?",
     answer:
-      "Als marktindicatie (2026): een standaard metal stud-scheidingswand kost circa €70–120 per m² wandoppervlak inclusief afwerking; geluidwerende of beglaasde varianten liggen hoger. In de offerte krijg je een vaste prijs per wand.",
+      "Dat hangt af van de hoogte, de isolatie en geluidseisen, deuren en glas, en de afwerking. Een prijs per m² zegt daarom weinig. Na een intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Hoe snel staat een metal stud-wand?",
@@ -721,7 +721,7 @@ export const faqSysteemplafonds: Faq[] = [
   {
     question: "Wat kost een systeemplafond?",
     answer:
-      "Als marktindicatie (2026): een standaard systeemplafond kost circa €40–80 per m²; inclusief LED-verlichting reken je op €65–120 per m². Akoestische of design-panelen liggen hoger. Na een intake ontvang je een gespecificeerde offerte.",
+      "Dat hangt af van het type plaat, de verlichting en installaties erboven, en of er een oud plafond uit moet. Een prijs per m² zegt daarom weinig. Na een intake ontvang je een gespecificeerde offerte.",
   },
   {
     question: "Wat is het voordeel van een systeemplafond in een kantoor?",
@@ -801,7 +801,7 @@ export const faqAannemerOldenzaal: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Oldenzaal?",
     answer:
-      "Nee, we werken met een vaste projectprijs waar alles in zit.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Doen jullie in Oldenzaal ook zakelijke projecten?",
@@ -824,7 +824,7 @@ export const faqAannemerBorne: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Borne?",
     answer:
-      "Nee — alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Kan ik een aanbouw in Borne ook prefab laten bouwen?",
@@ -847,7 +847,7 @@ export const faqAannemerHaaksbergen: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Haaksbergen?",
     answer:
-      "Nee — we werken met een vaste projectprijs waar alles in zit.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Kunnen jullie ook een overkapping of bijgebouw plaatsen?",
@@ -865,7 +865,7 @@ export const faqAannemerLosser: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Losser?",
     answer:
-      "Nee — alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Voor welke klussen kan ik jullie in Losser inschakelen?",
@@ -898,12 +898,12 @@ export const faqAannemerHengelo: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Hengelo?",
     answer:
-      "Nee. Alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Doen jullie in Hengelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één vaste prijs.",
+      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één offerte.",
   },
 ];
 
@@ -916,7 +916,7 @@ export const faqAannemerAlmelo: Faq[] = [
   {
     question: "Doen jullie in Almelo ook kleine klussen, zoals een veranda?",
     answer:
-      "Ja. De houten veranda die we in Almelo bouwden stond er in twee dagen. Klein of groot, je krijgt dezelfde vaste mensen en een vaste prijs.",
+      "Ja. De houten veranda die we in Almelo bouwden stond er in twee dagen. Klein of groot, je krijgt dezelfde vaste mensen en een heldere offerte.",
   },
   {
     question: "Heb ik in Almelo een vergunning nodig voor een veranda of overkapping?",
@@ -926,12 +926,12 @@ export const faqAannemerAlmelo: Faq[] = [
   {
     question: "Rekenen jullie voorrijkosten naar Almelo?",
     answer:
-      "Nee, alles zit in de vaste projectprijs.",
+      "Nee, voorrijkosten rekenen we niet apart. Wat je betaalt, staat in de offerte.",
   },
   {
     question: "Doen jullie in Almelo ook zakelijke projecten?",
     answer:
-      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één vaste prijs.",
+      "Ja. Via Afbouwstudio verbouwen we kantoren, winkels en bedrijfspanden, van casco tot sleutelklaar, met één team en één offerte.",
   },
 ];
 
@@ -997,7 +997,7 @@ export const faqKantoorAlmelo: Faq[] = [
   {
     question: "Kunnen jullie casco kantoorruimte in Almelo afbouwen?",
     answer:
-      "Ja — van casco naar turn-key is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair met één team en één vaste prijs.",
+      "Ja — van casco naar turn-key is ons specialisme: metal stud-wanden, systeemplafonds, vloeren, installaties, pantry en sanitair met één team en één offerte.",
   },
   {
     question: "Werken jullie in Almelo ook 's avonds of in het weekend?",

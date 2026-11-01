@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Kantoor verbouwen in Almelo | Afbouwstudio — MTB Bouw" },
   description:
-    "Kantoor verbouwen in Almelo en Noord-Twente: wanden, plafonds, installaties en afwerking. Van casco tot turn-key, met een vaste prijs.",
+    "Kantoor verbouwen in Almelo en Noord-Twente: wanden, plafonds, installaties en afwerking. Van casco tot turn-key, met een gespecificeerde offerte.",
   alternates: { canonical: "/afbouwstudio/kantoor-verbouwen-almelo" },
 };
 
@@ -29,7 +29,7 @@ export default function KantoorAlmeloPage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Almelo"
-        description="Kantoorverbouwing en casco-afbouw in Almelo en Noord-Twente door Afbouwstudio (MTB Bouw): wanden, plafonds, installaties en afwerking met vaste prijs."
+        description="Kantoorverbouwing en casco-afbouw in Almelo en Noord-Twente door Afbouwstudio (MTB Bouw): wanden, plafonds, installaties en afwerking met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-almelo"
         serviceType="Kantoorafbouw"
       />
@@ -95,13 +95,9 @@ export default function KantoorAlmeloPage() {
                 <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
                 met verlichting, vloeren, pantry, sanitair en installaties —
                 ook voor huurders die casco kantoorruimte moeten afbouwen.
-                Kostenindicaties staan op de{" "}
+                Waar de kosten van afhangen, lees je op de{" "}
                 <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   hoofdpagina kantoor verbouwen
-                </Link>{" "}
-                en in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
                 </Link>
                 .
               </p>

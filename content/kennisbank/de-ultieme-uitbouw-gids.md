@@ -109,7 +109,7 @@ Meer weten over het verschil? Lees onze pagina over [bouwmethodes](/bouwmethodes
 Hoe lang duurt een uitbouw nou echt? Van eerste gesprek tot oplevering reken je op **8 tot 14 weken bouwtijd**, plus de voorbereiding daarvoor. Zo ziet het traject eruit:
 
 1. **Kennismaking en schets (week 0).** We komen langs, kijken naar je huis en je tuin, en praten over wat je wilt. Aan de keukentafel, letterlijk.
-2. **Ontwerp en offerte (2–4 weken).** Tekeningen, materiaalkeuzes en een vaste projectprijs. Geen stelposten waar je later van schrikt.
+2. **Ontwerp en offerte (2–4 weken).** Tekeningen, materiaalkeuzes en een gespecificeerde offerte. Stelposten staan er duidelijk in, zodat je later niet schrikt.
 3. **Vergunning of check (0–8 weken).** Vergunningvrij? Dan alleen de bouwtechnische check. Anders vraagt onze werkvoorbereider (dat is Robbert) de vergunning aan.
 4. **Grondonderzoek en constructie (parallel).** Sondering en constructieberekening — hierover zo meer.
 5. **Werkvoorbereiding en inkoop (4–8 weken).** Kozijnen, staal en prefab-elementen hebben levertijd. Dit loopt grotendeels parallel met stap 3.

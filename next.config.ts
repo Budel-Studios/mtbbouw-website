@@ -111,6 +111,12 @@ const nextConfig: NextConfig = {
 
       // Project bedrijfshal Borne bleek geen MTB-project en is verwijderd (nov 2026).
       { source: "/projecten/bedrijfshal-borne", destination: "/projecten", permanent: true },
+      // Kostenartikel kantoorverbouwing draaide om m²-prijzen; offline gehaald (nov 2026).
+      {
+        source: "/kennisbank/kantoor-verbouwen-kosten-2026",
+        destination: "/afbouwstudio/kantoor-verbouwen",
+        permanent: true,
+      },
 
       // Oude WordPress-archieven (wildcards).
       { source: "/portfolio-item/:slug", destination: "/projecten", permanent: true },

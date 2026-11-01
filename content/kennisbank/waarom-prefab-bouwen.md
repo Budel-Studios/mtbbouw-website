@@ -101,7 +101,7 @@ Waar zit de winst dan? Niet in de aanneemsom, maar eromheen:
 
 - **Kortere bouwtijd** = minder weken overlast, minder lang een container voor de deur.
 - **Maatvastheid** = minder faalkosten en verrassingen tijdens de bouw.
-- **Vaste prijs is beter te geven** = de fabriek werkt met exacte calculaties, dus wij kunnen een vaste projectprijs afgeven zonder dikke risico-opslag.
+- **Prijs is beter vooraf te bepalen** = de fabriek werkt met exacte calculaties, dus er zit minder onzekerheid in de offerte en is er minder risico-opslag nodig.
 
 Wil je precies weten waar je aan toe bent met een aanbouw? Lees dan ook [wat kost een aanbouw in 2026](/kennisbank/wat-kost-een-aanbouw-2026).
 
@@ -125,7 +125,7 @@ Wil je precies weten waar je aan toe bent met een aanbouw? Lees dan ook [wat kos
 - Planning die niet omvalt door het weer
 - Hoge isolatiewaarden, lagere energierekening
 - Minder bouwafval en minder transportbewegingen naar de bouwplaats
-- Vaste projectprijs is goed af te geven
+- De prijs is goed vooraf te bepalen
 
 ## En de eerlijke nadelen
 

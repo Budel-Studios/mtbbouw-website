@@ -103,7 +103,7 @@ En als je zaak al draait? Dan telt elke dag dicht dubbel. Toen De Broodbode hun 
 | Stap | Wat gebeurt er | Indicatie doorlooptijd |
 |---|---|---|
 | 1. Pandcheck | Technische check vóór het tekenen: ventilatie, afvoer, elektra, bestemming | 1–2 weken |
-| 2. Ontwerp & offerte | Indeling, looplijnen, materialen, vaste projectprijs | 2–4 weken |
+| 2. Ontwerp & offerte | Indeling, looplijnen, materialen, gespecificeerde offerte | 2–4 weken |
 | 3. Vergunningen | Omgevingsvergunning, brandveiligheid, exploitatie — gemeente checkt | weken tot maanden |
 | 4. Voorbereiding | Bestellingen, maatwerk counter in productie, planning vaklui | parallel aan stap 3 |
 | 5. Verbouwing | Installaties, wanden, tegelwerk, plafond, keuken, counter | ± 6–10 weken (Zwolle: 7) |
@@ -115,7 +115,7 @@ En als je zaak al draait? Dan telt elke dag dicht dubbel. Toen De Broodbode hun 
 Een paar fouten die we vaak zien:
 
 1. **Te laat beginnen met vergunningen.** De verbouwing kan nog zo strak gepland zijn — als de vergunning er niet is, sta je stil. Bel de gemeente meteen.
-2. **Geen vaste prijs afspreken.** Op regiebasis verbouwen klinkt flexibel, maar je budget is dan een gok. Wij werken met vaste projectprijzen, zodat je vooraf weet waar je aan toe bent.
+2. **Zonder heldere offerte beginnen.** Op regiebasis verbouwen klinkt flexibel, maar je budget is dan een gok. Wij werken met een gespecificeerde offerte, met stelposten en uitsluitingen op een rij, zodat je vooraf weet waar je aan toe bent.
 3. **Installaties onderschatten.** Ventilatie, elektra en afvoer zijn het duurste én meest bepalende deel. Wie eerst de leuke dingen kiest en dan pas de techniek uitrekent, moet vaak opnieuw beginnen.
 4. **Geen akoestiekplan.** Zie hierboven. Achteraf fixen is duurder dan meteen goed doen.
 5. **Alles zelf willen regelen.** Vijf losse partijen aansturen naast je eigen voorbereiding op de opening — dat trekt bijna niemand. Eén partij die alles coördineert scheelt slapeloze nachten.

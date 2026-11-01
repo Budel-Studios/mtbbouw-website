@@ -71,7 +71,7 @@ export function HubPage({ type, item }: { type: HubType; item: TaxonomyItem }) {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Liever meteen advies voor jouw situatie?"
-        text="We komen langs, kijken mee en je ontvangt een offerte met vaste prijs."
+        text="We komen langs, kijken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: `Bel ${site.telephone}`, href: `tel:${site.telephoneHref}` }}
       />

@@ -29,7 +29,7 @@ export default function KantoorDeventerPage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Deventer"
-        description="Kantoorverbouwing en casco-afbouw in Deventer door Afbouwstudio (MTB Bouw): wanden, plafonds, installaties en afwerking met vaste prijs."
+        description="Kantoorverbouwing en casco-afbouw in Deventer door Afbouwstudio (MTB Bouw): wanden, plafonds, installaties en afwerking met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-deventer"
         serviceType="Kantoorafbouw"
       />
@@ -96,15 +96,11 @@ export default function KantoorDeventerPage() {
                 en glaswanden,{" "}
                 <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
                 met verlichting, vloeren, pantry, sanitair en installaties —
-                ook voor huurders die casco ruimte moeten afbouwen. Bekijk de{" "}
+                ook voor huurders die casco ruimte moeten afbouwen. Bekijk ook de{" "}
                 <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   hoofdpagina kantoor verbouwen
-                </Link>{" "}
-                en de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
-                </Link>{" "}
-                voor m²-prijzen.
+                </Link>
+                .
               </p>
             </div>
           </div>

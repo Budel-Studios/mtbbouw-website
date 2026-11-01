@@ -15,7 +15,7 @@ import { faqAannemerOldenzaal } from "@/lib/faq";
 
 const title = "Aannemer Oldenzaal | renovatie & verbouw | MTB Bouw";
 const description =
-  "Bouwbedrijf voor Oldenzaal: renovatie en verbouw met behoud van karakter, uitbouw en kozijnen. Vast team uit Enschede. Vaste prijs, geen voorrijkosten.";
+  "Bouwbedrijf voor Oldenzaal: renovatie en verbouw met behoud van karakter, uitbouw en kozijnen. Vast team uit Enschede. Heldere offerte, geen voorrijkosten.";
 const ogImage = "/images/projects/renovatie-schuur-behoud-karakter/cover.jpg";
 
 export const metadata: Metadata = {
@@ -199,7 +199,7 @@ export default function AannemerOldenzaalPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Verbouwplannen in Oldenzaal?"
-        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een offerte met vaste prijs."
+        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

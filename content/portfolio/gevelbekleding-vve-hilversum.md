@@ -37,4 +37,4 @@ De bestaande gevelbekleding was aan vervanging toe. Wij monteerden nieuwe, onder
 
 Een complex dat er weer fris bij staat en de komende jaren geen gevelonderhoud nodig heeft. Bekijk de foto's van de montage en het eindresultaat hierboven.
 
-VvE of vastgoedbeheerder met gevelplannen? [Neem contact op](/contact) — we plannen een opname en je ontvangt een vaste prijs.
+VvE of vastgoedbeheerder met gevelplannen? [Neem contact op](/contact) — we plannen een opname en je ontvangt een gespecificeerde offerte.

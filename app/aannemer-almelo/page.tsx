@@ -15,7 +15,7 @@ import { faqAannemerAlmelo } from "@/lib/faq";
 
 const title = "Aannemer Almelo | verbouw, uitbouw & veranda's | MTB Bouw";
 const description =
-  "Bouwbedrijf voor Almelo: verbouw, uitbouw, veranda's en kozijnen. Klein of groot, met een vast team uit Enschede. Vaste prijs, geen voorrijkosten.";
+  "Bouwbedrijf voor Almelo: verbouw, uitbouw, veranda's en kozijnen. Klein of groot, met een vast team uit Enschede. Heldere offerte, geen voorrijkosten.";
 const ogImage = "/images/projects/veranda-almelo/01.jpg";
 
 export const metadata: Metadata = {
@@ -197,7 +197,7 @@ export default function AannemerAlmeloPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Bouwplannen in Almelo?"
-        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een offerte met vaste prijs."
+        text="Mathijs of Robbert komt langs, denkt mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

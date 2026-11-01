@@ -27,7 +27,7 @@ export const processSteps = [
   {
     step: "02",
     title: "Plan & heldere offerte",
-    text: "Een duidelijk voorstel met een eerlijke, vaste prijs.",
+    text: "Een duidelijk voorstel met een eerlijke prijs, gespecificeerd per onderdeel.",
   },
   {
     step: "03",

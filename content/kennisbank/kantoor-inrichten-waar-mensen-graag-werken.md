@@ -10,6 +10,7 @@ cover: /images/projects/broodbode-zwolle-lunchroom/cover.jpg
 coverAlt: "Sfeervol ingericht interieur met akoestisch zwart plafond, maatwerk counter en doordacht verlichtingsplan"
 tags: ["kantoor inrichten", "kantoor indeling", "akoestiek", "kantoor verbouwen", "afbouw"]
 projects: [broodbode-zwolle-lunchroom, broodbode-apeldoorn-lunchroom]
+updated: 2026-11-01
 draft: false
 ---
 
@@ -103,7 +104,7 @@ Even eerlijk: wanneer heb jij voor het laatst bewust naar je kantoorplafond geke
 - **Licht** — daar zit je verlichting in of aan.
 - **Uitstraling** — een vergeeld plafond uit 1995 maakt élke inrichting sjofel.
 
-Daarom is een nieuw [systeemplafond](/afbouwstudio/systeemplafonds) vaak de slimste eerste ingreep bij een opknapbeurt: je pakt geluid, licht en uitstraling in één klap. Ter indicatie: een systeemplafond kost €40–80 per m², en inclusief LED-verlichting €65–120 per m² (excl. btw).
+Daarom is een nieuw [systeemplafond](/afbouwstudio/systeemplafonds) vaak de slimste eerste ingreep bij een opknapbeurt: je pakt geluid, licht en uitstraling in één klap.
 
 **Leuk weetje:** een plafond hoeft niet wit en saai te zijn. Bij De Broodbode in Zwolle kozen we voor een akoestisch zwart plafond — dat geeft diepte aan de ruimte én dempt het geluid van een volle zaak. Werkt in een kantoor net zo goed als in een lunchroom.
 
@@ -117,7 +118,7 @@ Twee dingen die je bij de inrichting meteen goed kunt regelen:
 - Slimme zonering scheelt ook stookkosten: waarom de hele vloer verwarmen als het team op dinsdag maar de helft gebruikt?
 
 **Flexibel:**
-- Metal stud-wanden zijn later aanpasbaar. Team gegroeid? Wand eruit, wand erbij. Ter indicatie: €70–120 per m² wand (excl. btw).
+- Metal stud-wanden zijn later aanpasbaar. Team gegroeid? Wand eruit, wand erbij.
 - Kies systeemplafonds met uitneembare platen — dan kun je later bij kabels en installaties zonder breekwerk.
 
 Zo bouw je een kantoor dat meebeweegt in plaats van elke vijf jaar op de schop moet.
@@ -155,13 +156,13 @@ Eerlijk verhaal: dat hangt af van hoe ver je gaat. Grofweg zijn er drie niveaus:
 
 Een prijs per m² zegt weinig: het pand, de installaties en het afwerkingsniveau bepalen de kosten. Na een intake op locatie rekenen we jouw situatie uit.
 
-Wil je precies weten waar die verschillen in zitten en waar je op kunt besparen? Dat rekenen we voor in [wat kost een kantoor verbouwen in 2026](/kennisbank/kantoor-verbouwen-kosten-2026). En bij [onze Afbouwstudio](/afbouwstudio) werken we altijd met een vaste projectprijs — dan weet je vooraf waar je aan toe bent.
+Bij [onze Afbouwstudio](/afbouwstudio) krijg je na die intake een gespecificeerde offerte. Stelposten en uitsluitingen staan er duidelijk in, en meerwerk doen we alleen na jouw akkoord. Zo weet je vooraf waar je aan toe bent.
 
 ## Veelgestelde vragen
 
 ### Wat is de beste eerste stap als mijn kantoor gedateerd voelt?
 
-Meestal het plafond met verlichting. Je pakt akoestiek, licht en uitstraling in één keer aan, en het kan vaak zonder dat de rest van het kantoor overhoop moet. Vanaf €65–120 per m² inclusief LED (excl. btw) ben je al een flink eind.
+Meestal het plafond met verlichting. Je pakt akoestiek, licht en uitstraling in één keer aan, en het kan vaak zonder dat de rest van het kantoor overhoop moet.
 
 ### Hoe los ik het geluidsprobleem in onze kantoortuin op?
 
@@ -177,7 +178,7 @@ Glas is inderdaad een hard vlak, maar in combinatie met een akoestisch plafond e
 
 ### Wat kost een kantoor opnieuw indelen met wanden?
 
-Metal stud-wanden kosten indicatief €70–120 per m² wand (excl. btw). Wat een complete herindeling kost, hangt af van het pand en de installaties; dat rekenen we uit na een intake op locatie.
+Dat hangt af van het aantal wanden, de geluidseisen, deuren en glas, en de installaties die mee moeten. Een prijs per m² zegt daarom weinig. Na een intake op locatie rekenen we jouw situatie uit.
 
 ### Hebben we een architect of interieurontwerper nodig?
 

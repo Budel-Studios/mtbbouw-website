@@ -59,7 +59,6 @@ const steps: Step[] = [
     links: [
       { href: "/kennisbank/offertes-vergelijken-verbouwing", label: "Offertes vergelijken: zo doe je dat" },
       { href: "/kennisbank/wat-kost-een-aanbouw-2026", label: "Wat kost een aanbouw?" },
-      { href: "/kennisbank/kantoor-verbouwen-kosten-2026", label: "Wat kost een kantoorverbouwing?" },
     ],
   },
   {
@@ -100,9 +99,9 @@ const procesFaq = [
       "Niets. De kennismaking en intake op locatie zijn kosteloos en vrijblijvend.",
   },
   {
-    question: "Werken jullie met een vaste prijs?",
+    question: "Weet ik vooraf wat het gaat kosten?",
     answer:
-      "In 99% van onze projecten werken we met een vaste aanneemsom. Eventuele stelposten benoemen we transparant in de offerte.",
+      `${facts.offerte.standaard} Meerwerk voeren we alleen uit na jouw akkoord.`,
   },
   {
     question: "Doen jullie ook totaalprojecten?",

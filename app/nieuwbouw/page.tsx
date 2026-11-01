@@ -17,12 +17,12 @@ import { garantieTekst } from "@/lib/facts";
 export const metadata: Metadata = {
   title: "Nieuwbouw in Enschede en Twente",
   description:
-    "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een heldere planning en heldere garantieafspraken.",
+    "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een gespecificeerde offerte, een heldere planning en heldere garantieafspraken.",
   alternates: { canonical: "/nieuwbouw" },
   openGraph: {
     type: "website",
     title: "Nieuwbouw in Enschede en Twente | MTB Bouw",
-    description: "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een vaste aanneemsom, een heldere planning en heldere garantieafspraken.",
+    description: "Bijna energieneutrale nieuwbouw (BENG) in Twente met één aanspreekpunt, een gespecificeerde offerte, een heldere planning en heldere garantieafspraken.",
     url: "/nieuwbouw",
   },
 };
@@ -62,7 +62,7 @@ export default function NieuwbouwPage() {
           {
             icon: ShieldIcon,
             title: "Prijs en planning op papier",
-            text: "Een aannemingsovereenkomst met een vaste aanneemsom, een planning met de beoogde opleverdatum en heldere garantieafspraken.",
+            text: "Een aannemingsovereenkomst met de aanneemsom, stelposten en uitsluitingen op een rij, een planning met de beoogde opleverdatum en heldere garantieafspraken.",
           },
           {
             icon: LayersIcon,

@@ -163,7 +163,7 @@ export default function KantoorVerbouwenPage() {
               <ul className="mt-6 space-y-2.5">
                 {[
                   "Eén aanspreekpunt: Mathijs of Robbert",
-                  "Vaste prijs en realistische planning",
+                  "Gespecificeerde offerte en een realistische planning",
                   "Gefaseerd werken, zodat je kantoor zoveel mogelijk bereikbaar blijft",
                   "Oplevering met vastgelegde garantieafspraken",
                 ].map((t) => (

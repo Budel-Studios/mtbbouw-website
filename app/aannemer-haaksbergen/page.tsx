@@ -14,13 +14,13 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer Haaksbergen | verbouw, uitbouw & erf | MTB Bouw" },
   description:
-    "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Heldere offerte, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-haaksbergen" },
   openGraph: {
     type: "website",
     title: "Aannemer Haaksbergen | verbouw, uitbouw & erf | MTB Bouw",
     description:
-      "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Vaste prijs, geen voorrijkosten.",
+      "Aannemer in Haaksbergen, dorp én buitengebied: renovatie, aanbouw, overkappingen en prefab bijgebouwen. Heldere offerte, geen voorrijkosten.",
     url: "/aannemer-haaksbergen",
     images: [{ url: "/images/projects/overkapping-paardenstal-enschede/cover.png", alt: "Grote houten overkapping met paardenstal in het buitengebied, door MTB Bouw" }],
   },
@@ -121,7 +121,7 @@ export default function AannemerHaaksbergenPage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Bouwplannen in Haaksbergen?"
-        text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="We komen langs, denken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

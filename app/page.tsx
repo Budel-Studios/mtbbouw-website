@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     absolute: "Aannemer Enschede & Twente — verbouw & uitbouw | MTB Bouw",
   },
   description:
-    "Aannemer uit Enschede voor verbouwing, uitbouw, renovatie en nieuwbouw in heel Twente. Vaste prijs vooraf, één aanspreekpunt en een intake bij jou thuis.",
+    "Aannemer uit Enschede voor verbouwing, uitbouw, renovatie en nieuwbouw in heel Twente. Een gespecificeerde offerte, één aanspreekpunt en een intake bij jou thuis.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "MTB Bouw — aannemer in Enschede & Twente",

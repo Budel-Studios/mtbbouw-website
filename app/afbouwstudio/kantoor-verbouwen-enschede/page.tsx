@@ -29,7 +29,7 @@ export default function KantoorEnschedePage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Enschede"
-        description="Kantoorverbouwing en kantoorafbouw in Enschede door Afbouwstudio (MTB Bouw), gevestigd in Enschede: van herindeling tot complete casco-afbouw met vaste prijs."
+        description="Kantoorverbouwing en kantoorafbouw in Enschede door Afbouwstudio (MTB Bouw), gevestigd in Enschede: van herindeling tot complete casco-afbouw met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-enschede"
         serviceType="Kantoorafbouw"
       />
@@ -96,14 +96,10 @@ export default function KantoorEnschedePage() {
                 en glaswanden,{" "}
                 <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
                 met LED, vloeren, pantry en installaties — of de complete
-                afbouw van casco gehuurde kantoorruimte. Kostenindicaties staan
-                op de{" "}
+                afbouw van casco gehuurde kantoorruimte. Hoe we werken en waar de
+                kosten van afhangen, lees je op de{" "}
                 <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   hoofdpagina kantoor verbouwen
-                </Link>{" "}
-                en in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
                 </Link>
                 .
               </p>

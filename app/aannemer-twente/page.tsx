@@ -14,13 +14,13 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer in Twente | MTB Bouw — verbouwen in de hele regio" },
   description:
-    "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, lokale partners.",
+    "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, heldere offerte, lokale partners.",
   alternates: { canonical: "/aannemer-twente" },
   openGraph: {
     type: "website",
     title: "Aannemer in Twente | MTB Bouw — verbouwen in de hele regio",
     description:
-      "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, vaste prijs, lokale partners.",
+      "Aannemer in Twente: MTB Bouw verbouwt in Hengelo, Almelo, Oldenzaal, Borne, Haaksbergen en Losser. Vast team, heldere offerte, lokale partners.",
     url: "/aannemer-twente",
     images: [{ url: "/images/projects/luxe-overkapping-twente/cover.jpg", alt: "Luxe houten overkapping in een tuin in Twente, gebouwd door MTB Bouw" }],
   },
@@ -165,7 +165,7 @@ export default function AannemerTwentePage() {
       <CtaBanner
         eyebrow="Vrijblijvend advies"
         title="Verbouwplannen in Twente?"
-        text="Waar je ook woont in de regio: we komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="Waar je ook woont in de regio: we komen langs, denken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

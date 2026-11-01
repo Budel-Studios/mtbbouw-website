@@ -1,6 +1,6 @@
 # Feitenlijst MTB Bouw
 
-> Opgesteld 1 november 2026, na de SEO/GEO-analyse van die dag. Status: grotendeels bevestigd door Robbert op 1 november 2026; de open punten staan in hoofdstuk 2.
+> Opgesteld 1 november 2026, na de SEO/GEO-analyse van die dag. Status: bevestigd door Robbert op 1 november 2026; wat nog openstaat, staat in hoofdstuk 2.
 >
 > Code: contactgegevens staan in `lib/site.ts`, vaste formuleringen voor garantie, offerte, meerwerk en planning in `lib/facts.ts`. Gebruik die in plaats van eigen varianten.
 >
@@ -19,11 +19,11 @@ Besluiten van Robbert op 1 november 2026 zijn verwerkt. Wat nog open staat, staa
 | Project bedrijfshal Borne | Projectpagina, FAQ Borne, stadspagina Borne, nieuwbouw, afbeeldingen en alt-teksten | Besluit Robbert: geen project van MTB Bouw | Verwijderd | Projectpagina weg (301 naar /projecten), alle verwijzingen weg. De foto bleek de bedrijfsbus van MTB Bouw; die heet nu `/images/mtb-bouw-bus.webp` met een eerlijke alt-tekst | – |
 | Offerte- en intaketermijnen | "binnen 5 werkdagen", "binnen 7 dagen", "binnen een week", "dezelfde week" | Besluit Robbert: geen termijnen | Bevestigd | Alle termijnen weg; nu "gespecificeerde offerte na de intake" | – |
 | Opleverdatum | "vaste opleverdatum" (nieuwbouw), "Geen vertraging" | Besluit Robbert: niet te hard maken. AV art. 5.1: termijnen indicatief | Bevestigd | "Planning met de beoogde opleverdatum" | – |
-| Vaste prijs | "vaste prijs", "vaste aanneemsom" (homepage, diensten, stadspagina's, nieuwbouw, artikelen) | AV art. 4.3: kostenstijgingen mogen worden doorberekend, mits vooraf afgestemd | Open | Niet sitebreed aangepast. "Geen (meerwerk-)verrassingen" is "Meerwerk alleen na jouw akkoord" (AV art. 4.4) | Robbert en Mathijs |
+| Vaste prijs | "vaste prijs", "vaste aanneemsom", "vaste projectprijs" (homepage, diensten, stadspagina's, nieuwbouw, afbouwpagina's, FAQ, artikelen) | AV art. 4.3: kostenstijgingen mogen worden doorberekend, mits vooraf afgestemd. Besluit Robbert: vervangen | Bevestigd | Overal vervangen door "gespecificeerde offerte" (`facts.offerte.standaard`), "Meerwerk alleen na jouw akkoord" en bij voorrijkosten "Wat je betaalt, staat in de offerte" | – |
 | Meerwerk | "geen meerwerk-verrassingen" | AV art. 4.4 | Bevestigd | "Meerwerk alleen na jouw akkoord" | – |
 | Bedrijf blijft open | "terwijl jouw bedrijf gewoon doordraait" | Geen bron | Onbevestigd | "Zoveel mogelijk", met afspraken vooraf | – |
 | Prijsvergelijking regio | "geen Randstad-tarieven" | Geen bron | Verwijderd | – | – |
-| Prijzen per m² voor panden | Kantoor, bedrijfspand, horeca, winkel, hal (FAQ, afbouwpagina's, artikelen lunchroom en kantoor inrichten) | Besluit Robbert: geen m²-prijzen voor panden | Verwijderd, op één artikel na | Het artikel "Wat kost een kantoorverbouwing per m² in 2026?" draait helemaal om m²-prijzen: zie vraag 2. Onderdeelprijzen (metal stud per m² wand, systeemplafond per m²) staan er nog | Robbert |
+| Prijzen per m² voor panden | Kantoor, bedrijfspand, horeca, winkel, hal, metal stud-wanden, systeemplafonds (FAQ, afbouwpagina's, artikelen) | Besluit Robbert: geen m²-prijzen voor panden, ook niet voor onderdelen | Verwijderd | Alle m²-prijzen voor panden en onderdelen weg. Het artikel "Wat kost een kantoorverbouwing per m² in 2026?" is offline gehaald; de URL verwijst door (301) naar /afbouwstudio/kantoor-verbouwen | – |
 | Prijzen woningen | Aanbouw, nieuwbouwwoning, renovatie per m² | Eigen indicaties | Ongewijzigd | – | – |
 | Adres | Heersenkampweg 5 (site) · Herikebrink 37 (enkele externe vermeldingen) | Besluit Robbert: Heersenkampweg 5 | Bevestigd | Site klopt. Externe profielen nog aanpassen (buiten deze opdracht) | Robbert |
 | Telefoon, WhatsApp, e-mail, openingstijden | 053 206 50 71 · +31 6 42997018 · info@mtbbouw.com · ma–vr 08:00–17:00 | `lib/site.ts` | Consistent | – | – |
@@ -31,15 +31,15 @@ Besluiten van Robbert op 1 november 2026 zijn verwerkt. Wat nog open staat, staa
 | Mijn Blauwdruk | Gepresenteerd als beschikbare klantomgeving | Nog niet live | Bevestigd | Blauwdruk is onze interne app; Mijn Blauwdruk komt binnenkort | – |
 | PandScan / inventarisatie-app | "onze PandScan-app", "inventarisatie-app" | Besluit Robbert: bestaat niet | Verwijderd | Nu "we leggen het pand op locatie nauwkeurig vast" | – |
 | Algemene voorwaarden | Formulier vraagt akkoord, AV staan niet op de site | AV juli 2025 | Komt binnenkort (Robbert) | Na publicatie linken vanuit het contactformulier; garantieartikel eerst gelijktrekken | Robbert |
-| Vacatures | Allround Timmerman en BBL Leerling | Nog niet bevestigd dat ze openstaan | Open | Status "te-bevestigen": zichtbaar, zonder vacaturepagina en markup | Mathijs |
+| Vacatures | Allround Timmerman en BBL Leerling | Besluit Robbert: staan echt open | Bevestigd | Status "open": elke vacature heeft een eigen pagina onder /werkgenoeg met Google-vacaturecode, en staat in de sitemap. Sluit een vacature, zet dan de status in `lib/jobs.ts` op "gesloten" | Mathijs |
 | Salaris | €2.700–€3.800 (vacature) · €3.000–€4.500 (werken bij) | Besluit Robbert: €3.000–€4.500 | Bevestigd | Vacature en markup op €3.000–€4.500 bruto per maand | – |
 
 ## 2. Nog open
 
-1. Vaste prijs: de site belooft een vaste prijs, AV art. 4.3 staat doorberekening van kostenstijgingen toe. Welke formulering?
-2. Artikel "Wat kost een kantoorverbouwing per m² in 2026?": offline halen met een doorverwijzing, of herschrijven zonder bedragen?
-3. Vacatures: staan Allround Timmerman en BBL Leerling nu echt open? Zo ja, dan krijgen ze een eigen pagina met Google-vacaturecode.
-4. AV art. 9.1 (1 jaar garantie) gelijktrekken met "garantie volgens de richtlijnen in de bouw" voordat de AV online gaan.
+1. AV art. 9.1 (1 jaar garantie) gelijktrekken met "garantie volgens de richtlijnen in de bouw" voordat de AV online gaan.
+2. Na publicatie van de AV: linken vanuit het contactformulier.
+
+Afgehandeld op 1 november 2026: vaste prijs (vervangen), kostenartikel kantoorverbouwing (offline, 301), vacatures (open).
 
 ## 3. Inhoudelijke claims: voor en na
 
@@ -50,8 +50,8 @@ Besluiten van Robbert op 1 november 2026 zijn verwerkt. Wat nog open staat, staa
 | BENG | "energieneutraal (BENG)", "Nieuwbouw voldoet aan BENG: warmtepomp, triple glas, balansventilatie en Rc 6,3" | Bijna energieneutraal; niet hetzelfde als volledig energieneutraal. BENG stelt prestatie-eisen (energiebehoefte, fossiel energiegebruik, aandeel hernieuwbaar), geen vaste maatregelen. Sinds 1 januari 2021 | RVO |
 | Waardestijging | "70–90% van de bouwkosten komt terug in de woningwaarde" (twee artikelen, samenvatting, FAQ) | "Een uitbouw kan de woningwaarde verhogen. Hoeveel dat is, hangt onder meer af van de woning, locatie, extra gebruiksruimte en kwaliteit van de uitvoering. Voor een inschatting is een taxatie nodig." Geen vervangend percentage | Geen betrouwbare bron gevonden voor het percentage |
 | Garantie | 5 jaar, 6/20/10 jaar, 5 jaar plaatsing, 1 jaar | Garantie volgens de richtlijnen in de bouw, afspraken in offerte en overeenkomst; materialen volgens fabrikant; wettelijke rechten blijven gelden; na oplevering bellen we altijd na | Besluit Robbert, AV art. 9.2 |
-| Offerte | "vaste prijs binnen 5 werkdagen", "intake binnen 7 dagen" | "Gespecificeerde offerte na de intake", geen termijnen | Besluit Robbert |
-| Prijzen panden | "€150–400 / €300–600 / €600–1.500 per m²", "hal €600–€1.100 per m²" | Geen m²-prijzen; kosten hangen af van pand, installaties en afwerking | Besluit Robbert |
+| Offerte | "vaste prijs binnen 5 werkdagen", "intake binnen 7 dagen", "vaste aanneemsom", "vaste projectprijs" | "Gespecificeerde offerte na de intake", geen termijnen. Stelposten en uitsluitingen staan in de offerte, meerwerk alleen na akkoord | Besluit Robbert, AV art. 4.3 en 4.4 |
+| Prijzen panden | "€150–400 / €300–600 / €600–1.500 per m²", "hal €600–€1.100 per m²", "metal stud €70–120 per m² wand", "systeemplafond €40–80 per m²" | Geen m²-prijzen; kosten hangen af van pand, installaties en afwerking | Besluit Robbert |
 
 ## 4. Gebruikte officiële bronnen (gecontroleerd op 1 november 2026)
 
@@ -67,3 +67,5 @@ Besluiten van Robbert op 1 november 2026 zijn verwerkt. Wat nog open staat, staa
 - FAQ kozijnen: ISDE "tot €130 per m² isolerend glas, bij minimaal 8 m²". Bedrag en voorwaarden jaarlijks controleren op rvo.nl.
 - FAQ kozijnen: U-waarden HR++ (± 1,1) en triple (tot 0,5). Laten controleren door de leverancier.
 - Project overkapping paardenstal: noemt "bestemmingsplan". Mogelijk terecht als het project onder de oude wet viel.
+- Kozijnen: "all-in prijs" (meta kozijnen, diensten, homepage). Klopt dit voor elke offerte van De Kozijnstudio?
+- Renovatie: kop "Geen renovatie-verrassingen". Zachter formuleren, in lijn met de offertetekst?

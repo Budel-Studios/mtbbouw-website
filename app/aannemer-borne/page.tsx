@@ -14,13 +14,13 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer Borne | verbouw & bedrijfspanden | MTB Bouw" },
   description:
-    "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. Vanuit Enschede in zo'n 20 minuten ter plaatse. Vaste prijs, geen voorrijkosten.",
+    "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. Vanuit Enschede in zo'n 20 minuten ter plaatse. Heldere offerte, geen voorrijkosten.",
   alternates: { canonical: "/aannemer-borne" },
   openGraph: {
     type: "website",
     title: "Aannemer Borne | verbouw & bedrijfspanden | MTB Bouw",
     description:
-      "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. Vanuit Enschede in zo'n 20 minuten ter plaatse. Vaste prijs, geen voorrijkosten.",
+      "Aannemer in Borne en Zenderen: renovatie, aanbouw, kozijnen en prefab. Vanuit Enschede in zo'n 20 minuten ter plaatse. Heldere offerte, geen voorrijkosten.",
     url: "/aannemer-borne",
     images: [{ url: "/images/mtb-bouw-bus.webp", alt: "Bedrijfsbus van MTB Bouw uit Enschede" }],
   },
@@ -127,7 +127,7 @@ export default function AannemerBornePage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Bouwplannen in Borne?"
-        text="We komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="We komen langs, denken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

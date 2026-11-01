@@ -13,7 +13,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Metal stud-wanden plaatsen | Afbouwstudio — MTB Bouw" },
   description:
-    "Metal stud-wanden voor kantoren en bedrijfsruimtes in Twente: snel geplaatst, geluidwerend en eenvoudig aan te passen. Vaste prijs vooraf.",
+    "Metal stud-wanden voor kantoren en bedrijfsruimtes in Twente: snel geplaatst, geluidwerend en eenvoudig aan te passen. Gespecificeerde offerte na een intake.",
   alternates: { canonical: "/afbouwstudio/metal-stud-wanden" },
 };
 
@@ -44,7 +44,7 @@ export default function MetalStudPage() {
         eyebrow="Afbouwstudio · Wanden"
         title="Metal stud-wanden: een nieuwe kantoorindeling in dagen"
         intro="Metal stud is dé manier om een kantoor of bedrijfsruimte opnieuw in te delen: licht, snel en droog gebouwd, geluidwerend uit te voeren en later eenvoudig aan te passen. Afbouwstudio plaatst metal stud-wanden inclusief glasstroken, deuren en volledige afwerking."
-        cta={<ArrowLink drawer onDark>Vraag een vaste prijs aan</ArrowLink>}
+        cta={<ArrowLink drawer onDark>Vraag een offerte aan</ArrowLink>}
       />
 
       <FeatureGrid
@@ -76,10 +76,9 @@ export default function MetalStudPage() {
             Wat kost een metal stud-wand?
           </h2>
           <p className="mt-5 max-w-2xl leading-relaxed text-stone">
-            Als marktindicatie (2026) kost een standaard metal stud-wand circa
-            €70–120 per m² wandoppervlak inclusief afwerking; geluidwerende en
-            beglaasde varianten liggen hoger. Wij plaatsen metal stud vrijwel
-            altijd als onderdeel van een complete{" "}
+            Dat hangt af van de hoogte, de isolatie en geluidseisen, deuren en
+            glas, en de afwerking. Een prijs per m² zegt daarom weinig. Wij
+            plaatsen metal stud vrijwel altijd als onderdeel van een complete{" "}
             <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
               kantoorverbouwing
             </Link>{" "}
@@ -87,12 +86,8 @@ export default function MetalStudPage() {
             <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">
               systeemplafonds
             </Link>{" "}
-            en installaties in één planning. Je ontvangt altijd een vaste prijs
-            vooraf; zie ook de{" "}
-            <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-              kostengids 2026
-            </Link>
-            .
+            en installaties in één planning. Na een intake ontvang je een
+            gespecificeerde offerte.
           </p>
         </div>
       </section>
@@ -111,7 +106,7 @@ export default function MetalStudPage() {
       <section id="contact" className="scroll-mt-24 bg-ink text-white">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
           <p className="eyebrow text-white/65">
-            Vaste prijs
+            Offerte
           </p>
           <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
             Nieuwe indeling nodig?

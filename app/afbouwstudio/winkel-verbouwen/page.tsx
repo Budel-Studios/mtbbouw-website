@@ -12,7 +12,7 @@ import { ContactDrawerButton } from "@/components/contact-drawer";
 export const metadata: Metadata = {
   title: { absolute: "Winkel verbouwen in Twente | Afbouwstudio" },
   description:
-    "Winkel of showroom verbouwen in Twente: klaar vóór je openingsdatum, gefaseerd of buiten openingstijden uitgevoerd, met een vaste prijs.",
+    "Winkel of showroom verbouwen in Twente: gepland rond je openingsdatum, gefaseerd of buiten openingstijden uitgevoerd, met een gespecificeerde offerte.",
   alternates: { canonical: "/afbouwstudio/winkel-verbouwen" },
 };
 
@@ -64,8 +64,8 @@ export default function WinkelVerbouwenPage() {
           alt: "Winkelafbouw door Afbouwstudio, het zakelijke label van MTB Bouw",
         }}
         eyebrow="Afbouwstudio · Retail"
-        title="Winkel verbouwen — afbouw die klaar is vóór je openingsdatum"
-        intro="Bij een winkelverbouwing telt elke dag: elke dag dicht is omzetverlies. Afbouwstudio bouwt winkels, showrooms en concept stores af in Twente en Oost-Nederland — gefaseerd of buiten openingstijden, met een vaste prijs en een planning die staat."
+        title="Winkel verbouwen — afbouw gepland rond je openingsdatum"
+        intro="Bij een winkelverbouwing telt elke dag: elke dag dicht is omzetverlies. Afbouwstudio bouwt winkels, showrooms en concept stores af in Twente en Oost-Nederland — gefaseerd of buiten openingstijden, met een gespecificeerde offerte en een planning rond je openingsdatum."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake</ArrowLink>
@@ -93,11 +93,9 @@ export default function WinkelVerbouwenPage() {
             ))}
           </div>
           <p className="mt-8 text-[15px] text-stone">
-            Benieuwd naar de kosten? Lees onze{" "}
-            <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-              kostengids voor zakelijke verbouwingen
-            </Link>{" "}
-            of vraag direct een vaste prijs aan.
+            Benieuwd naar de kosten? Die hangen af van het pand, de
+            installaties en de afwerking. Na een intake op locatie ontvang je
+            een gespecificeerde offerte.
           </p>
         </div>
       </section>

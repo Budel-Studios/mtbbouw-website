@@ -21,7 +21,7 @@ draft: false
 
 Een aanbouw of uitbouw kost in 2026 indicatief **€2.200 tot €3.200 per m², inclusief btw en afwerking**. Voor een gangbare aanbouw van 20 m² kom je daarmee op circa €45.000 tot €65.000. In deze gids leggen we uit waar dat bedrag uit bestaat, wat de prijs omhoog of omlaag duwt, en hoe je slim bespaart.
 
-> **Over deze cijfers:** dit zijn onze indicaties op prijspeil 2026 voor de regio Twente, bedoeld om richting te geven. Elke woning en elk plan is anders — een vaste prijs voor jouw situatie krijg je na een vrijblijvende opname bij je thuis.
+> **Over deze cijfers:** dit zijn onze indicaties op prijspeil 2026 voor de regio Twente, bedoeld om richting te geven. Elke woning en elk plan is anders — een gespecificeerde offerte voor jouw situatie krijg je na een vrijblijvende opname bij je thuis.
 
 ## Prijzen per m² in 2026
 
@@ -62,12 +62,12 @@ Veel aanbouwen aan het achtererf zijn vergunningvrij, maar een vaste maat die ov
 1. **Kies een plat dak** in plaats van een schuin dak — scheelt al snel duizenden euro's.
 2. **Beperk het aantal maatwerk-elementen**: standaardmaten voor kozijnen en pui zijn fors voordeliger.
 3. **Combineer met verduurzaming**: als de aannemer er toch is, zijn isolatie en HR++-glas relatief goedkoop mee te nemen — en soms subsidiabel (check [rvo.nl](https://www.rvo.nl) voor actuele ISDE-voorwaarden).
-4. **Werk met een vaste aanneemsom en een gespecificeerde offerte**: dan weet je vooraf waar je aan toe bent, en spreek je af dat meerwerk alleen na jouw akkoord wordt uitgevoerd.
+4. **Vraag een gespecificeerde offerte**: met stelposten en uitsluitingen op een rij weet je vooraf waar je aan toe bent. Spreek af dat meerwerk alleen na jouw akkoord wordt uitgevoerd.
 
 ## Wat levert een aanbouw op?
 
 Een aanbouw kan de woningwaarde verhogen. Hoeveel dat is, hangt onder meer af van de woning, de locatie, de extra gebruiksruimte en de kwaliteit van de uitvoering. Voor een inschatting van jouw situatie is een taxatie nodig. Het dagelijkse woonplezier heb je in elk geval meteen.
 
-## Vaste prijs voor jouw aanbouw?
+## Een offerte voor jouw aanbouw?
 
-MTB Bouw bouwt aanbouwen en uitbouwen in [Enschede](/aannemer-enschede) en heel [Twente](/aannemer-twente), traditioneel én prefab. Na een vrijblijvende kennismaking en opname ontvang je een offerte met vaste prijs. Bekijk onze [aanbouw & uitbouw-pagina](/aanbouw-uitbouw) of [neem contact op](/contact).
+MTB Bouw bouwt aanbouwen en uitbouwen in [Enschede](/aannemer-enschede) en heel [Twente](/aannemer-twente), traditioneel én prefab. Na een vrijblijvende kennismaking en opname ontvang je een gespecificeerde offerte. Bekijk onze [aanbouw & uitbouw-pagina](/aanbouw-uitbouw) of [neem contact op](/contact).

@@ -29,7 +29,7 @@ export default function KantoorZwollePage() {
       />
       <ServiceJsonLd
         name="Kantoor verbouwen in Zwolle"
-        description="Kantoorverbouwing en casco-afbouw in Zwolle door Afbouwstudio (MTB Bouw): metal stud, systeemplafonds, installaties en afwerking met vaste prijs."
+        description="Kantoorverbouwing en casco-afbouw in Zwolle door Afbouwstudio (MTB Bouw): metal stud, systeemplafonds, installaties en afwerking met een gespecificeerde offerte."
         url="/afbouwstudio/kantoor-verbouwen-zwolle"
         serviceType="Kantoorafbouw"
       />
@@ -43,7 +43,7 @@ export default function KantoorZwollePage() {
         }}
         eyebrow="Afbouwstudio · Zwolle"
         title="Kantoor verbouwen in Zwolle — bewezen met een compleet casco-project"
-        intro="In de Zwolse wijk Wezenlanden bouwden we een leeg casco-pand in 7 weken om tot een complete, werkende zaak. Datzelfde casco-naar-turn-key-traject voeren we uit voor kantoren in Zwolle: wanden, plafonds, vloeren, installaties en afwerking — één team, één vaste prijs."
+        intro="In de Zwolse wijk Wezenlanden bouwden we een leeg casco-pand in 7 weken om tot een complete, werkende zaak. Datzelfde casco-naar-turn-key-traject voeren we uit voor kantoren in Zwolle: wanden, plafonds, vloeren, installaties en afwerking — één team, één offerte."
         cta={
           <>
             <ArrowLink drawer onDark>Plan een intake in Zwolle</ArrowLink>
@@ -95,13 +95,9 @@ export default function KantoorZwollePage() {
                 en glaswanden,{" "}
                 <Link href="/afbouwstudio/systeemplafonds" className="font-semibold text-ink underline hover:text-navy">systeemplafonds</Link>{" "}
                 met verlichting, vloeren, installaties, pantry en sanitair.
-                Kostenindicaties en het volledige verhaal vind je op onze{" "}
+                Het volledige verhaal vind je op onze{" "}
                 <Link href="/afbouwstudio/kantoor-verbouwen" className="font-semibold text-ink underline hover:text-navy">
                   kantoor verbouwen-pagina
-                </Link>{" "}
-                en in de{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids 2026
                 </Link>
                 .
               </p>

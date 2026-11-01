@@ -4,9 +4,9 @@ import { sharedPillars } from "./types";
 export const uitbouwData: ServiceData = {
   slug: "/aanbouw-uitbouw",
   seo: {
-    title: "Aanbouw & uitbouw Enschede & Twente | MTB Bouw vaste prijs",
+    title: "Aanbouw & uitbouw in Enschede & Twente | MTB Bouw",
     description:
-      "Aanbouw of uitbouw plannen in Enschede, Hengelo of Twente? MTB Bouw realiseert je extra ruimte met één team, vaste prijs en duidelijke planning.",
+      "Aanbouw of uitbouw plannen in Enschede, Hengelo of Twente? MTB Bouw realiseert je extra ruimte met één team, een heldere offerte en een duidelijke planning.",
     canonical: "/aanbouw-uitbouw",
     focusKeyword: "aanbouw Enschede",
   },
@@ -86,7 +86,7 @@ export const uitbouwData: ServiceData = {
     h2: "De 5 vragen die we bij elke uitbouw krijgen",
     items: [
       { q: "Wat kost een uitbouw in Enschede of Twente?",
-        a: "Als indicatie: €2.200 tot €3.200 per m² inclusief btw, afhankelijk van afwerking, dakvorm en isolatie. Voor 20 m² kom je dan rond €45.000 tot €65.000. Na de intake krijg je een vaste prijs op maat." },
+        a: "Als indicatie: €2.200 tot €3.200 per m² inclusief btw, afhankelijk van afwerking, dakvorm en isolatie. Voor 20 m² kom je dan rond €45.000 tot €65.000. Na de intake krijg je een gespecificeerde offerte op maat." },
       { q: "Hoe lang duurt het bouwen van een uitbouw?",
         a: "Reken op 8 tot 14 weken uitvoering, afhankelijk van de grootte en de fundering. In houtskeletbouw gaat het sneller: onze uitbouw in Enschede stond er in vijf weken. Je krijgt de planning vooraf en we houden je wekelijks op de hoogte." },
       { q: "Heb ik een vergunning nodig voor een uitbouw?",

@@ -16,12 +16,12 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Bouwbedrijf in Enschede | MTB Bouw" },
   description:
-    "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, vaste prijzen.",
+    "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, heldere offertes.",
   alternates: { canonical: "/bouwbedrijf-enschede" },
   openGraph: {
     type: "website",
     title: "Bouwbedrijf in Enschede | MTB Bouw",
-    description: "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, vaste prijzen.",
+    description: "Allround bouwbedrijf in Enschede met vier specialismen: Wonen & Verbouwen, Afbouwstudio, Kozijnen en Prefab. Erkend leerbedrijf, heldere offertes.",
     url: "/bouwbedrijf-enschede",
   },
 };
@@ -158,7 +158,7 @@ export default function BouwbedrijfEnschedePage() {
       <CtaBanner
         eyebrow="Kennismaken"
         title="Op zoek naar een bouwbedrijf in Enschede?"
-        text="Plan een vrijblijvende kennismaking — we denken mee over je plan en je krijgt een offerte met vaste prijs."
+        text="Plan een vrijblijvende kennismaking — we denken mee over je plan en je krijgt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

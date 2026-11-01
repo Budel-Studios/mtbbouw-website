@@ -125,12 +125,9 @@ export default function BedrijfspandVerbouwenPage() {
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Dat hangt af van het pand, de installaties en de afwerking.
-                Een prijs per m² zegt daarom weinig.
-                Lees ook onze{" "}
-                <Link href="/kennisbank/kantoor-verbouwen-kosten-2026" className="font-semibold text-ink underline hover:text-navy">
-                  kostengids voor zakelijke verbouwingen
-                </Link>
-                . Na één intake op locatie ontvang je een gespecificeerde offerte.
+                Een prijs per m² zegt daarom weinig. Na één intake op locatie
+                ontvang je een gespecificeerde offerte, met stelposten en
+                uitsluitingen duidelijk op een rij.
               </p>
             </div>
           </div>

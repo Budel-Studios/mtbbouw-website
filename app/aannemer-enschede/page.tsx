@@ -17,13 +17,13 @@ import { KennisbankBlock } from "@/components/kennisbank/kennisbank-block";
 export const metadata: Metadata = {
   title: { absolute: "Aannemer Enschede | verbouw, uitbouw & renovatie | MTB Bouw" },
   description:
-    "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
+    "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een gespecificeerde offerte en één vast aanspreekpunt.",
   alternates: { canonical: "/aannemer-enschede" },
   openGraph: {
     type: "website",
     title: "Aannemer Enschede | verbouw, uitbouw & renovatie | MTB Bouw",
     description:
-      "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een vaste prijs en één vast aanspreekpunt.",
+      "Aannemer in Enschede voor renovatie, aanbouw, uitbouw en kozijnen. Intake bij jou op locatie, een gespecificeerde offerte en één vast aanspreekpunt.",
     url: "/aannemer-enschede",
     images: [{ url: "/images/projects/uitbouw-houtskeletbouw-enschede/01.jpg", alt: "Nieuwe uitbouw in houtskeletbouw met zwarte kozijnen in Enschede, door MTB Bouw" }],
   },
@@ -45,7 +45,7 @@ export default function AannemerEnschedePage() {
       />
       <ServiceJsonLd
         name="Aannemer in Enschede"
-        description="Aannemersbedrijf gevestigd in Enschede voor verbouw, renovatie, aanbouw, uitbouw en kozijnen. Vaste prijs en één aanspreekpunt."
+        description="Aannemersbedrijf gevestigd in Enschede voor verbouw, renovatie, aanbouw, uitbouw en kozijnen. Gespecificeerde offerte en één aanspreekpunt."
         url="/aannemer-enschede"
         serviceType="Aannemer"
         city="Enschede"
@@ -133,13 +133,13 @@ export default function AannemerEnschedePage() {
                 Kosten
               </p>
               <h2 className="display mt-4 text-4xl md:text-5xl">
-                Vaste prijs, vooraf helder
+                Vooraf weten waar je aan toe bent
               </h2>
               <p className="mt-5 leading-relaxed text-stone">
                 Geen uurtje-factuurtje: na een vrijblijvende kennismaking en een
-                opname bij jou thuis ontvang je een offerte met een vaste
-                aanneemsom en een realistische planning. Eventuele stelposten
-                benoemen we transparant. Zo weet je vóór de eerste hamerslag
+                opname bij jou thuis ontvang je een gespecificeerde offerte en een
+                realistische planning. Stelposten en uitsluitingen staan er
+                duidelijk in, en meerwerk doen we alleen na jouw akkoord. Zo weet je vóór de eerste hamerslag
                 waar je aan toe bent. Tip: bekijk ook onze{" "}
                 <Link href="/kennisbank/wat-kost-een-aanbouw-2026" className="font-semibold text-ink underline hover:text-navy">
                   kostengids voor aanbouwen
@@ -165,7 +165,7 @@ export default function AannemerEnschedePage() {
           },
           {
             icon: EuroIcon,
-            title: "Vaste prijs",
+            title: "Heldere offerte",
             text: "Gespecificeerde offerte vooraf. Meerwerk alleen na jouw akkoord.",
           },
           {
@@ -204,7 +204,7 @@ export default function AannemerEnschedePage() {
       <CtaBanner
         eyebrow="Vrijblijvend kennismaken"
         title="Verbouwplannen in Enschede?"
-        text="Bel, app of mail — we komen langs, denken mee en je ontvangt een offerte met vaste prijs."
+        text="Bel, app of mail — we komen langs, denken mee en je ontvangt een gespecificeerde offerte."
         cta={{ label: "Ontvang offerte", drawer: true }}
         secondary={{ label: "Bel 053 206 50 71", href: "tel:+31532065071" }}
       />

@@ -70,7 +70,7 @@ export const jobs: Job[] = [
       "Doorgroeien naar voorman of projectleider",
     ],
     // Status nog te bevestigen (audit 1 nov 2026: validThrough was verlopen).
-    status: "te-bevestigen",
+    status: "open",
     datePosted: "2026-07-03",
     employmentType: "FULL_TIME",
     salaryMin: 3000,
@@ -100,7 +100,7 @@ export const jobs: Job[] = [
       "Uitzicht op een vast contract na je diploma",
     ],
     // Status nog te bevestigen (audit 1 nov 2026: validThrough was verlopen).
-    status: "te-bevestigen",
+    status: "open",
     datePosted: "2026-07-03",
     employmentType: "FULL_TIME",
   },
