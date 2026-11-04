@@ -10,13 +10,13 @@ duration: "7 weken"
 clientType: "Zakelijk"
 featured: true
 spotlight: true
-cover: "/images/projects/broodbode-zwolle-lunchroom/01-counter.jpg"
-coverAlt: "Verlichte counter met houten lamellen en het logo van De Broodbode in Zwolle, afgebouwd door MTB Bouw"
-coverPosition: "50% 66%"
+cover: "/images/projects/broodbode-zwolle-lunchroom/cover.jpg"
+coverAlt: "Wandkast met hanglamp en lange tafel in lunchroom De Broodbode Zwolle, afgebouwd door MTB Bouw"
+coverPosition: "50% 45%"
 intro: "Een lege betonnen doos aan de Schuurmansstraat. Zeven weken later: een lunchroom waar de focaccia's over de toonbank vliegen. Van casco tot gebruiksklaar: zo bouwen we voor ondernemers."
 gallery:
-  - src: "/images/projects/broodbode-zwolle-lunchroom/cover.jpg"
-    alt: "Wandkast met hanglamp en lange tafel in lunchroom De Broodbode Zwolle, afgebouwd door MTB Bouw"
+  - src: "/images/projects/broodbode-zwolle-lunchroom/01-counter.jpg"
+    alt: "Verlichte counter met houten lamellen en het logo van De Broodbode in Zwolle, afgebouwd door MTB Bouw"
     phase: "eind"
   - src: "/images/projects/broodbode-zwolle-lunchroom/02.jpg"
     alt: "Vakman richt de houten wandkast in tijdens de afbouw van De Broodbode Zwolle"
