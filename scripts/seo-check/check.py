@@ -28,6 +28,7 @@ REDIRECTS = {
     "/afbouwstudio/kantoor-verbouwen": "/zakelijk/bedrijfspand-verbouwen",
     "/afbouwstudio/kantoor-verbouwen-zwolle": "/zakelijk/bedrijfspand-verbouwen",
     "/voor-bedrijven": "/zakelijk",
+    "/projecten/uitbouw-jaren-30-woning-hogeland-enschede": "/projecten/uitbouw-jaren-10-woning-hogeland-enschede",
     "/kennisbank/kantoor-verbouwen-kosten-2026": "/zakelijk/bedrijfspand-verbouwen",
     "/projecten/bedrijfshal-borne": "/projecten",
     "/bouwbedrijf-enschede": "/aannemer-enschede",
