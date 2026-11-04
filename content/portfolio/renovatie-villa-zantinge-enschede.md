@@ -8,8 +8,9 @@ category: "Renovatie"
 duration: "6 maanden"
 clientType: "Particulier"
 featured: true
-cover: "/images/projects/renovatie-villa-zantinge-enschede/06.jpg"
-coverAlt: "Nieuwe keuken met houten kastenwand, kookeiland en zicht op de glazen patio in de gerenoveerde Van Zantinge-villa in Enschede"
+cover: "/images/projects/renovatie-villa-zantinge-enschede/01.jpg"
+coverAlt: "Glazen patio met door MTB Bouw zelf gemaakte zwarte kozijnen en een olijfboom in de gerenoveerde Van Zantinge-villa in Enschede"
+coverPosition: "50% 45%"
 intro: "Veel aannemers zagen deze klus niet zitten. Wij wel: de volledige renovatie van een Van Zantinge-villa in Enschede — de woning waar architect Van Zantinge zelf woonde. Binnenschil, buitenschil, dak, kozijnen en patio, in zes maanden en in overleg met welstand."
 materials:
   - "Gasbeton (vergroten van kamers)"
