@@ -4,17 +4,33 @@ import type { ProjectCardData } from "@/components/project/project-cards";
 export type PortfolioProject = (typeof portfolio)[number];
 
 /**
+ * Tijdelijke covers (MTB-logo) voor projecten waarvan de foto's nog volgen.
+ * Zulke projecten staan achteraan in overzichten en niet in de homepage-slider.
+ */
+export const PLACEHOLDER_COVERS = [
+  "/images/projects/in-uitvoering.jpg",
+  "/images/projects/fotos-volgen.jpg",
+];
+
+export function hasPlaceholderCover(p: { cover?: string }): boolean {
+  return !!p.cover && PLACEHOLDER_COVERS.includes(p.cover);
+}
+
+/**
  * Gepubliceerde projecten in weergavevolgorde: uitgelicht werk vooraan,
  * daarbinnen nieuwste eerst (zelfde regel als de oude homepage-carrousel).
+ * Projecten met een tijdelijke cover sluiten de rij.
  */
 export function publishedProjects(): PortfolioProject[] {
   const live = portfolio
     .filter((p) => !p.draft)
     .sort((a, b) => b.date.localeCompare(a.date));
+  const withPhotos = live.filter((p) => !hasPlaceholderCover(p));
   return [
-    ...live.filter((p) => p.spotlight),
-    ...live.filter((p) => p.featured && !p.spotlight),
-    ...live.filter((p) => !p.featured && !p.spotlight),
+    ...withPhotos.filter((p) => p.spotlight),
+    ...withPhotos.filter((p) => p.featured && !p.spotlight),
+    ...withPhotos.filter((p) => !p.featured && !p.spotlight),
+    ...live.filter(hasPlaceholderCover),
   ];
 }
 
