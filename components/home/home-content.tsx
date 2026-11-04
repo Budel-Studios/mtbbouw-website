@@ -6,7 +6,7 @@ import { publishedArticles, toCard } from "@/lib/kennisbank";
 import { articleToCard } from "@/lib/article-slide";
 import { getAsset } from "@/lib/assets";
 import { WebSiteJsonLd } from "@/components/json-ld";
-import { publishedProjects, toProjectCard } from "@/lib/projects";
+import { hasPlaceholderCover, publishedProjects, toProjectCard } from "@/lib/projects";
 import { CardSlides, SliderLink } from "@/components/sections/card-slider";
 import { Slider } from "@/components/slider";
 import { HomeHero } from "@/components/home/home-hero";
@@ -205,7 +205,11 @@ export async function HomeContent({
   const latestArticles = publishedArticles()
     .slice(0, 6)
     .map((a) => articleToCard(toCard(a)));
-  const projects = publishedProjects().map(toProjectCard).filter((p) => p.images.length > 0);
+  const projects = publishedProjects()
+    .filter((p) => !hasPlaceholderCover(p))
+    .map(toProjectCard)
+    .filter((p) => p.images.length > 0);
+  const projectCount = publishedProjects().length;
 
   return (
     <>
@@ -311,7 +315,7 @@ export async function HomeContent({
                 </HandNote>
               )}
             </div>
-            <SliderLink href="/projecten">Bekijk alle {projects.length} projecten</SliderLink>
+            <SliderLink href="/projecten">Bekijk alle {projectCount} projecten</SliderLink>
           </div>
           <div className={playful ? "mt-20" : "mt-14"}>
             <CardSlides items={projects} label="Recente projecten" />
