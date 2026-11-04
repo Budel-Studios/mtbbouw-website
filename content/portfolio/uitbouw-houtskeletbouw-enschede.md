@@ -19,6 +19,10 @@ materials:
   - "Nieuwe binnendeuren"
   - "Houten overkapping met schuur"
 gallery:
+  - src: "/images/projects/uitbouw-houtskeletbouw-enschede/00-voor.jpg"
+    alt: "Vervallen gepleisterde uitbouw in Enschede met mossige gevel, terwijl MTB Bouw het oude platte dak sloopt"
+    caption: "Voor: de oude uitbouw, op de dag dat we het dak eraf haalden"
+    phase: "voor"
   - src: "/images/projects/uitbouw-houtskeletbouw-enschede/02.jpg"
     alt: "Hoekpartij met zwarte houten kozijnen en triple glas in een uitbouw met Finiplus gevelbekleding in Enschede"
     caption: "Glazen hoek met zwart gelakte houten kozijnen en triple glas"
