@@ -11,9 +11,9 @@ executionPeriod: "zomervakantie 2026"
 year: 2026
 clientType: "Zakelijk"
 featured: true
-cover: "/images/projects/broodbode-apeldoorn/01.jpg"
-coverAlt: "Sfeervol zitgedeelte van huiskamer-lunchroom De Broodbode in Apeldoorn met vintage behang en houten meubels"
-coverVideo: "/images/projects/broodbode-apeldoorn/header.mp4"
+cover: "/images/projects/broodbode-apeldoorn/00-header.jpg"
+coverAlt: "Zitgedeelte van lunchroom De Broodbode in Apeldoorn met oranje wandlampen, houten lambrisering, roze wandtegels en houten tafels"
+coverPosition: "50% 40%"
 intro: "Een verouderd winkelpand uit de jaren '40–'50, in circa zeven weken volledig getransformeerd tot een warme, eigentijdse huiskamer-lunchroom — gesloopt, heringedeeld en tot in detail afgewerkt tijdens de zomervakantie."
 situation: |
   Het pand van De Broodbode in Apeldoorn stamt uit de jaren '40–'50 en was toe aan een grondige modernisering. De indeling paste niet meer bij de formule, de techniek was verouderd en de uitstraling sloot niet aan bij de warme huiskamer-sfeer die De Broodbode voor ogen had.

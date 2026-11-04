@@ -79,8 +79,8 @@ const EXPERTISES = [
     desc: "Horeca, kantoren, winkels en bedrijfspanden verbouwen of afbouwen, van casco tot gebruiksklaar.",
     href: "/zakelijk",
     image: {
-      src: "/images/projects/broodbode-apeldoorn/04.jpg",
-      alt: "Maatwerk zitbanken bij De Broodbode Apeldoorn",
+      src: "/images/projects/broodbode-zwolle-lunchroom/cover.jpg",
+      alt: "Wandkast met hanglamp en lange tafel in lunchroom De Broodbode Zwolle, afgebouwd door MTB Bouw",
     },
   },
   {
