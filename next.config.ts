@@ -58,6 +58,12 @@ const nextConfig: NextConfig = {
       // Merkstructuur: /voor-bedrijven ging op in Afbouwstudio, sinds nov 2026
       // MTB Bouw Zakelijk. Direct naar de eindbestemming, zonder keten.
       { source: "/voor-bedrijven", destination: "/zakelijk", permanent: true },
+      // Project hernoemd: bouwjaar is jaren 10, niet jaren 30 (nov 2026).
+      {
+        source: "/projecten/uitbouw-jaren-30-woning-hogeland-enschede",
+        destination: "/projecten/uitbouw-jaren-10-woning-hogeland-enschede",
+        permanent: true,
+      },
 
       // Oude WordPress-pagina's (volledige Yoast page-sitemap, juli 2026).
       { source: "/aanbouw-uitbouw-enschede", destination: "/aanbouw-uitbouw", permanent: true },
